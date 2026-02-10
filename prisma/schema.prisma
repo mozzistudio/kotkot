@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Broker {
+  id                String     @id @default(cuid())
+  email             String     @unique
+  passwordHash      String
+  companyName       String
+  brandName         String
+  logo              String     @default("")
+  primaryColor      String     @default("#2D8C4E")
+  secondaryColor    String     @default("#E67E22")
+  whatsappConnected Boolean    @default(false)
+  whatsappNumber    String     @default("")
+  wabaId            String     @default("")
+  phoneNumberId     String     @default("")
+  plan              String     @default("starter")
+  planStatus        String     @default("trial")
+  trialEndsAt       DateTime?
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+  leads             Lead[]
+  quotes            Quote[]
+  activities        Activity[]
+}
+
+model Lead {
+  id            String     @id @default(cuid())
+  brokerId      String
+  broker        Broker     @relation(fields: [brokerId], references: [id])
+  fullName      String
+  cedula        String
+  phone         String
+  email         String     @default("")
+  insuranceType String
+  status        String     @default("new")
+  vehicleBrand  String     @default("")
+  vehicleModel  String     @default("")
+  vehicleYear   Int        @default(0)
+  vehicleUse    String     @default("")
+  coverageType  String     @default("")
+  licensePlate  String     @default("")
+  notes         String     @default("")
+  source        String     @default("webchat")
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  quotes        Quote[]
+  documents     Document[]
+  activities    Activity[]
+}
+
+model Quote {
+  id                  String   @id @default(cuid())
+  leadId              String
+  lead                Lead     @relation(fields: [leadId], references: [id])
+  brokerId            String
+  broker              Broker   @relation(fields: [brokerId], references: [id])
+  insurerName         String
+  planName            String
+  monthlyPremium      Float
+  annualPremium       Float
+  deductible          Float
+  coverageDescription String
+  coverageItems       String   @default("[]")
+  selected            Boolean  @default(false)
+  createdAt           DateTime @default(now())
+}
+
+model Document {
+  id         String   @id @default(cuid())
+  leadId     String
+  lead       Lead     @relation(fields: [leadId], references: [id])
+  docType    String
+  fileName   String
+  fileUrl    String
+  verified   Boolean  @default(false)
+  uploadedAt DateTime @default(now())
+}
+
+model Activity {
+  id           String   @id @default(cuid())
+  brokerId     String
+  broker       Broker   @relation(fields: [brokerId], references: [id])
+  leadId       String?
+  lead         Lead?    @relation(fields: [leadId], references: [id])
+  activityType String
+  description  String
+  createdAt    DateTime @default(now())
+}
