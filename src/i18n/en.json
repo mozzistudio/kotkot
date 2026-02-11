@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "login": "Log In",
+    "demo": "Request Demo"
+  },
+  "hero": {
+    "tag": "INSURTECH PARTNER",
+    "headline1": "YOUR INSURANCE",
+    "headline2": "INTELLIGENT AGENT ON",
+    "headline3": "WHATSAPP",
+    "subtitle": "Deploy an AI agent on your brokerage's WhatsApp. Quote, compare, and sell insurance automatically across Latin America, 24/7.",
+    "cta": "Request Demo"
+  },
+  "stats": {
+    "countries": "Countries in LATAM",
+    "satisfaction": "Satisfaction",
+    "agent": "AI Agent Active",
+    "quoteTime": "Quote Time"
+  },
+  "footer": {
+    "tagline": "Made for Latin America 🌎",
+    "copyright": "© 2026 CotiFácil. All rights reserved."
+  }
+}

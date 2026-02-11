@@ -1,0 +1,507 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mic, Paperclip, Phone, Video, ChevronLeft, MoreVertical } from 'lucide-react';
+
+// ---------------------------------------------------------------------------
+// Types
+// ---------------------------------------------------------------------------
+
+interface ChatMessage {
+  id: number;
+  sender: 'bot' | 'user';
+  text: string;
+  time: string;
+  /** Optional quick-reply buttons shown below the bubble */
+  buttons?: string[];
+  /** Render the text as a special quote-card */
+  isQuoteCard?: boolean;
+  /** Render a payment CTA button */
+  paymentButton?: { label: string };
+}
+
+// ---------------------------------------------------------------------------
+// Conversation script
+// ---------------------------------------------------------------------------
+
+const MESSAGES: ChatMessage[] = [
+  {
+    id: 1,
+    sender: 'bot',
+    text: '¡Hola! 👋 Soy tu asistente de seguros. ¿En qué puedo ayudarte?',
+    time: '10:30',
+  },
+  {
+    id: 2,
+    sender: 'user',
+    text: 'Necesito seguro para mi auto',
+    time: '10:31',
+  },
+  {
+    id: 3,
+    sender: 'bot',
+    text: '¡Claro! Te ayudo. ¿Cuál es la marca de tu vehículo?',
+    time: '10:31',
+  },
+  {
+    id: 4,
+    sender: 'user',
+    text: 'Toyota Corolla 2022',
+    time: '10:32',
+  },
+  {
+    id: 5,
+    sender: 'bot',
+    text: 'Perfecto. ¿Qué cobertura prefieres?',
+    time: '10:32',
+    buttons: ['Básico', 'Intermedio', 'Todo Riesgo'],
+  },
+  {
+    id: 6,
+    sender: 'user',
+    text: 'Todo Riesgo',
+    time: '10:33',
+  },
+  {
+    id: 7,
+    sender: 'bot',
+    text: '📊 Mejores opciones para ti:\n\n🏆 ASSA — $89/mes\n⭐ MAPFRE — $95/mes\n      SURA — $102/mes\n\nTodas incluyen: daños a terceros, robo total y asistencia vial.',
+    time: '10:33',
+    isQuoteCard: true,
+  },
+  {
+    id: 8,
+    sender: 'user',
+    text: 'ASSA',
+    time: '10:34',
+  },
+  {
+    id: 9,
+    sender: 'bot',
+    text: 'Excelente elección. Aquí tienes tu link de pago:',
+    time: '10:34',
+    paymentButton: { label: '💳 Pagar $89.00' },
+  },
+  {
+    id: 10,
+    sender: 'bot',
+    text: '✅ ¡Pago recibido! Tu póliza ASSA está activa. 📄 Tu documento:',
+    time: '10:35',
+  },
+];
+
+/** Delay (ms) before each message appears */
+const BOT_DELAY = 1800;
+const USER_DELAY = 1200;
+const TYPING_DURATION = 1200;
+const RESTART_PAUSE = 3000;
+
+// ---------------------------------------------------------------------------
+// Sub-components
+// ---------------------------------------------------------------------------
+
+/** Three bouncing dots typing indicator */
+function TypingIndicator() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -4 }}
+      transition={{ duration: 0.2 }}
+      className="flex items-start gap-1 px-3 pb-1"
+    >
+      <div className="rounded-2xl rounded-tl-sm bg-white px-4 py-2.5 shadow-sm">
+        <div className="flex items-center gap-1">
+          {[0, 1, 2].map((i) => (
+            <motion.span
+              key={i}
+              className="block h-[6px] w-[6px] rounded-full bg-gray-400"
+              animate={{ y: [0, -5, 0] }}
+              transition={{
+                duration: 0.55,
+                repeat: Infinity,
+                delay: i * 0.15,
+                ease: 'easeInOut',
+              }}
+            />
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+/** Quote comparison card */
+function QuoteCard({ text }: { text: string }) {
+  const lines = text.split('\n');
+  const title = lines[0]; // "📊 Mejores opciones para ti:"
+
+  return (
+    <div className="overflow-hidden rounded-xl border border-emerald-200/60 bg-gradient-to-br from-white to-emerald-50/50 shadow-sm">
+      {/* Card header */}
+      <div className="border-b border-emerald-100 bg-emerald-600/5 px-3 py-2">
+        <span className="text-[11px] font-semibold tracking-wide text-emerald-800">
+          {title}
+        </span>
+      </div>
+
+      {/* Quote rows */}
+      <div className="divide-y divide-emerald-50 px-1 py-1">
+        {/* ASSA */}
+        <div className="flex items-center justify-between rounded-lg bg-emerald-50/70 px-2.5 py-2">
+          <div className="flex items-center gap-1.5">
+            <span className="text-[11px]">🏆</span>
+            <span className="text-[11px] font-bold text-gray-900">ASSA</span>
+            <span className="rounded-full bg-emerald-500 px-1.5 py-[1px] text-[8px] font-bold text-white">
+              MEJOR
+            </span>
+          </div>
+          <span className="text-[12px] font-extrabold text-emerald-700">
+            $89<span className="text-[9px] font-semibold text-emerald-600">/mes</span>
+          </span>
+        </div>
+
+        {/* MAPFRE */}
+        <div className="flex items-center justify-between px-2.5 py-2">
+          <div className="flex items-center gap-1.5">
+            <span className="text-[11px]">⭐</span>
+            <span className="text-[11px] font-semibold text-gray-800">MAPFRE</span>
+          </div>
+          <span className="text-[11px] font-bold text-gray-700">
+            $95<span className="text-[9px] font-medium text-gray-500">/mes</span>
+          </span>
+        </div>
+
+        {/* SURA */}
+        <div className="flex items-center justify-between px-2.5 py-2">
+          <div className="flex items-center gap-1.5">
+            <span className="w-[14px]" />
+            <span className="text-[11px] font-medium text-gray-600">SURA</span>
+          </div>
+          <span className="text-[11px] font-bold text-gray-500">
+            $102<span className="text-[9px] font-medium text-gray-400">/mes</span>
+          </span>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="border-t border-emerald-100 bg-emerald-600/5 px-3 py-1.5">
+        <p className="text-[9px] leading-tight text-emerald-700/80">
+          Todas incluyen: daños a terceros, robo total y asistencia vial.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/** Payment CTA button */
+function PaymentButton({ label }: { label: string }) {
+  return (
+    <motion.button
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.97 }}
+      className="mt-1.5 w-full rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-2 text-[11px] font-bold text-white shadow-md shadow-emerald-500/20 transition-shadow hover:shadow-lg hover:shadow-emerald-500/30"
+    >
+      {label}
+    </motion.button>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Chat bubble
+// ---------------------------------------------------------------------------
+
+function ChatBubble({ message }: { message: ChatMessage }) {
+  const isBot = message.sender === 'bot';
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+      className={`flex w-full ${isBot ? 'justify-start' : 'justify-end'} px-2`}
+    >
+      <div
+        className={`relative max-w-[82%] ${
+          isBot
+            ? 'rounded-2xl rounded-tl-sm bg-white shadow-sm'
+            : 'rounded-2xl rounded-tr-sm bg-[#d9fdd3] shadow-sm'
+        }`}
+      >
+        {/* Bubble content */}
+        <div className="px-2.5 pb-1 pt-1.5">
+          {message.isQuoteCard ? (
+            <QuoteCard text={message.text} />
+          ) : (
+            <p className="whitespace-pre-wrap text-[11.5px] leading-[1.45] text-gray-900">
+              {message.text}
+            </p>
+          )}
+
+          {/* Quick-reply buttons */}
+          {message.buttons && (
+            <div className="mt-1.5 flex flex-wrap gap-1">
+              {message.buttons.map((btn) => (
+                <span
+                  key={btn}
+                  className="inline-block rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-[3px] text-[10px] font-medium text-emerald-700"
+                >
+                  {btn}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {/* Payment button */}
+          {message.paymentButton && (
+            <PaymentButton label={message.paymentButton.label} />
+          )}
+
+          {/* Timestamp */}
+          <div className={`flex items-center gap-0.5 ${isBot ? 'justify-end' : 'justify-end'} mt-0.5`}>
+            <span className="text-[9px] text-gray-400">{message.time}</span>
+            {!isBot && (
+              /* Double-check marks */
+              <svg width="13" height="8" viewBox="0 0 16 10" className="ml-0.5 text-blue-400" fill="currentColor">
+                <path d="M15.01 1.16a.73.73 0 0 0-1.03-.04l-6.12 5.72-1.2-1.12a.73.73 0 0 0-1 1.06l1.72 1.61a.73.73 0 0 0 1-.01l6.63-6.19a.73.73 0 0 0 0-1.03Z" />
+                <path d="M11.01 1.16a.73.73 0 0 0-1.03-.04l-6.12 5.72-1.2-1.12a.73.73 0 0 0-1 1.06l1.72 1.61a.73.73 0 0 0 1-.01l6.63-6.19a.73.73 0 0 0 0-1.03Z" />
+              </svg>
+            )}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Main component
+// ---------------------------------------------------------------------------
+
+export function WhatsAppMockup() {
+  const [visibleCount, setVisibleCount] = useState(0);
+  const [showTyping, setShowTyping] = useState(false);
+  const [cycleKey, setCycleKey] = useState(0);
+
+  useEffect(() => {
+    // Reset for new cycle
+    setVisibleCount(0);
+    setShowTyping(false);
+
+    let cancelled = false;
+    const timers: ReturnType<typeof setTimeout>[] = [];
+
+    // Schedule each message
+    let cumulativeDelay = 800; // initial pause
+
+    MESSAGES.forEach((msg, idx) => {
+      const isBot = msg.sender === 'bot';
+      const preDelay = idx === 0 ? 0 : isBot ? BOT_DELAY : USER_DELAY;
+      cumulativeDelay += preDelay;
+
+      if (isBot) {
+        // Show typing indicator
+        const typingTime = cumulativeDelay;
+        timers.push(
+          setTimeout(() => {
+            if (!cancelled) setShowTyping(true);
+          }, typingTime)
+        );
+
+        cumulativeDelay += TYPING_DURATION;
+
+        // Show the message
+        const showTime = cumulativeDelay;
+        timers.push(
+          setTimeout(() => {
+            if (!cancelled) {
+              setShowTyping(false);
+              setVisibleCount(idx + 1);
+            }
+          }, showTime)
+        );
+      } else {
+        const showTime = cumulativeDelay;
+        timers.push(
+          setTimeout(() => {
+            if (!cancelled) {
+              setVisibleCount(idx + 1);
+            }
+          }, showTime)
+        );
+      }
+    });
+
+    // After all messages, wait then restart
+    cumulativeDelay += RESTART_PAUSE;
+    timers.push(
+      setTimeout(() => {
+        if (!cancelled) setCycleKey((k) => k + 1);
+      }, cumulativeDelay)
+    );
+
+    return () => {
+      cancelled = true;
+      timers.forEach(clearTimeout);
+    };
+  }, [cycleKey]);
+
+  const visibleMessages = MESSAGES.slice(0, visibleCount);
+
+  return (
+    <motion.div
+      animate={{ y: [0, -8, 0] }}
+      transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+      className="relative mx-auto w-[300px] select-none sm:w-[320px]"
+    >
+      {/* Outer glow */}
+      <div className="absolute -inset-4 rounded-[3.5rem] bg-gradient-to-b from-emerald-400/20 via-teal-400/10 to-transparent blur-2xl" />
+
+      {/* iPhone frame */}
+      <div className="relative overflow-hidden rounded-[2.5rem] border-[6px] border-slate-800 bg-slate-800 shadow-2xl shadow-slate-900/50">
+        {/* Side buttons (decorative) */}
+        <div className="absolute -left-[8px] top-[80px] h-8 w-[3px] rounded-l-sm bg-slate-700" />
+        <div className="absolute -left-[8px] top-[120px] h-12 w-[3px] rounded-l-sm bg-slate-700" />
+        <div className="absolute -left-[8px] top-[145px] h-12 w-[3px] rounded-l-sm bg-slate-700" />
+        <div className="absolute -right-[8px] top-[110px] h-16 w-[3px] rounded-r-sm bg-slate-700" />
+
+        {/* Screen */}
+        <div className="relative flex h-[600px] flex-col overflow-hidden rounded-[2rem] bg-white sm:h-[640px]">
+          {/* Dynamic Island / Notch */}
+          <div className="absolute left-1/2 top-0 z-50 flex -translate-x-1/2 items-center justify-center">
+            <div className="h-[22px] w-[90px] rounded-b-2xl bg-slate-800" />
+          </div>
+
+          {/* Status bar */}
+          <div className="relative z-40 flex items-center justify-between bg-[#075E54] px-4 pb-0 pt-[26px]">
+            <span className="text-[9px] font-semibold text-white/90">9:41</span>
+            <div className="flex items-center gap-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
+                <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+                <circle cx="12" cy="20" r="1" fill="white" />
+              </svg>
+              <svg width="14" height="12" viewBox="0 0 24 24" fill="white" className="opacity-80">
+                <rect x="1" y="6" width="4" height="14" rx="1" opacity="0.3" />
+                <rect x="7" y="4" width="4" height="16" rx="1" opacity="0.5" />
+                <rect x="13" y="2" width="4" height="18" rx="1" opacity="0.7" />
+                <rect x="19" y="0" width="4" height="20" rx="1" />
+              </svg>
+              <div className="flex items-center">
+                <div className="h-[8px] w-[18px] rounded-sm border border-white/60 p-[1px]">
+                  <div className="h-full w-[70%] rounded-[1px] bg-white" />
+                </div>
+                <div className="ml-[1px] h-[4px] w-[1.5px] rounded-r-sm bg-white/60" />
+              </div>
+            </div>
+          </div>
+
+          {/* WhatsApp header */}
+          <div className="relative z-30 flex items-center gap-2 bg-[#075E54] px-2 pb-2.5 pt-0.5">
+            <ChevronLeft className="h-4 w-4 shrink-0 text-white/80" />
+
+            {/* Avatar */}
+            <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full bg-gradient-to-br from-emerald-300 to-teal-500 shadow-inner">
+              <div className="flex h-full w-full items-center justify-center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white" opacity="0.9">
+                  <path d="M12 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 12c5.523 0 10 2.239 10 5v1H2v-1c0-2.761 4.477-5 10-5Z" />
+                </svg>
+              </div>
+              {/* Online dot */}
+              <div className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-[1.5px] border-[#075E54] bg-green-400" />
+            </div>
+
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-1">
+                <span className="truncate text-[13px] font-semibold text-white">
+                  CotiFácil Bot
+                </span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                  <circle cx="12" cy="12" r="10" fill="#25D366" />
+                  <path d="M8 12l3 3 5-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <span className="text-[10px] text-emerald-200/80">en línea</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <Video className="h-4 w-4 text-white/70" />
+              <Phone className="h-4 w-4 text-white/70" />
+              <MoreVertical className="h-4 w-4 text-white/70" />
+            </div>
+          </div>
+
+          {/* Chat area */}
+          <div
+            className="relative flex-1 overflow-hidden"
+            style={{
+              backgroundColor: '#ECE5DD',
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c8e6c9' fill-opacity='0.18'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          >
+            {/* Scroll container */}
+            <div className="flex h-full flex-col-reverse overflow-y-auto">
+              <div className="flex flex-col gap-[6px] px-1.5 py-2">
+                {/* Date chip */}
+                <div className="flex justify-center py-1">
+                  <span className="rounded-lg bg-white/80 px-3 py-0.5 text-[10px] font-medium text-gray-500 shadow-sm">
+                    HOY
+                  </span>
+                </div>
+
+                {/* Encryption notice */}
+                <div className="flex justify-center px-6 pb-1">
+                  <div className="rounded-lg bg-[#FFF3C4]/60 px-3 py-1.5 text-center">
+                    <span className="text-[8.5px] leading-tight text-amber-800/70">
+                      🔒 Los mensajes están cifrados de extremo a extremo.
+                    </span>
+                  </div>
+                </div>
+
+                <AnimatePresence mode="popLayout">
+                  {visibleMessages.map((msg) => (
+                    <ChatBubble key={`${cycleKey}-${msg.id}`} message={msg} />
+                  ))}
+                  {showTyping && (
+                    <TypingIndicator key={`${cycleKey}-typing`} />
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+          </div>
+
+          {/* Input bar */}
+          <div className="relative z-20 flex items-center gap-1.5 bg-[#F0F0F0] px-2 py-1.5">
+            <div className="flex flex-1 items-center gap-2 rounded-full bg-white px-3 py-1.5 shadow-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8696A0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                <line x1="9" y1="9" x2="9.01" y2="9" />
+                <line x1="15" y1="9" x2="15.01" y2="9" />
+              </svg>
+              <span className="flex-1 text-[11px] text-gray-400">Mensaje</span>
+              <Paperclip className="h-3.5 w-3.5 shrink-0 rotate-45 text-gray-400" />
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8696A0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+            </div>
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#075E54] shadow-sm">
+              <Mic className="h-3.5 w-3.5 text-white" />
+            </div>
+          </div>
+
+          {/* Home indicator bar */}
+          <div className="flex items-center justify-center bg-[#F0F0F0] pb-1.5 pt-0.5">
+            <div className="h-[4px] w-[100px] rounded-full bg-slate-800/20" />
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+export default WhatsAppMockup;

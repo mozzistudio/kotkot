@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "features": "Funcionalidades",
+    "howItWorks": "Cómo Funciona",
+    "pricing": "Precios",
+    "blog": "Blog",
+    "login": "Iniciar Sesión",
+    "demo": "Solicitar Demo"
+  },
+  "hero": {
+    "tag": "INSURTECH PARTNER",
+    "headline1": "TU AGENTE DE SEGUROS",
+    "headline2": "INTELIGENTE EN",
+    "headline3": "WHATSAPP",
+    "subtitle": "Despliega un agente de IA en el WhatsApp de tu correduría. Cotiza, compara y vende seguros automáticamente en toda Latinoamérica, 24 horas al día.",
+    "cta": "Solicitar Demo"
+  },
+  "stats": {
+    "countries": "Países en LATAM",
+    "satisfaction": "Satisfacción",
+    "agent": "Agente IA Activo",
+    "quoteTime": "Tiempo de Cotización"
+  },
+  "footer": {
+    "tagline": "Hecho para Latinoamérica 🌎",
+    "copyright": "© 2026 CotiFácil. Todos los derechos reservados."
+  }
+}
