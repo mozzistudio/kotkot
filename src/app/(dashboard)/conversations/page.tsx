@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import {
   Search,
   Phone,
@@ -10,6 +12,7 @@ import {
   Bot,
   Shield,
   HandMetal,
+  ExternalLink,
 } from 'lucide-react';
 
 // ---------------------------------------------------------------------------
@@ -152,11 +155,24 @@ const insuranceBadgeColors: Record<string, string> = {
 // Component
 // ---------------------------------------------------------------------------
 
-export default function ConversationsPage() {
-  const [selectedId, setSelectedId] = useState<string>('1');
+function ConversationsContent() {
+  const searchParams = useSearchParams();
+  const urlId = searchParams.get('id');
+  const urlFilter = searchParams.get('filter') as ConversationStatus | null;
+
+  const [selectedId, setSelectedId] = useState<string>(urlId ?? '1');
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeFilter, setActiveFilter] = useState<ConversationStatus | 'all'>('all');
+  const [activeFilter, setActiveFilter] = useState<ConversationStatus | 'all'>(urlFilter ?? 'all');
   const [inputMessage, setInputMessage] = useState('');
+
+  // Sync state when URL params change
+  useEffect(() => {
+    if (urlId) setSelectedId(urlId);
+  }, [urlId]);
+
+  useEffect(() => {
+    if (urlFilter) setActiveFilter(urlFilter);
+  }, [urlFilter]);
 
   const filteredConversations = conversations.filter((c) => {
     const matchesSearch =
@@ -257,9 +273,13 @@ export default function ConversationsPage() {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h2 className="text-sm font-semibold text-slate-200">
+                <Link
+                  href={`/clients/C-${selectedConversation.id.padStart(3, '0')}`}
+                  className="text-sm font-semibold text-slate-200 hover:text-emerald-400 transition-colors inline-flex items-center gap-1"
+                >
                   {selectedConversation.clientName}
-                </h2>
+                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100" />
+                </Link>
                 <span
                   className={`rounded-full border px-2 py-0.5 text-xs font-medium ${
                     insuranceBadgeColors[selectedConversation.insuranceType] ?? 'bg-slate-500/20 text-slate-400 border-slate-500/30'
@@ -339,5 +359,13 @@ export default function ConversationsPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ConversationsPage() {
+  return (
+    <Suspense>
+      <ConversationsContent />
+    </Suspense>
   );
 }

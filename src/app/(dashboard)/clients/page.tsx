@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import {
   Search,
   Plus,
@@ -256,9 +257,10 @@ export default function ClientsPage() {
       {/* Client Cards */}
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {filteredClients.map((client) => (
-          <div
+          <Link
             key={client.id}
-            className="group rounded-xl border border-[#1e293b] bg-[#0d1117] p-5 transition-all hover:border-emerald-500/20"
+            href={`/clients/${client.id}`}
+            className="group rounded-xl border border-[#1e293b] bg-[#0d1117] p-5 transition-all hover:border-emerald-500/20 block"
           >
             {/* Top Row */}
             <div className="flex items-start justify-between">
@@ -271,7 +273,10 @@ export default function ClientsPage() {
                   <span className="text-xs text-slate-500">{client.id}</span>
                 </div>
               </div>
-              <button className="rounded-md p-1 text-slate-500 opacity-0 transition-opacity hover:bg-[#1e293b] hover:text-slate-300 group-hover:opacity-100">
+              <button
+                onClick={(e) => e.preventDefault()}
+                className="rounded-md p-1 text-slate-500 opacity-0 transition-opacity hover:bg-[#1e293b] hover:text-slate-300 group-hover:opacity-100"
+              >
                 <MoreHorizontal className="h-4 w-4" />
               </button>
             </div>
@@ -316,7 +321,7 @@ export default function ClientsPage() {
                 {client.lastActivity}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

@@ -1,27 +1,51 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, Lock, Eye, EyeOff, ShieldCheck } from 'lucide-react';
+import { createBrowserClient } from '@supabase/ssr';
 
 export default function LoginPage() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    // Placeholder: would call Supabase auth
-    console.log('Login attempt:', { email, password });
-    setTimeout(() => setIsLoading(false), 1500);
+    setError('');
+
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      setError(error.message);
+      setIsLoading(false);
+      return;
+    }
+
+    router.push('/dashboard');
   };
 
-  const handleGoogleLogin = () => {
-    // Placeholder: would call Supabase OAuth with Google
-    console.log('Google OAuth login');
+  const handleGoogleLogin = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: `${window.location.origin}/api/auth/callback?next=/dashboard`,
+      },
+    });
   };
 
   return (
@@ -99,6 +123,13 @@ export default function LoginPage() {
               </button>
             </div>
           </div>
+
+          {/* Error Message */}
+          {error && (
+            <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-2.5 text-sm text-red-600">
+              {error}
+            </div>
+          )}
 
           {/* Forgot Password */}
           <div className="flex justify-end">

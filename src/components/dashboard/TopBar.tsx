@@ -22,6 +22,7 @@ const PAGE_TITLES: Record<string, string> = {
   '/dashboard': 'Dashboard',
   '/conversations': 'Conversaciones',
   '/quotes': 'Cotizaciones',
+  '/ingresos': 'Ingresos',
   '/clients': 'Clientes',
   '/bot': 'Mi Agente',
   '/apis': 'Aseguradoras',

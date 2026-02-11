@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import {
   Search,
   Filter,
@@ -14,6 +16,7 @@ import {
   Clock,
   DollarSign,
   FileText,
+  ExternalLink,
 } from 'lucide-react';
 
 // ---------------------------------------------------------------------------
@@ -198,15 +201,25 @@ const filterOptions: { value: FilterStatus; label: string }[] = [
 // Component
 // ---------------------------------------------------------------------------
 
-export default function QuotesPage() {
-  const [activeFilter, setActiveFilter] = useState<FilterStatus>('all');
+function QuotesContent() {
+  const searchParams = useSearchParams();
+  const urlStatus = searchParams.get('status') as QuoteStatus | null;
+  const urlDate = searchParams.get('date');
+
+  const [activeFilter, setActiveFilter] = useState<FilterStatus>(urlStatus ?? 'all');
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Sync state when URL params change
+  useEffect(() => {
+    if (urlStatus) setActiveFilter(urlStatus);
+  }, [urlStatus]);
 
   const filteredQuotes = quotes.filter((q) => {
     const matchesSearch = q.clientName.toLowerCase().includes(searchQuery.toLowerCase()) || q.id.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesFilter = activeFilter === 'all' || q.status === activeFilter;
-    return matchesSearch && matchesFilter;
+    const matchesDate = !urlDate || q.date === urlDate;
+    return matchesSearch && matchesFilter && matchesDate;
   });
 
   return (
@@ -276,7 +289,13 @@ export default function QuotesPage() {
                 {/* Info */}
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium text-slate-200">{quote.clientName}</span>
+                    <Link
+                      href={`/clients/${quote.id.replace('Q-', 'C-')}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-sm font-medium text-slate-200 hover:text-emerald-400 transition-colors"
+                    >
+                      {quote.clientName}
+                    </Link>
                     <span className="text-xs text-slate-500">{quote.id}</span>
                   </div>
                   <div className="mt-1 flex items-center gap-3 text-xs text-slate-400">
@@ -354,5 +373,13 @@ export default function QuotesPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function QuotesPage() {
+  return (
+    <Suspense>
+      <QuotesContent />
+    </Suspense>
   );
 }
