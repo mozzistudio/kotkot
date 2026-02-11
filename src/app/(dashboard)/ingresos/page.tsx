@@ -44,6 +44,7 @@ interface InsuranceTypeRevenue {
 
 interface InsurerRevenue {
   name: string;
+  slug: string;
   policiesSold: number;
   totalRevenue: string;
   commissionPct: number;
@@ -153,12 +154,12 @@ const insuranceTypeRevenue: InsuranceTypeRevenue[] = [
 ];
 
 const insurerRevenue: InsurerRevenue[] = [
-  { name: 'ASSA Compania de Seguros', policiesSold: 48, totalRevenue: '$4,320', commissionPct: 30, commissionAmount: '$1,296' },
-  { name: 'Mapfre Panama', policiesSold: 35, totalRevenue: '$3,150', commissionPct: 28, commissionAmount: '$882' },
-  { name: 'Pan American Life', policiesSold: 28, totalRevenue: '$2,520', commissionPct: 32, commissionAmount: '$806' },
-  { name: 'Suramericana', policiesSold: 22, totalRevenue: '$1,480', commissionPct: 30, commissionAmount: '$444' },
-  { name: 'General de Seguros', policiesSold: 15, totalRevenue: '$620', commissionPct: 25, commissionAmount: '$155' },
-  { name: 'Worldwide Medical', policiesSold: 8, totalRevenue: '$360', commissionPct: 30, commissionAmount: '$108' },
+  { name: 'ASSA Compania de Seguros', slug: 'assa', policiesSold: 48, totalRevenue: '$4,320', commissionPct: 30, commissionAmount: '$1,296' },
+  { name: 'Mapfre Panama', slug: 'mapfre', policiesSold: 35, totalRevenue: '$3,150', commissionPct: 28, commissionAmount: '$882' },
+  { name: 'Pan American Life', slug: 'pan-american-life', policiesSold: 28, totalRevenue: '$2,520', commissionPct: 32, commissionAmount: '$806' },
+  { name: 'Suramericana', slug: 'suramericana', policiesSold: 22, totalRevenue: '$1,480', commissionPct: 30, commissionAmount: '$444' },
+  { name: 'General de Seguros', slug: 'general-de-seguros', policiesSold: 15, totalRevenue: '$620', commissionPct: 25, commissionAmount: '$155' },
+  { name: 'Worldwide Medical', slug: 'worldwide-medical', policiesSold: 8, totalRevenue: '$360', commissionPct: 30, commissionAmount: '$108' },
 ];
 
 const recentTransactions: Transaction[] = [
@@ -347,7 +348,14 @@ export default function IngresosPage() {
               <tbody className="divide-y divide-[#1e293b]/60">
                 {insurerRevenue.map((insurer) => (
                   <tr key={insurer.name} className="group hover:bg-white/[0.02] transition-colors">
-                    <td className="py-3 text-sm text-slate-300">{insurer.name}</td>
+                    <td className="py-3 text-sm">
+                      <Link
+                        href={`/apis/${insurer.slug}`}
+                        className="text-slate-300 hover:text-emerald-400 transition-colors"
+                      >
+                        {insurer.name}
+                      </Link>
+                    </td>
                     <td className="py-3 text-sm text-slate-300 text-right font-data">
                       {insurer.policiesSold}
                     </td>
@@ -413,7 +421,14 @@ export default function IngresosPage() {
                       </Link>
                     </td>
                     <td className="py-3 text-sm text-slate-300">{tx.tipoSeguro}</td>
-                    <td className="py-3 text-sm text-slate-400">{tx.aseguradora}</td>
+                    <td className="py-3 text-sm">
+                      <Link
+                        href={`/apis/${tx.aseguradora.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="text-slate-400 hover:text-emerald-400 transition-colors"
+                      >
+                        {tx.aseguradora}
+                      </Link>
+                    </td>
                     <td className="py-3 text-sm text-slate-200 text-right font-data font-semibold">
                       {tx.prima}
                     </td>

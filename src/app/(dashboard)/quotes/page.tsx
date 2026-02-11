@@ -3,6 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import {
   Search,
   Filter,
@@ -16,7 +17,8 @@ import {
   Clock,
   DollarSign,
   FileText,
-  ExternalLink,
+  X,
+  CalendarDays,
 } from 'lucide-react';
 
 // ---------------------------------------------------------------------------
@@ -203,10 +205,12 @@ const filterOptions: { value: FilterStatus; label: string }[] = [
 
 function QuotesContent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const urlStatus = searchParams.get('status') as QuoteStatus | null;
   const urlDate = searchParams.get('date');
 
   const [activeFilter, setActiveFilter] = useState<FilterStatus>(urlStatus ?? 'all');
+  const [dateFilter, setDateFilter] = useState<string | null>(urlDate);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -215,10 +219,23 @@ function QuotesContent() {
     if (urlStatus) setActiveFilter(urlStatus);
   }, [urlStatus]);
 
+  useEffect(() => {
+    setDateFilter(urlDate);
+  }, [urlDate]);
+
+  const clearDateFilter = () => {
+    setDateFilter(null);
+    // Remove date param from URL without full reload
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete('date');
+    const newUrl = params.toString() ? `/quotes?${params.toString()}` : '/quotes';
+    router.replace(newUrl);
+  };
+
   const filteredQuotes = quotes.filter((q) => {
     const matchesSearch = q.clientName.toLowerCase().includes(searchQuery.toLowerCase()) || q.id.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesFilter = activeFilter === 'all' || q.status === activeFilter;
-    const matchesDate = !urlDate || q.date === urlDate;
+    const matchesDate = !dateFilter || q.date === dateFilter;
     return matchesSearch && matchesFilter && matchesDate;
   });
 
@@ -263,6 +280,18 @@ function QuotesContent() {
             {opt.label}
           </button>
         ))}
+
+        {/* Date filter chip (clearable) */}
+        {dateFilter && (
+          <button
+            onClick={clearDateFilter}
+            className="ml-2 inline-flex shrink-0 items-center gap-1.5 rounded-full border border-teal-500/30 bg-teal-500/15 px-3 py-1.5 text-xs font-medium text-teal-400 transition-colors hover:bg-teal-500/25"
+          >
+            <CalendarDays className="h-3 w-3" />
+            {dateFilter}
+            <X className="h-3 w-3 ml-0.5" />
+          </button>
+        )}
       </div>
 
       {/* Quotes List */}
@@ -350,7 +379,14 @@ function QuotesContent() {
                       <tbody>
                         {quote.results.map((r, idx) => (
                           <tr key={idx} className="border-b border-[#1e293b]/50 last:border-b-0">
-                            <td className="py-2.5 pr-4 font-medium text-slate-200">{r.insurer}</td>
+                            <td className="py-2.5 pr-4 font-medium">
+                              <Link
+                                href={`/apis/${r.insurer.toLowerCase().replace(/\s+/g, '-')}`}
+                                className="text-slate-200 hover:text-emerald-400 transition-colors"
+                              >
+                                {r.insurer}
+                              </Link>
+                            </td>
                             <td className="py-2.5 pr-4 font-semibold text-emerald-400 font-data">{r.price}</td>
                             <td className="py-2.5 pr-4 text-slate-400">{r.coverage}</td>
                             <td className="py-2.5 text-slate-400">{r.deductible}</td>
