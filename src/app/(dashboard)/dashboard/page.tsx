@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import {
   MessageSquare,
   FileText,
@@ -24,6 +25,7 @@ interface StatCard {
   change: string;
   changeType: 'up' | 'down';
   icon: React.ReactNode;
+  href: string;
 }
 
 interface RecentConversation {
@@ -46,6 +48,7 @@ const stats: StatCard[] = [
     change: '+12%',
     changeType: 'up',
     icon: <MessageSquare className="h-5 w-5 text-emerald-400" />,
+    href: '/conversations?filter=active',
   },
   {
     label: 'Cotizaciones Hoy',
@@ -53,6 +56,7 @@ const stats: StatCard[] = [
     change: '+8%',
     changeType: 'up',
     icon: <FileText className="h-5 w-5 text-teal-400" />,
+    href: `/quotes?date=${new Date().toISOString().slice(0, 10)}`,
   },
   {
     label: 'Polizas Vendidas',
@@ -60,6 +64,7 @@ const stats: StatCard[] = [
     change: '+23%',
     changeType: 'up',
     icon: <Shield className="h-5 w-5 text-emerald-400" />,
+    href: '/quotes?status=paid',
   },
   {
     label: 'Ingresos del Mes',
@@ -67,6 +72,7 @@ const stats: StatCard[] = [
     change: '+18%',
     changeType: 'up',
     icon: <DollarSign className="h-5 w-5 text-teal-400" />,
+    href: '/ingresos',
   },
 ];
 
@@ -170,11 +176,12 @@ export default function DashboardPage() {
       {/* Stats Row */}
       <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {stats.map((stat, idx) => (
-          <div
+          <Link
             key={stat.label}
+            href={stat.href}
             onMouseEnter={() => setHoveredStat(idx)}
             onMouseLeave={() => setHoveredStat(null)}
-            className={`rounded-xl border border-[#1e293b] bg-[#0d1117] p-5 transition-all duration-200 ${
+            className={`block rounded-xl border border-[#1e293b] bg-[#0d1117] p-5 transition-all duration-200 ${
               hoveredStat === idx ? 'border-emerald-500/30 shadow-lg shadow-emerald-500/5' : ''
             }`}
           >
@@ -192,7 +199,7 @@ export default function DashboardPage() {
               {stat.value}
             </p>
             <p className="mt-1 text-sm text-slate-400">{stat.label}</p>
-          </div>
+          </Link>
         ))}
       </div>
 
@@ -203,19 +210,20 @@ export default function DashboardPage() {
             <h2 className="text-lg font-semibold text-slate-200">
               Conversaciones Recientes
             </h2>
-            <a
+            <Link
               href="/conversations"
               className="inline-flex items-center gap-1 text-sm text-emerald-400 hover:text-emerald-300 transition-colors"
             >
               Ver todas <ArrowRight className="h-3.5 w-3.5" />
-            </a>
+            </Link>
           </div>
 
           <div className="space-y-3">
             {recentConversations.map((conv) => (
-              <div
+              <Link
                 key={conv.id}
-                className="flex items-center gap-4 rounded-lg border border-[#1e293b]/60 bg-[#080c14] p-3.5 transition-colors hover:border-[#1e293b]"
+                href={`/conversations?id=${conv.id}`}
+                className="flex items-center gap-4 rounded-lg border border-[#1e293b]/60 bg-[#080c14] p-3.5 transition-colors hover:border-emerald-500/30 hover:bg-[#0d1117]/50"
               >
                 {/* Status Dot */}
                 <span className="relative flex h-2.5 w-2.5 shrink-0">
@@ -255,7 +263,7 @@ export default function DashboardPage() {
                     {conv.time}
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -269,7 +277,7 @@ export default function DashboardPage() {
             </h2>
             <div className="space-y-2">
               {quickActions.map((action) => (
-                <a
+                <Link
                   key={action.label}
                   href={action.href}
                   className="flex items-center gap-3 rounded-lg border border-[#1e293b]/60 bg-[#080c14] px-4 py-3 text-sm text-slate-300 transition-all hover:border-emerald-500/30 hover:text-emerald-400"
@@ -277,7 +285,7 @@ export default function DashboardPage() {
                   {action.icon}
                   {action.label}
                   <ArrowRight className="ml-auto h-3.5 w-3.5" />
-                </a>
+                </Link>
               ))}
             </div>
           </div>

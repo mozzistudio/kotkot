@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import {
   Check,
   AlertTriangle,
@@ -29,6 +30,7 @@ type InsuranceProduct = 'auto' | 'health' | 'home' | 'travel' | 'business';
 
 interface Insurer {
   id: string;
+  slug: string;
   name: string;
   country: string;
   status: ConnectionStatus;
@@ -45,6 +47,7 @@ interface Insurer {
 const insurers: Insurer[] = [
   {
     id: 'ins-1',
+    slug: 'assa',
     name: 'ASSA Compania de Seguros',
     country: 'PA',
     status: 'active',
@@ -55,6 +58,7 @@ const insurers: Insurer[] = [
   },
   {
     id: 'ins-2',
+    slug: 'mapfre',
     name: 'Mapfre Panama',
     country: 'PA',
     status: 'active',
@@ -65,6 +69,7 @@ const insurers: Insurer[] = [
   },
   {
     id: 'ins-3',
+    slug: 'pan-american-life',
     name: 'Pan American Life',
     country: 'PA',
     status: 'active',
@@ -75,6 +80,7 @@ const insurers: Insurer[] = [
   },
   {
     id: 'ins-4',
+    slug: 'suramericana',
     name: 'Seguros Suramericana',
     country: 'PA',
     status: 'pending',
@@ -85,6 +91,7 @@ const insurers: Insurer[] = [
   },
   {
     id: 'ins-5',
+    slug: 'general-de-seguros',
     name: 'General de Seguros',
     country: 'PA',
     status: 'error',
@@ -95,6 +102,7 @@ const insurers: Insurer[] = [
   },
   {
     id: 'ins-6',
+    slug: 'bupa',
     name: 'BUPA Panama',
     country: 'PA',
     status: 'disconnected',
@@ -105,6 +113,7 @@ const insurers: Insurer[] = [
   },
   {
     id: 'ins-7',
+    slug: 'cigna',
     name: 'Cigna International',
     country: 'PA',
     status: 'disconnected',
@@ -115,6 +124,7 @@ const insurers: Insurer[] = [
   },
   {
     id: 'ins-8',
+    slug: 'ancon',
     name: 'Aseguradora Nacional (ANCON)',
     country: 'PA',
     status: 'active',
@@ -205,8 +215,10 @@ export default function ApisPage() {
                     <Building2 className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-slate-200">{insurer.name}</h3>
-                    <span className="text-xs text-slate-500">
+                    <Link href={`/apis/${insurer.slug}`} className="text-sm font-semibold text-slate-200 hover:text-emerald-400 transition-colors">
+                      {insurer.name}
+                    </Link>
+                    <span className="block text-xs text-slate-500">
                       {insurer.apiType === 'manual' ? 'Tarifas manuales' : 'API directa'}
                     </span>
                   </div>

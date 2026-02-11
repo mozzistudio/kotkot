@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import {
   Camera,
   ChevronDown,
@@ -15,6 +15,9 @@ import {
   X,
   Bot,
   Rocket,
+  Trash2,
+  AlertCircle,
+  Loader2,
 } from 'lucide-react';
 
 // ---------------------------------------------------------------------------
@@ -40,6 +43,13 @@ interface BotSettings {
   restrictedTopics: string[];
   maxMessagesBeforeHandoff: number;
   fallbackAction: FallbackAction;
+}
+
+interface ChatMessage {
+  sender: 'bot' | 'user';
+  text: string;
+  isPreview?: boolean;
+  isError?: boolean;
 }
 
 // ---------------------------------------------------------------------------
@@ -90,7 +100,7 @@ const fallbackOptions: { key: FallbackAction; label: string }[] = [
 // Preview messages based on settings
 // ---------------------------------------------------------------------------
 
-function getPreviewMessages(settings: BotSettings): { sender: 'bot' | 'user'; text: string }[] {
+function getPreviewMessages(settings: BotSettings): ChatMessage[] {
   const emoji = settings.emojiLevel === 'frequent' ? ' ' : settings.emojiLevel === 'minimal' ? ' ' : '';
   const greeting = settings.pronoun === 'usted' ? 'Como esta?' : 'Como estas?';
   const toneAdj =
@@ -103,10 +113,11 @@ function getPreviewMessages(settings: BotSettings): { sender: 'bot' | 'user'; te
       : 'bien';
 
   return [
-    { sender: 'bot', text: settings.welcomeMessage },
-    { sender: 'user', text: 'Hola! Necesito un seguro de auto' },
+    { sender: 'bot', text: settings.welcomeMessage, isPreview: true },
+    { sender: 'user', text: 'Hola! Necesito un seguro de auto', isPreview: true },
     {
       sender: 'bot',
+      isPreview: true,
       text:
         settings.tone === 'friendly'
           ? `${toneAdj}!${emoji} Me encanta ayudarte con eso. ${settings.pronoun === 'usted' ? 'Podria' : 'Podrias'} decirme la marca y modelo de ${settings.pronoun === 'usted' ? 'su' : 'tu'} vehiculo?`
@@ -116,9 +127,10 @@ function getPreviewMessages(settings: BotSettings): { sender: 'bot' | 'user'; te
           ? `${toneAdj}!${emoji} Entiendo lo importante que es proteger ${settings.pronoun === 'usted' ? 'su' : 'tu'} vehiculo. ${greeting} ${settings.pronoun === 'usted' ? 'Cuenteme' : 'Cuentame'} sobre ${settings.pronoun === 'usted' ? 'su' : 'tu'} auto.`
           : `Perfecto.${emoji} Necesito: marca, modelo y ano del vehiculo.`,
     },
-    { sender: 'user', text: 'Toyota Corolla 2023' },
+    { sender: 'user', text: 'Toyota Corolla 2023', isPreview: true },
     {
       sender: 'bot',
+      isPreview: true,
       text:
         settings.tone === 'friendly'
           ? `${emoji}He encontrado 4 opciones increibles para ${settings.pronoun === 'usted' ? 'su' : 'tu'} Toyota Corolla! La mejor es ASSA desde $85/mes. ${settings.pronoun === 'usted' ? 'Le' : 'Te'} envio el comparativo?`
@@ -132,6 +144,24 @@ function getPreviewMessages(settings: BotSettings): { sender: 'bot' | 'user'; te
 }
 
 // ---------------------------------------------------------------------------
+// Typing indicator component
+// ---------------------------------------------------------------------------
+
+function TypingIndicator() {
+  return (
+    <div className="flex justify-start">
+      <div className="max-w-[85%] rounded-2xl rounded-bl-sm border border-emerald-500/20 bg-emerald-500/15 px-4 py-3">
+        <div className="flex items-center gap-1.5">
+          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-emerald-400/70" style={{ animationDelay: '0ms' }} />
+          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-emerald-400/70" style={{ animationDelay: '150ms' }} />
+          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-emerald-400/70" style={{ animationDelay: '300ms' }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Component
 // ---------------------------------------------------------------------------
 
@@ -139,6 +169,16 @@ export default function BotPage() {
   const [settings, setSettings] = useState<BotSettings>(defaultSettings);
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [newTag, setNewTag] = useState('');
+
+  // Interactive chat state
+  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
+  const [chatInput, setChatInput] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
+  const [chatError, setChatError] = useState<string | null>(null);
+
+  const chatEndRef = useRef<HTMLDivElement>(null);
+  const chatInputRef = useRef<HTMLInputElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   const updateSetting = <K extends keyof BotSettings>(key: K, value: BotSettings[K]) => {
     setSettings((prev) => ({ ...prev, [key]: value }));
@@ -161,6 +201,111 @@ export default function BotPage() {
 
   const previewMessages = getPreviewMessages(settings);
 
+  // Auto-scroll to bottom whenever messages change or typing starts
+  const scrollToBottom = useCallback(() => {
+    if (chatEndRef.current) {
+      chatEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [chatMessages, isTyping, scrollToBottom]);
+
+  // Build the conversation history for the API (only non-preview messages)
+  const buildHistory = useCallback(
+    (msgs: ChatMessage[]): { role: 'user' | 'assistant'; content: string }[] => {
+      return msgs
+        .filter((m) => !m.isPreview && !m.isError)
+        .map((m) => ({
+          role: m.sender === 'user' ? ('user' as const) : ('assistant' as const),
+          content: m.text,
+        }));
+    },
+    []
+  );
+
+  // Send a message to the bot
+  const sendMessage = useCallback(async () => {
+    const trimmed = chatInput.trim();
+    if (!trimmed || isTyping) return;
+
+    setChatError(null);
+    const userMessage: ChatMessage = { sender: 'user', text: trimmed };
+    setChatMessages((prev) => [...prev, userMessage]);
+    setChatInput('');
+    setIsTyping(true);
+
+    try {
+      const history = buildHistory([...chatMessages, userMessage]);
+
+      const personalityOverride = {
+        name: settings.name,
+        tone: settings.tone,
+        pronoun: settings.pronoun,
+        emojiLevel: settings.emojiLevel,
+        language: settings.language,
+        formality: settings.formality,
+        welcomeMessage: settings.welcomeMessage,
+      };
+
+      const res = await fetch('/api/bot/test', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: trimmed,
+          history,
+          personalityOverride,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || `Error ${res.status}: No se pudo obtener respuesta`);
+      }
+
+      const data = await res.json();
+
+      const botMessage: ChatMessage = {
+        sender: 'bot',
+        text: data.response,
+      };
+      setChatMessages((prev) => [...prev, botMessage]);
+    } catch (err) {
+      const errorText =
+        err instanceof Error ? err.message : 'Error inesperado al contactar al bot';
+      setChatError(errorText);
+      const errorMessage: ChatMessage = {
+        sender: 'bot',
+        text: `Error: ${errorText}`,
+        isError: true,
+      };
+      setChatMessages((prev) => [...prev, errorMessage]);
+    } finally {
+      setIsTyping(false);
+      // Re-focus the input for quick follow-ups
+      setTimeout(() => chatInputRef.current?.focus(), 50);
+    }
+  }, [chatInput, isTyping, chatMessages, settings, buildHistory]);
+
+  // Clear the interactive conversation
+  const clearChat = useCallback(() => {
+    setChatMessages([]);
+    setChatError(null);
+    setChatInput('');
+    setIsTyping(false);
+  }, []);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  };
+
+  // All messages to display: preview + interactive
+  const allMessages = [...previewMessages, ...chatMessages];
+
   return (
     <div className="min-h-screen bg-[#080c14] p-6 lg:p-8">
       {/* Header */}
@@ -174,7 +319,7 @@ export default function BotPage() {
       </div>
 
       <div className="flex flex-col gap-6 lg:flex-row">
-        {/* ── Editor (Left 2/3) ──────────────────────────────────── */}
+        {/* -- Editor (Left 2/3) ---------------------------------------- */}
         <div className="flex-1 space-y-6 lg:w-2/3">
           {/* Identity Card */}
           <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-6">
@@ -493,23 +638,36 @@ export default function BotPage() {
           </div>
         </div>
 
-        {/* ── Live Preview (Right 1/3) ───────────────────────────── */}
+        {/* -- Live Preview (Right 1/3) --------------------------------- */}
         <div className="w-full lg:w-1/3">
           <div className="sticky top-8">
             <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] overflow-hidden">
               {/* Preview Header */}
-              <div className="flex items-center gap-3 border-b border-[#1e293b] bg-emerald-500/10 px-4 py-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20">
-                  <Bot className="h-4 w-4 text-emerald-400" />
+              <div className="flex items-center justify-between border-b border-[#1e293b] bg-emerald-500/10 px-4 py-3">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20">
+                    <Bot className="h-4 w-4 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold text-slate-200">{settings.name || 'Bot'}</h3>
+                    <span className="text-xs text-emerald-400">Vista previa interactiva</span>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-slate-200">{settings.name || 'Bot'}</h3>
-                  <span className="text-xs text-emerald-400">Vista previa en vivo</span>
-                </div>
+                {chatMessages.length > 0 && (
+                  <button
+                    onClick={clearChat}
+                    className="flex items-center gap-1.5 rounded-lg border border-[#1e293b] bg-[#080c14]/60 px-2.5 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:border-red-500/30 hover:text-red-400"
+                    title="Limpiar chat"
+                  >
+                    <Trash2 className="h-3 w-3" />
+                    Limpiar chat
+                  </button>
+                )}
               </div>
 
               {/* WhatsApp-style Chat */}
               <div
+                ref={chatContainerRef}
                 className="space-y-3 overflow-y-auto p-4"
                 style={{
                   backgroundImage:
@@ -518,30 +676,87 @@ export default function BotPage() {
                   minHeight: 400,
                 }}
               >
-                {previewMessages.map((msg, idx) => (
+                {allMessages.map((msg, idx) => (
                   <div
                     key={idx}
                     className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                   >
                     <div
                       className={`max-w-[85%] rounded-2xl px-3.5 py-2 text-xs leading-relaxed ${
-                        msg.sender === 'user'
+                        msg.isError
+                          ? 'border border-red-500/30 bg-red-500/10 text-red-400 rounded-bl-sm'
+                          : msg.sender === 'user'
                           ? 'bg-white/10 text-slate-200 rounded-br-sm'
                           : 'bg-emerald-500/15 border border-emerald-500/20 text-slate-200 rounded-bl-sm'
                       }`}
                     >
+                      {msg.isError && (
+                        <AlertCircle className="mb-1 inline-block h-3 w-3 mr-1" />
+                      )}
                       {msg.text}
                     </div>
                   </div>
                 ))}
+
+                {/* Separator between preview and interactive messages */}
+                {chatMessages.length === 0 && (
+                  <div className="flex items-center gap-2 py-2">
+                    <div className="h-px flex-1 bg-[#1e293b]" />
+                    <span className="text-[10px] font-medium uppercase tracking-wider text-slate-600">
+                      Escribe para probar
+                    </span>
+                    <div className="h-px flex-1 bg-[#1e293b]" />
+                  </div>
+                )}
+
+                {/* Typing indicator */}
+                {isTyping && <TypingIndicator />}
+
+                {/* Scroll anchor */}
+                <div ref={chatEndRef} />
               </div>
 
-              {/* Preview Input */}
+              {/* Interactive Input */}
               <div className="border-t border-[#1e293b] bg-[#080c14] p-3">
-                <div className="flex items-center gap-2 rounded-full border border-[#1e293b] bg-[#0d1117] px-3 py-2">
-                  <Smile className="h-4 w-4 text-slate-500" />
-                  <span className="flex-1 text-xs text-slate-500">Escribe un mensaje...</span>
-                  <Send className="h-4 w-4 text-slate-500" />
+                {chatError && !isTyping && (
+                  <div className="mb-2 flex items-center gap-2 rounded-lg border border-red-500/20 bg-red-500/5 px-3 py-2 text-xs text-red-400">
+                    <AlertCircle className="h-3 w-3 flex-shrink-0" />
+                    <span className="line-clamp-2">{chatError}</span>
+                    <button
+                      onClick={() => setChatError(null)}
+                      className="ml-auto flex-shrink-0 text-red-400/60 hover:text-red-400"
+                    >
+                      <X className="h-3 w-3" />
+                    </button>
+                  </div>
+                )}
+                <div className="flex items-center gap-2 rounded-full border border-[#1e293b] bg-[#0d1117] px-3 py-2 focus-within:border-emerald-500/30 focus-within:ring-1 focus-within:ring-emerald-500/10 transition-all">
+                  <Smile className="h-4 w-4 flex-shrink-0 text-slate-500" />
+                  <input
+                    ref={chatInputRef}
+                    type="text"
+                    value={chatInput}
+                    onChange={(e) => setChatInput(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    placeholder="Escribe un mensaje..."
+                    disabled={isTyping}
+                    className="flex-1 bg-transparent text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none disabled:opacity-50"
+                  />
+                  <button
+                    onClick={sendMessage}
+                    disabled={!chatInput.trim() || isTyping}
+                    className={`flex-shrink-0 rounded-full p-1 transition-all ${
+                      chatInput.trim() && !isTyping
+                        ? 'bg-emerald-500 text-white shadow-md shadow-emerald-500/20 hover:bg-emerald-400'
+                        : 'text-slate-500'
+                    }`}
+                  >
+                    {isTyping ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <Send className="h-4 w-4" />
+                    )}
+                  </button>
                 </div>
               </div>
             </div>
