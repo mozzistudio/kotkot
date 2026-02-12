@@ -117,7 +117,7 @@ const faqs = [
     questions: [
       {
         q: '¿Cómo contacto a soporte?',
-        a: 'Puedes contactarnos por email (hola@cotifacil.com), WhatsApp, o abrir un ticket desde tu dashboard.',
+        a: 'Puedes contactarnos por email (support@kotkot.studio), WhatsApp, o abrir un ticket desde tu dashboard.',
       },
       {
         q: '¿Cuál es el tiempo de respuesta de soporte?',
@@ -278,7 +278,7 @@ export default function AyudaPage() {
               <ArrowUpRight className="h-5 w-5" />
             </a>
             <a
-              href="mailto:hola@cotifacil.com"
+              href="mailto:support@kotkot.studio"
               className="inline-flex items-center gap-2 rounded-full border border-emerald-500 px-8 py-4 text-base font-semibold text-emerald-600 transition-all duration-200 hover:bg-emerald-50"
             >
               Enviar Email

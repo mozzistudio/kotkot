@@ -52,7 +52,7 @@ export function Footer() {
                 <Shield className="h-5 w-5 text-white" strokeWidth={2.5} />
               </div>
               <span className="font-heading text-xl font-bold tracking-tight text-slate-900">
-                Coti<span className="text-emerald-600">Fácil</span>
+                kotkot<span className="text-emerald-600">.ai</span>
               </span>
             </a>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-500">
@@ -89,7 +89,7 @@ export function Footer() {
             Hecho para Latinoamérica {'\u{1F30E}'}
           </p>
           <p className="text-sm text-slate-400">
-            &copy; 2026 CotiFácil. Todos los derechos reservados.
+            &copy; 2026 kotkot.ai. Todos los derechos reservados.
           </p>
         </div>
       </div>

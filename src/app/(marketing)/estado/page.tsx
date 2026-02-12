@@ -3,59 +3,74 @@
 import { useState, useEffect } from 'react';
 import { CheckCircle2, AlertCircle, XCircle, Clock } from 'lucide-react';
 
-const services = [
+type ServiceStatus = 'operational' | 'degraded' | 'outage';
+type IncidentStatus = 'resolved' | 'investigating' | 'monitoring';
+type Severity = 'critical' | 'major' | 'minor' | 'maintenance';
+
+const services: Array<{
+  name: string;
+  description: string;
+  status: ServiceStatus;
+  uptime: string;
+}> = [
   {
     name: 'API Principal',
     description: 'REST API v1',
-    status: 'operational' as const,
+    status: 'operational',
     uptime: '99.99%',
   },
   {
     name: 'WhatsApp Bot',
     description: 'Procesamiento de mensajes',
-    status: 'operational' as const,
+    status: 'operational',
     uptime: '99.98%',
   },
   {
     name: 'Dashboard',
     description: 'Aplicación web',
-    status: 'operational' as const,
+    status: 'operational',
     uptime: '99.99%',
   },
   {
     name: 'Webhooks',
     description: 'Entrega de eventos',
-    status: 'operational' as const,
+    status: 'operational',
     uptime: '99.97%',
   },
   {
     name: 'Base de Datos',
     description: 'Almacenamiento de datos',
-    status: 'operational' as const,
+    status: 'operational',
     uptime: '99.99%',
   },
   {
     name: 'Integraciones Aseguradoras',
     description: 'APIs de terceros',
-    status: 'operational' as const,
+    status: 'operational',
     uptime: '99.95%',
   },
 ];
 
-const incidents = [
+const incidents: Array<{
+  date: string;
+  title: string;
+  status: IncidentStatus;
+  severity: Severity;
+  description: string;
+}> = [
   {
     date: '2026-02-10',
     title: 'Latencia elevada en API',
-    status: 'resolved' as const,
-    severity: 'minor' as const,
+    status: 'resolved',
+    severity: 'minor',
     description:
       'Se detectó un incremento en la latencia de la API entre las 14:30 y 15:15 UTC. El problema fue resuelto escalando automáticamente la infraestructura.',
   },
   {
     date: '2026-02-05',
     title: 'Mantenimiento programado completado',
-    status: 'resolved' as const,
-    severity: 'maintenance' as const,
+    status: 'resolved',
+    severity: 'maintenance',
     description:
       'Mantenimiento de base de datos completado exitosamente. El servicio estuvo disponible durante todo el proceso.',
   },
@@ -88,7 +103,7 @@ export default function EstadoPage() {
     return () => clearInterval(interval);
   }, []);
 
-  const getStatusIcon = (status: 'operational' | 'degraded' | 'outage') => {
+  const getStatusIcon = (status: ServiceStatus) => {
     switch (status) {
       case 'operational':
         return <CheckCircle2 className="h-5 w-5 text-emerald-600" />;
@@ -99,7 +114,7 @@ export default function EstadoPage() {
     }
   };
 
-  const getStatusText = (status: 'operational' | 'degraded' | 'outage') => {
+  const getStatusText = (status: ServiceStatus) => {
     switch (status) {
       case 'operational':
         return 'Operacional';
@@ -110,7 +125,7 @@ export default function EstadoPage() {
     }
   };
 
-  const getStatusColor = (status: 'operational' | 'degraded' | 'outage') => {
+  const getStatusColor = (status: ServiceStatus) => {
     switch (status) {
       case 'operational':
         return 'text-emerald-700 bg-emerald-50';
@@ -121,9 +136,7 @@ export default function EstadoPage() {
     }
   };
 
-  const getSeverityColor = (
-    severity: 'critical' | 'major' | 'minor' | 'maintenance'
-  ) => {
+  const getSeverityColor = (severity: Severity) => {
     switch (severity) {
       case 'critical':
         return 'bg-red-100 text-red-700';

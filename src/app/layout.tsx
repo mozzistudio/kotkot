@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CotiFácil — Tu agente de seguros que nunca duerme",
+  title: "kotkot.ai — Tu agente de seguros que nunca duerme",
   description:
     "Bot de seguros con IA por WhatsApp para brokers en Latinoamérica. Cotiza, emite y gestiona pólizas automáticamente las 24 horas.",
 };
