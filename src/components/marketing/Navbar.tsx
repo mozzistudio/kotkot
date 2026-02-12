@@ -56,7 +56,7 @@ export function Navbar() {
               <Shield className="h-5 w-5 text-white" strokeWidth={2.5} />
             </div>
             <span className="font-heading text-xl font-bold tracking-tight text-slate-900">
-              Coti<span className="text-emerald-600">Fácil</span>
+              kotkot<span className="text-emerald-600">.ai</span>
             </span>
           </a>
 

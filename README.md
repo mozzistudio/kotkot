@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# kotkot.ai
 
-## Getting Started
+**Tu agente de seguros que nunca duerme**
 
-First, run the development server:
+Bot de seguros con IA por WhatsApp para brokers en Latinoamérica. Cotiza, emite y gestiona pólizas automáticamente las 24 horas.
+
+## 🚀 Características
+
+- 🤖 **Agente IA en WhatsApp** - Bot inteligente que cotiza y vende seguros automáticamente
+- 🔌 **Integraciones con Aseguradoras** - Conecta APIs de aseguradoras para cotización en tiempo real
+- 💳 **Pagos Automáticos** - Integración con Stripe y Yappy (Panamá)
+- 📊 **Dashboard Inteligente** - Analytics y métricas en tiempo real
+- 🎨 **Personalizable** - Configura el nombre, tono e idioma de tu bot
+- 👥 **CRM Automático** - Gestión automática de leads y clientes
+
+## 🛠️ Stack Tecnológico
+
+- **Framework:** Next.js 16 (App Router)
+- **Lenguaje:** TypeScript
+- **Estilo:** Tailwind CSS 4
+- **Base de Datos:** Supabase (PostgreSQL)
+- **IA:** Anthropic Claude, Google Gemini
+- **Pagos:** Stripe, Yappy
+- **Analytics:** PostHog
+- **Monitoring:** Sentry
+
+## 📦 Instalación
 
 ```bash
+# Clonar el repositorio
+git clone https://github.com/mozzistudio/cotifacil.git
+cd cotifacil
+
+# Instalar dependencias
+npm install
+
+# Configurar variables de entorno
+cp .env.local.example .env.local
+# Editar .env.local con tus credenciales
+
+# Ejecutar el servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3001](http://localhost:3001) en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌍 Variables de Entorno
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Ver `.env.local.example` para la lista completa de variables necesarias.
 
-## Learn More
+### Esenciales:
+- `NEXT_PUBLIC_SUPABASE_URL` - URL de tu proyecto Supabase
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` - Anon key de Supabase
+- `ANTHROPIC_API_KEY` - API key de Claude
+- `NEXT_PUBLIC_APP_URL` - URL de tu aplicación
 
-To learn more about Next.js, take a look at the following resources:
+### Opcionales:
+- `WHATSAPP_ACCESS_TOKEN` - Para integración con WhatsApp
+- `STRIPE_SECRET_KEY` - Para pagos con Stripe
+- `YAPPY_MERCHANT_ID` - Para pagos con Yappy (Panamá)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Despliegue en Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mozzistudio/cotifacil)
 
-## Deploy on Vercel
+1. Haz clic en el botón de arriba
+2. Configura las variables de entorno
+3. Deploy!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📚 Documentación
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Documentación API](https://docs.kotkot.studio)
+- [Centro de Ayuda](https://kotkot.studio/ayuda)
+- [Estado del Sistema](https://kotkot.studio/estado)
+
+## 🤝 Soporte
+
+- **Email:** support@kotkot.studio
+- **WhatsApp:** +507 6000-0000
+
+## 📄 Licencia
+
+Todos los derechos reservados © 2026 kotkot.ai

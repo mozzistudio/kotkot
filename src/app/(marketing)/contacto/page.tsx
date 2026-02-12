@@ -224,10 +224,10 @@ export default function ContactoPage() {
                       Email
                     </p>
                     <a
-                      href="mailto:hola@cotifacil.com"
+                      href="mailto:support@kotkot.studio"
                       className="text-sm text-emerald-600 transition-colors hover:text-emerald-700"
                     >
-                      hola@cotifacil.com
+                      support@kotkot.studio
                     </a>
                   </div>
                 </div>
