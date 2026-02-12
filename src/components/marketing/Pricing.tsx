@@ -169,14 +169,14 @@ export function Pricing() {
               {/* CTA button */}
               {plan.ctaStyle === 'filled' ? (
                 <a
-                  href="/register"
+                  href="/signup"
                   className="btn-primary w-full rounded-xl text-center"
                 >
                   {plan.cta}
                 </a>
               ) : (
                 <a
-                  href={plan.name === 'Enterprise' ? '/contact' : '/register'}
+                  href={plan.name === 'Enterprise' ? '/contacto' : '/signup'}
                   className="inline-flex w-full items-center justify-center rounded-xl border border-emerald-500/30 bg-emerald-50/50 px-6 py-3 font-heading text-[0.9375rem] font-semibold text-emerald-700 transition-all duration-200 hover:border-emerald-500/50 hover:bg-emerald-50 hover:shadow-md hover:shadow-emerald-500/10"
                 >
                   {plan.cta}

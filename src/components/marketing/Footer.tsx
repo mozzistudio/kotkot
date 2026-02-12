@@ -18,24 +18,24 @@ const linkGroups: FooterLinkGroup[] = [
   {
     title: 'Empresa',
     links: [
-      { label: 'Nosotros', href: '/about' },
-      { label: 'Casos de Éxito', href: '/cases' },
-      { label: 'Contacto', href: '/contact' },
+      { label: 'Nosotros', href: '/nosotros' },
+      { label: 'Casos de Éxito', href: '/casos-de-exito' },
+      { label: 'Contacto', href: '/contacto' },
     ],
   },
   {
     title: 'Legal',
     links: [
-      { label: 'Política de Privacidad', href: '/privacy' },
-      { label: 'Términos de Servicio', href: '/terms' },
+      { label: 'Política de Privacidad', href: '/politica-privacidad' },
+      { label: 'Términos de Servicio', href: '/terminos' },
     ],
   },
   {
     title: 'Soporte',
     links: [
-      { label: 'Centro de Ayuda', href: '/help' },
-      { label: 'API Docs', href: '/docs/api' },
-      { label: 'Status', href: '/status' },
+      { label: 'Centro de Ayuda', href: '/ayuda' },
+      { label: 'API Docs', href: '/api-docs' },
+      { label: 'Status', href: '/estado' },
     ],
   },
 ];
