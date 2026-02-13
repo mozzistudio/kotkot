@@ -50,24 +50,24 @@ export default function PreciosPage() {
       {/* --- FAQ Section --- */}
       <div className="mx-auto mt-24 max-w-6xl px-4">
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">
             Preguntas sobre precios
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-4 text-lg text-[#6b7280]">
             Resolvemos tus dudas sobre planes, pagos y facturación.
           </p>
         </div>
 
         <div className="mx-auto max-w-3xl space-y-4">
           {faqs.map((faq) => (
-            <div key={faq.question} className="glass-card p-6">
+            <div key={faq.question} className="bg-white border border-[#e5e7eb] rounded-[16px] p-6">
               <div className="flex items-start gap-3">
-                <ChevronDown className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
+                <ChevronDown className="mt-0.5 h-5 w-5 shrink-0 text-[#059669]" />
                 <div>
-                  <h3 className="font-heading text-base font-semibold text-slate-900">
+                  <h3 className="font-heading text-base font-semibold text-[#111827]">
                     {faq.question}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  <p className="mt-2 text-sm leading-relaxed text-[#6b7280]">
                     {faq.answer}
                   </p>
                 </div>
@@ -78,17 +78,17 @@ export default function PreciosPage() {
 
         {/* --- Bottom CTA --- */}
         <div className="mx-auto mt-20 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+          <h2 className="font-heading text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl">
             ¿No estás seguro de qué plan necesitas?
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-4 text-lg text-[#6b7280]">
             Agenda una demo y te ayudamos a elegir el plan perfecto para tu
             correduría.
           </p>
           <div className="mt-8">
             <a
               href="/demo"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-emerald-500/25 transition-all duration-200 hover:shadow-emerald-500/40 hover:brightness-110"
+              className="inline-flex items-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600]"
             >
               Solicitar Demo
             </a>

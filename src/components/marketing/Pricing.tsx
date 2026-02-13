@@ -95,11 +95,11 @@ export function Pricing() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
           className="mx-auto mb-16 max-w-2xl text-center"
         >
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl lg:text-5xl">
             Planes diseñados para{' '}
-            <span className="text-gradient-primary">corredores de seguros</span>
+            <span className="text-[#059669]">corredores de seguros</span>
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-4 text-lg text-[#6b7280]">
             Sin comisiones ocultas. Cancela cuando quieras.
           </p>
         </motion.div>
@@ -116,50 +116,50 @@ export function Pricing() {
             <motion.div
               key={plan.name}
               variants={cardVariants}
-              className={`glass-card relative flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.10)] ${
+              className={`relative flex flex-col rounded-[16px] border bg-white p-8 transition-all duration-300 hover:-translate-y-1 ${
                 plan.popular
-                  ? 'border-emerald-500/50 shadow-[0_8px_32px_rgba(16,185,129,0.15)] md:-my-4 md:py-10 md:scale-[1.03]'
-                  : ''
+                  ? 'border-[rgba(202,255,4,0.40)] md:-my-4 md:py-10 md:scale-[1.03]'
+                  : 'border-[#e5e7eb] hover:border-[rgba(202,255,4,0.40)]'
               }`}
             >
               {/* Popular badge */}
               {plan.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-emerald-500/25">
+                  <span className="inline-flex items-center rounded-[10px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-4 py-1 text-xs font-bold uppercase tracking-wider text-[#111827]">
                     Popular
                   </span>
                 </div>
               )}
 
               {/* Plan name */}
-              <h3 className="font-heading text-xl font-bold text-slate-900">
+              <h3 className="font-heading text-xl font-bold text-[#111827]">
                 {plan.name}
               </h3>
 
               {/* Price */}
               <div className="mt-4 flex items-baseline gap-1">
-                <span className="font-heading text-4xl font-extrabold tracking-tight text-slate-900">
+                <span className="font-heading text-4xl font-extrabold tracking-tight text-[#111827]">
                   {plan.price}
                 </span>
                 {plan.period && (
-                  <span className="text-base font-medium text-slate-500">
+                  <span className="text-base font-medium text-[#6b7280]">
                     {plan.period}
                   </span>
                 )}
               </div>
 
               {/* Divider */}
-              <div className="divider-gradient my-6" />
+              <div className="my-6 border-t border-[#e5e7eb]" />
 
               {/* Feature list */}
               <ul className="mb-8 flex flex-1 flex-col gap-3">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2.5">
                     <Check
-                      className="mt-0.5 h-4.5 w-4.5 shrink-0 text-emerald-500"
+                      className="mt-0.5 h-4.5 w-4.5 shrink-0 text-[#059669]"
                       strokeWidth={2.5}
                     />
-                    <span className="text-[0.9375rem] leading-snug text-slate-600">
+                    <span className="text-[0.9375rem] leading-snug text-[#6b7280]">
                       {feature}
                     </span>
                   </li>
@@ -170,14 +170,14 @@ export function Pricing() {
               {plan.ctaStyle === 'filled' ? (
                 <a
                   href="/signup"
-                  className="btn-primary w-full rounded-xl text-center"
+                  className="w-full rounded-[10px] border border-[rgba(202,255,4,0.40)] bg-[#CAFF04] px-6 py-3 text-center font-heading text-[0.9375rem] font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600]"
                 >
                   {plan.cta}
                 </a>
               ) : (
                 <a
                   href={plan.name === 'Enterprise' ? '/contacto' : '/signup'}
-                  className="inline-flex w-full items-center justify-center rounded-xl border border-emerald-500/30 bg-emerald-50/50 px-6 py-3 font-heading text-[0.9375rem] font-semibold text-emerald-700 transition-all duration-200 hover:border-emerald-500/50 hover:bg-emerald-50 hover:shadow-md hover:shadow-emerald-500/10"
+                  className="inline-flex w-full items-center justify-center rounded-[10px] border border-[#e5e7eb] bg-white px-6 py-3 font-heading text-[0.9375rem] font-semibold text-[#111827] transition-all duration-200 hover:bg-[#f3f4f6]"
                 >
                   {plan.cta}
                 </a>
@@ -192,7 +192,7 @@ export function Pricing() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-10 flex flex-col items-center gap-2 text-center text-sm text-slate-500"
+          className="mt-10 flex flex-col items-center gap-2 text-center text-sm text-[#6b7280]"
         >
           <p>+$100/mes por número de WhatsApp adicional</p>
           <p>

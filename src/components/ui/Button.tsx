@@ -2,7 +2,7 @@
 
 import { ArrowRight, Loader2 } from 'lucide-react';
 
-type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
+type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'dark';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -15,19 +15,21 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:brightness-110 active:brightness-95',
+    'bg-[#CAFF04] text-[#111827] border border-[rgba(202,255,4,0.40)] hover:bg-[#b8e600] font-semibold',
   secondary:
-    'backdrop-blur-xl bg-white/60 border border-white/40 text-gray-800 shadow-sm hover:bg-white/80 active:bg-white/50',
+    'bg-white text-[#374151] border border-[#e5e7eb] hover:bg-[#f3f4f6]',
   outline:
-    'border border-emerald-500 text-emerald-600 bg-transparent hover:bg-emerald-50 active:bg-emerald-100',
+    'bg-transparent text-[#374151] border border-[#e5e7eb] hover:bg-[#f3f4f6]',
   ghost:
-    'text-gray-600 bg-transparent hover:bg-gray-100 active:bg-gray-200',
+    'bg-transparent text-[#6b7280] border-none hover:bg-[#f3f4f6]',
+  dark:
+    'bg-[#111827] text-white border border-[#111827] hover:bg-[#1f2937]',
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
   sm: 'px-4 py-2 text-sm gap-1.5',
-  md: 'px-6 py-2.5 text-base gap-2',
-  lg: 'px-8 py-3.5 text-lg gap-2.5',
+  md: 'px-6 py-2.5 text-sm gap-2',
+  lg: 'px-8 py-3 text-base gap-2.5',
 };
 
 const iconSizeClasses: Record<ButtonSize, string> = {
@@ -48,7 +50,7 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`inline-flex items-center justify-center rounded-full font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 disabled:pointer-events-none disabled:opacity-50 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
+      className={`inline-flex items-center justify-center rounded-[10px] font-medium transition-all duration-150 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#CAFF04] disabled:pointer-events-none disabled:opacity-50 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
       disabled={disabled || loading}
       {...props}
     >

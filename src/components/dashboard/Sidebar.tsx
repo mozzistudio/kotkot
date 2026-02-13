@@ -42,20 +42,20 @@ export function Sidebar({ open, onClose }: SidebarProps) {
   const sidebarContent = (
     <div className="flex flex-col h-full">
       {/* Logo */}
-      <div className="flex items-center justify-between px-6 py-5 border-b border-[#1e293b]">
+      <div className="flex items-center justify-between px-6 py-5 border-b border-[#e5e7eb]">
         <Link href="/dashboard" className="flex items-center gap-2.5">
-          <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 shadow-lg shadow-emerald-500/20">
-            <ShieldCheck className="w-5 h-5 text-white" />
+          <div className="flex items-center justify-center w-9 h-9 rounded-[12px] bg-[rgba(202,255,4,0.15)]">
+            <ShieldCheck className="w-5 h-5 text-[#111827]" />
           </div>
-          <span className="font-heading text-lg font-bold text-white">
-            Coti<span className="text-emerald-400">Facil</span>
+          <span className="font-heading text-lg font-bold text-[#111827]">
+            Coti<span className="text-[#059669]">Facil</span>
           </span>
         </Link>
 
         {/* Close button for mobile */}
         <button
           onClick={onClose}
-          className="lg:hidden p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors"
+          className="lg:hidden p-1.5 rounded-[10px] text-[#6b7280] hover:text-[#111827] hover:bg-[#f3f4f6] transition-colors"
           aria-label="Cerrar menu"
         >
           <X className="w-5 h-5" />
@@ -73,31 +73,22 @@ export function Sidebar({ open, onClose }: SidebarProps) {
               key={item.href}
               href={item.href}
               onClick={onClose}
-              className={`group relative flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+              className={`group relative flex items-center gap-3 px-3 py-2.5 rounded-[10px] text-sm font-medium transition-all duration-150 ${
                 isActive
-                  ? 'bg-emerald-500/10 text-emerald-400'
-                  : 'text-slate-400 hover:text-white hover:bg-white/5'
+                  ? 'bg-[#CAFF04] text-[#111827] font-semibold'
+                  : 'text-[#374151] hover:text-[#111827] hover:bg-[#f3f4f6]'
               }`}
             >
-              {/* Active indicator bar */}
-              {isActive && (
-                <motion.div
-                  layoutId="sidebar-active"
-                  className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-6 rounded-r-full bg-emerald-400"
-                  transition={{ type: 'spring', stiffness: 350, damping: 30 }}
-                />
-              )}
-
               <Icon
-                className={`w-5 h-5 shrink-0 transition-colors duration-200 ${
-                  isActive ? 'text-emerald-400' : 'text-slate-500 group-hover:text-slate-300'
+                className={`w-[18px] h-[18px] shrink-0 transition-colors duration-150 ${
+                  isActive ? 'text-[#111827]' : 'text-[#6b7280] group-hover:text-[#111827]'
                 }`}
               />
               <span>{item.label}</span>
 
               {/* Notification badge for Conversaciones */}
               {item.href === '/conversations' && (
-                <span className="ml-auto flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold">
+                <span className="ml-auto flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-[rgba(202,255,4,0.15)] text-[#111827] text-[10px] font-bold">
                   12
                 </span>
               )}
@@ -107,18 +98,18 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       </nav>
 
       {/* Bottom: Broker profile */}
-      <div className="px-3 py-4 border-t border-[#1e293b]">
-        <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5 transition-colors cursor-pointer">
-          <div className="w-9 h-9 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold text-sm shrink-0">
+      <div className="px-3 py-4 border-t border-[#e5e7eb]">
+        <div className="flex items-center gap-3 px-3 py-2.5 rounded-[10px] hover:bg-[#f3f4f6] transition-colors cursor-pointer">
+          <div className="w-9 h-9 rounded-full bg-[rgba(202,255,4,0.15)] flex items-center justify-center text-[#111827] font-bold text-sm shrink-0">
             JP
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-white truncate">Juan Perez</p>
+            <p className="text-sm font-medium text-[#111827] truncate">Juan Perez</p>
             <div className="flex items-center gap-1.5">
-              <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/15 text-emerald-400">
+              <span className="inline-flex items-center px-1.5 py-0.5 rounded-[6px] text-[10px] font-bold bg-[rgba(202,255,4,0.15)] text-[#111827]">
                 PRO
               </span>
-              <span className="text-[11px] text-slate-500 truncate">Broker</span>
+              <span className="text-[11px] text-[#9ca3af] truncate">Broker</span>
             </div>
           </div>
         </div>
@@ -129,7 +120,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex lg:fixed lg:inset-y-0 lg:left-0 lg:w-[280px] lg:flex-col bg-[#0d1117] border-r border-[#1e293b] z-30">
+      <aside className="hidden lg:flex lg:fixed lg:inset-y-0 lg:left-0 lg:w-[220px] lg:flex-col bg-white border-r border-[#e5e7eb] z-30">
         {sidebarContent}
       </aside>
 
@@ -137,11 +128,11 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       <AnimatePresence>
         {open && (
           <motion.aside
-            initial={{ x: -280 }}
+            initial={{ x: -220 }}
             animate={{ x: 0 }}
-            exit={{ x: -280 }}
+            exit={{ x: -220 }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed inset-y-0 left-0 w-[280px] flex flex-col bg-[#0d1117] border-r border-[#1e293b] z-50 lg:hidden"
+            className="fixed inset-y-0 left-0 w-[220px] flex flex-col bg-white border-r border-[#e5e7eb] z-50 lg:hidden"
           >
             {sidebarContent}
           </motion.aside>

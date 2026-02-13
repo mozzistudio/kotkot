@@ -83,25 +83,25 @@ const dateRanges: { key: DateRange; label: string }[] = [
 
 const kpiByRange: Record<DateRange, KPI[]> = {
   '7d': [
-    { label: 'Ingresos Totales', value: '$3,120', change: '+8.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-emerald-400" /> },
+    { label: 'Ingresos Totales', value: '$3,120', change: '+8.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" /> },
     { label: 'Comisiones Ganadas', value: '$936', change: '+6.1%', changeType: 'up', icon: <Award className="h-5 w-5 text-teal-400" /> },
     { label: 'Polizas Activas', value: '142', change: '+3', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
     { label: 'Ticket Promedio', value: '$72.10', change: '-2.3%', changeType: 'down', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
   ],
   '30d': [
-    { label: 'Ingresos Totales', value: '$12,450', change: '+15.3%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-emerald-400" /> },
+    { label: 'Ingresos Totales', value: '$12,450', change: '+15.3%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" /> },
     { label: 'Comisiones Ganadas', value: '$3,735', change: '+12.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-teal-400" /> },
     { label: 'Polizas Activas', value: '156', change: '+14', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
     { label: 'Ticket Promedio', value: '$79.80', change: '+4.1%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
   ],
   '90d': [
-    { label: 'Ingresos Totales', value: '$38,920', change: '+22.7%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-emerald-400" /> },
+    { label: 'Ingresos Totales', value: '$38,920', change: '+22.7%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" /> },
     { label: 'Comisiones Ganadas', value: '$11,676', change: '+19.4%', changeType: 'up', icon: <Award className="h-5 w-5 text-teal-400" /> },
     { label: 'Polizas Activas', value: '156', change: '+38', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
     { label: 'Ticket Promedio', value: '$83.50', change: '+7.6%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
   ],
   '12m': [
-    { label: 'Ingresos Totales', value: '$148,600', change: '+45.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-emerald-400" /> },
+    { label: 'Ingresos Totales', value: '$148,600', change: '+45.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" /> },
     { label: 'Comisiones Ganadas', value: '$44,580', change: '+41.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-teal-400" /> },
     { label: 'Polizas Activas', value: '156', change: '+89', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
     { label: 'Ticket Promedio', value: '$86.20', change: '+11.3%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
@@ -187,7 +187,7 @@ const paymentMethods: PaymentMethod[] = [
 function getEstadoBadge(estado: Transaction['estado']) {
   switch (estado) {
     case 'pagado':
-      return <span className="inline-flex items-center rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-semibold text-emerald-400">Pagado</span>;
+      return <span className="inline-flex items-center rounded-full bg-[var(--accent-light)] px-2.5 py-0.5 text-xs font-semibold text-[var(--accent)]">Pagado</span>;
     case 'pendiente':
       return <span className="inline-flex items-center rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-400">Pendiente</span>;
     case 'cancelado':
@@ -210,26 +210,26 @@ export default function IngresosPage() {
   const maxRevenue = Math.max(...revenueBars.map((b) => b.value));
 
   return (
-    <div className="min-h-screen bg-[#080c14]">
+    <div className="min-h-screen">
       {/* Header */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-slate-200 font-heading">Ingresos</h1>
-          <p className="mt-1 text-sm text-slate-400">
+          <h1 className="text-page-title">Ingresos</h1>
+          <p className="mt-1 text-sm text-[var(--text-secondary)]">
             Resumen de ingresos, comisiones y transacciones
           </p>
         </div>
 
         {/* Date Range Selector */}
-        <div className="flex gap-1.5 rounded-lg border border-[#1e293b] bg-[#0d1117] p-1">
+        <div className="flex gap-1.5 rounded-lg border border-[var(--border)] bg-white p-1">
           {dateRanges.map((dr) => (
             <button
               key={dr.key}
               onClick={() => setDateRange(dr.key)}
               className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
                 dateRange === dr.key
-                  ? 'bg-emerald-500/20 text-emerald-400 shadow-sm'
-                  : 'text-slate-400 hover:text-slate-300'
+                  ? 'bg-[var(--accent-light)] text-[var(--accent)] '
+                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               }`}
             >
               {dr.label}
@@ -241,12 +241,12 @@ export default function IngresosPage() {
       {/* KPI Row */}
       <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {kpis.map((kpi) => (
-          <div key={kpi.label} className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
+          <div key={kpi.label} className="card">
             <div className="flex items-center justify-between">
-              <div className="rounded-lg bg-[#080c14] p-2.5">{kpi.icon}</div>
+              <div className="rounded-lg p-2.5">{kpi.icon}</div>
               <span
                 className={`inline-flex items-center gap-0.5 text-xs font-semibold ${
-                  kpi.changeType === 'up' ? 'text-emerald-400' : 'text-red-400'
+                  kpi.changeType === 'up' ? 'text-[var(--accent)]' : 'text-red-400'
                 }`}
               >
                 {kpi.changeType === 'up' ? (
@@ -257,34 +257,34 @@ export default function IngresosPage() {
                 {kpi.change}
               </span>
             </div>
-            <p className="mt-4 text-2xl font-bold text-slate-200 font-data">{kpi.value}</p>
-            <p className="mt-1 text-sm text-slate-400">{kpi.label}</p>
+            <p className="mt-4 text-2xl font-bold text-[var(--text-primary)] font-data">{kpi.value}</p>
+            <p className="mt-1 text-sm text-[var(--text-secondary)]">{kpi.label}</p>
           </div>
         ))}
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Revenue Chart */}
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
+        <div className="card">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-base font-semibold text-slate-200">Ingresos por Periodo</h2>
-            <BarChart3 className="h-4 w-4 text-slate-500" />
+            <h2 className="text-section-heading">Ingresos por Periodo</h2>
+            <BarChart3 className="h-4 w-4 text-[var(--text-tertiary)]" />
           </div>
           <div className="flex items-end justify-between gap-2" style={{ height: 200 }}>
             {revenueBars.map((bar) => {
               const heightPct = (bar.value / maxRevenue) * 100;
               return (
                 <div key={bar.label} className="flex flex-1 flex-col items-center gap-2">
-                  <span className="text-[10px] text-slate-400 font-data">
+                  <span className="text-[10px] text-[var(--text-secondary)] font-data">
                     {formatCurrency(bar.value)}
                   </span>
                   <div className="w-full flex justify-center">
                     <div
-                      className="w-8 rounded-t-md bg-gradient-to-t from-emerald-600 to-teal-400 transition-all duration-300"
+                      className="w-8 rounded-t-md bg-[var(--accent)] transition-all duration-300"
                       style={{ height: `${heightPct}%`, minHeight: 8 }}
                     />
                   </div>
-                  <span className="text-xs text-slate-500">{bar.label}</span>
+                  <span className="text-xs text-[var(--text-tertiary)]">{bar.label}</span>
                 </div>
               );
             })}
@@ -292,23 +292,23 @@ export default function IngresosPage() {
         </div>
 
         {/* Revenue by Insurance Type */}
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
-          <h2 className="mb-4 text-base font-semibold text-slate-200">
+        <div className="card">
+          <h2 className="mb-4 text-base font-semibold text-[var(--text-primary)]">
             Ingresos por Tipo de Seguro
           </h2>
           <div className="space-y-4">
             {insuranceTypeRevenue.map((item) => (
               <div key={item.type}>
                 <div className="mb-1.5 flex items-center justify-between">
-                  <span className="text-sm text-slate-300">{item.type}</span>
+                  <span className="text-sm text-[var(--text-primary)]">{item.type}</span>
                   <div className="flex items-center gap-3">
-                    <span className="text-xs text-slate-400">{item.percentage}%</span>
-                    <span className="text-sm font-semibold text-slate-200 font-data">
+                    <span className="text-xs text-[var(--text-secondary)]">{item.percentage}%</span>
+                    <span className="text-sm font-semibold text-[var(--text-primary)] font-data">
                       {item.amount}
                     </span>
                   </div>
                 </div>
-                <div className="h-3 overflow-hidden rounded-full bg-[#080c14]">
+                <div className="h-3 overflow-hidden rounded-full">
                   <div
                     className={`h-full rounded-full ${item.color} transition-all duration-500`}
                     style={{ width: `${item.percentage}%` }}
@@ -320,27 +320,27 @@ export default function IngresosPage() {
         </div>
 
         {/* Revenue by Insurer Table */}
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5 lg:col-span-2">
-          <h2 className="mb-4 text-base font-semibold text-slate-200">
+        <div className="rounded-xl border border-[var(--border)] bg-white p-5 lg:col-span-2">
+          <h2 className="mb-4 text-base font-semibold text-[var(--text-primary)]">
             Ingresos por Aseguradora
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
-                <tr className="border-b border-[#1e293b]">
-                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500">
+                <tr className="border-b border-[var(--border)]">
+                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
                     Aseguradora
                   </th>
-                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500 text-right">
+                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)] text-right">
                     Polizas
                   </th>
-                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500 text-right">
+                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)] text-right">
                     Ingresos
                   </th>
-                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500 text-right">
+                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)] text-right">
                     Comision %
                   </th>
-                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500 text-right">
+                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)] text-right">
                     Comision
                   </th>
                 </tr>
@@ -351,21 +351,21 @@ export default function IngresosPage() {
                     <td className="py-3 text-sm">
                       <Link
                         href={`/apis/${insurer.slug}`}
-                        className="text-slate-300 hover:text-emerald-400 transition-colors"
+                        className="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
                       >
                         {insurer.name}
                       </Link>
                     </td>
-                    <td className="py-3 text-sm text-slate-300 text-right font-data">
+                    <td className="py-3 text-sm text-[var(--text-primary)] text-right font-data">
                       {insurer.policiesSold}
                     </td>
-                    <td className="py-3 text-sm text-slate-200 text-right font-data font-semibold">
+                    <td className="py-3 text-sm text-[var(--text-primary)] text-right font-data font-semibold">
                       {insurer.totalRevenue}
                     </td>
-                    <td className="py-3 text-sm text-slate-400 text-right font-data">
+                    <td className="py-3 text-sm text-[var(--text-secondary)] text-right font-data">
                       {insurer.commissionPct}%
                     </td>
-                    <td className="py-3 text-sm text-emerald-400 text-right font-data font-semibold">
+                    <td className="py-3 text-sm text-[var(--accent)] text-right font-data font-semibold">
                       {insurer.commissionAmount}
                     </td>
                   </tr>
@@ -376,34 +376,34 @@ export default function IngresosPage() {
         </div>
 
         {/* Recent Transactions Table */}
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5 lg:col-span-2">
+        <div className="rounded-xl border border-[var(--border)] bg-white p-5 lg:col-span-2">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-base font-semibold text-slate-200">Transacciones Recientes</h2>
-            <span className="text-xs text-slate-500">Ultimas 10 transacciones</span>
+            <h2 className="text-section-heading">Transacciones Recientes</h2>
+            <span className="text-xs text-[var(--text-tertiary)]">Ultimas 10 transacciones</span>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
-                <tr className="border-b border-[#1e293b]">
-                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500">
+                <tr className="border-b border-[var(--border)]">
+                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
                     Fecha
                   </th>
-                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500">
+                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
                     Cliente
                   </th>
-                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500">
+                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
                     Tipo de Seguro
                   </th>
-                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500">
+                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
                     Aseguradora
                   </th>
-                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500 text-right">
+                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)] text-right">
                     Prima
                   </th>
-                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500 text-right">
+                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)] text-right">
                     Comision
                   </th>
-                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500 text-center">
+                  <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)] text-center">
                     Estado
                   </th>
                 </tr>
@@ -411,28 +411,28 @@ export default function IngresosPage() {
               <tbody className="divide-y divide-[#1e293b]/60">
                 {recentTransactions.map((tx) => (
                   <tr key={tx.id} className="group hover:bg-white/[0.02] transition-colors">
-                    <td className="py-3 text-sm text-slate-400 font-data">{tx.fecha}</td>
+                    <td className="py-3 text-sm text-[var(--text-secondary)] font-data">{tx.fecha}</td>
                     <td className="py-3 text-sm">
                       <Link
                         href={`/clients/${tx.id.replace('TX-', 'C-')}`}
-                        className="text-slate-300 hover:text-emerald-400 transition-colors"
+                        className="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
                       >
                         {tx.cliente}
                       </Link>
                     </td>
-                    <td className="py-3 text-sm text-slate-300">{tx.tipoSeguro}</td>
+                    <td className="py-3 text-sm text-[var(--text-primary)]">{tx.tipoSeguro}</td>
                     <td className="py-3 text-sm">
                       <Link
                         href={`/apis/${tx.aseguradora.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="text-slate-400 hover:text-emerald-400 transition-colors"
+                        className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
                       >
                         {tx.aseguradora}
                       </Link>
                     </td>
-                    <td className="py-3 text-sm text-slate-200 text-right font-data font-semibold">
+                    <td className="py-3 text-sm text-[var(--text-primary)] text-right font-data font-semibold">
                       {tx.prima}
                     </td>
-                    <td className="py-3 text-sm text-emerald-400 text-right font-data font-semibold">
+                    <td className="py-3 text-sm text-[var(--accent)] text-right font-data font-semibold">
                       {tx.comision}
                     </td>
                     <td className="py-3 text-center">{getEstadoBadge(tx.estado)}</td>
@@ -444,8 +444,8 @@ export default function IngresosPage() {
         </div>
 
         {/* Payment Method Breakdown */}
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5 lg:col-span-2">
-          <h2 className="mb-6 text-base font-semibold text-slate-200">
+        <div className="rounded-xl border border-[var(--border)] bg-white p-5 lg:col-span-2">
+          <h2 className="mb-6 text-base font-semibold text-[var(--text-primary)]">
             Metodo de Pago
           </h2>
           <div className="grid gap-6 sm:grid-cols-2">
@@ -491,8 +491,8 @@ export default function IngresosPage() {
                 </svg>
                 {/* Center text */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="text-xl font-bold text-slate-200 font-data">$12,450</span>
-                  <span className="text-xs text-slate-500">Total</span>
+                  <span className="text-xl font-bold text-[var(--text-primary)] font-data">$12,450</span>
+                  <span className="text-xs text-[var(--text-tertiary)]">Total</span>
                 </div>
               </div>
             </div>
@@ -500,7 +500,7 @@ export default function IngresosPage() {
             {/* Legend and breakdown */}
             <div className="flex flex-col justify-center space-y-4">
               {paymentMethods.map((method) => (
-                <div key={method.name} className="rounded-lg border border-[#1e293b] bg-[#080c14] p-4">
+                <div key={method.name} className="rounded-lg border border-[var(--border)] p-4">
                   <div className="flex items-center gap-3">
                     <div
                       className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${method.color} text-white`}
@@ -509,18 +509,18 @@ export default function IngresosPage() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-slate-200">{method.name}</span>
-                        <span className="text-sm font-bold text-slate-200 font-data">
+                        <span className="text-sm font-medium text-[var(--text-primary)]">{method.name}</span>
+                        <span className="text-sm font-bold text-[var(--text-primary)] font-data">
                           {method.amount}
                         </span>
                       </div>
-                      <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#1e293b]">
+                      <div className="mt-2 h-2 overflow-hidden rounded-full bg-[var(--surface-secondary)]">
                         <div
                           className={`h-full rounded-full bg-gradient-to-r ${method.color} transition-all duration-500`}
                           style={{ width: `${method.percentage}%` }}
                         />
                       </div>
-                      <span className="mt-1 text-xs text-slate-500">{method.percentage}% del total</span>
+                      <span className="mt-1 text-xs text-[var(--text-tertiary)]">{method.percentage}% del total</span>
                     </div>
                   </div>
                 </div>

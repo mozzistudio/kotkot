@@ -4,7 +4,6 @@
  */
 
 import React from 'react';
-import { GlassCard } from '@/components/ui/GlassCard';
 import { Badge } from '@/components/ui/Badge';
 
 interface PricingSectionProps {
@@ -24,27 +23,27 @@ export function PricingSection({
 }: PricingSectionProps) {
   return (
     <section className="mb-12">
-      <h2 className="mb-8 text-3xl font-bold text-gray-900">
+      <h2 className="mb-8 text-3xl font-bold text-[#111827]">
         Precios y Factores
       </h2>
-      <GlassCard className="p-8">
+      <div className="bg-white border border-[#e5e7eb] rounded-[16px] p-8">
         <div className="mb-6">
-          <p className="mb-4 text-gray-700">
+          <p className="mb-4 text-[#6b7280]">
             El costo del {productName.toLowerCase()} en {companyName} varía según
             tus necesidades:
           </p>
           <div className="flex items-baseline gap-4">
-            <span className="text-3xl font-bold text-emerald-600">
+            <span className="text-3xl font-bold text-[#111827]">
               {priceMin}
             </span>
-            <span className="text-xl text-gray-600">a</span>
-            <span className="text-3xl font-bold text-emerald-600">
+            <span className="text-xl text-[#6b7280]">a</span>
+            <span className="text-3xl font-bold text-[#111827]">
               {priceMax}
             </span>
           </div>
         </div>
         <div>
-          <h3 className="mb-4 font-semibold text-gray-900">
+          <h3 className="mb-4 font-semibold text-[#111827]">
             Factores que afectan el precio:
           </h3>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -53,12 +52,12 @@ export function PricingSection({
                 <Badge color="gray" className="mt-0.5">
                   {index + 1}
                 </Badge>
-                <span className="text-sm text-gray-700">{factor}</span>
+                <span className="text-sm text-[#6b7280]">{factor}</span>
               </div>
             ))}
           </div>
         </div>
-      </GlassCard>
+      </div>
     </section>
   );
 }

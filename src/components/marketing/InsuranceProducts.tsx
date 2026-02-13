@@ -99,7 +99,7 @@ const cardVariants = {
 
 export function InsuranceProducts() {
   return (
-    <section className="relative px-4 py-24 sm:py-32 bg-gradient-to-b from-white to-emerald-50/30">
+    <section className="relative px-4 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <motion.div
@@ -109,15 +109,15 @@ export function InsuranceProducts() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
           className="mx-auto mb-16 max-w-3xl text-center"
         >
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-700">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-[10px] border border-[rgba(202,255,4,0.40)] bg-[rgba(202,255,4,0.15)] px-4 py-2 text-sm font-semibold text-[#111827]">
             <span>✨</span>
             10 Tipos de Seguros Disponibles
           </div>
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
-            Cotiza <span className="text-gradient-primary">Cualquier Seguro</span> en
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl lg:text-5xl">
+            Cotiza <span className="text-[#059669]">Cualquier Seguro</span> en
             Minutos
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-4 text-lg text-[#6b7280]">
             Desde seguro de auto hasta planes de ahorro. Compara 10+ aseguradoras y
             encuentra la mejor opción para ti.
           </p>
@@ -135,20 +135,20 @@ export function InsuranceProducts() {
             <motion.div key={product.slug} variants={cardVariants}>
               <Link
                 href={`/seguros/${product.slug}`}
-                className="glass-card group block h-full p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(16,185,129,0.15)] hover:bg-white"
+                className="group block h-full rounded-[16px] border border-[#e5e7eb] bg-white p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(202,255,4,0.40)] hover:bg-[#f3f4f6]"
               >
                 {/* Icon */}
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 text-3xl transition-transform duration-300 group-hover:scale-110">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)] text-3xl transition-transform duration-300 group-hover:scale-110">
                   {product.icon}
                 </div>
 
                 {/* Title */}
-                <h3 className="font-heading text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                <h3 className="font-heading text-lg font-bold text-[#111827] group-hover:text-[#059669] transition-colors">
                   {product.name}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                <p className="mt-2 text-sm leading-relaxed text-[#6b7280]">
                   {product.description}
                 </p>
 
@@ -157,16 +157,16 @@ export function InsuranceProducts() {
                   {product.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-center gap-2 text-xs text-slate-500"
+                      className="flex items-center gap-2 text-xs text-[#6b7280]"
                     >
-                      <span className="text-emerald-500">✓</span>
+                      <span className="text-[#059669]">✓</span>
                       {feature}
                     </li>
                   ))}
                 </ul>
 
                 {/* CTA */}
-                <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-emerald-600 group-hover:gap-2 transition-all">
+                <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-[#059669] group-hover:gap-2 transition-all">
                   Comparar precios
                   <span className="transition-transform group-hover:translate-x-1">
                     →
@@ -187,7 +187,7 @@ export function InsuranceProducts() {
         >
           <Link
             href="/seguros"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-emerald-600 bg-white px-8 py-4 text-lg font-semibold text-emerald-600 shadow-lg shadow-emerald-500/10 transition-all duration-200 hover:bg-emerald-600 hover:text-white hover:shadow-emerald-500/30"
+            className="inline-flex items-center gap-2 rounded-[10px] border border-[#e5e7eb] bg-white px-8 py-4 text-lg font-semibold text-[#111827] transition-all duration-200 hover:bg-[#f3f4f6]"
           >
             Ver Todas las Aseguradoras
             <span className="transition-transform group-hover:translate-x-1">→</span>

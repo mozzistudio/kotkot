@@ -79,14 +79,14 @@ export default function CasosDeExitoPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Page Header --- */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-emerald-600">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
             Historias reales
-            <span className="inline-block h-px w-10 bg-emerald-400" />
+            <span className="inline-block h-px w-10 bg-[#059669]" />
           </span>
-          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
             Casos de Éxito
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-slate-600 sm:text-xl">
+          <p className="mt-6 text-lg leading-relaxed text-[#6b7280] sm:text-xl">
             Descubre cómo corredurías de seguros en Latinoamérica están
             transformando sus negocios con CotiFácil.
           </p>
@@ -95,41 +95,41 @@ export default function CasosDeExitoPage() {
         {/* --- Case Studies --- */}
         <div className="flex flex-col gap-16">
           {caseStudies.map((study) => (
-            <article key={study.company} className="glass-card overflow-hidden">
+            <article key={study.company} className="bg-white border border-[#e5e7eb] rounded-[16px] overflow-hidden">
               {/* Header */}
-              <div className="border-b border-white/30 bg-white/20 px-8 py-6 sm:px-10">
+              <div className="border-b border-[#e5e7eb] bg-[#f3f4f6] px-8 py-6 sm:px-10">
                 <div className="flex flex-wrap items-center gap-4">
                   <span className="text-3xl">{study.flag}</span>
                   <div>
-                    <h2 className="font-heading text-xl font-bold text-slate-900">
+                    <h2 className="font-heading text-xl font-bold text-[#111827]">
                       {study.company}
                     </h2>
-                    <p className="text-sm text-slate-500">{study.country}</p>
+                    <p className="text-sm text-[#9ca3af]">{study.country}</p>
                   </div>
                 </div>
-                <p className="mt-3 font-heading text-lg font-semibold text-emerald-600">
+                <p className="mt-3 font-heading text-lg font-semibold text-[#059669]">
                   {study.headline}
                 </p>
               </div>
 
               {/* Content */}
               <div className="px-8 py-8 sm:px-10">
-                <p className="text-base leading-relaxed text-slate-600">
+                <p className="text-base leading-relaxed text-[#6b7280]">
                   {study.description}
                 </p>
 
                 {/* Challenge & Solution */}
                 <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
-                  <div className="glass-card-subtle p-5">
-                    <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-slate-500">
+                  <div className="bg-white border border-[#e5e7eb] rounded-[16px] p-5">
+                    <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#9ca3af]">
                       Desafío
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-slate-700">
                       {study.challenge}
                     </p>
                   </div>
-                  <div className="glass-card-subtle p-5">
-                    <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-emerald-600">
+                  <div className="bg-white border border-[#e5e7eb] rounded-[16px] p-5">
+                    <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#059669]">
                       Solución
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-slate-700">
@@ -143,13 +143,13 @@ export default function CasosDeExitoPage() {
                   {study.metrics.map((metric) => (
                     <div
                       key={metric.label}
-                      className="flex flex-col items-center rounded-2xl bg-emerald-50/80 px-4 py-5 text-center"
+                      className="flex flex-col items-center rounded-[16px] bg-[rgba(202,255,4,0.15)] px-4 py-5 text-center"
                     >
-                      <metric.icon className="mb-2 h-5 w-5 text-emerald-600" />
-                      <span className="font-data text-2xl font-bold text-slate-900">
+                      <metric.icon className="mb-2 h-5 w-5 text-[#059669]" />
+                      <span className="font-data text-2xl font-bold text-[#111827]">
                         {metric.value}
                       </span>
-                      <span className="mt-1 text-xs font-medium text-slate-500">
+                      <span className="mt-1 text-xs font-medium text-[#9ca3af]">
                         {metric.label}
                       </span>
                     </div>
@@ -157,16 +157,16 @@ export default function CasosDeExitoPage() {
                 </div>
 
                 {/* Quote */}
-                <div className="mt-8 flex gap-4 rounded-2xl bg-emerald-50/60 p-6">
-                  <Quote className="h-8 w-8 shrink-0 text-emerald-300" />
+                <div className="mt-8 flex gap-4 rounded-[16px] bg-[rgba(202,255,4,0.15)] p-6">
+                  <Quote className="h-8 w-8 shrink-0 text-[rgba(202,255,4,0.40)]" />
                   <div>
-                    <p className="text-base italic leading-relaxed text-slate-700">
+                    <p className="text-base italic leading-relaxed text-[#6b7280]">
                       &ldquo;{study.quote}&rdquo;
                     </p>
-                    <p className="mt-3 text-sm font-semibold text-slate-900">
+                    <p className="mt-3 text-sm font-semibold text-[#111827]">
                       {study.author}
                     </p>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-[#9ca3af]">
                       {study.role}, {study.company}
                     </p>
                   </div>
@@ -178,17 +178,17 @@ export default function CasosDeExitoPage() {
 
         {/* --- Bottom CTA --- */}
         <div className="mx-auto mt-24 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+          <h2 className="font-heading text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl">
             ¿Quieres ser el próximo caso de éxito?
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-4 text-lg text-[#6b7280]">
             Únete a las corredurías que ya están vendiendo seguros por WhatsApp
             con CotiFácil.
           </p>
           <div className="mt-8">
             <a
               href="/demo"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-emerald-500/25 transition-all duration-200 hover:shadow-emerald-500/40 hover:brightness-110"
+              className="inline-flex items-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600]"
             >
               Solicitar Demo
             </a>

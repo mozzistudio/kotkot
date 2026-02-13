@@ -37,12 +37,12 @@ export function Slider({
       {(label || showValue) && (
         <div className="flex items-center justify-between">
           {label && (
-            <label htmlFor={id} className="text-sm font-medium text-gray-700">
+            <label htmlFor={id} className="text-sm font-medium text-[#111827]">
               {label}
             </label>
           )}
           {showValue && (
-            <span className="text-sm font-semibold text-emerald-600">
+            <span className="text-sm font-semibold text-[#059669]">
               {value}
             </span>
           )}
@@ -58,16 +58,16 @@ export function Slider({
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
         disabled={disabled}
-        className="slider-emerald h-2 w-full cursor-pointer appearance-none rounded-full bg-gray-200 outline-none transition-opacity disabled:cursor-not-allowed disabled:opacity-50"
+        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-[#e5e7eb] outline-none transition-opacity disabled:cursor-not-allowed disabled:opacity-50"
         style={{
-          background: `linear-gradient(to right, #10b981 0%, #14b8a6 ${percentage}%, #e5e7eb ${percentage}%)`,
+          background: `linear-gradient(to right, #10b981 0%, #10b981 ${percentage}%, #e5e7eb ${percentage}%)`,
         }}
       />
 
       {(leftLabel || rightLabel) && (
         <div className="flex items-center justify-between">
-          <span className="text-xs text-gray-400">{leftLabel}</span>
-          <span className="text-xs text-gray-400">{rightLabel}</span>
+          <span className="text-xs text-[#9ca3af]">{leftLabel}</span>
+          <span className="text-xs text-[#9ca3af]">{rightLabel}</span>
         </div>
       )}
     </div>

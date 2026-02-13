@@ -213,10 +213,10 @@ const productConfig: Record<InsuranceProduct, { label: string; icon: React.React
 };
 
 const statusConfig: Record<ConnectionStatus, { label: string; dotColor: string; bg: string; text: string; border: string }> = {
-  active: { label: 'Activa', dotColor: 'bg-emerald-500', bg: 'bg-emerald-500/15', text: 'text-emerald-400', border: 'border-emerald-500/30' },
+  active: { label: 'Activa', dotColor: 'bg-[var(--success)]', bg: 'bg-[var(--accent-light)]', text: 'text-[var(--accent)]', border: 'border-[var(--accent)]' },
   pending: { label: 'Pendiente', dotColor: 'bg-amber-500', bg: 'bg-amber-500/15', text: 'text-amber-400', border: 'border-amber-500/30' },
   error: { label: 'Error', dotColor: 'bg-red-500', bg: 'bg-red-500/15', text: 'text-red-400', border: 'border-red-500/30' },
-  disconnected: { label: 'No conectada', dotColor: 'bg-slate-500', bg: 'bg-slate-500/15', text: 'text-slate-400', border: 'border-slate-500/30' },
+  disconnected: { label: 'No conectada', dotColor: 'bg-slate-500', bg: 'bg-slate-500/15', text: 'text-[var(--text-secondary)]', border: 'border-slate-500/30' },
 };
 
 // ---------------------------------------------------------------------------
@@ -229,15 +229,15 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
 
   if (!insurer) {
     return (
-      <div className="min-h-screen bg-[#080c14] p-6 lg:p-8">
-        <Link href="/apis" className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-emerald-400 transition-colors mb-6">
+      <div className="min-h-screen p-6 lg:p-8">
+        <Link href="/apis" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors mb-6">
           <ArrowLeft className="h-4 w-4" />
           Volver a Aseguradoras
         </Link>
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-12 text-center">
-          <Building2 className="mx-auto h-10 w-10 text-slate-600" />
-          <h2 className="mt-4 text-lg font-semibold text-slate-300">Aseguradora no encontrada</h2>
-          <p className="mt-2 text-sm text-slate-500">No se encontro informacion para esta aseguradora.</p>
+        <div className="rounded-xl border border-[var(--border)] bg-white p-12 text-center">
+          <Building2 className="mx-auto h-10 w-10 text-[var(--text-tertiary)]" />
+          <h2 className="mt-4 text-lg font-semibold text-[var(--text-primary)]">Aseguradora no encontrada</h2>
+          <p className="mt-2 text-sm text-[var(--text-tertiary)]">No se encontro informacion para esta aseguradora.</p>
         </div>
       </div>
     );
@@ -246,9 +246,9 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
   const sc = statusConfig[insurer.status];
 
   return (
-    <div className="min-h-screen bg-[#080c14] p-6 lg:p-8">
+    <div className="min-h-screen p-6 lg:p-8">
       {/* Back link */}
-      <Link href="/apis" className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-emerald-400 transition-colors mb-6">
+      <Link href="/apis" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors mb-6">
         <ArrowLeft className="h-4 w-4" />
         Volver a Aseguradoras
       </Link>
@@ -256,28 +256,28 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
       {/* Header */}
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex items-center gap-4">
-          <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#0d1117] border border-[#1e293b] text-slate-400">
+          <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white border border-[var(--border)] text-[var(--text-secondary)]">
             <Building2 className="h-7 w-7" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-slate-200 font-heading">{insurer.name}</h1>
+            <h1 className="text-page-title">{insurer.name}</h1>
             <div className="mt-1 flex items-center gap-3">
               <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium ${sc.bg} ${sc.text} ${sc.border}`}>
                 <span className={`h-1.5 w-1.5 rounded-full ${sc.dotColor}`} />
                 {sc.label}
               </span>
-              <span className="text-xs text-slate-500">{insurer.country}</span>
-              <span className="text-xs text-slate-500">{insurer.apiType === 'manual' ? 'Tarifas manuales' : 'API directa'}</span>
+              <span className="text-xs text-[var(--text-tertiary)]">{insurer.country}</span>
+              <span className="text-xs text-[var(--text-tertiary)]">{insurer.apiType === 'manual' ? 'Tarifas manuales' : 'API directa'}</span>
             </div>
           </div>
         </div>
 
         <div className="flex gap-2">
-          <button className="inline-flex items-center gap-2 rounded-lg border border-[#1e293b] bg-[#0d1117] px-4 py-2.5 text-sm font-medium text-slate-400 transition-colors hover:border-emerald-500/30 hover:text-emerald-400">
+          <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]">
             <RefreshCw className="h-4 w-4" />
             Test Conexion
           </button>
-          <button className="inline-flex items-center gap-2 rounded-lg border border-[#1e293b] bg-[#0d1117] px-4 py-2.5 text-sm font-medium text-slate-400 transition-colors hover:border-emerald-500/30 hover:text-emerald-400">
+          <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]">
             <Settings className="h-4 w-4" />
             Configurar
           </button>
@@ -286,40 +286,40 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
 
       {/* KPI Row */}
       <div className="mb-8 grid grid-cols-2 gap-4 xl:grid-cols-5">
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-4">
-          <div className="flex items-center gap-2 text-slate-500">
+        <div className="rounded-xl border border-[var(--border)] bg-white p-4">
+          <div className="flex items-center gap-2 text-[var(--text-tertiary)]">
             <Shield className="h-4 w-4" />
             <span className="text-xs">Polizas Vendidas</span>
           </div>
-          <p className="mt-2 text-xl font-bold text-slate-200 font-data">{insurer.policiesSold}</p>
+          <p className="mt-2 text-xl font-bold text-[var(--text-primary)] font-data">{insurer.policiesSold}</p>
         </div>
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-4">
-          <div className="flex items-center gap-2 text-slate-500">
+        <div className="rounded-xl border border-[var(--border)] bg-white p-4">
+          <div className="flex items-center gap-2 text-[var(--text-tertiary)]">
             <DollarSign className="h-4 w-4" />
             <span className="text-xs">Ingresos</span>
           </div>
-          <p className="mt-2 text-xl font-bold text-slate-200 font-data">{insurer.totalRevenue}</p>
+          <p className="mt-2 text-xl font-bold text-[var(--text-primary)] font-data">{insurer.totalRevenue}</p>
         </div>
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-4">
-          <div className="flex items-center gap-2 text-slate-500">
+        <div className="rounded-xl border border-[var(--border)] bg-white p-4">
+          <div className="flex items-center gap-2 text-[var(--text-tertiary)]">
             <TrendingUp className="h-4 w-4" />
             <span className="text-xs">Comision</span>
           </div>
-          <p className="mt-2 text-xl font-bold text-emerald-400 font-data">{insurer.commissionRate}%</p>
+          <p className="mt-2 text-xl font-bold text-[var(--accent)] font-data">{insurer.commissionRate}%</p>
         </div>
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-4">
-          <div className="flex items-center gap-2 text-slate-500">
+        <div className="rounded-xl border border-[var(--border)] bg-white p-4">
+          <div className="flex items-center gap-2 text-[var(--text-tertiary)]">
             <Zap className="h-4 w-4" />
             <span className="text-xs">Tiempo Respuesta</span>
           </div>
-          <p className="mt-2 text-xl font-bold text-slate-200 font-data">{insurer.avgResponseTime}</p>
+          <p className="mt-2 text-xl font-bold text-[var(--text-primary)] font-data">{insurer.avgResponseTime}</p>
         </div>
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-4">
-          <div className="flex items-center gap-2 text-slate-500">
+        <div className="rounded-xl border border-[var(--border)] bg-white p-4">
+          <div className="flex items-center gap-2 text-[var(--text-tertiary)]">
             <Check className="h-4 w-4" />
             <span className="text-xs">Uptime</span>
           </div>
-          <p className="mt-2 text-xl font-bold text-slate-200 font-data">{insurer.uptime}</p>
+          <p className="mt-2 text-xl font-bold text-[var(--text-primary)] font-data">{insurer.uptime}</p>
         </div>
       </div>
 
@@ -327,38 +327,38 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
         {/* Left Column: Info */}
         <div className="space-y-6">
           {/* About */}
-          <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
-            <h2 className="mb-3 text-base font-semibold text-slate-200">Informacion</h2>
-            <p className="text-sm text-slate-400 leading-relaxed">{insurer.description}</p>
+          <div className="card">
+            <h2 className="mb-3 text-base font-semibold text-[var(--text-primary)]">Informacion</h2>
+            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">{insurer.description}</p>
 
-            <div className="mt-4 space-y-3 border-t border-[#1e293b] pt-4">
+            <div className="mt-4 space-y-3 border-t border-[var(--border)] pt-4">
               <div className="flex items-center gap-3 text-sm">
-                <Globe className="h-4 w-4 text-slate-500" />
-                <span className="text-slate-400">{insurer.website}</span>
+                <Globe className="h-4 w-4 text-[var(--text-tertiary)]" />
+                <span className="text-[var(--text-secondary)]">{insurer.website}</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
-                <PhoneIcon className="h-4 w-4 text-slate-500" />
-                <span className="text-slate-400">{insurer.phone}</span>
+                <PhoneIcon className="h-4 w-4 text-[var(--text-tertiary)]" />
+                <span className="text-[var(--text-secondary)]">{insurer.phone}</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
-                <Mail className="h-4 w-4 text-slate-500" />
-                <span className="text-slate-400">{insurer.email}</span>
+                <Mail className="h-4 w-4 text-[var(--text-tertiary)]" />
+                <span className="text-[var(--text-secondary)]">{insurer.email}</span>
               </div>
             </div>
           </div>
 
           {/* Products */}
-          <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
-            <h2 className="mb-3 text-base font-semibold text-slate-200">Productos Disponibles</h2>
+          <div className="card">
+            <h2 className="mb-3 text-base font-semibold text-[var(--text-primary)]">Productos Disponibles</h2>
             <div className="space-y-2">
               {insurer.products.map((p) => {
                 const pc = productConfig[p];
                 return (
-                  <div key={p} className="flex items-center gap-3 rounded-lg border border-[#1e293b]/60 bg-[#080c14] px-4 py-3">
+                  <div key={p} className="flex items-center gap-3 rounded-lg border border-[var(--border)]/60 px-4 py-3">
                     <div className={`flex h-8 w-8 items-center justify-center rounded-lg border ${pc.color}`}>
                       {pc.icon}
                     </div>
-                    <span className="text-sm font-medium text-slate-300">{pc.label}</span>
+                    <span className="text-sm font-medium text-[var(--text-primary)]">{pc.label}</span>
                   </div>
                 );
               })}
@@ -366,27 +366,27 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
           </div>
 
           {/* API Status */}
-          <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
-            <h2 className="mb-3 text-base font-semibold text-slate-200">Estado de la API</h2>
+          <div className="card">
+            <h2 className="mb-3 text-base font-semibold text-[var(--text-primary)]">Estado de la API</h2>
             <div className="space-y-3">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-500">Estado</span>
+                <span className="text-[var(--text-tertiary)]">Estado</span>
                 <span className={`inline-flex items-center gap-1.5 ${sc.text}`}>
                   <span className={`h-1.5 w-1.5 rounded-full ${sc.dotColor}`} />
                   {sc.label}
                 </span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-500">Ultimo chequeo</span>
-                <span className="text-slate-300">{insurer.lastHealthCheck}</span>
+                <span className="text-[var(--text-tertiary)]">Ultimo chequeo</span>
+                <span className="text-[var(--text-primary)]">{insurer.lastHealthCheck}</span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-500">Tiempo de respuesta</span>
-                <span className="text-slate-300">{insurer.responseTime ?? 'N/A'}</span>
+                <span className="text-[var(--text-tertiary)]">Tiempo de respuesta</span>
+                <span className="text-[var(--text-primary)]">{insurer.responseTime ?? 'N/A'}</span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-500">Uptime (30d)</span>
-                <span className="text-slate-300">{insurer.uptime}</span>
+                <span className="text-[var(--text-tertiary)]">Uptime (30d)</span>
+                <span className="text-[var(--text-primary)]">{insurer.uptime}</span>
               </div>
             </div>
           </div>
@@ -394,44 +394,44 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
 
         {/* Right Column: Recent Quotes */}
         <div className="lg:col-span-2">
-          <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
+          <div className="card">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-base font-semibold text-slate-200">Cotizaciones Recientes</h2>
-              <span className="text-xs text-slate-500">{insurer.recentQuotes.length} cotizaciones</span>
+              <h2 className="text-section-heading">Cotizaciones Recientes</h2>
+              <span className="text-xs text-[var(--text-tertiary)]">{insurer.recentQuotes.length} cotizaciones</span>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="border-b border-[#1e293b]">
-                    <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500">ID</th>
-                    <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500">Cliente</th>
-                    <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500">Tipo</th>
-                    <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500 text-right">Precio</th>
-                    <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500">Fecha</th>
-                    <th className="pb-3 text-xs font-medium uppercase tracking-wider text-slate-500 text-center">Estado</th>
+                  <tr className="border-b border-[var(--border)]">
+                    <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)]">ID</th>
+                    <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)]">Cliente</th>
+                    <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)]">Tipo</th>
+                    <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)] text-right">Precio</th>
+                    <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)]">Fecha</th>
+                    <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)] text-center">Estado</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#1e293b]/60">
                   {insurer.recentQuotes.map((q) => (
                     <tr key={q.id + q.client} className="hover:bg-white/[0.02] transition-colors">
-                      <td className="py-3 text-sm text-slate-400 font-data">{q.id}</td>
+                      <td className="py-3 text-sm text-[var(--text-secondary)] font-data">{q.id}</td>
                       <td className="py-3 text-sm">
                         <Link
                           href={`/clients/${q.id.replace('Q-', 'C-')}`}
-                          className="text-slate-300 hover:text-emerald-400 transition-colors"
+                          className="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
                         >
                           {q.client}
                         </Link>
                       </td>
-                      <td className="py-3 text-sm text-slate-400">{q.type}</td>
-                      <td className="py-3 text-sm text-emerald-400 text-right font-data font-semibold">{q.price}</td>
-                      <td className="py-3 text-sm text-slate-400 font-data">{q.date}</td>
+                      <td className="py-3 text-sm text-[var(--text-secondary)]">{q.type}</td>
+                      <td className="py-3 text-sm text-[var(--accent)] text-right font-data font-semibold">{q.price}</td>
+                      <td className="py-3 text-sm text-[var(--text-secondary)] font-data">{q.date}</td>
                       <td className="py-3 text-center">
                         <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-                          q.status === 'Pagada' ? 'bg-emerald-500/15 text-emerald-400' :
+                          q.status === 'Pagada' ? 'bg-[var(--accent-light)] text-[var(--accent)]' :
                           q.status === 'Seleccionada' ? 'bg-amber-500/15 text-amber-400' :
                           q.status === 'Enviada' ? 'bg-blue-500/15 text-blue-400' :
-                          'bg-slate-500/15 text-slate-400'
+                          'bg-slate-500/15 text-[var(--text-secondary)]'
                         }`}>
                           {q.status}
                         </span>

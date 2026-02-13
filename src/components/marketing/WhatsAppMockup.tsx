@@ -193,27 +193,27 @@ function QuoteCard({ text }: { text: string }) {
   const title = lines[0]; // "📊 Mejores opciones para ti:"
 
   return (
-    <div className="overflow-hidden rounded-xl border border-emerald-200/60 bg-gradient-to-br from-white to-emerald-50/50 shadow-sm">
+    <div className="overflow-hidden rounded-[12px] border border-[#e5e7eb] bg-white">
       {/* Card header */}
-      <div className="border-b border-emerald-100 bg-emerald-600/5 px-3 py-2">
-        <span className="text-[11px] font-semibold tracking-wide text-emerald-800">
+      <div className="border-b border-[#e5e7eb] bg-[rgba(202,255,4,0.15)] px-3 py-2">
+        <span className="text-[11px] font-semibold tracking-wide text-[#111827]">
           {title}
         </span>
       </div>
 
       {/* Quote rows */}
-      <div className="divide-y divide-emerald-50 px-1 py-1">
+      <div className="divide-y divide-[#e5e7eb] px-1 py-1">
         {/* ASSA */}
-        <div className="flex items-center justify-between rounded-lg bg-emerald-50/70 px-2.5 py-2">
+        <div className="flex items-center justify-between rounded-[10px] bg-[rgba(202,255,4,0.15)] px-2.5 py-2">
           <div className="flex items-center gap-1.5">
             <span className="text-[11px]">🏆</span>
-            <span className="text-[11px] font-bold text-gray-900">ASSA</span>
-            <span className="rounded-full bg-emerald-500 px-1.5 py-[1px] text-[8px] font-bold text-white">
+            <span className="text-[11px] font-bold text-[#111827]">ASSA</span>
+            <span className="rounded-[10px] bg-[#CAFF04] px-1.5 py-[1px] text-[8px] font-bold text-[#111827]">
               MEJOR
             </span>
           </div>
-          <span className="text-[12px] font-extrabold text-emerald-700">
-            $89<span className="text-[9px] font-semibold text-emerald-600">/mes</span>
+          <span className="text-[12px] font-extrabold text-[#059669]">
+            $89<span className="text-[9px] font-semibold text-[#059669]">/mes</span>
           </span>
         </div>
 
@@ -221,10 +221,10 @@ function QuoteCard({ text }: { text: string }) {
         <div className="flex items-center justify-between px-2.5 py-2">
           <div className="flex items-center gap-1.5">
             <span className="text-[11px]">⭐</span>
-            <span className="text-[11px] font-semibold text-gray-800">MAPFRE</span>
+            <span className="text-[11px] font-semibold text-[#111827]">MAPFRE</span>
           </div>
-          <span className="text-[11px] font-bold text-gray-700">
-            $95<span className="text-[9px] font-medium text-gray-500">/mes</span>
+          <span className="text-[11px] font-bold text-[#6b7280]">
+            $95<span className="text-[9px] font-medium text-[#6b7280]">/mes</span>
           </span>
         </div>
 
@@ -232,17 +232,17 @@ function QuoteCard({ text }: { text: string }) {
         <div className="flex items-center justify-between px-2.5 py-2">
           <div className="flex items-center gap-1.5">
             <span className="w-[14px]" />
-            <span className="text-[11px] font-medium text-gray-600">SURA</span>
+            <span className="text-[11px] font-medium text-[#6b7280]">SURA</span>
           </div>
-          <span className="text-[11px] font-bold text-gray-500">
-            $102<span className="text-[9px] font-medium text-gray-400">/mes</span>
+          <span className="text-[11px] font-bold text-[#9ca3af]">
+            $102<span className="text-[9px] font-medium text-[#9ca3af]">/mes</span>
           </span>
         </div>
       </div>
 
       {/* Footer */}
-      <div className="border-t border-emerald-100 bg-emerald-600/5 px-3 py-1.5">
-        <p className="text-[9px] leading-tight text-emerald-700/80">
+      <div className="border-t border-[#e5e7eb] bg-[rgba(202,255,4,0.15)] px-3 py-1.5">
+        <p className="text-[9px] leading-tight text-[#6b7280]">
           Todas incluyen: daños a terceros, robo total y asistencia vial.
         </p>
       </div>
@@ -256,7 +256,7 @@ function PaymentButton({ label }: { label: string }) {
     <motion.button
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.97 }}
-      className="mt-1.5 w-full rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-2 text-[11px] font-bold text-white shadow-md shadow-emerald-500/20 transition-shadow hover:shadow-lg hover:shadow-emerald-500/30"
+      className="mt-1.5 w-full rounded-[10px] border border-[rgba(202,255,4,0.40)] bg-[#CAFF04] px-4 py-2 text-[11px] font-bold text-[#111827] transition-all hover:bg-[#b8e600]"
     >
       {label}
     </motion.button>
@@ -411,7 +411,7 @@ export function WhatsAppMockup() {
       className="relative mx-auto w-[300px] select-none sm:w-[320px]"
     >
       {/* Outer glow */}
-      <div className="absolute -inset-4 rounded-[3.5rem] bg-gradient-to-b from-emerald-400/20 via-teal-400/10 to-transparent blur-2xl" />
+      <div className="absolute -inset-4 rounded-[3.5rem] bg-gradient-to-b from-[rgba(202,255,4,0.2)] via-[rgba(202,255,4,0.1)] to-transparent blur-2xl" />
 
       {/* iPhone frame */}
       <div className="relative overflow-hidden rounded-[2.5rem] border-[6px] border-slate-800 bg-slate-800 shadow-2xl shadow-slate-900/50">

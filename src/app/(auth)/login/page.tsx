@@ -55,20 +55,20 @@ export default function LoginPage() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className="w-full max-w-md"
     >
-      <div className="glass-card-strong p-8 sm:p-10">
+      <div className="bg-white border border-[#e5e7eb] rounded-2xl p-8 sm:p-10">
         {/* Logo */}
         <div className="flex items-center justify-center gap-2 mb-8">
-          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 shadow-lg shadow-emerald-500/25">
-            <ShieldCheck className="w-6 h-6 text-white" />
+          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#CAFF04]">
+            <ShieldCheck className="w-6 h-6 text-[#111827]" />
           </div>
-          <span className="font-heading text-2xl font-bold text-gray-900">
-            Coti<span className="text-gradient-primary">Facil</span>
+          <span className="font-heading text-2xl font-bold text-[#111827]">
+            Coti<span className="text-[#10b981]">Facil</span>
           </span>
         </div>
 
         {/* Title */}
-        <h1 className="heading-lg text-center mb-2">Iniciar Sesion</h1>
-        <p className="text-body-sm text-center mb-8">
+        <h1 className="text-2xl font-bold text-[#111827] text-center mb-2">Iniciar Sesion</h1>
+        <p className="text-sm text-[#6b7280] text-center mb-8">
           Ingresa a tu cuenta para gestionar tus cotizaciones
         </p>
 
@@ -76,11 +76,11 @@ export default function LoginPage() {
         <form onSubmit={handleSubmit} className="space-y-5">
           {/* Email */}
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="email" className="text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="text-sm font-medium text-[#111827]">
               Correo electronico
             </label>
             <div className="relative">
-              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[#6b7280]">
                 <Mail className="w-4 h-4" />
               </div>
               <input
@@ -90,18 +90,18 @@ export default function LoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="tu@correo.com"
                 required
-                className="w-full rounded-xl pl-10 pr-4 py-2.5 text-sm backdrop-blur-xl bg-white/60 border border-white/40 text-gray-800 placeholder:text-gray-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 focus:outline-none shadow-sm transition-all duration-200"
+                className="w-full rounded-xl pl-10 pr-4 py-2.5 text-sm bg-white border border-[#e5e7eb] text-[#111827] placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:ring-2 focus:ring-[#CAFF04]/20 focus:outline-none transition-all duration-200"
               />
             </div>
           </div>
 
           {/* Password */}
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="password" className="text-sm font-medium text-gray-700">
+            <label htmlFor="password" className="text-sm font-medium text-[#111827]">
               Contrasena
             </label>
             <div className="relative">
-              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[#6b7280]">
                 <Lock className="w-4 h-4" />
               </div>
               <input
@@ -111,12 +111,12 @@ export default function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Tu contrasena"
                 required
-                className="w-full rounded-xl pl-10 pr-12 py-2.5 text-sm backdrop-blur-xl bg-white/60 border border-white/40 text-gray-800 placeholder:text-gray-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 focus:outline-none shadow-sm transition-all duration-200"
+                className="w-full rounded-xl pl-10 pr-12 py-2.5 text-sm bg-white border border-[#e5e7eb] text-[#111827] placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:ring-2 focus:ring-[#CAFF04]/20 focus:outline-none transition-all duration-200"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 transition-colors"
+                className="absolute inset-y-0 right-0 flex items-center pr-3 text-[#6b7280] hover:text-[#111827] transition-colors"
                 aria-label={showPassword ? 'Ocultar contrasena' : 'Mostrar contrasena'}
               >
                 {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -135,7 +135,7 @@ export default function LoginPage() {
           <div className="flex justify-end">
             <Link
               href="/forgot-password"
-              className="text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
+              className="text-sm text-[#10b981] hover:text-[#059669] font-medium transition-colors"
             >
               Olvidaste tu contrasena?
             </Link>
@@ -145,10 +145,10 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-500 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:brightness-110 active:brightness-95 transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none"
+            className="w-full inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-[#111827] bg-[#CAFF04] hover:bg-[#b8e600] active:bg-[#a6d400] transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none"
           >
             {isLoading ? (
-              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              <div className="w-5 h-5 border-2 border-[#111827]/30 border-t-[#111827] rounded-full animate-spin" />
             ) : null}
             {isLoading ? 'Iniciando sesion...' : 'Iniciar Sesion'}
           </button>
@@ -156,16 +156,16 @@ export default function LoginPage() {
 
         {/* Divider */}
         <div className="flex items-center gap-4 my-6">
-          <div className="flex-1 h-px bg-gray-200" />
-          <span className="text-sm text-gray-400 font-medium">o continua con</span>
-          <div className="flex-1 h-px bg-gray-200" />
+          <div className="flex-1 h-px bg-[#e5e7eb]" />
+          <span className="text-sm text-[#9ca3af] font-medium">o continua con</span>
+          <div className="flex-1 h-px bg-[#e5e7eb]" />
         </div>
 
         {/* Google OAuth */}
         <button
           type="button"
           onClick={handleGoogleLogin}
-          className="w-full inline-flex items-center justify-center gap-3 rounded-xl px-6 py-3 text-sm font-semibold text-gray-700 border border-gray-200 bg-white/60 backdrop-blur-sm hover:bg-white/80 hover:border-gray-300 transition-all duration-200"
+          className="w-full inline-flex items-center justify-center gap-3 rounded-xl px-6 py-3 text-sm font-semibold text-[#111827] border border-[#e5e7eb] bg-white hover:bg-[#f9fafb] hover:border-[#d1d5db] transition-all duration-200"
         >
           <svg className="w-5 h-5" viewBox="0 0 24 24">
             <path
@@ -189,11 +189,11 @@ export default function LoginPage() {
         </button>
 
         {/* Sign Up Link */}
-        <p className="text-center text-sm text-gray-500 mt-8">
+        <p className="text-center text-sm text-[#6b7280] mt-8">
           No tienes cuenta?{' '}
           <Link
             href="/signup"
-            className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors"
+            className="text-[#10b981] hover:text-[#059669] font-semibold transition-colors"
           >
             Crear cuenta
           </Link>
@@ -205,31 +205,31 @@ export default function LoginPage() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="mt-6 rounded-xl border border-emerald-200 bg-emerald-50/50 backdrop-blur-sm p-4"
+        className="mt-6 rounded-xl border border-[#e5e7eb] bg-white p-4"
       >
         <div className="flex items-start gap-3">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-100">
-            <ShieldCheck className="h-4 w-4 text-emerald-600" />
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#CAFF04]">
+            <ShieldCheck className="h-4 w-4 text-[#111827]" />
           </div>
           <div className="flex-1">
-            <h3 className="text-sm font-semibold text-emerald-900 mb-2">
+            <h3 className="text-sm font-semibold text-[#111827] mb-2">
               Credenciales de Prueba
             </h3>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <Mail className="h-3.5 w-3.5 text-emerald-600" />
-                <code className="text-xs font-mono text-emerald-800 bg-white/60 px-2 py-1 rounded">
+                <Mail className="h-3.5 w-3.5 text-[#6b7280]" />
+                <code className="text-xs font-mono text-[#111827] bg-[#f9fafb] border border-[#e5e7eb] px-2 py-1 rounded">
                   demo@kotkot.ai
                 </code>
               </div>
               <div className="flex items-center gap-2">
-                <Lock className="h-3.5 w-3.5 text-emerald-600" />
-                <code className="text-xs font-mono text-emerald-800 bg-white/60 px-2 py-1 rounded">
+                <Lock className="h-3.5 w-3.5 text-[#6b7280]" />
+                <code className="text-xs font-mono text-[#111827] bg-[#f9fafb] border border-[#e5e7eb] px-2 py-1 rounded">
                   demo123456
                 </code>
               </div>
             </div>
-            <p className="mt-2 text-xs text-emerald-700">
+            <p className="mt-2 text-xs text-[#6b7280]">
               Usa estas credenciales para explorar la plataforma
             </p>
           </div>

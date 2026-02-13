@@ -185,29 +185,29 @@ function ConversationsContent() {
   const selectedConversation = conversations.find((c) => c.id === selectedId) ?? conversations[0];
 
   return (
-    <div className="flex h-screen bg-[#080c14]">
+    <div className="flex h-screen bg-white">
       {/* ── Left Panel: Conversation List ──────────────────────────── */}
-      <div className="flex w-full flex-col border-r border-[#1e293b] lg:w-1/3">
+      <div className="flex w-full flex-col border-r border-[var(--border)] lg:w-1/3">
         {/* Search & Filter */}
-        <div className="border-b border-[#1e293b] p-4">
+        <div className="border-b border-[var(--border)] p-4 bg-white">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--text-tertiary)]" />
             <input
               type="text"
               placeholder="Buscar por nombre o telefono..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-lg border border-[#1e293b] bg-[#0d1117] py-2.5 pl-10 pr-4 text-sm text-slate-200 placeholder:text-slate-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/20"
+              className="input"
             />
           </div>
 
           <div className="mt-3 flex gap-1.5 overflow-x-auto">
             <button
               onClick={() => setActiveFilter('all')}
-              className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+              className={`shrink-0 pill ${
                 activeFilter === 'all'
-                  ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                  : 'text-slate-400 border border-[#1e293b] hover:text-slate-300'
+                  ? 'pill-active'
+                  : 'pill-default'
               }`}
             >
               Todas
@@ -216,10 +216,10 @@ function ConversationsContent() {
               <button
                 key={status}
                 onClick={() => setActiveFilter(status)}
-                className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                className={`shrink-0 pill ${
                   activeFilter === status
-                    ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                    : 'text-slate-400 border border-[#1e293b] hover:text-slate-300'
+                    ? 'pill-active'
+                    : 'pill-default'
                 }`}
               >
                 {statusLabels[status]}
@@ -229,15 +229,15 @@ function ConversationsContent() {
         </div>
 
         {/* Conversation List */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 overflow-y-auto bg-white">
           {filteredConversations.map((conv) => (
             <button
               key={conv.id}
               onClick={() => setSelectedId(conv.id)}
-              className={`flex w-full items-start gap-3 border-b border-[#1e293b]/50 p-4 text-left transition-colors ${
+              className={`flex w-full items-start gap-3 border-b border-[var(--border-light)] p-4 text-left transition-colors ${
                 selectedId === conv.id
-                  ? 'bg-[#0d1117] border-l-2 border-l-emerald-500'
-                  : 'hover:bg-[#0d1117]/50'
+                  ? 'bg-[var(--surface-secondary)] border-l-2 border-l-[var(--accent)]'
+                  : 'hover:bg-[var(--surface-hover)]'
               }`}
             >
               {/* Status */}
@@ -250,12 +250,12 @@ function ConversationsContent() {
 
               <div className="min-w-0 flex-1">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-slate-200">{conv.clientName}</span>
-                  <span className="text-xs text-slate-500">{conv.time}</span>
+                  <span className="text-sm font-medium text-[var(--text-primary)]">{conv.clientName}</span>
+                  <span className="text-xs text-[var(--text-tertiary)]">{conv.time}</span>
                 </div>
-                <p className="mt-0.5 truncate text-xs text-slate-400">{conv.lastMessage}</p>
+                <p className="mt-0.5 truncate text-xs text-[var(--text-secondary)]">{conv.lastMessage}</p>
                 <div className="mt-1.5 flex items-center gap-2">
-                  <span className="text-xs text-slate-500">{conv.phone}</span>
+                  <span className="text-xs text-[var(--text-tertiary)]">{conv.phone}</span>
                 </div>
               </div>
             </button>
@@ -264,75 +264,75 @@ function ConversationsContent() {
       </div>
 
       {/* ── Right Panel: Chat View ─────────────────────────────────── */}
-      <div className="hidden flex-1 flex-col lg:flex">
+      <div className="hidden flex-1 flex-col lg:flex bg-white">
         {/* Chat Header */}
-        <div className="flex items-center justify-between border-b border-[#1e293b] bg-[#0d1117] px-6 py-4">
+        <div className="flex items-center justify-between border-b border-[var(--border)] bg-white px-6 py-4">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1e293b]">
-              <User className="h-5 w-5 text-slate-400" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--surface-secondary)]">
+              <User className="h-5 w-5 text-[var(--text-secondary)]" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <Link
                   href={`/clients/C-${selectedConversation.id.padStart(3, '0')}`}
-                  className="text-sm font-semibold text-slate-200 hover:text-emerald-400 transition-colors inline-flex items-center gap-1"
+                  className="text-sm font-semibold text-[var(--text-primary)] hover:text-[var(--text-link)] transition-colors inline-flex items-center gap-1"
                 >
                   {selectedConversation.clientName}
                   <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100" />
                 </Link>
                 <span
-                  className={`rounded-full border px-2 py-0.5 text-xs font-medium ${
-                    insuranceBadgeColors[selectedConversation.insuranceType] ?? 'bg-slate-500/20 text-slate-400 border-slate-500/30'
+                  className={`badge ${
+                    insuranceBadgeColors[selectedConversation.insuranceType] ?? 'badge-lime'
                   }`}
                 >
                   {selectedConversation.insuranceType}
                 </span>
               </div>
-              <div className="flex items-center gap-1 text-xs text-slate-500">
+              <div className="flex items-center gap-1 text-xs text-[var(--text-tertiary)]">
                 <Phone className="h-3 w-3" />
                 {selectedConversation.phone}
               </div>
             </div>
           </div>
 
-          <button className="inline-flex items-center gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-2 text-sm font-medium text-amber-400 transition-colors hover:bg-amber-500/20">
+          <button className="btn-secondary text-[var(--warning)]">
             <HandMetal className="h-4 w-4" />
             Tomar Control
           </button>
         </div>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto p-6 space-y-4">
+        <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-[var(--surface-secondary)]">
           {selectedConversation.messages.map((msg) => (
             <div
               key={msg.id}
               className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               <div
-                className={`max-w-md rounded-2xl px-4 py-2.5 ${
+                className={`chat-bubble ${
                   msg.sender === 'user'
-                    ? 'bg-white/10 text-slate-200'
+                    ? 'bg-white'
                     : msg.sender === 'agent'
-                    ? 'bg-blue-500/15 border border-blue-500/20 text-slate-200'
-                    : 'bg-emerald-500/15 border border-emerald-500/20 text-slate-200'
+                    ? 'bg-blue-50 border-blue-200'
+                    : 'bg-[var(--accent-light)] border-[var(--accent)]'
                 }`}
               >
                 {msg.sender !== 'user' && (
                   <div className="mb-1 flex items-center gap-1">
                     {msg.sender === 'bot' ? (
-                      <Bot className="h-3 w-3 text-emerald-400" />
+                      <Bot className="h-3 w-3 text-[var(--chart-line)]" />
                     ) : (
-                      <User className="h-3 w-3 text-blue-400" />
+                      <User className="h-3 w-3 text-blue-600" />
                     )}
-                    <span className={`text-xs font-medium ${msg.sender === 'bot' ? 'text-emerald-400' : 'text-blue-400'}`}>
+                    <span className={`text-chat-label ${msg.sender === 'bot' ? 'text-[var(--chart-line)]' : 'text-blue-600'}`}>
                       {msg.sender === 'bot' ? 'Bot' : 'Agente'}
                     </span>
                   </div>
                 )}
-                <p className="text-sm">{msg.text}</p>
+                <p className="text-body">{msg.text}</p>
                 <div className={`mt-1 flex items-center gap-1 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <Clock className="h-3 w-3 text-slate-500" />
-                  <span className="text-xs text-slate-500">{msg.time}</span>
+                  <Clock className="h-3 w-3 text-[var(--text-tertiary)]" />
+                  <span className="text-timestamp">{msg.time}</span>
                 </div>
               </div>
             </div>
@@ -340,20 +340,20 @@ function ConversationsContent() {
         </div>
 
         {/* Input Area */}
-        <div className="border-t border-[#1e293b] bg-[#0d1117] p-4">
-          <div className="flex items-center gap-3">
+        <div className="border-t border-[var(--border)] bg-white p-4">
+          <div className="chat-input-container">
             <input
               type="text"
               placeholder="Escribe un mensaje para tomar control de la conversacion..."
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
-              className="flex-1 rounded-lg border border-[#1e293b] bg-[#080c14] px-4 py-2.5 text-sm text-slate-200 placeholder:text-slate-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/20"
+              className="chat-input"
             />
-            <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-white transition-opacity hover:opacity-90">
+            <button className="btn-send">
               <Send className="h-4 w-4" />
             </button>
           </div>
-          <p className="mt-2 text-xs text-slate-500">
+          <p className="mt-2 text-fine-print">
             Al enviar un mensaje, tomaras el control de esta conversacion.
           </p>
         </div>

@@ -354,7 +354,7 @@ function getGenericClient(id: string): ClientDetail {
 
 const tagColors: Record<string, string> = {
   VIP: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
-  Nuevo: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
+  Nuevo: 'bg-[var(--accent-light)] text-[var(--accent)] border-[var(--accent)]',
   Renovacion: 'bg-blue-500/15 text-blue-400 border-blue-500/30',
   Empresa: 'bg-purple-500/15 text-purple-400 border-purple-500/30',
   Referido: 'bg-teal-500/15 text-teal-400 border-teal-500/30',
@@ -364,13 +364,13 @@ const tagColors: Record<string, string> = {
 };
 
 const policyStatusColors: Record<string, string> = {
-  Activa: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
+  Activa: 'bg-[var(--accent-light)] text-[var(--accent)] border-[var(--accent)]',
   Vencida: 'bg-red-500/15 text-red-400 border-red-500/30',
   Pendiente: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
 };
 
 const paymentStatusColors: Record<string, string> = {
-  Completado: 'bg-emerald-500/15 text-emerald-400',
+  Completado: 'bg-[var(--accent-light)] text-[var(--accent)]',
   Pendiente: 'bg-amber-500/15 text-amber-400',
   Fallido: 'bg-red-500/15 text-red-400',
 };
@@ -382,8 +382,8 @@ const paymentMethodColors: Record<string, string> = {
 };
 
 const conversationStatusColors: Record<string, string> = {
-  Leido: 'bg-slate-500/15 text-slate-400',
-  Respondido: 'bg-emerald-500/15 text-emerald-400',
+  Leido: 'bg-slate-500/15 text-[var(--text-secondary)]',
+  Respondido: 'bg-[var(--accent-light)] text-[var(--accent)]',
   Pendiente: 'bg-amber-500/15 text-amber-400',
 };
 
@@ -403,13 +403,13 @@ export default function ClientDetailPage() {
   );
 
   return (
-    <div className="min-h-screen bg-[#080c14] p-6 lg:p-8">
+    <div className="min-h-screen p-6 lg:p-8">
       {/* ----------------------------------------------------------------- */}
       {/* Back Button                                                        */}
       {/* ----------------------------------------------------------------- */}
       <Link
         href="/clients"
-        className="mb-6 inline-flex items-center gap-2 text-sm text-slate-400 transition-colors hover:text-emerald-400"
+        className="mb-6 inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]"
       >
         <ArrowLeft className="h-4 w-4" />
         Volver a Clientes
@@ -418,32 +418,32 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       {/* Header                                                             */}
       {/* ----------------------------------------------------------------- */}
-      <div className="mb-8 rounded-xl border border-[#1e293b] bg-[#0d1117] p-6">
+      <div className="mb-8 rounded-xl border border-[var(--border)] bg-white p-6">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-center gap-5">
             {/* Avatar */}
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-xl font-bold text-white shadow-lg shadow-emerald-500/20">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[var(--accent)] text-xl font-bold text-white">
               {client.initials}
             </div>
             <div>
               <div className="flex items-center gap-3">
-                <h1 className="text-2xl font-bold text-slate-200">
+                <h1 className="text-2xl font-bold text-[var(--text-primary)]">
                   {client.name}
                 </h1>
-                <span className="rounded-md bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-400">
+                <span className="rounded-md bg-[var(--surface-secondary)] px-2 py-0.5 text-xs font-medium text-[var(--text-secondary)]">
                   {client.id}
                 </span>
                 <span
                   className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
                     client.status === 'Activo'
-                      ? 'bg-emerald-500/15 text-emerald-400'
+                      ? 'bg-[var(--accent-light)] text-[var(--accent)]'
                       : 'bg-red-500/15 text-red-400'
                   }`}
                 >
                   {client.status}
                 </span>
               </div>
-              <p className="mt-1 text-sm text-slate-400">
+              <p className="mt-1 text-sm text-[var(--text-secondary)]">
                 {client.email} &middot; {client.phone}
               </p>
             </div>
@@ -451,7 +451,7 @@ export default function ClientDetailPage() {
 
           {/* Quick Actions */}
           <div className="flex gap-3">
-            <button className="inline-flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-sm font-medium text-emerald-400 transition-colors hover:bg-emerald-500/20">
+            <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--accent)] bg-[var(--accent-light)] px-4 py-2.5 text-sm font-medium text-[var(--accent)] transition-colors hover:bg-[var(--accent-light)]">
               <MessageCircle className="h-4 w-4" />
               Enviar WhatsApp
             </button>
@@ -459,7 +459,7 @@ export default function ClientDetailPage() {
               <Phone className="h-4 w-4" />
               Llamar
             </button>
-            <button className="inline-flex items-center gap-2 rounded-lg border border-[#1e293b] bg-[#080c14] px-4 py-2.5 text-sm font-medium text-slate-300 transition-colors hover:border-slate-600 hover:text-slate-200">
+            <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm font-medium text-[var(--text-primary)] transition-colors hover:border-slate-600 hover:text-[var(--text-primary)]">
               <Edit className="h-4 w-4" />
               Editar
             </button>
@@ -472,9 +472,9 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       <div className="mb-8 grid gap-6 lg:grid-cols-2">
         {/* Datos Personales */}
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-6">
-          <h2 className="mb-4 flex items-center gap-2 text-base font-semibold text-slate-200">
-            <User className="h-5 w-5 text-emerald-400" />
+        <div className="card">
+          <h2 className="mb-4 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
+            <User className="h-5 w-5 text-[var(--accent)]" />
             Datos Personales
           </h2>
           <div className="space-y-3">
@@ -487,10 +487,10 @@ export default function ClientDetailPage() {
               { label: 'Direccion', value: client.address, icon: MapPin },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-3">
-                <item.icon className="mt-0.5 h-4 w-4 shrink-0 text-slate-500" />
+                <item.icon className="mt-0.5 h-4 w-4 shrink-0 text-[var(--text-tertiary)]" />
                 <div>
-                  <p className="text-xs text-slate-500">{item.label}</p>
-                  <p className="text-sm text-slate-300">{item.value}</p>
+                  <p className="text-xs text-[var(--text-tertiary)]">{item.label}</p>
+                  <p className="text-sm text-[var(--text-primary)]">{item.value}</p>
                 </div>
               </div>
             ))}
@@ -500,8 +500,8 @@ export default function ClientDetailPage() {
         {/* Datos del Vehiculo / Tags */}
         <div className="space-y-6">
           {client.vehicle && (
-            <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-6">
-              <h2 className="mb-4 flex items-center gap-2 text-base font-semibold text-slate-200">
+            <div className="card">
+              <h2 className="mb-4 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
                 <Car className="h-5 w-5 text-sky-400" />
                 Datos del Vehiculo
               </h2>
@@ -515,8 +515,8 @@ export default function ClientDetailPage() {
                   { label: 'VIN', value: client.vehicle.vin },
                 ].map((item) => (
                   <div key={item.label}>
-                    <p className="text-xs text-slate-500">{item.label}</p>
-                    <p className="text-sm font-medium text-slate-300">{item.value}</p>
+                    <p className="text-xs text-[var(--text-tertiary)]">{item.label}</p>
+                    <p className="text-sm font-medium text-[var(--text-primary)]">{item.value}</p>
                   </div>
                 ))}
               </div>
@@ -524,8 +524,8 @@ export default function ClientDetailPage() {
           )}
 
           {/* Tags */}
-          <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-6">
-            <h2 className="mb-4 flex items-center gap-2 text-base font-semibold text-slate-200">
+          <div className="card">
+            <h2 className="mb-4 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
               <Tag className="h-5 w-5 text-amber-400" />
               Tags
             </h2>
@@ -534,7 +534,7 @@ export default function ClientDetailPage() {
                 <span
                   key={tag}
                   className={`rounded-full border px-3 py-1 text-sm font-medium ${
-                    tagColors[tag] ?? 'bg-slate-500/15 text-slate-400 border-slate-500/30'
+                    tagColors[tag] ?? 'bg-slate-500/15 text-[var(--text-secondary)] border-slate-500/30'
                   }`}
                 >
                   {tag}
@@ -548,22 +548,22 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       {/* Polizas                                                            */}
       {/* ----------------------------------------------------------------- */}
-      <div className="mb-8 rounded-xl border border-[#1e293b] bg-[#0d1117] p-6">
-        <h2 className="mb-5 flex items-center gap-2 text-base font-semibold text-slate-200">
-          <Shield className="h-5 w-5 text-emerald-400" />
+      <div className="mb-8 rounded-xl border border-[var(--border)] bg-white p-6">
+        <h2 className="mb-5 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
+          <Shield className="h-5 w-5 text-[var(--accent)]" />
           Polizas
-          <span className="ml-2 rounded-full bg-emerald-500/15 px-2 py-0.5 text-xs font-medium text-emerald-400">
+          <span className="ml-2 rounded-full bg-[var(--accent-light)] px-2 py-0.5 text-xs font-medium text-[var(--accent)]">
             {client.policies.length}
           </span>
         </h2>
 
         {client.policies.length === 0 ? (
-          <p className="text-sm text-slate-500">No hay polizas registradas.</p>
+          <p className="text-sm text-[var(--text-tertiary)]">No hay polizas registradas.</p>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm">
               <thead>
-                <tr className="border-b border-[#1e293b] text-xs uppercase text-slate-500">
+                <tr className="border-b border-[var(--border)] text-xs uppercase text-[var(--text-tertiary)]">
                   <th className="pb-3 pr-4 font-medium">No. Poliza</th>
                   <th className="pb-3 pr-4 font-medium">Aseguradora</th>
                   <th className="pb-3 pr-4 font-medium">Tipo</th>
@@ -578,19 +578,19 @@ export default function ClientDetailPage() {
                 {client.policies.map((policy) => (
                   <tr
                     key={policy.numero}
-                    className="border-b border-[#1e293b]/50 last:border-0"
+                    className="border-b border-[var(--border)]/50 last:border-0"
                   >
-                    <td className="py-3 pr-4 font-medium text-slate-300 font-data">
+                    <td className="py-3 pr-4 font-medium text-[var(--text-primary)] font-data">
                       {policy.numero}
                     </td>
-                    <td className="py-3 pr-4 text-slate-400">{policy.aseguradora}</td>
-                    <td className="py-3 pr-4 text-slate-400">{policy.tipo}</td>
-                    <td className="py-3 pr-4 text-slate-400">{policy.cobertura}</td>
-                    <td className="py-3 pr-4 font-semibold text-emerald-400 font-data">
+                    <td className="py-3 pr-4 text-[var(--text-secondary)]">{policy.aseguradora}</td>
+                    <td className="py-3 pr-4 text-[var(--text-secondary)]">{policy.tipo}</td>
+                    <td className="py-3 pr-4 text-[var(--text-secondary)]">{policy.cobertura}</td>
+                    <td className="py-3 pr-4 font-semibold text-[var(--accent)] font-data">
                       {policy.primaMensual}
                     </td>
-                    <td className="py-3 pr-4 text-slate-500 font-data">{policy.fechaInicio}</td>
-                    <td className="py-3 pr-4 text-slate-500 font-data">
+                    <td className="py-3 pr-4 text-[var(--text-tertiary)] font-data">{policy.fechaInicio}</td>
+                    <td className="py-3 pr-4 text-[var(--text-tertiary)] font-data">
                       {policy.fechaVencimiento}
                     </td>
                     <td className="py-3">
@@ -613,41 +613,41 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       {/* Historial de Cotizaciones                                          */}
       {/* ----------------------------------------------------------------- */}
-      <div className="mb-8 rounded-xl border border-[#1e293b] bg-[#0d1117] p-6">
-        <h2 className="mb-5 flex items-center gap-2 text-base font-semibold text-slate-200">
+      <div className="mb-8 rounded-xl border border-[var(--border)] bg-white p-6">
+        <h2 className="mb-5 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
           <FileText className="h-5 w-5 text-blue-400" />
           Historial de Cotizaciones
         </h2>
 
         {client.quotes.length === 0 ? (
-          <p className="text-sm text-slate-500">No hay cotizaciones registradas.</p>
+          <p className="text-sm text-[var(--text-tertiary)]">No hay cotizaciones registradas.</p>
         ) : (
           <div className="space-y-3">
             {client.quotes.map((quote) => (
               <div
                 key={quote.id}
-                className="flex flex-col gap-3 rounded-lg border border-[#1e293b]/50 bg-[#080c14] p-4 sm:flex-row sm:items-center sm:justify-between"
+                className="flex flex-col gap-3 rounded-lg border border-[var(--border)]/50 p-4 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div className="flex-1">
                   <div className="flex items-center gap-3">
-                    <span className="text-sm font-medium text-slate-300 font-data">
+                    <span className="text-sm font-medium text-[var(--text-primary)] font-data">
                       {quote.id}
                     </span>
                     <span className="rounded-full bg-sky-500/15 px-2 py-0.5 text-xs font-medium text-sky-400">
                       {quote.tipo}
                     </span>
-                    <span className="text-xs text-slate-500 font-data">{quote.fecha}</span>
+                    <span className="text-xs text-[var(--text-tertiary)] font-data">{quote.fecha}</span>
                   </div>
-                  <p className="mt-1 text-xs text-slate-500">
+                  <p className="mt-1 text-xs text-[var(--text-tertiary)]">
                     Comparado: {quote.aseguradoras.join(', ')}
                   </p>
-                  <p className="mt-0.5 text-xs text-slate-400">
+                  <p className="mt-0.5 text-xs text-[var(--text-secondary)]">
                     Seleccionada:{' '}
-                    <span className="text-emerald-400">{quote.seleccionada}</span>
+                    <span className="text-[var(--accent)]">{quote.seleccionada}</span>
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="text-sm font-semibold text-emerald-400 font-data">
+                  <p className="text-sm font-semibold text-[var(--accent)] font-data">
                     {quote.precio}
                   </p>
                 </div>
@@ -660,27 +660,27 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       {/* Historial de Conversaciones                                        */}
       {/* ----------------------------------------------------------------- */}
-      <div className="mb-8 rounded-xl border border-[#1e293b] bg-[#0d1117] p-6">
-        <h2 className="mb-5 flex items-center gap-2 text-base font-semibold text-slate-200">
-          <MessageSquare className="h-5 w-5 text-emerald-400" />
+      <div className="mb-8 rounded-xl border border-[var(--border)] bg-white p-6">
+        <h2 className="mb-5 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
+          <MessageSquare className="h-5 w-5 text-[var(--accent)]" />
           Historial de Conversaciones
         </h2>
 
         {client.conversations.length === 0 ? (
-          <p className="text-sm text-slate-500">No hay conversaciones registradas.</p>
+          <p className="text-sm text-[var(--text-tertiary)]">No hay conversaciones registradas.</p>
         ) : (
           <div className="space-y-3">
             {client.conversations.map((conv) => (
               <div
                 key={conv.id}
-                className="flex items-center gap-4 rounded-lg border border-[#1e293b]/50 bg-[#080c14] p-4 transition-colors hover:border-[#1e293b]"
+                className="flex items-center gap-4 rounded-lg border border-[var(--border)]/50 p-4 transition-colors hover:border-[var(--border)]"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-500/10">
-                  <MessageCircle className="h-5 w-5 text-emerald-400" />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--accent-light)]">
+                  <MessageCircle className="h-5 w-5 text-[var(--accent)]" />
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs text-slate-500 font-data">{conv.fecha}</span>
+                    <span className="text-xs text-[var(--text-tertiary)] font-data">{conv.fecha}</span>
                     <span
                       className={`rounded-full px-2 py-0.5 text-xs font-medium ${
                         conversationStatusColors[conv.status] ?? ''
@@ -689,9 +689,9 @@ export default function ClientDetailPage() {
                       {conv.status}
                     </span>
                   </div>
-                  <p className="mt-1 truncate text-sm text-slate-400">{conv.preview}</p>
+                  <p className="mt-1 truncate text-sm text-[var(--text-secondary)]">{conv.preview}</p>
                 </div>
-                <ChevronRight className="h-4 w-4 shrink-0 text-slate-600" />
+                <ChevronRight className="h-4 w-4 shrink-0 text-[var(--text-tertiary)]" />
               </div>
             ))}
           </div>
@@ -701,19 +701,19 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       {/* Historial de Pagos                                                 */}
       {/* ----------------------------------------------------------------- */}
-      <div className="mb-8 rounded-xl border border-[#1e293b] bg-[#0d1117] p-6">
-        <h2 className="mb-5 flex items-center gap-2 text-base font-semibold text-slate-200">
+      <div className="mb-8 rounded-xl border border-[var(--border)] bg-white p-6">
+        <h2 className="mb-5 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
           <CreditCard className="h-5 w-5 text-purple-400" />
           Historial de Pagos
         </h2>
 
         {client.payments.length === 0 ? (
-          <p className="text-sm text-slate-500">No hay pagos registrados.</p>
+          <p className="text-sm text-[var(--text-tertiary)]">No hay pagos registrados.</p>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm">
               <thead>
-                <tr className="border-b border-[#1e293b] text-xs uppercase text-slate-500">
+                <tr className="border-b border-[var(--border)] text-xs uppercase text-[var(--text-tertiary)]">
                   <th className="pb-3 pr-4 font-medium">Fecha</th>
                   <th className="pb-3 pr-4 font-medium">Monto</th>
                   <th className="pb-3 pr-4 font-medium">Metodo</th>
@@ -725,10 +725,10 @@ export default function ClientDetailPage() {
                 {client.payments.map((payment) => (
                   <tr
                     key={payment.id}
-                    className="border-b border-[#1e293b]/50 last:border-0"
+                    className="border-b border-[var(--border)]/50 last:border-0"
                   >
-                    <td className="py-3 pr-4 text-slate-400 font-data">{payment.fecha}</td>
-                    <td className="py-3 pr-4 font-semibold text-slate-200 font-data">
+                    <td className="py-3 pr-4 text-[var(--text-secondary)] font-data">{payment.fecha}</td>
+                    <td className="py-3 pr-4 font-semibold text-[var(--text-primary)] font-data">
                       {payment.monto}
                     </td>
                     <td className="py-3 pr-4">
@@ -754,7 +754,7 @@ export default function ClientDetailPage() {
                         {payment.estado}
                       </span>
                     </td>
-                    <td className="py-3 text-xs text-slate-500 font-data">
+                    <td className="py-3 text-xs text-[var(--text-tertiary)] font-data">
                       {payment.referencia}
                     </td>
                   </tr>
@@ -768,8 +768,8 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       {/* Notas                                                              */}
       {/* ----------------------------------------------------------------- */}
-      <div className="mb-8 rounded-xl border border-[#1e293b] bg-[#0d1117] p-6">
-        <h2 className="mb-4 flex items-center gap-2 text-base font-semibold text-slate-200">
+      <div className="mb-8 rounded-xl border border-[var(--border)] bg-white p-6">
+        <h2 className="mb-4 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
           <StickyNote className="h-5 w-5 text-amber-400" />
           Notas
         </h2>
@@ -778,10 +778,10 @@ export default function ClientDetailPage() {
           onChange={(e) => setNotes(e.target.value)}
           rows={4}
           placeholder="Agregar notas sobre el cliente..."
-          className="w-full rounded-lg border border-[#1e293b] bg-[#080c14] px-4 py-3 text-sm text-slate-300 placeholder:text-slate-600 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/20"
+          className="w-full rounded-lg border border-[var(--border)] px-4 py-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
         />
         <div className="mt-3 flex justify-end">
-          <button className="rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition-opacity hover:opacity-90">
+          <button className="rounded-lg bg-[var(--accent)] text-[var(--text-on-accent)] transition-opacity hover:opacity-90">
             Guardar Notas
           </button>
         </div>

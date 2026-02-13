@@ -25,16 +25,16 @@ export default function SEOLayout({
         <main className="flex-1">{children}</main>
 
         {/* Simple SEO-focused Footer */}
-        <footer className="border-t border-white/20 bg-white/30 backdrop-blur-xl mt-16">
+        <footer className="border-t border-[#e5e7eb] bg-white mt-16">
           <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
               {/* Company */}
               <div>
-                <h3 className="mb-4 flex items-center gap-2 text-lg font-bold text-gray-900">
-                  <Shield className="h-5 w-5 text-emerald-600" />
+                <h3 className="mb-4 flex items-center gap-2 text-lg font-bold text-[#111827]">
+                  <Shield className="h-5 w-5 text-[#10b981]" />
                   kotkot.ai
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-[#6b7280]">
                   Comparador de seguros y préstamos en Panamá. Encuentra las
                   mejores opciones en minutos.
                 </p>
@@ -42,34 +42,34 @@ export default function SEOLayout({
 
               {/* Seguros */}
               <div>
-                <h4 className="mb-4 text-sm font-semibold text-gray-900">
+                <h4 className="mb-4 text-sm font-semibold text-[#111827]">
                   Seguros
                 </h4>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-2 text-sm text-[#6b7280]">
                   <li>
-                    <Link href="/seguros/auto" className="hover:text-emerald-600">
+                    <Link href="/seguros/auto" className="hover:text-[#10b981]">
                       Seguro de Auto
                     </Link>
                   </li>
                   <li>
-                    <Link href="/seguros/salud" className="hover:text-emerald-600">
+                    <Link href="/seguros/salud" className="hover:text-[#10b981]">
                       Seguro de Salud
                     </Link>
                   </li>
                   <li>
-                    <Link href="/seguros/vida" className="hover:text-emerald-600">
+                    <Link href="/seguros/vida" className="hover:text-[#10b981]">
                       Seguro de Vida
                     </Link>
                   </li>
                   <li>
-                    <Link href="/seguros/hogar" className="hover:text-emerald-600">
+                    <Link href="/seguros/hogar" className="hover:text-[#10b981]">
                       Seguro de Hogar
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/seguros/aseguradoras"
-                      className="hover:text-emerald-600"
+                      className="hover:text-[#10b981]"
                     >
                       Ver todas las aseguradoras
                     </Link>
@@ -79,14 +79,14 @@ export default function SEOLayout({
 
               {/* Préstamos */}
               <div>
-                <h4 className="mb-4 text-sm font-semibold text-gray-900">
+                <h4 className="mb-4 text-sm font-semibold text-[#111827]">
                   Préstamos
                 </h4>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-2 text-sm text-[#6b7280]">
                   <li>
                     <Link
                       href="/prestamos/personal"
-                      className="hover:text-emerald-600"
+                      className="hover:text-[#10b981]"
                     >
                       Préstamo Personal
                     </Link>
@@ -94,7 +94,7 @@ export default function SEOLayout({
                   <li>
                     <Link
                       href="/prestamos/hipotecario"
-                      className="hover:text-emerald-600"
+                      className="hover:text-[#10b981]"
                     >
                       Préstamo Hipotecario
                     </Link>
@@ -102,7 +102,7 @@ export default function SEOLayout({
                   <li>
                     <Link
                       href="/prestamos/auto"
-                      className="hover:text-emerald-600"
+                      className="hover:text-[#10b981]"
                     >
                       Préstamo de Auto
                     </Link>
@@ -110,7 +110,7 @@ export default function SEOLayout({
                   <li>
                     <Link
                       href="/prestamos/bancos"
-                      className="hover:text-emerald-600"
+                      className="hover:text-[#10b981]"
                     >
                       Ver todos los bancos
                     </Link>
@@ -120,27 +120,27 @@ export default function SEOLayout({
 
               {/* Compañía */}
               <div>
-                <h4 className="mb-4 text-sm font-semibold text-gray-900">
+                <h4 className="mb-4 text-sm font-semibold text-[#111827]">
                   Compañía
                 </h4>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-2 text-sm text-[#6b7280]">
                   <li>
-                    <Link href="/sobre-nosotros" className="hover:text-emerald-600">
+                    <Link href="/sobre-nosotros" className="hover:text-[#10b981]">
                       Sobre Nosotros
                     </Link>
                   </li>
                   <li>
-                    <Link href="/contacto" className="hover:text-emerald-600">
+                    <Link href="/contacto" className="hover:text-[#10b981]">
                       Contacto
                     </Link>
                   </li>
                   <li>
-                    <Link href="/blog" className="hover:text-emerald-600">
+                    <Link href="/blog" className="hover:text-[#10b981]">
                       Blog
                     </Link>
                   </li>
                   <li>
-                    <Link href="/para-brokers" className="hover:text-emerald-600">
+                    <Link href="/para-brokers" className="hover:text-[#10b981]">
                       Para Brokers
                     </Link>
                   </li>
@@ -149,16 +149,16 @@ export default function SEOLayout({
             </div>
 
             {/* Bottom Bar */}
-            <div className="mt-8 border-t border-gray-200 pt-8 text-center text-sm text-gray-600">
+            <div className="mt-8 border-t border-[#e5e7eb] pt-8 text-center text-sm text-[#6b7280]">
               <p>
                 © {new Date().getFullYear()} kotkot.ai. Todos los derechos
                 reservados.
               </p>
               <div className="mt-2 flex justify-center gap-4">
-                <Link href="/privacidad" className="hover:text-emerald-600">
+                <Link href="/privacidad" className="hover:text-[#10b981]">
                   Privacidad
                 </Link>
-                <Link href="/terminos" className="hover:text-emerald-600">
+                <Link href="/terminos" className="hover:text-[#10b981]">
                   Términos
                 </Link>
               </div>

@@ -4,14 +4,11 @@ import { useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
-type ModalVariant = 'glass' | 'dark';
-
 interface ModalProps {
   open: boolean;
   onClose: () => void;
   children: React.ReactNode;
   title?: string;
-  variant?: ModalVariant;
   className?: string;
 }
 
@@ -25,29 +22,11 @@ const panelVariants = {
   visible: { opacity: 1, scale: 1, y: 0 },
 };
 
-const variantClasses: Record<ModalVariant, string> = {
-  glass:
-    'backdrop-blur-2xl bg-white/70 border border-white/40 shadow-2xl',
-  dark:
-    'bg-gray-900 border border-gray-700 shadow-2xl',
-};
-
-const titleVariantClasses: Record<ModalVariant, string> = {
-  glass: 'text-gray-900',
-  dark: 'text-gray-100',
-};
-
-const closeButtonVariantClasses: Record<ModalVariant, string> = {
-  glass: 'text-gray-500 hover:text-gray-700 hover:bg-gray-200/50',
-  dark: 'text-gray-400 hover:text-gray-200 hover:bg-gray-700/50',
-};
-
 export function Modal({
   open,
   onClose,
   children,
   title,
-  variant = 'glass',
   className = '',
 }: ModalProps) {
   const handleEscape = useCallback(
@@ -79,7 +58,7 @@ export function Modal({
             animate="visible"
             exit="hidden"
             transition={{ duration: 0.2 }}
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/30"
             onClick={onClose}
             aria-hidden="true"
           />
@@ -94,17 +73,17 @@ export function Modal({
             animate="visible"
             exit="hidden"
             transition={{ duration: 0.2, ease: 'easeOut' }}
-            className={`relative z-10 w-full max-w-lg rounded-2xl p-6 ${variantClasses[variant]} ${className}`}
+            className={`relative z-10 w-full max-w-lg rounded-[16px] bg-white border border-[#e5e7eb] p-6 ${className}`}
           >
             {/* Header */}
             {(title != null) && (
               <div className="mb-4 flex items-center justify-between">
-                <h2 className={`text-lg font-semibold ${titleVariantClasses[variant]}`}>
+                <h2 className="text-lg font-semibold text-[#111827]">
                   {title}
                 </h2>
                 <button
                   onClick={onClose}
-                  className={`rounded-lg p-1.5 transition-colors ${closeButtonVariantClasses[variant]}`}
+                  className="rounded-[10px] p-1.5 text-[#6b7280] hover:bg-[#f3f4f6] hover:text-[#111827] transition-colors"
                   aria-label="Fechar modal"
                 >
                   <X className="h-5 w-5" />
@@ -116,7 +95,7 @@ export function Modal({
             {title == null && (
               <button
                 onClick={onClose}
-                className={`absolute right-4 top-4 rounded-lg p-1.5 transition-colors ${closeButtonVariantClasses[variant]}`}
+                className="absolute right-4 top-4 rounded-[10px] p-1.5 text-[#6b7280] hover:bg-[#f3f4f6] hover:text-[#111827] transition-colors"
                 aria-label="Fechar modal"
               >
                 <X className="h-5 w-5" />

@@ -5,7 +5,6 @@
 
 import React from 'react';
 import { Check } from 'lucide-react';
-import { GlassCard } from '@/components/ui/GlassCard';
 import type { Coverage } from '@/data/schema';
 
 interface CoverageDetailsProps {
@@ -22,22 +21,24 @@ export function CoverageDetails({
 }: CoverageDetailsProps) {
   return (
     <section className="mb-12">
-      <h2 className="mb-8 text-3xl font-bold text-gray-900">{title}</h2>
-      <GlassCard className="p-8">
+      <h2 className="mb-8 text-3xl font-bold text-[#111827]">{title}</h2>
+      <div className="bg-white border border-[#e5e7eb] rounded-[16px] p-8">
         <div className="grid gap-4 md:grid-cols-2">
           {coverages.map((coverage, index) => (
             <div key={index} className="flex items-start gap-3">
-              <Check className="h-6 w-6 flex-shrink-0 text-emerald-600 mt-1" />
+              <div className="flex-shrink-0 mt-1 bg-[rgba(202,255,4,0.15)] rounded-[12px] p-1.5">
+                <Check className="h-4 w-4 text-[#111827]" />
+              </div>
               <div>
-                <h3 className="mb-1 font-semibold text-gray-900">
+                <h3 className="mb-1 font-semibold text-[#111827]">
                   {coverage.name}
                 </h3>
-                <p className="text-sm text-gray-600">{coverage.description}</p>
+                <p className="text-sm text-[#6b7280]">{coverage.description}</p>
               </div>
             </div>
           ))}
         </div>
-      </GlassCard>
+      </div>
     </section>
   );
 }
