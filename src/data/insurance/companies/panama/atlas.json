@@ -1,0 +1,73 @@
+{
+  "slug": "atlas",
+  "name": "Atlas Seguros",
+  "legalName": "Atlas Compañía de Seguros S.A.",
+  "logo": "/logos/atlas.png",
+  "country": "panama",
+  "description": "Atlas es una aseguradora panameña establecida, conocida por su enfoque en seguros empresariales y comerciales. También ofrece productos para individuos con precios competitivos.",
+  "foundedYear": 1982,
+  "headquarters": "Ciudad de Panamá, Panamá",
+  "seo": {
+    "metaTitle": "Atlas Seguros Panamá 2026 - Seguros Empresariales y Personales | kotkot.ai",
+    "metaDescription": "Atlas Seguros en Panamá. Especialistas en seguros empresariales y comerciales. También ofrece seguros personales. +40 años de experiencia.",
+    "keywords": [
+      "atlas seguros panama",
+      "atlas empresarial",
+      "seguro comercial panama"
+    ],
+    "h1": "Atlas Seguros - Especialistas Empresariales"
+  },
+  "productsOffered": [
+    "auto",
+    "vida",
+    "hogar",
+    "empresarial",
+    "responsabilidad-civil"
+  ],
+  "ratings": {
+    "overall": 4.0,
+    "customerService": 3.9,
+    "claimsProcess": 4.1,
+    "digitalExperience": 3.7,
+    "priceValue": 4.1,
+    "reviewCount": 412
+  },
+  "pros": [
+    "Gran experiencia en seguros empresariales",
+    "Precios competitivos",
+    "Flexibilidad en coberturas comerciales",
+    "Buena relación precio-valor"
+  ],
+  "cons": [
+    "Tecnología digital menos avanzada",
+    "Servicio al cliente puede mejorar",
+    "Proceso de reclamaciones tradicional",
+    "App móvil limitada"
+  ],
+  "contact": {
+    "phone": "+507 269-2222",
+    "email": "info@atlasseguros.com",
+    "website": "https://www.atlasseguros.com",
+    "officeLocations": [
+      {
+        "city": "Ciudad de Panamá",
+        "address": "Calle 50, Edificio Atlas"
+      }
+    ]
+  },
+  "digitalFeatures": {
+    "onlineQuotes": true,
+    "mobileApp": false,
+    "onlineClaims": false,
+    "chatSupport": false,
+    "whatsappSupport": false
+  },
+  "licenses": [
+    "Autorizada por la Superintendencia de Seguros de Panamá"
+  ],
+  "specialties": [
+    "Líder en seguros empresariales",
+    "Seguros comerciales especializados"
+  ],
+  "marketPosition": "Sólida posición en sector corporativo"
+}

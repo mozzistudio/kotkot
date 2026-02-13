@@ -1,0 +1,113 @@
+{
+  "type": "salud",
+  "slug": "salud",
+  "name": "Seguro de Salud",
+  "shortDescription": "Cobertura médica integral para ti y tu familia con acceso a la mejor red de hospitales y médicos.",
+  "longDescription": "El seguro de salud en Panamá te garantiza acceso a servicios médicos de calidad sin preocuparte por los altos costos. Incluye hospitalización, cirugías, consultas ambulatorias, medicamentos y más. Con opciones para cobertura individual, familiar e internacional.",
+  "icon": "🏥",
+  "seo": {
+    "metaTitle": "Seguro de Salud en Panamá 2026 - Compara Planes y Precios | kotkot.ai",
+    "metaDescription": "Compara seguros de salud en Panamá. Encuentra el mejor plan médico para ti y tu familia. ASSA, Bupa, Mapfre y más. Cotiza gratis y ahorra hasta 40%.",
+    "keywords": [
+      "seguro de salud panama",
+      "seguro medico panama",
+      "plan de salud familiar",
+      "seguro hospitalario",
+      "bupa panama",
+      "assa salud",
+      "seguro salud internacional"
+    ],
+    "h1": "Seguro de Salud en Panamá: Protege a tu Familia",
+    "canonicalUrl": "https://kotkot.ai/seguros/salud"
+  },
+  "benefits": [
+    "Cobertura de hospitalización y cirugías",
+    "Consultas médicas ambulatorias",
+    "Exámenes de laboratorio y diagnóstico",
+    "Medicamentos con y sin receta",
+    "Cobertura de maternidad y pediatría",
+    "Atención de emergencias 24/7",
+    "Red amplia de médicos y hospitales",
+    "Telemedicina y consultas virtuales",
+    "Cobertura en el extranjero (planes internacionales)",
+    "Chequeos preventivos anuales",
+    "Vacunaciones y medicina preventiva",
+    "Tratamientos especializados y oncología"
+  ],
+  "whoNeedsIt": [
+    "Familias que buscan protección médica completa",
+    "Profesionales independientes sin seguro corporativo",
+    "Expatriados y residentes extranjeros",
+    "Personas con condiciones médicas preexistentes",
+    "Padres que planean tener hijos",
+    "Adultos mayores que requieren atención regular",
+    "Personas que viajan frecuentemente"
+  ],
+  "coverageTypes": [
+    {
+      "name": "Hospitalización",
+      "description": "Cubre gastos de internamiento, habitación, procedimientos quirúrgicos y medicamentos durante la hospitalización."
+    },
+    {
+      "name": "Ambulatorio",
+      "description": "Consultas médicas, exámenes de laboratorio, radiografías y otros servicios que no requieren hospitalización."
+    },
+    {
+      "name": "Maternidad",
+      "description": "Cuidado prenatal, parto, cesárea y cuidado postnatal. Algunos planes incluyen fertilidad y reproducción asistida."
+    },
+    {
+      "name": "Medicamentos",
+      "description": "Cobertura de medicamentos prescritos con copago o reembolso según el plan. Algunos incluyen medicinas sin receta."
+    },
+    {
+      "name": "Emergencias",
+      "description": "Atención inmediata en sala de emergencias por accidentes o condiciones críticas, disponible 24/7."
+    },
+    {
+      "name": "Dental y Visión",
+      "description": "Cobertura opcional para tratamientos dentales, lentes, exámenes oftalmológicos y cirugías visuales."
+    }
+  ],
+  "priceRanges": {
+    "min": "$80/mes",
+    "max": "$800/mes",
+    "factors": [
+      "Edad del asegurado principal",
+      "Número de dependientes incluidos",
+      "Nivel de cobertura (básico, intermedio, premium)",
+      "Monto del deducible anual",
+      "Coaseguro o copagos",
+      "Red de hospitales (local vs internacional)",
+      "Condiciones preexistentes",
+      "Coberturas adicionales (dental, maternidad, etc.)"
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Cuánto cuesta un seguro de salud en Panamá?",
+      "answer": "Los planes individuales comienzan desde $80/mes para coberturas básicas y pueden superar $800/mes para planes premium con cobertura internacional. Los planes familiares varían entre $250 y $2,000/mes dependiendo del número de miembros y nivel de cobertura."
+    },
+    {
+      "question": "¿Cubren condiciones preexistentes?",
+      "answer": "Depende del plan y la aseguradora. Generalmente hay períodos de espera de 6-24 meses para condiciones preexistentes. Algunas aseguradoras las cubren con recargos o exclusiones permanentes."
+    },
+    {
+      "question": "¿Qué es el deducible anual?",
+      "answer": "Es la cantidad que debes pagar de tu bolsillo antes de que el seguro comience a cubrir. Los deducibles van desde $500 hasta $10,000 anuales. Un deducible más alto reduce tu prima mensual."
+    },
+    {
+      "question": "¿Puedo elegir mi médico y hospital?",
+      "answer": "Depende del plan. Los planes PPO te permiten elegir cualquier proveedor con reembolso. Los planes HMO requieren que uses la red de proveedores de la aseguradora para recibir cobertura completa."
+    },
+    {
+      "question": "¿Incluye cobertura en el extranjero?",
+      "answer": "Los planes locales generalmente cubren solo emergencias en el extranjero. Los planes internacionales ofrecen cobertura completa en países seleccionados o a nivel mundial, ideal para expatriados."
+    }
+  ],
+  "relatedProducts": [
+    "vida",
+    "accidentes-personales",
+    "viaje"
+  ]
+}

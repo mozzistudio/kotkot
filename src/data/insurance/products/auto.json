@@ -1,0 +1,109 @@
+{
+  "type": "auto",
+  "slug": "auto",
+  "name": "Seguro de Auto",
+  "shortDescription": "Protección completa para tu vehículo contra accidentes, robos y daños a terceros.",
+  "longDescription": "El seguro de auto en Panamá te brinda la tranquilidad de conducir protegido. Cubre desde daños por colisión hasta responsabilidad civil, robo total y asistencia en carretera. Con coberturas flexibles que se ajustan a tu presupuesto y necesidades.",
+  "icon": "🚗",
+  "seo": {
+    "metaTitle": "Seguro de Auto en Panamá 2026 - Compara las Mejores Opciones | kotkot.ai",
+    "metaDescription": "Compara seguros de auto en Panamá. Encuentra las mejores coberturas, precios y beneficios de ASSA, MAPFRE, Sura y más aseguradoras. Cotiza gratis en minutos.",
+    "keywords": [
+      "seguro de auto panama",
+      "seguro vehicular panama",
+      "cotizar seguro auto",
+      "seguro auto barato panama",
+      "assa seguro auto",
+      "mapfre auto panama",
+      "responsabilidad civil auto"
+    ],
+    "h1": "Seguro de Auto en Panamá: Compara y Ahorra",
+    "canonicalUrl": "https://kotkot.ai/seguros/auto"
+  },
+  "benefits": [
+    "Protección contra accidentes y colisiones",
+    "Cobertura de responsabilidad civil obligatoria",
+    "Protección contra robo total o parcial",
+    "Asistencia en carretera 24/7",
+    "Cobertura de daños a terceros",
+    "Protección contra desastres naturales",
+    "Gastos médicos para ocupantes",
+    "Auto sustituto en caso de siniestro"
+  ],
+  "whoNeedsIt": [
+    "Propietarios de vehículos que circulan en Panamá",
+    "Conductores que financian su auto (requerido por bancos)",
+    "Personas que valoran la protección de su patrimonio",
+    "Conductores que recorren largas distancias",
+    "Dueños de autos nuevos o de alto valor",
+    "Familias que dependen de su vehículo",
+    "Profesionales que usan su auto para trabajar"
+  ],
+  "coverageTypes": [
+    {
+      "name": "Responsabilidad Civil",
+      "description": "Cobertura obligatoria que cubre daños a terceros (personas y propiedades). Monto mínimo $50,000 según ley panameña."
+    },
+    {
+      "name": "Colisión y Vuelco",
+      "description": "Cubre los daños a tu vehículo causados por accidentes de tránsito, independientemente de quién tenga la culpa."
+    },
+    {
+      "name": "Robo Total",
+      "description": "Protección contra el robo completo del vehículo. Cubre el valor comercial del auto al momento del siniestro."
+    },
+    {
+      "name": "Daños a Terceros",
+      "description": "Amplía la responsabilidad civil para cubrir daños materiales a otros vehículos y propiedades."
+    },
+    {
+      "name": "Gastos Médicos",
+      "description": "Cubre gastos médicos de los ocupantes del vehículo en caso de accidente, sin importar quién sea responsable."
+    },
+    {
+      "name": "Asistencia en Carretera",
+      "description": "Servicio de grúa, cambio de llanta, paso de corriente, apertura de puertas y más servicios de emergencia."
+    }
+  ],
+  "priceRanges": {
+    "min": "$300/año",
+    "max": "$2,500/año",
+    "factors": [
+      "Valor comercial del vehículo",
+      "Año y modelo del auto",
+      "Historial de reclamaciones del conductor",
+      "Edad y experiencia del conductor principal",
+      "Zona de circulación habitual",
+      "Uso del vehículo (personal, comercial, Uber)",
+      "Monto del deducible seleccionado",
+      "Coberturas adicionales contratadas"
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Cuánto cuesta un seguro de auto en Panamá?",
+      "answer": "El costo varía entre $300 y $2,500 al año dependiendo del valor del vehículo, coberturas seleccionadas, edad del conductor y otros factores. Un seguro básico de responsabilidad civil cuesta desde $300, mientras que una cobertura todo riesgo para un auto nuevo puede superar los $1,500 anuales."
+    },
+    {
+      "question": "¿Qué cubre el seguro obligatorio de auto en Panamá?",
+      "answer": "El seguro obligatorio (responsabilidad civil) cubre daños corporales y materiales causados a terceros con un mínimo de $50,000. No cubre daños a tu propio vehículo ni robo."
+    },
+    {
+      "question": "¿Cuál es el deducible promedio?",
+      "answer": "Los deducibles típicos van desde $250 hasta $1,000 o 10% del valor asegurado. Un deducible más alto reduce la prima mensual pero aumenta tu pago en caso de reclamación."
+    },
+    {
+      "question": "¿El seguro cubre desastres naturales?",
+      "answer": "Depende de la póliza. Algunas coberturas incluyen daños por inundaciones, deslizamientos o caída de árboles, mientras que otras requieren una cobertura adicional. Es importante revisar esto durante la época de lluvias en Panamá."
+    },
+    {
+      "question": "¿Puedo asegurar un auto usado o con más de 10 años?",
+      "answer": "Sí, pero las opciones son más limitadas. Muchas aseguradoras solo ofrecen responsabilidad civil para autos antiguos, mientras que otras tienen límites de edad (generalmente hasta 15 años) para coberturas completas."
+    }
+  ],
+  "relatedProducts": [
+    "vida",
+    "hogar",
+    "accidentes-personales"
+  ]
+}

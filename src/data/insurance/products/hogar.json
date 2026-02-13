@@ -1,0 +1,70 @@
+{
+  "type": "hogar",
+  "slug": "hogar",
+  "name": "Seguro de Hogar",
+  "shortDescription": "Protege tu casa, apartamento y pertenencias contra robos, incendios y desastres naturales.",
+  "longDescription": "El seguro de hogar protege tu patrimonio más valioso: tu vivienda y todo lo que hay dentro. Cubre daños estructurales, contenidos, responsabilidad civil y más. Indispensable en Panamá donde los riesgos de inundaciones, robos y otros siniestros son reales.",
+  "icon": "🏠",
+  "seo": {
+    "metaTitle": "Seguro de Hogar en Panamá 2026 - Protege tu Casa | kotkot.ai",
+    "metaDescription": "Compara seguros de hogar en Panamá. Protege tu casa contra robos, incendios e inundaciones. ASSA, MAPFRE, Sura. Desde $20/mes. Cotiza gratis.",
+    "keywords": [
+      "seguro de hogar panama",
+      "seguro de casa",
+      "seguro apartamento",
+      "seguro contra incendio",
+      "seguro contra robo hogar",
+      "seguro contenido hogar"
+    ],
+    "h1": "Seguro de Hogar en Panamá: Protege tu Patrimonio"
+  },
+  "benefits": [
+    "Protección de estructura contra incendios y desastres",
+    "Cobertura de contenidos y pertenencias",
+    "Responsabilidad civil por daños a terceros",
+    "Cobertura contra robo y vandalismo",
+    "Protección contra inundaciones y tormentas",
+    "Daños por cortocircuito eléctrico",
+    "Gastos de hospedaje temporal",
+    "Rotura de cristales y ventanas"
+  ],
+  "whoNeedsIt": [
+    "Propietarios de casas y apartamentos",
+    "Inquilinos que quieren proteger sus pertenencias",
+    "Personas en zonas de alto riesgo de inundación",
+    "Propietarios con hipoteca (generalmente requerido)",
+    "Dueños de propiedades de alto valor"
+  ],
+  "coverageTypes": [
+    {
+      "name": "Estructura",
+      "description": "Cubre daños físicos a las paredes, techo, pisos y estructura de tu propiedad por incendio, viento, inundación."
+    },
+    {
+      "name": "Contenidos",
+      "description": "Protege muebles, electrodomésticos, ropa, joyas y otros objetos personales dentro del hogar."
+    },
+    {
+      "name": "Responsabilidad Civil",
+      "description": "Cubre daños que causes a otras propiedades o personas desde tu hogar."
+    }
+  ],
+  "priceRanges": {
+    "min": "$20/mes",
+    "max": "$300/mes",
+    "factors": [
+      "Valor de la estructura",
+      "Valor del contenido asegurado",
+      "Ubicación y zona de riesgo",
+      "Tipo de construcción",
+      "Sistemas de seguridad instalados"
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Cubre inundaciones?",
+      "answer": "Depende de la póliza. Las inundaciones pueden requerir cobertura adicional, especialmente en zonas de alto riesgo en Panamá."
+    }
+  ],
+  "relatedProducts": ["auto", "vida"]
+}

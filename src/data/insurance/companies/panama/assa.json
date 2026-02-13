@@ -1,0 +1,90 @@
+{
+  "slug": "assa",
+  "name": "ASSA Compañía de Seguros",
+  "legalName": "ASSA Compañía de Seguros S.A.",
+  "logo": "/logos/assa.png",
+  "country": "panama",
+  "description": "ASSA es una de las aseguradoras más grandes y reconocidas de Panamá, con más de 75 años de experiencia en el mercado. Ofrece una amplia gama de productos de seguros para individuos y empresas, destacándose por su solidez financiera y excelente servicio al cliente.",
+  "foundedYear": 1948,
+  "headquarters": "Ciudad de Panamá, Panamá",
+  "seo": {
+    "metaTitle": "ASSA Seguros Panamá 2026 - Seguros de Auto, Salud, Vida | kotkot.ai",
+    "metaDescription": "ASSA Compañía de Seguros en Panamá. Líder en seguros de auto, salud, vida y hogar. +75 años de experiencia. Cotiza y compara con otras aseguradoras.",
+    "keywords": [
+      "assa panama",
+      "assa seguros",
+      "assa seguro auto",
+      "assa salud",
+      "assa vida",
+      "assa compañia seguros"
+    ],
+    "h1": "ASSA Compañía de Seguros - Líder en Panamá",
+    "canonicalUrl": "https://kotkot.ai/seguros/aseguradoras/assa"
+  },
+  "productsOffered": [
+    "auto",
+    "salud",
+    "vida",
+    "hogar",
+    "viaje",
+    "empresarial",
+    "responsabilidad-civil",
+    "accidentes-personales"
+  ],
+  "ratings": {
+    "overall": 4.5,
+    "customerService": 4.6,
+    "claimsProcess": 4.4,
+    "digitalExperience": 4.3,
+    "priceValue": 4.2,
+    "reviewCount": 1847
+  },
+  "pros": [
+    "Más de 75 años de experiencia y solidez financiera",
+    "Amplia red de talleres y proveedores médicos",
+    "Excelente servicio al cliente y atención personalizada",
+    "Proceso de reclamaciones ágil y eficiente",
+    "Variedad de productos para todas las necesidades",
+    "Cobertura en toda Panamá",
+    "Plataforma digital moderna y app móvil",
+    "Múltiples opciones de pago"
+  ],
+  "cons": [
+    "Primas pueden ser más altas que competidores",
+    "Algunos productos requieren examen médico extenso",
+    "Tiempos de aprobación pueden ser lentos en temporada alta",
+    "Deducibles pueden ser altos en ciertas pólizas"
+  ],
+  "contact": {
+    "phone": "+507 204-7000",
+    "whatsapp": "+507 6000-0000",
+    "email": "info@assanet.com",
+    "website": "https://www.assanet.com",
+    "officeLocations": [
+      {
+        "city": "Ciudad de Panamá",
+        "address": "Calle 50 y 56 Este, Edificio ASSA"
+      },
+      {
+        "city": "David",
+        "address": "Avenida Central, Plaza David"
+      }
+    ]
+  },
+  "digitalFeatures": {
+    "onlineQuotes": true,
+    "mobileApp": true,
+    "onlineClaims": true,
+    "chatSupport": true,
+    "whatsappSupport": true
+  },
+  "licenses": [
+    "Autorizada por la Superintendencia de Seguros y Reaseguros de Panamá"
+  ],
+  "specialties": [
+    "Líder en seguros de auto",
+    "Amplia experiencia en seguros corporativos",
+    "Red médica más extensa del país"
+  ],
+  "marketPosition": "Líder del mercado panameño con mayor cuota de participación"
+}
