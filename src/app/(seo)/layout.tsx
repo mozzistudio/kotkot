@@ -6,8 +6,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Shield, Phone } from 'lucide-react';
+import { Shield } from 'lucide-react';
 import { GradientBackground } from '@/components/ui/GradientBackground';
+import { SEONavbar } from '@/components/seo/layout/SEONavbar';
 
 export default function SEOLayout({
   children,
@@ -17,89 +18,8 @@ export default function SEOLayout({
   return (
     <GradientBackground>
       <div className="flex min-h-screen flex-col">
-        {/* Simple SEO-focused Navbar */}
-        <header className="sticky top-0 z-50 border-b border-white/20 bg-white/50 backdrop-blur-xl">
-          <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-            {/* Logo */}
-            <Link
-              href="/"
-              className="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-white"
-            >
-              <Shield className="h-6 w-6 text-emerald-600" />
-              <span>kotkot.ai</span>
-            </Link>
-
-            {/* Navigation Links */}
-            <div className="hidden items-center gap-6 md:flex">
-              <Link
-                href="/seguros"
-                className="text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors"
-              >
-                Seguros
-              </Link>
-              <Link
-                href="/prestamos"
-                className="text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors"
-              >
-                Préstamos
-              </Link>
-              <Link
-                href="/seguros/aseguradoras"
-                className="text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors"
-              >
-                Aseguradoras
-              </Link>
-              <Link
-                href="/prestamos/bancos"
-                className="text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors"
-              >
-                Bancos
-              </Link>
-            </div>
-
-            {/* CTA Button */}
-            <a
-              href="https://wa.me/50760000000?text=Hola%2C%20quiero%20cotizar%20un%20seguro"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
-            >
-              <Phone className="h-4 w-4" />
-              <span className="hidden sm:inline">Cotiza por WhatsApp</span>
-              <span className="sm:hidden">WhatsApp</span>
-            </a>
-          </nav>
-
-          {/* Mobile Navigation (simple version) */}
-          <div className="border-t border-white/20 bg-white/30 px-4 py-2 md:hidden">
-            <div className="flex items-center justify-around text-xs">
-              <Link
-                href="/seguros"
-                className="text-gray-700 hover:text-emerald-600"
-              >
-                Seguros
-              </Link>
-              <Link
-                href="/prestamos"
-                className="text-gray-700 hover:text-emerald-600"
-              >
-                Préstamos
-              </Link>
-              <Link
-                href="/seguros/aseguradoras"
-                className="text-gray-700 hover:text-emerald-600"
-              >
-                Aseguradoras
-              </Link>
-              <Link
-                href="/prestamos/bancos"
-                className="text-gray-700 hover:text-emerald-600"
-              >
-                Bancos
-              </Link>
-            </div>
-          </div>
-        </header>
+        {/* Enhanced SEO Navbar with Dropdowns */}
+        <SEONavbar />
 
         {/* Main Content */}
         <main className="flex-1">{children}</main>
