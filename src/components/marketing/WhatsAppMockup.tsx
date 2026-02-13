@@ -86,8 +86,63 @@ const MESSAGES: ChatMessage[] = [
   {
     id: 10,
     sender: 'bot',
-    text: '✅ ¡Pago recibido! Tu póliza ASSA está activa. 📄 Tu documento:',
+    text: '✅ ¡Pago recibido! Ahora necesito algunos documentos para activar tu póliza:',
     time: '10:35',
+  },
+  {
+    id: 11,
+    sender: 'bot',
+    text: '📋 Documentos requeridos:\n\n1️⃣ Cédula o Pasaporte\n2️⃣ Licencia de Conducir\n3️⃣ Tarjeta de Circulación\n4️⃣ Fotos del vehículo (4 lados + VIN)\n\nPor favor envíalos uno por uno 📸',
+    time: '10:35',
+  },
+  {
+    id: 12,
+    sender: 'user',
+    text: '📎 Cedula.jpg',
+    time: '10:36',
+  },
+  {
+    id: 13,
+    sender: 'user',
+    text: '📎 Licencia.jpg',
+    time: '10:36',
+  },
+  {
+    id: 14,
+    sender: 'user',
+    text: '📎 Tarjeta_Circulacion.jpg',
+    time: '10:37',
+  },
+  {
+    id: 15,
+    sender: 'user',
+    text: '📎 Fotos_Auto.zip',
+    time: '10:37',
+  },
+  {
+    id: 16,
+    sender: 'bot',
+    text: 'Perfecto! ✅ Documentos recibidos. Verifica tus datos:',
+    time: '10:38',
+  },
+  {
+    id: 17,
+    sender: 'bot',
+    text: '👤 Juan Pérez\n🚗 Toyota Corolla 2022\n📋 Todo Riesgo - ASSA\n💰 $89/mes\n\n¿Todo correcto?',
+    time: '10:38',
+    buttons: ['✅ Confirmar', '✏️ Editar'],
+  },
+  {
+    id: 18,
+    sender: 'user',
+    text: '✅ Confirmar',
+    time: '10:39',
+  },
+  {
+    id: 19,
+    sender: 'bot',
+    text: '🎉 ¡Listo! Tu póliza ASSA #PA-2024-12345 está activa.\n\n📄 Certificado enviado a tu email.',
+    time: '10:39',
   },
 ];
 
