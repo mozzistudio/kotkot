@@ -1,0 +1,66 @@
+{
+  "type": "viaje",
+  "slug": "viaje",
+  "name": "Seguro de Viaje",
+  "shortDescription": "Protección completa para tus viajes: gastos médicos, cancelaciones, equipaje y más.",
+  "longDescription": "El seguro de viaje te protege durante tus vacaciones o viajes de negocios. Cubre emergencias médicas en el extranjero, cancelaciones de vuelo, pérdida de equipaje, repatriación y más. Indispensable para viajar con tranquilidad.",
+  "icon": "✈️",
+  "seo": {
+    "metaTitle": "Seguro de Viaje Internacional 2026 - Viaja Protegido | kotkot.ai",
+    "metaDescription": "Compara seguros de viaje para salir de Panamá. Cobertura médica internacional, cancelaciones, equipaje perdido. Desde $5/día. Cotiza ahora.",
+    "keywords": [
+      "seguro de viaje panama",
+      "seguro viaje internacional",
+      "seguro medico viaje",
+      "seguro cancelacion vuelo",
+      "seguro equipaje"
+    ],
+    "h1": "Seguro de Viaje: Protección Internacional Completa"
+  },
+  "benefits": [
+    "Gastos médicos en el extranjero",
+    "Repatriación médica o funeraria",
+    "Cancelación de viaje",
+    "Pérdida o retraso de equipaje",
+    "Asistencia legal en el extranjero",
+    "Cobertura COVID-19"
+  ],
+  "whoNeedsIt": [
+    "Viajeros internacionales",
+    "Turistas que van a Europa o Asia",
+    "Viajeros de negocios frecuentes",
+    "Familias que viajan con niños"
+  ],
+  "coverageTypes": [
+    {
+      "name": "Gastos Médicos",
+      "description": "Cubre atención médica de emergencia, hospitalización y medicamentos en el extranjero."
+    },
+    {
+      "name": "Cancelación",
+      "description": "Reembolso de gastos no reembolsables si debes cancelar por enfermedad, emergencia familiar u otros eventos cubiertos."
+    },
+    {
+      "name": "Equipaje",
+      "description": "Compensación por pérdida, robo o daño de equipaje durante el viaje."
+    }
+  ],
+  "priceRanges": {
+    "min": "$5/día",
+    "max": "$50/día",
+    "factors": [
+      "Destino del viaje",
+      "Duración del viaje",
+      "Edad del viajero",
+      "Actividades planeadas",
+      "Monto de cobertura médica"
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Cubre COVID-19?",
+      "answer": "La mayoría de seguros modernos incluyen cobertura COVID, pero verifica los términos específicos de cada póliza."
+    }
+  ],
+  "relatedProducts": ["salud", "accidentes-personales"]
+}

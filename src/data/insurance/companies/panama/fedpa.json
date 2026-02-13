@@ -1,0 +1,72 @@
+{
+  "slug": "fedpa",
+  "name": "Fedpa Seguros",
+  "legalName": "Federación Panameña de Aseguradores S.A.",
+  "logo": "/logos/fedpa.png",
+  "country": "panama",
+  "description": "Fedpa es una cooperativa de seguros panameña con enfoque comunitario. Ofrece productos de seguros accesibles con énfasis en servicio al cliente y beneficios para sus miembros.",
+  "foundedYear": 1975,
+  "headquarters": "Ciudad de Panamá, Panamá",
+  "seo": {
+    "metaTitle": "Fedpa Seguros Panamá 2026 - Cooperativa de Seguros | kotkot.ai",
+    "metaDescription": "Fedpa Seguros. Cooperativa panameña con +45 años. Seguros accesibles de auto, vida y hogar. Beneficios para miembros. Cotiza ahora.",
+    "keywords": [
+      "fedpa panama",
+      "fedpa seguros",
+      "cooperativa seguros panama"
+    ],
+    "h1": "Fedpa Seguros - Cooperativa Panameña"
+  },
+  "productsOffered": [
+    "auto",
+    "vida",
+    "hogar",
+    "accidentes-personales"
+  ],
+  "ratings": {
+    "overall": 3.9,
+    "customerService": 4.1,
+    "claimsProcess": 3.8,
+    "digitalExperience": 3.5,
+    "priceValue": 4.2,
+    "reviewCount": 318
+  },
+  "pros": [
+    "Precios accesibles",
+    "Enfoque comunitario",
+    "Beneficios para miembros",
+    "Atención cercana"
+  ],
+  "cons": [
+    "Tecnología limitada",
+    "Menos productos disponibles",
+    "Procesos menos ágiles",
+    "Sin app móvil"
+  ],
+  "contact": {
+    "phone": "+507 264-8200",
+    "email": "info@fedpa.com",
+    "website": "https://www.fedpa.com",
+    "officeLocations": [
+      {
+        "city": "Ciudad de Panamá",
+        "address": "Avenida Balboa"
+      }
+    ]
+  },
+  "digitalFeatures": {
+    "onlineQuotes": false,
+    "mobileApp": false,
+    "onlineClaims": false,
+    "chatSupport": false,
+    "whatsappSupport": false
+  },
+  "licenses": [
+    "Autorizada por la Superintendencia de Seguros de Panamá"
+  ],
+  "specialties": [
+    "Modelo cooperativo",
+    "Seguros accesibles"
+  ],
+  "marketPosition": "Cooperativa con nicho en sectores populares"
+}

@@ -1,0 +1,72 @@
+{
+  "type": "ahorro",
+  "slug": "ahorro",
+  "name": "Seguro de Ahorro",
+  "shortDescription": "Combina protección de vida con ahorro e inversión para alcanzar tus metas financieras.",
+  "longDescription": "El seguro de ahorro es un plan que combina protección de vida con un componente de ahorro o inversión. Ideal para acumular capital a largo plazo mientras proteges a tu familia, con beneficios fiscales y garantías de rentabilidad.",
+  "icon": "💰",
+  "seo": {
+    "metaTitle": "Seguro de Ahorro en Panamá 2026 - Ahorra e Invierte | kotkot.ai",
+    "metaDescription": "Planes de ahorro con seguro de vida en Panamá. Acumula capital, protege tu familia y obtén rendimientos. Compara opciones y cotiza.",
+    "keywords": [
+      "seguro de ahorro panama",
+      "plan de ahorro",
+      "seguro inversion",
+      "ahorro programado",
+      "seguro dotal"
+    ],
+    "h1": "Seguro de Ahorro: Protección + Inversión"
+  },
+  "benefits": [
+    "Ahorro disciplinado y automático",
+    "Protección de vida incluida",
+    "Rendimientos garantizados o variables",
+    "Beneficios fiscales",
+    "Acumulación de capital a largo plazo",
+    "Préstamos sobre valor en efectivo",
+    "Flexibilidad en aportes"
+  ],
+  "whoNeedsIt": [
+    "Personas que buscan ahorro forzoso",
+    "Padres ahorrando para educación universitaria",
+    "Planificación de retiro",
+    "Personas que buscan beneficios fiscales",
+    "Inversionistas conservadores"
+  ],
+  "coverageTypes": [
+    {
+      "name": "Vida Universal",
+      "description": "Combina seguro de vida con ahorro flexible e inversión, con ajustes en primas y cobertura."
+    },
+    {
+      "name": "Seguro Dotal",
+      "description": "Paga una suma al final del plazo si sobrevives, o antes a beneficiarios si falleces."
+    },
+    {
+      "name": "Renta Vitalicia",
+      "description": "Acumulas capital durante años y luego recibes pagos mensuales de por vida."
+    }
+  ],
+  "priceRanges": {
+    "min": "$50/mes",
+    "max": "$2,000/mes",
+    "factors": [
+      "Monto de ahorro deseado",
+      "Plazo del plan",
+      "Edad al contratar",
+      "Tipo de inversión",
+      "Suma asegurada de vida"
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Puedo retirar mi dinero antes?",
+      "answer": "Sí, pero generalmente con penalizaciones. Algunos planes permiten préstamos contra el valor acumulado sin cancelar la póliza."
+    },
+    {
+      "question": "¿Qué rendimiento puedo esperar?",
+      "answer": "Los rendimientos varían según el tipo de plan: desde 2-4% garantizado en planes conservadores hasta rendimientos variables según mercado en planes de inversión."
+    }
+  ],
+  "relatedProducts": ["vida", "salud"]
+}

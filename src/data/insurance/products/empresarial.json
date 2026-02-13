@@ -1,0 +1,66 @@
+{
+  "type": "empresarial",
+  "slug": "empresarial",
+  "name": "Seguro Empresarial",
+  "shortDescription": "Protección integral para tu negocio: propiedad, responsabilidad, equipos y más.",
+  "longDescription": "El seguro empresarial protege tu negocio contra riesgos diversos: daños a la propiedad, responsabilidad civil, robo, interrupción de operaciones y más. Personalizable según el tipo y tamaño de tu empresa.",
+  "icon": "🏢",
+  "seo": {
+    "metaTitle": "Seguro Empresarial en Panamá 2026 - Protege tu Negocio | kotkot.ai",
+    "metaDescription": "Seguros para empresas en Panamá. Protege tu negocio contra riesgos: propiedad, responsabilidad civil, empleados. Cotiza gratis.",
+    "keywords": [
+      "seguro empresarial panama",
+      "seguro negocio",
+      "seguro comercial",
+      "seguro pyme",
+      "responsabilidad civil empresa"
+    ],
+    "h1": "Seguro Empresarial: Protege tu Negocio"
+  },
+  "benefits": [
+    "Protección de propiedad comercial",
+    "Responsabilidad civil general",
+    "Cobertura de equipos y maquinaria",
+    "Interrupción de operaciones",
+    "Robo y vandalismo",
+    "Responsabilidad de productos"
+  ],
+  "whoNeedsIt": [
+    "Dueños de pequeñas y medianas empresas",
+    "Comerciantes con local físico",
+    "Empresas de servicios",
+    "Restaurantes y hoteles"
+  ],
+  "coverageTypes": [
+    {
+      "name": "Propiedad Comercial",
+      "description": "Cubre edificio, equipos, inventario y otros activos del negocio."
+    },
+    {
+      "name": "Responsabilidad Civil",
+      "description": "Protege contra reclamaciones por lesiones o daños causados por tu negocio."
+    },
+    {
+      "name": "Interrupción",
+      "description": "Cubre pérdida de ingresos si el negocio debe cerrar temporalmente por un siniestro."
+    }
+  ],
+  "priceRanges": {
+    "min": "$50/mes",
+    "max": "$2,000/mes",
+    "factors": [
+      "Tipo de negocio",
+      "Tamaño de la empresa",
+      "Ubicación",
+      "Valor de activos",
+      "Número de empleados"
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Qué es la responsabilidad civil general?",
+      "answer": "Protege tu empresa contra reclamaciones de terceros por lesiones corporales o daños a la propiedad."
+    }
+  ],
+  "relatedProducts": ["responsabilidad-civil", "vida"]
+}

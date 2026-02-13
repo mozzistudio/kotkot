@@ -1,0 +1,76 @@
+{
+  "slug": "bupa",
+  "name": "Bupa Panamá",
+  "legalName": "Bupa Panamá S.A.",
+  "logo": "/logos/bupa.png",
+  "country": "panama",
+  "description": "Bupa es un proveedor global de seguros de salud con presencia en Panamá. Especializado en planes médicos premium con cobertura internacional, ideal para expatriados y ejecutivos.",
+  "foundedYear": 2005,
+  "headquarters": "Ciudad de Panamá, Panamá",
+  "seo": {
+    "metaTitle": "Bupa Panamá 2026 - Seguros de Salud Internacional | kotkot.ai",
+    "metaDescription": "Bupa en Panamá. Líder en seguros de salud internacional. Cobertura global premium. Ideal para expatriados. Cotiza tu plan médico.",
+    "keywords": [
+      "bupa panama",
+      "bupa salud",
+      "seguro salud internacional",
+      "bupa expatriados panama"
+    ],
+    "h1": "Bupa Panamá - Salud Internacional Premium"
+  },
+  "productsOffered": [
+    "salud",
+    "viaje",
+    "accidentes-personales"
+  ],
+  "ratings": {
+    "overall": 4.6,
+    "customerService": 4.7,
+    "claimsProcess": 4.6,
+    "digitalExperience": 4.5,
+    "priceValue": 3.9,
+    "reviewCount": 674
+  },
+  "pros": [
+    "Cobertura de salud internacional de primer nivel",
+    "Red médica global exclusiva",
+    "Servicio al cliente en múltiples idiomas",
+    "Proceso de reclamaciones eficiente",
+    "Telemedicina 24/7",
+    "Ideal para expatriados"
+  ],
+  "cons": [
+    "Primas premium (las más altas del mercado)",
+    "Enfocado solo en seguros de salud",
+    "No ofrece seguros de auto o hogar",
+    "Puede ser excesivo para necesidades locales"
+  ],
+  "contact": {
+    "phone": "+507 297-0707",
+    "whatsapp": "+507 6500-0707",
+    "email": "panama@bupa.com",
+    "website": "https://www.bupa-latam.com/panama",
+    "officeLocations": [
+      {
+        "city": "Ciudad de Panamá",
+        "address": "Punta Pacífica, The Towers"
+      }
+    ]
+  },
+  "digitalFeatures": {
+    "onlineQuotes": true,
+    "mobileApp": true,
+    "onlineClaims": true,
+    "chatSupport": true,
+    "whatsappSupport": true
+  },
+  "licenses": [
+    "Autorizada por la Superintendencia de Seguros de Panamá"
+  ],
+  "specialties": [
+    "Líder absoluto en seguros de salud internacional",
+    "Red médica global",
+    "Servicio premium para expatriados"
+  ],
+  "marketPosition": "Líder en seguros de salud premium e internacional"
+}

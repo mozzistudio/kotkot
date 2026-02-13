@@ -1,0 +1,76 @@
+{
+  "slug": "banistmo-seguros",
+  "name": "Banistmo Seguros",
+  "legalName": "Banistmo Compañía de Seguros S.A.",
+  "logo": "/logos/banistmo.png",
+  "country": "panama",
+  "description": "Banistmo Seguros es el brazo asegurador de Banistmo (Banco Istmo), uno de los bancos más grandes de Panamá. Ofrece productos de seguros integrados con servicios bancarios.",
+  "foundedYear": 2001,
+  "headquarters": "Ciudad de Panamá, Panamá",
+  "seo": {
+    "metaTitle": "Banistmo Seguros Panamá 2026 - Seguros Bancarios | kotkot.ai",
+    "metaDescription": "Banistmo Seguros. Seguros integrados con banca. Auto, vida, salud y más. Beneficios para clientes Banistmo. Cotiza ahora.",
+    "keywords": [
+      "banistmo seguros",
+      "seguros banistmo panama",
+      "seguro banco istmo"
+    ],
+    "h1": "Banistmo Seguros - Integración Bancaria"
+  },
+  "productsOffered": [
+    "auto",
+    "vida",
+    "hogar",
+    "viaje",
+    "salud",
+    "ahorro"
+  ],
+  "ratings": {
+    "overall": 4.2,
+    "customerService": 4.1,
+    "claimsProcess": 4.0,
+    "digitalExperience": 4.4,
+    "priceValue": 4.0,
+    "reviewCount": 756
+  },
+  "pros": [
+    "Integración con servicios bancarios",
+    "Descuentos para clientes del banco",
+    "Pago automático desde cuenta bancaria",
+    "Plataforma digital sólida",
+    "Respaldo de grupo financiero grande"
+  ],
+  "cons": [
+    "Mejores beneficios requieren ser cliente bancario",
+    "Precios no siempre los más competitivos",
+    "Proceso puede ser burocrático",
+    "Opciones limitadas vs aseguradoras especializadas"
+  ],
+  "contact": {
+    "phone": "+507 263-6666",
+    "email": "seguros@banistmo.com",
+    "website": "https://www.banistmo.com/seguros",
+    "officeLocations": [
+      {
+        "city": "Ciudad de Panamá",
+        "address": "Vía España, Torre Banistmo"
+      }
+    ]
+  },
+  "digitalFeatures": {
+    "onlineQuotes": true,
+    "mobileApp": true,
+    "onlineClaims": true,
+    "chatSupport": true,
+    "whatsappSupport": false
+  },
+  "licenses": [
+    "Autorizada por la Superintendencia de Seguros de Panamá"
+  ],
+  "specialties": [
+    "Bancaseguros",
+    "Integración banca-seguros",
+    "Productos de ahorro e inversión"
+  ],
+  "marketPosition": "Fuerte en bancaseguros con base de clientes del banco"
+}

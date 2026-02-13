@@ -1,0 +1,60 @@
+{
+  "type": "mascota",
+  "slug": "mascota",
+  "name": "Seguro de Mascota",
+  "shortDescription": "Cobertura veterinaria y de salud para tus perros y gatos.",
+  "longDescription": "El seguro de mascota cubre gastos veterinarios, cirugías, medicamentos y tratamientos para tu perro o gato. También incluye responsabilidad civil por daños que tu mascota pueda causar a terceros.",
+  "icon": "🐾",
+  "seo": {
+    "metaTitle": "Seguro para Mascotas en Panamá 2026 - Protege a tu Perro o Gato | kotkot.ai",
+    "metaDescription": "Seguro veterinario para mascotas en Panamá. Cubre consultas, cirugías, medicamentos y emergencias. Desde $15/mes. Compara y cotiza.",
+    "keywords": [
+      "seguro mascota panama",
+      "seguro perro",
+      "seguro gato",
+      "seguro veterinario",
+      "cobertura veterinaria"
+    ],
+    "h1": "Seguro de Mascota: Salud para tu Mejor Amigo"
+  },
+  "benefits": [
+    "Consultas veterinarias",
+    "Cirugías y hospitalizaciones",
+    "Medicamentos",
+    "Vacunaciones",
+    "Exámenes de laboratorio",
+    "Responsabilidad civil"
+  ],
+  "whoNeedsIt": [
+    "Dueños de perros y gatos",
+    "Familias con mascotas jóvenes",
+    "Propietarios de razas con problemas de salud hereditarios"
+  ],
+  "coverageTypes": [
+    {
+      "name": "Atención Veterinaria",
+      "description": "Cubre consultas regulares, emergencias, cirugías y tratamientos veterinarios."
+    },
+    {
+      "name": "Responsabilidad Civil",
+      "description": "Cubre daños que tu mascota cause a otras personas o propiedades."
+    }
+  ],
+  "priceRanges": {
+    "min": "$15/mes",
+    "max": "$80/mes",
+    "factors": [
+      "Tipo de mascota",
+      "Raza y edad",
+      "Historial de salud",
+      "Nivel de cobertura"
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Cubre condiciones preexistentes?",
+      "answer": "Generalmente no, pero algunas aseguradoras las cubren después de un período de espera."
+    }
+  ],
+  "relatedProducts": ["responsabilidad-civil", "hogar"]
+}

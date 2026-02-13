@@ -1,0 +1,87 @@
+{
+  "slug": "mapfre",
+  "name": "MAPFRE Panamá",
+  "legalName": "MAPFRE Panamá S.A.",
+  "logo": "/logos/mapfre.png",
+  "country": "panama",
+  "description": "MAPFRE es un grupo asegurador multinacional español con fuerte presencia en Panamá. Reconocido por su innovación, tecnología y atención al cliente de primer nivel. Ofrece soluciones integrales en seguros personales y empresariales.",
+  "foundedYear": 1989,
+  "headquarters": "Ciudad de Panamá, Panamá",
+  "seo": {
+    "metaTitle": "MAPFRE Panamá 2026 - Seguros de Auto, Vida, Salud | kotkot.ai",
+    "metaDescription": "MAPFRE en Panamá. Aseguradora global con presencia local. Seguros de auto, vida, salud, hogar y más. Tecnología de punta. Cotiza ahora.",
+    "keywords": [
+      "mapfre panama",
+      "mapfre seguros",
+      "mapfre auto",
+      "mapfre vida",
+      "mapfre salud panama"
+    ],
+    "h1": "MAPFRE Panamá - Innovación en Seguros",
+    "canonicalUrl": "https://kotkot.ai/seguros/aseguradoras/mapfre"
+  },
+  "productsOffered": [
+    "auto",
+    "salud",
+    "vida",
+    "hogar",
+    "viaje",
+    "mascota",
+    "empresarial",
+    "responsabilidad-civil",
+    "accidentes-personales",
+    "ahorro"
+  ],
+  "ratings": {
+    "overall": 4.4,
+    "customerService": 4.5,
+    "claimsProcess": 4.3,
+    "digitalExperience": 4.7,
+    "priceValue": 4.1,
+    "reviewCount": 1523
+  },
+  "pros": [
+    "Respaldo de grupo asegurador global",
+    "Tecnología de punta y app móvil excelente",
+    "Atención al cliente 24/7",
+    "Cotizaciones en línea instantáneas",
+    "Programa de fidelidad y descuentos",
+    "Proceso de reclamaciones 100% digital",
+    "Cobertura internacional en seguros de viaje",
+    "Productos innovadores como seguro de mascotas"
+  ],
+  "cons": [
+    "Red de talleres más limitada que competidores locales",
+    "Servicio puede ser menos personalizado",
+    "Algunas coberturas tienen exclusiones más estrictas",
+    "Primas competitivas pero no siempre las más bajas"
+  ],
+  "contact": {
+    "phone": "+507 297-5200",
+    "whatsapp": "+507 6100-0000",
+    "email": "clientes@mapfre.com.pa",
+    "website": "https://www.mapfre.com.pa",
+    "officeLocations": [
+      {
+        "city": "Ciudad de Panamá",
+        "address": "Avenida Samuel Lewis, Edificio MAPFRE"
+      }
+    ]
+  },
+  "digitalFeatures": {
+    "onlineQuotes": true,
+    "mobileApp": true,
+    "onlineClaims": true,
+    "chatSupport": true,
+    "whatsappSupport": true
+  },
+  "licenses": [
+    "Autorizada por la Superintendencia de Seguros de Panamá"
+  ],
+  "specialties": [
+    "Líder en transformación digital",
+    "Experiencia internacional",
+    "Innovación en productos"
+  ],
+  "marketPosition": "Top 3 en el mercado panameño con fuerte crecimiento"
+}

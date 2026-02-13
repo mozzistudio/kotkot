@@ -1,0 +1,114 @@
+{
+  "type": "vida",
+  "slug": "vida",
+  "name": "Seguro de Vida",
+  "shortDescription": "Protección financiera para tu familia en caso de fallecimiento o invalidez permanente.",
+  "longDescription": "El seguro de vida garantiza la seguridad económica de tus seres queridos cuando más lo necesitan. Ofrece una suma asegurada que puede cubrir deudas, gastos funerarios, educación de los hijos y sustento familiar. Con opciones de vida temporal o permanente.",
+  "icon": "🛡️",
+  "seo": {
+    "metaTitle": "Seguro de Vida en Panamá 2026 - Protege a tu Familia | kotkot.ai",
+    "metaDescription": "Compara seguros de vida en Panamá. Encuentra el mejor plan para proteger a tu familia. Desde $15/mes. ASSA, Sura, MAPFRE y más. Cotiza gratis.",
+    "keywords": [
+      "seguro de vida panama",
+      "seguro de vida barato",
+      "poliza de vida",
+      "seguro vida familiar",
+      "seguro invalidez",
+      "assa vida",
+      "sura vida panama"
+    ],
+    "h1": "Seguro de Vida en Panamá: Tranquilidad para tu Familia",
+    "canonicalUrl": "https://kotkot.ai/seguros/vida"
+  },
+  "benefits": [
+    "Suma asegurada para tus beneficiarios",
+    "Cobertura de invalidez total y permanente",
+    "Beneficio por muerte accidental",
+    "Cobertura de enfermedades graves",
+    "Exención de pago de primas en caso de invalidez",
+    "Anticipo de beneficios por enfermedad terminal",
+    "Cobertura de gastos funerarios",
+    "Opciones de ahorro e inversión",
+    "Primas fijas durante el período de cobertura",
+    "Sin examen médico para montos bajos",
+    "Doble indemnización por accidente",
+    "Beneficios fiscales en algunos casos"
+  ],
+  "whoNeedsIt": [
+    "Padres con hijos dependientes",
+    "Personas con hipoteca o deudas significativas",
+    "Sostén económico principal de la familia",
+    "Empresarios y profesionales independientes",
+    "Personas que desean dejar un legado",
+    "Parejas jóvenes planificando el futuro",
+    "Adultos mayores sin ahorros suficientes",
+    "Personas que buscan ahorro forzoso"
+  ],
+  "coverageTypes": [
+    {
+      "name": "Vida Temporal",
+      "description": "Cobertura por un período específico (10, 20, 30 años). Más económico, ideal para cubrir períodos de riesgo específicos como una hipoteca."
+    },
+    {
+      "name": "Vida Entera",
+      "description": "Cobertura vitalicia que garantiza un pago sin importar cuándo ocurra el fallecimiento. Incluye componente de ahorro."
+    },
+    {
+      "name": "Vida Universal",
+      "description": "Combina seguro y ahorro con flexibilidad en primas y suma asegurada. Permite ajustar cobertura según tus necesidades cambiantes."
+    },
+    {
+      "name": "Invalidez y Sobrevivencia",
+      "description": "Cubre invalidez total y permanente, pagando una renta mensual si no puedes trabajar. También cubre fallecimiento."
+    },
+    {
+      "name": "Enfermedades Graves",
+      "description": "Paga una suma global al diagnóstico de enfermedades críticas como cáncer, infarto o derrame cerebral."
+    },
+    {
+      "name": "Accidentes Personales",
+      "description": "Cobertura adicional que duplica o triplica el beneficio si el fallecimiento ocurre por accidente."
+    }
+  ],
+  "priceRanges": {
+    "min": "$15/mes",
+    "max": "$500/mes",
+    "factors": [
+      "Edad al momento de contratación",
+      "Estado de salud y historial médico",
+      "Monto de la suma asegurada",
+      "Tipo de póliza (temporal vs permanente)",
+      "Ocupación y actividades de riesgo",
+      "Hábitos (fumador vs no fumador)",
+      "Género (las mujeres pagan menos generalmente)",
+      "Coberturas adicionales (invalidez, enfermedades graves)"
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Cuánto seguro de vida necesito?",
+      "answer": "La regla general es 10 veces tu ingreso anual, pero depende de tus deudas, gastos familiares y objetivos. Para una familia con hijos, considera cubrir hipoteca, educación universitaria y 5-10 años de gastos de vida."
+    },
+    {
+      "question": "¿Necesito examen médico?",
+      "answer": "Depende del monto. Para sumas aseguradas hasta $100,000, muchas aseguradoras solo requieren un cuestionario de salud. Montos mayores generalmente requieren examen médico completo."
+    },
+    {
+      "question": "¿Qué pasa si dejo de pagar?",
+      "answer": "En seguros temporales, la póliza se cancela y pierdes la cobertura. En seguros permanentes con valor en efectivo, puedes usar ese valor para mantener la póliza activa o recibirlo como reembolso parcial."
+    },
+    {
+      "question": "¿Cubre suicidio?",
+      "answer": "La mayoría de pólizas excluyen suicidio durante los primeros 2 años. Después de este período de carencia, sí hay cobertura y se paga el beneficio completo."
+    },
+    {
+      "question": "¿Puedo cambiar de beneficiarios?",
+      "answer": "Sí, puedes cambiar beneficiarios en cualquier momento llenando un formulario con la aseguradora. Se recomienda revisar y actualizar beneficiarios después de eventos importantes (matrimonio, divorcio, nacimientos)."
+    }
+  ],
+  "relatedProducts": [
+    "salud",
+    "accidentes-personales",
+    "ahorro"
+  ]
+}

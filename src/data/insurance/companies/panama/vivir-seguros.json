@@ -1,0 +1,70 @@
+{
+  "slug": "vivir-seguros",
+  "name": "Vivir Seguros",
+  "legalName": "Vivir Seguros S.A.",
+  "logo": "/logos/vivir.png",
+  "country": "panama",
+  "description": "Vivir Seguros es una aseguradora panameña moderna enfocada en seguros de vida y salud con tecnología digital. Destaca por su proceso de contratación 100% en línea y precios transparentes.",
+  "foundedYear": 2018,
+  "headquarters": "Ciudad de Panamá, Panamá",
+  "seo": {
+    "metaTitle": "Vivir Seguros Panamá 2026 - Seguro de Vida Digital | kotkot.ai",
+    "metaDescription": "Vivir Seguros. Aseguradora digital panameña. Seguros de vida y salud 100% en línea. Proceso rápido y transparente. Cotiza en minutos.",
+    "keywords": [
+      "vivir seguros panama",
+      "seguro vida digital",
+      "seguro online panama"
+    ],
+    "h1": "Vivir Seguros - Aseguradora Digital"
+  },
+  "productsOffered": [
+    "vida",
+    "salud",
+    "accidentes-personales",
+    "ahorro"
+  ],
+  "ratings": {
+    "overall": 4.2,
+    "customerService": 4.3,
+    "claimsProcess": 4.0,
+    "digitalExperience": 4.8,
+    "priceValue": 4.4,
+    "reviewCount": 289
+  },
+  "pros": [
+    "Proceso 100% digital y rápido",
+    "Precios transparentes y competitivos",
+    "Sin examen médico para montos básicos",
+    "Contratación en minutos",
+    "App móvil excelente",
+    "Interfaz moderna y fácil de usar"
+  ],
+  "cons": [
+    "Empresa relativamente nueva (menos trayectoria)",
+    "Solo ofrece vida y salud (no auto ni hogar)",
+    "Red médica más limitada",
+    "Sin oficinas físicas"
+  ],
+  "contact": {
+    "whatsapp": "+507 6700-0000",
+    "email": "hola@vivirseguros.com",
+    "website": "https://www.vivirseguros.com",
+    "officeLocations": []
+  },
+  "digitalFeatures": {
+    "onlineQuotes": true,
+    "mobileApp": true,
+    "onlineClaims": true,
+    "chatSupport": true,
+    "whatsappSupport": true
+  },
+  "licenses": [
+    "Autorizada por la Superintendencia de Seguros de Panamá"
+  ],
+  "specialties": [
+    "Primera aseguradora 100% digital de Panamá",
+    "Proceso de contratación instantáneo",
+    "Enfoque en millennials y Gen Z"
+  ],
+  "marketPosition": "Disruptor digital con crecimiento rápido"
+}

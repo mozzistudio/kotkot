@@ -1,0 +1,64 @@
+{
+  "type": "accidentes-personales",
+  "slug": "accidentes-personales",
+  "name": "Seguro de Accidentes Personales",
+  "shortDescription": "Protección contra lesiones y accidentes con cobertura de gastos médicos e indemnizaciones.",
+  "longDescription": "El seguro de accidentes personales te protege financieramente en caso de lesiones accidentales. Cubre gastos médicos, indemnización por muerte o invalidez accidental, y beneficios por hospitalización.",
+  "icon": "🚑",
+  "seo": {
+    "metaTitle": "Seguro Accidentes Personales Panamá 2026 - Protección 24/7 | kotkot.ai",
+    "metaDescription": "Seguro de accidentes personales en Panamá. Cobertura 24/7 contra lesiones accidentales. Desde $10/mes. Compara y cotiza.",
+    "keywords": [
+      "seguro accidentes panama",
+      "seguro accidentes personales",
+      "cobertura accidentes",
+      "seguro lesiones"
+    ],
+    "h1": "Seguro de Accidentes Personales: Protección 24/7"
+  },
+  "benefits": [
+    "Cobertura de gastos médicos por accidente",
+    "Indemnización por muerte accidental",
+    "Indemnización por invalidez permanente",
+    "Beneficio por hospitalización",
+    "Cobertura 24 horas, 7 días",
+    "Sin periodo de espera"
+  ],
+  "whoNeedsIt": [
+    "Personas activas y deportistas",
+    "Trabajadores en empleos de riesgo",
+    "Familias con niños activos",
+    "Personas sin seguro de salud completo"
+  ],
+  "coverageTypes": [
+    {
+      "name": "Gastos Médicos",
+      "description": "Cubre tratamiento médico necesario por lesiones accidentales."
+    },
+    {
+      "name": "Muerte Accidental",
+      "description": "Paga una suma global a beneficiarios en caso de muerte por accidente."
+    },
+    {
+      "name": "Invalidez Permanente",
+      "description": "Indemnización si un accidente resulta en discapacidad permanente."
+    }
+  ],
+  "priceRanges": {
+    "min": "$10/mes",
+    "max": "$100/mes",
+    "factors": [
+      "Edad del asegurado",
+      "Ocupación y riesgos",
+      "Monto de cobertura",
+      "Actividades deportivas"
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Cubre accidentes deportivos?",
+      "answer": "Sí, pero deportes extremos pueden requerir cobertura adicional o tener exclusiones."
+    }
+  ],
+  "relatedProducts": ["salud", "vida"]
+}

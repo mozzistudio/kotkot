@@ -1,0 +1,83 @@
+{
+  "slug": "sura",
+  "name": "Seguros Sura Panamá",
+  "legalName": "Seguros Sura S.A.",
+  "logo": "/logos/sura.png",
+  "country": "panama",
+  "description": "Sura es una compañía multinacional con amplia presencia en Latinoamérica. En Panamá, se destaca por su enfoque en bienestar, prevención y acompañamiento integral a sus clientes. Especializada en seguros de vida, salud y pensiones.",
+  "foundedYear": 2012,
+  "headquarters": "Ciudad de Panamá, Panamá",
+  "seo": {
+    "metaTitle": "Seguros Sura Panamá 2026 - Vida, Salud, Auto | kotkot.ai",
+    "metaDescription": "Sura Panamá. Aseguradora enfocada en tu bienestar. Seguros de vida, salud, auto y pensiones. Prevención y acompañamiento. Cotiza gratis.",
+    "keywords": [
+      "sura panama",
+      "seguros sura",
+      "sura vida",
+      "sura salud",
+      "sura auto panama"
+    ],
+    "h1": "Seguros Sura - Bienestar y Protección",
+    "canonicalUrl": "https://kotkot.ai/seguros/aseguradoras/sura"
+  },
+  "productsOffered": [
+    "auto",
+    "salud",
+    "vida",
+    "hogar",
+    "viaje",
+    "accidentes-personales",
+    "ahorro"
+  ],
+  "ratings": {
+    "overall": 4.3,
+    "customerService": 4.4,
+    "claimsProcess": 4.2,
+    "digitalExperience": 4.1,
+    "priceValue": 4.3,
+    "reviewCount": 987
+  },
+  "pros": [
+    "Enfoque en prevención y bienestar",
+    "Excelente servicio en seguros de vida y pensiones",
+    "Programas de fidelidad atractivos",
+    "Asesoría personalizada y cercana",
+    "Red médica de calidad",
+    "Precios competitivos",
+    "Respaldo de grupo latinoamericano sólido"
+  ],
+  "cons": [
+    "Presencia digital menos desarrollada que competidores",
+    "Menor variedad de productos que otras aseguradoras",
+    "Red de talleres limitada en provincias",
+    "App móvil requiere mejoras"
+  ],
+  "contact": {
+    "phone": "+507 306-8700",
+    "whatsapp": "+507 6200-0000",
+    "email": "servicioalcliente@segurossura.com",
+    "website": "https://www.segurossura.com.pa",
+    "officeLocations": [
+      {
+        "city": "Ciudad de Panamá",
+        "address": "Calle 50, Torre Global Bank"
+      }
+    ]
+  },
+  "digitalFeatures": {
+    "onlineQuotes": true,
+    "mobileApp": true,
+    "onlineClaims": false,
+    "chatSupport": true,
+    "whatsappSupport": true
+  },
+  "licenses": [
+    "Autorizada por la Superintendencia de Seguros de Panamá"
+  ],
+  "specialties": [
+    "Liderazgo en seguros de vida",
+    "Enfoque en bienestar y prevención",
+    "Planes de pensiones y ahorro"
+  ],
+  "marketPosition": "Top 5 con especialización en vida y salud"
+}

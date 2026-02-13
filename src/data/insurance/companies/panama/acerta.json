@@ -1,0 +1,74 @@
+{
+  "slug": "acerta",
+  "name": "Acerta Seguros",
+  "legalName": "Acerta Compañía de Seguros S.A.",
+  "logo": "/logos/acerta.png",
+  "country": "panama",
+  "description": "Acerta es una aseguradora panameña especializada en seguros de auto, con más de 25 años sirviendo al mercado local. Reconocida por sus precios competitivos y servicio personalizado.",
+  "foundedYear": 1998,
+  "headquarters": "Ciudad de Panamá, Panamá",
+  "seo": {
+    "metaTitle": "Acerta Seguros Panamá 2026 - Especialistas en Autos | kotkot.ai",
+    "metaDescription": "Acerta Seguros en Panamá. Especialistas en seguros de auto con precios competitivos. +25 años de experiencia. Cotiza tu seguro vehicular.",
+    "keywords": [
+      "acerta panama",
+      "acerta seguros",
+      "acerta auto",
+      "seguro auto acerta"
+    ],
+    "h1": "Acerta Seguros - Especialistas en Autos"
+  },
+  "productsOffered": [
+    "auto",
+    "hogar",
+    "vida",
+    "accidentes-personales"
+  ],
+  "ratings": {
+    "overall": 4.1,
+    "customerService": 4.0,
+    "claimsProcess": 4.2,
+    "digitalExperience": 3.8,
+    "priceValue": 4.4,
+    "reviewCount": 542
+  },
+  "pros": [
+    "Precios muy competitivos en seguros de auto",
+    "Atención personalizada",
+    "Procesos de reclamación rápidos",
+    "Flexibilidad en métodos de pago",
+    "Especialización en vehículos"
+  ],
+  "cons": [
+    "Menos productos que aseguradoras grandes",
+    "Presencia digital limitada",
+    "Red de talleres más pequeña",
+    "App móvil básica"
+  ],
+  "contact": {
+    "phone": "+507 399-2000",
+    "email": "info@acerta.com.pa",
+    "website": "https://www.acerta.com.pa",
+    "officeLocations": [
+      {
+        "city": "Ciudad de Panamá",
+        "address": "Vía España, Edificio Acerta"
+      }
+    ]
+  },
+  "digitalFeatures": {
+    "onlineQuotes": true,
+    "mobileApp": true,
+    "onlineClaims": false,
+    "chatSupport": false,
+    "whatsappSupport": true
+  },
+  "licenses": [
+    "Autorizada por la Superintendencia de Seguros de Panamá"
+  ],
+  "specialties": [
+    "Seguros de auto económicos",
+    "Servicio personalizado"
+  ],
+  "marketPosition": "Aseguradora local enfocada en precio-valor"
+}

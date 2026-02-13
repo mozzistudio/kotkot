@@ -1,0 +1,78 @@
+{
+  "slug": "generali",
+  "name": "Generali Panamá",
+  "legalName": "Generali Panamá S.A.",
+  "logo": "/logos/generali.png",
+  "country": "panama",
+  "description": "Generali es uno de los grupos aseguradores más grandes del mundo con presencia en Panamá. Ofrece productos premium con enfoque en seguros de vida, salud y patrimoniales de alto valor.",
+  "foundedYear": 2015,
+  "headquarters": "Ciudad de Panamá, Panamá",
+  "seo": {
+    "metaTitle": "Generali Panamá 2026 - Seguros Premium Internacionales | kotkot.ai",
+    "metaDescription": "Generali en Panamá. Grupo asegurador global. Seguros premium de vida, salud y patrimoniales. Cobertura internacional. Cotiza ahora.",
+    "keywords": [
+      "generali panama",
+      "generali seguros",
+      "seguros premium panama"
+    ],
+    "h1": "Generali Panamá - Seguros Premium Globales"
+  },
+  "productsOffered": [
+    "vida",
+    "salud",
+    "auto",
+    "hogar",
+    "viaje",
+    "ahorro",
+    "empresarial"
+  ],
+  "ratings": {
+    "overall": 4.5,
+    "customerService": 4.6,
+    "claimsProcess": 4.5,
+    "digitalExperience": 4.4,
+    "priceValue": 3.8,
+    "reviewCount": 523
+  },
+  "pros": [
+    "Respaldo de grupo asegurador global líder",
+    "Productos premium de alta calidad",
+    "Cobertura internacional extensa",
+    "Excelente servicio al cliente",
+    "Procesos ágiles y profesionales",
+    "Ideal para patrimonios altos"
+  ],
+  "cons": [
+    "Primas premium (más caras)",
+    "Enfocado en segmento alto",
+    "No es la mejor opción para presupuestos ajustados",
+    "Presencia limitada fuera de Ciudad de Panamá"
+  ],
+  "contact": {
+    "phone": "+507 297-7000",
+    "email": "panama@generali.com",
+    "website": "https://www.generali.com.pa",
+    "officeLocations": [
+      {
+        "city": "Ciudad de Panamá",
+        "address": "Costa del Este, Tower Financial Center"
+      }
+    ]
+  },
+  "digitalFeatures": {
+    "onlineQuotes": true,
+    "mobileApp": true,
+    "onlineClaims": true,
+    "chatSupport": true,
+    "whatsappSupport": true
+  },
+  "licenses": [
+    "Autorizada por la Superintendencia de Seguros de Panamá"
+  ],
+  "specialties": [
+    "Seguros premium para altos patrimonios",
+    "Cobertura internacional",
+    "Experiencia global"
+  ],
+  "marketPosition": "Líder en segmento premium y alto valor"
+}

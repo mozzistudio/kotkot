@@ -1,0 +1,58 @@
+{
+  "type": "responsabilidad-civil",
+  "slug": "responsabilidad-civil",
+  "name": "Seguro de Responsabilidad Civil",
+  "shortDescription": "Protección contra reclamaciones legales por daños causados a terceros.",
+  "longDescription": "El seguro de responsabilidad civil te protege contra reclamaciones legales por daños corporales o materiales que causes a otras personas. Esencial para profesionales, empresarios y cualquiera que pueda ser demandado.",
+  "icon": "⚖️",
+  "seo": {
+    "metaTitle": "Seguro Responsabilidad Civil Panamá 2026 - Protección Legal | kotkot.ai",
+    "metaDescription": "Seguro de responsabilidad civil en Panamá. Protección contra demandas y reclamaciones. Para profesionales, empresas e individuos.",
+    "keywords": [
+      "responsabilidad civil panama",
+      "seguro responsabilidad profesional",
+      "seguro errores omisiones",
+      "rc profesional"
+    ],
+    "h1": "Seguro de Responsabilidad Civil: Protección Legal"
+  },
+  "benefits": [
+    "Cobertura de demandas y reclamaciones",
+    "Gastos legales y de defensa",
+    "Indemnizaciones a terceros",
+    "Protección de patrimonio personal"
+  ],
+  "whoNeedsIt": [
+    "Médicos, abogados y profesionales",
+    "Contratistas y constructores",
+    "Consultores y asesores",
+    "Propietarios de negocios"
+  ],
+  "coverageTypes": [
+    {
+      "name": "Responsabilidad General",
+      "description": "Cubre daños corporales y materiales causados a terceros en el curso de tus actividades."
+    },
+    {
+      "name": "Responsabilidad Profesional",
+      "description": "Protege contra reclamaciones por errores u omisiones en servicios profesionales."
+    }
+  ],
+  "priceRanges": {
+    "min": "$30/mes",
+    "max": "$500/mes",
+    "factors": [
+      "Profesión u ocupación",
+      "Monto de cobertura",
+      "Historial de reclamaciones",
+      "Volumen de negocio"
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Cubre negligencia profesional?",
+      "answer": "Sí, la responsabilidad profesional específicamente cubre errores, omisiones y negligencia en servicios profesionales."
+    }
+  ],
+  "relatedProducts": ["empresarial", "vida"]
+}
