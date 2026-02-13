@@ -7,20 +7,21 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Shield, Phone, ChevronDown, Menu, X } from 'lucide-react';
+import { Phone, ChevronDown, Menu, X, Car, Heart, Shield, Home, Plane, PawPrint, Building2, Scale, Ambulance, PiggyBank } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Logo } from '@/components/ui/Logo';
 
 const insuranceProducts = [
-  { slug: 'auto', name: 'Seguro de Auto', icon: '🚗', description: 'Protección para tu vehículo' },
-  { slug: 'salud', name: 'Seguro de Salud', icon: '🏥', description: 'Cobertura médica completa' },
-  { slug: 'vida', name: 'Seguro de Vida', icon: '🛡️', description: 'Protección para tu familia' },
-  { slug: 'hogar', name: 'Seguro de Hogar', icon: '🏠', description: 'Protege tu casa' },
-  { slug: 'viaje', name: 'Seguro de Viaje', icon: '✈️', description: 'Viaja protegido' },
-  { slug: 'mascota', name: 'Seguro de Mascota', icon: '🐾', description: 'Salud para tu mascota' },
-  { slug: 'empresarial', name: 'Seguro Empresarial', icon: '🏢', description: 'Para tu negocio' },
-  { slug: 'responsabilidad-civil', name: 'Responsabilidad Civil', icon: '⚖️', description: 'Protección legal' },
-  { slug: 'accidentes-personales', name: 'Accidentes Personales', icon: '🚑', description: 'Cobertura 24/7' },
-  { slug: 'ahorro', name: 'Seguro de Ahorro', icon: '💰', description: 'Ahorra e invierte' },
+  { slug: 'auto', name: 'Seguro de Auto', icon: Car, description: 'Protección para tu vehículo', color: 'text-blue-600' },
+  { slug: 'salud', name: 'Seguro de Salud', icon: Heart, description: 'Cobertura médica completa', color: 'text-red-500' },
+  { slug: 'vida', name: 'Seguro de Vida', icon: Shield, description: 'Protección para tu familia', color: 'text-purple-600' },
+  { slug: 'hogar', name: 'Seguro de Hogar', icon: Home, description: 'Protege tu casa', color: 'text-orange-600' },
+  { slug: 'viaje', name: 'Seguro de Viaje', icon: Plane, description: 'Viaja protegido', color: 'text-sky-600' },
+  { slug: 'mascota', name: 'Seguro de Mascota', icon: PawPrint, description: 'Salud para tu mascota', color: 'text-amber-600' },
+  { slug: 'empresarial', name: 'Seguro Empresarial', icon: Building2, description: 'Para tu negocio', color: 'text-slate-700' },
+  { slug: 'responsabilidad-civil', name: 'Responsabilidad Civil', icon: Scale, description: 'Protección legal', color: 'text-indigo-600' },
+  { slug: 'accidentes-personales', name: 'Accidentes Personales', icon: Ambulance, description: 'Cobertura 24/7', color: 'text-rose-600' },
+  { slug: 'ahorro', name: 'Seguro de Ahorro', icon: PiggyBank, description: 'Ahorra e invierte', color: 'text-emerald-600' },
 ];
 
 const topCompanies = [
@@ -39,12 +40,8 @@ export function SEONavbar() {
     <header className="sticky top-0 z-50 border-b border-white/20 bg-white/50 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-xl font-bold text-gray-900 hover:text-emerald-600 transition-colors"
-        >
-          <Shield className="h-6 w-6 text-emerald-600" />
-          <span>kotkot.ai</span>
+        <Link href="/" className="transition-opacity hover:opacity-80">
+          <Logo size="sm" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -80,23 +77,28 @@ export function SEONavbar() {
                       </Link>
                     </div>
                     <div className="grid grid-cols-2 gap-2">
-                      {insuranceProducts.map((product) => (
-                        <Link
-                          key={product.slug}
-                          href={`/seguros/${product.slug}`}
-                          className="group rounded-lg p-3 hover:bg-emerald-50 transition-colors"
-                        >
-                          <div className="flex items-start gap-2">
-                            <span className="text-2xl">{product.icon}</span>
-                            <div>
-                              <p className="text-sm font-semibold text-gray-900 group-hover:text-emerald-600">
-                                {product.name.replace('Seguro de ', '')}
-                              </p>
-                              <p className="text-xs text-gray-500">{product.description}</p>
+                      {insuranceProducts.map((product) => {
+                        const IconComponent = product.icon;
+                        return (
+                          <Link
+                            key={product.slug}
+                            href={`/seguros/${product.slug}`}
+                            className="group rounded-lg p-3 hover:bg-emerald-50 transition-colors"
+                          >
+                            <div className="flex items-start gap-3">
+                              <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white shadow-sm ${product.color}`}>
+                                <IconComponent className="h-5 w-5" strokeWidth={2} />
+                              </div>
+                              <div className="min-w-0 flex-1">
+                                <p className="text-sm font-semibold text-gray-900 group-hover:text-emerald-600 truncate">
+                                  {product.name.replace('Seguro de ', '')}
+                                </p>
+                                <p className="text-xs text-gray-500 line-clamp-1">{product.description}</p>
+                              </div>
                             </div>
-                          </div>
-                        </Link>
-                      ))}
+                          </Link>
+                        );
+                      })}
                     </div>
                   </div>
                 </motion.div>
@@ -173,8 +175,16 @@ export function SEONavbar() {
           </Link>
         </div>
 
-        {/* Right Side - CTA & Mobile Menu */}
+        {/* Right Side - Login & CTA & Mobile Menu */}
         <div className="flex items-center gap-3">
+          {/* Login Link */}
+          <Link
+            href="/login"
+            className="hidden text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors lg:block"
+          >
+            Iniciar Sesión
+          </Link>
+
           {/* WhatsApp CTA */}
           <a
             href="https://wa.me/50760000000?text=Hola%2C%20quiero%20cotizar%20un%20seguro"
@@ -218,16 +228,20 @@ export function SEONavbar() {
                   <span className="text-sm text-emerald-600">Ver todos →</span>
                 </Link>
                 <div className="grid grid-cols-2 gap-2 pl-4">
-                  {insuranceProducts.slice(0, 6).map((product) => (
-                    <Link
-                      key={product.slug}
-                      href={`/seguros/${product.slug}`}
-                      className="rounded-lg p-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {product.icon} {product.name.replace('Seguro de ', '')}
-                    </Link>
-                  ))}
+                  {insuranceProducts.slice(0, 6).map((product) => {
+                    const IconComponent = product.icon;
+                    return (
+                      <Link
+                        key={product.slug}
+                        href={`/seguros/${product.slug}`}
+                        className="flex items-center gap-2 rounded-lg p-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        <IconComponent className={`h-4 w-4 ${product.color}`} strokeWidth={2} />
+                        <span>{product.name.replace('Seguro de ', '')}</span>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -270,6 +284,13 @@ export function SEONavbar() {
                   onClick={() => setMobileOpen(false)}
                 >
                   Para Brokers
+                </Link>
+                <Link
+                  href="/login"
+                  className="block rounded-lg p-2 text-base font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-600"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Iniciar Sesión
                 </Link>
               </div>
 
