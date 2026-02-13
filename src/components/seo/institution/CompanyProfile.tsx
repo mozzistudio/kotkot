@@ -238,7 +238,7 @@ export function CompanyProfile({ company }: CompanyProfileProps) {
         </h2>
         <div className="flex flex-wrap gap-2">
           {company.productsOffered.map((product) => (
-            <Badge key={product} color="emerald">
+            <Badge key={product} color="success">
               {product.charAt(0).toUpperCase() + product.slice(1).replace('-', ' ')}
             </Badge>
           ))}

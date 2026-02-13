@@ -54,7 +54,7 @@ export function CompanyCard({
 
         {/* Badge for market position */}
         {company.marketPosition && (
-          <Badge color="emerald" className="ml-2">
+          <Badge color="success" className="ml-2">
             Top
           </Badge>
         )}

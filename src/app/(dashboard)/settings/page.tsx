@@ -481,7 +481,7 @@ export default function SettingsPage() {
                         setNotifications((prev) => ({ ...prev, [item.key]: !prev[item.key] }))
                       }
                       className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ${
-                        notifications[item.key] ? 'bg-[var(--success)] : 'bg-[var(--surface-secondary)]'
+                        notifications[item.key] ? 'bg-[var(--success)]' : 'bg-[var(--surface-secondary)]'
                       }`}
                     >
                       <span
@@ -520,7 +520,7 @@ export default function SettingsPage() {
                         setNotifications((prev) => ({ ...prev, [item.key]: !prev[item.key] }))
                       }
                       className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ${
-                        notifications[item.key] ? 'bg-[var(--success)] : 'bg-[var(--surface-secondary)]'
+                        notifications[item.key] ? 'bg-[var(--success)]' : 'bg-[var(--surface-secondary)]'
                       }`}
                     >
                       <span

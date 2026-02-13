@@ -105,7 +105,7 @@ export default function InsuranceHubPage() {
 
                   {/* Price Range */}
                   {product.priceRanges && (
-                    <Badge color="emerald" className="mb-4">
+                    <Badge color="lime" className="mb-4">
                       Desde {product.priceRanges.min}
                     </Badge>
                   )}
