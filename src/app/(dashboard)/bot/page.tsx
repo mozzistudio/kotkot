@@ -152,9 +152,9 @@ function TypingIndicator() {
     <div className="flex justify-start">
       <div className="max-w-[85%] rounded-2xl rounded-bl-sm border border-[var(--accent)] bg-[var(--accent-light)] px-4 py-3">
         <div className="flex items-center gap-1.5">
-          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-emerald-400/70" style={{ animationDelay: '0ms' }} />
-          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-emerald-400/70" style={{ animationDelay: '150ms' }} />
-          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-emerald-400/70" style={{ animationDelay: '300ms' }} />
+          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-[#9ca3af]" style={{ animationDelay: '0ms' }} />
+          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-[#9ca3af]" style={{ animationDelay: '150ms' }} />
+          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-[#9ca3af]" style={{ animationDelay: '300ms' }} />
         </div>
       </div>
     </div>

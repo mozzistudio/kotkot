@@ -117,7 +117,7 @@ export default function DemoPage() {
             Solicita tu Demo Personalizada
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-[#6b7280] sm:text-xl">
-            Te mostramos cómo CotiFácil puede transformar tu correduría en 30
+            Te mostramos cómo Kotkot puede transformar tu correduría en 30
             minutos.
           </p>
         </div>
@@ -284,7 +284,7 @@ export default function DemoPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[#111827] shadow-xl shadow-emerald-500/25 transition-all duration-200 hover:shadow-emerald-500/40 hover:brightness-110 disabled:pointer-events-none disabled:opacity-50 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[#111827] shadow-xl shadow-[rgba(202,255,4,0.25)] transition-all duration-200 hover:shadow-[rgba(202,255,4,0.4)] hover:brightness-110 disabled:pointer-events-none disabled:opacity-50 sm:w-auto"
                 >
                   {isSubmitting ? (
                     <>
@@ -343,7 +343,7 @@ export default function DemoPage() {
             {/* Trust badge */}
             <div className="mt-6 bg-white border border-[#e5e7eb] rounded-[16px] p-6 text-center">
               <p className="text-sm font-medium text-[#6b7280]">
-                Más de 500 corredurías confían en CotiFácil
+                Más de 500 corredurías confían en Kotkot
               </p>
               <p className="mt-1 text-xs text-[#9ca3af]">
                 en 10 países de Latinoamérica

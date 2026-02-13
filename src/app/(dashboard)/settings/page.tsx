@@ -349,7 +349,7 @@ export default function SettingsPage() {
                   <p className="mb-1 font-medium text-[var(--text-secondary)]">Como funciona:</p>
                   <ul className="ml-4 list-disc space-y-1">
                     <li>El cliente selecciona una cotizacion y elige Yappy como metodo de pago</li>
-                    <li>CotiFacil genera un enlace de pago Yappy con el monto exacto</li>
+                    <li>Kotkot genera un enlace de pago Yappy con el monto exacto</li>
                     <li>El enlace se envia por WhatsApp al cliente</li>
                     <li>Al confirmar el pago, la poliza se genera automaticamente</li>
                   </ul>

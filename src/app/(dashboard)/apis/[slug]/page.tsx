@@ -209,7 +209,7 @@ const productConfig: Record<InsuranceProduct, { label: string; icon: React.React
   health: { label: 'Salud', icon: <Heart className="h-3.5 w-3.5" />, color: 'bg-rose-500/15 text-rose-400 border-rose-500/30' },
   home: { label: 'Hogar', icon: <Home className="h-3.5 w-3.5" />, color: 'bg-amber-500/15 text-amber-400 border-amber-500/30' },
   travel: { label: 'Viaje', icon: <Plane className="h-3.5 w-3.5" />, color: 'bg-purple-500/15 text-purple-400 border-purple-500/30' },
-  business: { label: 'Negocio', icon: <Briefcase className="h-3.5 w-3.5" />, color: 'bg-teal-500/15 text-teal-400 border-teal-500/30' },
+  business: { label: 'Negocio', icon: <Briefcase className="h-3.5 w-3.5" />, color: 'bg-[#059669]/15 text-[#059669] border-[#059669]/30' },
 };
 
 const statusConfig: Record<ConnectionStatus, { label: string; dotColor: string; bg: string; text: string; border: string }> = {

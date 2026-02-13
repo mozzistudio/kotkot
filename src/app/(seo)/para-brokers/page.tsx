@@ -147,13 +147,13 @@ export default function ParaBrokersPage() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="mb-16 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-700">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[rgba(202,255,4,0.15)] px-4 py-2 text-sm font-semibold text-[#111827]">
             <Shield className="h-4 w-4" />
             Plataforma para Brokers
           </div>
           <h1 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl lg:text-6xl">
             Vende Más Seguros con
-            <span className="block bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <span className="block text-[#111827] font-bold">
               Herramientas Digitales
             </span>
           </h1>
@@ -166,14 +166,14 @@ export default function ParaBrokersPage() {
               href="https://wa.me/50760000000?text=Hola%2C%20quiero%20registrarme%20como%20broker"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-6 py-3 text-lg font-semibold text-white hover:bg-emerald-700 transition-colors"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#CAFF04] px-6 py-3 text-lg font-semibold text-[#111827] hover:bg-[#b8e600] transition-colors"
             >
               <Phone className="h-5 w-5" />
               Contáctanos por WhatsApp
             </a>
             <Link
               href="/seguros"
-              className="inline-flex items-center gap-2 rounded-xl border-2 border-emerald-600 px-6 py-3 text-lg font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors"
+              className="inline-flex items-center gap-2 rounded-xl border-2 border-[rgba(202,255,4,0.40)] bg-[#CAFF04] px-6 py-3 text-lg font-semibold text-[#111827] hover:bg-[#b8e600] transition-colors"
             >
               Ver Productos
             </Link>
@@ -188,8 +188,8 @@ export default function ParaBrokersPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => (
               <GlassCard key={benefit.title} className="p-6">
-                <div className="mb-4 inline-flex items-center justify-center rounded-xl bg-emerald-100 p-3">
-                  <benefit.icon className="h-6 w-6 text-emerald-600" />
+                <div className="mb-4 inline-flex items-center justify-center rounded-xl bg-[rgba(202,255,4,0.15)] p-3">
+                  <benefit.icon className="h-6 w-6 text-[#111827]" />
                 </div>
                 <h3 className="mb-2 text-xl font-bold text-gray-900">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
@@ -211,7 +211,7 @@ export default function ParaBrokersPage() {
                 <ul className="space-y-2">
                   {feature.list.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
-                      <span className="mt-1 text-emerald-600">✓</span>
+                      <span className="mt-1 text-[#059669]">✓</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -229,7 +229,7 @@ export default function ParaBrokersPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {howItWorks.map((step) => (
               <GlassCard key={step.step} className="p-6 text-center">
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600 text-xl font-bold text-white">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#CAFF04] text-xl font-bold text-[#111827]">
                   {step.step}
                 </div>
                 <h3 className="mb-2 text-lg font-bold text-gray-900">{step.title}</h3>
@@ -324,7 +324,7 @@ export default function ParaBrokersPage() {
             href="https://wa.me/50760000000?text=Hola%2C%20quiero%20registrarme%20como%20broker"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-8 py-4 text-lg font-semibold text-white hover:bg-emerald-700 transition-colors"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#CAFF04] px-8 py-4 text-lg font-semibold text-[#111827] hover:bg-[#b8e600] transition-colors"
           >
             <Phone className="h-5 w-5" />
             Contáctanos por WhatsApp

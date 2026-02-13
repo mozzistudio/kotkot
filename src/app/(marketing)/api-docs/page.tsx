@@ -13,9 +13,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Documentación API — CotiFácil',
+  title: 'Documentación API — Kotkot',
   description:
-    'Documentación técnica completa de la API de CotiFácil. Integra CotiFácil con tus sistemas.',
+    'Documentación técnica completa de la API de Kotkot. Integra Kotkot con tus sistemas.',
 };
 
 const features = [
@@ -93,12 +93,12 @@ const endpoints = [
 ];
 
 const quickStart = `# Instalación
-npm install @cotifacil/sdk
+npm install @kotkot/sdk
 
 # Configuración
-import CotiFacil from '@cotifacil/sdk';
+import Kotkot from '@kotkot/sdk';
 
-const client = new CotiFacil({
+const client = new Kotkot({
   apiKey: 'tu_api_key',
   environment: 'production', // o 'sandbox'
 });
@@ -131,7 +131,7 @@ export default function ApiDocsPage() {
             Documentación API
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-[#6b7280] sm:text-xl">
-            Integra CotiFácil con tus sistemas y flujos de trabajo existentes
+            Integra Kotkot con tus sistemas y flujos de trabajo existentes
             mediante nuestra API RESTful.
           </p>
 
@@ -280,7 +280,7 @@ export default function ApiDocsPage() {
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
-                href="https://docs.cotifacil.com"
+                href="https://docs.kotkot.ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-base font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600]"

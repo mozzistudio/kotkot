@@ -196,7 +196,7 @@ async function loadBotPersonality(
     .single();
 
   return {
-    name: settings?.bot_name ?? 'CotiFacil Bot',
+    name: settings?.bot_name ?? 'Kotkot Bot',
     tone: settings?.tone ?? 'amigable y profesional',
     formality: settings?.formality ?? 50,
     pronoun: settings?.pronoun ?? 'usted',

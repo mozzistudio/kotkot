@@ -3,9 +3,9 @@ import { Pricing } from '@/components/marketing/Pricing';
 import { ChevronDown } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Precios — CotiFácil',
+  title: 'Precios — Kotkot',
   description:
-    'Planes y precios de CotiFácil. Desde $149/mes para corredores individuales hasta planes Enterprise para grandes corredurías.',
+    'Planes y precios de Kotkot. Desde $149/mes para corredores individuales hasta planes Enterprise para grandes corredurías.',
 };
 
 const faqs = [
@@ -22,7 +22,7 @@ const faqs = [
   {
     question: '¿Qué pasa con los mensajes de WhatsApp?',
     answer:
-      'Las tarifas de Meta se cobran por separado, al costo. CotiFácil no agrega ningún markup. Las tarifas varían por país y tipo de mensaje (conversación iniciada por usuario vs. notificación).',
+      'Las tarifas de Meta se cobran por separado, al costo. Kotkot no agrega ningún markup. Las tarifas varían por país y tipo de mensaje (conversación iniciada por usuario vs. notificación).',
   },
   {
     question: '¿Cuánto cuesta un número adicional?',
@@ -32,7 +32,7 @@ const faqs = [
   {
     question: '¿Puedo usar mi número existente?',
     answer:
-      'Sí, siempre que sea un número de WhatsApp Business. Si actualmente usas WhatsApp personal, puedes migrarlo a WhatsApp Business antes de conectarlo a CotiFácil.',
+      'Sí, siempre que sea un número de WhatsApp Business. Si actualmente usas WhatsApp personal, puedes migrarlo a WhatsApp Business antes de conectarlo a Kotkot.',
   },
   {
     question: '¿En qué países están disponibles?',

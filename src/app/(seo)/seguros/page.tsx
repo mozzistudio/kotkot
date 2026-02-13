@@ -73,7 +73,7 @@ export default function InsuranceHubPage() {
             href="https://wa.me/50760000000?text=Hola%2C%20quiero%20cotizar%20un%20seguro"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-xl bg-emerald-600 px-8 py-4 text-lg font-semibold text-white hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/20"
+            className="inline-flex items-center rounded-xl bg-[#CAFF04] px-8 py-4 text-lg font-semibold text-[#111827] hover:bg-[#b8e600] transition-colors shadow-lg shadow-[rgba(202,255,4,0.2)]"
           >
             Cotizar Gratis por WhatsApp
           </a>
@@ -111,13 +111,13 @@ export default function InsuranceHubPage() {
                   )}
 
                   {/* CTA */}
-                  <div className="flex items-center gap-2 text-sm font-semibold text-emerald-600">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[#059669]">
                     Ver Opciones
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
 
                   {/* Hover Effect */}
-                  <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[rgba(202,255,4,0.08)] to-[rgba(202,255,4,0.04)] opacity-0 transition-opacity group-hover:opacity-100" />
                 </GlassCard>
               </Link>
             ))}
@@ -132,7 +132,7 @@ export default function InsuranceHubPage() {
             </h2>
             <Link
               href="/seguros/aseguradoras"
-              className="text-sm font-semibold text-emerald-600 hover:text-emerald-700"
+              className="text-sm font-semibold text-[#059669] hover:text-[#047857]"
             >
               Ver todas →
             </Link>
@@ -148,7 +148,7 @@ export default function InsuranceHubPage() {
                     {company.name}
                   </h3>
                   <div className="mb-2 flex items-center gap-2">
-                    <span className="text-2xl font-bold text-emerald-600">
+                    <span className="text-2xl font-bold text-[#059669]">
                       {company.ratings.overall.toFixed(1)}
                     </span>
                     <span className="text-sm text-gray-600">
@@ -158,11 +158,11 @@ export default function InsuranceHubPage() {
                   <p className="mb-4 text-sm text-gray-600 line-clamp-2">
                     {company.description}
                   </p>
-                  <div className="flex items-center gap-2 text-sm font-semibold text-emerald-600">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[#059669]">
                     Ver Perfil
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
-                  <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[rgba(202,255,4,0.08)] to-[rgba(202,255,4,0.04)] opacity-0 transition-opacity group-hover:opacity-100" />
                 </GlassCard>
               </Link>
             ))}
@@ -170,11 +170,11 @@ export default function InsuranceHubPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-600 p-12 text-center text-white">
+        <section className="rounded-2xl bg-[#CAFF04] p-12 text-center text-[#111827]">
           <h2 className="mb-4 text-3xl font-bold">
             ¿No estás seguro cuál elegir?
           </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-emerald-50">
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-[#6b7280]">
             Nuestro asistente por WhatsApp te ayuda a encontrar el seguro
             perfecto según tus necesidades y presupuesto.
           </p>
@@ -182,7 +182,7 @@ export default function InsuranceHubPage() {
             href="https://wa.me/50760000000?text=Hola%2C%20necesito%20ayuda%20para%20elegir%20un%20seguro"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-xl bg-white px-8 py-4 text-lg font-semibold text-emerald-600 hover:bg-gray-50 transition-colors shadow-lg"
+            className="inline-flex items-center rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-gray-50 transition-colors shadow-lg"
           >
             Hablar con un Asesor
           </a>

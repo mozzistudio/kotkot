@@ -129,17 +129,17 @@ export default async function InsuranceCompanyProfilePage({
                     {product.icon && (
                       <div className="mb-3 text-3xl">{product.icon}</div>
                     )}
-                    <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-emerald-600">
+                    <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-[#059669]">
                       {product.name}
                     </h3>
                     <p className="mb-4 text-sm text-gray-600 line-clamp-2">
                       {product.shortDescription}
                     </p>
-                    <div className="flex items-center gap-2 text-sm font-semibold text-emerald-600">
+                    <div className="flex items-center gap-2 text-sm font-semibold text-[#059669]">
                       Ver Detalles
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </div>
-                    <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 opacity-0 transition-opacity group-hover:opacity-100" />
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[rgba(202,255,4,0.08)] to-[rgba(202,255,4,0.04)] opacity-0 transition-opacity group-hover:opacity-100" />
                   </GlassCard>
                 </Link>
               );
@@ -149,11 +149,11 @@ export default async function InsuranceCompanyProfilePage({
 
         {/* CTA Section */}
         <section className="mx-auto mt-16 max-w-4xl">
-          <GlassCard className="bg-gradient-to-br from-emerald-600 to-teal-600 p-12 text-center text-white">
+          <GlassCard className="bg-[#CAFF04] p-12 text-center text-[#111827]">
             <h2 className="mb-4 text-3xl font-bold">
               ¿Quieres cotizar con {company.name}?
             </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-emerald-50">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-[#6b7280]">
               Obtén una cotización personalizada en minutos por WhatsApp.
             </p>
             <a
@@ -162,7 +162,7 @@ export default async function InsuranceCompanyProfilePage({
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl bg-white px-8 py-4 text-lg font-semibold text-emerald-600 hover:bg-gray-50 transition-colors shadow-lg"
+              className="inline-flex items-center rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-gray-50 transition-colors shadow-lg"
             >
               Cotizar Ahora
             </a>

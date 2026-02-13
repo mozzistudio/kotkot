@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Clock, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Blog — CotiFácil',
+  title: 'Blog — Kotkot',
   description:
     'Noticias, guías y tendencias del mundo de seguros en LATAM. Aprende sobre insurtech, automatización y WhatsApp Business.',
 };
@@ -14,7 +14,7 @@ const blogPosts = [
     excerpt:
       'La inteligencia artificial está revolucionando la manera en que se venden, cotizan y gestionan seguros en toda la región. Desde chatbots en WhatsApp hasta suscripción automatizada, exploramos las tendencias más importantes.',
     category: 'Tendencias',
-    categoryColor: 'bg-teal-100 text-teal-700',
+    categoryColor: 'bg-[rgba(202,255,4,0.15)] text-[#111827]',
     date: '8 Feb 2026',
     readTime: '7 min',
   },
@@ -22,9 +22,9 @@ const blogPosts = [
     slug: '5-razones-automatizar-correduria',
     title: '5 razones para automatizar tu correduría de seguros',
     excerpt:
-      'La automatización no es solo para grandes empresas. Descubre por qué los corredores independientes y las pequeñas corredurías son quienes más se benefician de herramientas como CotiFácil.',
+      'La automatización no es solo para grandes empresas. Descubre por qué los corredores independientes y las pequeñas corredurías son quienes más se benefician de herramientas como Kotkot.',
     category: 'Guías',
-    categoryColor: 'bg-emerald-100 text-emerald-700',
+    categoryColor: 'bg-[rgba(202,255,4,0.15)] text-[#111827]',
     date: '3 Feb 2026',
     readTime: '5 min',
   },
@@ -34,7 +34,7 @@ const blogPosts = [
     excerpt:
       'Todo lo que necesitas saber sobre la WhatsApp Business API: cómo funciona, cuánto cuesta, cómo obtener acceso y las mejores prácticas para usarla en tu correduría.',
     category: 'Guías',
-    categoryColor: 'bg-emerald-100 text-emerald-700',
+    categoryColor: 'bg-[rgba(202,255,4,0.15)] text-[#111827]',
     date: '28 Ene 2026',
     readTime: '10 min',
   },
@@ -54,7 +54,7 @@ const blogPosts = [
     excerpt:
       'El ecosistema insurtech en Latinoamérica está creciendo aceleradamente. Analizamos las startups más importantes, las tendencias de inversión y lo que viene para el sector.',
     category: 'Tendencias',
-    categoryColor: 'bg-teal-100 text-teal-700',
+    categoryColor: 'bg-[rgba(202,255,4,0.15)] text-[#111827]',
     date: '15 Ene 2026',
     readTime: '6 min',
   },
@@ -64,7 +64,7 @@ const blogPosts = [
     excerpt:
       'Guía práctica para corredores: los factores clave para recomendar el seguro de salud ideal según el perfil, presupuesto y necesidades de cada cliente.',
     category: 'Guías',
-    categoryColor: 'bg-emerald-100 text-emerald-700',
+    categoryColor: 'bg-[rgba(202,255,4,0.15)] text-[#111827]',
     date: '10 Ene 2026',
     readTime: '9 min',
   },
@@ -81,7 +81,7 @@ export default function BlogPage() {
             <span className="inline-block h-px w-10 bg-[#059669]" />
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
-            Blog CotiFácil
+            Blog Kotkot
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-[#6b7280] sm:text-xl">
             Noticias, guías y tendencias del mundo de seguros en LATAM
@@ -96,7 +96,7 @@ export default function BlogPage() {
               className="bg-white border border-[#e5e7eb] rounded-[16px] group flex flex-col overflow-hidden"
             >
               {/* Image placeholder */}
-              <div className="flex h-48 items-center justify-center bg-gradient-to-br from-emerald-50 to-teal-50">
+              <div className="flex h-48 items-center justify-center bg-gradient-to-br from-[#f9fafb] to-[#f3f4f6]">
                 <div className="flex h-16 w-16 items-center justify-center rounded-[16px] bg-white/80 shadow-sm">
                   <span className="font-heading text-2xl font-bold text-[#059669]">
                     CF

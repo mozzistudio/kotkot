@@ -161,7 +161,7 @@ export default function EstadoPage() {
             <span className="inline-block h-px w-10 bg-[#059669]" />
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl">
-            Estado de CotiFácil
+            Estado de Kotkot
           </h1>
           <p className="mt-4 text-base text-[#9ca3af]">{currentTime}</p>
         </div>
@@ -334,7 +334,7 @@ export default function EstadoPage() {
             />
             <button
               type="submit"
-              className="rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-6 py-2.5 text-sm font-semibold text-[#111827] shadow-lg shadow-emerald-500/25 transition-all duration-200 hover:shadow-emerald-500/40 hover:brightness-110"
+              className="rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-6 py-2.5 text-sm font-semibold text-[#111827] shadow-lg shadow-[rgba(202,255,4,0.25)] transition-all duration-200 hover:shadow-[rgba(202,255,4,0.4)] hover:brightness-110"
             >
               Suscribirse
             </button>

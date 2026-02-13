@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Cómo Funciona — CotiFácil',
+  title: 'Cómo Funciona — Kotkot',
   description:
     'Empieza a vender seguros por WhatsApp en 15 minutos. Conoce el proceso paso a paso para configurar tu agente IA de seguros.',
 };
@@ -79,7 +79,7 @@ const steps = [
 
 const faqs = [
   {
-    question: '¿Necesito conocimientos técnicos para configurar CotiFácil?',
+    question: '¿Necesito conocimientos técnicos para configurar Kotkot?',
     answer:
       'No. Nuestro asistente de configuración te guía paso a paso. Si necesitas ayuda, nuestro equipo de soporte está disponible por WhatsApp y email.',
   },
@@ -104,14 +104,14 @@ const faqs = [
       'El bot detecta cuando un cliente necesita atención humana y transfiere la conversación a un corredor de tu equipo, incluyendo todo el contexto de la conversación.',
   },
   {
-    question: '¿En qué países funciona CotiFácil?',
+    question: '¿En qué países funciona Kotkot?',
     answer:
-      'CotiFácil opera en Panamá, Colombia, México, Chile, Perú, Ecuador, Costa Rica, República Dominicana, Argentina y Brasil. Estamos expandiéndonos constantemente.',
+      'Kotkot opera en Panamá, Colombia, México, Chile, Perú, Ecuador, Costa Rica, República Dominicana, Argentina y Brasil. Estamos expandiéndonos constantemente.',
   },
   {
     question: '¿Cómo se cobran los mensajes de WhatsApp?',
     answer:
-      'Las tarifas de mensajes de WhatsApp son establecidas por Meta y se cobran por separado, al costo. CotiFácil no agrega ningún markup a las tarifas de Meta.',
+      'Las tarifas de mensajes de WhatsApp son establecidas por Meta y se cobran por separado, al costo. Kotkot no agrega ningún markup a las tarifas de Meta.',
   },
   {
     question: '¿Mis datos y los de mis clientes están seguros?',
@@ -217,7 +217,7 @@ export default function ComoFuncionaPage() {
               Preguntas Frecuentes
             </h2>
             <p className="mt-4 text-lg text-[#6b7280]">
-              Todo lo que necesitas saber sobre cómo funciona CotiFácil.
+              Todo lo que necesitas saber sobre cómo funciona Kotkot.
             </p>
           </div>
 
@@ -246,7 +246,7 @@ export default function ComoFuncionaPage() {
             Listo para empezar?
           </h2>
           <p className="mt-4 text-lg text-[#6b7280]">
-            Solicita una demo y te mostramos cómo CotiFácil transforma tu
+            Solicita una demo y te mostramos cómo Kotkot transforma tu
             correduría en minutos.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     const personality = {
-      name: personalityOverride?.name ?? settings?.bot_name ?? 'CotiFacil Bot',
+      name: personalityOverride?.name ?? settings?.bot_name ?? 'Kotkot Bot',
       tone: personalityOverride?.tone ?? settings?.tone ?? 'amigable y profesional',
       formality: personalityOverride?.formality ?? settings?.formality ?? 50,
       pronoun: personalityOverride?.pronoun ?? settings?.pronoun ?? 'usted',

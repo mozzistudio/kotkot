@@ -115,7 +115,7 @@ const conversations: Conversation[] = [
     status: 'active',
     insuranceType: 'Salud',
     messages: [
-      { id: 'm1', sender: 'bot', text: 'Hola Laura! Bienvenida a CotiFacil. En que te puedo ayudar?', time: '08:10 AM' },
+      { id: 'm1', sender: 'bot', text: 'Hola Laura! Bienvenida a Kotkot. En que te puedo ayudar?', time: '08:10 AM' },
       { id: 'm2', sender: 'user', text: 'Quiero comparar seguros de salud para mi familia', time: '08:12 AM' },
       { id: 'm3', sender: 'bot', text: 'Con gusto! Cuantos miembros tiene tu familia y cuales son sus edades?', time: '08:12 AM' },
       { id: 'm4', sender: 'user', text: 'Somos 4: yo (35), mi esposo (37), y dos hijos de 8 y 5 anos', time: '08:14 AM' },
@@ -129,7 +129,7 @@ const conversations: Conversation[] = [
 // ---------------------------------------------------------------------------
 
 const statusColors: Record<ConversationStatus, string> = {
-  active: 'bg-emerald-500',
+  active: 'bg-[#10b981]',
   waiting: 'bg-amber-500',
   human: 'bg-blue-500',
   closed: 'bg-slate-500',

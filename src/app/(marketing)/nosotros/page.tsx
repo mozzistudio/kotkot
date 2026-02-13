@@ -10,9 +10,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Sobre Nosotros — CotiFácil',
+  title: 'Sobre Nosotros — Kotkot',
   description:
-    'Conoce la misión, visión y equipo detrás de CotiFácil. Democratizamos el acceso a seguros en Latinoamérica a través de la tecnología.',
+    'Conoce la misión, visión y equipo detrás de Kotkot. Democratizamos el acceso a seguros en Latinoamérica a través de la tecnología.',
 };
 
 const values = [
@@ -89,7 +89,7 @@ export default function NosotrosPage() {
             <span className="inline-block h-px w-10 bg-[#059669]" />
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
-            Sobre CotiFácil
+            Sobre Kotkot
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-[#6b7280] sm:text-xl">
             Estamos construyendo el futuro de los seguros en Latinoamérica, un
@@ -143,7 +143,7 @@ export default function NosotrosPage() {
             </div>
             <div className="bg-white border border-[#e5e7eb] rounded-[16px] flex aspect-[4/3] items-center justify-center p-8">
               <div className="flex flex-col items-center gap-4 text-center">
-                <div className="flex h-20 w-20 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)] shadow-lg shadow-emerald-500/25">
+                <div className="flex h-20 w-20 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)] shadow-lg shadow-[rgba(202,255,4,0.25)]">
                   <Globe className="h-10 w-10 text-white" strokeWidth={1.5} />
                 </div>
                 <p className="text-sm font-medium text-[#9ca3af]">
@@ -192,7 +192,7 @@ export default function NosotrosPage() {
               Nuestro Equipo
             </h2>
             <h3 className="mt-3 font-heading text-2xl font-bold text-[#111827] sm:text-3xl">
-              Las personas detrás de CotiFácil
+              Las personas detrás de Kotkot
             </h3>
           </div>
 
@@ -203,7 +203,7 @@ export default function NosotrosPage() {
                 className="bg-white border border-[#e5e7eb] rounded-[16px] flex flex-col items-center p-6 text-center"
               >
                 {/* Avatar placeholder */}
-                <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]radient-to-br from-emerald-100 to-teal-100">
+                <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
                   <Users className="h-8 w-8 text-[#059669]" />
                 </div>
                 <h4 className="font-heading text-base font-semibold text-[#111827]">
@@ -256,12 +256,12 @@ export default function NosotrosPage() {
           </h2>
           <p className="mt-4 text-lg text-[#6b7280]">
             Sé parte de la revolución insurtech en Latinoamérica. Empieza a
-            vender seguros por WhatsApp con CotiFácil.
+            vender seguros por WhatsApp con Kotkot.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
               href="/demo"
-              className="inline-flex items-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[#111827] shadow-xl shadow-emerald-500/25 transition-all duration-200 hover:shadow-emerald-500/40 hover:brightness-110"
+              className="inline-flex items-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[#111827] shadow-xl shadow-[rgba(202,255,4,0.25)] transition-all duration-200 hover:shadow-[rgba(202,255,4,0.4)] hover:brightness-110"
             >
               Solicitar Demo
               <ArrowUpRight className="h-5 w-5" />

@@ -140,7 +140,7 @@ const quickActions = [
 // ---------------------------------------------------------------------------
 
 const statusColors: Record<RecentConversation['status'], string> = {
-  active: 'bg-emerald-500',
+  active: 'bg-[#10b981]',
   waiting: 'bg-amber-500',
   human: 'bg-blue-500',
   closed: 'bg-slate-500',

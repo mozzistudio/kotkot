@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Términos de Servicio — CotiFácil',
+  title: 'Términos de Servicio — Kotkot',
   description:
-    'Términos y condiciones de uso de la plataforma CotiFácil. Conoce tus derechos y obligaciones al usar nuestros servicios.',
+    'Términos y condiciones de uso de la plataforma Kotkot. Conoce tus derechos y obligaciones al usar nuestros servicios.',
 };
 
 export default function TerminosPage() {
@@ -27,8 +27,8 @@ export default function TerminosPage() {
             <section>
               <p className="text-base leading-relaxed">
                 Estos Términos de Servicio (&quot;Términos&quot;) regulan el
-                acceso y uso de la plataforma CotiFácil (&quot;la
-                Plataforma&quot;), operada por CotiFácil Inc.
+                acceso y uso de la plataforma Kotkot (&quot;la
+                Plataforma&quot;), operada por Kotkot Inc.
                 (&quot;nosotros&quot;, &quot;nuestro&quot;). Al acceder o
                 utilizar nuestros servicios, aceptas estos Términos en su
                 totalidad. Si no estás de acuerdo, no utilices la Plataforma.
@@ -41,7 +41,7 @@ export default function TerminosPage() {
                 1. Aceptación de los Términos
               </h2>
               <p className="mt-3 text-base leading-relaxed">
-                Al registrarte en CotiFácil, acceder a nuestro dashboard,
+                Al registrarte en Kotkot, acceder a nuestro dashboard,
                 utilizar nuestro agente de WhatsApp, o hacer uso de cualquiera
                 de nuestros servicios, declaras que:
               </p>
@@ -68,7 +68,7 @@ export default function TerminosPage() {
                 2. Descripción del Servicio
               </h2>
               <p className="mt-3 text-base leading-relaxed">
-                CotiFácil es una plataforma de tecnología (SaaS) que permite a
+                Kotkot es una plataforma de tecnología (SaaS) que permite a
                 corredores de seguros en Latinoamérica:
               </p>
               <ul className="mt-3 list-disc space-y-2 pl-6">
@@ -91,7 +91,7 @@ export default function TerminosPage() {
                 </li>
               </ul>
               <p className="mt-3 text-base leading-relaxed">
-                CotiFácil no es una aseguradora ni una correduría de seguros.
+                Kotkot no es una aseguradora ni una correduría de seguros.
                 Somos un proveedor de tecnología que facilita las operaciones
                 de corredurías existentes. La responsabilidad sobre las pólizas,
                 coberturas y relaciones con clientes finales recae
@@ -172,7 +172,7 @@ export default function TerminosPage() {
                 5. Uso Aceptable
               </h2>
               <p className="mt-3 text-base leading-relaxed">
-                Al utilizar CotiFácil, te comprometes a:
+                Al utilizar Kotkot, te comprometes a:
               </p>
               <ul className="mt-3 list-disc space-y-2 pl-6">
                 <li>
@@ -211,9 +211,9 @@ export default function TerminosPage() {
                 6. Propiedad Intelectual
               </h2>
               <p className="mt-3 text-base leading-relaxed">
-                La plataforma CotiFácil, incluyendo su software, diseño,
+                La plataforma Kotkot, incluyendo su software, diseño,
                 logotipos, modelos de IA, y contenido, son propiedad exclusiva
-                de CotiFácil Inc. y están protegidos por leyes de propiedad
+                de Kotkot Inc. y están protegidos por leyes de propiedad
                 intelectual.
               </p>
               <p className="mt-3 text-base leading-relaxed">
@@ -237,7 +237,7 @@ export default function TerminosPage() {
               </h2>
               <ul className="mt-3 list-disc space-y-2 pl-6">
                 <li>
-                  CotiFácil proporciona la plataforma &quot;tal cual&quot; y
+                  Kotkot proporciona la plataforma &quot;tal cual&quot; y
                   &quot;según disponibilidad&quot;, sin garantías de ningún
                   tipo, expresas o implícitas.
                 </li>
@@ -312,7 +312,7 @@ export default function TerminosPage() {
                 9. Indemnización
               </h2>
               <p className="mt-3 text-base leading-relaxed">
-                Aceptas indemnizar y mantener indemne a CotiFácil, sus
+                Aceptas indemnizar y mantener indemne a Kotkot, sus
                 directores, empleados y agentes, de cualquier reclamación,
                 daño, pérdida o gasto (incluyendo honorarios legales) que
                 surja de tu uso de la plataforma, tu violación de estos
@@ -365,7 +365,7 @@ export default function TerminosPage() {
                 </li>
                 <li>
                   Estos Términos constituyen el acuerdo completo entre tú y
-                  CotiFácil con respecto al uso de la plataforma.
+                  Kotkot con respecto al uso de la plataforma.
                 </li>
                 <li>
                   No puedes ceder o transferir estos Términos sin nuestro
@@ -384,15 +384,15 @@ export default function TerminosPage() {
               </p>
               <div className="mt-3 bg-white border border-[#e5e7eb] rounded-[16px] p-5">
                 <p className="text-sm text-[#6b7280]">
-                  <strong>CotiFácil</strong>
+                  <strong>Kotkot</strong>
                 </p>
                 <p className="text-sm text-[#6b7280]">
                   Email:{' '}
                   <a
-                    href="mailto:legal@cotifacil.com"
+                    href="mailto:legal@kotkot.ai"
                     className="text-[#059669] hover:text-[#059669]"
                   >
-                    legal@cotifacil.com
+                    legal@kotkot.ai
                   </a>
                 </p>
                 <p className="text-sm text-[#6b7280]">

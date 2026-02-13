@@ -357,7 +357,7 @@ const tagColors: Record<string, string> = {
   Nuevo: 'bg-[var(--accent-light)] text-[var(--accent)] border-[var(--accent)]',
   Renovacion: 'bg-blue-500/15 text-blue-400 border-blue-500/30',
   Empresa: 'bg-purple-500/15 text-purple-400 border-purple-500/30',
-  Referido: 'bg-teal-500/15 text-teal-400 border-teal-500/30',
+  Referido: 'bg-[#059669]/15 text-[#059669] border-[#059669]/30',
   Auto: 'bg-sky-500/15 text-sky-400 border-sky-500/30',
   Salud: 'bg-rose-500/15 text-rose-400 border-rose-500/30',
   Hogar: 'bg-orange-500/15 text-orange-400 border-orange-500/30',
@@ -378,7 +378,7 @@ const paymentStatusColors: Record<string, string> = {
 const paymentMethodColors: Record<string, string> = {
   Yappy: 'bg-purple-500/15 text-purple-400',
   Stripe: 'bg-blue-500/15 text-blue-400',
-  Transferencia: 'bg-teal-500/15 text-teal-400',
+  Transferencia: 'bg-[#059669]/15 text-[#059669]',
 };
 
 const conversationStatusColors: Record<string, string> = {

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidad — CotiFácil',
+  title: 'Política de Privacidad — Kotkot',
   description:
-    'Política de privacidad de CotiFácil. Conoce cómo recopilamos, usamos y protegemos tus datos personales.',
+    'Política de privacidad de Kotkot. Conoce cómo recopilamos, usamos y protegemos tus datos personales.',
 };
 
 export default function PoliticaPrivacidadPage() {
@@ -26,7 +26,7 @@ export default function PoliticaPrivacidadPage() {
             {/* Intro */}
             <section>
               <p className="text-base leading-relaxed">
-                En CotiFácil (&quot;nosotros&quot;, &quot;nuestro&quot; o &quot;la
+                En Kotkot (&quot;nosotros&quot;, &quot;nuestro&quot; o &quot;la
                 Plataforma&quot;), respetamos tu privacidad y nos comprometemos a
                 proteger tus datos personales. Esta Política de Privacidad describe
                 cómo recopilamos, usamos, almacenamos y compartimos información
@@ -219,10 +219,10 @@ export default function PoliticaPrivacidadPage() {
               <p className="mt-3 text-base leading-relaxed">
                 Para ejercer cualquiera de estos derechos, contáctanos en{' '}
                 <a
-                  href="mailto:privacidad@cotifacil.com"
+                  href="mailto:privacidad@kotkot.ai"
                   className="font-medium text-[#059669] hover:text-[#059669]"
                 >
-                  privacidad@cotifacil.com
+                  privacidad@kotkot.ai
                 </a>
                 .
               </p>
@@ -279,15 +279,15 @@ export default function PoliticaPrivacidadPage() {
               </p>
               <div className="mt-3 bg-white border border-[#e5e7eb] rounded-[16px] p-5">
                 <p className="text-sm text-[#6b7280]">
-                  <strong>CotiFácil</strong>
+                  <strong>Kotkot</strong>
                 </p>
                 <p className="text-sm text-[#6b7280]">
                   Email:{' '}
                   <a
-                    href="mailto:privacidad@cotifacil.com"
+                    href="mailto:privacidad@kotkot.ai"
                     className="text-[#059669] hover:text-[#059669]"
                   >
-                    privacidad@cotifacil.com
+                    privacidad@kotkot.ai
                   </a>
                 </p>
                 <p className="text-sm text-[#6b7280]">
