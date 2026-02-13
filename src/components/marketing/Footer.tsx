@@ -1,4 +1,5 @@
-import { Shield } from 'lucide-react';
+import { Logo } from '@/components/ui/Logo';
+import Link from 'next/link';
 
 interface FooterLinkGroup {
   title: string;
@@ -13,7 +14,16 @@ const linkGroups: FooterLinkGroup[] = [
       { label: 'Seguro de Salud', href: '/seguros/salud' },
       { label: 'Seguro de Vida', href: '/seguros/vida' },
       { label: 'Seguro de Hogar', href: '/seguros/hogar' },
-      { label: 'Todas las Aseguradoras', href: '/seguros/aseguradoras' },
+      { label: 'Ver Todas', href: '/seguros' },
+    ],
+  },
+  {
+    title: 'Préstamos',
+    links: [
+      { label: 'Préstamo Personal', href: '/prestamos/personal' },
+      { label: 'Préstamo Hipotecario', href: '/prestamos/hipotecario' },
+      { label: 'Préstamo de Auto', href: '/prestamos/auto' },
+      { label: 'Ver Todos', href: '/prestamos' },
     ],
   },
   {
@@ -21,7 +31,6 @@ const linkGroups: FooterLinkGroup[] = [
     links: [
       { label: 'Funcionalidades', href: '#funcionalidades' },
       { label: 'Precios', href: '#precios' },
-      { label: 'Demo', href: '/demo' },
       { label: 'Para Brokers', href: '/para-brokers' },
       { label: 'Blog', href: '/blog' },
     ],
@@ -30,62 +39,52 @@ const linkGroups: FooterLinkGroup[] = [
     title: 'Empresa',
     links: [
       { label: 'Nosotros', href: '/nosotros' },
-      { label: 'Casos de Éxito', href: '/casos-de-exito' },
       { label: 'Contacto', href: '/contacto' },
-    ],
-  },
-  {
-    title: 'Legal',
-    links: [
-      { label: 'Política de Privacidad', href: '/politica-privacidad' },
-      { label: 'Términos de Servicio', href: '/terminos' },
-    ],
-  },
-  {
-    title: 'Soporte',
-    links: [
-      { label: 'Centro de Ayuda', href: '/ayuda' },
-      { label: 'API Docs', href: '/api-docs' },
-      { label: 'Status', href: '/estado' },
+      { label: 'Casos de Éxito', href: '/casos-de-exito' },
     ],
   },
 ];
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/40 bg-white/30 backdrop-blur-md">
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-6">
-          {/* --- Brand column --- */}
-          <div className="sm:col-span-2 lg:col-span-2">
-            <a href="/" className="group inline-flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 shadow-md shadow-emerald-500/25 transition-transform duration-200 group-hover:scale-105">
-                <Shield className="h-5 w-5 text-white" strokeWidth={2.5} />
-              </div>
-              <span className="font-heading text-xl font-bold tracking-tight text-slate-900">
-                kotkot<span className="text-emerald-600">.ai</span>
-              </span>
-            </a>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-500">
-              Tu agente de seguros que nunca duerme
+    <footer className="relative border-t border-white/40 bg-gradient-to-b from-white/30 to-white/50 backdrop-blur-md">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
+          {/* Brand Column - Spans 2 columns */}
+          <div className="col-span-2">
+            <Link href="/" className="inline-block">
+              <Logo size="md" />
+            </Link>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">
+              Comparador inteligente de seguros y préstamos en Latinoamérica.
+              Encuentra las mejores opciones en minutos.
             </p>
+            <div className="mt-6 flex items-center gap-4">
+              <Link
+                href="/demo"
+                className="text-sm font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
+              >
+                Solicitar Demo →
+              </Link>
+            </div>
           </div>
 
-          {/* --- Link columns --- */}
+          {/* Link Columns */}
           {linkGroups.map((group) => (
             <div key={group.title}>
-              <h4 className="font-heading text-sm font-semibold text-slate-900">
+              <h4 className="text-sm font-bold text-slate-900 mb-4">
                 {group.title}
               </h4>
-              <ul className="mt-3 flex flex-col gap-2.5">
+              <ul className="space-y-3">
                 {group.links.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
-                      className="text-sm text-slate-500 transition-colors duration-200 hover:text-emerald-600"
+                      className="text-sm text-slate-600 hover:text-emerald-600 transition-colors"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -93,15 +92,33 @@ export function Footer() {
           ))}
         </div>
 
-        {/* --- Bottom bar --- */}
-        <div className="divider-gradient mt-12" />
-        <div className="mt-6 flex flex-col items-center justify-between gap-3 sm:flex-row">
-          <p className="text-sm text-slate-400">
-            Hecho para Latinoamérica {'\u{1F30E}'}
-          </p>
-          <p className="text-sm text-slate-400">
-            &copy; 2026 kotkot.ai. Todos los derechos reservados.
-          </p>
+        {/* Bottom Bar */}
+        <div className="mt-12 border-t border-slate-200 pt-8">
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <div className="flex items-center gap-6">
+              <Link
+                href="/politica-privacidad"
+                className="text-sm text-slate-500 hover:text-slate-700 transition-colors"
+              >
+                Privacidad
+              </Link>
+              <Link
+                href="/terminos"
+                className="text-sm text-slate-500 hover:text-slate-700 transition-colors"
+              >
+                Términos
+              </Link>
+              <Link
+                href="/contacto"
+                className="text-sm text-slate-500 hover:text-slate-700 transition-colors"
+              >
+                Contacto
+              </Link>
+            </div>
+            <p className="text-sm text-slate-500">
+              © 2026 kotkot.ai. Todos los derechos reservados.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

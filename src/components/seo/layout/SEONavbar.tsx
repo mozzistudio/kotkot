@@ -7,21 +7,28 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Phone, ChevronDown, Menu, X, Car, Heart, Shield, Home, Plane, PawPrint, Building2, Scale, Ambulance, PiggyBank } from 'lucide-react';
+import { Phone, ChevronDown, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Logo } from '@/components/ui/Logo';
 
 const insuranceProducts = [
-  { slug: 'auto', name: 'Seguro de Auto', icon: Car, description: 'Protección para tu vehículo', color: 'text-blue-600' },
-  { slug: 'salud', name: 'Seguro de Salud', icon: Heart, description: 'Cobertura médica completa', color: 'text-red-500' },
-  { slug: 'vida', name: 'Seguro de Vida', icon: Shield, description: 'Protección para tu familia', color: 'text-purple-600' },
-  { slug: 'hogar', name: 'Seguro de Hogar', icon: Home, description: 'Protege tu casa', color: 'text-orange-600' },
-  { slug: 'viaje', name: 'Seguro de Viaje', icon: Plane, description: 'Viaja protegido', color: 'text-sky-600' },
-  { slug: 'mascota', name: 'Seguro de Mascota', icon: PawPrint, description: 'Salud para tu mascota', color: 'text-amber-600' },
-  { slug: 'empresarial', name: 'Seguro Empresarial', icon: Building2, description: 'Para tu negocio', color: 'text-slate-700' },
-  { slug: 'responsabilidad-civil', name: 'Responsabilidad Civil', icon: Scale, description: 'Protección legal', color: 'text-indigo-600' },
-  { slug: 'accidentes-personales', name: 'Accidentes Personales', icon: Ambulance, description: 'Cobertura 24/7', color: 'text-rose-600' },
-  { slug: 'ahorro', name: 'Seguro de Ahorro', icon: PiggyBank, description: 'Ahorra e invierte', color: 'text-emerald-600' },
+  { slug: 'auto', name: 'Auto', icon: '🚗', description: 'Protección para tu vehículo' },
+  { slug: 'salud', name: 'Salud', icon: '🏥', description: 'Cobertura médica completa' },
+  { slug: 'vida', name: 'Vida', icon: '🛡️', description: 'Protección para tu familia' },
+  { slug: 'hogar', name: 'Hogar', icon: '🏠', description: 'Protege tu casa' },
+  { slug: 'viaje', name: 'Viaje', icon: '✈️', description: 'Viaja protegido' },
+  { slug: 'mascota', name: 'Mascota', icon: '🐾', description: 'Salud para tu mascota' },
+  { slug: 'empresarial', name: 'Empresarial', icon: '🏢', description: 'Para tu negocio' },
+  { slug: 'responsabilidad-civil', name: 'Responsabilidad Civil', icon: '⚖️', description: 'Protección legal' },
+  { slug: 'accidentes-personales', name: 'Accidentes Personales', icon: '🚑', description: 'Cobertura 24/7' },
+  { slug: 'ahorro', name: 'Ahorro', icon: '💰', description: 'Ahorra e invierte' },
+];
+
+const loanProducts = [
+  { slug: 'personal', name: 'Personal', icon: '💳', description: 'Para tus proyectos personales' },
+  { slug: 'hipotecario', name: 'Hipotecario', icon: '🏡', description: 'Compra tu casa soñada' },
+  { slug: 'auto', name: 'Auto', icon: '🚙', description: 'Financia tu vehículo' },
+  { slug: 'empresarial', name: 'Empresarial', icon: '💼', description: 'Crece tu negocio' },
 ];
 
 const topCompanies = [
@@ -33,6 +40,7 @@ const topCompanies = [
 
 export function SEONavbar() {
   const [segurosOpen, setSegurosOpen] = useState(false);
+  const [prestamosOpen, setPrestamosOpen] = useState(false);
   const [aseguradorasOpen, setAseguradorasOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -64,7 +72,7 @@ export function SEONavbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute left-0 top-full mt-2 w-96 rounded-2xl border border-white/40 bg-white/95 backdrop-blur-xl shadow-2xl"
+                  className="absolute left-0 top-full mt-2 w-[480px] rounded-2xl border border-white/40 bg-white/95 backdrop-blur-xl shadow-2xl"
                 >
                   <div className="p-4">
                     <div className="mb-3 flex items-center justify-between">
@@ -77,28 +85,78 @@ export function SEONavbar() {
                       </Link>
                     </div>
                     <div className="grid grid-cols-2 gap-2">
-                      {insuranceProducts.map((product) => {
-                        const IconComponent = product.icon;
-                        return (
-                          <Link
-                            key={product.slug}
-                            href={`/seguros/${product.slug}`}
-                            className="group rounded-lg p-3 hover:bg-emerald-50 transition-colors"
-                          >
-                            <div className="flex items-start gap-3">
-                              <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white shadow-sm ${product.color}`}>
-                                <IconComponent className="h-5 w-5" strokeWidth={2} />
-                              </div>
-                              <div className="min-w-0 flex-1">
-                                <p className="text-sm font-semibold text-gray-900 group-hover:text-emerald-600 truncate">
-                                  {product.name.replace('Seguro de ', '')}
-                                </p>
-                                <p className="text-xs text-gray-500 line-clamp-1">{product.description}</p>
-                              </div>
+                      {insuranceProducts.map((product) => (
+                        <Link
+                          key={product.slug}
+                          href={`/seguros/${product.slug}`}
+                          className="group rounded-lg p-3 hover:bg-emerald-50 transition-colors"
+                        >
+                          <div className="flex items-start gap-2">
+                            <span className="text-2xl flex-shrink-0">{product.icon}</span>
+                            <div>
+                              <p className="text-sm font-semibold text-gray-900 group-hover:text-emerald-600">
+                                {product.name}
+                              </p>
+                              <p className="text-xs text-gray-500">{product.description}</p>
                             </div>
-                          </Link>
-                        );
-                      })}
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Préstamos Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setPrestamosOpen(true)}
+            onMouseLeave={() => setPrestamosOpen(false)}
+          >
+            <button className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors">
+              Préstamos
+              <ChevronDown className={`h-4 w-4 transition-transform ${prestamosOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {prestamosOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute left-0 top-full mt-2 w-[400px] rounded-2xl border border-white/40 bg-white/95 backdrop-blur-xl shadow-2xl"
+                >
+                  <div className="p-4">
+                    <div className="mb-3 flex items-center justify-between">
+                      <h3 className="text-sm font-semibold text-gray-900">Tipos de Préstamos</h3>
+                      <Link
+                        href="/prestamos"
+                        className="text-xs font-medium text-emerald-600 hover:text-emerald-700"
+                      >
+                        Ver todos →
+                      </Link>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      {loanProducts.map((product) => (
+                        <Link
+                          key={product.slug}
+                          href={`/prestamos/${product.slug}`}
+                          className="group rounded-lg p-3 hover:bg-emerald-50 transition-colors"
+                        >
+                          <div className="flex items-start gap-2">
+                            <span className="text-2xl flex-shrink-0">{product.icon}</span>
+                            <div>
+                              <p className="text-sm font-semibold text-gray-900 group-hover:text-emerald-600">
+                                {product.name}
+                              </p>
+                              <p className="text-xs text-gray-500">{product.description}</p>
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </motion.div>
@@ -228,20 +286,42 @@ export function SEONavbar() {
                   <span className="text-sm text-emerald-600">Ver todos →</span>
                 </Link>
                 <div className="grid grid-cols-2 gap-2 pl-4">
-                  {insuranceProducts.slice(0, 6).map((product) => {
-                    const IconComponent = product.icon;
-                    return (
-                      <Link
-                        key={product.slug}
-                        href={`/seguros/${product.slug}`}
-                        className="flex items-center gap-2 rounded-lg p-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        <IconComponent className={`h-4 w-4 ${product.color}`} strokeWidth={2} />
-                        <span>{product.name.replace('Seguro de ', '')}</span>
-                      </Link>
-                    );
-                  })}
+                  {insuranceProducts.slice(0, 6).map((product) => (
+                    <Link
+                      key={product.slug}
+                      href={`/seguros/${product.slug}`}
+                      className="flex items-center gap-2 rounded-lg p-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      <span className="text-lg">{product.icon}</span>
+                      <span>{product.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Mobile Préstamos */}
+              <div className="mb-4">
+                <Link
+                  href="/prestamos"
+                  className="mb-2 flex items-center justify-between text-base font-semibold text-gray-900"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Préstamos
+                  <span className="text-sm text-emerald-600">Ver todos →</span>
+                </Link>
+                <div className="grid grid-cols-2 gap-2 pl-4">
+                  {loanProducts.map((product) => (
+                    <Link
+                      key={product.slug}
+                      href={`/prestamos/${product.slug}`}
+                      className="flex items-center gap-2 rounded-lg p-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      <span className="text-lg">{product.icon}</span>
+                      <span>{product.name}</span>
+                    </Link>
+                  ))}
                 </div>
               </div>
 
