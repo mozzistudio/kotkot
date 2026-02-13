@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Menu, X, Shield } from 'lucide-react';
+import { ArrowUpRight, Menu, X, Shield, ChevronDown } from 'lucide-react';
 
 const navLinks = [
   { label: 'Funcionalidades', href: '#funcionalidades' },
@@ -11,10 +11,20 @@ const navLinks = [
   { label: 'Blog', href: '/blog' },
 ];
 
+const insuranceProducts = [
+  { slug: 'auto', name: 'Auto', icon: '🚗' },
+  { slug: 'salud', name: 'Salud', icon: '🏥' },
+  { slug: 'vida', name: 'Vida', icon: '🛡️' },
+  { slug: 'hogar', name: 'Hogar', icon: '🏠' },
+  { slug: 'viaje', name: 'Viaje', icon: '✈️' },
+  { slug: 'mascota', name: 'Mascota', icon: '🐾' },
+];
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('#funcionalidades');
+  const [segurosOpen, setSegurosOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,6 +69,51 @@ export function Navbar() {
               kotkot<span className="text-emerald-600">.ai</span>
             </span>
           </a>
+
+          {/* --- Seguros Dropdown (desktop) --- */}
+          <div
+            className="relative hidden lg:block"
+            onMouseEnter={() => setSegurosOpen(true)}
+            onMouseLeave={() => setSegurosOpen(false)}
+          >
+            <button className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-white/60 hover:text-slate-900">
+              Seguros
+              <ChevronDown className={`h-4 w-4 transition-transform ${segurosOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {segurosOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute left-0 top-full mt-2 w-64 rounded-xl border border-white/40 bg-white/95 backdrop-blur-xl shadow-xl"
+                >
+                  <div className="p-2">
+                    {insuranceProducts.map((product) => (
+                      <a
+                        key={product.slug}
+                        href={`/seguros/${product.slug}`}
+                        className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-emerald-50 hover:text-emerald-700"
+                      >
+                        <span className="text-lg">{product.icon}</span>
+                        <span>Seguro de {product.name}</span>
+                      </a>
+                    ))}
+                    <div className="mt-1 border-t border-slate-200 pt-1">
+                      <a
+                        href="/seguros"
+                        className="flex items-center justify-center rounded-lg px-3 py-2 text-sm font-semibold text-emerald-600 transition-colors hover:bg-emerald-50"
+                      >
+                        Ver todos los seguros →
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           {/* --- Center Nav Pill (desktop) --- */}
           <div className="hidden items-center gap-1 rounded-full border border-white/40 bg-white/40 px-2 py-1.5 backdrop-blur-md lg:flex">
@@ -136,6 +191,18 @@ export function Navbar() {
               }}
               className="flex flex-1 flex-col items-center justify-center gap-6 px-8"
             >
+              <motion.a
+                href="/seguros"
+                onClick={() => setMobileOpen(false)}
+                variants={{
+                  open: { y: 0, opacity: 1 },
+                  closed: { y: 20, opacity: 0 },
+                }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+                className="flex items-center gap-2 font-heading text-2xl font-semibold text-emerald-600 transition-colors hover:text-emerald-700"
+              >
+                Seguros
+              </motion.a>
               {navLinks.map((link) => (
                 <motion.a
                   key={link.href}

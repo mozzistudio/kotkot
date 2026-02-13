@@ -71,21 +71,57 @@ export function Hero() {
           {/* Sub-headline */}
           <motion.p
             variants={itemVariants}
-            className="mt-6 max-w-lg text-lg leading-relaxed text-slate-500 sm:text-xl"
+            className="mt-6 max-w-lg text-lg leading-relaxed text-slate-600 sm:text-xl"
           >
-            Despliega un agente de IA en el WhatsApp de tu correduría. Cotiza,
-            compara y vende seguros automáticamente en toda Latinoamérica, 24
-            horas al día.
+            Automatiza tu correduría con IA. Cotiza seguros de auto, salud, vida y más en segundos.
+            Compara 10+ aseguradoras y cierra ventas 24/7 por WhatsApp.
           </motion.p>
 
+          {/* Stats */}
+          <motion.div variants={itemVariants} className="mt-6 flex flex-wrap gap-6">
+            <div className="flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100">
+                <span className="text-xl">⚡</span>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-slate-900">2 min</div>
+                <div className="text-xs text-slate-500">Cotización promedio</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100">
+                <span className="text-xl">🏢</span>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-slate-900">10+</div>
+                <div className="text-xs text-slate-500">Aseguradoras</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100">
+                <span className="text-xl">🤖</span>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-slate-900">24/7</div>
+                <div className="text-xs text-slate-500">Automatización</div>
+              </div>
+            </div>
+          </motion.div>
+
           {/* CTA */}
-          <motion.div variants={itemVariants} className="mt-8">
+          <motion.div variants={itemVariants} className="mt-8 flex flex-wrap gap-4">
             <a
               href="/demo"
               className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-emerald-500/25 transition-all duration-200 hover:shadow-emerald-500/40 hover:brightness-110 active:brightness-95"
             >
               Solicitar Demo
               <ArrowUpRight className="h-5 w-5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </a>
+            <a
+              href="/seguros"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-slate-300 bg-white px-8 py-4 text-lg font-semibold text-slate-700 transition-all duration-200 hover:border-emerald-500 hover:text-emerald-600"
+            >
+              Ver Seguros
             </a>
           </motion.div>
         </motion.div>
