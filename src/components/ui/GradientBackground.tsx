@@ -5,7 +5,7 @@ interface GradientBackgroundProps {
 
 export function GradientBackground({ children, className = '' }: GradientBackgroundProps) {
   return (
-    <div className={`gradient-mesh-bg min-h-screen ${className}`}>
+    <div className={`min-h-screen ${className}`}>
       {children}
     </div>
   );

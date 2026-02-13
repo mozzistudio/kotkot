@@ -28,7 +28,7 @@ export function InsurersLogos() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
-          className="mb-10 text-center font-heading text-lg font-semibold text-slate-500"
+          className="mb-10 text-center font-heading text-lg font-semibold text-[#6b7280]"
         >
           Compatible con aseguradoras en toda Latinoamérica
         </motion.p>
@@ -54,9 +54,9 @@ export function InsurersLogos() {
               {marqueeItems.map((name, index) => (
                 <div
                   key={`${name}-${index}`}
-                  className="glass-card flex shrink-0 items-center justify-center rounded-full px-6 py-2.5 transition-all duration-200 hover:bg-white/60"
+                  className="flex shrink-0 items-center justify-center rounded-[10px] border border-[#e5e7eb] bg-white px-6 py-2.5 transition-all duration-200 hover:bg-[#f3f4f6]"
                 >
-                  <span className="font-heading text-sm font-semibold tracking-wide text-slate-700 whitespace-nowrap">
+                  <span className="font-heading text-sm font-semibold tracking-wide text-[#111827] whitespace-nowrap">
                     {name}
                   </span>
                 </div>
@@ -71,7 +71,7 @@ export function InsurersLogos() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-6 text-center text-sm text-slate-400"
+          className="mt-6 text-center text-sm text-[#9ca3af]"
         >
           + 30 más en 10 países
         </motion.p>

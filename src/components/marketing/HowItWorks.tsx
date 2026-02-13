@@ -73,9 +73,9 @@ export function HowItWorks() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
           className="mx-auto mb-16 max-w-2xl text-center"
         >
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl lg:text-5xl">
             De registro a primera venta en{' '}
-            <span className="text-gradient-primary">15 minutos</span>
+            <span className="text-[#059669]">15 minutos</span>
           </h2>
         </motion.div>
 
@@ -88,10 +88,10 @@ export function HowItWorks() {
           className="relative"
         >
           {/* Connecting line — horizontal (desktop) */}
-          <div className="absolute top-[3.25rem] left-[calc(12.5%+1.25rem)] right-[calc(12.5%+1.25rem)] hidden h-0.5 border-t-2 border-dashed border-emerald-200 lg:block" />
+          <div className="absolute top-[3.25rem] left-[calc(12.5%+1.25rem)] right-[calc(12.5%+1.25rem)] hidden h-0.5 border-t-2 border-dashed border-[#e5e7eb] lg:block" />
 
           {/* Connecting line — vertical (mobile/tablet) */}
-          <div className="absolute top-16 bottom-16 left-[1.6875rem] w-0.5 border-l-2 border-dashed border-emerald-200 lg:hidden" />
+          <div className="absolute top-16 bottom-16 left-[1.6875rem] w-0.5 border-l-2 border-dashed border-[#e5e7eb] lg:hidden" />
 
           {/* Desktop grid (horizontal) */}
           <div className="hidden grid-cols-4 gap-8 lg:grid">
@@ -102,24 +102,24 @@ export function HowItWorks() {
                 className="relative flex flex-col items-center text-center"
               >
                 {/* Numbered circle */}
-                <div className="relative z-10 mb-5 flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 shadow-lg shadow-emerald-500/25">
-                  <span className="font-heading text-xl font-bold text-white">
+                <div className="relative z-10 mb-5 flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-[10px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)]">
+                  <span className="font-heading text-xl font-bold text-[#111827]">
                     {step.number}
                   </span>
                 </div>
 
                 {/* Icon */}
-                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-emerald-50">
-                  <step.icon className="h-5 w-5 text-emerald-600" strokeWidth={1.8} />
+                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-[10px] bg-[rgba(202,255,4,0.15)]">
+                  <step.icon className="h-5 w-5 text-[#111827]" strokeWidth={1.8} />
                 </div>
 
                 {/* Title */}
-                <h3 className="font-heading text-lg font-bold text-slate-900">
+                <h3 className="font-heading text-lg font-bold text-[#111827]">
                   {step.title}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
+                <p className="mt-1.5 text-sm leading-relaxed text-[#6b7280]">
                   {step.description}
                 </p>
               </motion.div>
@@ -135,8 +135,8 @@ export function HowItWorks() {
                 className="relative flex items-start gap-5 pl-2"
               >
                 {/* Numbered circle */}
-                <div className="relative z-10 flex h-[3.5rem] w-[3.5rem] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 shadow-lg shadow-emerald-500/25">
-                  <span className="font-heading text-lg font-bold text-white">
+                <div className="relative z-10 flex h-[3.5rem] w-[3.5rem] shrink-0 items-center justify-center rounded-[10px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)]">
+                  <span className="font-heading text-lg font-bold text-[#111827]">
                     {step.number}
                   </span>
                 </div>
@@ -144,12 +144,12 @@ export function HowItWorks() {
                 {/* Content */}
                 <div className="pt-1">
                   <div className="mb-1.5 flex items-center gap-2">
-                    <step.icon className="h-5 w-5 text-emerald-600" strokeWidth={1.8} />
-                    <h3 className="font-heading text-lg font-bold text-slate-900">
+                    <step.icon className="h-5 w-5 text-[#111827]" strokeWidth={1.8} />
+                    <h3 className="font-heading text-lg font-bold text-[#111827]">
                       {step.title}
                     </h3>
                   </div>
-                  <p className="text-sm leading-relaxed text-slate-600">
+                  <p className="text-sm leading-relaxed text-[#6b7280]">
                     {step.description}
                   </p>
                 </div>

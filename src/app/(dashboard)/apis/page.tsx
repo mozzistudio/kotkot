@@ -164,19 +164,19 @@ export default function ApisPage() {
   const activeCount = filtered.filter((i) => i.status === 'active').length;
 
   return (
-    <div className="min-h-screen bg-[#080c14] p-6 lg:p-8">
+    <div className="min-h-screen">
       {/* Header */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-slate-200 font-heading">
+          <h1 className="text-page-title">
             Aseguradoras Conectadas
           </h1>
-          <p className="mt-1 text-sm text-slate-400">
+          <p className="mt-1 text-body">
             {activeCount} de {filtered.length} aseguradoras activas en Panama
           </p>
         </div>
 
-        <button className="inline-flex items-center gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-2.5 text-sm font-medium text-amber-400 transition-colors hover:bg-amber-500/20">
+        <button className="btn-secondary text-[var(--warning)]">
           <Upload className="h-4 w-4" />
           Subir Tabla de Tarifas
         </button>
@@ -188,12 +188,12 @@ export default function ApisPage() {
           const sc = statusConfig[s];
           const count = filtered.filter((i) => i.status === s).length;
           return (
-            <div key={s} className="rounded-lg border border-[#1e293b] bg-[#0d1117] p-3">
+            <div key={s} className="card p-3">
               <div className="flex items-center gap-2">
-                <span className={`h-2 w-2 rounded-full ${sc.dotColor}`} />
-                <span className="text-xs text-slate-400">{sc.label}</span>
+                <span className={`status-dot ${sc.dotColor === 'bg-emerald-500' ? 'status-dot-success' : sc.dotColor === 'bg-red-500' ? 'status-dot-error' : sc.dotColor === 'bg-amber-500' ? 'status-dot-warning' : ''}`} />
+                <span className="text-xs text-[var(--text-secondary)]">{sc.label}</span>
               </div>
-              <p className="mt-1 text-lg font-bold text-slate-200 font-data">{count}</p>
+              <p className="mt-1 text-lg font-bold text-[var(--text-primary)] font-data">{count}</p>
             </div>
           );
         })}
@@ -206,19 +206,19 @@ export default function ApisPage() {
           return (
             <div
               key={insurer.id}
-              className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5 transition-all hover:border-[#1e293b]"
+              className="card"
             >
               {/* Top */}
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#080c14] text-slate-400">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[var(--surface-secondary)] text-[var(--text-secondary)]">
                     <Building2 className="h-5 w-5" />
                   </div>
                   <div>
-                    <Link href={`/apis/${insurer.slug}`} className="text-sm font-semibold text-slate-200 hover:text-emerald-400 transition-colors">
+                    <Link href={`/apis/${insurer.slug}`} className="text-sm font-semibold text-[var(--text-primary)] hover:text-[var(--text-link)] transition-colors">
                       {insurer.name}
                     </Link>
-                    <span className="block text-xs text-slate-500">
+                    <span className="block text-xs text-[var(--text-tertiary)]">
                       {insurer.apiType === 'manual' ? 'Tarifas manuales' : 'API directa'}
                     </span>
                   </div>
@@ -227,15 +227,15 @@ export default function ApisPage() {
 
               {/* Status Badge */}
               <div className="mt-4 flex items-center gap-2">
-                <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium ${sc.badgeBg} ${sc.badgeText} ${sc.badgeBorder}`}>
+                <span className={`badge ${sc.badgeBg} ${sc.badgeText} ${sc.badgeBorder}`}>
                   <span className={`h-1.5 w-1.5 rounded-full ${sc.dotColor}`} />
                   {sc.label}
                 </span>
                 {insurer.responseTime && insurer.status === 'active' && (
-                  <span className="text-xs text-slate-500">{insurer.responseTime}</span>
+                  <span className="text-xs text-[var(--text-tertiary)]">{insurer.responseTime}</span>
                 )}
                 {insurer.status === 'error' && (
-                  <span className="text-xs text-red-400">{insurer.responseTime}</span>
+                  <span className="text-xs text-[var(--error)]">{insurer.responseTime}</span>
                 )}
               </div>
 
@@ -246,7 +246,7 @@ export default function ApisPage() {
                   return (
                     <span
                       key={p}
-                      className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium ${pc.color}`}
+                      className={`badge ${pc.color}`}
                     >
                       {pc.icon}
                       {pc.label}
@@ -256,25 +256,25 @@ export default function ApisPage() {
               </div>
 
               {/* Health Check */}
-              <div className="mt-4 flex items-center gap-1.5 text-xs text-slate-500">
+              <div className="mt-4 flex items-center gap-1.5 text-xs text-[var(--text-tertiary)]">
                 <Clock className="h-3 w-3" />
                 Ultimo chequeo: {insurer.lastHealthCheck}
               </div>
 
               {/* Action Button */}
-              <div className="mt-4 border-t border-[#1e293b] pt-4">
+              <div className="mt-4 border-t border-[var(--border)] pt-4">
                 {insurer.status === 'disconnected' ? (
-                  <button className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-emerald-500/15 transition-all hover:shadow-emerald-500/25 hover:brightness-110">
+                  <button className="btn-primary w-full">
                     <Link2 className="h-4 w-4" />
                     Conectar
                   </button>
                 ) : insurer.status === 'error' ? (
-                  <button className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-2 text-sm font-medium text-red-400 transition-colors hover:bg-red-500/20">
+                  <button className="btn-secondary w-full text-[var(--error)]">
                     <RefreshCw className="h-4 w-4" />
                     Reintentar Conexion
                   </button>
                 ) : (
-                  <button className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#1e293b] bg-[#080c14] px-4 py-2 text-sm font-medium text-slate-400 transition-colors hover:border-emerald-500/30 hover:text-emerald-400">
+                  <button className="btn-secondary w-full">
                     <Settings className="h-4 w-4" />
                     Configurar
                   </button>

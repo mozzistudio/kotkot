@@ -47,7 +47,7 @@ const linkGroups: FooterLinkGroup[] = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/40 bg-gradient-to-b from-white/30 to-white/50 backdrop-blur-md">
+    <footer className="relative border-t border-[#e5e7eb] bg-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
@@ -56,14 +56,14 @@ export function Footer() {
             <Link href="/" className="inline-block">
               <Logo size="md" />
             </Link>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#6b7280]">
               Comparador inteligente de seguros y préstamos en Latinoamérica.
               Encuentra las mejores opciones en minutos.
             </p>
             <div className="mt-6 flex items-center gap-4">
               <Link
                 href="/demo"
-                className="text-sm font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
+                className="text-sm font-semibold text-[#059669] hover:text-[#047857] transition-colors"
               >
                 Solicitar Demo →
               </Link>
@@ -73,7 +73,7 @@ export function Footer() {
           {/* Link Columns */}
           {linkGroups.map((group) => (
             <div key={group.title}>
-              <h4 className="text-sm font-bold text-slate-900 mb-4">
+              <h4 className="text-sm font-bold text-[#111827] mb-4">
                 {group.title}
               </h4>
               <ul className="space-y-3">
@@ -81,7 +81,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-slate-600 hover:text-emerald-600 transition-colors"
+                      className="text-sm text-[#6b7280] hover:text-[#059669] transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -93,29 +93,29 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 border-t border-slate-200 pt-8">
+        <div className="mt-12 border-t border-[#e5e7eb] pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <div className="flex items-center gap-6">
               <Link
                 href="/politica-privacidad"
-                className="text-sm text-slate-500 hover:text-slate-700 transition-colors"
+                className="text-sm text-[#9ca3af] hover:text-[#6b7280] transition-colors"
               >
                 Privacidad
               </Link>
               <Link
                 href="/terminos"
-                className="text-sm text-slate-500 hover:text-slate-700 transition-colors"
+                className="text-sm text-[#9ca3af] hover:text-[#6b7280] transition-colors"
               >
                 Términos
               </Link>
               <Link
                 href="/contacto"
-                className="text-sm text-slate-500 hover:text-slate-700 transition-colors"
+                className="text-sm text-[#9ca3af] hover:text-[#6b7280] transition-colors"
               >
                 Contacto
               </Link>
             </div>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-[#9ca3af]">
               © 2026 kotkot.ai. Todos los derechos reservados.
             </p>
           </div>

@@ -64,7 +64,7 @@ const invoices: Invoice[] = [
 const roleConfig: Record<string, { label: string; color: string }> = {
   admin: { label: 'Admin', color: 'bg-purple-500/15 text-purple-400 border-purple-500/30' },
   agent: { label: 'Agente', color: 'bg-blue-500/15 text-blue-400 border-blue-500/30' },
-  viewer: { label: 'Visor', color: 'bg-slate-500/15 text-slate-400 border-slate-500/30' },
+  viewer: { label: 'Visor', color: 'bg-slate-500/15 text-[var(--text-secondary)] border-slate-500/30' },
 };
 
 const tabs: { key: SettingsTab; label: string; icon: React.ReactNode }[] = [
@@ -91,25 +91,25 @@ export default function SettingsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-[#080c14] p-6 lg:p-8">
+    <div className="min-h-screen p-6 lg:p-8">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-slate-200 font-heading">Configuracion</h1>
-        <p className="mt-1 text-sm text-slate-400">
+        <h1 className="text-page-title">Configuracion</h1>
+        <p className="mt-1 text-sm text-[var(--text-secondary)]">
           Administra tu cuenta y preferencias
         </p>
       </div>
 
       {/* Tabs */}
-      <div className="mb-6 flex gap-1 overflow-x-auto rounded-lg border border-[#1e293b] bg-[#0d1117] p-1">
+      <div className="mb-6 flex gap-1 overflow-x-auto rounded-lg border border-[var(--border)] bg-white p-1">
         {tabs.map((tab) => (
           <button
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
             className={`flex items-center gap-2 whitespace-nowrap rounded-md px-4 py-2.5 text-sm font-medium transition-all ${
               activeTab === tab.key
-                ? 'bg-emerald-500/15 text-emerald-400 shadow-sm'
-                : 'text-slate-400 hover:text-slate-300'
+                ? 'bg-[var(--accent-light)] text-[var(--accent)] '
+                : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
             }`}
           >
             {tab.icon}
@@ -119,63 +119,63 @@ export default function SettingsPage() {
       </div>
 
       {/* Tab Content */}
-      <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-6">
+      <div className="card">
         {/* ── Profile Tab ─────────────────────────────────────────── */}
         {activeTab === 'profile' && (
           <div className="space-y-6">
-            <h2 className="text-lg font-semibold text-slate-200">Informacion del Perfil</h2>
+            <h2 className="text-card-title">Informacion del Perfil</h2>
 
             <div className="flex items-center gap-4">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-dashed border-[#1e293b] bg-[#080c14] text-slate-500 transition-colors hover:border-emerald-500/30 hover:text-emerald-400">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-dashed border-[var(--border)] text-[var(--text-tertiary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]">
                 <Camera className="h-6 w-6" />
               </div>
               <div>
-                <p className="text-sm font-medium text-slate-300">Foto de perfil</p>
-                <p className="text-xs text-slate-500">JPG, PNG. Max 2MB.</p>
+                <p className="text-sm font-medium text-[var(--text-primary)]">Foto de perfil</p>
+                <p className="text-xs text-[var(--text-tertiary)]">JPG, PNG. Max 2MB.</p>
               </div>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-slate-300">Nombre del Broker</label>
+                <label className="mb-1.5 block text-sm font-medium text-[var(--text-primary)]">Nombre del Broker</label>
                 <input
                   type="text"
                   defaultValue="Ricardo Lopez"
-                  className="w-full rounded-lg border border-[#1e293b] bg-[#080c14] px-4 py-2.5 text-sm text-slate-200 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/20"
+                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-slate-300">Email</label>
+                <label className="mb-1.5 block text-sm font-medium text-[var(--text-primary)]">Email</label>
                 <input
                   type="email"
                   defaultValue="ricardo@brokerspa.com"
-                  className="w-full rounded-lg border border-[#1e293b] bg-[#080c14] px-4 py-2.5 text-sm text-slate-200 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/20"
+                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-slate-300">
+                <label className="mb-1.5 block text-sm font-medium text-[var(--text-primary)]">
                   <Building2 className="mr-1 inline h-3.5 w-3.5" />
                   Empresa
                 </label>
                 <input
                   type="text"
                   defaultValue="Brokers Panama S.A."
-                  className="w-full rounded-lg border border-[#1e293b] bg-[#080c14] px-4 py-2.5 text-sm text-slate-200 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/20"
+                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-slate-300">
+                <label className="mb-1.5 block text-sm font-medium text-[var(--text-primary)]">
                   <Phone className="mr-1 inline h-3.5 w-3.5" />
                   Telefono
                 </label>
                 <input
                   type="tel"
                   defaultValue="+507 6100-0000"
-                  className="w-full rounded-lg border border-[#1e293b] bg-[#080c14] px-4 py-2.5 text-sm text-slate-200 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/20"
+                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-slate-300">
+                <label className="mb-1.5 block text-sm font-medium text-[var(--text-primary)]">
                   <Globe className="mr-1 inline h-3.5 w-3.5" />
                   Pais
                 </label>
@@ -184,14 +184,14 @@ export default function SettingsPage() {
                     type="text"
                     value="Panama (PA)"
                     readOnly
-                    className="w-full cursor-not-allowed rounded-lg border border-[#1e293b] bg-[#080c14] px-4 py-2.5 text-sm text-slate-500 opacity-60"
+                    className="w-full cursor-not-allowed rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-tertiary)] opacity-60"
                   />
-                  <span className="shrink-0 text-xs text-slate-600">No editable</span>
+                  <span className="shrink-0 text-xs text-[var(--text-tertiary)]">No editable</span>
                 </div>
               </div>
             </div>
 
-            <button className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400">
+            <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--accent-hover)]">
               <Check className="h-4 w-4" />
               Guardar Perfil
             </button>
@@ -201,39 +201,39 @@ export default function SettingsPage() {
         {/* ── Billing Tab ─────────────────────────────────────────── */}
         {activeTab === 'billing' && (
           <div className="space-y-6">
-            <h2 className="text-lg font-semibold text-slate-200">Facturacion & Plan</h2>
+            <h2 className="text-card-title">Facturacion & Plan</h2>
 
             {/* Current Plan */}
-            <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/5 p-5">
+            <div className="rounded-lg border border-[var(--accent)] bg-[var(--accent-light)] p-5">
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/20">
-                    <Crown className="h-5 w-5 text-emerald-400" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--accent-light)]">
+                    <Crown className="h-5 w-5 text-[var(--accent)]" />
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold text-slate-200">Plan Profesional</h3>
-                    <p className="text-sm text-slate-400">$49/mes - Hasta 500 conversaciones</p>
+                    <h3 className="text-section-heading">Plan Profesional</h3>
+                    <p className="text-body">$49/mes - Hasta 500 conversaciones</p>
                   </div>
                 </div>
-                <span className="rounded-full border border-emerald-500/30 bg-emerald-500/15 px-3 py-1 text-xs font-medium text-emerald-400">
+                <span className="rounded-full border border-[var(--accent)] bg-[var(--accent-light)] px-3 py-1 text-xs font-medium text-[var(--accent)]">
                   Activo
                 </span>
               </div>
               <div className="mt-4 grid grid-cols-3 gap-3 text-center">
                 <div>
-                  <p className="text-lg font-bold text-slate-200 font-data">324</p>
-                  <p className="text-xs text-slate-500">Conversaciones usadas</p>
+                  <p className="text-lg font-bold text-[var(--text-primary)] font-data">324</p>
+                  <p className="text-xs text-[var(--text-tertiary)]">Conversaciones usadas</p>
                 </div>
                 <div>
-                  <p className="text-lg font-bold text-slate-200 font-data">176</p>
-                  <p className="text-xs text-slate-500">Restantes</p>
+                  <p className="text-lg font-bold text-[var(--text-primary)] font-data">176</p>
+                  <p className="text-xs text-[var(--text-tertiary)]">Restantes</p>
                 </div>
                 <div>
-                  <p className="text-lg font-bold text-slate-200 font-data">18 dias</p>
-                  <p className="text-xs text-slate-500">Hasta renovacion</p>
+                  <p className="text-lg font-bold text-[var(--text-primary)] font-data">18 dias</p>
+                  <p className="text-xs text-[var(--text-tertiary)]">Hasta renovacion</p>
                 </div>
               </div>
-              <button className="mt-4 inline-flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-400 transition-colors hover:bg-emerald-500/20">
+              <button className="mt-4 inline-flex items-center gap-2 rounded-lg border border-[var(--accent)] bg-[var(--accent-light)] px-4 py-2 text-sm font-medium text-[var(--accent)] transition-colors hover:bg-[var(--accent-light)]">
                 <Zap className="h-4 w-4" />
                 Cambiar Plan
               </button>
@@ -241,38 +241,38 @@ export default function SettingsPage() {
 
             {/* Payment Method */}
             <div>
-              <h3 className="mb-3 text-sm font-semibold text-slate-300">Metodo de Pago</h3>
-              <div className="flex items-center gap-3 rounded-lg border border-[#1e293b] bg-[#080c14] p-4">
+              <h3 className="mb-3 text-sm font-semibold text-[var(--text-primary)]">Metodo de Pago</h3>
+              <div className="flex items-center gap-3 rounded-lg border border-[var(--border)] p-4">
                 <div className="flex h-8 w-12 items-center justify-center rounded-md bg-blue-500/20 text-xs font-bold text-blue-400">
                   VISA
                 </div>
                 <div>
-                  <p className="text-sm text-slate-200">**** **** **** 4242</p>
-                  <p className="text-xs text-slate-500">Expira 12/2027</p>
+                  <p className="text-sm text-[var(--text-primary)]">**** **** **** 4242</p>
+                  <p className="text-xs text-[var(--text-tertiary)]">Expira 12/2027</p>
                 </div>
-                <button className="ml-auto text-xs text-slate-400 hover:text-slate-300">Cambiar</button>
+                <button className="ml-auto text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)]">Cambiar</button>
               </div>
             </div>
 
             {/* Invoices */}
             <div>
-              <h3 className="mb-3 text-sm font-semibold text-slate-300">Historial de Facturas</h3>
+              <h3 className="mb-3 text-sm font-semibold text-[var(--text-primary)]">Historial de Facturas</h3>
               <div className="space-y-2">
                 {invoices.map((inv) => (
                   <div
                     key={inv.id}
-                    className="flex items-center justify-between rounded-lg border border-[#1e293b] bg-[#080c14] px-4 py-3"
+                    className="flex items-center justify-between rounded-lg border border-[var(--border)] px-4 py-3"
                   >
                     <div className="flex items-center gap-3">
-                      <CreditCard className="h-4 w-4 text-slate-500" />
+                      <CreditCard className="h-4 w-4 text-[var(--text-tertiary)]" />
                       <div>
-                        <span className="text-sm text-slate-200">{inv.id}</span>
-                        <span className="ml-2 text-xs text-slate-500">{inv.date}</span>
+                        <span className="text-sm text-[var(--text-primary)]">{inv.id}</span>
+                        <span className="ml-2 text-xs text-[var(--text-tertiary)]">{inv.date}</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="text-sm font-semibold text-slate-200 font-data">{inv.amount}</span>
-                      <span className="rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2 py-0.5 text-xs text-emerald-400">
+                      <span className="text-sm font-semibold text-[var(--text-primary)] font-data">{inv.amount}</span>
+                      <span className="rounded-full border border-[var(--accent)] bg-[var(--accent-light)] px-2 py-0.5 text-xs text-[var(--accent)]">
                         Pagada
                       </span>
                     </div>
@@ -286,26 +286,26 @@ export default function SettingsPage() {
         {/* ── Payments Tab ─────────────────────────────────────────── */}
         {activeTab === 'payments' && (
           <div className="space-y-6">
-            <h2 className="text-lg font-semibold text-slate-200">Configuracion de Pagos de Seguros</h2>
-            <p className="text-sm text-slate-400">
+            <h2 className="text-card-title">Configuracion de Pagos de Seguros</h2>
+            <p className="text-body">
               Configura como tus clientes pagan las polizas de seguros.
             </p>
 
             {demoCountry === 'PA' ? (
               /* ── Yappy Config (Panama) ────────────────────── */
               <div className="space-y-5">
-                <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/5 p-4">
+                <div className="rounded-lg border border-[var(--accent)] bg-[var(--accent-light)] p-4">
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#7B2BFC]/20">
                       <Wallet className="h-5 w-5 text-[#7B2BFC]" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-slate-200">Yappy Business</h3>
-                      <p className="text-xs text-slate-400">
+                      <h3 className="text-sm font-semibold text-[var(--text-primary)]">Yappy Business</h3>
+                      <p className="text-xs text-[var(--text-secondary)]">
                         Acepta pagos de polizas de seguros via Yappy en Panama
                       </p>
                     </div>
-                    <span className="ml-auto rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2.5 py-0.5 text-xs font-medium text-emerald-400">
+                    <span className="ml-auto rounded-full border border-[var(--accent)] bg-[var(--accent-light)] px-2.5 py-0.5 text-xs font-medium text-[var(--accent)]">
                       Conectado
                     </span>
                   </div>
@@ -313,40 +313,40 @@ export default function SettingsPage() {
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-slate-300">
+                    <label className="mb-1.5 block text-sm font-medium text-[var(--text-primary)]">
                       Merchant ID
                     </label>
                     <input
                       type="text"
                       defaultValue="YAPPY_MID_BROKERS_PA"
-                      className="w-full rounded-lg border border-[#1e293b] bg-[#080c14] px-4 py-2.5 text-sm text-slate-200 font-mono focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/20"
+                      className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] font-mono focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
                     />
                   </div>
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-slate-300">
+                    <label className="mb-1.5 block text-sm font-medium text-[var(--text-primary)]">
                       Secret Token
                     </label>
                     <input
                       type="password"
                       defaultValue="ypy_sk_live_xxxxxxxxxxxxx"
-                      className="w-full rounded-lg border border-[#1e293b] bg-[#080c14] px-4 py-2.5 text-sm text-slate-200 font-mono focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/20"
+                      className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] font-mono focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
                     />
                   </div>
                 </div>
 
                 <div className="flex gap-3">
-                  <button className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400">
+                  <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--accent-hover)]">
                     <Check className="h-4 w-4" />
                     Guardar Credenciales
                   </button>
-                  <button className="inline-flex items-center gap-2 rounded-lg border border-[#1e293b] bg-[#080c14] px-5 py-2.5 text-sm font-medium text-slate-400 transition-colors hover:border-emerald-500/30 hover:text-emerald-400">
+                  <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-5 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]">
                     <Zap className="h-4 w-4" />
                     Probar Conexion
                   </button>
                 </div>
 
-                <div className="rounded-lg border border-[#1e293b] bg-[#080c14] p-4 text-xs text-slate-500">
-                  <p className="mb-1 font-medium text-slate-400">Como funciona:</p>
+                <div className="rounded-lg border border-[var(--border)] p-4 text-xs text-[var(--text-tertiary)]">
+                  <p className="mb-1 font-medium text-[var(--text-secondary)]">Como funciona:</p>
                   <ul className="ml-4 list-disc space-y-1">
                     <li>El cliente selecciona una cotizacion y elige Yappy como metodo de pago</li>
                     <li>CotiFacil genera un enlace de pago Yappy con el monto exacto</li>
@@ -358,14 +358,14 @@ export default function SettingsPage() {
             ) : (
               /* ── Stripe Connect (Other countries) ──────────── */
               <div className="space-y-5">
-                <div className="rounded-lg border border-[#1e293b] bg-[#080c14] p-5">
+                <div className="rounded-lg border border-[var(--border)] p-5">
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/20">
                       <CreditCard className="h-5 w-5 text-purple-400" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-slate-200">Stripe Connect</h3>
-                      <p className="text-xs text-slate-400">
+                      <h3 className="text-sm font-semibold text-[var(--text-primary)]">Stripe Connect</h3>
+                      <p className="text-xs text-[var(--text-secondary)]">
                         Acepta pagos de polizas con tarjeta de credito/debito
                       </p>
                     </div>
@@ -375,7 +375,7 @@ export default function SettingsPage() {
                   </div>
                 </div>
 
-                <button className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:brightness-110">
+                <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--accent-hover)]">
                   <ExternalLink className="h-4 w-4" />
                   Conectar con Stripe
                 </button>
@@ -388,8 +388,8 @@ export default function SettingsPage() {
         {activeTab === 'team' && (
           <div className="space-y-6">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold text-slate-200">Equipo</h2>
-              <button className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400">
+              <h2 className="text-card-title">Equipo</h2>
+              <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--accent-hover)]">
                 <Plus className="h-4 w-4" />
                 Invitar Miembro
               </button>
@@ -401,22 +401,22 @@ export default function SettingsPage() {
                 return (
                   <div
                     key={member.id}
-                    className="flex items-center justify-between rounded-lg border border-[#1e293b] bg-[#080c14] p-4"
+                    className="flex items-center justify-between rounded-lg border border-[var(--border)] p-4"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1e293b] text-slate-400">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--surface-secondary)] text-[var(--text-secondary)]">
                         <User className="h-5 w-5" />
                       </div>
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="text-sm font-medium text-slate-200">{member.name}</span>
+                          <span className="text-sm font-medium text-[var(--text-primary)]">{member.name}</span>
                           {member.status === 'pending' && (
                             <span className="rounded-full border border-amber-500/30 bg-amber-500/15 px-2 py-0.5 text-xs text-amber-400">
                               Pendiente
                             </span>
                           )}
                         </div>
-                        <span className="text-xs text-slate-500">{member.email}</span>
+                        <span className="text-xs text-[var(--text-tertiary)]">{member.email}</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -425,13 +425,13 @@ export default function SettingsPage() {
                       </span>
                       <select
                         defaultValue={member.role}
-                        className="rounded-md border border-[#1e293b] bg-[#0d1117] px-2 py-1 text-xs text-slate-300 focus:border-emerald-500/50 focus:outline-none"
+                        className="rounded-md border border-[var(--border)] bg-white px-2 py-1 text-xs text-[var(--text-primary)] focus:border-[var(--accent)]/50 focus:outline-none"
                       >
                         <option value="admin">Admin</option>
                         <option value="agent">Agente</option>
                         <option value="viewer">Visor</option>
                       </select>
-                      <button className="rounded-md p-1.5 text-slate-500 transition-colors hover:bg-red-500/10 hover:text-red-400">
+                      <button className="rounded-md p-1.5 text-[var(--text-tertiary)] transition-colors hover:bg-red-500/10 hover:text-red-400">
                         <Trash2 className="h-4 w-4" />
                       </button>
                     </div>
@@ -440,12 +440,12 @@ export default function SettingsPage() {
               })}
             </div>
 
-            <div className="rounded-lg border border-[#1e293b] bg-[#080c14] p-4">
-              <h3 className="mb-2 text-sm font-medium text-slate-300">Roles:</h3>
-              <div className="space-y-1.5 text-xs text-slate-500">
-                <p><strong className="text-slate-400">Admin:</strong> Acceso completo a todas las funciones, facturacion y configuracion.</p>
-                <p><strong className="text-slate-400">Agente:</strong> Puede gestionar conversaciones, cotizaciones y clientes.</p>
-                <p><strong className="text-slate-400">Visor:</strong> Solo puede ver analiticas y reportes. Acceso de solo lectura.</p>
+            <div className="rounded-lg border border-[var(--border)] p-4">
+              <h3 className="mb-2 text-sm font-medium text-[var(--text-primary)]">Roles:</h3>
+              <div className="space-y-1.5 text-xs text-[var(--text-tertiary)]">
+                <p><strong className="text-[var(--text-secondary)]">Admin:</strong> Acceso completo a todas las funciones, facturacion y configuracion.</p>
+                <p><strong className="text-[var(--text-secondary)]">Agente:</strong> Puede gestionar conversaciones, cotizaciones y clientes.</p>
+                <p><strong className="text-[var(--text-secondary)]">Visor:</strong> Solo puede ver analiticas y reportes. Acceso de solo lectura.</p>
               </div>
             </div>
           </div>
@@ -454,11 +454,11 @@ export default function SettingsPage() {
         {/* ── Notifications Tab ───────────────────────────────── */}
         {activeTab === 'notifications' && (
           <div className="space-y-6">
-            <h2 className="text-lg font-semibold text-slate-200">Notificaciones</h2>
+            <h2 className="text-card-title">Notificaciones</h2>
 
             {/* Email Notifications */}
             <div>
-              <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold text-slate-300">
+              <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold text-[var(--text-primary)]">
                 <Mail className="h-4 w-4" />
                 Notificaciones por Email
               </h3>
@@ -470,22 +470,22 @@ export default function SettingsPage() {
                 ].map((item) => (
                   <div
                     key={item.key}
-                    className="flex items-center justify-between rounded-lg border border-[#1e293b] bg-[#080c14] p-4"
+                    className="flex items-center justify-between rounded-lg border border-[var(--border)] p-4"
                   >
                     <div>
-                      <p className="text-sm font-medium text-slate-200">{item.label}</p>
-                      <p className="text-xs text-slate-500">{item.description}</p>
+                      <p className="text-sm font-medium text-[var(--text-primary)]">{item.label}</p>
+                      <p className="text-xs text-[var(--text-tertiary)]">{item.description}</p>
                     </div>
                     <button
                       onClick={() =>
                         setNotifications((prev) => ({ ...prev, [item.key]: !prev[item.key] }))
                       }
                       className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ${
-                        notifications[item.key] ? 'bg-emerald-500' : 'bg-[#1e293b]'
+                        notifications[item.key] ? 'bg-[var(--success)] : 'bg-[var(--surface-secondary)]'
                       }`}
                     >
                       <span
-                        className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-sm transition-transform duration-200 ${
+                        className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white  transition-transform duration-200 ${
                           notifications[item.key] ? 'translate-x-5' : 'translate-x-0'
                         }`}
                       />
@@ -497,7 +497,7 @@ export default function SettingsPage() {
 
             {/* WhatsApp Alerts */}
             <div>
-              <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold text-slate-300">
+              <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold text-[var(--text-primary)]">
                 <MessageSquare className="h-4 w-4" />
                 Alertas por WhatsApp
               </h3>
@@ -509,22 +509,22 @@ export default function SettingsPage() {
                 ].map((item) => (
                   <div
                     key={item.key}
-                    className="flex items-center justify-between rounded-lg border border-[#1e293b] bg-[#080c14] p-4"
+                    className="flex items-center justify-between rounded-lg border border-[var(--border)] p-4"
                   >
                     <div>
-                      <p className="text-sm font-medium text-slate-200">{item.label}</p>
-                      <p className="text-xs text-slate-500">{item.description}</p>
+                      <p className="text-sm font-medium text-[var(--text-primary)]">{item.label}</p>
+                      <p className="text-xs text-[var(--text-tertiary)]">{item.description}</p>
                     </div>
                     <button
                       onClick={() =>
                         setNotifications((prev) => ({ ...prev, [item.key]: !prev[item.key] }))
                       }
                       className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ${
-                        notifications[item.key] ? 'bg-emerald-500' : 'bg-[#1e293b]'
+                        notifications[item.key] ? 'bg-[var(--success)] : 'bg-[var(--surface-secondary)]'
                       }`}
                     >
                       <span
-                        className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-sm transition-transform duration-200 ${
+                        className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white  transition-transform duration-200 ${
                           notifications[item.key] ? 'translate-x-5' : 'translate-x-0'
                         }`}
                       />
@@ -534,7 +534,7 @@ export default function SettingsPage() {
               </div>
             </div>
 
-            <button className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400">
+            <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--accent-hover)]">
               <Check className="h-4 w-4" />
               Guardar Preferencias
             </button>

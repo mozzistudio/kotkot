@@ -7,32 +7,32 @@ interface StatusDotProps {
 }
 
 const statusClasses: Record<StatusDotStatus, string> = {
-  active: 'bg-emerald-500',
-  pending: 'bg-amber-500',
-  error: 'bg-red-500',
+  active: 'bg-[#10b981]',
+  pending: 'bg-[#f59e0b]',
+  error: 'bg-[#ef4444]',
 };
 
 const pulseClasses: Record<StatusDotStatus, string> = {
-  active: 'bg-emerald-400',
-  pending: 'bg-amber-400',
-  error: 'bg-red-400',
+  active: 'bg-[#34d399]',
+  pending: 'bg-[#fbbf24]',
+  error: 'bg-[#f87171]',
 };
 
 export function StatusDot({ status, label, className = '' }: StatusDotProps) {
   return (
     <span className={`inline-flex items-center gap-1.5 ${className}`}>
-      <span className="relative flex h-2.5 w-2.5">
+      <span className="relative flex h-2 w-2">
         {status === 'active' && (
           <span
             className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 ${pulseClasses[status]}`}
           />
         )}
         <span
-          className={`relative inline-flex h-2.5 w-2.5 rounded-full ${statusClasses[status]}`}
+          className={`relative inline-flex h-2 w-2 rounded-full ${statusClasses[status]}`}
         />
       </span>
       {label && (
-        <span className="text-sm text-gray-600">{label}</span>
+        <span className="text-sm text-[#6b7280]">{label}</span>
       )}
     </span>
   );

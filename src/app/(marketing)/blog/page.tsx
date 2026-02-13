@@ -76,14 +76,14 @@ export default function BlogPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Page Header --- */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-emerald-600">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
             Recursos
-            <span className="inline-block h-px w-10 bg-emerald-400" />
+            <span className="inline-block h-px w-10 bg-[#059669]" />
           </span>
-          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
             Blog CotiFácil
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-slate-600 sm:text-xl">
+          <p className="mt-6 text-lg leading-relaxed text-[#6b7280] sm:text-xl">
             Noticias, guías y tendencias del mundo de seguros en LATAM
           </p>
         </div>
@@ -93,12 +93,12 @@ export default function BlogPage() {
           {blogPosts.map((post) => (
             <article
               key={post.slug}
-              className="glass-card-hover group flex flex-col overflow-hidden"
+              className="bg-white border border-[#e5e7eb] rounded-[16px] group flex flex-col overflow-hidden"
             >
               {/* Image placeholder */}
               <div className="flex h-48 items-center justify-center bg-gradient-to-br from-emerald-50 to-teal-50">
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/80 shadow-sm">
-                  <span className="font-heading text-2xl font-bold text-emerald-500">
+                <div className="flex h-16 w-16 items-center justify-center rounded-[16px] bg-white/80 shadow-sm">
+                  <span className="font-heading text-2xl font-bold text-[#059669]">
                     CF
                   </span>
                 </div>
@@ -113,26 +113,26 @@ export default function BlogPage() {
                   >
                     {post.category}
                   </span>
-                  <div className="flex items-center gap-1 text-xs text-slate-400">
+                  <div className="flex items-center gap-1 text-xs text-[#9ca3af]">
                     <Clock className="h-3 w-3" />
                     {post.readTime}
                   </div>
                 </div>
 
                 {/* Title */}
-                <h2 className="font-heading text-lg font-semibold leading-snug text-slate-900 transition-colors group-hover:text-emerald-600">
+                <h2 className="font-heading text-lg font-semibold leading-snug text-[#111827] transition-colors group-hover:text-[#059669]">
                   {post.title}
                 </h2>
 
                 {/* Excerpt */}
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600 line-clamp-3">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-[#6b7280] line-clamp-3">
                   {post.excerpt}
                 </p>
 
                 {/* Footer */}
-                <div className="mt-4 flex items-center justify-between border-t border-white/30 pt-4">
-                  <span className="text-xs text-slate-400">{post.date}</span>
-                  <span className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 transition-transform group-hover:translate-x-0.5">
+                <div className="mt-4 flex items-center justify-between border-t border-[#e5e7eb] pt-4">
+                  <span className="text-xs text-[#9ca3af]">{post.date}</span>
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-[#059669] transition-transform group-hover:translate-x-0.5">
                     Leer más
                     <ArrowRight className="h-3.5 w-3.5" />
                   </span>
@@ -144,11 +144,11 @@ export default function BlogPage() {
 
         {/* --- Newsletter CTA --- */}
         <div className="mx-auto mt-20 max-w-2xl text-center">
-          <div className="glass-card p-10">
-            <h2 className="font-heading text-2xl font-bold text-slate-900">
+          <div className="bg-white border border-[#e5e7eb] rounded-[16px] p-10">
+            <h2 className="font-heading text-2xl font-bold text-[#111827]">
               Suscríbete a nuestro newsletter
             </h2>
-            <p className="mt-3 text-base text-slate-600">
+            <p className="mt-3 text-base text-[#6b7280]">
               Recibe las últimas noticias y guías sobre seguros e insurtech en
               LATAM directamente en tu inbox.
             </p>
@@ -156,9 +156,9 @@ export default function BlogPage() {
               <input
                 type="email"
                 placeholder="tu@email.com"
-                className="w-full rounded-full border border-white/40 bg-white/60 px-5 py-3 text-sm text-gray-800 shadow-sm backdrop-blur-xl transition-all duration-200 placeholder:text-gray-400 focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/20 sm:max-w-xs"
+                className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-5 py-3 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[rgba(5,150,105,0.20)] sm:max-w-xs"
               />
-              <button className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 transition-all duration-200 hover:shadow-emerald-500/40 hover:brightness-110">
+              <button className="inline-flex items-center justify-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-6 py-3 text-sm font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600]">
                 Suscribirse
               </button>
             </div>

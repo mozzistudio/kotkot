@@ -32,7 +32,7 @@ export function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
 
       <nav
         aria-label="Breadcrumb"
-        className={`flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 ${className}`}
+        className={`flex items-center gap-2 text-sm text-[#6b7280] ${className}`}
       >
         {allItems.map((item, index) => {
           const isLast = index === allItems.length - 1;
@@ -40,12 +40,12 @@ export function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
           return (
             <React.Fragment key={item.url}>
               {index > 0 && (
-                <ChevronRight className="h-4 w-4 text-gray-400" />
+                <ChevronRight className="h-4 w-4 text-[#9ca3af]" />
               )}
 
               {isLast ? (
                 <span
-                  className="text-emerald-600 dark:text-emerald-400 font-medium"
+                  className="text-[#111827] font-medium"
                   aria-current="page"
                 >
                   {item.name}
@@ -53,7 +53,7 @@ export function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
               ) : (
                 <Link
                   href={item.url.replace('https://kotkot.ai', '')}
-                  className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-1"
+                  className="hover:text-[#111827] transition-colors flex items-center gap-1"
                 >
                   {index === 0 && <Home className="h-4 w-4" />}
                   {item.name}

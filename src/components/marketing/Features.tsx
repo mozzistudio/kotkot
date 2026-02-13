@@ -89,11 +89,11 @@ export function Features() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
           className="mx-auto mb-16 max-w-2xl text-center"
         >
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl lg:text-5xl">
             Todo lo que tu correduría{' '}
-            <span className="text-gradient-primary">necesita</span>
+            <span className="text-[#059669]">necesita</span>
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-4 text-lg text-[#6b7280]">
             Una plataforma completa para automatizar tu negocio de seguros en
             cualquier país de Latinoamérica.
           </p>
@@ -111,20 +111,20 @@ export function Features() {
             <motion.div
               key={feature.title}
               variants={cardVariants}
-              className="glass-card group cursor-default p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.10)] hover:bg-white/55"
+              className="group cursor-default rounded-[16px] border border-[#e5e7eb] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-[#f3f4f6]"
             >
               {/* Icon */}
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50">
-                <feature.icon className="h-6 w-6 text-emerald-600" strokeWidth={1.8} />
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-[10px] bg-[rgba(202,255,4,0.15)]">
+                <feature.icon className="h-6 w-6 text-[#111827]" strokeWidth={1.8} />
               </div>
 
               {/* Title */}
-              <h3 className="font-heading text-lg font-semibold text-slate-900">
+              <h3 className="font-heading text-lg font-semibold text-[#111827]">
                 {feature.title}
               </h3>
 
               {/* Description */}
-              <p className="mt-2 text-[0.9375rem] leading-relaxed text-slate-600">
+              <p className="mt-2 text-[0.9375rem] leading-relaxed text-[#6b7280]">
                 {feature.description}
               </p>
             </motion.div>

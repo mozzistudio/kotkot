@@ -6,7 +6,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { Star, ArrowRight, Phone } from 'lucide-react';
-import { GlassCard } from '@/components/ui/GlassCard';
 import { Badge } from '@/components/ui/Badge';
 import type { InsuranceCompany, Lender } from '@/data/schema';
 
@@ -31,11 +30,11 @@ export function CompanyCard({
     : null;
 
   return (
-    <GlassCard className="group relative overflow-hidden p-6 transition-all hover:shadow-xl hover:scale-[1.02]">
+    <div className="group relative overflow-hidden bg-white border border-[#e5e7eb] rounded-[16px] p-6 transition-all hover:scale-[1.02]">
       {/* Company Header */}
       <div className="mb-4 flex items-start justify-between">
         <div className="flex-1">
-          <h3 className="mb-2 text-xl font-bold text-gray-900">
+          <h3 className="mb-2 text-xl font-bold text-[#111827]">
             {company.name}
           </h3>
 
@@ -43,11 +42,11 @@ export function CompanyCard({
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1">
               <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-              <span className="font-semibold text-gray-900">
+              <span className="font-semibold text-[#111827]">
                 {company.ratings.overall.toFixed(1)}
               </span>
             </div>
-            <span className="text-sm text-gray-600">
+            <span className="text-sm text-[#6b7280]">
               ({company.ratings.reviewCount || 0} reseñas)
             </span>
           </div>
@@ -62,7 +61,7 @@ export function CompanyCard({
       </div>
 
       {/* Description */}
-      <p className="mb-4 line-clamp-2 text-sm text-gray-600">
+      <p className="mb-4 line-clamp-2 text-sm text-[#6b7280]">
         {company.description}
       </p>
 
@@ -87,7 +86,7 @@ export function CompanyCard({
         {crossPagePath && (
           <Link
             href={crossPagePath}
-            className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
+            className="flex flex-1 items-center justify-center gap-2 rounded-[10px] bg-[#CAFF04] px-4 py-2 text-sm font-semibold text-[#111827] hover:bg-[#b8e604] transition-colors"
           >
             Ver Detalles
             <ArrowRight className="h-4 w-4" />
@@ -96,15 +95,12 @@ export function CompanyCard({
 
         <Link
           href={companyPath}
-          className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-emerald-600 bg-white/50 px-4 py-2 text-sm font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors"
+          className="flex flex-1 items-center justify-center gap-2 rounded-[10px] border border-[#e5e7eb] bg-white px-4 py-2 text-sm font-semibold text-[#111827] hover:bg-gray-50 transition-colors"
         >
           Perfil Completo
         </Link>
       </div>
-
-      {/* Hover Effect */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 opacity-0 transition-opacity group-hover:opacity-100" />
-    </GlassCard>
+    </div>
   );
 }
 

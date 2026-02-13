@@ -12,17 +12,17 @@ export default function TerminosPage() {
       <div className="mx-auto max-w-4xl">
         {/* --- Header --- */}
         <div className="mb-12 text-center">
-          <h1 className="font-heading text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+          <h1 className="font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl">
             Términos de Servicio
           </h1>
-          <p className="mt-4 text-base text-slate-500">
+          <p className="mt-4 text-base text-[#9ca3af]">
             Última actualización: 1 de febrero de 2026
           </p>
         </div>
 
         {/* --- Content --- */}
-        <div className="glass-card p-8 sm:p-12">
-          <div className="prose-sm space-y-8 text-slate-700">
+        <div className="bg-white border border-[#e5e7eb] rounded-[16px] p-8 sm:p-12">
+          <div className="prose-sm space-y-8 text-[#6b7280]">
             {/* Intro */}
             <section>
               <p className="text-base leading-relaxed">
@@ -37,7 +37,7 @@ export default function TerminosPage() {
 
             {/* 1. Aceptación de los Términos */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-slate-900">
+              <h2 className="font-heading text-xl font-bold text-[#111827]">
                 1. Aceptación de los Términos
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -64,7 +64,7 @@ export default function TerminosPage() {
 
             {/* 2. Descripción del Servicio */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-slate-900">
+              <h2 className="font-heading text-xl font-bold text-[#111827]">
                 2. Descripción del Servicio
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -102,7 +102,7 @@ export default function TerminosPage() {
 
             {/* 3. Registro y Cuenta */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-slate-900">
+              <h2 className="font-heading text-xl font-bold text-[#111827]">
                 3. Registro y Cuenta
               </h2>
               <ul className="mt-3 list-disc space-y-2 pl-6">
@@ -131,7 +131,7 @@ export default function TerminosPage() {
 
             {/* 4. Planes y Pagos */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-slate-900">
+              <h2 className="font-heading text-xl font-bold text-[#111827]">
                 4. Planes y Pagos
               </h2>
               <ul className="mt-3 list-disc space-y-2 pl-6">
@@ -168,7 +168,7 @@ export default function TerminosPage() {
 
             {/* 5. Uso Aceptable */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-slate-900">
+              <h2 className="font-heading text-xl font-bold text-[#111827]">
                 5. Uso Aceptable
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -207,7 +207,7 @@ export default function TerminosPage() {
 
             {/* 6. Propiedad Intelectual */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-slate-900">
+              <h2 className="font-heading text-xl font-bold text-[#111827]">
                 6. Propiedad Intelectual
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -232,7 +232,7 @@ export default function TerminosPage() {
 
             {/* 7. Limitación de Responsabilidad */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-slate-900">
+              <h2 className="font-heading text-xl font-bold text-[#111827]">
                 7. Limitación de Responsabilidad
               </h2>
               <ul className="mt-3 list-disc space-y-2 pl-6">
@@ -270,7 +270,7 @@ export default function TerminosPage() {
 
             {/* 8. Suspensión y Terminación */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-slate-900">
+              <h2 className="font-heading text-xl font-bold text-[#111827]">
                 8. Suspensión y Terminación
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -308,7 +308,7 @@ export default function TerminosPage() {
 
             {/* 9. Indemnización */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-slate-900">
+              <h2 className="font-heading text-xl font-bold text-[#111827]">
                 9. Indemnización
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -322,7 +322,7 @@ export default function TerminosPage() {
 
             {/* 10. Modificaciones */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-slate-900">
+              <h2 className="font-heading text-xl font-bold text-[#111827]">
                 10. Modificaciones a los Términos
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -337,7 +337,7 @@ export default function TerminosPage() {
 
             {/* 11. Ley Aplicable */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-slate-900">
+              <h2 className="font-heading text-xl font-bold text-[#111827]">
                 11. Ley Aplicable y Jurisdicción
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -350,7 +350,7 @@ export default function TerminosPage() {
 
             {/* 12. Disposiciones Generales */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-slate-900">
+              <h2 className="font-heading text-xl font-bold text-[#111827]">
                 12. Disposiciones Generales
               </h2>
               <ul className="mt-3 list-disc space-y-2 pl-6">
@@ -376,26 +376,26 @@ export default function TerminosPage() {
 
             {/* 13. Contacto */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-slate-900">
+              <h2 className="font-heading text-xl font-bold text-[#111827]">
                 13. Contacto
               </h2>
               <p className="mt-3 text-base leading-relaxed">
                 Para preguntas sobre estos Términos de Servicio, contáctanos:
               </p>
-              <div className="mt-3 glass-card-subtle p-5">
-                <p className="text-sm text-slate-700">
+              <div className="mt-3 bg-white border border-[#e5e7eb] rounded-[16px] p-5">
+                <p className="text-sm text-[#6b7280]">
                   <strong>CotiFácil</strong>
                 </p>
-                <p className="text-sm text-slate-600">
+                <p className="text-sm text-[#6b7280]">
                   Email:{' '}
                   <a
                     href="mailto:legal@cotifacil.com"
-                    className="text-emerald-600 hover:text-emerald-700"
+                    className="text-[#059669] hover:text-[#059669]"
                   >
                     legal@cotifacil.com
                   </a>
                 </p>
-                <p className="text-sm text-slate-600">
+                <p className="text-sm text-[#6b7280]">
                   Dirección: Calle 50, Torre Global Bank, Piso 30, Ciudad de
                   Panamá, Panamá
                 </p>

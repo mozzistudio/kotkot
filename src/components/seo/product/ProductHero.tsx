@@ -21,12 +21,12 @@ export function ProductHero({ product }: ProductHeroProps) {
           )}
 
           {/* H1 */}
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          <h1 className="mb-6 text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
             {product.seo.h1}
           </h1>
 
           {/* Description */}
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-600 sm:text-xl">
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-[#6b7280] sm:text-xl">
             {product.longDescription}
           </p>
 
@@ -35,7 +35,7 @@ export function ProductHero({ product }: ProductHeroProps) {
             href="https://wa.me/50760000000?text=Hola%2C%20quiero%20cotizar%20un%20seguro"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-xl bg-emerald-600 px-8 py-4 text-lg font-semibold text-white hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/20"
+            className="inline-flex items-center rounded-[10px] bg-[#CAFF04] px-8 py-4 text-lg font-semibold text-[#111827] hover:bg-[#b8e604] transition-colors"
           >
             Cotizar Gratis por WhatsApp
           </a>

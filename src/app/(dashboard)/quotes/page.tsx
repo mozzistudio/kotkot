@@ -240,41 +240,41 @@ function QuotesContent() {
   });
 
   return (
-    <div className="min-h-screen bg-[#080c14] p-6 lg:p-8">
+    <div className="min-h-screen">
       {/* Header */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-slate-200 font-heading">
+          <h1 className="text-page-title">
             Cotizaciones & Polizas
           </h1>
-          <p className="mt-1 text-sm text-slate-400">
+          <p className="mt-1 text-body">
             {quotes.length} cotizaciones en total
           </p>
         </div>
 
         <div className="relative w-full sm:w-72">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--text-tertiary)]" />
           <input
             type="text"
             placeholder="Buscar por cliente o ID..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-lg border border-[#1e293b] bg-[#0d1117] py-2.5 pl-10 pr-4 text-sm text-slate-200 placeholder:text-slate-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/20"
+            className="input"
           />
         </div>
       </div>
 
       {/* Filter Bar */}
       <div className="mb-6 flex items-center gap-2 overflow-x-auto pb-2">
-        <Filter className="mr-1 h-4 w-4 shrink-0 text-slate-500" />
+        <Filter className="mr-1 h-4 w-4 shrink-0 text-[var(--text-tertiary)]" />
         {filterOptions.map((opt) => (
           <button
             key={opt.value}
             onClick={() => setActiveFilter(opt.value)}
-            className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors ${
+            className={`shrink-0 pill ${
               activeFilter === opt.value
-                ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                : 'text-slate-400 border border-[#1e293b] hover:text-slate-300 hover:border-[#1e293b]'
+                ? 'pill-active'
+                : 'pill-default'
             }`}
           >
             {opt.label}
@@ -285,7 +285,7 @@ function QuotesContent() {
         {dateFilter && (
           <button
             onClick={clearDateFilter}
-            className="ml-2 inline-flex shrink-0 items-center gap-1.5 rounded-full border border-teal-500/30 bg-teal-500/15 px-3 py-1.5 text-xs font-medium text-teal-400 transition-colors hover:bg-teal-500/25"
+            className="ml-2 inline-flex shrink-0 items-center gap-1.5 pill pill-active"
           >
             <CalendarDays className="h-3 w-3" />
             {dateFilter}
@@ -303,15 +303,15 @@ function QuotesContent() {
           return (
             <div
               key={quote.id}
-              className="rounded-xl border border-[#1e293b] bg-[#0d1117] transition-colors"
+              className="card transition-colors"
             >
               {/* Quote Row */}
               <button
                 onClick={() => setExpandedId(isExpanded ? null : quote.id)}
-                className="flex w-full items-center gap-4 p-4 text-left"
+                className="flex w-full items-center gap-4 text-left"
               >
                 {/* Icon */}
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#080c14] text-slate-400">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--surface-secondary)] text-[var(--text-secondary)]">
                   {typeIcons[quote.insuranceType] ?? <FileText className="h-4 w-4" />}
                 </div>
 
@@ -321,75 +321,75 @@ function QuotesContent() {
                     <Link
                       href={`/clients/${quote.id.replace('Q-', 'C-')}`}
                       onClick={(e) => e.stopPropagation()}
-                      className="text-sm font-medium text-slate-200 hover:text-emerald-400 transition-colors"
+                      className="text-sm font-medium text-[var(--text-primary)] hover:text-[var(--text-link)] transition-colors"
                     >
                       {quote.clientName}
                     </Link>
-                    <span className="text-xs text-slate-500">{quote.id}</span>
+                    <span className="text-xs text-[var(--text-tertiary)]">{quote.id}</span>
                   </div>
-                  <div className="mt-1 flex items-center gap-3 text-xs text-slate-400">
+                  <div className="mt-1 flex items-center gap-3 text-xs text-[var(--text-secondary)]">
                     <span>{quote.insuranceType}</span>
-                    <span className="text-slate-600">|</span>
+                    <span className="text-[var(--border-medium)]">|</span>
                     <span className="flex items-center gap-1">
                       <Clock className="h-3 w-3" /> {quote.date}
                     </span>
-                    <span className="text-slate-600">|</span>
+                    <span className="text-[var(--border-medium)]">|</span>
                     <span>{quote.resultsCount} resultados</span>
                   </div>
                 </div>
 
                 {/* Best Price */}
                 <div className="hidden shrink-0 text-right sm:block">
-                  <div className="flex items-center gap-1 text-sm font-semibold text-emerald-400 font-data">
+                  <div className="flex items-center gap-1 text-sm font-semibold text-[var(--success)] font-data">
                     <DollarSign className="h-3.5 w-3.5" />
                     {quote.bestPrice}
                   </div>
-                  <span className="text-xs text-slate-500">Mejor precio</span>
+                  <span className="text-xs text-[var(--text-tertiary)]">Mejor precio</span>
                 </div>
 
                 {/* Status */}
-                <span className={`shrink-0 rounded-full border px-2.5 py-1 text-xs font-medium ${sc.bg} ${sc.text} ${sc.border}`}>
+                <span className={`shrink-0 badge ${sc.bg} ${sc.text} ${sc.border}`}>
                   {sc.label}
                 </span>
 
                 {/* Expand Arrow */}
                 {isExpanded ? (
-                  <ChevronUp className="h-4 w-4 shrink-0 text-slate-500" />
+                  <ChevronUp className="h-4 w-4 shrink-0 text-[var(--text-tertiary)]" />
                 ) : (
-                  <ChevronDown className="h-4 w-4 shrink-0 text-slate-500" />
+                  <ChevronDown className="h-4 w-4 shrink-0 text-[var(--text-tertiary)]" />
                 )}
               </button>
 
               {/* Expanded Results */}
               {isExpanded && (
-                <div className="border-t border-[#1e293b] p-4">
-                  <h3 className="mb-3 text-sm font-medium text-slate-300">
+                <div className="border-t border-[var(--border)] pt-4 mt-4">
+                  <h3 className="mb-3 text-card-title">
                     Comparacion de Cotizaciones
                   </h3>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-left text-sm">
+                  <div className="table-container">
+                    <table className="table">
                       <thead>
-                        <tr className="border-b border-[#1e293b]">
-                          <th className="pb-2 pr-4 text-xs font-medium text-slate-500">Aseguradora</th>
-                          <th className="pb-2 pr-4 text-xs font-medium text-slate-500">Precio</th>
-                          <th className="pb-2 pr-4 text-xs font-medium text-slate-500">Cobertura</th>
-                          <th className="pb-2 text-xs font-medium text-slate-500">Deducible</th>
+                        <tr>
+                          <th>Aseguradora</th>
+                          <th>Precio</th>
+                          <th>Cobertura</th>
+                          <th>Deducible</th>
                         </tr>
                       </thead>
                       <tbody>
                         {quote.results.map((r, idx) => (
-                          <tr key={idx} className="border-b border-[#1e293b]/50 last:border-b-0">
-                            <td className="py-2.5 pr-4 font-medium">
+                          <tr key={idx}>
+                            <td className="font-medium">
                               <Link
                                 href={`/apis/${r.insurer.toLowerCase().replace(/\s+/g, '-')}`}
-                                className="text-slate-200 hover:text-emerald-400 transition-colors"
+                                className="link"
                               >
                                 {r.insurer}
                               </Link>
                             </td>
-                            <td className="py-2.5 pr-4 font-semibold text-emerald-400 font-data">{r.price}</td>
-                            <td className="py-2.5 pr-4 text-slate-400">{r.coverage}</td>
-                            <td className="py-2.5 text-slate-400">{r.deductible}</td>
+                            <td className="font-semibold text-[var(--success)] font-data">{r.price}</td>
+                            <td>{r.coverage}</td>
+                            <td>{r.deductible}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -402,9 +402,9 @@ function QuotesContent() {
         })}
 
         {filteredQuotes.length === 0 && (
-          <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-12 text-center">
-            <FileText className="mx-auto h-8 w-8 text-slate-600" />
-            <p className="mt-3 text-sm text-slate-400">No se encontraron cotizaciones</p>
+          <div className="card p-12 text-center">
+            <FileText className="mx-auto h-8 w-8 text-[var(--border-medium)]" />
+            <p className="mt-3 text-body">No se encontraron cotizaciones</p>
           </div>
         )}
       </div>

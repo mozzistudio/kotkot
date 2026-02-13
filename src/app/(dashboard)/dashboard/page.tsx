@@ -47,7 +47,7 @@ const stats: StatCard[] = [
     value: '24',
     change: '+12%',
     changeType: 'up',
-    icon: <MessageSquare className="h-5 w-5 text-emerald-400" />,
+    icon: <MessageSquare className="h-5 w-5 text-[var(--chart-line)]" />,
     href: '/conversations?filter=active',
   },
   {
@@ -55,7 +55,7 @@ const stats: StatCard[] = [
     value: '18',
     change: '+8%',
     changeType: 'up',
-    icon: <FileText className="h-5 w-5 text-teal-400" />,
+    icon: <FileText className="h-5 w-5 text-[var(--chart-dot)]" />,
     href: `/quotes?date=${new Date().toISOString().slice(0, 10)}`,
   },
   {
@@ -63,7 +63,7 @@ const stats: StatCard[] = [
     value: '156',
     change: '+23%',
     changeType: 'up',
-    icon: <Shield className="h-5 w-5 text-emerald-400" />,
+    icon: <Shield className="h-5 w-5 text-[var(--chart-line)]" />,
     href: '/quotes?status=paid',
   },
   {
@@ -71,7 +71,7 @@ const stats: StatCard[] = [
     value: '$12,450',
     change: '+18%',
     changeType: 'up',
-    icon: <DollarSign className="h-5 w-5 text-teal-400" />,
+    icon: <DollarSign className="h-5 w-5 text-[var(--chart-dot)]" />,
     href: '/ingresos',
   },
 ];
@@ -162,13 +162,13 @@ export default function DashboardPage() {
   const maxChartValue = Math.max(...chartData.map((d) => d.value));
 
   return (
-    <div className="min-h-screen bg-[#080c14] p-6 lg:p-8">
+    <div className="min-h-screen">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-slate-200 font-heading">
+        <h1 className="text-page-title">
           Dashboard
         </h1>
-        <p className="mt-1 text-sm text-slate-400">
+        <p className="mt-1 text-body">
           Resumen de tu actividad de hoy
         </p>
       </div>
@@ -181,38 +181,38 @@ export default function DashboardPage() {
             href={stat.href}
             onMouseEnter={() => setHoveredStat(idx)}
             onMouseLeave={() => setHoveredStat(null)}
-            className={`block rounded-xl border border-[#1e293b] bg-[#0d1117] p-5 transition-all duration-200 ${
-              hoveredStat === idx ? 'border-emerald-500/30 shadow-lg shadow-emerald-500/5' : ''
+            className={`block card transition-all duration-200 ${
+              hoveredStat === idx ? 'border-[var(--border-medium)]' : ''
             }`}
           >
             <div className="flex items-center justify-between">
-              <div className="rounded-lg bg-[#080c14] p-2.5">{stat.icon}</div>
+              <div className="rounded-lg bg-[var(--surface-secondary)] p-2.5">{stat.icon}</div>
               <span
                 className={`text-xs font-semibold ${
-                  stat.changeType === 'up' ? 'text-emerald-400' : 'text-red-400'
+                  stat.changeType === 'up' ? 'text-[var(--success)]' : 'text-[var(--error)]'
                 }`}
               >
                 {stat.change}
               </span>
             </div>
-            <p className="mt-4 text-2xl font-bold text-slate-200 font-data">
+            <p className="mt-4 text-2xl font-bold text-[var(--text-primary)] font-data">
               {stat.value}
             </p>
-            <p className="mt-1 text-sm text-slate-400">{stat.label}</p>
+            <p className="mt-1 text-sm text-[var(--text-secondary)]">{stat.label}</p>
           </Link>
         ))}
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* Recent Conversations */}
-        <div className="lg:col-span-2 rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
+        <div className="lg:col-span-2 card">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-slate-200">
+            <h2 className="text-section-heading">
               Conversaciones Recientes
             </h2>
             <Link
               href="/conversations"
-              className="inline-flex items-center gap-1 text-sm text-emerald-400 hover:text-emerald-300 transition-colors"
+              className="inline-flex items-center gap-1 text-sm text-[var(--text-link)] hover:opacity-80 transition-opacity"
             >
               Ver todas <ArrowRight className="h-3.5 w-3.5" />
             </Link>
@@ -223,7 +223,7 @@ export default function DashboardPage() {
               <Link
                 key={conv.id}
                 href={`/conversations?id=${conv.id}`}
-                className="flex items-center gap-4 rounded-lg border border-[#1e293b]/60 bg-[#080c14] p-3.5 transition-colors hover:border-emerald-500/30 hover:bg-[#0d1117]/50"
+                className="flex items-center gap-4 rounded-lg border border-[var(--border)] bg-[var(--surface-secondary)] p-3.5 transition-colors hover:border-[var(--border-medium)]"
               >
                 {/* Status Dot */}
                 <span className="relative flex h-2.5 w-2.5 shrink-0">
@@ -240,25 +240,25 @@ export default function DashboardPage() {
                 {/* Info */}
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium text-slate-200">
+                    <span className="text-sm font-medium text-[var(--text-primary)]">
                       {conv.clientName}
                     </span>
-                    <span className="rounded-full bg-[#1e293b] px-2 py-0.5 text-xs text-slate-400">
+                    <span className="badge badge-lime">
                       {statusLabels[conv.status]}
                     </span>
                   </div>
-                  <p className="mt-0.5 truncate text-sm text-slate-400">
+                  <p className="mt-0.5 truncate text-sm text-[var(--text-secondary)]">
                     {conv.lastMessage}
                   </p>
                 </div>
 
                 {/* Right side */}
                 <div className="shrink-0 text-right">
-                  <div className="flex items-center gap-1 text-xs text-slate-500">
+                  <div className="flex items-center gap-1 text-xs text-[var(--text-tertiary)]">
                     <Phone className="h-3 w-3" />
                     {conv.phone}
                   </div>
-                  <div className="mt-1 flex items-center gap-1 text-xs text-slate-500">
+                  <div className="mt-1 flex items-center gap-1 text-xs text-[var(--text-tertiary)]">
                     <Clock className="h-3 w-3" />
                     {conv.time}
                   </div>
@@ -271,8 +271,8 @@ export default function DashboardPage() {
         {/* Right Column: Quick Actions + Chart */}
         <div className="space-y-6">
           {/* Quick Actions */}
-          <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
-            <h2 className="mb-4 text-lg font-semibold text-slate-200">
+          <div className="card">
+            <h2 className="mb-4 text-section-heading">
               Acciones Rapidas
             </h2>
             <div className="space-y-2">
@@ -280,7 +280,7 @@ export default function DashboardPage() {
                 <Link
                   key={action.label}
                   href={action.href}
-                  className="flex items-center gap-3 rounded-lg border border-[#1e293b]/60 bg-[#080c14] px-4 py-3 text-sm text-slate-300 transition-all hover:border-emerald-500/30 hover:text-emerald-400"
+                  className="flex items-center gap-3 rounded-lg border border-[var(--border)] bg-[var(--surface-secondary)] px-4 py-3 text-sm text-[var(--text-secondary)] transition-all hover:border-[var(--border-medium)] hover:text-[var(--text-link)]"
                 >
                   {action.icon}
                   {action.label}
@@ -291,12 +291,12 @@ export default function DashboardPage() {
           </div>
 
           {/* Activity Chart */}
-          <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
+          <div className="card">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-lg font-semibold text-slate-200">
+              <h2 className="text-section-heading">
                 Actividad Semanal
               </h2>
-              <TrendingUp className="h-4 w-4 text-emerald-400" />
+              <TrendingUp className="h-4 w-4 text-[var(--chart-line)]" />
             </div>
 
             <div className="flex items-end justify-between gap-2" style={{ height: 140 }}>
@@ -304,16 +304,16 @@ export default function DashboardPage() {
                 const heightPct = (d.value / maxChartValue) * 100;
                 return (
                   <div key={d.day} className="flex flex-1 flex-col items-center gap-1.5">
-                    <span className="text-xs text-slate-400 font-data">
+                    <span className="text-xs text-[var(--text-secondary)] font-data">
                       {d.value}
                     </span>
                     <div className="w-full flex justify-center">
                       <div
-                        className="w-6 rounded-t-md bg-gradient-to-t from-emerald-600 to-teal-400 transition-all duration-300"
+                        className="w-6 rounded-t-md bg-[var(--chart-line)] transition-all duration-300"
                         style={{ height: `${heightPct}%`, minHeight: 8 }}
                       />
                     </div>
-                    <span className="text-xs text-slate-500">{d.day}</span>
+                    <span className="text-xs text-[var(--text-tertiary)]">{d.day}</span>
                   </div>
                 );
               })}

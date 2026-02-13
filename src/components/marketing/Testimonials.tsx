@@ -23,7 +23,7 @@ const testimonials: Testimonial[] = [
     country: 'Panamá',
     flag: '\u{1F1F5}\u{1F1E6}',
     initials: 'CM',
-    color: 'from-emerald-400 to-teal-500',
+    color: 'bg-[#CAFF04]',
   },
   {
     quote:
@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
     country: 'Colombia',
     flag: '\u{1F1E8}\u{1F1F4}',
     initials: 'MG',
-    color: 'from-teal-400 to-emerald-500',
+    color: 'bg-[#CAFF04]',
   },
   {
     quote:
@@ -43,7 +43,7 @@ const testimonials: Testimonial[] = [
     country: 'México',
     flag: '\u{1F1F2}\u{1F1FD}',
     initials: 'RL',
-    color: 'from-emerald-500 to-teal-400',
+    color: 'bg-[#CAFF04]',
   },
 ];
 
@@ -104,9 +104,9 @@ export function Testimonials() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
           className="mx-auto mb-16 max-w-2xl text-center"
         >
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl lg:text-5xl">
             Lo que dicen nuestros{' '}
-            <span className="text-gradient-primary">corredores</span>
+            <span className="text-[#059669]">corredores</span>
           </h2>
         </motion.div>
 
@@ -122,27 +122,27 @@ export function Testimonials() {
             <motion.div
               key={t.name}
               variants={cardVariants}
-              className="glass-card flex flex-col p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.10)]"
+              className="flex flex-col rounded-[16px] border border-[#e5e7eb] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-[#f3f4f6]"
             >
               <StarRating />
 
-              <blockquote className="mt-4 flex-1 text-[0.9375rem] leading-relaxed text-slate-700">
+              <blockquote className="mt-4 flex-1 text-[0.9375rem] leading-relaxed text-[#111827]">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
 
-              <div className="mt-6 flex items-center gap-3 border-t border-white/40 pt-5">
+              <div className="mt-6 flex items-center gap-3 border-t border-[#e5e7eb] pt-5">
                 {/* Avatar */}
                 <div
-                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${t.color} text-sm font-bold text-white shadow-md`}
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] ${t.color} text-sm font-bold text-[#111827]`}
                 >
                   {t.initials}
                 </div>
 
                 <div className="min-w-0">
-                  <p className="font-heading text-sm font-semibold text-slate-900">
+                  <p className="font-heading text-sm font-semibold text-[#111827]">
                     {t.name}
                   </p>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-[#6b7280]">
                     {t.title}, {t.country} {t.flag}
                   </p>
                 </div>
@@ -160,25 +160,25 @@ export function Testimonials() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
-              className="glass-card flex flex-col p-7"
+              className="flex flex-col rounded-[16px] border border-[#e5e7eb] bg-white p-7"
             >
               <StarRating />
 
-              <blockquote className="mt-4 text-[0.9375rem] leading-relaxed text-slate-700">
+              <blockquote className="mt-4 text-[0.9375rem] leading-relaxed text-[#111827]">
                 &ldquo;{testimonials[currentIndex].quote}&rdquo;
               </blockquote>
 
-              <div className="mt-6 flex items-center gap-3 border-t border-white/40 pt-5">
+              <div className="mt-6 flex items-center gap-3 border-t border-[#e5e7eb] pt-5">
                 <div
-                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${testimonials[currentIndex].color} text-sm font-bold text-white shadow-md`}
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] ${testimonials[currentIndex].color} text-sm font-bold text-[#111827]`}
                 >
                   {testimonials[currentIndex].initials}
                 </div>
                 <div>
-                  <p className="font-heading text-sm font-semibold text-slate-900">
+                  <p className="font-heading text-sm font-semibold text-[#111827]">
                     {testimonials[currentIndex].name}
                   </p>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-[#6b7280]">
                     {testimonials[currentIndex].title},{' '}
                     {testimonials[currentIndex].country}{' '}
                     {testimonials[currentIndex].flag}
@@ -193,7 +193,7 @@ export function Testimonials() {
             <button
               onClick={goToPrev}
               aria-label="Anterior testimonio"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/50 text-slate-600 backdrop-blur-md transition-all duration-200 hover:bg-white/70 hover:text-slate-900"
+              className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-[#e5e7eb] bg-white text-[#6b7280] transition-all duration-200 hover:bg-[#f3f4f6] hover:text-[#111827]"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
@@ -204,10 +204,10 @@ export function Testimonials() {
                   key={i}
                   onClick={() => setCurrentIndex(i)}
                   aria-label={`Ir a testimonio ${i + 1}`}
-                  className={`h-2 rounded-full transition-all duration-300 ${
+                  className={`h-2 rounded-[10px] transition-all duration-300 ${
                     i === currentIndex
-                      ? 'w-6 bg-emerald-500'
-                      : 'w-2 bg-slate-300 hover:bg-slate-400'
+                      ? 'w-6 bg-[#CAFF04]'
+                      : 'w-2 bg-[#e5e7eb] hover:bg-[#9ca3af]'
                   }`}
                 />
               ))}
@@ -216,7 +216,7 @@ export function Testimonials() {
             <button
               onClick={goToNext}
               aria-label="Siguiente testimonio"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/50 text-slate-600 backdrop-blur-md transition-all duration-200 hover:bg-white/70 hover:text-slate-900"
+              className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-[#e5e7eb] bg-white text-[#6b7280] transition-all duration-200 hover:bg-[#f3f4f6] hover:text-[#111827]"
             >
               <ChevronRight className="h-5 w-5" />
             </button>

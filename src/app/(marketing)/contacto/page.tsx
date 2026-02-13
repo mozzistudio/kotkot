@@ -37,20 +37,20 @@ export default function ContactoPage() {
   if (submitted) {
     return (
       <div className="flex min-h-[70vh] items-center justify-center px-4 pt-32">
-        <div className="glass-card mx-auto max-w-lg p-12 text-center">
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100">
-            <CheckCircle2 className="h-8 w-8 text-emerald-600" />
+        <div className="bg-white border border-[#e5e7eb] rounded-[16px] mx-auto max-w-lg p-12 text-center">
+          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)]">
+            <CheckCircle2 className="h-8 w-8 text-[#059669]" />
           </div>
-          <h2 className="font-heading text-2xl font-bold text-slate-900">
+          <h2 className="font-heading text-2xl font-bold text-[#111827]">
             Mensaje enviado
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-600">
+          <p className="mt-4 text-base leading-relaxed text-[#6b7280]">
             Gracias por contactarnos, {formData.nombre}. Te responderemos dentro
             de las próximas 24 horas.
           </p>
           <a
             href="/"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 transition-all duration-200 hover:shadow-emerald-500/40 hover:brightness-110"
+            className="mt-8 inline-flex items-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-6 py-3 text-sm font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600]"
           >
             Volver al inicio
           </a>
@@ -64,14 +64,14 @@ export default function ContactoPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Header --- */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-emerald-600">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
             Estamos aquí para ti
-            <span className="inline-block h-px w-10 bg-emerald-400" />
+            <span className="inline-block h-px w-10 bg-[#059669]" />
           </span>
-          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl">
             Contáctanos
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-slate-600">
+          <p className="mt-6 text-lg leading-relaxed text-[#6b7280]">
             ¿Tienes preguntas, sugerencias o necesitas ayuda? Escríbenos y te
             responderemos lo más pronto posible.
           </p>
@@ -81,8 +81,8 @@ export default function ContactoPage() {
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-5 lg:gap-16">
           {/* --- Form (left) --- */}
           <div className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="glass-card p-8 sm:p-10">
-              <h2 className="mb-6 font-heading text-lg font-bold text-slate-900">
+            <form onSubmit={handleSubmit} className="bg-white border border-[#e5e7eb] rounded-[16px] p-8 sm:p-10">
+              <h2 className="mb-6 font-heading text-lg font-bold text-[#111827]">
                 Envíanos un mensaje
               </h2>
               <div className="flex flex-col gap-6">
@@ -90,7 +90,7 @@ export default function ContactoPage() {
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="nombre"
-                    className="text-sm font-medium text-gray-700"
+                    className="text-sm font-medium text-[#111827]"
                   >
                     Nombre completo *
                   </label>
@@ -102,7 +102,7 @@ export default function ContactoPage() {
                     value={formData.nombre}
                     onChange={handleChange}
                     placeholder="Juan Pérez"
-                    className="w-full rounded-xl border border-white/40 bg-white/60 px-4 py-2.5 text-sm text-gray-800 shadow-sm backdrop-blur-xl transition-all duration-200 placeholder:text-gray-400 focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/20"
+                    className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[rgba(5,150,105,0.20)]"
                   />
                 </div>
 
@@ -110,7 +110,7 @@ export default function ContactoPage() {
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="email"
-                    className="text-sm font-medium text-gray-700"
+                    className="text-sm font-medium text-[#111827]"
                   >
                     Email *
                   </label>
@@ -122,7 +122,7 @@ export default function ContactoPage() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="juan@correduria.com"
-                    className="w-full rounded-xl border border-white/40 bg-white/60 px-4 py-2.5 text-sm text-gray-800 shadow-sm backdrop-blur-xl transition-all duration-200 placeholder:text-gray-400 focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/20"
+                    className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[rgba(5,150,105,0.20)]"
                   />
                 </div>
 
@@ -130,7 +130,7 @@ export default function ContactoPage() {
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="asunto"
-                    className="text-sm font-medium text-gray-700"
+                    className="text-sm font-medium text-[#111827]"
                   >
                     Asunto *
                   </label>
@@ -142,7 +142,7 @@ export default function ContactoPage() {
                     value={formData.asunto}
                     onChange={handleChange}
                     placeholder="¿En qué podemos ayudarte?"
-                    className="w-full rounded-xl border border-white/40 bg-white/60 px-4 py-2.5 text-sm text-gray-800 shadow-sm backdrop-blur-xl transition-all duration-200 placeholder:text-gray-400 focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/20"
+                    className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[rgba(5,150,105,0.20)]"
                   />
                 </div>
 
@@ -150,7 +150,7 @@ export default function ContactoPage() {
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="mensaje"
-                    className="text-sm font-medium text-gray-700"
+                    className="text-sm font-medium text-[#111827]"
                   >
                     Mensaje *
                   </label>
@@ -162,7 +162,7 @@ export default function ContactoPage() {
                     value={formData.mensaje}
                     onChange={handleChange}
                     placeholder="Escribe tu mensaje aquí..."
-                    className="w-full resize-none rounded-xl border border-white/40 bg-white/60 px-4 py-2.5 text-sm text-gray-800 shadow-sm backdrop-blur-xl transition-all duration-200 placeholder:text-gray-400 focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/20"
+                    className="w-full resize-none rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[rgba(5,150,105,0.20)]"
                   />
                 </div>
 
@@ -170,7 +170,7 @@ export default function ContactoPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-8 py-3.5 text-base font-semibold text-white shadow-xl shadow-emerald-500/25 transition-all duration-200 hover:shadow-emerald-500/40 hover:brightness-110 disabled:pointer-events-none disabled:opacity-50 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-3.5 text-base font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600] disabled:pointer-events-none disabled:opacity-50 sm:w-auto"
                 >
                   {isSubmitting ? (
                     <>
@@ -208,24 +208,24 @@ export default function ContactoPage() {
 
           {/* --- Contact Info (right) --- */}
           <div className="lg:col-span-2">
-            <div className="glass-card p-8">
-              <h3 className="mb-6 font-heading text-lg font-bold text-slate-900">
+            <div className="bg-white border border-[#e5e7eb] rounded-[16px] p-8">
+              <h3 className="mb-6 font-heading text-lg font-bold text-[#111827]">
                 Información de contacto
               </h3>
 
               <div className="space-y-6">
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50">
-                    <Mail className="h-5 w-5 text-emerald-600" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
+                    <Mail className="h-5 w-5 text-[#059669]" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-900">
+                    <p className="text-sm font-semibold text-[#111827]">
                       Email
                     </p>
                     <a
                       href="mailto:support@kotkot.studio"
-                      className="text-sm text-emerald-600 transition-colors hover:text-emerald-700"
+                      className="text-sm text-[#059669] transition-colors hover:text-[#059669]"
                     >
                       support@kotkot.studio
                     </a>
@@ -234,16 +234,16 @@ export default function ContactoPage() {
 
                 {/* WhatsApp */}
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50">
-                    <MessageCircle className="h-5 w-5 text-emerald-600" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
+                    <MessageCircle className="h-5 w-5 text-[#059669]" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-900">
+                    <p className="text-sm font-semibold text-[#111827]">
                       WhatsApp
                     </p>
                     <a
                       href="https://wa.me/50760000000"
-                      className="text-sm text-emerald-600 transition-colors hover:text-emerald-700"
+                      className="text-sm text-[#059669] transition-colors hover:text-[#059669]"
                     >
                       +507 6000-0000
                     </a>
@@ -252,16 +252,16 @@ export default function ContactoPage() {
 
                 {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50">
-                    <Phone className="h-5 w-5 text-emerald-600" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
+                    <Phone className="h-5 w-5 text-[#059669]" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-900">
+                    <p className="text-sm font-semibold text-[#111827]">
                       Teléfono
                     </p>
                     <a
                       href="tel:+50720000000"
-                      className="text-sm text-emerald-600 transition-colors hover:text-emerald-700"
+                      className="text-sm text-[#059669] transition-colors hover:text-[#059669]"
                     >
                       +507 200-0000
                     </a>
@@ -270,17 +270,17 @@ export default function ContactoPage() {
 
                 {/* Address */}
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50">
-                    <MapPin className="h-5 w-5 text-emerald-600" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
+                    <MapPin className="h-5 w-5 text-[#059669]" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-900">
+                    <p className="text-sm font-semibold text-[#111827]">
                       Oficina
                     </p>
-                    <p className="text-sm text-slate-600">
+                    <p className="text-sm text-[#6b7280]">
                       Ciudad de Panamá, Panamá
                     </p>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-[#9ca3af]">
                       Calle 50, Torre Global Bank, Piso 30
                     </p>
                   </div>
@@ -289,29 +289,29 @@ export default function ContactoPage() {
             </div>
 
             {/* Horarios */}
-            <div className="mt-6 glass-card-subtle p-6">
-              <h4 className="font-heading text-sm font-semibold text-slate-900">
+            <div className="mt-6 bg-white border border-[#e5e7eb] rounded-[16px] p-6">
+              <h4 className="font-heading text-sm font-semibold text-[#111827]">
                 Horario de atención
               </h4>
               <div className="mt-3 space-y-1.5">
                 <div className="flex justify-between text-sm">
-                  <span className="text-slate-600">Lunes a Viernes</span>
-                  <span className="font-medium text-slate-900">
+                  <span className="text-[#6b7280]">Lunes a Viernes</span>
+                  <span className="font-medium text-[#111827]">
                     8:00 AM - 6:00 PM
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-slate-600">Sábados</span>
-                  <span className="font-medium text-slate-900">
+                  <span className="text-[#6b7280]">Sábados</span>
+                  <span className="font-medium text-[#111827]">
                     9:00 AM - 1:00 PM
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-slate-600">Domingos</span>
-                  <span className="text-slate-400">Cerrado</span>
+                  <span className="text-[#6b7280]">Domingos</span>
+                  <span className="text-[#9ca3af]">Cerrado</span>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-slate-500">
+              <p className="mt-3 text-xs text-[#9ca3af]">
                 Hora de Panamá (EST / UTC-5). Nuestro bot de WhatsApp está
                 disponible 24/7.
               </p>

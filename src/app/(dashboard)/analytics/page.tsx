@@ -63,22 +63,22 @@ const dateRanges: { key: DateRange; label: string }[] = [
 
 const kpiByRange: Record<DateRange, KPI[]> = {
   '7d': [
-    { label: 'Total Conversaciones', value: '168', change: '+12%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-emerald-400" /> },
-    { label: 'Tasa de Conversion', value: '34.5%', change: '+3.2%', changeType: 'up', icon: <Target className="h-5 w-5 text-teal-400" /> },
-    { label: 'Tiempo Prom. Cotizacion', value: '2.4 min', change: '-18%', changeType: 'up', icon: <Clock className="h-5 w-5 text-blue-400" /> },
-    { label: 'Ingresos Totales', value: '$4,280', change: '+22%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-emerald-400" /> },
+    { label: 'Total Conversaciones', value: '168', change: '+12%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--chart-line)]" /> },
+    { label: 'Tasa de Conversion', value: '34.5%', change: '+3.2%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--chart-dot)]" /> },
+    { label: 'Tiempo Prom. Cotizacion', value: '2.4 min', change: '-18%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--chart-line)]" /> },
+    { label: 'Ingresos Totales', value: '$4,280', change: '+22%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--chart-dot)]" /> },
   ],
   '30d': [
-    { label: 'Total Conversaciones', value: '682', change: '+18%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-emerald-400" /> },
-    { label: 'Tasa de Conversion', value: '31.2%', change: '+5.1%', changeType: 'up', icon: <Target className="h-5 w-5 text-teal-400" /> },
-    { label: 'Tiempo Prom. Cotizacion', value: '2.8 min', change: '-12%', changeType: 'up', icon: <Clock className="h-5 w-5 text-blue-400" /> },
-    { label: 'Ingresos Totales', value: '$12,450', change: '+15%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-emerald-400" /> },
+    { label: 'Total Conversaciones', value: '682', change: '+18%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--chart-line)]" /> },
+    { label: 'Tasa de Conversion', value: '31.2%', change: '+5.1%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--chart-dot)]" /> },
+    { label: 'Tiempo Prom. Cotizacion', value: '2.8 min', change: '-12%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--chart-line)]" /> },
+    { label: 'Ingresos Totales', value: '$12,450', change: '+15%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--chart-dot)]" /> },
   ],
   '90d': [
-    { label: 'Total Conversaciones', value: '1,847', change: '+45%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-emerald-400" /> },
-    { label: 'Tasa de Conversion', value: '29.8%', change: '+8.3%', changeType: 'up', icon: <Target className="h-5 w-5 text-teal-400" /> },
-    { label: 'Tiempo Prom. Cotizacion', value: '3.1 min', change: '-24%', changeType: 'up', icon: <Clock className="h-5 w-5 text-blue-400" /> },
-    { label: 'Ingresos Totales', value: '$38,920', change: '+52%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-emerald-400" /> },
+    { label: 'Total Conversaciones', value: '1,847', change: '+45%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--chart-line)]" /> },
+    { label: 'Tasa de Conversion', value: '29.8%', change: '+8.3%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--chart-dot)]" /> },
+    { label: 'Tiempo Prom. Cotizacion', value: '3.1 min', change: '-24%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--chart-line)]" /> },
+    { label: 'Ingresos Totales', value: '$38,920', change: '+52%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--chart-dot)]" /> },
   ],
 };
 
@@ -126,26 +126,26 @@ export default function AnalyticsPage() {
   const maxInsurerSales = Math.max(...topInsurers.map((i) => i.sales));
 
   return (
-    <div className="min-h-screen bg-[#080c14] p-6 lg:p-8">
+    <div className="min-h-screen">
       {/* Header */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-slate-200 font-heading">Analiticas</h1>
-          <p className="mt-1 text-sm text-slate-400">
+          <h1 className="text-page-title">Analiticas</h1>
+          <p className="mt-1 text-body">
             Metricas y desempeno de tu negocio
           </p>
         </div>
 
         {/* Date Range Selector */}
-        <div className="flex gap-1.5 rounded-lg border border-[#1e293b] bg-[#0d1117] p-1">
+        <div className="flex gap-1.5 rounded-lg border border-[var(--border)] bg-white p-1">
           {dateRanges.map((dr) => (
             <button
               key={dr.key}
               onClick={() => setDateRange(dr.key)}
               className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
                 dateRange === dr.key
-                  ? 'bg-emerald-500/20 text-emerald-400 shadow-sm'
-                  : 'text-slate-400 hover:text-slate-300'
+                  ? 'bg-[var(--accent)] text-[var(--text-on-accent)]'
+                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               }`}
             >
               {dr.label}
@@ -157,40 +157,40 @@ export default function AnalyticsPage() {
       {/* KPI Row */}
       <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {kpis.map((kpi) => (
-          <div key={kpi.label} className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
+          <div key={kpi.label} className="card">
             <div className="flex items-center justify-between">
-              <div className="rounded-lg bg-[#080c14] p-2.5">{kpi.icon}</div>
-              <span className={`inline-flex items-center gap-0.5 text-xs font-semibold ${kpi.changeType === 'up' ? 'text-emerald-400' : 'text-red-400'}`}>
+              <div className="rounded-lg bg-[var(--surface-secondary)] p-2.5">{kpi.icon}</div>
+              <span className={`inline-flex items-center gap-0.5 text-xs font-semibold ${kpi.changeType === 'up' ? 'text-[var(--success)]' : 'text-[var(--error)]'}`}>
                 {kpi.changeType === 'up' ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
                 {kpi.change}
               </span>
             </div>
-            <p className="mt-4 text-2xl font-bold text-slate-200 font-data">{kpi.value}</p>
-            <p className="mt-1 text-sm text-slate-400">{kpi.label}</p>
+            <p className="mt-4 text-2xl font-bold text-[var(--text-primary)] font-data">{kpi.value}</p>
+            <p className="mt-1 text-sm text-[var(--text-secondary)]">{kpi.label}</p>
           </div>
         ))}
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Conversaciones por dia */}
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
+        <div className="card">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-base font-semibold text-slate-200">Conversaciones por Dia</h2>
-            <BarChart3 className="h-4 w-4 text-slate-500" />
+            <h2 className="text-section-heading">Conversaciones por Dia</h2>
+            <BarChart3 className="h-4 w-4 text-[var(--text-tertiary)]" />
           </div>
           <div className="flex items-end justify-between gap-3" style={{ height: 180 }}>
             {dailyConversations.map((d) => {
               const heightPct = (d.value / maxDaily) * 100;
               return (
                 <div key={d.day} className="flex flex-1 flex-col items-center gap-2">
-                  <span className="text-xs text-slate-400 font-data">{d.value}</span>
+                  <span className="text-xs text-[var(--text-secondary)] font-data">{d.value}</span>
                   <div className="w-full flex justify-center">
                     <div
-                      className="w-8 rounded-t-md bg-gradient-to-t from-emerald-600 to-teal-400 transition-all duration-300"
+                      className="w-8 rounded-t-md bg-[var(--chart-line)] transition-all duration-300"
                       style={{ height: `${heightPct}%`, minHeight: 8 }}
                     />
                   </div>
-                  <span className="text-xs text-slate-500">{d.day}</span>
+                  <span className="text-xs text-[var(--text-tertiary)]">{d.day}</span>
                 </div>
               );
             })}
@@ -198,20 +198,20 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Distribution by insurance type */}
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
-          <h2 className="mb-4 text-base font-semibold text-slate-200">
+        <div className="card">
+          <h2 className="mb-4 text-section-heading">
             Distribucion por Tipo de Seguro
           </h2>
           <div className="space-y-4">
             {insuranceDistribution.map((item) => (
               <div key={item.type}>
                 <div className="mb-1.5 flex items-center justify-between">
-                  <span className="text-sm text-slate-300">{item.type}</span>
-                  <span className="text-sm font-semibold text-slate-200 font-data">{item.percentage}%</span>
+                  <span className="text-sm text-[var(--text-primary)]">{item.type}</span>
+                  <span className="text-sm font-semibold text-[var(--text-primary)] font-data">{item.percentage}%</span>
                 </div>
-                <div className="h-3 overflow-hidden rounded-full bg-[#080c14]">
+                <div className="progress-track">
                   <div
-                    className={`h-full rounded-full ${item.color} transition-all duration-500`}
+                    className={`progress-fill ${item.color}`}
                     style={{ width: `${item.percentage}%` }}
                   />
                 </div>
@@ -221,25 +221,25 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Top insurers by sales */}
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
-          <h2 className="mb-4 text-base font-semibold text-slate-200">
+        <div className="card">
+          <h2 className="mb-4 text-section-heading">
             Top Aseguradoras por Ventas
           </h2>
           <div className="space-y-3">
             {topInsurers.map((insurer, idx) => (
               <div key={insurer.name} className="flex items-center gap-3">
-                <span className="w-5 text-right text-xs font-semibold text-slate-500">{idx + 1}</span>
+                <span className="w-5 text-right text-xs font-semibold text-[var(--text-tertiary)]">{idx + 1}</span>
                 <div className="min-w-0 flex-1">
                   <div className="mb-1 flex items-center justify-between">
-                    <span className="text-sm text-slate-300">{insurer.name}</span>
+                    <span className="text-sm text-[var(--text-primary)]">{insurer.name}</span>
                     <div className="flex items-center gap-3 text-xs">
-                      <span className="text-slate-400">{insurer.sales} ventas</span>
-                      <span className="font-semibold text-emerald-400 font-data">{insurer.revenue}</span>
+                      <span className="text-[var(--text-secondary)]">{insurer.sales} ventas</span>
+                      <span className="font-semibold text-[var(--success)] font-data">{insurer.revenue}</span>
                     </div>
                   </div>
-                  <div className="h-2 overflow-hidden rounded-full bg-[#080c14]">
+                  <div className="progress-track">
                     <div
-                      className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-400 transition-all duration-500"
+                      className="progress-fill"
                       style={{ width: `${(insurer.sales / maxInsurerSales) * 100}%` }}
                     />
                   </div>
@@ -250,25 +250,25 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Conversion Funnel */}
-        <div className="rounded-xl border border-[#1e293b] bg-[#0d1117] p-5">
-          <h2 className="mb-4 text-base font-semibold text-slate-200">
+        <div className="card">
+          <h2 className="mb-4 text-section-heading">
             Embudo de Conversion
           </h2>
           <div className="space-y-3">
             {funnelSteps.map((step, idx) => (
               <div key={step.label}>
                 <div className="mb-1.5 flex items-center justify-between">
-                  <span className="text-sm text-slate-300">{step.label}</span>
+                  <span className="text-sm text-[var(--text-primary)]">{step.label}</span>
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-semibold text-slate-200 font-data">
+                    <span className="text-sm font-semibold text-[var(--text-primary)] font-data">
                       {step.value.toLocaleString()}
                     </span>
-                    <span className="rounded-full bg-[#1e293b] px-2 py-0.5 text-xs text-slate-400">
+                    <span className="badge badge-lime">
                       {step.percentage}%
                     </span>
                   </div>
                 </div>
-                <div className="h-8 overflow-hidden rounded-lg bg-[#080c14]">
+                <div className="h-8 overflow-hidden rounded-lg bg-[var(--surface-secondary)]">
                   <div
                     className={`flex h-full items-center justify-center rounded-lg bg-gradient-to-r ${step.color} transition-all duration-500`}
                     style={{ width: `${step.percentage}%` }}
@@ -280,7 +280,7 @@ export default function AnalyticsPage() {
                 </div>
                 {idx < funnelSteps.length - 1 && (
                   <div className="flex justify-center py-1">
-                    <ArrowDown className="h-3.5 w-3.5 text-slate-600" />
+                    <ArrowDown className="h-3.5 w-3.5 text-[var(--border-medium)]" />
                   </div>
                 )}
               </div>
@@ -288,10 +288,10 @@ export default function AnalyticsPage() {
           </div>
 
           {/* Conversion rate callout */}
-          <div className="mt-4 rounded-lg border border-emerald-500/20 bg-emerald-500/5 p-3 text-center">
-            <p className="text-xs text-slate-400">Tasa de conversion total</p>
-            <p className="text-xl font-bold text-emerald-400 font-data">22.9%</p>
-            <p className="text-xs text-slate-500">Conversacion a Pago</p>
+          <div className="mt-4 rounded-lg border border-[var(--border)] bg-[var(--accent-light)] p-3 text-center">
+            <p className="text-xs text-[var(--text-secondary)]">Tasa de conversion total</p>
+            <p className="text-xl font-bold text-[var(--success)] font-data">22.9%</p>
+            <p className="text-xs text-[var(--text-tertiary)]">Conversacion a Pago</p>
           </div>
         </div>
       </div>
