@@ -199,6 +199,42 @@ export default function LoginPage() {
           </Link>
         </p>
       </div>
+
+      {/* Test Credentials */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mt-6 rounded-xl border border-emerald-200 bg-emerald-50/50 backdrop-blur-sm p-4"
+      >
+        <div className="flex items-start gap-3">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-100">
+            <ShieldCheck className="h-4 w-4 text-emerald-600" />
+          </div>
+          <div className="flex-1">
+            <h3 className="text-sm font-semibold text-emerald-900 mb-2">
+              Credenciales de Prueba
+            </h3>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <Mail className="h-3.5 w-3.5 text-emerald-600" />
+                <code className="text-xs font-mono text-emerald-800 bg-white/60 px-2 py-1 rounded">
+                  demo@kotkot.ai
+                </code>
+              </div>
+              <div className="flex items-center gap-2">
+                <Lock className="h-3.5 w-3.5 text-emerald-600" />
+                <code className="text-xs font-mono text-emerald-800 bg-white/60 px-2 py-1 rounded">
+                  demo123456
+                </code>
+              </div>
+            </div>
+            <p className="mt-2 text-xs text-emerald-700">
+              Usa estas credenciales para explorar la plataforma
+            </p>
+          </div>
+        </div>
+      </motion.div>
     </motion.div>
   );
 }
