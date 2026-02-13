@@ -17,7 +17,7 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote:
-      'CotiFácil transformó mi correduría. Ahora vendo seguros mientras duermo.',
+      'Kotkot transformó mi correduría. Ahora vendo seguros mientras duermo.',
     name: 'Carlos M.',
     title: 'Corredor',
     country: 'Panamá',

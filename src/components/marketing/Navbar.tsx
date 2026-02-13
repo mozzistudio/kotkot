@@ -4,11 +4,17 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Menu, X, Shield, ChevronDown } from 'lucide-react';
 
+const loanProducts = [
+  { slug: 'personal', name: 'Personal', icon: '💳' },
+  { slug: 'hipotecario', name: 'Hipotecario', icon: '🏡' },
+  { slug: 'auto', name: 'Auto', icon: '🚙' },
+  { slug: 'empresarial', name: 'Empresarial', icon: '💼' },
+];
+
 const navLinks = [
   { label: 'Funcionalidades', href: '#funcionalidades' },
-  { label: 'Cómo Funciona', href: '#como-funciona' },
   { label: 'Precios', href: '#precios' },
-  { label: 'Blog', href: '/blog' },
+  { label: 'Para Brokers', href: '/para-brokers' },
 ];
 
 const insuranceProducts = [
@@ -25,6 +31,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('#funcionalidades');
   const [segurosOpen, setSegurosOpen] = useState(false);
+  const [prestamosOpen, setPrestamosOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -112,6 +119,51 @@ export function Navbar() {
               </AnimatePresence>
             </div>
 
+            {/* Préstamos Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setPrestamosOpen(true)}
+              onMouseLeave={() => setPrestamosOpen(false)}
+            >
+              <button className="flex items-center gap-1 rounded-[10px] px-4 py-2 text-sm font-medium text-[#6b7280] transition-colors hover:bg-[#f3f4f6] hover:text-[#111827]">
+                Préstamos
+                <ChevronDown className={`h-4 w-4 transition-transform ${prestamosOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              <AnimatePresence>
+                {prestamosOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute left-0 top-full mt-2 w-64 rounded-[16px] border border-[#e5e7eb] bg-white"
+                  >
+                    <div className="p-2">
+                      {loanProducts.map((product) => (
+                        <a
+                          key={product.slug}
+                          href={`/prestamos/${product.slug}`}
+                          className="flex items-center gap-3 rounded-[10px] px-3 py-2 text-sm font-medium text-[#6b7280] transition-colors hover:bg-[#f3f4f6] hover:text-[#111827]"
+                        >
+                          <span className="text-lg">{product.icon}</span>
+                          <span>Préstamo {product.name}</span>
+                        </a>
+                      ))}
+                      <div className="mt-1 border-t border-[#e5e7eb] pt-1">
+                        <a
+                          href="/prestamos"
+                          className="flex items-center justify-center rounded-[10px] px-3 py-2 text-sm font-semibold text-[#059669] transition-colors hover:bg-[rgba(202,255,4,0.15)]"
+                        >
+                          Ver todos los préstamos →
+                        </a>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -190,6 +242,18 @@ export function Navbar() {
                 className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#059669] transition-colors hover:text-[#047857]"
               >
                 Seguros
+              </motion.a>
+              <motion.a
+                href="/prestamos"
+                onClick={() => setMobileOpen(false)}
+                variants={{
+                  open: { y: 0, opacity: 1 },
+                  closed: { y: 20, opacity: 0 },
+                }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+                className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#059669] transition-colors hover:text-[#047857]"
+              >
+                Préstamos
               </motion.a>
               {navLinks.map((link) => (
                 <motion.a

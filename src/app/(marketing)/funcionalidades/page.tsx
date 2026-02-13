@@ -10,9 +10,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Funcionalidades — CotiFácil',
+  title: 'Funcionalidades — Kotkot',
   description:
-    'Descubre todas las funcionalidades de CotiFácil: agente IA en WhatsApp, conexión multi-aseguradora, cobros automáticos, dashboard inteligente y más.',
+    'Descubre todas las funcionalidades de Kotkot: agente IA en WhatsApp, conexión multi-aseguradora, cobros automáticos, dashboard inteligente y más.',
 };
 
 const features = [
@@ -44,7 +44,7 @@ const features = [
     title: 'Conexión Multi-Aseguradora',
     subtitle: 'Todas tus aseguradoras en un solo lugar',
     description:
-      'Conecta las APIs de tus aseguradoras con tus propias credenciales. CotiFácil actúa como middleware inteligente, normalizando las respuestas para que tu agente pueda comparar precios y coberturas instantáneamente.',
+      'Conecta las APIs de tus aseguradoras con tus propias credenciales. Kotkot actúa como middleware inteligente, normalizando las respuestas para que tu agente pueda comparar precios y coberturas instantáneamente.',
     subFeatures: [
       'Integración directa via API REST',
       'Alternativa: carga de tablas de tarifas (CSV/Excel)',
@@ -256,7 +256,7 @@ export default function FuncionalidadesPage() {
                 <div className={isReversed ? 'lg:[direction:ltr]' : ''}>
                   <div className="bg-white border border-[#e5e7eb] rounded-[16px] flex aspect-[4/3] items-center justify-center overflow-hidden p-8">
                     <div className="flex flex-col items-center gap-4 text-center">
-                      <div className="flex h-20 w-20 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)] shadow-lg shadow-emerald-500/25">
+                      <div className="flex h-20 w-20 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)] shadow-lg shadow-[rgba(202,255,4,0.25)]">
                         <feature.icon
                           className="h-10 w-10 text-white"
                           strokeWidth={1.5}
@@ -282,13 +282,13 @@ export default function FuncionalidadesPage() {
             Listo para transformar tu correduría?
           </h2>
           <p className="mt-4 text-lg text-[#6b7280]">
-            Solicita una demo personalizada y descubre cómo CotiFácil puede
+            Solicita una demo personalizada y descubre cómo Kotkot puede
             automatizar tu negocio de seguros.
           </p>
           <div className="mt-8">
             <a
               href="/demo"
-              className="inline-flex items-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[#111827] shadow-xl shadow-emerald-500/25 transition-all duration-200 hover:shadow-emerald-500/40 hover:brightness-110"
+              className="inline-flex items-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[#111827] shadow-xl shadow-[rgba(202,255,4,0.25)] transition-all duration-200 hover:shadow-[rgba(202,255,4,0.4)] hover:brightness-110"
             >
               Solicitar Demo
             </a>

@@ -300,7 +300,7 @@ function ChatBubble({ message }: { message: ChatMessage }) {
               {message.buttons.map((btn) => (
                 <span
                   key={btn}
-                  className="inline-block rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-[3px] text-[10px] font-medium text-emerald-700"
+                  className="inline-block rounded-full border border-[rgba(202,255,4,0.40)] bg-[rgba(202,255,4,0.15)] px-2.5 py-[3px] text-[10px] font-medium text-[#111827]"
                 >
                   {btn}
                 </span>
@@ -458,7 +458,7 @@ export function WhatsAppMockup() {
             <ChevronLeft className="h-4 w-4 shrink-0 text-white/80" />
 
             {/* Avatar */}
-            <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full bg-gradient-to-br from-emerald-300 to-teal-500 shadow-inner">
+            <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] shadow-inner">
               <div className="flex h-full w-full items-center justify-center">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white" opacity="0.9">
                   <path d="M12 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 12c5.523 0 10 2.239 10 5v1H2v-1c0-2.761 4.477-5 10-5Z" />
@@ -471,14 +471,14 @@ export function WhatsAppMockup() {
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1">
                 <span className="truncate text-[13px] font-semibold text-white">
-                  CotiFácil Bot
+                  Kotkot Bot
                 </span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0">
                   <circle cx="12" cy="12" r="10" fill="#25D366" />
                   <path d="M8 12l3 3 5-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <span className="text-[10px] text-emerald-200/80">en línea</span>
+              <span className="text-[10px] text-[#25D366]/80">en línea</span>
             </div>
 
             <div className="flex items-center gap-3">

@@ -176,7 +176,7 @@ const statusConfig: Record<QuoteStatus, { label: string; bg: string; text: strin
   generated: { label: 'Generada', bg: 'bg-slate-500/15', text: 'text-slate-400', border: 'border-slate-500/30' },
   sent: { label: 'Enviada', bg: 'bg-blue-500/15', text: 'text-blue-400', border: 'border-blue-500/30' },
   selected: { label: 'Seleccionada', bg: 'bg-amber-500/15', text: 'text-amber-400', border: 'border-amber-500/30' },
-  paid: { label: 'Pagada', bg: 'bg-emerald-500/15', text: 'text-emerald-400', border: 'border-emerald-500/30' },
+  paid: { label: 'Pagada', bg: 'bg-[#10b981]/15', text: 'text-[#10b981]', border: 'border-[#10b981]/30' },
   expired: { label: 'Expirada', bg: 'bg-red-500/15', text: 'text-red-400', border: 'border-red-500/30' },
 };
 

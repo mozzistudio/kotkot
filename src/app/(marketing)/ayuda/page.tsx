@@ -15,9 +15,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Centro de Ayuda — CotiFácil',
+  title: 'Centro de Ayuda — Kotkot',
   description:
-    'Encuentra respuestas a tus preguntas sobre CotiFácil. Guías, tutoriales y soporte técnico.',
+    'Encuentra respuestas a tus preguntas sobre Kotkot. Guías, tutoriales y soporte técnico.',
 };
 
 const faqs = [
@@ -26,7 +26,7 @@ const faqs = [
     icon: Smartphone,
     questions: [
       {
-        q: '¿Cómo empiezo a usar CotiFácil?',
+        q: '¿Cómo empiezo a usar Kotkot?',
         a: 'Primero, solicita una demo desde nuestra página principal. Nuestro equipo te contactará para configurar tu cuenta, conectar tu número de WhatsApp Business y configurar las integraciones con tus aseguradoras.',
       },
       {
@@ -63,10 +63,10 @@ const faqs = [
     questions: [
       {
         q: '¿Cómo funciona el cobro automático?',
-        a: 'CotiFácil genera automáticamente links de pago (Yappy, Stripe) cuando un cliente acepta una cotización. El dinero va directamente a tu cuenta de procesador de pagos.',
+        a: 'Kotkot genera automáticamente links de pago (Yappy, Stripe) cuando un cliente acepta una cotización. El dinero va directamente a tu cuenta de procesador de pagos.',
       },
       {
-        q: '¿CotiFácil cobra comisión por las ventas?',
+        q: '¿Kotkot cobra comisión por las ventas?',
         a: 'No. Solo pagas la suscripción mensual. No cobramos comisiones sobre tus ventas de seguros.',
       },
       {
@@ -135,7 +135,7 @@ const resources = [
   {
     icon: Book,
     title: 'Documentación',
-    description: 'Guías completas sobre cómo usar todas las funciones de CotiFácil.',
+    description: 'Guías completas sobre cómo usar todas las funciones de Kotkot.',
     href: '#',
   },
   {
@@ -259,7 +259,7 @@ export default function AyudaPage() {
 
         {/* --- Contact Support CTA --- */}
         <div className="bg-white border border-[#e5e7eb] rounded-[16px] mx-auto max-w-3xl p-10 text-center">
-          <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-[16px] bg-emerald-50">
+          <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)]">
             <Mail className="h-7 w-7 text-[#059669]" />
           </div>
           <h2 className="font-heading text-2xl font-bold text-[#111827]">

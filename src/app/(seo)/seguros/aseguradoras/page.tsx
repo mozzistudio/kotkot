@@ -83,11 +83,11 @@ export default function InsuranceCompaniesDirectoryPage() {
 
         {/* CTA Section */}
         <section className="mx-auto mt-16 max-w-4xl">
-          <div className="rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-600 p-12 text-center text-white">
+          <div className="rounded-2xl bg-[#CAFF04] p-12 text-center text-[#111827]">
             <h2 className="mb-4 text-3xl font-bold">
               ¿No sabes cuál elegir?
             </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-emerald-50">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-[#6b7280]">
               Nuestro asistente te ayuda a encontrar la mejor aseguradora según
               tus necesidades.
             </p>
@@ -95,7 +95,7 @@ export default function InsuranceCompaniesDirectoryPage() {
               href="https://wa.me/50760000000?text=Hola%2C%20necesito%20ayuda%20para%20elegir%20una%20aseguradora"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl bg-white px-8 py-4 text-lg font-semibold text-emerald-600 hover:bg-gray-50 transition-colors shadow-lg"
+              className="inline-flex items-center rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-gray-50 transition-colors shadow-lg"
             >
               Hablar con un Asesor
             </a>

@@ -145,10 +145,10 @@ const clients: Client[] = [
 
 const tagColors: Record<string, string> = {
   VIP: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
-  Nuevo: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
+  Nuevo: 'bg-[#10b981]/15 text-[#10b981] border-[#10b981]/30',
   Renovacion: 'bg-blue-500/15 text-blue-400 border-blue-500/30',
   Empresa: 'bg-purple-500/15 text-purple-400 border-purple-500/30',
-  Referido: 'bg-teal-500/15 text-teal-400 border-teal-500/30',
+  Referido: 'bg-[#059669]/15 text-[#059669] border-[#059669]/30',
   Auto: 'bg-sky-500/15 text-sky-400 border-sky-500/30',
   Salud: 'bg-rose-500/15 text-rose-400 border-rose-500/30',
   Hogar: 'bg-orange-500/15 text-orange-400 border-orange-500/30',

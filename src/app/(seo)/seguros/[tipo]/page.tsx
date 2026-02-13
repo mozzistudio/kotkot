@@ -146,11 +146,11 @@ export default async function InsuranceProductPage({
             </h2>
             <GlassCard className="p-8">
               <div className="mb-6 flex items-baseline gap-4">
-                <span className="text-4xl font-bold text-emerald-600">
+                <span className="text-4xl font-bold text-[#059669]">
                   {product.priceRanges.min}
                 </span>
                 <span className="text-xl text-gray-600">a</span>
-                <span className="text-4xl font-bold text-emerald-600">
+                <span className="text-4xl font-bold text-[#059669]">
                   {product.priceRanges.max}
                 </span>
               </div>
@@ -234,7 +234,7 @@ export default async function InsuranceProductPage({
                           {relatedProduct.icon}
                         </div>
                       )}
-                      <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-emerald-600">
+                      <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-[#059669]">
                         {relatedProduct.name}
                       </h3>
                       <p className="text-sm text-gray-600 line-clamp-2">
@@ -250,11 +250,11 @@ export default async function InsuranceProductPage({
 
         {/* Final CTA */}
         <section className="mx-auto max-w-4xl px-4 py-16">
-          <GlassCard className="bg-gradient-to-br from-emerald-600 to-teal-600 p-12 text-center text-white">
+          <GlassCard className="bg-[#CAFF04] p-12 text-center text-[#111827]">
             <h2 className="mb-4 text-3xl font-bold">
               ¿Listo para cotizar tu {product.name.toLowerCase()}?
             </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-emerald-50">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-[#6b7280]">
               Recibe cotizaciones personalizadas de las mejores aseguradoras en
               minutos por WhatsApp.
             </p>
@@ -264,7 +264,7 @@ export default async function InsuranceProductPage({
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl bg-white px-8 py-4 text-lg font-semibold text-emerald-600 hover:bg-gray-50 transition-colors shadow-lg"
+              className="inline-flex items-center rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-gray-50 transition-colors shadow-lg"
             >
               Cotizar Ahora por WhatsApp
             </a>

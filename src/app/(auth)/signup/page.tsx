@@ -70,8 +70,8 @@ function getPasswordStrength(password: string): { score: number; label: string; 
   if (score <= 1) return { score, label: 'Debil', color: 'bg-red-400' };
   if (score <= 2) return { score, label: 'Regular', color: 'bg-orange-400' };
   if (score <= 3) return { score, label: 'Buena', color: 'bg-yellow-400' };
-  if (score <= 4) return { score, label: 'Fuerte', color: 'bg-emerald-400' };
-  return { score, label: 'Muy fuerte', color: 'bg-emerald-500' };
+  if (score <= 4) return { score, label: 'Fuerte', color: 'bg-[#10b981]' };
+  return { score, label: 'Muy fuerte', color: 'bg-[#059669]' };
 }
 
 export default function SignupPage() {

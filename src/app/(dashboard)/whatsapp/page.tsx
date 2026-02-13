@@ -51,7 +51,7 @@ const numbers: WhatsAppNumber[] = [
   {
     id: 'wa-1',
     phoneNumber: '+507 6100-0001',
-    displayName: 'CotiFacil Panama',
+    displayName: 'Kotkot Panama',
     wabaId: 'WABA-1234567890',
     status: 'active',
     botPersonality: 'Mi Agente',
@@ -255,7 +255,7 @@ export default function WhatsAppPage() {
           </div>
           <h3 className="text-card-title">Conectar Nuevo Numero</h3>
           <p className="mt-2 text-sm text-[var(--text-secondary)]">
-            Conecta un nuevo numero de WhatsApp Business a tu cuenta de CotiFacil a traves de Meta Embedded Signup.
+            Conecta un nuevo numero de WhatsApp Business a tu cuenta de Kotkot a traves de Meta Embedded Signup.
           </p>
 
           <button className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 text-[var(--text-on-accent)] transition-all hover:bg-[var(--accent-hover)]">

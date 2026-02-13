@@ -159,7 +159,7 @@ export default async function InsuranceCrossPage({
               )}%20con%20${encodeURIComponent(company.name)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-8 py-4 text-lg font-semibold text-white hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/20"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#CAFF04] px-8 py-4 text-lg font-semibold text-[#111827] hover:bg-[#b8e600] transition-colors shadow-lg shadow-[rgba(202,255,4,0.2)]"
             >
               <Phone className="h-5 w-5" />
               Cotizar por WhatsApp
@@ -176,7 +176,7 @@ export default async function InsuranceCrossPage({
             {company.pros.slice(0, 6).map((pro, index) => (
               <GlassCard key={index} className="p-6">
                 <div className="flex items-start gap-3">
-                  <Check className="h-6 w-6 flex-shrink-0 text-emerald-600 mt-1" />
+                  <Check className="h-6 w-6 flex-shrink-0 text-[#059669] mt-1" />
                   <p className="text-gray-700">{pro}</p>
                 </div>
               </GlassCard>
@@ -193,7 +193,7 @@ export default async function InsuranceCrossPage({
             <div className="grid gap-4 md:grid-cols-2">
               {product.coverageTypes.slice(0, 6).map((coverage, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <Check className="h-6 w-6 flex-shrink-0 text-emerald-600 mt-1" />
+                  <Check className="h-6 w-6 flex-shrink-0 text-[#059669] mt-1" />
                   <div>
                     <h3 className="mb-1 font-semibold text-gray-900">
                       {coverage.name}
@@ -221,11 +221,11 @@ export default async function InsuranceCrossPage({
                   varía según tus necesidades:
                 </p>
                 <div className="flex items-baseline gap-4">
-                  <span className="text-3xl font-bold text-emerald-600">
+                  <span className="text-3xl font-bold text-[#059669]">
                     {product.priceRanges.min}
                   </span>
                   <span className="text-xl text-gray-600">a</span>
-                  <span className="text-3xl font-bold text-emerald-600">
+                  <span className="text-3xl font-bold text-[#059669]">
                     {product.priceRanges.max}
                   </span>
                 </div>
@@ -262,7 +262,7 @@ export default async function InsuranceCrossPage({
                   href={`/seguros/${product.slug}/${competitor.slug}`}
                 >
                   <GlassCard className="group h-full p-6 transition-all hover:shadow-xl hover:scale-[1.02]">
-                    <h3 className="mb-2 text-xl font-bold text-gray-900 group-hover:text-emerald-600">
+                    <h3 className="mb-2 text-xl font-bold text-gray-900 group-hover:text-[#059669]">
                       {competitor.name}
                     </h3>
                     <div className="mb-4 flex items-center gap-2">
@@ -312,7 +312,7 @@ export default async function InsuranceCrossPage({
             </p>
             <Link
               href={`/seguros/aseguradoras/${company.slug}`}
-              className="inline-flex items-center rounded-xl border-2 border-emerald-600 px-6 py-3 font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors"
+              className="inline-flex items-center rounded-xl border-2 border-[rgba(202,255,4,0.40)] bg-[#CAFF04] px-6 py-3 font-semibold text-[#111827] hover:bg-[#b8e600] transition-colors"
             >
               Ver Perfil Completo de {company.name}
             </Link>
@@ -321,11 +321,11 @@ export default async function InsuranceCrossPage({
 
         {/* Final CTA */}
         <section>
-          <GlassCard className="bg-gradient-to-br from-emerald-600 to-teal-600 p-12 text-center text-white">
+          <GlassCard className="bg-[#CAFF04] p-12 text-center text-[#111827]">
             <h2 className="mb-4 text-3xl font-bold">
               ¿Listo para contratar con {company.name}?
             </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-emerald-50">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-[#6b7280]">
               Obtén tu cotización personalizada en minutos. Sin compromiso.
             </p>
             <a
@@ -334,7 +334,7 @@ export default async function InsuranceCrossPage({
               )}%20con%20${encodeURIComponent(company.name)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-lg font-semibold text-emerald-600 hover:bg-gray-50 transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-gray-50 transition-colors shadow-lg"
             >
               <Phone className="h-5 w-5" />
               Cotizar Ahora por WhatsApp

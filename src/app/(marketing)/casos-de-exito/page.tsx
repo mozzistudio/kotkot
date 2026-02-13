@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { TrendingUp, Clock, MessageSquare, Quote } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Casos de Éxito — CotiFácil',
+  title: 'Casos de Éxito — Kotkot',
   description:
-    'Descubre cómo corredurías de seguros en Latinoamérica están transformando sus negocios con CotiFácil.',
+    'Descubre cómo corredurías de seguros en Latinoamérica están transformando sus negocios con Kotkot.',
 };
 
 const caseStudies = [
@@ -12,20 +12,20 @@ const caseStudies = [
     company: 'Correduría Panamá Seguros',
     country: 'Panamá',
     flag: '\u{1F1F5}\u{1F1E6}',
-    headline: 'Aumentó ventas 300% en 3 meses con CotiFácil',
+    headline: 'Aumentó ventas 300% en 3 meses con Kotkot',
     description:
-      'Correduría Panamá Seguros es una correduría familiar con 15 años de experiencia. Antes de CotiFácil, procesaban cotizaciones manualmente por teléfono y email, con un tiempo promedio de respuesta de 24 horas.',
+      'Correduría Panamá Seguros es una correduría familiar con 15 años de experiencia. Antes de Kotkot, procesaban cotizaciones manualmente por teléfono y email, con un tiempo promedio de respuesta de 24 horas.',
     challenge:
       'Responder a clientes tomaba demasiado tiempo. Perdían prospectos que necesitaban cotizaciones inmediatas, especialmente fuera del horario de oficina.',
     solution:
-      'Implementaron el agente IA de CotiFácil en su WhatsApp Business, conectando 4 aseguradoras (ASSA, Mapfre, Generali, SURA) con cobro automático via Yappy.',
+      'Implementaron el agente IA de Kotkot en su WhatsApp Business, conectando 4 aseguradoras (ASSA, Mapfre, Generali, SURA) con cobro automático via Yappy.',
     metrics: [
       { icon: TrendingUp, label: 'Aumento en ventas', value: '+300%' },
       { icon: Clock, label: 'Tiempo de cotización', value: '3 seg' },
       { icon: MessageSquare, label: 'Cotizaciones/mes', value: '1,200+' },
     ],
     quote:
-      'CotiFácil transformó nuestra correduría. Ahora vendemos seguros las 24 horas sin aumentar personal. Nuestros clientes no pueden creer lo rápido que reciben sus cotizaciones.',
+      'Kotkot transformó nuestra correduría. Ahora vendemos seguros las 24 horas sin aumentar personal. Nuestros clientes no pueden creer lo rápido que reciben sus cotizaciones.',
     author: 'Roberto Méndez',
     role: 'Director General',
   },
@@ -39,14 +39,14 @@ const caseStudies = [
     challenge:
       'El alto volumen de consultas repetitivas consumía el 80% del tiempo del equipo, dejando poco espacio para ventas consultivas y clientes de alto valor.',
     solution:
-      'Desplegaron CotiFácil para manejar cotizaciones estándar de auto y SOAT, liberando al equipo para enfocarse en seguros empresariales y de vida. Conectaron 5 aseguradoras.',
+      'Desplegaron Kotkot para manejar cotizaciones estándar de auto y SOAT, liberando al equipo para enfocarse en seguros empresariales y de vida. Conectaron 5 aseguradoras.',
     metrics: [
       { icon: TrendingUp, label: 'Cotizaciones automáticas', value: '80%' },
       { icon: Clock, label: 'Horas ahorradas/semana', value: '120h' },
       { icon: MessageSquare, label: 'Satisfacción cliente', value: '97%' },
     ],
     quote:
-      'Nuestro equipo ahora se enfoca en lo que realmente importa: las ventas consultivas. CotiFácil maneja todo lo repetitivo con una precisión impresionante.',
+      'Nuestro equipo ahora se enfoca en lo que realmente importa: las ventas consultivas. Kotkot maneja todo lo repetitivo con una precisión impresionante.',
     author: 'María Fernanda López',
     role: 'Gerente Comercial',
   },
@@ -60,7 +60,7 @@ const caseStudies = [
     challenge:
       'Cotizar un seguro de auto requería ingresar datos en 5 portales diferentes, comparar manualmente y enviar el resultado al cliente. Todo el proceso tomaba entre 2 y 24 horas.',
     solution:
-      'Integraron CotiFácil con GNP, Qualitas, AXA y HDI. El agente IA ahora consulta las 4 aseguradoras en paralelo y presenta la comparación en WhatsApp en menos de 3 segundos.',
+      'Integraron Kotkot con GNP, Qualitas, AXA y HDI. El agente IA ahora consulta las 4 aseguradoras en paralelo y presenta la comparación en WhatsApp en menos de 3 segundos.',
     metrics: [
       { icon: TrendingUp, label: 'Reducción de tiempo', value: '99.99%' },
       { icon: Clock, label: 'Tiempo de respuesta', value: '< 3 seg' },
@@ -88,7 +88,7 @@ export default function CasosDeExitoPage() {
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-[#6b7280] sm:text-xl">
             Descubre cómo corredurías de seguros en Latinoamérica están
-            transformando sus negocios con CotiFácil.
+            transformando sus negocios con Kotkot.
           </p>
         </div>
 
@@ -183,7 +183,7 @@ export default function CasosDeExitoPage() {
           </h2>
           <p className="mt-4 text-lg text-[#6b7280]">
             Únete a las corredurías que ya están vendiendo seguros por WhatsApp
-            con CotiFácil.
+            con Kotkot.
           </p>
           <div className="mt-8">
             <a
