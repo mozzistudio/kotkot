@@ -7,11 +7,22 @@ interface FooterLinkGroup {
 
 const linkGroups: FooterLinkGroup[] = [
   {
+    title: 'Seguros',
+    links: [
+      { label: 'Seguro de Auto', href: '/seguros/auto' },
+      { label: 'Seguro de Salud', href: '/seguros/salud' },
+      { label: 'Seguro de Vida', href: '/seguros/vida' },
+      { label: 'Seguro de Hogar', href: '/seguros/hogar' },
+      { label: 'Todas las Aseguradoras', href: '/seguros/aseguradoras' },
+    ],
+  },
+  {
     title: 'Producto',
     links: [
       { label: 'Funcionalidades', href: '#funcionalidades' },
       { label: 'Precios', href: '#precios' },
       { label: 'Demo', href: '/demo' },
+      { label: 'Para Brokers', href: '/para-brokers' },
       { label: 'Blog', href: '/blog' },
     ],
   },
@@ -44,9 +55,9 @@ export function Footer() {
   return (
     <footer className="border-t border-white/40 bg-white/30 backdrop-blur-md">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-6 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-6">
           {/* --- Brand column --- */}
-          <div className="md:col-span-6 lg:col-span-4">
+          <div className="sm:col-span-2 lg:col-span-2">
             <a href="/" className="group inline-flex items-center gap-2.5">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 shadow-md shadow-emerald-500/25 transition-transform duration-200 group-hover:scale-105">
                 <Shield className="h-5 w-5 text-white" strokeWidth={2.5} />
@@ -62,7 +73,7 @@ export function Footer() {
 
           {/* --- Link columns --- */}
           {linkGroups.map((group) => (
-            <div key={group.title} className="md:col-span-3 lg:col-span-2">
+            <div key={group.title}>
               <h4 className="font-heading text-sm font-semibold text-slate-900">
                 {group.title}
               </h4>
