@@ -122,15 +122,15 @@ const MESSAGES: ChatMessage[] = [
   {
     id: 16,
     sender: 'bot',
-    text: 'Perfecto! ✅ Documentos recibidos. Verifica tus datos:',
+    text: 'Perfecto! ✅ Analizando documentos...',
     time: '10:38',
   },
   {
     id: 17,
     sender: 'bot',
-    text: '👤 Juan Pérez\n🚗 Toyota Corolla 2022\n📋 Todo Riesgo - ASSA\n💰 $89/mes\n\n¿Todo correcto?',
+    text: '📄 Datos extraídos de tus documentos:\n\n👤 Juan Pérez Gómez\n🆔 Cédula: 8-123-4567\n🚗 Toyota Corolla 2022\n🔢 Placa: PA-12345\n📅 VIN: JT2BF18K5X0123456\n\nCobertura: Todo Riesgo - ASSA\n💰 $89/mes\n\n¿Todo correcto?',
     time: '10:38',
-    buttons: ['✅ Confirmar', '✏️ Editar'],
+    buttons: ['✅ Confirmar', '✏️ Corregir'],
   },
   {
     id: 18,
