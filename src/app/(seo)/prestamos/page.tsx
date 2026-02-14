@@ -147,7 +147,7 @@ export default function LoansHubPage() {
                       <p className="text-sm font-semibold text-[#111827]">{product.term}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 text-sm font-semibold text-[#059669]">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[#0C1E35]">
                     Comparar Opciones
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>

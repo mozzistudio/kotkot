@@ -146,11 +146,11 @@ export default async function InsuranceProductPage({
             </h2>
             <GlassCard className="p-8">
               <div className="mb-6 flex items-baseline gap-4">
-                <span className="text-4xl font-bold text-[#059669]">
+                <span className="text-4xl font-bold text-[#0C1E35]">
                   {product.priceRanges.min}
                 </span>
                 <span className="text-xl text-[#6b7280]">a</span>
-                <span className="text-4xl font-bold text-[#059669]">
+                <span className="text-4xl font-bold text-[#0C1E35]">
                   {product.priceRanges.max}
                 </span>
               </div>

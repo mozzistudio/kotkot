@@ -538,11 +538,11 @@ export default function SignupPage() {
                   </div>
                   <span className="text-xs text-[#6b7280] leading-relaxed">
                     Acepto los{' '}
-                    <Link href="/terms" className="text-[#059669] hover:underline font-medium">
+                    <Link href="/terms" className="text-[#0C1E35] hover:underline font-medium">
                       Terminos de Servicio
                     </Link>{' '}
                     y la{' '}
-                    <Link href="/privacy" className="text-[#059669] hover:underline font-medium">
+                    <Link href="/privacy" className="text-[#0C1E35] hover:underline font-medium">
                       Politica de Privacidad
                     </Link>
                   </span>
@@ -579,7 +579,7 @@ export default function SignupPage() {
           Ya tienes cuenta?{' '}
           <Link
             href="/login"
-            className="text-[#059669] hover:text-[#111827] font-semibold transition-colors"
+            className="text-[#0C1E35] hover:text-[#111827] font-semibold transition-colors"
           >
             Iniciar sesion
           </Link>

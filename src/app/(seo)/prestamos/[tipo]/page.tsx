@@ -381,7 +381,7 @@ export default async function LoanProductPage({
                       {related.name}
                     </h3>
                     <p className="text-sm text-[#6b7280]">{related.shortDescription}</p>
-                    <div className="mt-3 flex items-center gap-1 text-sm font-semibold text-[#059669]">
+                    <div className="mt-3 flex items-center gap-1 text-sm font-semibold text-[#0C1E35]">
                       Ver más <ArrowRight className="h-4 w-4" />
                     </div>
                   </GlassCard>

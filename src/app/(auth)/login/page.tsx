@@ -139,7 +139,7 @@ export default function LoginPage() {
           <div className="flex justify-end">
             <Link
               href="/forgot-password"
-              className="text-sm text-[#059669] hover:text-[#111827] font-medium transition-colors"
+              className="text-sm text-[#0C1E35] hover:text-[#111827] font-medium transition-colors"
             >
               Olvidaste tu contrasena?
             </Link>
@@ -197,7 +197,7 @@ export default function LoginPage() {
           No tienes cuenta?{' '}
           <Link
             href="/signup"
-            className="text-[#059669] hover:text-[#111827] font-semibold transition-colors"
+            className="text-[#0C1E35] hover:text-[#111827] font-semibold transition-colors"
           >
             Crear cuenta
           </Link>

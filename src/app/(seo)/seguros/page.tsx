@@ -111,7 +111,7 @@ export default function InsuranceHubPage() {
                   )}
 
                   {/* CTA */}
-                  <div className="flex items-center gap-2 text-sm font-semibold text-[#059669]">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[#0C1E35]">
                     Ver Opciones
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
@@ -132,7 +132,7 @@ export default function InsuranceHubPage() {
             </h2>
             <Link
               href="/seguros/aseguradoras"
-              className="text-sm font-semibold text-[#059669] hover:text-[#111827]"
+              className="text-sm font-semibold text-[#0C1E35] hover:text-[#111827]"
             >
               Ver todas →
             </Link>
@@ -148,7 +148,7 @@ export default function InsuranceHubPage() {
                     {company.name}
                   </h3>
                   <div className="mb-2 flex items-center gap-2">
-                    <span className="text-2xl font-bold text-[#059669]">
+                    <span className="text-2xl font-bold text-[#0C1E35]">
                       {company.ratings.overall.toFixed(1)}
                     </span>
                     <span className="text-sm text-[#6b7280]">
@@ -158,7 +158,7 @@ export default function InsuranceHubPage() {
                   <p className="mb-4 text-sm text-[#6b7280] line-clamp-2">
                     {company.description}
                   </p>
-                  <div className="flex items-center gap-2 text-sm font-semibold text-[#059669]">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[#0C1E35]">
                     Ver Perfil
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
