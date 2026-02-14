@@ -120,7 +120,7 @@ export default function BlogPage() {
                 </div>
 
                 {/* Title */}
-                <h2 className="font-heading text-lg font-semibold leading-snug text-[#111827] transition-colors group-hover:text-[#059669]">
+                <h2 className="font-heading text-lg font-semibold leading-snug text-[#111827] transition-colors group-hover:text-[#6b7280]">
                   {post.title}
                 </h2>
 
@@ -132,7 +132,7 @@ export default function BlogPage() {
                 {/* Footer */}
                 <div className="mt-4 flex items-center justify-between border-t border-[#e5e7eb] pt-4">
                   <span className="text-xs text-[#9ca3af]">{post.date}</span>
-                  <span className="inline-flex items-center gap-1 text-sm font-medium text-[#059669] transition-transform group-hover:translate-x-0.5">
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-[#111827] transition-transform group-hover:translate-x-0.5">
                     Leer más
                     <ArrowRight className="h-3.5 w-3.5" />
                   </span>

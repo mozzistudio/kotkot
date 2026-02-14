@@ -128,7 +128,6 @@ const howItWorks = [
 
 export default function ParaBrokersPage() {
   const breadcrumbItems = [
-    { name: 'Inicio', url: '/' },
     { name: 'Para Brokers', url: '/para-brokers' },
   ];
 

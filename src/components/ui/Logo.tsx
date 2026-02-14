@@ -6,9 +6,9 @@ interface LogoProps {
 }
 
 const sizeMap = {
-  sm: { container: 'h-8 w-8', text: 'text-lg' },
-  md: { container: 'h-10 w-10', text: 'text-xl' },
-  lg: { container: 'h-12 w-12', text: 'text-2xl' },
+  sm: { container: 'h-8 w-8', text: 'text-lg', icon: 'h-[18px] w-[18px]' },
+  md: { container: 'h-10 w-10', text: 'text-xl', icon: 'h-[22px] w-[22px]' },
+  lg: { container: 'h-12 w-12', text: 'text-2xl', icon: 'h-[26px] w-[26px]' },
 };
 
 export function Logo({ className = '', size = 'md' }: LogoProps) {
@@ -16,53 +16,41 @@ export function Logo({ className = '', size = 'md' }: LogoProps) {
 
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
-      {/* Modern Logo Icon */}
+      {/* Logo Mark */}
       <div
-        className={`${sizes.container} relative flex items-center justify-center rounded-xl bg-[#CAFF04] shadow-lg shadow-[rgba(202,255,4,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[rgba(202,255,4,0.5)]`}
+        className={`${sizes.container} relative flex items-center justify-center rounded-[10px] bg-[#CAFF04]`}
       >
-        {/* Abstract "K" Shape - Modern & Creative */}
         <svg
-          viewBox="0 0 24 24"
+          viewBox="0 0 32 32"
           fill="none"
-          className="h-[60%] w-[60%]"
+          className={sizes.icon}
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Main vertical bar */}
+          {/* Stylized "K" lettermark */}
           <path
-            d="M7 4 L7 20"
+            d="M9 6v20"
             stroke="#111827"
-            strokeWidth="2.5"
+            strokeWidth="3"
             strokeLinecap="round"
           />
-          {/* Upper diagonal */}
           <path
-            d="M7 12 L16 5"
+            d="M9 16l10-10"
             stroke="#111827"
-            strokeWidth="2.5"
+            strokeWidth="3"
             strokeLinecap="round"
           />
-          {/* Lower diagonal */}
           <path
-            d="M7 12 L16 19"
+            d="M9 16l10 10"
             stroke="#111827"
-            strokeWidth="2.5"
+            strokeWidth="3"
             strokeLinecap="round"
-          />
-          {/* Shield accent - top right corner */}
-          <path
-            d="M17 4 L17 8 L19 7 L19 4 Z"
-            fill="#111827"
-            opacity="0.8"
           />
         </svg>
-
-        {/* Subtle glow effect */}
-        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#111827]/5 to-transparent" />
       </div>
 
-      {/* Brand Name */}
-      <span className={`font-heading ${sizes.text} font-bold tracking-tight text-slate-900`}>
-        kotkot<span className="text-[#111827]">.ai</span>
+      {/* Wordmark */}
+      <span className={`font-heading ${sizes.text} font-bold tracking-tight text-[#111827]`}>
+        kotkot<span className="font-normal text-[#9ca3af]">.ai</span>
       </span>
     </div>
   );
@@ -73,39 +61,33 @@ export function LogoIcon({ className = '', size = 'md' }: LogoProps) {
 
   return (
     <div
-      className={`${sizes.container} ${className} relative flex items-center justify-center rounded-xl bg-[#CAFF04] shadow-lg shadow-[rgba(202,255,4,0.3)]`}
+      className={`${sizes.container} ${className} relative flex items-center justify-center rounded-[10px] bg-[#CAFF04]`}
     >
       <svg
-        viewBox="0 0 24 24"
+        viewBox="0 0 32 32"
         fill="none"
-        className="h-[60%] w-[60%]"
+        className={sizes.icon}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M7 4 L7 20"
+          d="M9 6v20"
           stroke="#111827"
-          strokeWidth="2.5"
+          strokeWidth="3"
           strokeLinecap="round"
         />
         <path
-          d="M7 12 L16 5"
+          d="M9 16l10-10"
           stroke="#111827"
-          strokeWidth="2.5"
+          strokeWidth="3"
           strokeLinecap="round"
         />
         <path
-          d="M7 12 L16 19"
+          d="M9 16l10 10"
           stroke="#111827"
-          strokeWidth="2.5"
+          strokeWidth="3"
           strokeLinecap="round"
-        />
-        <path
-          d="M17 4 L17 8 L19 7 L19 4 Z"
-          fill="#111827"
-          opacity="0.8"
         />
       </svg>
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#111827]/5 to-transparent" />
     </div>
   );
 }

@@ -390,7 +390,7 @@ export default function TerminosPage() {
                   Email:{' '}
                   <a
                     href="mailto:legal@kotkot.ai"
-                    className="text-[#059669] hover:text-[#059669]"
+                    className="text-[#111827] font-medium hover:text-[#6b7280]"
                   >
                     legal@kotkot.ai
                   </a>

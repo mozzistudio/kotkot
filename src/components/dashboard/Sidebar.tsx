@@ -44,11 +44,15 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       {/* Logo */}
       <div className="flex items-center justify-between px-6 py-5 border-b border-[#e5e7eb]">
         <Link href="/dashboard" className="flex items-center gap-2.5">
-          <div className="flex items-center justify-center w-9 h-9 rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-            <ShieldCheck className="w-5 h-5 text-[#111827]" />
+          <div className="flex items-center justify-center w-9 h-9 rounded-[10px] bg-[#CAFF04]">
+            <svg viewBox="0 0 32 32" fill="none" className="h-[18px] w-[18px]">
+              <path d="M9 6v20" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
+              <path d="M9 16l10-10" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
+              <path d="M9 16l10 10" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
+            </svg>
           </div>
           <span className="font-heading text-lg font-bold text-[#111827]">
-            kotkot<span className="text-[#111827]">.ai</span>
+            kotkot<span className="font-normal text-[#9ca3af]">.ai</span>
           </span>
         </Link>
 
