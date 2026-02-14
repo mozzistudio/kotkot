@@ -46,7 +46,7 @@ export function Hero() {
         >
           {/* Tag line */}
           <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
+            <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#111827]">
               Insurtech Partner
               <span className="inline-block h-px w-10 bg-[#CAFF04]" />
             </span>
@@ -63,7 +63,7 @@ export function Hero() {
             <span className="mt-1 block text-4xl font-bold sm:text-5xl md:text-7xl">
               <span className="mr-2">&#10024;</span>INTELIGENTE EN
             </span>
-            <span className="mt-1 block text-4xl font-bold text-[#059669] sm:text-5xl md:text-7xl">
+            <span className="mt-1 block text-4xl font-bold text-[#111827] sm:text-5xl md:text-7xl">
               WHATSAPP
             </span>
           </motion.h1>

@@ -126,9 +126,9 @@ export default function ComoFuncionaPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Hero --- */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#111827]">
             Paso a paso
-            <span className="inline-block h-px w-10 bg-[#059669]" />
+            <span className="inline-block h-px w-10 bg-[#111827]" />
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
             Empieza a vender seguros por WhatsApp en{' '}
@@ -164,7 +164,7 @@ export default function ComoFuncionaPage() {
                       <h2 className="font-heading text-2xl font-bold tracking-tight text-[#111827]">
                         {step.title}
                       </h2>
-                      <p className="text-sm font-medium text-[#059669]">
+                      <p className="text-sm font-medium text-[#111827]">
                         {step.subtitle}
                       </p>
                     </div>
@@ -177,7 +177,7 @@ export default function ComoFuncionaPage() {
                   <ul className="mt-6 space-y-3">
                     {step.details.map((detail) => (
                       <li key={detail} className="flex items-start gap-3">
-                        <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-[#059669]" />
+                        <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-[#111827]" />
                         <span className="text-sm leading-relaxed text-slate-700">
                           {detail}
                         </span>
@@ -225,7 +225,7 @@ export default function ComoFuncionaPage() {
             {faqs.map((faq) => (
               <div key={faq.question} className="bg-white border border-[#e5e7eb] rounded-[16px] p-6">
                 <div className="flex items-start gap-3">
-                  <ChevronDown className="mt-0.5 h-5 w-5 shrink-0 text-[#059669]" />
+                  <ChevronDown className="mt-0.5 h-5 w-5 shrink-0 text-[#111827]" />
                   <div>
                     <h3 className="font-heading text-base font-semibold text-[#111827]">
                       {faq.question}

@@ -84,9 +84,9 @@ export default function NosotrosPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Page Header --- */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#111827]">
             Nuestra historia
-            <span className="inline-block h-px w-10 bg-[#059669]" />
+            <span className="inline-block h-px w-10 bg-[#111827]" />
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
             Sobre Kotkot
@@ -101,9 +101,9 @@ export default function NosotrosPage() {
         <section className="mb-24">
           <div className="bg-white border border-[#e5e7eb] rounded-[16px] mx-auto max-w-4xl p-10 text-center sm:p-14">
             <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)]">
-              <Target className="h-7 w-7 text-[#059669]" />
+              <Target className="h-7 w-7 text-[#111827]" />
             </div>
-            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#059669]">
+            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#111827]">
               Nuestra Misión
             </h2>
             <p className="mt-4 font-heading text-2xl font-bold leading-snug text-[#111827] sm:text-3xl">
@@ -123,7 +123,7 @@ export default function NosotrosPage() {
         <section className="mb-24">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#059669]">
+              <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#111827]">
                 Nuestra Visión
               </h2>
               <h3 className="mt-3 font-heading text-2xl font-bold text-[#111827] sm:text-3xl">
@@ -157,7 +157,7 @@ export default function NosotrosPage() {
         {/* --- Values --- */}
         <section className="mb-24">
           <div className="mb-12 text-center">
-            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#059669]">
+            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#111827]">
               Nuestros Valores
             </h2>
             <h3 className="mt-3 font-heading text-2xl font-bold text-[#111827] sm:text-3xl">
@@ -170,7 +170,7 @@ export default function NosotrosPage() {
               <div key={value.title} className="bg-white border border-[#e5e7eb] rounded-[16px] p-7">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
                   <value.icon
-                    className="h-6 w-6 text-[#059669]"
+                    className="h-6 w-6 text-[#111827]"
                     strokeWidth={1.8}
                   />
                 </div>
@@ -188,7 +188,7 @@ export default function NosotrosPage() {
         {/* --- Team --- */}
         <section className="mb-24">
           <div className="mb-12 text-center">
-            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#059669]">
+            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#111827]">
               Nuestro Equipo
             </h2>
             <h3 className="mt-3 font-heading text-2xl font-bold text-[#111827] sm:text-3xl">
@@ -204,12 +204,12 @@ export default function NosotrosPage() {
               >
                 {/* Avatar placeholder */}
                 <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                  <Users className="h-8 w-8 text-[#059669]" />
+                  <Users className="h-8 w-8 text-[#111827]" />
                 </div>
                 <h4 className="font-heading text-base font-semibold text-[#111827]">
                   {member.name}
                 </h4>
-                <p className="text-sm font-medium text-[#059669]">
+                <p className="text-sm font-medium text-[#111827]">
                   {member.role}
                 </p>
                 <p className="mt-2 text-xs leading-relaxed text-[#9ca3af]">
@@ -223,7 +223,7 @@ export default function NosotrosPage() {
         {/* --- Countries --- */}
         <section className="mb-24">
           <div className="mb-12 text-center">
-            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#059669]">
+            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#111827]">
               Presencia Regional
             </h2>
             <h3 className="mt-3 font-heading text-2xl font-bold text-[#111827] sm:text-3xl">
@@ -241,7 +241,7 @@ export default function NosotrosPage() {
                 <p className="mt-2 text-sm font-semibold text-[#111827]">
                   {country.name}
                 </p>
-                <span className="mt-1 inline-flex items-center rounded-[12px] bg-[rgba(202,255,4,0.15)] px-2 py-0.5 text-[10px] font-medium text-[#059669]">
+                <span className="mt-1 inline-flex items-center rounded-[12px] bg-[rgba(202,255,4,0.15)] px-2 py-0.5 text-[10px] font-medium text-[#111827]">
                   {country.status}
                 </span>
               </div>

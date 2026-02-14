@@ -123,9 +123,9 @@ export default function ApiDocsPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Page Header --- */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#111827]">
             Para desarrolladores
-            <span className="inline-block h-px w-10 bg-[#059669]" />
+            <span className="inline-block h-px w-10 bg-[#111827]" />
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
             Documentación API
@@ -148,7 +148,7 @@ export default function ApiDocsPage() {
             {features.map((feature) => (
               <div key={feature.title} className="bg-white border border-[#e5e7eb] rounded-[16px] p-6">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                  <feature.icon className="h-6 w-6 text-[#059669]" strokeWidth={1.8} />
+                  <feature.icon className="h-6 w-6 text-[#111827]" strokeWidth={1.8} />
                 </div>
                 <h3 className="font-heading text-base font-semibold text-[#111827]">
                   {feature.title}
@@ -166,7 +166,7 @@ export default function ApiDocsPage() {
           <div className="mb-8">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                <Code className="h-5 w-5 text-[#059669]" />
+                <Code className="h-5 w-5 text-[#111827]" />
               </div>
               <h2 className="font-heading text-2xl font-bold text-[#111827]">
                 Quick Start
@@ -191,7 +191,7 @@ export default function ApiDocsPage() {
           </div>
 
           <div className="mt-6 flex items-start gap-3 rounded-[16px] border border-[rgba(202,255,4,0.40)] bg-[rgba(202,255,4,0.15)] p-4">
-            <Lock className="mt-0.5 h-5 w-5 shrink-0 text-[#059669]" />
+            <Lock className="mt-0.5 h-5 w-5 shrink-0 text-[#111827]" />
             <div>
               <p className="text-sm font-semibold text-[#111827]">
                 Autenticación Requerida
@@ -209,7 +209,7 @@ export default function ApiDocsPage() {
           <div className="mb-12">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                <BookOpen className="h-5 w-5 text-[#059669]" />
+                <BookOpen className="h-5 w-5 text-[#111827]" />
               </div>
               <h2 className="font-heading text-2xl font-bold text-[#111827]">
                 Endpoints Disponibles
@@ -223,7 +223,7 @@ export default function ApiDocsPage() {
                 {/* Category header */}
                 <div className="mb-6 flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                    <category.icon className="h-6 w-6 text-[#059669]" strokeWidth={1.8} />
+                    <category.icon className="h-6 w-6 text-[#111827]" strokeWidth={1.8} />
                   </div>
                   <div>
                     <h3 className="font-heading text-lg font-bold text-[#111827]">

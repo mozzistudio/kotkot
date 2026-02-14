@@ -62,10 +62,10 @@ export default function InsuranceHubPage() {
 
         {/* Hero Section */}
         <section className="mb-16 text-center">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          <h1 className="mb-6 text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
             Compara Seguros en Panamá
           </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-600 sm:text-xl">
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-[#6b7280] sm:text-xl">
             Encuentra el seguro perfecto para ti comparando coberturas, precios
             y beneficios de las principales aseguradoras de Panamá.
           </p>
@@ -81,7 +81,7 @@ export default function InsuranceHubPage() {
 
         {/* Product Categories */}
         <section className="mb-16">
-          <h2 className="mb-8 text-3xl font-bold text-gray-900">
+          <h2 className="mb-8 text-3xl font-bold text-[#111827]">
             Tipos de Seguros
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -94,12 +94,12 @@ export default function InsuranceHubPage() {
                   )}
 
                   {/* Name */}
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">
+                  <h3 className="mb-2 text-xl font-bold text-[#111827]">
                     {product.name}
                   </h3>
 
                   {/* Description */}
-                  <p className="mb-4 text-sm text-gray-600 line-clamp-2">
+                  <p className="mb-4 text-sm text-[#6b7280] line-clamp-2">
                     {product.shortDescription}
                   </p>
 
@@ -127,12 +127,12 @@ export default function InsuranceHubPage() {
         {/* Top Companies */}
         <section className="mb-16">
           <div className="mb-8 flex items-end justify-between">
-            <h2 className="text-3xl font-bold text-gray-900">
+            <h2 className="text-3xl font-bold text-[#111827]">
               Mejores Aseguradoras
             </h2>
             <Link
               href="/seguros/aseguradoras"
-              className="text-sm font-semibold text-[#059669] hover:text-[#047857]"
+              className="text-sm font-semibold text-[#059669] hover:text-[#111827]"
             >
               Ver todas →
             </Link>
@@ -144,18 +144,18 @@ export default function InsuranceHubPage() {
                 href={`/seguros/aseguradoras/${company.slug}`}
               >
                 <GlassCard className="group relative h-full overflow-hidden p-6 transition-all hover:shadow-xl hover:scale-[1.02]">
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">
+                  <h3 className="mb-2 text-xl font-bold text-[#111827]">
                     {company.name}
                   </h3>
                   <div className="mb-2 flex items-center gap-2">
                     <span className="text-2xl font-bold text-[#059669]">
                       {company.ratings.overall.toFixed(1)}
                     </span>
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-[#6b7280]">
                       / 5.0 ({company.ratings.reviewCount} reseñas)
                     </span>
                   </div>
-                  <p className="mb-4 text-sm text-gray-600 line-clamp-2">
+                  <p className="mb-4 text-sm text-[#6b7280] line-clamp-2">
                     {company.description}
                   </p>
                   <div className="flex items-center gap-2 text-sm font-semibold text-[#059669]">
@@ -182,7 +182,7 @@ export default function InsuranceHubPage() {
             href="https://wa.me/50760000000?text=Hola%2C%20necesito%20ayuda%20para%20elegir%20un%20seguro"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-gray-50 transition-colors shadow-lg"
+            className="inline-flex items-center rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-[#1f2937] transition-colors shadow-lg"
           >
             Hablar con un Asesor
           </a>

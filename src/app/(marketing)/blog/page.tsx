@@ -76,9 +76,9 @@ export default function BlogPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Page Header --- */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#111827]">
             Recursos
-            <span className="inline-block h-px w-10 bg-[#059669]" />
+            <span className="inline-block h-px w-10 bg-[#111827]" />
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
             Blog Kotkot
@@ -98,7 +98,7 @@ export default function BlogPage() {
               {/* Image placeholder */}
               <div className="flex h-48 items-center justify-center bg-gradient-to-br from-[#f9fafb] to-[#f3f4f6]">
                 <div className="flex h-16 w-16 items-center justify-center rounded-[16px] bg-white/80 shadow-sm">
-                  <span className="font-heading text-2xl font-bold text-[#059669]">
+                  <span className="font-heading text-2xl font-bold text-[#111827]">
                     CF
                   </span>
                 </div>
@@ -156,7 +156,7 @@ export default function BlogPage() {
               <input
                 type="email"
                 placeholder="tu@email.com"
-                className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-5 py-3 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[rgba(5,150,105,0.20)] sm:max-w-xs"
+                className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-5 py-3 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:outline-none focus:ring-2 focus:ring-[rgba(202,255,4,0.20)] sm:max-w-xs"
               />
               <button className="inline-flex items-center justify-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-6 py-3 text-sm font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600]">
                 Suscribirse

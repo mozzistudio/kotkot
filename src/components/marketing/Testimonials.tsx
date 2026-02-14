@@ -106,7 +106,7 @@ export function Testimonials() {
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl lg:text-5xl">
             Lo que dicen nuestros{' '}
-            <span className="text-[#059669]">corredores</span>
+            <span className="text-[#111827]">corredores</span>
           </h2>
         </motion.div>
 

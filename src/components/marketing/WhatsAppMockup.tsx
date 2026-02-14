@@ -171,7 +171,7 @@ function TypingIndicator() {
           {[0, 1, 2].map((i) => (
             <motion.span
               key={i}
-              className="block h-[6px] w-[6px] rounded-full bg-gray-400"
+              className="block h-[6px] w-[6px] rounded-full bg-[#9ca3af]"
               animate={{ y: [0, -5, 0] }}
               transition={{
                 duration: 0.55,
@@ -289,7 +289,7 @@ function ChatBubble({ message }: { message: ChatMessage }) {
           {message.isQuoteCard ? (
             <QuoteCard text={message.text} />
           ) : (
-            <p className="whitespace-pre-wrap text-[11.5px] leading-[1.45] text-gray-900">
+            <p className="whitespace-pre-wrap text-[11.5px] leading-[1.45] text-[#111827]">
               {message.text}
             </p>
           )}
@@ -315,7 +315,7 @@ function ChatBubble({ message }: { message: ChatMessage }) {
 
           {/* Timestamp */}
           <div className={`flex items-center gap-0.5 ${isBot ? 'justify-end' : 'justify-end'} mt-0.5`}>
-            <span className="text-[9px] text-gray-400">{message.time}</span>
+            <span className="text-[9px] text-[#9ca3af]">{message.time}</span>
             {!isBot && (
               /* Double-check marks */
               <svg width="13" height="8" viewBox="0 0 16 10" className="ml-0.5 text-blue-400" fill="currentColor">
@@ -501,7 +501,7 @@ export function WhatsAppMockup() {
               <div className="flex flex-col gap-[6px] px-1.5 py-2">
                 {/* Date chip */}
                 <div className="flex justify-center py-1">
-                  <span className="rounded-lg bg-white/80 px-3 py-0.5 text-[10px] font-medium text-gray-500 shadow-sm">
+                  <span className="rounded-lg bg-white/80 px-3 py-0.5 text-[10px] font-medium text-[#6b7280] shadow-sm">
                     HOY
                   </span>
                 </div>
@@ -536,8 +536,8 @@ export function WhatsAppMockup() {
                 <line x1="9" y1="9" x2="9.01" y2="9" />
                 <line x1="15" y1="9" x2="15.01" y2="9" />
               </svg>
-              <span className="flex-1 text-[11px] text-gray-400">Mensaje</span>
-              <Paperclip className="h-3.5 w-3.5 shrink-0 rotate-45 text-gray-400" />
+              <span className="flex-1 text-[11px] text-[#9ca3af]">Mensaje</span>
+              <Paperclip className="h-3.5 w-3.5 shrink-0 rotate-45 text-[#9ca3af]" />
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8696A0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
                 <circle cx="8.5" cy="8.5" r="1.5" />

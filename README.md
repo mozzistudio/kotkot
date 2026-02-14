@@ -28,8 +28,8 @@ Bot de seguros con IA por WhatsApp para brokers en Latinoamérica. Cotiza, emite
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/mozzistudio/cotifacil.git
-cd cotifacil
+git clone https://github.com/mozzistudio/kotkot.git
+cd kotkot
 
 # Instalar dependencias
 npm install
@@ -61,7 +61,7 @@ Ver `.env.local.example` para la lista completa de variables necesarias.
 
 ## 🚀 Despliegue en Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mozzistudio/cotifacil)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mozzistudio/kotkot)
 
 1. Haz clic en el botón de arriba
 2. Configura las variables de entorno

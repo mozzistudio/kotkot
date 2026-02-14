@@ -68,7 +68,7 @@ export function Navbar() {
               <Shield className="h-5 w-5 text-[#111827]" strokeWidth={2.5} />
             </div>
             <span className="font-heading text-xl font-bold tracking-tight text-[#111827]">
-              kotkot<span className="text-[#059669]">.ai</span>
+              kotkot<span className="text-[#111827]">.ai</span>
             </span>
           </a>
 
@@ -239,7 +239,7 @@ export function Navbar() {
                   closed: { y: 20, opacity: 0 },
                 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#059669] transition-colors hover:text-[#047857]"
+                className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#059669] transition-colors hover:text-[#111827]"
               >
                 Seguros
               </motion.a>
@@ -251,7 +251,7 @@ export function Navbar() {
                   closed: { y: 20, opacity: 0 },
                 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#059669] transition-colors hover:text-[#047857]"
+                className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#059669] transition-colors hover:text-[#111827]"
               >
                 Préstamos
               </motion.a>

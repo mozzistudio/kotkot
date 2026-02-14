@@ -18,7 +18,7 @@ export function CTASection() {
           <div>
             <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl lg:text-5xl">
               ¿Listo para automatizar{' '}
-              <span className="text-[#059669]">tu correduría</span>?
+              <span className="text-[#111827]">tu correduría</span>?
             </h2>
 
             <p className="mx-auto mt-4 max-w-xl text-lg text-[#6b7280]">

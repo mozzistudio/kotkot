@@ -257,7 +257,7 @@ export function SEONavbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex items-center justify-center rounded-[12px] p-2 text-[#111827] hover:bg-gray-50 lg:hidden"
+            className="flex items-center justify-center rounded-[12px] p-2 text-[#111827] hover:bg-[#f9fafb] lg:hidden"
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>

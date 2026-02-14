@@ -91,7 +91,7 @@ export function Features() {
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl lg:text-5xl">
             Todo lo que tu correduría{' '}
-            <span className="text-[#059669]">necesita</span>
+            <span className="text-[#111827]">necesita</span>
           </h2>
           <p className="mt-4 text-lg text-[#6b7280]">
             Una plataforma completa para automatizar tu negocio de seguros en
