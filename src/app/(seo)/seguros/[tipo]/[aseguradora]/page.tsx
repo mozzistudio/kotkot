@@ -221,11 +221,11 @@ export default async function InsuranceCrossPage({
                   varía según tus necesidades:
                 </p>
                 <div className="flex items-baseline gap-4">
-                  <span className="text-3xl font-bold text-[#059669]">
+                  <span className="text-3xl font-bold text-[#0C1E35]">
                     {product.priceRanges.min}
                   </span>
                   <span className="text-xl text-[#6b7280]">a</span>
-                  <span className="text-3xl font-bold text-[#059669]">
+                  <span className="text-3xl font-bold text-[#0C1E35]">
                     {product.priceRanges.max}
                   </span>
                 </div>

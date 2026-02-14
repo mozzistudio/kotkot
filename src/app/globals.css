@@ -49,12 +49,12 @@
   --color-text-primary: #111827;
   --color-text-secondary: #6b7280;
   --color-text-tertiary: #9ca3af;
-  --color-text-link: #059669;
+  --color-text-link: #0C1E35;
   --color-text-on-accent: #111827;
 
   /* --- Charts & Data --------------------------------------- */
   --color-chart-line: #10b981;
-  --color-chart-dot: #059669;
+  --color-chart-dot: #0C1E35;
   --color-chart-grid: #e5e7eb;
   --color-chart-fill: rgba(16, 185, 129, 0.08);
 
@@ -161,12 +161,12 @@
   --text-primary: #111827;
   --text-secondary: #6b7280;
   --text-tertiary: #9ca3af;
-  --text-link: #059669;
+  --text-link: #0C1E35;
   --text-on-accent: #111827;
 
   /* --- Charts & Data -------------------------------------- */
   --chart-line: #10b981;
-  --chart-dot: #059669;
+  --chart-dot: #0C1E35;
   --chart-grid: #e5e7eb;
   --chart-fill: rgba(16, 185, 129, 0.08);
 
@@ -603,7 +603,7 @@ body {
 
 .badge-success {
   background: rgba(16, 185, 129, 0.15);
-  color: #059669;
+  color: #0C1E35;
 }
 
 .badge-error {

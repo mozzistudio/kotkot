@@ -97,7 +97,7 @@ const insuranceDistribution: InsuranceTypeDist[] = [
   { type: 'Salud', percentage: 25, color: 'bg-rose-500' },
   { type: 'Hogar', percentage: 15, color: 'bg-amber-500' },
   { type: 'Viaje', percentage: 10, color: 'bg-purple-500' },
-  { type: 'Negocio', percentage: 5, color: 'bg-[#059669]' },
+  { type: 'Negocio', percentage: 5, color: 'bg-[#0C1E35]' },
 ];
 
 const topInsurers: TopInsurer[] = [
@@ -112,7 +112,7 @@ const funnelSteps: FunnelStep[] = [
   { label: 'Conversaciones', value: 682, percentage: 100, color: 'from-slate-500 to-slate-400' },
   { label: 'Cotizaciones', value: 412, percentage: 60, color: 'from-blue-500 to-blue-400' },
   { label: 'Seleccion', value: 213, percentage: 31, color: 'from-amber-500 to-amber-400' },
-  { label: 'Pago', value: 156, percentage: 23, color: 'from-[#10b981] to-[#059669]' },
+  { label: 'Pago', value: 156, percentage: 23, color: 'from-[#10b981] to-[#0C1E35]' },
 ];
 
 // ---------------------------------------------------------------------------

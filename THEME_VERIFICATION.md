@@ -127,7 +127,7 @@ The entire Kotkot project has been successfully transformed to the **Lime Light 
 - [x] Text primary `#111827` for headings
 - [x] Text secondary `#6b7280` for body
 - [x] Text tertiary `#9ca3af` for meta
-- [x] Links `#059669` emerald green
+- [x] Links `#0C1E35` emerald green
 - [x] Success `#10b981` chart green
 - [x] Warning `#f59e0b` amber
 - [x] Error `#ef4444` red

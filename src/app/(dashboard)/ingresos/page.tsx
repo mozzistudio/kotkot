@@ -84,25 +84,25 @@ const dateRanges: { key: DateRange; label: string }[] = [
 const kpiByRange: Record<DateRange, KPI[]> = {
   '7d': [
     { label: 'Ingresos Totales', value: '$3,120', change: '+8.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[#0C1E35]" /> },
-    { label: 'Comisiones Ganadas', value: '$936', change: '+6.1%', changeType: 'up', icon: <Award className="h-5 w-5 text-[#059669]" /> },
+    { label: 'Comisiones Ganadas', value: '$936', change: '+6.1%', changeType: 'up', icon: <Award className="h-5 w-5 text-[#0C1E35]" /> },
     { label: 'Polizas Activas', value: '142', change: '+3', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
     { label: 'Ticket Promedio', value: '$72.10', change: '-2.3%', changeType: 'down', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
   ],
   '30d': [
     { label: 'Ingresos Totales', value: '$12,450', change: '+15.3%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[#0C1E35]" /> },
-    { label: 'Comisiones Ganadas', value: '$3,735', change: '+12.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[#059669]" /> },
+    { label: 'Comisiones Ganadas', value: '$3,735', change: '+12.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[#0C1E35]" /> },
     { label: 'Polizas Activas', value: '156', change: '+14', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
     { label: 'Ticket Promedio', value: '$79.80', change: '+4.1%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
   ],
   '90d': [
     { label: 'Ingresos Totales', value: '$38,920', change: '+22.7%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[#0C1E35]" /> },
-    { label: 'Comisiones Ganadas', value: '$11,676', change: '+19.4%', changeType: 'up', icon: <Award className="h-5 w-5 text-[#059669]" /> },
+    { label: 'Comisiones Ganadas', value: '$11,676', change: '+19.4%', changeType: 'up', icon: <Award className="h-5 w-5 text-[#0C1E35]" /> },
     { label: 'Polizas Activas', value: '156', change: '+38', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
     { label: 'Ticket Promedio', value: '$83.50', change: '+7.6%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
   ],
   '12m': [
     { label: 'Ingresos Totales', value: '$148,600', change: '+45.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[#0C1E35]" /> },
-    { label: 'Comisiones Ganadas', value: '$44,580', change: '+41.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[#059669]" /> },
+    { label: 'Comisiones Ganadas', value: '$44,580', change: '+41.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[#0C1E35]" /> },
     { label: 'Polizas Activas', value: '156', change: '+89', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
     { label: 'Ticket Promedio', value: '$86.20', change: '+11.3%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
   ],
@@ -150,7 +150,7 @@ const insuranceTypeRevenue: InsuranceTypeRevenue[] = [
   { type: 'Salud', percentage: 25, amount: '$3,113', color: 'bg-rose-500' },
   { type: 'Hogar', percentage: 15, amount: '$1,868', color: 'bg-amber-500' },
   { type: 'Viaje', percentage: 10, amount: '$1,245', color: 'bg-purple-500' },
-  { type: 'Negocio', percentage: 5, amount: '$623', color: 'bg-[#059669]' },
+  { type: 'Negocio', percentage: 5, amount: '$623', color: 'bg-[#0C1E35]' },
 ];
 
 const insurerRevenue: InsurerRevenue[] = [

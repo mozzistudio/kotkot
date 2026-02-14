@@ -135,7 +135,7 @@ export default async function InsuranceCompanyProfilePage({
                     <p className="mb-4 text-sm text-[#6b7280] line-clamp-2">
                       {product.shortDescription}
                     </p>
-                    <div className="flex items-center gap-2 text-sm font-semibold text-[#059669]">
+                    <div className="flex items-center gap-2 text-sm font-semibold text-[#0C1E35]">
                       Ver Detalles
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </div>

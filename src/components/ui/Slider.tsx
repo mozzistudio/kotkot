@@ -42,7 +42,7 @@ export function Slider({
             </label>
           )}
           {showValue && (
-            <span className="text-sm font-semibold text-[#059669]">
+            <span className="text-sm font-semibold text-[#0C1E35]">
               {value}
             </span>
           )}
