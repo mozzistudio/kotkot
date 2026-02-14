@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Play } from 'lucide-react';
 import WhatsAppMockup from './WhatsAppMockup';
 
 const containerVariants = {
@@ -44,85 +44,101 @@ export function Hero() {
           animate="visible"
           className="flex flex-col items-start lg:col-span-6"
         >
-          {/* Tag line */}
+          {/* Badge */}
           <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#111827]">
-              Insurtech Partner
-              <span className="inline-block h-px w-10 bg-[#CAFF04]" />
+            <span className="inline-flex items-center gap-2 rounded-full bg-[rgba(202,255,4,0.15)] border border-[rgba(202,255,4,0.40)] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#111827]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#CAFF04]" />
+              Insurtech para corredores
             </span>
           </motion.div>
 
-          {/* Main headline — mixed weights */}
+          {/* Main headline */}
           <motion.h1
             variants={itemVariants}
-            className="mt-6 font-heading leading-[1.08] tracking-tight text-[#111827]"
+            className="mt-8 font-heading leading-[1.05] tracking-tight"
           >
-            <span className="block text-4xl font-light sm:text-5xl md:text-7xl">
-              TU AGENTE DE SEGUROS
+            <span className="block text-[2.5rem] font-medium text-[#6b7280] sm:text-5xl lg:text-[3.5rem]">
+              Tu agente de seguros
             </span>
-            <span className="mt-1 block text-4xl font-bold sm:text-5xl md:text-7xl">
-              <span className="mr-2">&#10024;</span>INTELIGENTE EN
+            <span className="block text-[2.5rem] font-bold text-[#111827] sm:text-5xl lg:text-[3.5rem]">
+              inteligente en
             </span>
-            <span className="mt-1 block text-4xl font-bold text-[#111827] sm:text-5xl md:text-7xl">
-              WHATSAPP
+            <span className="relative inline-block text-[2.5rem] font-bold text-[#111827] sm:text-5xl lg:text-[3.5rem]">
+              WhatsApp
+              <span className="absolute -bottom-1 left-0 h-3 w-full bg-[#CAFF04] -z-10 rounded-sm" />
             </span>
           </motion.h1>
 
           {/* Sub-headline */}
           <motion.p
             variants={itemVariants}
-            className="mt-6 max-w-lg text-lg leading-relaxed text-[#6b7280] sm:text-xl"
+            className="mt-6 max-w-lg text-lg leading-relaxed text-[#6b7280]"
           >
-            Automatiza tu correduría con IA. Cotiza seguros de auto, salud, vida y más en segundos.
-            Compara 10+ aseguradoras y cierra ventas 24/7 por WhatsApp.
+            Automatiza tu correduría con IA. Cotiza, compara 10+ aseguradoras
+            y cierra ventas 24/7 directamente por WhatsApp.
           </motion.p>
 
-          {/* Stats */}
-          <motion.div variants={itemVariants} className="mt-6 flex flex-wrap gap-6">
-            <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                <span className="text-xl">⚡</span>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-[#111827]">2 min</div>
-                <div className="text-xs text-[#6b7280]">Cotización promedio</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                <span className="text-xl">🏢</span>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-[#111827]">10+</div>
-                <div className="text-xs text-[#6b7280]">Aseguradoras</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                <span className="text-xl">🤖</span>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-[#111827]">24/7</div>
-                <div className="text-xs text-[#6b7280]">Automatización</div>
-              </div>
-            </div>
-          </motion.div>
-
           {/* CTA */}
-          <motion.div variants={itemVariants} className="mt-8 flex flex-wrap gap-4">
+          <motion.div variants={itemVariants} className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="/demo"
-              className="group inline-flex items-center gap-2 rounded-[10px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[#111827] transition-all duration-150 hover:bg-[#b8e600]"
+              className="group inline-flex items-center gap-2 rounded-[12px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-7 py-3.5 text-base font-semibold text-[#111827] transition-all duration-150 hover:bg-[#b8e600] hover:shadow-lg hover:shadow-[rgba(202,255,4,0.25)]"
             >
               Solicitar Demo
-              <ArrowUpRight className="h-5 w-5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
               href="/seguros"
-              className="inline-flex items-center gap-2 rounded-[10px] border border-[#e5e7eb] bg-white px-8 py-4 text-lg font-semibold text-[#111827] transition-all duration-150 hover:bg-[#f3f4f6]"
+              className="inline-flex items-center gap-2 rounded-[12px] border border-[#e5e7eb] bg-white px-7 py-3.5 text-base font-semibold text-[#111827] transition-all duration-150 hover:bg-[#f9fafb] hover:border-[#d1d5db]"
             >
+              <Play className="h-4 w-4" />
               Ver Seguros
             </a>
+          </motion.div>
+
+          {/* Social proof */}
+          <motion.div variants={itemVariants} className="mt-10 flex items-center gap-6">
+            <div className="flex -space-x-2">
+              {['JP', 'MR', 'AL', 'SC'].map((initials, i) => (
+                <div
+                  key={i}
+                  className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[#f3f4f6] text-[10px] font-bold text-[#111827]"
+                >
+                  {initials}
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="h-3.5 w-3.5 text-[#CAFF04]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <span className="text-xs text-[#6b7280]">
+                Usado por <span className="font-semibold text-[#111827]">500+</span> corredores
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Stats row */}
+          <motion.div
+            variants={itemVariants}
+            className="mt-8 flex flex-wrap gap-8 border-t border-[#e5e7eb] pt-8"
+          >
+            <div>
+              <div className="text-2xl font-bold tracking-tight text-[#111827]">2 min</div>
+              <div className="text-xs text-[#9ca3af]">Cotización promedio</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold tracking-tight text-[#111827]">10+</div>
+              <div className="text-xs text-[#9ca3af]">Aseguradoras</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold tracking-tight text-[#111827]">24/7</div>
+              <div className="text-xs text-[#9ca3af]">Automatización</div>
+            </div>
           </motion.div>
         </motion.div>
 

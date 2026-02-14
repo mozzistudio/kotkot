@@ -220,7 +220,7 @@ export default function PoliticaPrivacidadPage() {
                 Para ejercer cualquiera de estos derechos, contáctanos en{' '}
                 <a
                   href="mailto:privacidad@kotkot.ai"
-                  className="font-medium text-[#059669] hover:text-[#059669]"
+                  className="font-medium text-[#111827] font-medium hover:text-[#6b7280]"
                 >
                   privacidad@kotkot.ai
                 </a>
@@ -285,7 +285,7 @@ export default function PoliticaPrivacidadPage() {
                   Email:{' '}
                   <a
                     href="mailto:privacidad@kotkot.ai"
-                    className="text-[#059669] hover:text-[#059669]"
+                    className="text-[#111827] font-medium hover:text-[#6b7280]"
                   >
                     privacidad@kotkot.ai
                   </a>

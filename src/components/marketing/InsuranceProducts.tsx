@@ -143,7 +143,7 @@ export function InsuranceProducts() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-heading text-lg font-bold text-[#111827] group-hover:text-[#059669] transition-colors">
+                <h3 className="font-heading text-lg font-bold text-[#111827] group-hover:text-[#6b7280] transition-colors">
                   {product.name}
                 </h3>
 
@@ -166,7 +166,7 @@ export function InsuranceProducts() {
                 </ul>
 
                 {/* CTA */}
-                <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-[#059669] group-hover:gap-2 transition-all">
+                <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-[#111827] group-hover:gap-2 transition-all">
                   Comparar precios
                   <span className="transition-transform group-hover:translate-x-1">
                     →

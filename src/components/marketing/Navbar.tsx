@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Menu, X, Shield, ChevronDown } from 'lucide-react';
+import { ArrowUpRight, Menu, X, ChevronDown } from 'lucide-react';
 
 const loanProducts = [
   { slug: 'personal', name: 'Personal', icon: '💳' },
@@ -64,11 +64,15 @@ export function Navbar() {
         <nav className="flex w-full max-w-7xl mx-auto items-center justify-between px-6 py-4">
           {/* --- Logo --- */}
           <a href="/" className="flex items-center gap-2.5 group">
-            <div className="flex h-9 w-9 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)] transition-transform duration-200 group-hover:scale-105">
-              <Shield className="h-5 w-5 text-[#111827]" strokeWidth={2.5} />
+            <div className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-[#CAFF04] transition-transform duration-200 group-hover:scale-105">
+              <svg viewBox="0 0 32 32" fill="none" className="h-[18px] w-[18px]">
+                <path d="M9 6v20" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
+                <path d="M9 16l10-10" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
+                <path d="M9 16l10 10" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
+              </svg>
             </div>
             <span className="font-heading text-xl font-bold tracking-tight text-[#111827]">
-              kotkot<span className="text-[#111827]">.ai</span>
+              kotkot<span className="font-normal text-[#9ca3af]">.ai</span>
             </span>
           </a>
 
@@ -108,7 +112,7 @@ export function Navbar() {
                       <div className="mt-1 border-t border-[#e5e7eb] pt-1">
                         <a
                           href="/seguros"
-                          className="flex items-center justify-center rounded-[10px] px-3 py-2 text-sm font-semibold text-[#059669] transition-colors hover:bg-[rgba(202,255,4,0.15)]"
+                          className="flex items-center justify-center rounded-[10px] px-3 py-2 text-sm font-semibold text-[#111827] transition-colors hover:bg-[rgba(202,255,4,0.15)]"
                         >
                           Ver todos los seguros →
                         </a>
@@ -153,7 +157,7 @@ export function Navbar() {
                       <div className="mt-1 border-t border-[#e5e7eb] pt-1">
                         <a
                           href="/prestamos"
-                          className="flex items-center justify-center rounded-[10px] px-3 py-2 text-sm font-semibold text-[#059669] transition-colors hover:bg-[rgba(202,255,4,0.15)]"
+                          className="flex items-center justify-center rounded-[10px] px-3 py-2 text-sm font-semibold text-[#111827] transition-colors hover:bg-[rgba(202,255,4,0.15)]"
                         >
                           Ver todos los préstamos →
                         </a>
@@ -239,7 +243,7 @@ export function Navbar() {
                   closed: { y: 20, opacity: 0 },
                 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#059669] transition-colors hover:text-[#111827]"
+                className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#111827] transition-colors hover:text-[#6b7280]"
               >
                 Seguros
               </motion.a>
@@ -251,7 +255,7 @@ export function Navbar() {
                   closed: { y: 20, opacity: 0 },
                 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#059669] transition-colors hover:text-[#111827]"
+                className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#111827] transition-colors hover:text-[#6b7280]"
               >
                 Préstamos
               </motion.a>
@@ -265,7 +269,7 @@ export function Navbar() {
                     closed: { y: 20, opacity: 0 },
                   }}
                   transition={{ duration: 0.3, ease: 'easeOut' }}
-                  className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#111827] transition-colors hover:text-[#059669]"
+                  className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#111827] transition-colors hover:text-[#6b7280]"
                 >
                   {activeLink === link.href && (
                     <span className="h-2 w-2 rounded-full bg-[#CAFF04]" />

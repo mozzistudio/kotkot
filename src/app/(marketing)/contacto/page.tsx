@@ -225,7 +225,7 @@ export default function ContactoPage() {
                     </p>
                     <a
                       href="mailto:support@kotkot.studio"
-                      className="text-sm text-[#059669] transition-colors hover:text-[#111827]"
+                      className="text-sm text-[#111827] font-medium transition-colors hover:text-[#6b7280]"
                     >
                       support@kotkot.studio
                     </a>
@@ -243,7 +243,7 @@ export default function ContactoPage() {
                     </p>
                     <a
                       href="https://wa.me/50760000000"
-                      className="text-sm text-[#059669] transition-colors hover:text-[#111827]"
+                      className="text-sm text-[#111827] font-medium transition-colors hover:text-[#6b7280]"
                     >
                       +507 6000-0000
                     </a>
@@ -261,7 +261,7 @@ export default function ContactoPage() {
                     </p>
                     <a
                       href="tel:+50720000000"
-                      className="text-sm text-[#059669] transition-colors hover:text-[#111827]"
+                      className="text-sm text-[#111827] font-medium transition-colors hover:text-[#6b7280]"
                     >
                       +507 200-0000
                     </a>

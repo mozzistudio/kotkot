@@ -63,7 +63,7 @@ export function Footer() {
             <div className="mt-6 flex items-center gap-4">
               <Link
                 href="/demo"
-                className="text-sm font-semibold text-[#059669] hover:text-[#111827] transition-colors"
+                className="text-sm font-semibold text-[#111827] hover:text-[#6b7280] transition-colors"
               >
                 Solicitar Demo →
               </Link>
@@ -81,7 +81,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-[#6b7280] hover:text-[#059669] transition-colors"
+                      className="text-sm text-[#6b7280] hover:text-[#111827] transition-colors"
                     >
                       {link.label}
                     </Link>

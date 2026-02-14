@@ -141,12 +141,16 @@ export default function SignupPage() {
     >
       <div className="bg-white border border-[#e5e7eb] rounded-2xl p-8 sm:p-10">
         {/* Logo */}
-        <div className="flex items-center justify-center gap-2 mb-6">
-          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#CAFF04]">
-            <ShieldCheck className="w-6 h-6 text-[#111827]" />
+        <div className="flex items-center justify-center gap-2.5 mb-6">
+          <div className="flex items-center justify-center w-10 h-10 rounded-[10px] bg-[#CAFF04]">
+            <svg viewBox="0 0 32 32" fill="none" className="h-[22px] w-[22px]">
+              <path d="M9 6v20" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
+              <path d="M9 16l10-10" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
+              <path d="M9 16l10 10" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
+            </svg>
           </div>
           <span className="font-heading text-2xl font-bold text-[#111827]">
-            kotkot<span className="text-[#111827]">.ai</span>
+            kotkot<span className="font-normal text-[#9ca3af]">.ai</span>
           </span>
         </div>
 
