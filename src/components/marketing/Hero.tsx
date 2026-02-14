@@ -9,8 +9,8 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.15,
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
     },
   },
 };
@@ -30,7 +30,7 @@ const mockupVariants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const, delay: 0.5 },
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const, delay: 0.4 },
   },
 };
 
@@ -49,14 +49,14 @@ const avatars = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden px-4 pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-44 lg:pb-32">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
+    <section className="relative overflow-hidden px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
         {/* --- Left: Text Content --- */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col items-start lg:col-span-6"
+          className="flex flex-col items-start lg:col-span-7"
         >
           {/* Badge */}
           <motion.div variants={itemVariants}>
@@ -72,34 +72,31 @@ export function Hero() {
           {/* Main headline */}
           <motion.h1
             variants={itemVariants}
-            className="mt-8 font-heading leading-[1.08] tracking-tight"
+            className="mt-6 font-heading text-[44px] font-extrabold leading-[1.05] tracking-[-0.03em] text-[var(--dark-blue)] sm:text-[52px] lg:text-[56px] xl:text-[64px]"
           >
-            <span className="block text-[var(--type-display-sm)] font-bold text-[var(--text-primary)] lg:text-[var(--type-display-lg)]">
-              Tu agente de seguros
-            </span>
-            <span className="block text-[var(--type-display-sm)] font-bold text-[var(--text-primary)] lg:text-[var(--type-display-lg)]">
-              inteligente en{' '}
-              <span className="relative inline-block">
-                <span className="relative z-10">WhatsApp</span>
-                <motion.span
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.9 }}
-                  className="absolute -bottom-0.5 left-[-2%] h-[0.32em] w-[104%] origin-left -skew-y-[0.8deg] rounded-[3px] bg-[var(--accent)]"
-                />
-              </span>
+            Tu agente de seguros
+            <br className="hidden sm:block" />
+            {' '}inteligente en{' '}
+            <span className="relative inline-block whitespace-nowrap">
+              <span className="relative z-10">WhatsApp</span>
+              <motion.span
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.7 }}
+                className="absolute bottom-[0.06em] left-[-3%] h-[0.4em] w-[106%] origin-left -skew-y-[1deg] rounded-[4px] bg-[var(--accent)]"
+              />
             </span>
           </motion.h1>
 
           {/* Sub-headline */}
           <motion.p
             variants={itemVariants}
-            className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--text-secondary)]"
+            className="mt-5 max-w-xl text-[18px] leading-relaxed text-[var(--text-secondary)] sm:text-xl"
           >
             Automatiza tu correduría con IA. Cotiza, compara{' '}
-            <span className="font-semibold text-[var(--text-primary)]">10+ aseguradoras</span>{' '}
+            <span className="font-semibold text-[var(--dark-blue)]">10+ aseguradoras</span>{' '}
             y cierra ventas{' '}
-            <span className="font-semibold text-[var(--text-primary)]">24/7</span>{' '}
+            <span className="font-semibold text-[var(--dark-blue)]">24/7</span>{' '}
             directamente por WhatsApp.
           </motion.p>
 
@@ -125,7 +122,7 @@ export function Hero() {
           </motion.div>
 
           {/* Social proof */}
-          <motion.div variants={itemVariants} className="mt-10 flex items-center gap-6">
+          <motion.div variants={itemVariants} className="mt-8 flex items-center gap-5">
             <div className="flex -space-x-2.5">
               {avatars.map((user, i) => (
                 <div
@@ -145,7 +142,7 @@ export function Hero() {
                 ))}
               </div>
               <span className="text-xs text-[var(--text-secondary)]">
-                Usado por <span className="font-semibold text-[var(--text-primary)]">500+</span> corredores
+                Usado por <span className="font-semibold text-[var(--dark-blue)]">500+</span> corredores
               </span>
             </div>
           </motion.div>
@@ -153,13 +150,13 @@ export function Hero() {
           {/* Stats row */}
           <motion.div
             variants={itemVariants}
-            className="mt-8 flex flex-wrap gap-8 border-t border-[var(--border-default)] pt-8"
+            className="mt-6 flex flex-wrap gap-8 border-t border-[var(--border-default)] pt-6"
           >
             {stats.map((stat) => (
-              <div key={stat.label} className="flex flex-col gap-1">
+              <div key={stat.label} className="flex flex-col gap-0.5">
                 <div className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
-                  <span className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">
+                  <span className="text-2xl font-bold tracking-tight text-[var(--dark-blue)]">
                     {stat.value}
                   </span>
                 </div>
@@ -174,7 +171,7 @@ export function Hero() {
           variants={mockupVariants}
           initial="hidden"
           animate="visible"
-          className="flex items-center justify-center lg:col-span-6"
+          className="flex items-center justify-center lg:col-span-5"
         >
           <WhatsAppMockup />
         </motion.div>
