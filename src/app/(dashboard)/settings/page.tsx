@@ -296,8 +296,8 @@ export default function SettingsPage() {
               <div className="space-y-5">
                 <div className="rounded-lg border border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] p-4">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#7B2BFC]/20">
-                      <Wallet className="h-5 w-5 text-[#7B2BFC]" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--color-brand-wallet)]/20">
+                      <Wallet className="h-5 w-5 text-[var(--color-brand-wallet)]" />
                     </div>
                     <div>
                       <h3 className="text-sm font-semibold text-[var(--text-primary)]">Yappy Business</h3>

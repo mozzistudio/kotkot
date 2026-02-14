@@ -480,12 +480,12 @@ export default function IngresosPage() {
                   />
                   <defs>
                     <linearGradient id="yappyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#8b5cf6" />
-                      <stop offset="100%" stopColor="#a855f7" />
+                      <stop offset="0%" stopColor="var(--color-brand-yappy-1)" />
+                      <stop offset="100%" stopColor="var(--color-brand-yappy-2)" />
                     </linearGradient>
                     <linearGradient id="stripeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#3b82f6" />
-                      <stop offset="100%" stopColor="#6366f1" />
+                      <stop offset="0%" stopColor="var(--color-brand-stripe-1)" />
+                      <stop offset="100%" stopColor="var(--color-brand-stripe-2)" />
                     </linearGradient>
                   </defs>
                 </svg>

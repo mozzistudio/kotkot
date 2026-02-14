@@ -274,7 +274,7 @@ function ChatBubble({ message }: { message: ChatMessage }) {
         className={`relative max-w-[82%] ${
           isBot
             ? 'rounded-2xl rounded-tl-sm bg-white shadow-sm'
-            : 'rounded-2xl rounded-tr-sm bg-[#d9fdd3] shadow-sm'
+            : 'rounded-2xl rounded-tr-sm bg-[var(--color-brand-whatsapp-bubble)] shadow-sm'
         }`}
       >
         <div className="px-2.5 pb-1 pt-1.5">
@@ -292,7 +292,7 @@ function ChatBubble({ message }: { message: ChatMessage }) {
               {message.buttons.map((btn) => (
                 <span
                   key={btn}
-                  className="inline-block rounded-full border border-[rgba(202,255,4,0.40)] bg-[var(--accent-light)] px-2.5 py-[3px] text-[10px] font-medium text-[var(--text-primary)]"
+                  className="inline-block rounded-full border border-[rgba(202,255,4,0.40)] bg-[var(--accent-light)] px-2.5 py-[3px] text-xs font-medium text-[var(--text-primary)]"
                 >
                   {btn}
                 </span>
@@ -331,11 +331,17 @@ export function WhatsAppMockup() {
   const [cycleKey, setCycleKey] = useState(0);
 
   useEffect(() => {
-    setVisibleCount(0);
-    setShowTyping(false);
-
     let cancelled = false;
     const timers: ReturnType<typeof setTimeout>[] = [];
+
+    timers.push(
+      setTimeout(() => {
+        if (!cancelled) {
+          setVisibleCount(0);
+          setShowTyping(false);
+        }
+      }, 0)
+    );
 
     let cumulativeDelay = 800;
 
@@ -415,7 +421,7 @@ export function WhatsAppMockup() {
           </div>
 
           {/* Status bar — WhatsApp brand colors (not tokenized) */}
-          <div className="relative z-40 flex items-center justify-between bg-[#075E54] px-4 pb-0 pt-[26px]">
+          <div className="relative z-40 flex items-center justify-between bg-[var(--color-brand-whatsapp-700)] px-4 pb-0 pt-6">
             <span className="text-[9px] font-semibold text-white/90">9:41</span>
             <div className="flex items-center gap-1">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
@@ -440,16 +446,16 @@ export function WhatsAppMockup() {
           </div>
 
           {/* WhatsApp header — WhatsApp brand colors (not tokenized) */}
-          <div className="relative z-30 flex items-center gap-2 bg-[#075E54] px-2 pb-2.5 pt-0.5">
+          <div className="relative z-30 flex items-center gap-2 bg-[var(--color-brand-whatsapp-700)] px-2 pb-2.5 pt-0.5">
             <ChevronLeft className="h-4 w-4 shrink-0 text-white/80" />
 
-            <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] shadow-inner">
+            <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full bg-gradient-to-br from-[var(--color-brand-whatsapp-400)] to-[var(--color-brand-whatsapp-500)] shadow-inner">
               <div className="flex h-full w-full items-center justify-center">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white" opacity="0.9">
                   <path d="M12 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 12c5.523 0 10 2.239 10 5v1H2v-1c0-2.761 4.477-5 10-5Z" />
                 </svg>
               </div>
-              <div className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-[1.5px] border-[#075E54] bg-green-400" />
+              <div className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-2 border-[var(--color-brand-whatsapp-700)] bg-green-400" />
             </div>
 
             <div className="min-w-0 flex-1">
@@ -458,11 +464,11 @@ export function WhatsAppMockup() {
                   Kotkot Bot
                 </span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0">
-                  <circle cx="12" cy="12" r="10" fill="#25D366" />
+                  <circle cx="12" cy="12" r="10" fill="var(--color-brand-whatsapp-400)" />
                   <path d="M8 12l3 3 5-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <span className="text-[10px] text-[#25D366]/80">en línea</span>
+              <span className="text-xs text-[var(--color-brand-whatsapp-400)]/80">en línea</span>
             </div>
 
             <div className="flex items-center gap-3">
@@ -476,7 +482,7 @@ export function WhatsAppMockup() {
           <div
             className="relative flex-1 overflow-hidden"
             style={{
-              backgroundColor: '#ECE5DD',
+              backgroundColor: 'var(--color-brand-whatsapp-chat)',
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c8e6c9' fill-opacity='0.18'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
             }}
           >
@@ -484,14 +490,14 @@ export function WhatsAppMockup() {
               <div className="flex flex-col gap-[6px] px-1.5 py-2">
                 {/* Date chip */}
                 <div className="flex justify-center py-1">
-                  <span className="rounded-lg bg-white/80 px-3 py-0.5 text-[10px] font-medium text-[var(--text-secondary)] shadow-sm">
+                  <span className="rounded-lg bg-white/80 px-3 py-0.5 text-xs font-medium text-[var(--text-secondary)] shadow-sm">
                     HOY
                   </span>
                 </div>
 
                 {/* Encryption notice */}
                 <div className="flex justify-center px-6 pb-1">
-                  <div className="rounded-lg bg-[#FFF3C4]/60 px-3 py-1.5 text-center">
+                  <div className="rounded-lg bg-[var(--color-brand-note-bg)]/60 px-3 py-1.5 text-center">
                     <span className="text-[8.5px] leading-tight text-amber-800/70">
                       🔒 Los mensajes están cifrados de extremo a extremo.
                     </span>
@@ -511,9 +517,9 @@ export function WhatsAppMockup() {
           </div>
 
           {/* Input bar — WhatsApp brand */}
-          <div className="relative z-20 flex items-center gap-1.5 bg-[#F0F0F0] px-2 py-1.5">
+          <div className="relative z-20 flex items-center gap-1.5 bg-[var(--color-brand-whatsapp-input)] px-2 py-1.5">
             <div className="flex flex-1 items-center gap-2 rounded-full bg-white px-3 py-1.5 shadow-sm">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8696A0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M8 14s1.5 2 4 2 4-2 4-2" />
                 <line x1="9" y1="9" x2="9.01" y2="9" />
@@ -521,19 +527,19 @@ export function WhatsAppMockup() {
               </svg>
               <span className="flex-1 text-[11px] text-[var(--text-muted)]">Mensaje</span>
               <Paperclip className="h-3.5 w-3.5 shrink-0 rotate-45 text-[var(--text-muted)]" />
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8696A0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
                 <circle cx="8.5" cy="8.5" r="1.5" />
                 <polyline points="21 15 16 10 5 21" />
               </svg>
             </div>
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#075E54] shadow-sm">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand-whatsapp-700)] shadow-sm">
               <Mic className="h-3.5 w-3.5 text-white" />
             </div>
           </div>
 
           {/* Home indicator */}
-          <div className="flex items-center justify-center bg-[#F0F0F0] pb-1.5 pt-0.5">
+          <div className="flex items-center justify-center bg-[var(--color-brand-whatsapp-input)] pb-1.5 pt-0.5">
             <div className="h-[4px] w-[100px] rounded-full bg-slate-800/20" />
           </div>
         </div>

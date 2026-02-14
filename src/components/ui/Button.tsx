@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { ArrowRight, Loader2 } from 'lucide-react';
 
 type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
@@ -10,22 +11,23 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   arrow?: boolean;
   loading?: boolean;
+  href?: string;
   children: React.ReactNode;
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-[var(--action-primary-bg)] text-[var(--action-primary-fg)] border border-[rgba(202,255,4,0.40)] hover:bg-[var(--action-primary-hover)] font-semibold',
+    'bg-[var(--color-action-primary-bg)] text-[var(--color-action-primary-fg)] border border-[var(--color-action-primary-bg)] hover:bg-[var(--color-action-primary-hover)] font-semibold',
   secondary:
-    'bg-[var(--surface-page)] text-[var(--text-primary)] border border-[var(--border-default)] hover:bg-[var(--surface-hover)] hover:border-[var(--border-strong)]',
+    'bg-[var(--color-surface-page)] text-[var(--color-text-primary)] border border-[var(--color-border-default)] hover:bg-[var(--color-surface-hover)] hover:border-[var(--color-border-strong)]',
   tertiary:
-    'bg-transparent text-[var(--text-secondary)] border-none hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]',
+    'bg-transparent text-[var(--color-action-tertiary-fg)] border-none hover:bg-[var(--color-action-tertiary-hover)] hover:text-[var(--color-text-primary)]',
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
   sm: 'px-4 py-2 text-sm gap-1.5',
   md: 'px-6 py-3 text-sm gap-2',
-  lg: 'px-8 py-3.5 text-base gap-2.5',
+  lg: 'px-8 py-3 text-base gap-2.5',
 };
 
 const iconSizeClasses: Record<ButtonSize, string> = {
@@ -42,11 +44,25 @@ export function Button({
   children,
   className = '',
   disabled,
+  href,
   ...props
 }: ButtonProps) {
+  const classes = `inline-flex items-center justify-center rounded-[var(--radius-md)] font-medium transition-all duration-150 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-focus-ring)] disabled:pointer-events-none disabled:opacity-50 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {children}
+        {arrow && !loading && (
+          <ArrowRight className={`transition-transform group-hover:translate-x-0.5 ${iconSizeClasses[size]}`} />
+        )}
+      </Link>
+    );
+  }
+
   return (
     <button
-      className={`inline-flex items-center justify-center rounded-[var(--radius-button)] font-medium transition-all duration-150 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)] disabled:pointer-events-none disabled:opacity-50 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
+      className={classes}
       disabled={disabled || loading}
       {...props}
     >

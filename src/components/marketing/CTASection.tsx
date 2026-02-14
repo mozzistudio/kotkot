@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
 
 export function CTASection() {
   return (
@@ -12,35 +12,36 @@ export function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
-          className="relative overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white px-8 py-16 text-center sm:px-16 sm:py-20"
+          className="relative overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-border-default)] bg-[var(--color-surface-page)] px-8 py-16 text-center sm:px-16 sm:py-20"
         >
-          {/* Content */}
           <div>
-            <h2 className="font-heading text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
+            <h2 className="font-heading text-[var(--type-heading-lg)] font-bold tracking-tight text-[var(--color-text-primary)] sm:text-[var(--type-display-sm)]">
               ¿Listo para automatizar{' '}
-              <span className="text-[var(--text-primary)]">tu correduría</span>?
+              <span className="text-[var(--color-text-primary)]">tu correduría</span>?
             </h2>
 
-            <p className="mx-auto mt-4 max-w-xl text-lg text-[var(--text-secondary)]">
+            <p className="mx-auto mt-4 max-w-xl text-[var(--type-body-md)] text-[var(--color-text-secondary)]">
               Únete a cientos de corredores en Latinoamérica que ya venden
               seguros con IA.
             </p>
 
-            {/* Single primary CTA + secondary */}
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a
+              <Button
                 href="/demo"
-                className="inline-flex items-center gap-2 rounded-[var(--radius-button)] bg-[var(--action-dark-bg)] px-8 py-3.5 text-base font-semibold text-[var(--action-dark-fg)] transition-all duration-200 hover:bg-[var(--action-dark-hover)]"
+                size="lg"
+                className="bg-[var(--color-action-dark-bg)] text-[var(--color-action-dark-fg)] hover:bg-[var(--color-action-dark-hover)]"
+                arrow
               >
                 Solicitar Demo
-                <ArrowUpRight className="h-4.5 w-4.5" />
-              </a>
-              <a
+              </Button>
+              <Button
                 href="#precios"
-                className="inline-flex items-center justify-center rounded-[var(--radius-button)] border border-[var(--dark-blue)] bg-white px-8 py-3.5 font-heading text-[0.9375rem] font-semibold text-[var(--dark-blue)] transition-all duration-200 hover:bg-[var(--dark-blue-surface)]"
+                variant="secondary"
+                size="lg"
+                className="border-[var(--color-info-fg)] text-[var(--color-info-fg)] hover:bg-[var(--color-info-bg)]"
               >
                 Ver Precios
-              </a>
+              </Button>
             </div>
           </div>
         </motion.div>
