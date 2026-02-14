@@ -126,15 +126,15 @@ export default function ComoFuncionaPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Hero --- */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#111827]">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[var(--text-primary)]">
             Paso a paso
-            <span className="inline-block h-px w-10 bg-[#111827]" />
+            <span className="inline-block h-px w-10 bg-[var(--text-primary)]" />
           </span>
-          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl lg:text-6xl">
             Empieza a vender seguros por WhatsApp en{' '}
             <span className="text-gradient-primary">15 minutos</span>
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-[#6b7280] sm:text-xl">
+          <p className="mt-6 text-lg leading-relaxed text-[var(--text-secondary)] sm:text-xl">
             Configurar tu agente IA de seguros es más fácil de lo que piensas.
             Sigue estos 4 pasos y empieza a recibir cotizaciones automáticas hoy.
           </p>
@@ -155,29 +155,29 @@ export default function ComoFuncionaPage() {
                 {/* --- Text --- */}
                 <div className={isReversed ? 'lg:[direction:ltr]' : ''}>
                   <div className="mb-4 flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-[12px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)]">
-                      <span className="font-heading text-lg font-bold text-[#111827]">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-[var(--radius-md)] bg-[var(--accent)] border border-[rgba(202,255,4,0.40)]">
+                      <span className="font-heading text-lg font-bold text-[var(--text-primary)]">
                         {step.number}
                       </span>
                     </div>
                     <div>
-                      <h2 className="font-heading text-2xl font-bold tracking-tight text-[#111827]">
+                      <h2 className="font-heading text-2xl font-bold tracking-tight text-[var(--text-primary)]">
                         {step.title}
                       </h2>
-                      <p className="text-sm font-medium text-[#111827]">
+                      <p className="text-sm font-medium text-[var(--text-primary)]">
                         {step.subtitle}
                       </p>
                     </div>
                   </div>
 
-                  <p className="mt-4 text-base leading-relaxed text-[#6b7280]">
+                  <p className="mt-4 text-base leading-relaxed text-[var(--text-secondary)]">
                     {step.description}
                   </p>
 
                   <ul className="mt-6 space-y-3">
                     {step.details.map((detail) => (
                       <li key={detail} className="flex items-start gap-3">
-                        <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-[#111827]" />
+                        <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-[var(--text-primary)]" />
                         <span className="text-sm leading-relaxed text-slate-700">
                           {detail}
                         </span>
@@ -188,18 +188,18 @@ export default function ComoFuncionaPage() {
 
                 {/* --- Mockup Placeholder --- */}
                 <div className={isReversed ? 'lg:[direction:ltr]' : ''}>
-                  <div className="bg-white border border-[#e5e7eb] rounded-[16px] flex aspect-[4/3] items-center justify-center overflow-hidden p-8">
+                  <div className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] flex aspect-[4/3] items-center justify-center overflow-hidden p-8">
                     <div className="flex flex-col items-center gap-4 text-center">
-                      <div className="flex h-20 w-20 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)]">
+                      <div className="flex h-20 w-20 items-center justify-center rounded-[var(--radius-card)] bg-[rgba(202,255,4,0.15)]">
                         <step.icon
                           className="h-10 w-10 text-white"
                           strokeWidth={1.5}
                         />
                       </div>
-                      <p className="text-sm font-medium text-[#9ca3af]">
+                      <p className="text-sm font-medium text-[var(--text-muted)]">
                         Captura de pantalla / Mockup
                       </p>
-                      <p className="max-w-xs text-xs text-[#9ca3af]">
+                      <p className="max-w-xs text-xs text-[var(--text-muted)]">
                         Paso {step.number}: {step.title}
                       </p>
                     </div>
@@ -213,24 +213,24 @@ export default function ComoFuncionaPage() {
         {/* --- FAQ Section --- */}
         <div className="mt-32">
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">
+            <h2 className="font-heading text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
               Preguntas Frecuentes
             </h2>
-            <p className="mt-4 text-lg text-[#6b7280]">
+            <p className="mt-4 text-lg text-[var(--text-secondary)]">
               Todo lo que necesitas saber sobre cómo funciona Kotkot.
             </p>
           </div>
 
           <div className="mx-auto max-w-3xl space-y-4">
             {faqs.map((faq) => (
-              <div key={faq.question} className="bg-white border border-[#e5e7eb] rounded-[16px] p-6">
+              <div key={faq.question} className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-6">
                 <div className="flex items-start gap-3">
-                  <ChevronDown className="mt-0.5 h-5 w-5 shrink-0 text-[#111827]" />
+                  <ChevronDown className="mt-0.5 h-5 w-5 shrink-0 text-[var(--text-primary)]" />
                   <div>
-                    <h3 className="font-heading text-base font-semibold text-[#111827]">
+                    <h3 className="font-heading text-base font-semibold text-[var(--text-primary)]">
                       {faq.question}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[#6b7280]">
+                    <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
                       {faq.answer}
                     </p>
                   </div>
@@ -242,23 +242,23 @@ export default function ComoFuncionaPage() {
 
         {/* --- Bottom CTA --- */}
         <div className="mx-auto mt-24 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl">
+          <h2 className="font-heading text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">
             Listo para empezar?
           </h2>
-          <p className="mt-4 text-lg text-[#6b7280]">
+          <p className="mt-4 text-lg text-[var(--text-secondary)]">
             Solicita una demo y te mostramos cómo Kotkot transforma tu
             correduría en minutos.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
               href="/demo"
-              className="inline-flex items-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600]"
+              className="inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent)] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[var(--text-primary)] transition-all duration-200 hover:bg-[var(--action-primary-hover)]"
             >
               Solicitar Demo
             </a>
             <a
               href="/precios"
-              className="inline-flex items-center gap-2 rounded-[16px] bg-white border border-[#e5e7eb] px-8 py-4 text-lg font-semibold text-[#111827] transition-all duration-200 hover:bg-[#f3f4f6]"
+              className="inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-white border border-[var(--border-default)] px-8 py-4 text-lg font-semibold text-[var(--text-primary)] transition-all duration-200 hover:bg-[var(--surface-hover)]"
             >
               Ver Precios
             </a>

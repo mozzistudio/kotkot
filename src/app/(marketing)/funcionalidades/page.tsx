@@ -145,14 +145,14 @@ export default function FuncionalidadesPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Page Header --- */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#111827]">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[var(--text-primary)]">
             Plataforma completa
-            <span className="inline-block h-px w-10 bg-[#111827]" />
+            <span className="inline-block h-px w-10 bg-[var(--text-primary)]" />
           </span>
-          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl lg:text-6xl">
             Funcionalidades
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-[#6b7280] sm:text-xl">
+          <p className="mt-6 text-lg leading-relaxed text-[var(--text-secondary)] sm:text-xl">
             Todo lo que necesitas para automatizar tu correduría de seguros.
             Una plataforma diseñada para corredores en Latinoamérica.
           </p>
@@ -172,20 +172,20 @@ export default function FuncionalidadesPage() {
               >
                 {/* --- Text Side --- */}
                 <div className={isReversed ? 'lg:[direction:ltr]' : ''}>
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)]">
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-[var(--radius-card)] bg-[rgba(202,255,4,0.15)]">
                     <feature.icon
-                      className="h-7 w-7 text-[#111827]"
+                      className="h-7 w-7 text-[var(--text-primary)]"
                       strokeWidth={1.8}
                     />
                   </div>
 
-                  <h2 className="font-heading text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl">
+                  <h2 className="font-heading text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">
                     {feature.title}
                   </h2>
-                  <p className="mt-1 text-base font-medium text-[#111827]">
+                  <p className="mt-1 text-base font-medium text-[var(--text-primary)]">
                     {feature.subtitle}
                   </p>
-                  <p className="mt-4 text-base leading-relaxed text-[#6b7280]">
+                  <p className="mt-4 text-base leading-relaxed text-[var(--text-secondary)]">
                     {feature.description}
                   </p>
 
@@ -194,10 +194,10 @@ export default function FuncionalidadesPage() {
                     {feature.subFeatures.map((sub) => (
                       <li key={sub} className="flex items-start gap-3">
                         <CheckCircle2
-                          className="mt-0.5 h-5 w-5 shrink-0 text-[#111827]"
+                          className="mt-0.5 h-5 w-5 shrink-0 text-[var(--text-primary)]"
                           strokeWidth={2}
                         />
-                        <span className="text-sm leading-relaxed text-[#6b7280]">
+                        <span className="text-sm leading-relaxed text-[var(--text-secondary)]">
                           {sub}
                         </span>
                       </li>
@@ -207,16 +207,16 @@ export default function FuncionalidadesPage() {
                   {/* Conversation flow (if applicable) */}
                   {feature.flow && feature.flow.length > 0 && (
                     <div className="mt-8">
-                      <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#9ca3af]">
+                      <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)]">
                         Flujo de conversación
                       </h3>
                       <ol className="mt-3 space-y-2">
                         {feature.flow.map((step, i) => (
                           <li key={i} className="flex items-start gap-3">
-                            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)] text-xs font-bold text-[#111827]">
+                            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-[rgba(202,255,4,0.15)] text-xs font-bold text-[var(--text-primary)]">
                               {i + 1}
                             </span>
-                            <span className="text-sm leading-relaxed text-[#6b7280]">
+                            <span className="text-sm leading-relaxed text-[var(--text-secondary)]">
                               {step}
                             </span>
                           </li>
@@ -228,7 +228,7 @@ export default function FuncionalidadesPage() {
                   {/* Countries list (for multi-insurer) */}
                   {'countries' in feature && feature.countries && (
                     <div className="mt-8">
-                      <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#9ca3af]">
+                      <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)]">
                         Aseguradoras por país
                       </h3>
                       <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -237,12 +237,12 @@ export default function FuncionalidadesPage() {
                         ).map(([country, insurers]) => (
                           <div
                             key={country}
-                            className="bg-white border border-[#e5e7eb] rounded-[16px] px-4 py-3"
+                            className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] px-4 py-3"
                           >
-                            <p className="text-sm font-semibold text-[#111827]">
+                            <p className="text-sm font-semibold text-[var(--text-primary)]">
                               {country}
                             </p>
-                            <p className="mt-0.5 text-xs text-[#9ca3af]">
+                            <p className="mt-0.5 text-xs text-[var(--text-muted)]">
                               {insurers.join(', ')}
                             </p>
                           </div>
@@ -254,18 +254,18 @@ export default function FuncionalidadesPage() {
 
                 {/* --- Visual / Mockup Placeholder Side --- */}
                 <div className={isReversed ? 'lg:[direction:ltr]' : ''}>
-                  <div className="bg-white border border-[#e5e7eb] rounded-[16px] flex aspect-[4/3] items-center justify-center overflow-hidden p-8">
+                  <div className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] flex aspect-[4/3] items-center justify-center overflow-hidden p-8">
                     <div className="flex flex-col items-center gap-4 text-center">
-                      <div className="flex h-20 w-20 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)] shadow-lg shadow-[rgba(202,255,4,0.25)]">
+                      <div className="flex h-20 w-20 items-center justify-center rounded-[var(--radius-card)] bg-[rgba(202,255,4,0.15)] shadow-lg shadow-[rgba(202,255,4,0.25)]">
                         <feature.icon
                           className="h-10 w-10 text-white"
                           strokeWidth={1.5}
                         />
                       </div>
-                      <p className="text-sm font-medium text-[#9ca3af]">
+                      <p className="text-sm font-medium text-[var(--text-muted)]">
                         Ilustración / Mockup
                       </p>
-                      <p className="max-w-xs text-xs text-[#9ca3af]">
+                      <p className="max-w-xs text-xs text-[var(--text-muted)]">
                         {feature.title}
                       </p>
                     </div>
@@ -278,17 +278,17 @@ export default function FuncionalidadesPage() {
 
         {/* --- Bottom CTA --- */}
         <div className="mx-auto mt-24 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl">
+          <h2 className="font-heading text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">
             Listo para transformar tu correduría?
           </h2>
-          <p className="mt-4 text-lg text-[#6b7280]">
+          <p className="mt-4 text-lg text-[var(--text-secondary)]">
             Solicita una demo personalizada y descubre cómo Kotkot puede
             automatizar tu negocio de seguros.
           </p>
           <div className="mt-8">
             <a
               href="/demo"
-              className="inline-flex items-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[#111827] shadow-xl shadow-[rgba(202,255,4,0.25)] transition-all duration-200 hover:shadow-[rgba(202,255,4,0.4)] hover:brightness-110"
+              className="inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent)] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[var(--text-primary)] shadow-xl shadow-[rgba(202,255,4,0.25)] transition-all duration-200 hover:shadow-[rgba(202,255,4,0.4)] hover:brightness-110"
             >
               Solicitar Demo
             </a>

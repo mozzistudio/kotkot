@@ -213,7 +213,7 @@ export default function ClientsPage() {
             onClick={() => setShowFilters(!showFilters)}
             className={`btn-secondary ${
               showFilters || selectedTags.length > 0
-                ? 'border-[#0C1E35] bg-[rgba(12,30,53,0.06)] text-[#0C1E35]'
+                ? 'border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] text-[var(--dark-blue)]'
                 : ''
             }`}
           >
@@ -265,7 +265,7 @@ export default function ClientsPage() {
             {/* Top Row */}
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(12,30,53,0.06)] text-[#0C1E35]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(12,30,53,0.06)] text-[var(--dark-blue)]">
                   <User className="h-5 w-5" />
                 </div>
                 <div>

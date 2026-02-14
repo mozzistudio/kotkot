@@ -22,28 +22,28 @@ export function Input({
   const id = externalId ?? generatedId;
 
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex flex-col gap-2">
       {label && (
         <label
           htmlFor={id}
-          className="text-sm font-medium text-[#111827]"
+          className="text-sm font-medium text-[var(--text-primary)]"
         >
           {label}
         </label>
       )}
       <div className="relative">
         {icon && (
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[#6b7280]">
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-secondary)]">
             {icon}
           </div>
         )}
         <input
           id={id}
-          className={`w-full rounded-[12px] px-4 py-2.5 text-sm bg-white border border-[#e5e7eb] text-[#111827] placeholder:text-[#9ca3af] transition-all duration-150 focus:outline-none focus:border-[#CAFF04] focus:ring-[3px] focus:ring-[rgba(202,255,4,0.2)] ${
+          className={`w-full rounded-[var(--radius-input)] px-4 py-3 text-sm bg-[var(--surface-page)] border border-[var(--border-default)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] transition-all duration-150 focus:outline-none focus:border-[var(--accent)] focus:ring-[3px] focus:ring-[var(--accent-light)] ${
             icon ? 'pl-10' : ''
           } ${
             error
-              ? 'border-[#ef4444] ring-[#ef4444]/20 focus:border-[#ef4444] focus:ring-[#ef4444]/20'
+              ? 'border-[var(--error)] focus:border-[var(--error)] focus:ring-[var(--color-danger-bg)]'
               : ''
           } ${className}`}
           aria-invalid={error ? 'true' : undefined}
@@ -54,12 +54,12 @@ export function Input({
         />
       </div>
       {error && (
-        <p id={`${id}-error`} className="text-sm text-[#ef4444]" role="alert">
+        <p id={`${id}-error`} className="text-sm text-[var(--error)]" role="alert">
           {error}
         </p>
       )}
       {hint && !error && (
-        <p id={`${id}-hint`} className="text-sm text-[#9ca3af]">
+        <p id={`${id}-hint`} className="text-sm text-[var(--text-muted)]">
           {hint}
         </p>
       )}

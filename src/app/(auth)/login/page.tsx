@@ -55,24 +55,24 @@ export default function LoginPage() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className="w-full max-w-md"
     >
-      <div className="bg-white border border-[#e5e7eb] rounded-2xl p-8 sm:p-10">
+      <div className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-8 sm:p-10">
         {/* Logo */}
         <div className="flex items-center justify-center gap-2.5 mb-8">
-          <div className="flex items-center justify-center w-10 h-10 rounded-[10px] bg-[#CAFF04]">
+          <div className="flex items-center justify-center w-10 h-10 rounded-[var(--radius-button)] bg-[var(--accent)]">
             <svg viewBox="0 0 32 32" fill="none" className="h-[22px] w-[22px]">
-              <path d="M9 6v20" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
-              <path d="M9 16l10-10" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
-              <path d="M9 16l10 10" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
+              <path d="M9 6v20" stroke="var(--text-primary)" strokeWidth="3" strokeLinecap="round" />
+              <path d="M9 16l10-10" stroke="var(--text-primary)" strokeWidth="3" strokeLinecap="round" />
+              <path d="M9 16l10 10" stroke="var(--text-primary)" strokeWidth="3" strokeLinecap="round" />
             </svg>
           </div>
-          <span className="font-heading text-2xl font-bold text-[#111827]">
-            kotkot<span className="font-normal text-[#9ca3af]">.ai</span>
+          <span className="font-heading text-2xl font-bold text-[var(--text-primary)]">
+            kotkot<span className="font-normal text-[var(--text-muted)]">.ai</span>
           </span>
         </div>
 
         {/* Title */}
-        <h1 className="text-2xl font-bold text-[#111827] text-center mb-2">Iniciar Sesion</h1>
-        <p className="text-sm text-[#6b7280] text-center mb-8">
+        <h1 className="text-2xl font-bold text-[var(--text-primary)] text-center mb-2">Iniciar Sesion</h1>
+        <p className="text-sm text-[var(--text-secondary)] text-center mb-8">
           Ingresa a tu cuenta para gestionar tus cotizaciones
         </p>
 
@@ -80,11 +80,11 @@ export default function LoginPage() {
         <form onSubmit={handleSubmit} className="space-y-5">
           {/* Email */}
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="email" className="text-sm font-medium text-[#111827]">
+            <label htmlFor="email" className="text-sm font-medium text-[var(--text-primary)]">
               Correo electronico
             </label>
             <div className="relative">
-              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[#6b7280]">
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-secondary)]">
                 <Mail className="w-4 h-4" />
               </div>
               <input
@@ -94,18 +94,18 @@ export default function LoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="tu@correo.com"
                 required
-                className="w-full rounded-xl pl-10 pr-4 py-2.5 text-sm bg-white border border-[#e5e7eb] text-[#111827] placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:ring-2 focus:ring-[#CAFF04]/20 focus:outline-none transition-all duration-200"
+                className="w-full rounded-[var(--radius-md)] pl-10 pr-4 py-2.5 text-sm bg-white border border-[var(--border-default)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent-light)] focus:outline-none transition-all duration-200"
               />
             </div>
           </div>
 
           {/* Password */}
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="password" className="text-sm font-medium text-[#111827]">
+            <label htmlFor="password" className="text-sm font-medium text-[var(--text-primary)]">
               Contrasena
             </label>
             <div className="relative">
-              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[#6b7280]">
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-secondary)]">
                 <Lock className="w-4 h-4" />
               </div>
               <input
@@ -115,12 +115,12 @@ export default function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Tu contrasena"
                 required
-                className="w-full rounded-xl pl-10 pr-12 py-2.5 text-sm bg-white border border-[#e5e7eb] text-[#111827] placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:ring-2 focus:ring-[#CAFF04]/20 focus:outline-none transition-all duration-200"
+                className="w-full rounded-[var(--radius-md)] pl-10 pr-12 py-2.5 text-sm bg-white border border-[var(--border-default)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent-light)] focus:outline-none transition-all duration-200"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute inset-y-0 right-0 flex items-center pr-3 text-[#6b7280] hover:text-[#111827] transition-colors"
+                className="absolute inset-y-0 right-0 flex items-center pr-3 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
                 aria-label={showPassword ? 'Ocultar contrasena' : 'Mostrar contrasena'}
               >
                 {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -130,7 +130,7 @@ export default function LoginPage() {
 
           {/* Error Message */}
           {error && (
-            <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-2.5 text-sm text-red-600">
+            <div className="rounded-[var(--radius-md)] bg-red-50 border border-red-200 px-4 py-2.5 text-sm text-red-600">
               {error}
             </div>
           )}
@@ -139,7 +139,7 @@ export default function LoginPage() {
           <div className="flex justify-end">
             <Link
               href="/forgot-password"
-              className="text-sm text-[#0C1E35] hover:text-[#111827] font-medium transition-colors"
+              className="text-sm text-[var(--dark-blue)] hover:text-[var(--text-primary)] font-medium transition-colors"
             >
               Olvidaste tu contrasena?
             </Link>
@@ -149,10 +149,10 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-[#111827] bg-[#CAFF04] hover:bg-[#b8e600] active:bg-[#a6d400] transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none"
+            className="w-full inline-flex items-center justify-center gap-2 rounded-[var(--radius-md)] px-6 py-3 text-base font-semibold text-[var(--text-primary)] bg-[var(--action-primary-bg)] hover:bg-[var(--action-primary-hover)] active:bg-[var(--action-primary-hover)] transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none"
           >
             {isLoading ? (
-              <div className="w-5 h-5 border-2 border-[#111827]/30 border-t-[#111827] rounded-full animate-spin" />
+              <div className="w-5 h-5 border-2 border-[var(--text-primary)]/30 border-t-[var(--text-primary)] rounded-full animate-spin" />
             ) : null}
             {isLoading ? 'Iniciando sesion...' : 'Iniciar Sesion'}
           </button>
@@ -160,16 +160,16 @@ export default function LoginPage() {
 
         {/* Divider */}
         <div className="flex items-center gap-4 my-6">
-          <div className="flex-1 h-px bg-[#e5e7eb]" />
-          <span className="text-sm text-[#9ca3af] font-medium">o continua con</span>
-          <div className="flex-1 h-px bg-[#e5e7eb]" />
+          <div className="flex-1 h-px bg-[var(--border-default)]" />
+          <span className="text-sm text-[var(--text-muted)] font-medium">o continua con</span>
+          <div className="flex-1 h-px bg-[var(--border-default)]" />
         </div>
 
         {/* Google OAuth */}
         <button
           type="button"
           onClick={handleGoogleLogin}
-          className="w-full inline-flex items-center justify-center gap-3 rounded-xl px-6 py-3 text-sm font-semibold text-[#111827] border border-[#e5e7eb] bg-white hover:bg-[#f9fafb] hover:border-[#d1d5db] transition-all duration-200"
+          className="w-full inline-flex items-center justify-center gap-3 rounded-[var(--radius-md)] px-6 py-3 text-sm font-semibold text-[var(--text-primary)] border border-[var(--border-default)] bg-white hover:bg-[var(--surface-panel)] hover:border-[var(--border-strong)] transition-all duration-200"
         >
           <svg className="w-5 h-5" viewBox="0 0 24 24">
             <path
@@ -193,11 +193,11 @@ export default function LoginPage() {
         </button>
 
         {/* Sign Up Link */}
-        <p className="text-center text-sm text-[#6b7280] mt-8">
+        <p className="text-center text-sm text-[var(--text-secondary)] mt-8">
           No tienes cuenta?{' '}
           <Link
             href="/signup"
-            className="text-[#0C1E35] hover:text-[#111827] font-semibold transition-colors"
+            className="text-[var(--dark-blue)] hover:text-[var(--text-primary)] font-semibold transition-colors"
           >
             Crear cuenta
           </Link>
@@ -209,31 +209,31 @@ export default function LoginPage() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="mt-6 rounded-xl border border-[#e5e7eb] bg-white p-4"
+        className="mt-6 rounded-[var(--radius-md)] border border-[var(--border-default)] bg-white p-4"
       >
         <div className="flex items-start gap-3">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#CAFF04]">
-            <ShieldCheck className="h-4 w-4 text-[#111827]" />
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-[var(--accent)]">
+            <ShieldCheck className="h-4 w-4 text-[var(--text-primary)]" />
           </div>
           <div className="flex-1">
-            <h3 className="text-sm font-semibold text-[#111827] mb-2">
+            <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-2">
               Credenciales de Prueba
             </h3>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <Mail className="h-3.5 w-3.5 text-[#6b7280]" />
-                <code className="text-xs font-mono text-[#111827] bg-[#f9fafb] border border-[#e5e7eb] px-2 py-1 rounded">
+                <Mail className="h-3.5 w-3.5 text-[var(--text-secondary)]" />
+                <code className="text-xs font-mono text-[var(--text-primary)] bg-[var(--surface-panel)] border border-[var(--border-default)] px-2 py-1 rounded">
                   demo@kotkot.ai
                 </code>
               </div>
               <div className="flex items-center gap-2">
-                <Lock className="h-3.5 w-3.5 text-[#6b7280]" />
-                <code className="text-xs font-mono text-[#111827] bg-[#f9fafb] border border-[#e5e7eb] px-2 py-1 rounded">
+                <Lock className="h-3.5 w-3.5 text-[var(--text-secondary)]" />
+                <code className="text-xs font-mono text-[var(--text-primary)] bg-[var(--surface-panel)] border border-[var(--border-default)] px-2 py-1 rounded">
                   demo123456
                 </code>
               </div>
             </div>
-            <p className="mt-2 text-xs text-[#6b7280]">
+            <p className="mt-2 text-xs text-[var(--text-secondary)]">
               Usa estas credenciales para explorar la plataforma
             </p>
           </div>

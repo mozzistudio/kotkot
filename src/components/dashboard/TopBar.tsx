@@ -210,24 +210,24 @@ export function TopBar({ onMenuClick }: TopBarProps) {
   };
 
   return (
-    <header className="sticky top-0 z-20 bg-white border-b border-[#e5e7eb]">
+    <header className="sticky top-0 z-20 bg-white border-b border-[var(--border-default)]">
       <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
         {/* Left: Hamburger + Page title */}
         <div className="flex items-center gap-3">
           <button
             onClick={onMenuClick}
-            className="lg:hidden p-2 rounded-lg text-[#6b7280] hover:text-[#111827] hover:bg-[#f3f4f6] transition-colors"
+            className="lg:hidden p-2 rounded-[var(--radius-md)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)] transition-colors"
             aria-label="Abrir menu"
           >
             <Menu className="w-5 h-5" />
           </button>
-          <h1 className="font-heading text-lg font-semibold text-[#111827]">{pageTitle}</h1>
+          <h1 className="font-heading text-lg font-semibold text-[var(--text-primary)]">{pageTitle}</h1>
         </div>
 
         {/* Center: Search with dropdown */}
         <div ref={searchRef} className="hidden md:flex flex-1 max-w-md mx-8 relative">
           <div className="relative w-full">
-            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[#9ca3af]">
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-muted)]">
               <Search className="w-4 h-4" />
             </div>
             <input
@@ -241,10 +241,10 @@ export function TopBar({ onMenuClick }: TopBarProps) {
               onFocus={() => setSearchOpen(true)}
               onKeyDown={handleKeyDown}
               placeholder="Buscar cotizaciones, clientes..."
-              className="w-full rounded-lg pl-10 pr-4 py-2 text-sm bg-white border border-[#e5e7eb] text-[#111827] placeholder:text-[#9ca3af] focus:border-[#0C1E35] focus:ring-1 focus:ring-[rgba(12,30,53,0.15)] focus:outline-none transition-all duration-200"
+              className="w-full rounded-[var(--radius-md)] pl-10 pr-4 py-2 text-sm bg-white border border-[var(--border-default)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--dark-blue)] focus:ring-1 focus:ring-[rgba(12,30,53,0.15)] focus:outline-none transition-all duration-200"
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-              <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-medium text-[#9ca3af] bg-white border border-[#e5e7eb]">
+              <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-medium text-[var(--text-muted)] bg-white border border-[var(--border-default)]">
                 /
               </kbd>
             </div>
@@ -258,7 +258,7 @@ export function TopBar({ onMenuClick }: TopBarProps) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: 0.15 }}
-                className="absolute top-full left-0 right-0 mt-2 max-h-[420px] overflow-y-auto rounded-xl bg-white border border-[#e5e7eb] shadow-2xl shadow-black/10"
+                className="absolute top-full left-0 right-0 mt-2 max-h-[420px] overflow-y-auto rounded-[var(--radius-md)] bg-white border border-[var(--border-default)] shadow-2xl shadow-black/10"
               >
                 {hasResults ? (
                   <div className="py-2">
@@ -270,10 +270,10 @@ export function TopBar({ onMenuClick }: TopBarProps) {
                       return (
                         <div key={type}>
                           {/* Group Header */}
-                          <div className="flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#6b7280]">
+                          <div className="flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
                             {config.icon}
                             {config.label}
-                            <span className="ml-auto text-[10px] font-normal normal-case text-[#9ca3af]">
+                            <span className="ml-auto text-[10px] font-normal normal-case text-[var(--text-muted)]">
                               {items.length}
                             </span>
                           </div>
@@ -290,17 +290,17 @@ export function TopBar({ onMenuClick }: TopBarProps) {
                                 onMouseEnter={() => setSelectedIndex(flatIdx)}
                                 className={`flex w-full items-center gap-3 px-4 py-2.5 text-left transition-colors ${
                                   isSelected
-                                    ? 'bg-[rgba(12,30,53,0.06)] text-[#111827]'
-                                    : 'text-[#6b7280] hover:bg-[#f3f4f6]'
+                                    ? 'bg-[var(--dark-blue-surface)] text-[var(--text-primary)]'
+                                    : 'text-[var(--text-secondary)] hover:bg-[var(--surface-hover)]'
                                 }`}
                               >
                                 <div className="min-w-0 flex-1">
-                                  <p className={`text-sm font-medium truncate ${isSelected ? 'text-[#111827]' : 'text-[#111827]'}`}>
+                                  <p className={`text-sm font-medium truncate ${isSelected ? 'text-[var(--text-primary)]' : 'text-[var(--text-primary)]'}`}>
                                     {item.label}
                                   </p>
-                                  <p className="text-xs text-[#6b7280] truncate">{item.sublabel}</p>
+                                  <p className="text-xs text-[var(--text-secondary)] truncate">{item.sublabel}</p>
                                 </div>
-                                <ArrowRight className={`h-3.5 w-3.5 shrink-0 transition-opacity ${isSelected ? 'opacity-100 text-[#111827]' : 'opacity-0'}`} />
+                                <ArrowRight className={`h-3.5 w-3.5 shrink-0 transition-opacity ${isSelected ? 'opacity-100 text-[var(--text-primary)]' : 'opacity-0'}`} />
                               </button>
                             );
                           })}
@@ -310,21 +310,21 @@ export function TopBar({ onMenuClick }: TopBarProps) {
                   </div>
                 ) : (
                   <div className="px-4 py-8 text-center">
-                    <Search className="mx-auto h-6 w-6 text-[#9ca3af]" />
-                    <p className="mt-2 text-sm text-[#6b7280]">
+                    <Search className="mx-auto h-6 w-6 text-[var(--text-muted)]" />
+                    <p className="mt-2 text-sm text-[var(--text-secondary)]">
                       No se encontraron resultados para &quot;{searchQuery}&quot;
                     </p>
                   </div>
                 )}
 
                 {/* Footer hint */}
-                <div className="border-t border-[#e5e7eb] px-4 py-2 flex items-center justify-between text-[10px] text-[#9ca3af]">
+                <div className="border-t border-[var(--border-default)] px-4 py-2 flex items-center justify-between text-[10px] text-[var(--text-muted)]">
                   <span>
-                    <kbd className="rounded bg-[#f3f4f6] px-1 py-0.5 font-mono">↑↓</kbd> navegar
+                    <kbd className="rounded bg-[var(--surface-hover)] px-1 py-0.5 font-mono">↑↓</kbd> navegar
                     <span className="mx-2">·</span>
-                    <kbd className="rounded bg-[#f3f4f6] px-1 py-0.5 font-mono">Enter</kbd> seleccionar
+                    <kbd className="rounded bg-[var(--surface-hover)] px-1 py-0.5 font-mono">Enter</kbd> seleccionar
                     <span className="mx-2">·</span>
-                    <kbd className="rounded bg-[#f3f4f6] px-1 py-0.5 font-mono">Esc</kbd> cerrar
+                    <kbd className="rounded bg-[var(--surface-hover)] px-1 py-0.5 font-mono">Esc</kbd> cerrar
                   </span>
                 </div>
               </motion.div>
@@ -336,25 +336,25 @@ export function TopBar({ onMenuClick }: TopBarProps) {
         <div className="flex items-center gap-2">
           {/* Notification Bell */}
           <button
-            className="relative p-2 rounded-lg text-[#6b7280] hover:text-[#111827] hover:bg-[#f3f4f6] transition-colors"
+            className="relative p-2 rounded-[var(--radius-md)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)] transition-colors"
             aria-label="Notificaciones"
           >
             <Bell className="w-5 h-5" />
             {/* Red dot badge */}
-            <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-[#ef4444] ring-2 ring-white" />
+            <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-[var(--error)] ring-2 ring-white" />
           </button>
 
           {/* Profile Dropdown */}
           <div ref={profileRef} className="relative">
             <button
               onClick={() => setProfileOpen(!profileOpen)}
-              className="flex items-center gap-2 p-1.5 rounded-lg hover:bg-[#f3f4f6] transition-colors"
+              className="flex items-center gap-2 p-1.5 rounded-[var(--radius-md)] hover:bg-[var(--surface-hover)] transition-colors"
             >
-              <div className="w-8 h-8 rounded-full bg-[#0C1E35] flex items-center justify-center text-white font-bold text-xs">
+              <div className="w-8 h-8 rounded-full bg-[var(--dark-blue)] flex items-center justify-center text-white font-bold text-xs">
                 JP
               </div>
               <ChevronDown
-                className={`w-4 h-4 text-[#6b7280] transition-transform duration-200 hidden sm:block ${
+                className={`w-4 h-4 text-[var(--text-secondary)] transition-transform duration-200 hidden sm:block ${
                   profileOpen ? 'rotate-180' : ''
                 }`}
               />
@@ -367,12 +367,12 @@ export function TopBar({ onMenuClick }: TopBarProps) {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -8, scale: 0.95 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute right-0 top-full mt-2 w-56 rounded-xl bg-white border border-[#e5e7eb] shadow-xl shadow-black/10 overflow-hidden"
+                  className="absolute right-0 top-full mt-2 w-56 rounded-[var(--radius-md)] bg-white border border-[var(--border-default)] shadow-xl shadow-black/10 overflow-hidden"
                 >
                   {/* User info */}
-                  <div className="px-4 py-3 border-b border-[#e5e7eb]">
-                    <p className="text-sm font-medium text-[#111827]">Juan Perez</p>
-                    <p className="text-xs text-[#6b7280]">juan@correduria.com</p>
+                  <div className="px-4 py-3 border-b border-[var(--border-default)]">
+                    <p className="text-sm font-medium text-[var(--text-primary)]">Juan Perez</p>
+                    <p className="text-xs text-[var(--text-secondary)]">juan@correduria.com</p>
                   </div>
 
                   {/* Menu items */}
@@ -380,7 +380,7 @@ export function TopBar({ onMenuClick }: TopBarProps) {
                     <Link
                       href="/settings"
                       onClick={() => setProfileOpen(false)}
-                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-[#6b7280] hover:text-[#111827] hover:bg-[#f3f4f6] transition-colors"
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)] transition-colors"
                     >
                       <User className="w-4 h-4" />
                       Perfil
@@ -388,12 +388,12 @@ export function TopBar({ onMenuClick }: TopBarProps) {
                     <Link
                       href="/settings"
                       onClick={() => setProfileOpen(false)}
-                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-[#6b7280] hover:text-[#111827] hover:bg-[#f3f4f6] transition-colors"
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)] transition-colors"
                     >
                       <Settings className="w-4 h-4" />
                       Configuracion
                     </Link>
-                    <div className="my-1 h-px bg-[#e5e7eb]" />
+                    <div className="my-1 h-px bg-[var(--border-default)]" />
                     <button
                       onClick={() => {
                         setProfileOpen(false);

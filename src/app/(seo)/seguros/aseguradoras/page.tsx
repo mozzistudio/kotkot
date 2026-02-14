@@ -64,10 +64,10 @@ export default function InsuranceCompaniesDirectoryPage() {
 
         {/* Header */}
         <div className="mb-12 text-center">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl">
+          <h1 className="mb-4 text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl">
             Aseguradoras en Panamá
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-[#6b7280]">
+          <p className="mx-auto max-w-2xl text-lg text-[var(--text-secondary)]">
             Directorio completo de {companies.length} compañías de seguros
             autorizadas en Panamá. Compara calificaciones, productos y
             servicios.
@@ -83,11 +83,11 @@ export default function InsuranceCompaniesDirectoryPage() {
 
         {/* CTA Section */}
         <section className="mx-auto mt-16 max-w-4xl">
-          <div className="rounded-2xl bg-[#CAFF04] p-12 text-center text-[#111827]">
+          <div className="rounded-2xl bg-[var(--accent)] p-12 text-center text-[var(--text-primary)]">
             <h2 className="mb-4 text-3xl font-bold">
               ¿No sabes cuál elegir?
             </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-[#6b7280]">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-[var(--text-secondary)]">
               Nuestro asistente te ayuda a encontrar la mejor aseguradora según
               tus necesidades.
             </p>
@@ -95,7 +95,7 @@ export default function InsuranceCompaniesDirectoryPage() {
               href="https://wa.me/50760000000?text=Hola%2C%20necesito%20ayuda%20para%20elegir%20una%20aseguradora"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-[#1f2937] transition-colors shadow-lg"
+              className="inline-flex items-center rounded-xl bg-[var(--text-primary)] px-8 py-4 text-lg font-semibold text-white hover:bg-[var(--text-primary)] transition-colors shadow-lg"
             >
               Hablar con un Asesor
             </a>

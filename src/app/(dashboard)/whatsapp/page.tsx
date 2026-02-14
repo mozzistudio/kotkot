@@ -74,7 +74,7 @@ const botPersonalities = ['Mi Agente', 'Agente Formal', 'Agente Express'];
 // ---------------------------------------------------------------------------
 
 const statusConfig: Record<NumberStatus, { label: string; dotColor: string; icon: React.ReactNode }> = {
-  active: { label: 'Activo', dotColor: 'bg-[var(--success)]', icon: <Wifi className="h-4 w-4 text-[#0C1E35]" /> },
+  active: { label: 'Activo', dotColor: 'bg-[var(--success)]', icon: <Wifi className="h-4 w-4 text-[var(--dark-blue)]" /> },
   pending: { label: 'Pendiente', dotColor: 'bg-amber-500', icon: <Clock className="h-4 w-4 text-amber-700" /> },
   disconnected: { label: 'Desconectado', dotColor: 'bg-red-500', icon: <WifiOff className="h-4 w-4 text-red-700" /> },
 };
@@ -114,7 +114,7 @@ export default function WhatsAppPage() {
                 <div className="flex items-start gap-4">
                   {/* Icon */}
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[rgba(12,30,53,0.06)]">
-                    <MessageSquare className="h-6 w-6 text-[#0C1E35]" />
+                    <MessageSquare className="h-6 w-6 text-[var(--dark-blue)]" />
                   </div>
 
                   <div>
@@ -122,7 +122,7 @@ export default function WhatsAppPage() {
                       <h3 className="text-section-heading">{num.displayName}</h3>
                       <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium ${
                         num.status === 'active'
-                          ? 'border-[#0C1E35] bg-[rgba(12,30,53,0.06)] text-[#0C1E35]'
+                          ? 'border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] text-[var(--dark-blue)]'
                           : num.status === 'pending'
                           ? 'border border-amber-200 bg-amber-50 text-amber-700'
                           : 'border border-red-200 bg-red-50 text-red-700'
@@ -164,7 +164,7 @@ export default function WhatsAppPage() {
                   <div className="mt-1">
                     <select
                       defaultValue={num.botPersonality}
-                      className="w-full rounded-md border border-[var(--border)] bg-white px-2 py-1 text-sm text-[var(--text-primary)] focus:border-[#0C1E35]/50 focus:outline-none"
+                      className="w-full rounded-md border border-[var(--border)] bg-white px-2 py-1 text-sm text-[var(--text-primary)] focus:border-[var(--dark-blue)]/50 focus:outline-none"
                     >
                       {botPersonalities.map((bp) => (
                         <option key={bp} value={bp}>{bp}</option>
@@ -191,7 +191,7 @@ export default function WhatsAppPage() {
                     <Clock className="h-4 w-4 text-[var(--text-tertiary)]" />
                     <span className="text-sm font-medium text-[var(--text-primary)]">Horario de Atencion</span>
                     {num.businessHours.enabled && (
-                      <span className="rounded-full bg-[rgba(12,30,53,0.06)] px-2 py-0.5 text-xs text-[#0C1E35]">
+                      <span className="rounded-full bg-[rgba(12,30,53,0.06)] px-2 py-0.5 text-xs text-[var(--dark-blue)]">
                         Activo
                       </span>
                     )}
@@ -227,7 +227,7 @@ export default function WhatsAppPage() {
                             key={day}
                             className={`rounded-md px-2.5 py-1 text-xs font-medium ${
                               num.businessHours.days.includes(day)
-                                ? 'bg-[rgba(12,30,53,0.06)] text-[#0C1E35] border border-[#0C1E35]'
+                                ? 'bg-[rgba(12,30,53,0.06)] text-[var(--dark-blue)] border border-[var(--dark-blue)]'
                                 : 'bg-white text-[var(--text-tertiary)] border border-[var(--border)]'
                             }`}
                           >
@@ -251,14 +251,14 @@ export default function WhatsAppPage() {
       <div className="rounded-xl border-2 border-dashed border-[var(--border)] bg-white/50 p-8">
         <div className="mx-auto max-w-md text-center">
           <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[rgba(12,30,53,0.06)]">
-            <Plus className="h-8 w-8 text-[#0C1E35]" />
+            <Plus className="h-8 w-8 text-[var(--dark-blue)]" />
           </div>
           <h3 className="text-card-title">Conectar Nuevo Numero</h3>
           <p className="mt-2 text-sm text-[var(--text-secondary)]">
             Conecta un nuevo numero de WhatsApp Business a tu cuenta de Kotkot a traves de Meta Embedded Signup.
           </p>
 
-          <button className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#0C1E35] px-6 py-3 text-[var(--text-on-accent)] transition-all hover:bg-[#0C1E35]/90">
+          <button className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[var(--dark-blue)] px-6 py-3 text-[var(--text-on-accent)] transition-all hover:bg-[var(--dark-blue)]/90">
             <MessageSquare className="h-4 w-4" />
             Conectar con Meta
             <ExternalLink className="h-3.5 w-3.5" />
@@ -281,7 +281,7 @@ export default function WhatsAppPage() {
                   <li>Acceso a recibir SMS o llamadas en ese numero</li>
                 </ul>
                 <p>
-                  <strong className="text-[var(--text-primary)]">Costo:</strong> El uso de la API de WhatsApp Business tiene un costo aproximado de <span className="text-[#0C1E35] font-medium">$100/mes</span> dependiendo del volumen de mensajes.
+                  <strong className="text-[var(--text-primary)]">Costo:</strong> El uso de la API de WhatsApp Business tiene un costo aproximado de <span className="text-[var(--dark-blue)] font-medium">$100/mes</span> dependiendo del volumen de mensajes.
                 </p>
               </div>
             </div>

@@ -46,8 +46,8 @@ export function Hero() {
         >
           {/* Badge */}
           <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center gap-2 rounded-full bg-[rgba(12,30,53,0.08)] border border-[rgba(12,30,53,0.15)] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#0C1E35]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#0C1E35]" />
+            <span className="inline-flex items-center gap-2 rounded-full bg-[var(--color-info-bg)] border border-[rgba(12,30,53,0.15)] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[var(--dark-blue)]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--dark-blue)]" />
               Insurtech para corredores
             </span>
           </motion.div>
@@ -57,39 +57,39 @@ export function Hero() {
             variants={itemVariants}
             className="mt-8 font-heading leading-[1.05] tracking-tight"
           >
-            <span className="block text-[2.5rem] font-medium text-[#6b7280] sm:text-5xl lg:text-[3.5rem]">
+            <span className="block text-[2.5rem] font-medium text-[var(--text-secondary)] sm:text-5xl lg:text-[3.5rem]">
               Tu agente de seguros
             </span>
-            <span className="block text-[2.5rem] font-bold text-[#111827] sm:text-5xl lg:text-[3.5rem]">
+            <span className="block text-[2.5rem] font-bold text-[var(--text-primary)] sm:text-5xl lg:text-[3.5rem]">
               inteligente en
             </span>
-            <span className="relative inline-block text-[2.5rem] font-bold text-[#111827] sm:text-5xl lg:text-[3.5rem]">
+            <span className="relative inline-block text-[2.5rem] font-bold text-[var(--text-primary)] sm:text-5xl lg:text-[3.5rem]">
               WhatsApp
-              <span className="absolute -bottom-1 left-0 h-3 w-full bg-[#CAFF04] -z-10 rounded-sm" />
+              <span className="absolute -bottom-1 left-0 h-3 w-full bg-[var(--accent)] -z-10 rounded-sm" />
             </span>
           </motion.h1>
 
           {/* Sub-headline */}
           <motion.p
             variants={itemVariants}
-            className="mt-6 max-w-lg text-lg leading-relaxed text-[#6b7280]"
+            className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--text-secondary)]"
           >
             Automatiza tu correduría con IA. Cotiza, compara 10+ aseguradoras
             y cierra ventas 24/7 directamente por WhatsApp.
           </motion.p>
 
-          {/* CTA */}
+          {/* CTA — single primary (dark bg for B2B demo), secondary = outline */}
           <motion.div variants={itemVariants} className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="/demo"
-              className="group inline-flex items-center gap-2 rounded-[10px] bg-[#0C1E35] px-7 py-3.5 text-base font-semibold text-white transition-all duration-150 hover:bg-[#122B47] hover:shadow-lg hover:shadow-[rgba(12,30,53,0.25)]"
+              className="group inline-flex items-center gap-2 rounded-[var(--radius-button)] bg-[var(--action-dark-bg)] px-7 py-3.5 text-base font-semibold text-[var(--action-dark-fg)] transition-all duration-150 hover:bg-[var(--action-dark-hover)] hover:shadow-lg hover:shadow-[rgba(12,30,53,0.25)]"
             >
               Solicitar Demo
               <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
               href="/seguros"
-              className="inline-flex items-center gap-2 rounded-[10px] border border-[#0C1E35] bg-white px-7 py-3.5 text-base font-semibold text-[#0C1E35] transition-all duration-150 hover:bg-[rgba(12,30,53,0.06)]"
+              className="inline-flex items-center gap-2 rounded-[var(--radius-button)] border border-[var(--dark-blue)] bg-white px-7 py-3.5 text-base font-semibold text-[var(--dark-blue)] transition-all duration-150 hover:bg-[var(--dark-blue-surface)]"
             >
               <Play className="h-4 w-4" />
               Ver Seguros
@@ -102,7 +102,7 @@ export function Hero() {
               {['JP', 'MR', 'AL', 'SC'].map((initials, i) => (
                 <div
                   key={i}
-                  className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[#f3f4f6] text-[10px] font-bold text-[#111827]"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[var(--surface-hover)] text-[10px] font-bold text-[var(--text-primary)]"
                 >
                   {initials}
                 </div>
@@ -116,8 +116,8 @@ export function Hero() {
                   </svg>
                 ))}
               </div>
-              <span className="text-xs text-[#6b7280]">
-                Usado por <span className="font-semibold text-[#111827]">500+</span> corredores
+              <span className="text-xs text-[var(--text-secondary)]">
+                Usado por <span className="font-semibold text-[var(--text-primary)]">500+</span> corredores
               </span>
             </div>
           </motion.div>
@@ -125,19 +125,19 @@ export function Hero() {
           {/* Stats row */}
           <motion.div
             variants={itemVariants}
-            className="mt-8 flex flex-wrap gap-8 border-t border-[#e5e7eb] pt-8"
+            className="mt-8 flex flex-wrap gap-8 border-t border-[var(--border-default)] pt-8"
           >
             <div>
-              <div className="text-2xl font-bold tracking-tight text-[#111827]">2 min</div>
-              <div className="text-xs text-[#9ca3af]">Cotización promedio</div>
+              <div className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">2 min</div>
+              <div className="text-xs text-[var(--text-muted)]">Cotización promedio</div>
             </div>
             <div>
-              <div className="text-2xl font-bold tracking-tight text-[#111827]">10+</div>
-              <div className="text-xs text-[#9ca3af]">Aseguradoras</div>
+              <div className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">10+</div>
+              <div className="text-xs text-[var(--text-muted)]">Aseguradoras</div>
             </div>
             <div>
-              <div className="text-2xl font-bold tracking-tight text-[#111827]">24/7</div>
-              <div className="text-xs text-[#9ca3af]">Automatización</div>
+              <div className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">24/7</div>
+              <div className="text-xs text-[var(--text-muted)]">Automatización</div>
             </div>
           </motion.div>
         </motion.div>

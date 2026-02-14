@@ -46,18 +46,18 @@ const linkGroups: FooterLinkGroup[] = [
 
 export function Footer() {
   return (
-    <footer className="relative bg-[#0C1E35]">
+    <footer className="relative bg-[var(--dark-blue)]">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
           {/* Brand Column - Spans 2 columns */}
           <div className="col-span-2">
             <Link href="/" className="inline-flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-[#CAFF04]">
+              <div className="flex h-9 w-9 items-center justify-center rounded-[var(--radius-button)] bg-[var(--accent)]">
                 <svg viewBox="0 0 32 32" fill="none" className="h-[18px] w-[18px]">
-                  <path d="M9 6v20" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
-                  <path d="M9 16l10-10" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
-                  <path d="M9 16l10 10" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
+                  <path d="M9 6v20" stroke="var(--text-primary)" strokeWidth="3" strokeLinecap="round" />
+                  <path d="M9 16l10-10" stroke="var(--text-primary)" strokeWidth="3" strokeLinecap="round" />
+                  <path d="M9 16l10 10" stroke="var(--text-primary)" strokeWidth="3" strokeLinecap="round" />
                 </svg>
               </div>
               <span className="font-heading text-xl font-bold tracking-tight text-white">
@@ -71,7 +71,7 @@ export function Footer() {
             <div className="mt-6 flex items-center gap-4">
               <Link
                 href="/demo"
-                className="text-sm font-semibold text-[#CAFF04] hover:text-white transition-colors"
+                className="text-sm font-semibold text-[var(--accent)] hover:text-white transition-colors"
               >
                 Solicitar Demo →
               </Link>
