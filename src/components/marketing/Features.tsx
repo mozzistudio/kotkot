@@ -22,37 +22,37 @@ const features: Feature[] = [
     icon: MessageSquare,
     title: 'Agente IA en WhatsApp',
     description:
-      'Tu bot cotiza, compara y vende seguros directamente en WhatsApp. Sin intervención humana.',
+      'Cotiza seguros y préstamos 24/7. Compara opciones y cierra ventas automáticamente en WhatsApp.',
   },
   {
     icon: Plug,
-    title: 'Conecta tus Aseguradoras',
+    title: 'Conecta Aseguradoras y Bancos',
     description:
-      'Conecta los APIs de tus aseguradoras. Cotización en tiempo real con tus propias credenciales.',
+      'APIs de aseguradoras y entidades financieras. Cotización en tiempo real con tus credenciales.',
   },
   {
     icon: CreditCard,
-    title: 'Cobro Automático',
+    title: 'Cobro y Desembolso Automático',
     description:
-      'Genera links de pago automáticamente. Yappy en Panamá, Stripe en toda Latinoamérica. El dinero llega directo a tu cuenta.',
+      'Links de pago y tracking de desembolsos. Yappy, Stripe, y más integrados. El dinero llega directo.',
   },
   {
     icon: BarChart3,
-    title: 'Dashboard Inteligente',
+    title: 'Dashboard Unificado',
     description:
-      'Conversaciones, cotizaciones, clientes, pólizas y comisiones. Todo en un solo lugar.',
+      'Seguros, préstamos, conversaciones, clientes y comisiones en un solo lugar. Todo bajo control.',
   },
   {
     icon: Palette,
     title: 'Personaliza tu Agente',
     description:
-      'Configura el nombre, tono, idioma y personalidad de tu bot. Tu marca, tu voz.',
+      'Configura tono, idioma y personalidad. Tu marca, múltiples productos financieros, una sola voz.',
   },
   {
     icon: Users,
-    title: 'CRM Automático',
+    title: 'CRM Inteligente',
     description:
-      'Cada conversación crea un lead. Seguimiento automático, recordatorios de renovación, cross-sell.',
+      'Lead scoring, seguimiento automático, renovaciones de pólizas, refinanciamiento de préstamos.',
   },
 ];
 
@@ -90,12 +90,11 @@ export function Features() {
           className="mx-auto mb-16 max-w-2xl text-center"
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
-            Todo lo que tu correduría{' '}
+            Todo lo que tu negocio financiero{' '}
             <span className="text-[var(--text-primary)]">necesita</span>
           </h2>
           <p className="mt-4 text-lg text-[var(--text-secondary)]">
-            Una plataforma completa para automatizar tu negocio de seguros en
-            cualquier país de Latinoamérica.
+            Una plataforma completa para automatizar seguros y préstamos en Latinoamérica.
           </p>
         </motion.div>
 

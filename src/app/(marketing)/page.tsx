@@ -1,6 +1,7 @@
 import { Hero } from '@/components/marketing/Hero';
 import { Stats } from '@/components/marketing/Stats';
 import { InsuranceProducts } from '@/components/marketing/InsuranceProducts';
+import { LoanProducts } from '@/components/marketing/LoanProducts';
 import { Features } from '@/components/marketing/Features';
 import { HowItWorks } from '@/components/marketing/HowItWorks';
 import { InsurersLogos } from '@/components/marketing/InsurersLogos';
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Hero />
       <Stats />
       <InsuranceProducts />
+      <LoanProducts />
       <Features />
       <HowItWorks />
       <InsurersLogos />

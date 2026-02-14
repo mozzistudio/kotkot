@@ -36,7 +36,7 @@ const mockupVariants = {
 
 const stats = [
   { value: '2 min', label: 'Cotización promedio' },
-  { value: '10+', label: 'Aseguradoras' },
+  { value: '25+', label: 'Partners Financieros' },
   { value: '24/7', label: 'Automatización' },
 ];
 
@@ -65,7 +65,7 @@ export function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--color-success)] opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--color-success)]" />
               </span>
-              Insurtech para corredores
+              Plataforma Financiera IA
             </span>
           </motion.div>
 
@@ -74,7 +74,7 @@ export function Hero() {
             variants={itemVariants}
             className="mt-6 font-heading text-[44px] font-extrabold leading-[1.05] tracking-[-0.03em] text-[var(--dark-blue)] sm:text-[52px] lg:text-[56px] xl:text-[64px]"
           >
-            Tu agente de seguros
+            Tu agente financiero
             <br className="hidden sm:block" />
             {' '}inteligente en{' '}
             <span className="relative inline-block whitespace-nowrap">
@@ -93,11 +93,11 @@ export function Hero() {
             variants={itemVariants}
             className="mt-5 max-w-xl text-[18px] leading-relaxed text-[var(--text-secondary)] sm:text-xl"
           >
-            Automatiza tu correduría con IA. Cotiza, compara{' '}
-            <span className="font-semibold text-[var(--dark-blue)]">10+ aseguradoras</span>{' '}
-            y cierra ventas{' '}
+            Compara seguros y préstamos con IA. Conecta{' '}
+            <span className="font-semibold text-[var(--dark-blue)]">10+ aseguradoras</span> y{' '}
+            <span className="font-semibold text-[var(--dark-blue)]">15+ bancos</span>. Cierra ventas{' '}
             <span className="font-semibold text-[var(--dark-blue)]">24/7</span>{' '}
-            directamente por WhatsApp.
+            por WhatsApp.
           </motion.p>
 
           {/* CTA */}
@@ -117,7 +117,7 @@ export function Hero() {
               className="border-[var(--color-info-fg)] text-[var(--color-info-fg)] hover:bg-[var(--color-info-bg)]"
             >
               <Play className="h-4 w-4" />
-              Ver Seguros
+              Ver Productos
             </Button>
           </motion.div>
 
@@ -142,7 +142,7 @@ export function Hero() {
                 ))}
               </div>
               <span className="text-xs text-[var(--text-secondary)]">
-                Usado por <span className="font-semibold text-[var(--dark-blue)]">500+</span> corredores
+                Usado por <span className="font-semibold text-[var(--dark-blue)]">500+</span> brokers
               </span>
             </div>
           </motion.div>
