@@ -79,7 +79,7 @@ const cardVariants = {
 
 export function Features() {
   return (
-    <section id="funcionalidades" className="relative px-4 py-24 sm:py-32">
+    <section id="funcionalidades" className="relative px-4 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl">
         {/* --- Header --- */}
         <motion.div
@@ -89,11 +89,11 @@ export function Features() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
           className="mx-auto mb-16 max-w-2xl text-center"
         >
-          <h2 className="font-heading text-4xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-5xl lg:text-6xl leading-[1.1]">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
             Todo lo que tu negocio financiero{' '}
-            <span className="text-[var(--text-link)]">necesita</span>
+            <span className="text-[var(--text-primary)]">necesita</span>
           </h2>
-          <p className="mt-6 text-xl text-[var(--text-secondary)] font-medium leading-relaxed">
+          <p className="mt-4 text-lg text-[var(--text-secondary)]">
             Una plataforma completa para automatizar seguros y préstamos en Latinoamérica.
           </p>
         </motion.div>
@@ -110,20 +110,20 @@ export function Features() {
             <motion.div
               key={feature.title}
               variants={cardVariants}
-              className="group cursor-default rounded-[var(--radius-card)] border-2 border-[var(--border)] bg-[var(--surface-primary)] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[var(--accent)] hover:shadow-[0_8px_32px_rgba(202,255,4,0.15)]"
+              className="group cursor-default rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--surface-hover)]"
             >
               {/* Icon */}
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-[var(--radius-input)] bg-[var(--accent-light)]">
-                <feature.icon className="h-7 w-7 text-[var(--text-primary)]" strokeWidth={2} />
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-info-bg)]">
+                <feature.icon className="h-6 w-6 text-[var(--dark-blue)]" strokeWidth={1.8} />
               </div>
 
               {/* Title */}
-              <h3 className="font-heading text-xl font-bold text-[var(--text-primary)] mb-3">
+              <h3 className="font-heading text-lg font-semibold text-[var(--text-primary)]">
                 {feature.title}
               </h3>
 
               {/* Description */}
-              <p className="text-base leading-relaxed text-[var(--text-secondary)]">
+              <p className="mt-2 text-[0.9375rem] leading-relaxed text-[var(--text-secondary)]">
                 {feature.description}
               </p>
             </motion.div>

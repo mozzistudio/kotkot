@@ -353,38 +353,38 @@ function getGenericClient(id: string): ClientDetail {
 // ---------------------------------------------------------------------------
 
 const tagColors: Record<string, string> = {
-  VIP: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
-  Nuevo: 'bg-[var(--accent-light)] text-[var(--accent)] border-[var(--accent)]',
-  Renovacion: 'bg-blue-500/15 text-blue-400 border-blue-500/30',
-  Empresa: 'bg-purple-500/15 text-purple-400 border-purple-500/30',
-  Referido: 'bg-teal-500/15 text-teal-400 border-teal-500/30',
-  Auto: 'bg-sky-500/15 text-sky-400 border-sky-500/30',
-  Salud: 'bg-rose-500/15 text-rose-400 border-rose-500/30',
-  Hogar: 'bg-orange-500/15 text-orange-400 border-orange-500/30',
+  VIP: 'bg-amber-50 text-amber-700 border border-amber-200',
+  Nuevo: 'bg-[rgba(12,30,53,0.06)] text-[var(--dark-blue)] border border-[var(--dark-blue)]/20',
+  Renovacion: 'bg-blue-50 text-blue-700 border border-blue-200',
+  Empresa: 'bg-purple-50 text-purple-700 border border-purple-200',
+  Referido: 'bg-teal-50 text-teal-700 border border-teal-200',
+  Auto: 'bg-sky-50 text-sky-700 border border-sky-200',
+  Salud: 'bg-rose-50 text-rose-700 border border-rose-200',
+  Hogar: 'bg-orange-50 text-orange-700 border border-orange-200',
 };
 
 const policyStatusColors: Record<string, string> = {
-  Activa: 'bg-[var(--accent-light)] text-[var(--accent)] border-[var(--accent)]',
-  Vencida: 'bg-red-500/15 text-red-400 border-red-500/30',
-  Pendiente: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
+  Activa: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
+  Vencida: 'bg-red-50 text-red-700 border border-red-200',
+  Pendiente: 'bg-amber-50 text-amber-700 border border-amber-200',
 };
 
 const paymentStatusColors: Record<string, string> = {
-  Completado: 'bg-[var(--accent-light)] text-[var(--accent)]',
-  Pendiente: 'bg-amber-500/15 text-amber-400',
-  Fallido: 'bg-red-500/15 text-red-400',
+  Completado: 'bg-emerald-50 text-emerald-700',
+  Pendiente: 'bg-amber-50 text-amber-700',
+  Fallido: 'bg-red-50 text-red-700',
 };
 
 const paymentMethodColors: Record<string, string> = {
-  Yappy: 'bg-purple-500/15 text-purple-400',
-  Stripe: 'bg-blue-500/15 text-blue-400',
-  Transferencia: 'bg-teal-500/15 text-teal-400',
+  Yappy: 'bg-purple-50 text-purple-700',
+  Stripe: 'bg-blue-50 text-blue-700',
+  Transferencia: 'bg-teal-50 text-teal-700',
 };
 
 const conversationStatusColors: Record<string, string> = {
-  Leido: 'bg-slate-500/15 text-[var(--text-secondary)]',
-  Respondido: 'bg-[var(--accent-light)] text-[var(--accent)]',
-  Pendiente: 'bg-amber-500/15 text-amber-400',
+  Leido: 'bg-slate-100 text-slate-600',
+  Respondido: 'bg-emerald-50 text-emerald-700',
+  Pendiente: 'bg-amber-50 text-amber-700',
 };
 
 // ---------------------------------------------------------------------------
@@ -409,7 +409,7 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       <Link
         href="/clients"
-        className="mb-6 inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]"
+        className="mb-6 inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--dark-blue)]"
       >
         <ArrowLeft className="h-4 w-4" />
         Volver a Clientes
@@ -422,7 +422,7 @@ export default function ClientDetailPage() {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-center gap-5">
             {/* Avatar */}
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[var(--accent)] text-xl font-bold text-white">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[var(--dark-blue)] text-xl font-bold text-white">
               {client.initials}
             </div>
             <div>
@@ -436,8 +436,8 @@ export default function ClientDetailPage() {
                 <span
                   className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
                     client.status === 'Activo'
-                      ? 'bg-[var(--accent-light)] text-[var(--accent)]'
-                      : 'bg-red-500/15 text-red-400'
+                      ? 'bg-emerald-50 text-[var(--success-fg)]'
+                      : 'bg-red-50 text-red-700'
                   }`}
                 >
                   {client.status}
@@ -451,11 +451,11 @@ export default function ClientDetailPage() {
 
           {/* Quick Actions */}
           <div className="flex gap-3">
-            <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--accent)] bg-[var(--accent-light)] px-4 py-2.5 text-sm font-medium text-[var(--accent)] transition-colors hover:bg-[var(--accent-light)]">
+            <button className="inline-flex items-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-2.5 text-sm font-medium text-[var(--success-fg)] transition-colors hover:bg-emerald-100">
               <MessageCircle className="h-4 w-4" />
               Enviar WhatsApp
             </button>
-            <button className="inline-flex items-center gap-2 rounded-lg border border-sky-500/30 bg-sky-500/10 px-4 py-2.5 text-sm font-medium text-sky-400 transition-colors hover:bg-sky-500/20">
+            <button className="inline-flex items-center gap-2 rounded-lg border border-sky-200 bg-sky-50 px-4 py-2.5 text-sm font-medium text-sky-700 transition-colors hover:bg-sky-100">
               <Phone className="h-4 w-4" />
               Llamar
             </button>
@@ -474,7 +474,7 @@ export default function ClientDetailPage() {
         {/* Datos Personales */}
         <div className="card">
           <h2 className="mb-4 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
-            <User className="h-5 w-5 text-[var(--accent)]" />
+            <User className="h-5 w-5 text-[var(--dark-blue)]" />
             Datos Personales
           </h2>
           <div className="space-y-3">
@@ -502,7 +502,7 @@ export default function ClientDetailPage() {
           {client.vehicle && (
             <div className="card">
               <h2 className="mb-4 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
-                <Car className="h-5 w-5 text-sky-400" />
+                <Car className="h-5 w-5 text-sky-700" />
                 Datos del Vehiculo
               </h2>
               <div className="grid grid-cols-2 gap-3">
@@ -526,7 +526,7 @@ export default function ClientDetailPage() {
           {/* Tags */}
           <div className="card">
             <h2 className="mb-4 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
-              <Tag className="h-5 w-5 text-amber-400" />
+              <Tag className="h-5 w-5 text-amber-700" />
               Tags
             </h2>
             <div className="flex flex-wrap gap-2">
@@ -534,7 +534,7 @@ export default function ClientDetailPage() {
                 <span
                   key={tag}
                   className={`rounded-full border px-3 py-1 text-sm font-medium ${
-                    tagColors[tag] ?? 'bg-slate-500/15 text-[var(--text-secondary)] border-slate-500/30'
+                    tagColors[tag] ?? 'bg-slate-100 text-slate-600 border border-slate-200'
                   }`}
                 >
                   {tag}
@@ -550,9 +550,9 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       <div className="mb-8 rounded-xl border border-[var(--border)] bg-white p-6">
         <h2 className="mb-5 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
-          <Shield className="h-5 w-5 text-[var(--accent)]" />
+          <Shield className="h-5 w-5 text-[var(--dark-blue)]" />
           Polizas
-          <span className="ml-2 rounded-full bg-[var(--accent-light)] px-2 py-0.5 text-xs font-medium text-[var(--accent)]">
+          <span className="ml-2 rounded-full bg-[rgba(12,30,53,0.06)] px-2 py-0.5 text-xs font-medium text-[var(--dark-blue)]">
             {client.policies.length}
           </span>
         </h2>
@@ -586,7 +586,7 @@ export default function ClientDetailPage() {
                     <td className="py-3 pr-4 text-[var(--text-secondary)]">{policy.aseguradora}</td>
                     <td className="py-3 pr-4 text-[var(--text-secondary)]">{policy.tipo}</td>
                     <td className="py-3 pr-4 text-[var(--text-secondary)]">{policy.cobertura}</td>
-                    <td className="py-3 pr-4 font-semibold text-[var(--accent)] font-data">
+                    <td className="py-3 pr-4 font-semibold text-[var(--success-fg)] font-data">
                       {policy.primaMensual}
                     </td>
                     <td className="py-3 pr-4 text-[var(--text-tertiary)] font-data">{policy.fechaInicio}</td>
@@ -615,7 +615,7 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       <div className="mb-8 rounded-xl border border-[var(--border)] bg-white p-6">
         <h2 className="mb-5 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
-          <FileText className="h-5 w-5 text-blue-400" />
+          <FileText className="h-5 w-5 text-blue-700" />
           Historial de Cotizaciones
         </h2>
 
@@ -633,7 +633,7 @@ export default function ClientDetailPage() {
                     <span className="text-sm font-medium text-[var(--text-primary)] font-data">
                       {quote.id}
                     </span>
-                    <span className="rounded-full bg-sky-500/15 px-2 py-0.5 text-xs font-medium text-sky-400">
+                    <span className="rounded-full bg-sky-50 px-2 py-0.5 text-xs font-medium text-sky-700">
                       {quote.tipo}
                     </span>
                     <span className="text-xs text-[var(--text-tertiary)] font-data">{quote.fecha}</span>
@@ -643,11 +643,11 @@ export default function ClientDetailPage() {
                   </p>
                   <p className="mt-0.5 text-xs text-[var(--text-secondary)]">
                     Seleccionada:{' '}
-                    <span className="text-[var(--accent)]">{quote.seleccionada}</span>
+                    <span className="text-[var(--success-fg)]">{quote.seleccionada}</span>
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="text-sm font-semibold text-[var(--accent)] font-data">
+                  <p className="text-sm font-semibold text-[var(--success-fg)] font-data">
                     {quote.precio}
                   </p>
                 </div>
@@ -662,7 +662,7 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       <div className="mb-8 rounded-xl border border-[var(--border)] bg-white p-6">
         <h2 className="mb-5 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
-          <MessageSquare className="h-5 w-5 text-[var(--accent)]" />
+          <MessageSquare className="h-5 w-5 text-[var(--dark-blue)]" />
           Historial de Conversaciones
         </h2>
 
@@ -675,8 +675,8 @@ export default function ClientDetailPage() {
                 key={conv.id}
                 className="flex items-center gap-4 rounded-lg border border-[var(--border)]/50 p-4 transition-colors hover:border-[var(--border)]"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--accent-light)]">
-                  <MessageCircle className="h-5 w-5 text-[var(--accent)]" />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(12,30,53,0.06)]">
+                  <MessageCircle className="h-5 w-5 text-[var(--dark-blue)]" />
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2">
@@ -703,7 +703,7 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       <div className="mb-8 rounded-xl border border-[var(--border)] bg-white p-6">
         <h2 className="mb-5 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
-          <CreditCard className="h-5 w-5 text-purple-400" />
+          <CreditCard className="h-5 w-5 text-purple-700" />
           Historial de Pagos
         </h2>
 
@@ -770,7 +770,7 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       <div className="mb-8 rounded-xl border border-[var(--border)] bg-white p-6">
         <h2 className="mb-4 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
-          <StickyNote className="h-5 w-5 text-amber-400" />
+          <StickyNote className="h-5 w-5 text-amber-700" />
           Notas
         </h2>
         <textarea
@@ -778,10 +778,10 @@ export default function ClientDetailPage() {
           onChange={(e) => setNotes(e.target.value)}
           rows={4}
           placeholder="Agregar notas sobre el cliente..."
-          className="w-full rounded-lg border border-[var(--border)] px-4 py-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
+          className="w-full rounded-lg border border-[var(--border)] px-4 py-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.10)]"
         />
         <div className="mt-3 flex justify-end">
-          <button className="rounded-lg bg-[var(--accent)] text-[var(--text-on-accent)] transition-opacity hover:opacity-90">
+          <button className="rounded-lg bg-[var(--dark-blue)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--dark-blue-light)]">
             Guardar Notas
           </button>
         </div>

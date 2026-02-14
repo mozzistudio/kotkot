@@ -70,8 +70,8 @@ function getPasswordStrength(password: string): { score: number; label: string; 
   if (score <= 1) return { score, label: 'Debil', color: 'bg-red-400' };
   if (score <= 2) return { score, label: 'Regular', color: 'bg-orange-400' };
   if (score <= 3) return { score, label: 'Buena', color: 'bg-yellow-400' };
-  if (score <= 4) return { score, label: 'Fuerte', color: 'bg-emerald-400' };
-  return { score, label: 'Muy fuerte', color: 'bg-emerald-500' };
+  if (score <= 4) return { score, label: 'Fuerte', color: 'bg-[var(--success)]' };
+  return { score, label: 'Muy fuerte', color: 'bg-[var(--accent)]' };
 }
 
 export default function SignupPage() {
@@ -139,20 +139,24 @@ export default function SignupPage() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className="w-full max-w-lg"
     >
-      <div className="bg-white border border-[#e5e7eb] rounded-2xl p-8 sm:p-10">
+      <div className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-8 sm:p-10">
         {/* Logo */}
-        <div className="flex items-center justify-center gap-2 mb-6">
-          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#CAFF04]">
-            <ShieldCheck className="w-6 h-6 text-[#111827]" />
+        <div className="flex items-center justify-center gap-2.5 mb-6">
+          <div className="flex items-center justify-center w-10 h-10 rounded-[var(--radius-button)] bg-[var(--accent)]">
+            <svg viewBox="0 0 32 32" fill="none" className="h-[22px] w-[22px]">
+              <path d="M9 6v20" stroke="var(--text-primary)" strokeWidth="3" strokeLinecap="round" />
+              <path d="M9 16l10-10" stroke="var(--text-primary)" strokeWidth="3" strokeLinecap="round" />
+              <path d="M9 16l10 10" stroke="var(--text-primary)" strokeWidth="3" strokeLinecap="round" />
+            </svg>
           </div>
-          <span className="font-heading text-2xl font-bold text-[#111827]">
-            Coti<span className="text-[#10b981]">Facil</span>
+          <span className="font-heading text-2xl font-bold text-[var(--text-primary)]">
+            kotkot<span className="font-normal text-[var(--text-muted)]">.ai</span>
           </span>
         </div>
 
         {/* Title */}
-        <h1 className="text-2xl font-bold text-[#111827] text-center mb-2">Crea tu Cuenta</h1>
-        <p className="text-sm text-[#6b7280] text-center mb-6">
+        <h1 className="text-2xl font-bold text-[var(--text-primary)] text-center mb-2">Crea tu Cuenta</h1>
+        <p className="text-sm text-[var(--text-secondary)] text-center mb-6">
           Comienza a automatizar tus cotizaciones de seguros
         </p>
 
@@ -162,28 +166,28 @@ export default function SignupPage() {
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300 ${
                 step >= 1
-                  ? 'bg-[#CAFF04] text-[#111827]'
-                  : 'bg-[#e5e7eb] text-[#9ca3af]'
+                  ? 'bg-[var(--accent)] text-[var(--text-primary)]'
+                  : 'bg-[var(--border-default)] text-[var(--text-muted)]'
               }`}
             >
               {step > 1 ? <Check className="w-4 h-4" /> : '1'}
             </div>
-            <span className={`text-sm font-medium ${step >= 1 ? 'text-[#111827]' : 'text-[#9ca3af]'}`}>
+            <span className={`text-sm font-medium ${step >= 1 ? 'text-[var(--text-primary)]' : 'text-[var(--text-muted)]'}`}>
               Datos personales
             </span>
           </div>
-          <div className={`w-8 h-px transition-colors duration-300 ${step >= 2 ? 'bg-[#CAFF04]' : 'bg-[#e5e7eb]'}`} />
+          <div className={`w-8 h-px transition-colors duration-300 ${step >= 2 ? 'bg-[var(--accent)]' : 'bg-[var(--border-default)]'}`} />
           <div className="flex items-center gap-2">
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300 ${
                 step >= 2
-                  ? 'bg-[#CAFF04] text-[#111827]'
-                  : 'bg-[#e5e7eb] text-[#9ca3af]'
+                  ? 'bg-[var(--accent)] text-[var(--text-primary)]'
+                  : 'bg-[var(--border-default)] text-[var(--text-muted)]'
               }`}
             >
               2
             </div>
-            <span className={`text-sm font-medium ${step >= 2 ? 'text-[#111827]' : 'text-[#9ca3af]'}`}>
+            <span className={`text-sm font-medium ${step >= 2 ? 'text-[var(--text-primary)]' : 'text-[var(--text-muted)]'}`}>
               Tu correduria
             </span>
           </div>
@@ -202,11 +206,11 @@ export default function SignupPage() {
               >
                 {/* Full Name */}
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="fullName" className="text-sm font-medium text-[#111827]">
+                  <label htmlFor="fullName" className="text-sm font-medium text-[var(--text-primary)]">
                     Nombre completo
                   </label>
                   <div className="relative">
-                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[#6b7280]">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-secondary)]">
                       <User className="w-4 h-4" />
                     </div>
                     <input
@@ -216,18 +220,18 @@ export default function SignupPage() {
                       onChange={(e) => setFullName(e.target.value)}
                       placeholder="Juan Perez"
                       required
-                      className="w-full rounded-xl pl-10 pr-4 py-2.5 text-sm bg-white border border-[#e5e7eb] text-[#111827] placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:ring-2 focus:ring-[#CAFF04]/20 focus:outline-none transition-all duration-200"
+                      className="w-full rounded-[var(--radius-md)] pl-10 pr-4 py-2.5 text-sm bg-white border border-[var(--border-default)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent-light)] focus:outline-none transition-all duration-200"
                     />
                   </div>
                 </div>
 
                 {/* Email */}
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="signup-email" className="text-sm font-medium text-[#111827]">
+                  <label htmlFor="signup-email" className="text-sm font-medium text-[var(--text-primary)]">
                     Correo electronico
                   </label>
                   <div className="relative">
-                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[#6b7280]">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-secondary)]">
                       <Mail className="w-4 h-4" />
                     </div>
                     <input
@@ -237,18 +241,18 @@ export default function SignupPage() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="tu@correo.com"
                       required
-                      className="w-full rounded-xl pl-10 pr-4 py-2.5 text-sm bg-white border border-[#e5e7eb] text-[#111827] placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:ring-2 focus:ring-[#CAFF04]/20 focus:outline-none transition-all duration-200"
+                      className="w-full rounded-[var(--radius-md)] pl-10 pr-4 py-2.5 text-sm bg-white border border-[var(--border-default)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent-light)] focus:outline-none transition-all duration-200"
                     />
                   </div>
                 </div>
 
                 {/* Password */}
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="signup-password" className="text-sm font-medium text-[#111827]">
+                  <label htmlFor="signup-password" className="text-sm font-medium text-[var(--text-primary)]">
                     Contrasena
                   </label>
                   <div className="relative">
-                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[#6b7280]">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-secondary)]">
                       <Lock className="w-4 h-4" />
                     </div>
                     <input
@@ -259,12 +263,12 @@ export default function SignupPage() {
                       placeholder="Minimo 8 caracteres"
                       required
                       minLength={8}
-                      className="w-full rounded-xl pl-10 pr-12 py-2.5 text-sm bg-white border border-[#e5e7eb] text-[#111827] placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:ring-2 focus:ring-[#CAFF04]/20 focus:outline-none transition-all duration-200"
+                      className="w-full rounded-[var(--radius-md)] pl-10 pr-12 py-2.5 text-sm bg-white border border-[var(--border-default)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent-light)] focus:outline-none transition-all duration-200"
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute inset-y-0 right-0 flex items-center pr-3 text-[#6b7280] hover:text-[#111827] transition-colors"
+                      className="absolute inset-y-0 right-0 flex items-center pr-3 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
                       aria-label={showPassword ? 'Ocultar contrasena' : 'Mostrar contrasena'}
                     >
                       {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -278,12 +282,12 @@ export default function SignupPage() {
                           <div
                             key={i}
                             className={`h-1 flex-1 rounded-full transition-all duration-300 ${
-                              i < passwordStrength.score ? passwordStrength.color : 'bg-[#e5e7eb]'
+                              i < passwordStrength.score ? passwordStrength.color : 'bg-[var(--border-default)]'
                             }`}
                           />
                         ))}
                       </div>
-                      <p className="text-xs text-[#6b7280]">
+                      <p className="text-xs text-[var(--text-secondary)]">
                         Seguridad: <span className="font-medium">{passwordStrength.label}</span>
                       </p>
                     </div>
@@ -292,11 +296,11 @@ export default function SignupPage() {
 
                 {/* Confirm Password */}
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="confirm-password" className="text-sm font-medium text-[#111827]">
+                  <label htmlFor="confirm-password" className="text-sm font-medium text-[var(--text-primary)]">
                     Confirmar contrasena
                   </label>
                   <div className="relative">
-                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[#6b7280]">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-secondary)]">
                       <Lock className="w-4 h-4" />
                     </div>
                     <input
@@ -306,18 +310,18 @@ export default function SignupPage() {
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       placeholder="Repite tu contrasena"
                       required
-                      className={`w-full rounded-xl pl-10 pr-12 py-2.5 text-sm bg-white border text-[#111827] placeholder:text-[#9ca3af] focus:ring-2 focus:outline-none transition-all duration-200 ${
+                      className={`w-full rounded-[var(--radius-md)] pl-10 pr-12 py-2.5 text-sm bg-white border text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:ring-2 focus:outline-none transition-all duration-200 ${
                         passwordsMismatch
                           ? 'border-red-400 focus:border-red-400 focus:ring-red-400/20'
                           : passwordsMatch
-                          ? 'border-[#CAFF04] focus:border-[#CAFF04] focus:ring-[#CAFF04]/20'
-                          : 'border-[#e5e7eb] focus:border-[#CAFF04] focus:ring-[#CAFF04]/20'
+                          ? 'border-[var(--accent)] focus:border-[var(--accent)] focus:ring-[var(--accent-light)]'
+                          : 'border-[var(--border-default)] focus:border-[var(--accent)] focus:ring-[var(--accent-light)]'
                       }`}
                     />
                     <button
                       type="button"
                       onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                      className="absolute inset-y-0 right-0 flex items-center pr-3 text-[#6b7280] hover:text-[#111827] transition-colors"
+                      className="absolute inset-y-0 right-0 flex items-center pr-3 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
                       aria-label={showConfirmPassword ? 'Ocultar contrasena' : 'Mostrar contrasena'}
                     >
                       {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -327,7 +331,7 @@ export default function SignupPage() {
                     <p className="text-xs text-red-500">Las contrasenas no coinciden</p>
                   )}
                   {passwordsMatch && (
-                    <p className="text-xs text-[#10b981] flex items-center gap-1">
+                    <p className="text-xs text-[var(--success)] flex items-center gap-1">
                       <Check className="w-3 h-3" /> Las contrasenas coinciden
                     </p>
                   )}
@@ -335,22 +339,22 @@ export default function SignupPage() {
 
                 {/* Country Selector */}
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-sm font-medium text-[#111827]">Pais</label>
+                  <label className="text-sm font-medium text-[var(--text-primary)]">Pais</label>
                   <div className="relative">
                     <button
                       type="button"
                       onClick={() => setCountryOpen(!countryOpen)}
-                      className="w-full rounded-xl px-4 py-2.5 text-sm bg-white border border-[#e5e7eb] text-left flex items-center justify-between transition-all duration-200 hover:bg-[#f9fafb] focus:border-[#CAFF04] focus:ring-2 focus:ring-[#CAFF04]/20 focus:outline-none"
+                      className="w-full rounded-[var(--radius-md)] px-4 py-2.5 text-sm bg-white border border-[var(--border-default)] text-left flex items-center justify-between transition-all duration-200 hover:bg-[var(--surface-panel)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent-light)] focus:outline-none"
                     >
                       {selectedCountry ? (
-                        <span className="text-[#111827]">
+                        <span className="text-[var(--text-primary)]">
                           {selectedCountry.flag} {selectedCountry.name}
                         </span>
                       ) : (
-                        <span className="text-[#9ca3af]">Selecciona tu pais</span>
+                        <span className="text-[var(--text-muted)]">Selecciona tu pais</span>
                       )}
                       <ChevronDown
-                        className={`w-4 h-4 text-[#6b7280] transition-transform duration-200 ${
+                        className={`w-4 h-4 text-[var(--text-secondary)] transition-transform duration-200 ${
                           countryOpen ? 'rotate-180' : ''
                         }`}
                       />
@@ -363,7 +367,7 @@ export default function SignupPage() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -8 }}
                           transition={{ duration: 0.15 }}
-                          className="absolute z-50 top-full left-0 right-0 mt-1 rounded-xl bg-white border border-[#e5e7eb] max-h-60 overflow-y-auto"
+                          className="absolute z-50 top-full left-0 right-0 mt-1 rounded-[var(--radius-md)] bg-white border border-[var(--border-default)] max-h-60 overflow-y-auto"
                         >
                           {COUNTRIES.map((country) => (
                             <button
@@ -373,15 +377,15 @@ export default function SignupPage() {
                                 setSelectedCountry(country);
                                 setCountryOpen(false);
                               }}
-                              className={`w-full text-left px-4 py-2.5 text-sm hover:bg-[#f9fafb] transition-colors flex items-center gap-2 ${
+                              className={`w-full text-left px-4 py-2.5 text-sm hover:bg-[var(--surface-panel)] transition-colors flex items-center gap-2 ${
                                 selectedCountry?.code === country.code
-                                  ? 'bg-[#CAFF04]/10 text-[#111827]'
-                                  : 'text-[#111827]'
+                                  ? 'bg-[rgba(202,255,4,0.10)] text-[var(--text-primary)]'
+                                  : 'text-[var(--text-primary)]'
                               }`}
                             >
                               <span className="text-base">{country.flag}</span>
                               <span>{country.name}</span>
-                              <span className="ml-auto text-xs text-[#6b7280]">{country.phoneCode}</span>
+                              <span className="ml-auto text-xs text-[var(--text-secondary)]">{country.phoneCode}</span>
                             </button>
                           ))}
                         </motion.div>
@@ -394,10 +398,10 @@ export default function SignupPage() {
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
-                      className="flex items-start gap-2 p-3 rounded-lg bg-white border border-[#e5e7eb]"
+                      className="flex items-start gap-2 p-3 rounded-[var(--radius-md)] bg-white border border-[var(--border-default)]"
                     >
-                      <Info className="w-4 h-4 text-[#10b981] mt-0.5 shrink-0" />
-                      <div className="text-xs text-[#6b7280] space-y-0.5">
+                      <Info className="w-4 h-4 text-[var(--text-primary)] mt-0.5 shrink-0" />
+                      <div className="text-xs text-[var(--text-secondary)] space-y-0.5">
                         <p>
                           <span className="font-medium">Moneda:</span> {selectedCountry.currency}
                         </p>
@@ -414,7 +418,7 @@ export default function SignupPage() {
                   type="button"
                   onClick={handleNext}
                   disabled={!step1Valid}
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-[#111827] bg-[#CAFF04] hover:bg-[#b8e600] active:bg-[#a6d400] transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-[var(--radius-md)] px-6 py-3 text-base font-semibold text-[var(--text-primary)] bg-[var(--action-primary-bg)] hover:bg-[var(--action-primary-hover)] active:bg-[var(--action-primary-hover)] transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none"
                 >
                   Siguiente
                   <ArrowRight className="w-4 h-4" />
@@ -433,11 +437,11 @@ export default function SignupPage() {
               >
                 {/* Brokerage Name */}
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="brokerage" className="text-sm font-medium text-[#111827]">
+                  <label htmlFor="brokerage" className="text-sm font-medium text-[var(--text-primary)]">
                     Nombre de Correduria
                   </label>
                   <div className="relative">
-                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[#6b7280]">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-secondary)]">
                       <Building2 className="w-4 h-4" />
                     </div>
                     <input
@@ -447,19 +451,19 @@ export default function SignupPage() {
                       onChange={(e) => setBrokerageName(e.target.value)}
                       placeholder="Mi Correduria de Seguros"
                       required
-                      className="w-full rounded-xl pl-10 pr-4 py-2.5 text-sm bg-white border border-[#e5e7eb] text-[#111827] placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:ring-2 focus:ring-[#CAFF04]/20 focus:outline-none transition-all duration-200"
+                      className="w-full rounded-[var(--radius-md)] pl-10 pr-4 py-2.5 text-sm bg-white border border-[var(--border-default)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent-light)] focus:outline-none transition-all duration-200"
                     />
                   </div>
                 </div>
 
                 {/* Phone */}
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="phone" className="text-sm font-medium text-[#111827]">
+                  <label htmlFor="phone" className="text-sm font-medium text-[var(--text-primary)]">
                     Telefono
                   </label>
                   <div className="relative flex gap-2">
-                    <div className="flex items-center gap-1 rounded-xl px-3 py-2.5 text-sm bg-white border border-[#e5e7eb] text-[#111827] shrink-0">
-                      <Phone className="w-4 h-4 text-[#6b7280]" />
+                    <div className="flex items-center gap-1 rounded-[var(--radius-md)] px-3 py-2.5 text-sm bg-white border border-[var(--border-default)] text-[var(--text-primary)] shrink-0">
+                      <Phone className="w-4 h-4 text-[var(--text-secondary)]" />
                       <span>{selectedCountry?.phoneCode || '+1'}</span>
                     </div>
                     <input
@@ -469,48 +473,48 @@ export default function SignupPage() {
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="6000-0000"
                       required
-                      className="w-full rounded-xl px-4 py-2.5 text-sm bg-white border border-[#e5e7eb] text-[#111827] placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:ring-2 focus:ring-[#CAFF04]/20 focus:outline-none transition-all duration-200"
+                      className="w-full rounded-[var(--radius-md)] px-4 py-2.5 text-sm bg-white border border-[var(--border-default)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent-light)] focus:outline-none transition-all duration-200"
                     />
                   </div>
                 </div>
 
                 {/* Plan Selector */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-medium text-[#111827]">Plan</label>
+                  <label className="text-sm font-medium text-[var(--text-primary)]">Plan</label>
                   <div className="grid grid-cols-3 gap-2">
                     {PLANS.map((plan) => (
                       <button
                         key={plan.id}
                         type="button"
                         onClick={() => setSelectedPlan(plan.id)}
-                        className={`relative rounded-xl p-3 text-left border transition-all duration-200 ${
+                        className={`relative rounded-[var(--radius-md)] p-3 text-left border transition-all duration-200 ${
                           selectedPlan === plan.id
-                            ? 'border-[#CAFF04] bg-[#CAFF04]/10'
-                            : 'border-[#e5e7eb] bg-white hover:bg-[#f9fafb]'
+                            ? 'border-[var(--accent)] bg-[rgba(202,255,4,0.10)]'
+                            : 'border-[var(--border-default)] bg-white hover:bg-[var(--surface-panel)]'
                         }`}
                       >
                         {plan.popular && (
-                          <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-[10px] font-bold text-[#111827] bg-[#CAFF04] px-2 py-0.5 rounded-full">
+                          <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-[10px] font-bold text-[var(--text-primary)] bg-[var(--accent)] px-2 py-0.5 rounded-full">
                             Popular
                           </span>
                         )}
-                        <p className="font-heading font-bold text-sm text-[#111827]">{plan.name}</p>
-                        <p className="font-data text-lg font-bold text-[#10b981] mt-1">
+                        <p className="font-heading font-bold text-sm text-[var(--text-primary)]">{plan.name}</p>
+                        <p className="font-data text-lg font-bold text-[var(--success)] mt-1">
                           {plan.price}
-                          <span className="text-xs font-normal text-[#6b7280]">{plan.period}</span>
+                          <span className="text-xs font-normal text-[var(--text-secondary)]">{plan.period}</span>
                         </p>
                         <ul className="mt-2 space-y-1">
                           {plan.features.map((feature) => (
-                            <li key={feature} className="text-[10px] text-[#6b7280] flex items-start gap-1">
-                              <Check className="w-3 h-3 text-[#10b981] shrink-0 mt-px" />
+                            <li key={feature} className="text-[10px] text-[var(--text-secondary)] flex items-start gap-1">
+                              <Check className="w-3 h-3 text-[var(--text-primary)] shrink-0 mt-px" />
                               <span>{feature}</span>
                             </li>
                           ))}
                         </ul>
                         {selectedPlan === plan.id && (
                           <div className="absolute top-2 right-2">
-                            <div className="w-5 h-5 rounded-full bg-[#CAFF04] flex items-center justify-center">
-                              <Check className="w-3 h-3 text-[#111827]" />
+                            <div className="w-5 h-5 rounded-full bg-[var(--accent)] flex items-center justify-center">
+                              <Check className="w-3 h-3 text-[var(--text-primary)]" />
                             </div>
                           </div>
                         )}
@@ -528,17 +532,17 @@ export default function SignupPage() {
                       onChange={(e) => setAcceptTerms(e.target.checked)}
                       className="peer sr-only"
                     />
-                    <div className="w-5 h-5 rounded-md border-2 border-[#e5e7eb] bg-white peer-checked:border-[#CAFF04] peer-checked:bg-[#CAFF04] transition-all duration-200 flex items-center justify-center">
-                      {acceptTerms && <Check className="w-3 h-3 text-[#111827]" />}
+                    <div className="w-5 h-5 rounded-md border-2 border-[var(--border-default)] bg-white peer-checked:border-[var(--accent)] peer-checked:bg-[var(--accent)] transition-all duration-200 flex items-center justify-center">
+                      {acceptTerms && <Check className="w-3 h-3 text-[var(--text-primary)]" />}
                     </div>
                   </div>
-                  <span className="text-xs text-[#6b7280] leading-relaxed">
+                  <span className="text-xs text-[var(--text-secondary)] leading-relaxed">
                     Acepto los{' '}
-                    <Link href="/terms" className="text-[#10b981] hover:underline font-medium">
+                    <Link href="/terms" className="text-[var(--dark-blue)] hover:underline font-medium">
                       Terminos de Servicio
                     </Link>{' '}
                     y la{' '}
-                    <Link href="/privacy" className="text-[#10b981] hover:underline font-medium">
+                    <Link href="/privacy" className="text-[var(--dark-blue)] hover:underline font-medium">
                       Politica de Privacidad
                     </Link>
                   </span>
@@ -549,7 +553,7 @@ export default function SignupPage() {
                   <button
                     type="button"
                     onClick={() => setStep(1)}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-[#111827] border border-[#e5e7eb] bg-white hover:bg-[#f9fafb] transition-all duration-200"
+                    className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-md)] px-5 py-3 text-sm font-semibold text-[var(--text-primary)] border border-[var(--border-default)] bg-white hover:bg-[var(--surface-panel)] transition-all duration-200"
                   >
                     <ArrowLeft className="w-4 h-4" />
                     Atras
@@ -557,10 +561,10 @@ export default function SignupPage() {
                   <button
                     type="submit"
                     disabled={!step2Valid || isLoading}
-                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-[#111827] bg-[#CAFF04] hover:bg-[#b8e600] active:bg-[#a6d400] transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none"
+                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-[var(--radius-md)] px-6 py-3 text-base font-semibold text-[var(--text-primary)] bg-[var(--action-primary-bg)] hover:bg-[var(--action-primary-hover)] active:bg-[var(--action-primary-hover)] transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none"
                   >
                     {isLoading ? (
-                      <div className="w-5 h-5 border-2 border-[#111827]/30 border-t-[#111827] rounded-full animate-spin" />
+                      <div className="w-5 h-5 border-2 border-[var(--text-primary)]/30 border-t-[var(--text-primary)] rounded-full animate-spin" />
                     ) : null}
                     {isLoading ? 'Creando cuenta...' : 'Crear Cuenta'}
                   </button>
@@ -571,11 +575,11 @@ export default function SignupPage() {
         </form>
 
         {/* Login Link */}
-        <p className="text-center text-sm text-[#6b7280] mt-6">
+        <p className="text-center text-sm text-[var(--text-secondary)] mt-6">
           Ya tienes cuenta?{' '}
           <Link
             href="/login"
-            className="text-[#10b981] hover:text-[#059669] font-semibold transition-colors"
+            className="text-[var(--dark-blue)] hover:text-[var(--text-primary)] font-semibold transition-colors"
           >
             Iniciar sesion
           </Link>

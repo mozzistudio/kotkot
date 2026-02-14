@@ -10,9 +10,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Sobre Nosotros — CotiFácil',
+  title: 'Sobre Nosotros — Kotkot',
   description:
-    'Conoce la misión, visión y equipo detrás de CotiFácil. Democratizamos el acceso a seguros en Latinoamérica a través de la tecnología.',
+    'Conoce la misión, visión y equipo detrás de Kotkot. Democratizamos el acceso a seguros en Latinoamérica a través de la tecnología.',
 };
 
 const values = [
@@ -84,14 +84,14 @@ export default function NosotrosPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Page Header --- */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[var(--text-primary)]">
             Nuestra historia
-            <span className="inline-block h-px w-10 bg-[#059669]" />
+            <span className="inline-block h-px w-10 bg-[var(--text-primary)]" />
           </span>
-          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
-            Sobre CotiFácil
+          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl lg:text-6xl">
+            Sobre Kotkot
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-[#6b7280] sm:text-xl">
+          <p className="mt-6 text-lg leading-relaxed text-[var(--text-secondary)] sm:text-xl">
             Estamos construyendo el futuro de los seguros en Latinoamérica, un
             mensaje de WhatsApp a la vez.
           </p>
@@ -99,18 +99,18 @@ export default function NosotrosPage() {
 
         {/* --- Mission --- */}
         <section className="mb-24">
-          <div className="bg-white border border-[#e5e7eb] rounded-[16px] mx-auto max-w-4xl p-10 text-center sm:p-14">
-            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)]">
-              <Target className="h-7 w-7 text-[#059669]" />
+          <div className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] mx-auto max-w-4xl p-10 text-center sm:p-14">
+            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-[var(--radius-card)] bg-[rgba(202,255,4,0.15)]">
+              <Target className="h-7 w-7 text-[var(--text-primary)]" />
             </div>
-            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#059669]">
+            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
               Nuestra Misión
             </h2>
-            <p className="mt-4 font-heading text-2xl font-bold leading-snug text-[#111827] sm:text-3xl">
+            <p className="mt-4 font-heading text-2xl font-bold leading-snug text-[var(--text-primary)] sm:text-3xl">
               Democratizar el acceso a seguros en Latinoamérica a través de la
               tecnología.
             </p>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#6b7280]">
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[var(--text-secondary)]">
               Creemos que cada persona en Latinoamérica merece acceso a seguros
               de calidad. Y creemos que los corredores de seguros, con las
               herramientas adecuadas, son quienes mejor pueden llevar esa
@@ -123,30 +123,30 @@ export default function NosotrosPage() {
         <section className="mb-24">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#059669]">
+              <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
                 Nuestra Visión
               </h2>
-              <h3 className="mt-3 font-heading text-2xl font-bold text-[#111827] sm:text-3xl">
+              <h3 className="mt-3 font-heading text-2xl font-bold text-[var(--text-primary)] sm:text-3xl">
                 Un corredor de seguros en cada bolsillo
               </h3>
-              <p className="mt-4 text-base leading-relaxed text-[#6b7280]">
+              <p className="mt-4 text-base leading-relaxed text-[var(--text-secondary)]">
                 Imaginamos un futuro donde cualquier persona puede cotizar,
                 comparar y comprar seguros desde su WhatsApp, con la misma
                 confianza que si estuviera hablando con un corredor experto.
               </p>
-              <p className="mt-4 text-base leading-relaxed text-[#6b7280]">
+              <p className="mt-4 text-base leading-relaxed text-[var(--text-secondary)]">
                 Nuestra visión es ser la plataforma de tecnología de seguros
                 líder en Latinoamérica, potenciando a miles de corredores con
                 inteligencia artificial para proteger a millones de familias y
                 negocios.
               </p>
             </div>
-            <div className="bg-white border border-[#e5e7eb] rounded-[16px] flex aspect-[4/3] items-center justify-center p-8">
+            <div className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] flex aspect-[4/3] items-center justify-center p-8">
               <div className="flex flex-col items-center gap-4 text-center">
-                <div className="flex h-20 w-20 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)] shadow-lg shadow-emerald-500/25">
+                <div className="flex h-20 w-20 items-center justify-center rounded-[var(--radius-card)] bg-[rgba(202,255,4,0.15)] shadow-lg shadow-[rgba(202,255,4,0.25)]">
                   <Globe className="h-10 w-10 text-white" strokeWidth={1.5} />
                 </div>
-                <p className="text-sm font-medium text-[#9ca3af]">
+                <p className="text-sm font-medium text-[var(--text-muted)]">
                   Ilustración de visión
                 </p>
               </div>
@@ -157,27 +157,27 @@ export default function NosotrosPage() {
         {/* --- Values --- */}
         <section className="mb-24">
           <div className="mb-12 text-center">
-            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#059669]">
+            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
               Nuestros Valores
             </h2>
-            <h3 className="mt-3 font-heading text-2xl font-bold text-[#111827] sm:text-3xl">
+            <h3 className="mt-3 font-heading text-2xl font-bold text-[var(--text-primary)] sm:text-3xl">
               Lo que nos guía
             </h3>
           </div>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {values.map((value) => (
-              <div key={value.title} className="bg-white border border-[#e5e7eb] rounded-[16px] p-7">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
+              <div key={value.title} className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-7">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-[var(--radius-md)] bg-[rgba(202,255,4,0.15)]">
                   <value.icon
-                    className="h-6 w-6 text-[#059669]"
+                    className="h-6 w-6 text-[var(--text-primary)]"
                     strokeWidth={1.8}
                   />
                 </div>
-                <h4 className="font-heading text-lg font-semibold text-[#111827]">
+                <h4 className="font-heading text-lg font-semibold text-[var(--text-primary)]">
                   {value.title}
                 </h4>
-                <p className="mt-2 text-sm leading-relaxed text-[#6b7280]">
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
                   {value.description}
                 </p>
               </div>
@@ -188,11 +188,11 @@ export default function NosotrosPage() {
         {/* --- Team --- */}
         <section className="mb-24">
           <div className="mb-12 text-center">
-            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#059669]">
+            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
               Nuestro Equipo
             </h2>
-            <h3 className="mt-3 font-heading text-2xl font-bold text-[#111827] sm:text-3xl">
-              Las personas detrás de CotiFácil
+            <h3 className="mt-3 font-heading text-2xl font-bold text-[var(--text-primary)] sm:text-3xl">
+              Las personas detrás de Kotkot
             </h3>
           </div>
 
@@ -200,19 +200,19 @@ export default function NosotrosPage() {
             {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className="bg-white border border-[#e5e7eb] rounded-[16px] flex flex-col items-center p-6 text-center"
+                className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] flex flex-col items-center p-6 text-center"
               >
                 {/* Avatar placeholder */}
-                <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]radient-to-br from-emerald-100 to-teal-100">
-                  <Users className="h-8 w-8 text-[#059669]" />
+                <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-[var(--radius-md)] bg-[rgba(202,255,4,0.15)]">
+                  <Users className="h-8 w-8 text-[var(--text-primary)]" />
                 </div>
-                <h4 className="font-heading text-base font-semibold text-[#111827]">
+                <h4 className="font-heading text-base font-semibold text-[var(--text-primary)]">
                   {member.name}
                 </h4>
-                <p className="text-sm font-medium text-[#059669]">
+                <p className="text-sm font-medium text-[var(--text-primary)]">
                   {member.role}
                 </p>
-                <p className="mt-2 text-xs leading-relaxed text-[#9ca3af]">
+                <p className="mt-2 text-xs leading-relaxed text-[var(--text-muted)]">
                   {member.bio}
                 </p>
               </div>
@@ -223,10 +223,10 @@ export default function NosotrosPage() {
         {/* --- Countries --- */}
         <section className="mb-24">
           <div className="mb-12 text-center">
-            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#059669]">
+            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
               Presencia Regional
             </h2>
-            <h3 className="mt-3 font-heading text-2xl font-bold text-[#111827] sm:text-3xl">
+            <h3 className="mt-3 font-heading text-2xl font-bold text-[var(--text-primary)] sm:text-3xl">
               Operamos en 10 países de Latinoamérica
             </h3>
           </div>
@@ -235,13 +235,13 @@ export default function NosotrosPage() {
             {countries.map((country) => (
               <div
                 key={country.name}
-                className="bg-white border border-[#e5e7eb] rounded-[16px] flex flex-col items-center px-4 py-5 text-center"
+                className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] flex flex-col items-center px-4 py-5 text-center"
               >
                 <span className="text-3xl">{country.flag}</span>
-                <p className="mt-2 text-sm font-semibold text-[#111827]">
+                <p className="mt-2 text-sm font-semibold text-[var(--text-primary)]">
                   {country.name}
                 </p>
-                <span className="mt-1 inline-flex items-center rounded-[12px] bg-[rgba(202,255,4,0.15)] px-2 py-0.5 text-[10px] font-medium text-[#059669]">
+                <span className="mt-1 inline-flex items-center rounded-[var(--radius-md)] bg-[rgba(202,255,4,0.15)] px-2 py-0.5 text-[10px] font-medium text-[var(--text-primary)]">
                   {country.status}
                 </span>
               </div>
@@ -251,24 +251,24 @@ export default function NosotrosPage() {
 
         {/* --- Bottom CTA --- */}
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-heading text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl">
+          <h2 className="font-heading text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">
             Únete a nuestra misión
           </h2>
-          <p className="mt-4 text-lg text-[#6b7280]">
+          <p className="mt-4 text-lg text-[var(--text-secondary)]">
             Sé parte de la revolución insurtech en Latinoamérica. Empieza a
-            vender seguros por WhatsApp con CotiFácil.
+            vender seguros por WhatsApp con Kotkot.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
               href="/demo"
-              className="inline-flex items-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[#111827] shadow-xl shadow-emerald-500/25 transition-all duration-200 hover:shadow-emerald-500/40 hover:brightness-110"
+              className="inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent)] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[var(--text-primary)] shadow-xl shadow-[rgba(202,255,4,0.25)] transition-all duration-200 hover:shadow-[rgba(202,255,4,0.4)] hover:brightness-110"
             >
               Solicitar Demo
               <ArrowUpRight className="h-5 w-5" />
             </a>
             <a
               href="/contacto"
-              className="inline-flex items-center gap-2 rounded-[16px] bg-white border border-[#e5e7eb] px-8 py-4 text-lg font-semibold text-[#111827] transition-all duration-200 hover:bg-[#f3f4f6]"
+              className="inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-white border border-[var(--border-default)] px-8 py-4 text-lg font-semibold text-[var(--text-primary)] transition-all duration-200 hover:bg-[var(--surface-hover)]"
             >
               Contáctanos
             </a>

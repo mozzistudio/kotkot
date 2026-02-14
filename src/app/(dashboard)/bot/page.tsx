@@ -150,11 +150,11 @@ function getPreviewMessages(settings: BotSettings): ChatMessage[] {
 function TypingIndicator() {
   return (
     <div className="flex justify-start">
-      <div className="max-w-[85%] rounded-2xl rounded-bl-sm border border-[var(--accent)] bg-[var(--accent-light)] px-4 py-3">
+      <div className="max-w-[85%] rounded-2xl rounded-bl-sm border border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] px-4 py-3">
         <div className="flex items-center gap-1.5">
-          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-emerald-400/70" style={{ animationDelay: '0ms' }} />
-          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-emerald-400/70" style={{ animationDelay: '150ms' }} />
-          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-emerald-400/70" style={{ animationDelay: '300ms' }} />
+          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-[var(--text-muted)]" style={{ animationDelay: '0ms' }} />
+          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-[var(--text-muted)]" style={{ animationDelay: '150ms' }} />
+          <span className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-[var(--text-muted)]" style={{ animationDelay: '300ms' }} />
         </div>
       </div>
     </div>
@@ -328,7 +328,7 @@ export default function BotPage() {
             <div className="flex flex-col gap-6 sm:flex-row">
               {/* Avatar */}
               <div className="flex flex-col items-center gap-2">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-dashed border-[var(--border)] bg-white text-[var(--text-tertiary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-dashed border-[var(--border)] bg-white text-[var(--text-tertiary)] transition-colors hover:border-[var(--dark-blue)] hover:text-[var(--dark-blue)]">
                   <Camera className="h-6 w-6" />
                 </div>
                 <span className="text-xs text-[var(--text-tertiary)]">Subir avatar</span>
@@ -344,7 +344,7 @@ export default function BotPage() {
                     type="text"
                     value={settings.name}
                     onChange={(e) => updateSetting('name', e.target.value)}
-                    className="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]"
+                    className="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--dark-blue)] focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]"
                     placeholder="Nombre de tu asistente"
                   />
                 </div>
@@ -384,7 +384,7 @@ export default function BotPage() {
                   value={settings.welcomeMessage}
                   onChange={(e) => updateSetting('welcomeMessage', e.target.value)}
                   rows={3}
-                  className="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)] resize-none"
+                  className="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--dark-blue)] focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)] resize-none"
                 />
               </div>
 
@@ -396,7 +396,7 @@ export default function BotPage() {
                   value={settings.goodbyeMessage}
                   onChange={(e) => updateSetting('goodbyeMessage', e.target.value)}
                   rows={3}
-                  className="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)] resize-none"
+                  className="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--dark-blue)] focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)] resize-none"
                 />
               </div>
             </div>
@@ -416,13 +416,13 @@ export default function BotPage() {
                     onClick={() => updateSetting('tone', t.key)}
                     className={`rounded-lg border p-3 text-left transition-all ${
                       settings.tone === t.key
-                        ? 'border-[var(--accent)] bg-[var(--accent-light)] ring-1 ring-[var(--accent-light)]'
+                        ? 'border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] ring-1 ring-[rgba(12,30,53,0.06)]'
                         : 'border-[var(--border)] hover:border-[var(--border-hover)] hover:bg-[var(--surface-secondary)]'
                     }`}
                   >
                     <span
                       className={`text-sm font-medium ${
-                        settings.tone === t.key ? 'text-[var(--accent)]' : 'text-[var(--text-primary)]'
+                        settings.tone === t.key ? 'text-[var(--dark-blue)]' : 'text-[var(--text-primary)]'
                       }`}
                     >
                       {t.label}
@@ -437,7 +437,7 @@ export default function BotPage() {
             <div className="mb-6">
               <div className="mb-2 flex items-center justify-between">
                 <label className="text-sm font-medium text-[var(--text-primary)]">Formalidad</label>
-                <span className="text-xs font-semibold text-[var(--accent)] font-data">{settings.formality}</span>
+                <span className="text-xs font-semibold text-[var(--dark-blue)] font-data">{settings.formality}</span>
               </div>
               <input
                 type="range"
@@ -447,7 +447,7 @@ export default function BotPage() {
                 onChange={(e) => updateSetting('formality', Number(e.target.value))}
                 className="h-2 w-full cursor-pointer appearance-none rounded-full outline-none"
                 style={{
-                  background: `linear-gradient(to right, var(--accent) 0%, var(--accent) ${settings.formality}%, var(--border) ${settings.formality}%)`,
+                  background: `linear-gradient(to right, var(--dark-blue) 0%, var(--dark-blue) ${settings.formality}%, var(--border) ${settings.formality}%)`,
                 }}
               />
               <div className="mt-1 flex justify-between">
@@ -464,7 +464,7 @@ export default function BotPage() {
                   onClick={() => updateSetting('pronoun', 'tu')}
                   className={`rounded-md px-5 py-2 text-sm font-medium transition-all ${
                     settings.pronoun === 'tu'
-                      ? 'bg-[var(--accent-light)] text-[var(--accent)]'
+                      ? 'bg-[rgba(12,30,53,0.06)] text-[var(--dark-blue)]'
                       : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                   }`}
                 >
@@ -474,7 +474,7 @@ export default function BotPage() {
                   onClick={() => updateSetting('pronoun', 'usted')}
                   className={`rounded-md px-5 py-2 text-sm font-medium transition-all ${
                     settings.pronoun === 'usted'
-                      ? 'bg-[var(--accent-light)] text-[var(--accent)]'
+                      ? 'bg-[rgba(12,30,53,0.06)] text-[var(--dark-blue)]'
                       : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                   }`}
                 >
@@ -517,10 +517,10 @@ export default function BotPage() {
                   {settings.restrictedTopics.map((topic) => (
                     <span
                       key={topic}
-                      className="inline-flex items-center gap-1 rounded-full border border-red-500/30 bg-red-500/10 px-2.5 py-1 text-xs font-medium text-red-400"
+                      className="inline-flex items-center gap-1 rounded-full border border-red-200 bg-red-50 px-2.5 py-1 text-xs font-medium text-red-700"
                     >
                       {topic}
-                      <button onClick={() => removeRestrictedTopic(topic)} className="hover:text-red-300">
+                      <button onClick={() => removeRestrictedTopic(topic)} className="hover:text-red-900">
                         <X className="h-3 w-3" />
                       </button>
                     </span>
@@ -533,11 +533,11 @@ export default function BotPage() {
                     onChange={(e) => setNewTag(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && addRestrictedTopic()}
                     placeholder="Agregar tema..."
-                    className="flex-1 rounded-lg border border-[var(--border)] px-3 py-2 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
+                    className="flex-1 rounded-lg border border-[var(--border)] px-3 py-2 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20"
                   />
                   <button
                     onClick={addRestrictedTopic}
-                    className="rounded-lg border border-[var(--border)] px-3 py-2 text-sm text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                    className="rounded-lg border border-[var(--border)] px-3 py-2 text-sm text-[var(--text-secondary)] transition-colors hover:border-[var(--dark-blue)] hover:text-[var(--dark-blue)]"
                   >
                     Agregar
                   </button>
@@ -555,7 +555,7 @@ export default function BotPage() {
                   max={50}
                   value={settings.maxMessagesBeforeHandoff}
                   onChange={(e) => updateSetting('maxMessagesBeforeHandoff', Number(e.target.value))}
-                  className="w-32 rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
+                  className="w-32 rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20"
                 />
                 <p className="mt-1 text-xs text-[var(--text-tertiary)]">
                   Despues de este numero de mensajes sin resolucion, el bot transferira a un agente.
@@ -570,7 +570,7 @@ export default function BotPage() {
                 <select
                   value={settings.fallbackAction}
                   onChange={(e) => updateSetting('fallbackAction', e.target.value as FallbackAction)}
-                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20 sm:w-64"
+                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20 sm:w-64"
                 >
                   {fallbackOptions.map((opt) => (
                     <option key={opt.key} value={opt.key}>
@@ -589,7 +589,7 @@ export default function BotPage() {
               className="flex w-full items-center justify-between p-6 text-left"
             >
               <div className="flex items-center gap-2">
-                <Sparkles className="h-4 w-4 text-amber-400" />
+                <Sparkles className="h-4 w-4 text-amber-700" />
                 <span className="text-card-title">Avanzado</span>
               </div>
               {showAdvanced ? (
@@ -608,9 +608,9 @@ export default function BotPage() {
                   onChange={(e) => updateSetting('systemPrompt', e.target.value)}
                   rows={8}
                   placeholder="Deja vacio para usar el prompt generado automaticamente basado en la configuracion anterior..."
-                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20 resize-none font-mono"
+                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20 resize-none font-mono"
                 />
-                <p className="mt-1.5 text-xs text-amber-400/80">
+                <p className="mt-1.5 text-xs text-amber-700/80">
                   Advertencia: Esto sobrescribe completamente el prompt del sistema. Usa con cuidado.
                 </p>
               </div>
@@ -619,11 +619,11 @@ export default function BotPage() {
 
           {/* Action Buttons */}
           <div className="flex flex-col gap-3 sm:flex-row">
-            <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--accent)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--accent-hover)] ">
+            <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--dark-blue)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--dark-blue)]/90 ">
               <Save className="h-4 w-4" />
               Guardar Cambios
             </button>
-            <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 text-[var(--text-on-accent)] transition-all hover:bg-[var(--accent-hover)]">
+            <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--dark-blue)] px-6 py-3 text-[var(--text-on-accent)] transition-all hover:bg-[var(--dark-blue)]/90">
               <Rocket className="h-4 w-4" />
               Desplegar en WhatsApp
             </button>
@@ -635,20 +635,20 @@ export default function BotPage() {
           <div className="sticky top-8">
             <div className="rounded-xl border border-[var(--border)] bg-white overflow-hidden">
               {/* Preview Header */}
-              <div className="flex items-center justify-between border-b border-[var(--border)] bg-[var(--accent-light)] px-4 py-3">
+              <div className="flex items-center justify-between border-b border-[var(--border)] bg-[rgba(12,30,53,0.06)] px-4 py-3">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--accent-light)]">
-                    <Bot className="h-4 w-4 text-[var(--accent)]" />
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(12,30,53,0.06)]">
+                    <Bot className="h-4 w-4 text-[var(--dark-blue)]" />
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-[var(--text-primary)]">{settings.name || 'Bot'}</h3>
-                    <span className="text-xs text-[var(--accent)]">Vista previa interactiva</span>
+                    <span className="text-xs text-[var(--dark-blue)]">Vista previa interactiva</span>
                   </div>
                 </div>
                 {chatMessages.length > 0 && (
                   <button
                     onClick={clearChat}
-                    className="flex items-center gap-1.5 rounded-lg border border-[var(--border)]/60 px-2.5 py-1.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-red-500/30 hover:text-red-400"
+                    className="flex items-center gap-1.5 rounded-lg border border-[var(--border)]/60 px-2.5 py-1.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-red-200 hover:text-red-700"
                     title="Limpiar chat"
                   >
                     <Trash2 className="h-3 w-3" />
@@ -676,10 +676,10 @@ export default function BotPage() {
                     <div
                       className={`max-w-[85%] rounded-2xl px-3.5 py-2 text-xs leading-relaxed ${
                         msg.isError
-                          ? 'border border-red-500/30 bg-red-500/10 text-red-400 rounded-bl-sm'
+                          ? 'border border-red-200 bg-red-50 text-red-700 rounded-bl-sm'
                           : msg.sender === 'user'
                           ? 'bg-white/10 text-[var(--text-primary)] rounded-br-sm'
-                          : 'bg-[var(--accent-light)] border border-[var(--accent)] text-[var(--text-primary)] rounded-bl-sm'
+                          : 'bg-[rgba(12,30,53,0.06)] border border-[var(--dark-blue)] text-[var(--text-primary)] rounded-bl-sm'
                       }`}
                     >
                       {msg.isError && (
@@ -711,18 +711,18 @@ export default function BotPage() {
               {/* Interactive Input */}
               <div className="border-t border-[var(--border)] p-3">
                 {chatError && !isTyping && (
-                  <div className="mb-2 flex items-center gap-2 rounded-lg border border-red-500/20 bg-red-500/5 px-3 py-2 text-xs text-red-400">
+                  <div className="mb-2 flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700">
                     <AlertCircle className="h-3 w-3 flex-shrink-0" />
                     <span className="line-clamp-2">{chatError}</span>
                     <button
                       onClick={() => setChatError(null)}
-                      className="ml-auto flex-shrink-0 text-red-400/60 hover:text-red-400"
+                      className="ml-auto flex-shrink-0 text-red-700/60 hover:text-red-700"
                     >
                       <X className="h-3 w-3" />
                     </button>
                   </div>
                 )}
-                <div className="flex items-center gap-2 rounded-full border border-[var(--border)] bg-white px-3 py-2 focus-within:border-[var(--accent)] focus-within:ring-1 focus-within:ring-[var(--accent-light)] transition-all">
+                <div className="flex items-center gap-2 rounded-full border border-[var(--border)] bg-white px-3 py-2 focus-within:border-[var(--dark-blue)] focus-within:ring-1 focus-within:ring-[rgba(12,30,53,0.06)] transition-all">
                   <Smile className="h-4 w-4 flex-shrink-0 text-[var(--text-tertiary)]" />
                   <input
                     ref={chatInputRef}
@@ -739,7 +739,7 @@ export default function BotPage() {
                     disabled={!chatInput.trim() || isTyping}
                     className={`flex-shrink-0 rounded-full p-1 transition-all ${
                       chatInput.trim() && !isTyping
-                        ? 'bg-[var(--success)] text-white hover:bg-[var(--accent-hover)]'
+                        ? 'bg-[var(--success)] text-white hover:bg-[var(--dark-blue)]/90'
                         : 'text-[var(--text-tertiary)]'
                     }`}
                   >

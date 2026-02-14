@@ -115,7 +115,7 @@ const conversations: Conversation[] = [
     status: 'active',
     insuranceType: 'Salud',
     messages: [
-      { id: 'm1', sender: 'bot', text: 'Hola Laura! Bienvenida a CotiFacil. En que te puedo ayudar?', time: '08:10 AM' },
+      { id: 'm1', sender: 'bot', text: 'Hola Laura! Bienvenida a Kotkot. En que te puedo ayudar?', time: '08:10 AM' },
       { id: 'm2', sender: 'user', text: 'Quiero comparar seguros de salud para mi familia', time: '08:12 AM' },
       { id: 'm3', sender: 'bot', text: 'Con gusto! Cuantos miembros tiene tu familia y cuales son sus edades?', time: '08:12 AM' },
       { id: 'm4', sender: 'user', text: 'Somos 4: yo (35), mi esposo (37), y dos hijos de 8 y 5 anos', time: '08:14 AM' },
@@ -129,10 +129,10 @@ const conversations: Conversation[] = [
 // ---------------------------------------------------------------------------
 
 const statusColors: Record<ConversationStatus, string> = {
-  active: 'bg-emerald-500',
+  active: 'bg-[var(--success)]',
   waiting: 'bg-amber-500',
-  human: 'bg-blue-500',
-  closed: 'bg-slate-500',
+  human: 'bg-[var(--dark-blue)]',
+  closed: 'bg-slate-400',
 };
 
 const statusLabels: Record<ConversationStatus, string> = {
@@ -145,10 +145,10 @@ const statusLabels: Record<ConversationStatus, string> = {
 const filterOptions: ConversationStatus[] = ['active', 'waiting', 'human', 'closed'];
 
 const insuranceBadgeColors: Record<string, string> = {
-  Auto: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-  Salud: 'bg-rose-500/20 text-rose-400 border-rose-500/30',
-  Hogar: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
-  Viaje: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
+  Auto: 'bg-blue-50 text-blue-700 border border-blue-200',
+  Salud: 'bg-rose-50 text-rose-700 border border-rose-200',
+  Hogar: 'bg-amber-50 text-amber-700 border border-amber-200',
+  Viaje: 'bg-purple-50 text-purple-700 border border-purple-200',
 };
 
 // ---------------------------------------------------------------------------

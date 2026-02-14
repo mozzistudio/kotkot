@@ -123,17 +123,17 @@ export default async function InsuranceCrossPage({
         {/* Hero Section */}
         <section className="mb-12">
           <div className="text-center">
-            <div className="mb-4 flex items-center justify-center gap-2 text-sm text-gray-600">
+            <div className="mb-4 flex items-center justify-center gap-2 text-sm text-[var(--text-secondary)]">
               {product.icon && (
                 <span className="text-2xl">{product.icon}</span>
               )}
               <span>→</span>
               <span className="font-semibold">{company.name}</span>
             </div>
-            <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            <h1 className="mb-6 text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl">
               {product.name} {company.name}
             </h1>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-600">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-[var(--text-secondary)]">
               Toda la información sobre el {product.name.toLowerCase()} de{' '}
               {company.name} en Panamá: coberturas, precios, requisitos y cómo
               contratarlo.
@@ -143,11 +143,11 @@ export default async function InsuranceCrossPage({
             <div className="mb-8 flex items-center justify-center gap-4">
               <div className="flex items-center gap-2">
                 <Star className="h-6 w-6 fill-yellow-400 text-yellow-400" />
-                <span className="text-2xl font-bold text-gray-900">
+                <span className="text-2xl font-bold text-[var(--text-primary)]">
                   {company.ratings.overall.toFixed(1)}
                 </span>
               </div>
-              <span className="text-gray-600">
+              <span className="text-[var(--text-secondary)]">
                 ({company.ratings.reviewCount || 0} reseñas)
               </span>
             </div>
@@ -159,7 +159,7 @@ export default async function InsuranceCrossPage({
               )}%20con%20${encodeURIComponent(company.name)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-8 py-4 text-lg font-semibold text-white hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/20"
+              className="inline-flex items-center gap-2 rounded-xl bg-[var(--accent)] px-8 py-4 text-lg font-semibold text-[var(--text-primary)] hover:bg-[var(--action-primary-hover)] transition-colors shadow-lg shadow-[rgba(202,255,4,0.2)]"
             >
               <Phone className="h-5 w-5" />
               Cotizar por WhatsApp
@@ -169,15 +169,15 @@ export default async function InsuranceCrossPage({
 
         {/* Key Benefits */}
         <section className="mb-12">
-          <h2 className="mb-8 text-3xl font-bold text-gray-900">
+          <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
             ¿Por qué elegir {company.name}?
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {company.pros.slice(0, 6).map((pro, index) => (
               <GlassCard key={index} className="p-6">
                 <div className="flex items-start gap-3">
-                  <Check className="h-6 w-6 flex-shrink-0 text-emerald-600 mt-1" />
-                  <p className="text-gray-700">{pro}</p>
+                  <Check className="h-6 w-6 flex-shrink-0 text-[var(--text-primary)] mt-1" />
+                  <p className="text-[var(--text-primary)]">{pro}</p>
                 </div>
               </GlassCard>
             ))}
@@ -186,19 +186,19 @@ export default async function InsuranceCrossPage({
 
         {/* Coverage Details */}
         <section className="mb-12">
-          <h2 className="mb-8 text-3xl font-bold text-gray-900">
+          <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
             ¿Qué cubre?
           </h2>
           <GlassCard className="p-8">
             <div className="grid gap-4 md:grid-cols-2">
               {product.coverageTypes.slice(0, 6).map((coverage, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <Check className="h-6 w-6 flex-shrink-0 text-emerald-600 mt-1" />
+                  <Check className="h-6 w-6 flex-shrink-0 text-[var(--text-primary)] mt-1" />
                   <div>
-                    <h3 className="mb-1 font-semibold text-gray-900">
+                    <h3 className="mb-1 font-semibold text-[var(--text-primary)]">
                       {coverage.name}
                     </h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-[var(--text-secondary)]">
                       {coverage.description}
                     </p>
                   </div>
@@ -211,27 +211,27 @@ export default async function InsuranceCrossPage({
         {/* Pricing Section */}
         {product.priceRanges && (
           <section className="mb-12">
-            <h2 className="mb-8 text-3xl font-bold text-gray-900">
+            <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
               Precios y Factores
             </h2>
             <GlassCard className="p-8">
               <div className="mb-6">
-                <p className="mb-4 text-gray-700">
+                <p className="mb-4 text-[var(--text-primary)]">
                   El costo del {product.name.toLowerCase()} en {company.name}{' '}
                   varía según tus necesidades:
                 </p>
                 <div className="flex items-baseline gap-4">
-                  <span className="text-3xl font-bold text-emerald-600">
+                  <span className="text-3xl font-bold text-[var(--dark-blue)]">
                     {product.priceRanges.min}
                   </span>
-                  <span className="text-xl text-gray-600">a</span>
-                  <span className="text-3xl font-bold text-emerald-600">
+                  <span className="text-xl text-[var(--text-secondary)]">a</span>
+                  <span className="text-3xl font-bold text-[var(--dark-blue)]">
                     {product.priceRanges.max}
                   </span>
                 </div>
               </div>
               <div>
-                <h3 className="mb-4 font-semibold text-gray-900">
+                <h3 className="mb-4 font-semibold text-[var(--text-primary)]">
                   Factores que afectan el precio:
                 </h3>
                 <div className="grid gap-3 sm:grid-cols-2">
@@ -240,7 +240,7 @@ export default async function InsuranceCrossPage({
                       <Badge color="gray" className="mt-0.5">
                         {index + 1}
                       </Badge>
-                      <span className="text-sm text-gray-700">{factor}</span>
+                      <span className="text-sm text-[var(--text-primary)]">{factor}</span>
                     </div>
                   ))}
                 </div>
@@ -252,7 +252,7 @@ export default async function InsuranceCrossPage({
         {/* Company Comparison */}
         {competingCompanies.length > 0 && (
           <section className="mb-12">
-            <h2 className="mb-8 text-3xl font-bold text-gray-900">
+            <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
               Comparar con Otras Opciones
             </h2>
             <div className="grid gap-6 md:grid-cols-3">
@@ -262,16 +262,16 @@ export default async function InsuranceCrossPage({
                   href={`/seguros/${product.slug}/${competitor.slug}`}
                 >
                   <GlassCard className="group h-full p-6 transition-all hover:shadow-xl hover:scale-[1.02]">
-                    <h3 className="mb-2 text-xl font-bold text-gray-900 group-hover:text-emerald-600">
+                    <h3 className="mb-2 text-xl font-bold text-[var(--text-primary)] group-hover:text-[var(--text-primary)]">
                       {competitor.name}
                     </h3>
                     <div className="mb-4 flex items-center gap-2">
                       <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                      <span className="font-semibold text-gray-900">
+                      <span className="font-semibold text-[var(--text-primary)]">
                         {competitor.ratings.overall.toFixed(1)}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-600 line-clamp-2">
+                    <p className="text-sm text-[var(--text-secondary)] line-clamp-2">
                       {competitor.description}
                     </p>
                   </GlassCard>
@@ -284,16 +284,16 @@ export default async function InsuranceCrossPage({
         {/* FAQ Section */}
         {product.faqs && product.faqs.length > 0 && (
           <section className="mb-12">
-            <h2 className="mb-8 text-3xl font-bold text-gray-900">
+            <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
               Preguntas Frecuentes
             </h2>
             <div className="space-y-4">
               {product.faqs.slice(0, 3).map((faq, index) => (
                 <GlassCard key={index} className="p-6">
-                  <h3 className="mb-3 text-lg font-bold text-gray-900">
+                  <h3 className="mb-3 text-lg font-bold text-[var(--text-primary)]">
                     {faq.question}
                   </h3>
-                  <p className="text-gray-600">{faq.answer}</p>
+                  <p className="text-[var(--text-secondary)]">{faq.answer}</p>
                 </GlassCard>
               ))}
             </div>
@@ -303,16 +303,16 @@ export default async function InsuranceCrossPage({
         {/* Company Profile Link */}
         <section className="mb-12">
           <GlassCard className="p-8 text-center">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900">
+            <h2 className="mb-4 text-2xl font-bold text-[var(--text-primary)]">
               Más sobre {company.name}
             </h2>
-            <p className="mb-6 text-gray-600">
+            <p className="mb-6 text-[var(--text-secondary)]">
               Conoce más detalles sobre esta aseguradora, sus otros productos y
               opiniones de clientes.
             </p>
             <Link
               href={`/seguros/aseguradoras/${company.slug}`}
-              className="inline-flex items-center rounded-xl border-2 border-emerald-600 px-6 py-3 font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors"
+              className="inline-flex items-center rounded-xl border-2 border-[rgba(202,255,4,0.40)] bg-[var(--accent)] px-6 py-3 font-semibold text-[var(--text-primary)] hover:bg-[var(--action-primary-hover)] transition-colors"
             >
               Ver Perfil Completo de {company.name}
             </Link>
@@ -321,11 +321,11 @@ export default async function InsuranceCrossPage({
 
         {/* Final CTA */}
         <section>
-          <GlassCard className="bg-gradient-to-br from-emerald-600 to-teal-600 p-12 text-center text-white">
+          <GlassCard className="bg-[var(--accent)] p-12 text-center text-[var(--text-primary)]">
             <h2 className="mb-4 text-3xl font-bold">
               ¿Listo para contratar con {company.name}?
             </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-emerald-50">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-[var(--text-secondary)]">
               Obtén tu cotización personalizada en minutos. Sin compromiso.
             </p>
             <a
@@ -334,7 +334,7 @@ export default async function InsuranceCrossPage({
               )}%20con%20${encodeURIComponent(company.name)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-lg font-semibold text-emerald-600 hover:bg-gray-50 transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 rounded-xl bg-[var(--text-primary)] px-8 py-4 text-lg font-semibold text-white hover:bg-[var(--text-primary)] transition-colors shadow-lg"
             >
               <Phone className="h-5 w-5" />
               Cotizar Ahora por WhatsApp

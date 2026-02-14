@@ -62,10 +62,10 @@ export default function InsuranceHubPage() {
 
         {/* Hero Section */}
         <section className="mb-16 text-center">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          <h1 className="mb-6 text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl lg:text-6xl">
             Compara Seguros en Panamá
           </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-600 sm:text-xl">
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-[var(--text-secondary)] sm:text-xl">
             Encuentra el seguro perfecto para ti comparando coberturas, precios
             y beneficios de las principales aseguradoras de Panamá.
           </p>
@@ -73,7 +73,7 @@ export default function InsuranceHubPage() {
             href="https://wa.me/50760000000?text=Hola%2C%20quiero%20cotizar%20un%20seguro"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-xl bg-emerald-600 px-8 py-4 text-lg font-semibold text-white hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/20"
+            className="inline-flex items-center rounded-xl bg-[var(--accent)] px-8 py-4 text-lg font-semibold text-[var(--text-primary)] hover:bg-[var(--action-primary-hover)] transition-colors shadow-lg shadow-[rgba(202,255,4,0.2)]"
           >
             Cotizar Gratis por WhatsApp
           </a>
@@ -81,7 +81,7 @@ export default function InsuranceHubPage() {
 
         {/* Product Categories */}
         <section className="mb-16">
-          <h2 className="mb-8 text-3xl font-bold text-gray-900">
+          <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
             Tipos de Seguros
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -94,12 +94,12 @@ export default function InsuranceHubPage() {
                   )}
 
                   {/* Name */}
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">
+                  <h3 className="mb-2 text-xl font-bold text-[var(--text-primary)]">
                     {product.name}
                   </h3>
 
                   {/* Description */}
-                  <p className="mb-4 text-sm text-gray-600 line-clamp-2">
+                  <p className="mb-4 text-sm text-[var(--text-secondary)] line-clamp-2">
                     {product.shortDescription}
                   </p>
 
@@ -111,13 +111,13 @@ export default function InsuranceHubPage() {
                   )}
 
                   {/* CTA */}
-                  <div className="flex items-center gap-2 text-sm font-semibold text-emerald-600">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[var(--dark-blue)]">
                     Ver Opciones
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
 
                   {/* Hover Effect */}
-                  <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[rgba(202,255,4,0.08)] to-[rgba(202,255,4,0.04)] opacity-0 transition-opacity group-hover:opacity-100" />
                 </GlassCard>
               </Link>
             ))}
@@ -127,12 +127,12 @@ export default function InsuranceHubPage() {
         {/* Top Companies */}
         <section className="mb-16">
           <div className="mb-8 flex items-end justify-between">
-            <h2 className="text-3xl font-bold text-gray-900">
+            <h2 className="text-3xl font-bold text-[var(--text-primary)]">
               Mejores Aseguradoras
             </h2>
             <Link
               href="/seguros/aseguradoras"
-              className="text-sm font-semibold text-emerald-600 hover:text-emerald-700"
+              className="text-sm font-semibold text-[var(--dark-blue)] hover:text-[var(--text-primary)]"
             >
               Ver todas →
             </Link>
@@ -144,25 +144,25 @@ export default function InsuranceHubPage() {
                 href={`/seguros/aseguradoras/${company.slug}`}
               >
                 <GlassCard className="group relative h-full overflow-hidden p-6 transition-all hover:shadow-xl hover:scale-[1.02]">
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">
+                  <h3 className="mb-2 text-xl font-bold text-[var(--text-primary)]">
                     {company.name}
                   </h3>
                   <div className="mb-2 flex items-center gap-2">
-                    <span className="text-2xl font-bold text-emerald-600">
+                    <span className="text-2xl font-bold text-[var(--dark-blue)]">
                       {company.ratings.overall.toFixed(1)}
                     </span>
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-[var(--text-secondary)]">
                       / 5.0 ({company.ratings.reviewCount} reseñas)
                     </span>
                   </div>
-                  <p className="mb-4 text-sm text-gray-600 line-clamp-2">
+                  <p className="mb-4 text-sm text-[var(--text-secondary)] line-clamp-2">
                     {company.description}
                   </p>
-                  <div className="flex items-center gap-2 text-sm font-semibold text-emerald-600">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[var(--dark-blue)]">
                     Ver Perfil
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
-                  <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[rgba(202,255,4,0.08)] to-[rgba(202,255,4,0.04)] opacity-0 transition-opacity group-hover:opacity-100" />
                 </GlassCard>
               </Link>
             ))}
@@ -170,11 +170,11 @@ export default function InsuranceHubPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-600 p-12 text-center text-white">
+        <section className="rounded-2xl bg-[var(--accent)] p-12 text-center text-[var(--text-primary)]">
           <h2 className="mb-4 text-3xl font-bold">
             ¿No estás seguro cuál elegir?
           </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-emerald-50">
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-[var(--text-secondary)]">
             Nuestro asistente por WhatsApp te ayuda a encontrar el seguro
             perfecto según tus necesidades y presupuesto.
           </p>
@@ -182,7 +182,7 @@ export default function InsuranceHubPage() {
             href="https://wa.me/50760000000?text=Hola%2C%20necesito%20ayuda%20para%20elegir%20un%20seguro"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-xl bg-white px-8 py-4 text-lg font-semibold text-emerald-600 hover:bg-gray-50 transition-colors shadow-lg"
+            className="inline-flex items-center rounded-xl bg-[var(--text-primary)] px-8 py-4 text-lg font-semibold text-white hover:bg-[var(--text-primary)] transition-colors shadow-lg"
           >
             Hablar con un Asesor
           </a>

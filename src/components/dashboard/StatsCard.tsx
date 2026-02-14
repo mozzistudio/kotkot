@@ -15,12 +15,12 @@ interface StatsCardProps {
 export function StatsCard({ icon, label, value, trend, className = '' }: StatsCardProps) {
   return (
     <div
-      className={`bg-white border border-[#e5e7eb] rounded-[16px] p-6 transition-all duration-150 hover:border-[rgba(202,255,4,0.40)] hover:-translate-y-0.5 ${className}`}
+      className={`bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-6 transition-all duration-150 hover:border-[rgba(12,30,53,0.20)] hover:-translate-y-0.5 ${className}`}
     >
       <div className="flex items-start justify-between">
         {/* Icon */}
-        <div className="flex items-center justify-center w-10 h-10 rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-          <div className="text-[#111827]">{icon}</div>
+        <div className="flex items-center justify-center w-10 h-10 rounded-[var(--radius-md)] bg-[var(--dark-blue-surface)]">
+          <div className="text-[var(--dark-blue)]">{icon}</div>
         </div>
 
         {/* Trend */}
@@ -28,8 +28,8 @@ export function StatsCard({ icon, label, value, trend, className = '' }: StatsCa
           <div
             className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold ${
               trend.direction === 'up'
-                ? 'bg-[rgba(16,185,129,0.15)] text-[#047857]'
-                : 'bg-[rgba(239,68,68,0.15)] text-[#dc2626]'
+                ? 'bg-[rgba(16,185,129,0.15)] text-[var(--dark-blue)]'
+                : 'bg-[rgba(239,68,68,0.15)] text-[var(--error)]'
             }`}
           >
             {trend.direction === 'up' ? (
@@ -43,10 +43,10 @@ export function StatsCard({ icon, label, value, trend, className = '' }: StatsCa
       </div>
 
       {/* Label */}
-      <p className="mt-4 text-sm text-[#6b7280]">{label}</p>
+      <p className="mt-4 text-sm text-[var(--text-secondary)]">{label}</p>
 
       {/* Value */}
-      <p className="mt-1 text-2xl font-bold font-mono text-[#111827] tracking-tight">{value}</p>
+      <p className="mt-1 text-2xl font-bold font-mono text-[var(--text-primary)] tracking-tight">{value}</p>
     </div>
   );
 }

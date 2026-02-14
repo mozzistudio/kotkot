@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Outfit, DM_Sans, JetBrains_Mono, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -20,6 +20,13 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ['400', '500', '600'],
+  subsets: ['latin'],
+  variable: '--font-ibm-plex-mono',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: "kotkot.ai — Tu agente de seguros que nunca duerme",
   description:
@@ -34,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${outfit.variable} ${dmSans.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${outfit.variable} ${dmSans.variable} ${jetbrainsMono.variable} ${ibmPlexMono.variable} antialiased`}
       >
         {children}
       </body>

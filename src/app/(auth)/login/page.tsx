@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, Lock, Eye, EyeOff, ShieldCheck } from 'lucide-react';
 import { createBrowserClient } from '@supabase/ssr';
+import { Input } from '@/components/ui/Input';
+import { Button } from '@/components/ui/Button';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -25,10 +27,7 @@ export default function LoginPage() {
     setIsLoading(true);
     setError('');
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
 
     if (error) {
       setError(error.message);
@@ -55,183 +54,133 @@ export default function LoginPage() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className="w-full max-w-md"
     >
-      <div className="bg-white border border-[#e5e7eb] rounded-2xl p-8 sm:p-10">
-        {/* Logo */}
-        <div className="flex items-center justify-center gap-2 mb-8">
-          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#CAFF04]">
-            <ShieldCheck className="w-6 h-6 text-[#111827]" />
+      <div className="rounded-[var(--radius-lg)] border border-[var(--color-border-default)] bg-[var(--color-surface-page)] p-8 sm:p-10">
+        <div className="mb-8 flex items-center justify-center gap-2">
+          <div className="flex h-10 w-10 items-center justify-center rounded-[var(--radius-md)] bg-[var(--color-action-primary-bg)]">
+            <svg viewBox="0 0 32 32" fill="none" className="h-6 w-6">
+              <path d="M9 6v20" stroke="var(--color-text-primary)" strokeWidth="3" strokeLinecap="round" />
+              <path d="M9 16l10-10" stroke="var(--color-text-primary)" strokeWidth="3" strokeLinecap="round" />
+              <path d="M9 16l10 10" stroke="var(--color-text-primary)" strokeWidth="3" strokeLinecap="round" />
+            </svg>
           </div>
-          <span className="font-heading text-2xl font-bold text-[#111827]">
-            Coti<span className="text-[#10b981]">Facil</span>
+          <span className="font-heading text-[var(--type-heading-md)] font-bold text-[var(--color-text-primary)]">
+            kotkot<span className="font-normal text-[var(--color-text-muted)]">.ai</span>
           </span>
         </div>
 
-        {/* Title */}
-        <h1 className="text-2xl font-bold text-[#111827] text-center mb-2">Iniciar Sesion</h1>
-        <p className="text-sm text-[#6b7280] text-center mb-8">
+        <h1 className="mb-2 text-center text-[var(--type-heading-md)] font-bold text-[var(--color-text-primary)]">Iniciar sesión</h1>
+        <p className="mb-8 text-center text-sm text-[var(--color-text-secondary)]">
           Ingresa a tu cuenta para gestionar tus cotizaciones
         </p>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-5">
-          {/* Email */}
-          <div className="flex flex-col gap-1.5">
-            <label htmlFor="email" className="text-sm font-medium text-[#111827]">
-              Correo electronico
-            </label>
-            <div className="relative">
-              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[#6b7280]">
-                <Mail className="w-4 h-4" />
-              </div>
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="tu@correo.com"
-                required
-                className="w-full rounded-xl pl-10 pr-4 py-2.5 text-sm bg-white border border-[#e5e7eb] text-[#111827] placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:ring-2 focus:ring-[#CAFF04]/20 focus:outline-none transition-all duration-200"
-              />
-            </div>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <Input
+            id="email"
+            type="email"
+            label="Correo electrónico"
+            icon={<Mail className="h-4 w-4" />}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="tu@correo.com"
+            required
+          />
+
+          <div className="relative">
+            <Input
+              id="password"
+              type={showPassword ? 'text' : 'password'}
+              label="Contraseña"
+              icon={<Lock className="h-4 w-4" />}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Tu contraseña"
+              required
+              className="pr-12"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute bottom-3 right-3 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
+              aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+            >
+              {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+            </button>
           </div>
 
-          {/* Password */}
-          <div className="flex flex-col gap-1.5">
-            <label htmlFor="password" className="text-sm font-medium text-[#111827]">
-              Contrasena
-            </label>
-            <div className="relative">
-              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[#6b7280]">
-                <Lock className="w-4 h-4" />
-              </div>
-              <input
-                id="password"
-                type={showPassword ? 'text' : 'password'}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Tu contrasena"
-                required
-                className="w-full rounded-xl pl-10 pr-12 py-2.5 text-sm bg-white border border-[#e5e7eb] text-[#111827] placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:ring-2 focus:ring-[#CAFF04]/20 focus:outline-none transition-all duration-200"
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="absolute inset-y-0 right-0 flex items-center pr-3 text-[#6b7280] hover:text-[#111827] transition-colors"
-                aria-label={showPassword ? 'Ocultar contrasena' : 'Mostrar contrasena'}
-              >
-                {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-              </button>
-            </div>
-          </div>
-
-          {/* Error Message */}
           {error && (
-            <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-2.5 text-sm text-red-600">
+            <div className="rounded-[var(--radius-md)] border border-[var(--color-danger-fg)] bg-[var(--color-danger-bg)] px-4 py-3 text-sm text-[var(--color-danger-fg)]">
               {error}
             </div>
           )}
 
-          {/* Forgot Password */}
           <div className="flex justify-end">
-            <Link
-              href="/forgot-password"
-              className="text-sm text-[#10b981] hover:text-[#059669] font-medium transition-colors"
-            >
-              Olvidaste tu contrasena?
+            <Link href="/forgot-password" className="text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]">
+              Olvidaste tu contraseña?
             </Link>
           </div>
 
-          {/* Submit Button */}
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-[#111827] bg-[#CAFF04] hover:bg-[#b8e600] active:bg-[#a6d400] transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none"
-          >
-            {isLoading ? (
-              <div className="w-5 h-5 border-2 border-[#111827]/30 border-t-[#111827] rounded-full animate-spin" />
-            ) : null}
-            {isLoading ? 'Iniciando sesion...' : 'Iniciar Sesion'}
-          </button>
+          <Button type="submit" loading={isLoading} className="w-full" size="lg">
+            {isLoading ? 'Iniciando sesión...' : 'Iniciar sesión'}
+          </Button>
         </form>
 
-        {/* Divider */}
-        <div className="flex items-center gap-4 my-6">
-          <div className="flex-1 h-px bg-[#e5e7eb]" />
-          <span className="text-sm text-[#9ca3af] font-medium">o continua con</span>
-          <div className="flex-1 h-px bg-[#e5e7eb]" />
+        <div className="my-6 flex items-center gap-4">
+          <div className="h-px flex-1 bg-[var(--color-border-default)]" />
+          <span className="text-sm font-medium text-[var(--color-text-muted)]">o continúa con</span>
+          <div className="h-px flex-1 bg-[var(--color-border-default)]" />
         </div>
 
-        {/* Google OAuth */}
-        <button
+        <Button
           type="button"
           onClick={handleGoogleLogin}
-          className="w-full inline-flex items-center justify-center gap-3 rounded-xl px-6 py-3 text-sm font-semibold text-[#111827] border border-[#e5e7eb] bg-white hover:bg-[#f9fafb] hover:border-[#d1d5db] transition-all duration-200"
+          variant="secondary"
+          size="lg"
+          className="w-full gap-3"
         >
-          <svg className="w-5 h-5" viewBox="0 0 24 24">
-            <path
-              d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"
-              fill="#4285F4"
-            />
-            <path
-              d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-              fill="#34A853"
-            />
-            <path
-              d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-              fill="#FBBC05"
-            />
-            <path
-              d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-              fill="#EA4335"
-            />
+          <svg className="h-5 w-5" viewBox="0 0 24 24">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="var(--color-brand-google-blue)" />
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="var(--color-brand-google-green)" />
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="var(--color-brand-google-yellow)" />
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="var(--color-brand-google-red)" />
           </svg>
           Continuar con Google
-        </button>
+        </Button>
 
-        {/* Sign Up Link */}
-        <p className="text-center text-sm text-[#6b7280] mt-8">
+        <p className="mt-8 text-center text-sm text-[var(--color-text-secondary)]">
           No tienes cuenta?{' '}
-          <Link
-            href="/signup"
-            className="text-[#10b981] hover:text-[#059669] font-semibold transition-colors"
-          >
+          <Link href="/signup" className="font-semibold text-[var(--color-text-primary)] underline-offset-4 hover:underline">
             Crear cuenta
           </Link>
         </p>
       </div>
 
-      {/* Test Credentials */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="mt-6 rounded-xl border border-[#e5e7eb] bg-white p-4"
+        className="mt-6 rounded-[var(--radius-md)] border border-[var(--color-border-default)] bg-[var(--color-surface-page)] p-4"
       >
         <div className="flex items-start gap-3">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#CAFF04]">
-            <ShieldCheck className="h-4 w-4 text-[#111827]" />
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-[var(--color-action-primary-bg)]">
+            <ShieldCheck className="h-4 w-4 text-[var(--color-text-primary)]" />
           </div>
           <div className="flex-1">
-            <h3 className="text-sm font-semibold text-[#111827] mb-2">
-              Credenciales de Prueba
-            </h3>
+            <h3 className="mb-2 text-sm font-semibold text-[var(--color-text-primary)]">Credenciales de prueba</h3>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <Mail className="h-3.5 w-3.5 text-[#6b7280]" />
-                <code className="text-xs font-mono text-[#111827] bg-[#f9fafb] border border-[#e5e7eb] px-2 py-1 rounded">
+                <Mail className="h-3.5 w-3.5 text-[var(--color-text-secondary)]" />
+                <code className="rounded-[var(--radius-sm)] border border-[var(--color-border-default)] bg-[var(--color-surface-panel)] px-2 py-1 text-xs font-mono text-[var(--color-text-primary)]">
                   demo@kotkot.ai
                 </code>
               </div>
               <div className="flex items-center gap-2">
-                <Lock className="h-3.5 w-3.5 text-[#6b7280]" />
-                <code className="text-xs font-mono text-[#111827] bg-[#f9fafb] border border-[#e5e7eb] px-2 py-1 rounded">
+                <Lock className="h-3.5 w-3.5 text-[var(--color-text-secondary)]" />
+                <code className="rounded-[var(--radius-sm)] border border-[var(--color-border-default)] bg-[var(--color-surface-panel)] px-2 py-1 text-xs font-mono text-[var(--color-text-primary)]">
                   demo123456
                 </code>
               </div>
             </div>
-            <p className="mt-2 text-xs text-[#6b7280]">
-              Usa estas credenciales para explorar la plataforma
-            </p>
+            <p className="mt-2 text-xs text-[var(--color-text-secondary)]">Usa estas credenciales para explorar la plataforma.</p>
           </div>
         </div>
       </motion.div>

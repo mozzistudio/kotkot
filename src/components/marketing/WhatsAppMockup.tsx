@@ -13,11 +13,8 @@ interface ChatMessage {
   sender: 'bot' | 'user';
   text: string;
   time: string;
-  /** Optional quick-reply buttons shown below the bubble */
   buttons?: string[];
-  /** Render the text as a special quote-card */
   isQuoteCard?: boolean;
-  /** Render a payment CTA button */
   paymentButton?: { label: string };
 }
 
@@ -146,7 +143,6 @@ const MESSAGES: ChatMessage[] = [
   },
 ];
 
-/** Delay (ms) before each message appears */
 const BOT_DELAY = 1800;
 const USER_DELAY = 1200;
 const TYPING_DURATION = 1200;
@@ -156,7 +152,6 @@ const RESTART_PAUSE = 3000;
 // Sub-components
 // ---------------------------------------------------------------------------
 
-/** Three bouncing dots typing indicator */
 function TypingIndicator() {
   return (
     <motion.div
@@ -171,7 +166,7 @@ function TypingIndicator() {
           {[0, 1, 2].map((i) => (
             <motion.span
               key={i}
-              className="block h-[6px] w-[6px] rounded-full bg-gray-400"
+              className="block h-[6px] w-[6px] rounded-full bg-[var(--text-muted)]"
               animate={{ y: [0, -5, 0] }}
               transition={{
                 duration: 0.55,
@@ -187,33 +182,32 @@ function TypingIndicator() {
   );
 }
 
-/** Quote comparison card */
 function QuoteCard({ text }: { text: string }) {
   const lines = text.split('\n');
-  const title = lines[0]; // "📊 Mejores opciones para ti:"
+  const title = lines[0];
 
   return (
-    <div className="overflow-hidden rounded-[12px] border border-[#e5e7eb] bg-white">
+    <div className="overflow-hidden rounded-[var(--radius-md)] border border-[var(--border-default)] bg-white">
       {/* Card header */}
-      <div className="border-b border-[#e5e7eb] bg-[rgba(202,255,4,0.15)] px-3 py-2">
-        <span className="text-[11px] font-semibold tracking-wide text-[#111827]">
+      <div className="border-b border-[var(--border-default)] bg-[var(--accent-light)] px-3 py-2">
+        <span className="text-[11px] font-semibold tracking-wide text-[var(--text-primary)]">
           {title}
         </span>
       </div>
 
       {/* Quote rows */}
-      <div className="divide-y divide-[#e5e7eb] px-1 py-1">
-        {/* ASSA */}
-        <div className="flex items-center justify-between rounded-[10px] bg-[rgba(202,255,4,0.15)] px-2.5 py-2">
+      <div className="divide-y divide-[var(--border-default)] px-1 py-1">
+        {/* ASSA — Best */}
+        <div className="flex items-center justify-between rounded-[var(--radius-button)] bg-[var(--accent-light)] px-2.5 py-2">
           <div className="flex items-center gap-1.5">
             <span className="text-[11px]">🏆</span>
-            <span className="text-[11px] font-bold text-[#111827]">ASSA</span>
-            <span className="rounded-[10px] bg-[#CAFF04] px-1.5 py-[1px] text-[8px] font-bold text-[#111827]">
+            <span className="text-[11px] font-bold text-[var(--text-primary)]">ASSA</span>
+            <span className="rounded-[var(--radius-button)] bg-[var(--accent)] px-1.5 py-[1px] text-[8px] font-bold text-[var(--text-primary)]">
               MEJOR
             </span>
           </div>
-          <span className="text-[12px] font-extrabold text-[#059669]">
-            $89<span className="text-[9px] font-semibold text-[#059669]">/mes</span>
+          <span className="text-[12px] font-extrabold text-[var(--dark-blue)]">
+            $89<span className="text-[9px] font-semibold text-[var(--dark-blue)]">/mes</span>
           </span>
         </div>
 
@@ -221,10 +215,10 @@ function QuoteCard({ text }: { text: string }) {
         <div className="flex items-center justify-between px-2.5 py-2">
           <div className="flex items-center gap-1.5">
             <span className="text-[11px]">⭐</span>
-            <span className="text-[11px] font-semibold text-[#111827]">MAPFRE</span>
+            <span className="text-[11px] font-semibold text-[var(--text-primary)]">MAPFRE</span>
           </div>
-          <span className="text-[11px] font-bold text-[#6b7280]">
-            $95<span className="text-[9px] font-medium text-[#6b7280]">/mes</span>
+          <span className="text-[11px] font-bold text-[var(--text-secondary)]">
+            $95<span className="text-[9px] font-medium text-[var(--text-secondary)]">/mes</span>
           </span>
         </div>
 
@@ -232,17 +226,17 @@ function QuoteCard({ text }: { text: string }) {
         <div className="flex items-center justify-between px-2.5 py-2">
           <div className="flex items-center gap-1.5">
             <span className="w-[14px]" />
-            <span className="text-[11px] font-medium text-[#6b7280]">SURA</span>
+            <span className="text-[11px] font-medium text-[var(--text-secondary)]">SURA</span>
           </div>
-          <span className="text-[11px] font-bold text-[#9ca3af]">
-            $102<span className="text-[9px] font-medium text-[#9ca3af]">/mes</span>
+          <span className="text-[11px] font-bold text-[var(--text-muted)]">
+            $102<span className="text-[9px] font-medium text-[var(--text-muted)]">/mes</span>
           </span>
         </div>
       </div>
 
       {/* Footer */}
-      <div className="border-t border-[#e5e7eb] bg-[rgba(202,255,4,0.15)] px-3 py-1.5">
-        <p className="text-[9px] leading-tight text-[#6b7280]">
+      <div className="border-t border-[var(--border-default)] bg-[var(--accent-light)] px-3 py-1.5">
+        <p className="text-[9px] leading-tight text-[var(--text-secondary)]">
           Todas incluyen: daños a terceros, robo total y asistencia vial.
         </p>
       </div>
@@ -250,13 +244,12 @@ function QuoteCard({ text }: { text: string }) {
   );
 }
 
-/** Payment CTA button */
 function PaymentButton({ label }: { label: string }) {
   return (
     <motion.button
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.97 }}
-      className="mt-1.5 w-full rounded-[10px] border border-[rgba(202,255,4,0.40)] bg-[#CAFF04] px-4 py-2 text-[11px] font-bold text-[#111827] transition-all hover:bg-[#b8e600]"
+      className="mt-1.5 w-full rounded-[var(--radius-button)] border border-[rgba(202,255,4,0.40)] bg-[var(--accent)] px-4 py-2 text-[11px] font-bold text-[var(--text-primary)] transition-all hover:bg-[var(--action-primary-hover)]"
     >
       {label}
     </motion.button>
@@ -281,15 +274,14 @@ function ChatBubble({ message }: { message: ChatMessage }) {
         className={`relative max-w-[82%] ${
           isBot
             ? 'rounded-2xl rounded-tl-sm bg-white shadow-sm'
-            : 'rounded-2xl rounded-tr-sm bg-[#d9fdd3] shadow-sm'
+            : 'rounded-2xl rounded-tr-sm bg-[var(--color-brand-whatsapp-bubble)] shadow-sm'
         }`}
       >
-        {/* Bubble content */}
         <div className="px-2.5 pb-1 pt-1.5">
           {message.isQuoteCard ? (
             <QuoteCard text={message.text} />
           ) : (
-            <p className="whitespace-pre-wrap text-[11.5px] leading-[1.45] text-gray-900">
+            <p className="whitespace-pre-wrap text-[11.5px] leading-[1.45] text-[var(--text-primary)]">
               {message.text}
             </p>
           )}
@@ -300,7 +292,7 @@ function ChatBubble({ message }: { message: ChatMessage }) {
               {message.buttons.map((btn) => (
                 <span
                   key={btn}
-                  className="inline-block rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-[3px] text-[10px] font-medium text-emerald-700"
+                  className="inline-block rounded-full border border-[rgba(202,255,4,0.40)] bg-[var(--accent-light)] px-2.5 py-[3px] text-xs font-medium text-[var(--text-primary)]"
                 >
                   {btn}
                 </span>
@@ -314,10 +306,9 @@ function ChatBubble({ message }: { message: ChatMessage }) {
           )}
 
           {/* Timestamp */}
-          <div className={`flex items-center gap-0.5 ${isBot ? 'justify-end' : 'justify-end'} mt-0.5`}>
-            <span className="text-[9px] text-gray-400">{message.time}</span>
+          <div className="flex items-center gap-0.5 justify-end mt-0.5">
+            <span className="text-[9px] text-[var(--text-muted)]">{message.time}</span>
             {!isBot && (
-              /* Double-check marks */
               <svg width="13" height="8" viewBox="0 0 16 10" className="ml-0.5 text-blue-400" fill="currentColor">
                 <path d="M15.01 1.16a.73.73 0 0 0-1.03-.04l-6.12 5.72-1.2-1.12a.73.73 0 0 0-1 1.06l1.72 1.61a.73.73 0 0 0 1-.01l6.63-6.19a.73.73 0 0 0 0-1.03Z" />
                 <path d="M11.01 1.16a.73.73 0 0 0-1.03-.04l-6.12 5.72-1.2-1.12a.73.73 0 0 0-1 1.06l1.72 1.61a.73.73 0 0 0 1-.01l6.63-6.19a.73.73 0 0 0 0-1.03Z" />
@@ -340,15 +331,19 @@ export function WhatsAppMockup() {
   const [cycleKey, setCycleKey] = useState(0);
 
   useEffect(() => {
-    // Reset for new cycle
-    setVisibleCount(0);
-    setShowTyping(false);
-
     let cancelled = false;
     const timers: ReturnType<typeof setTimeout>[] = [];
 
-    // Schedule each message
-    let cumulativeDelay = 800; // initial pause
+    timers.push(
+      setTimeout(() => {
+        if (!cancelled) {
+          setVisibleCount(0);
+          setShowTyping(false);
+        }
+      }, 0)
+    );
+
+    let cumulativeDelay = 800;
 
     MESSAGES.forEach((msg, idx) => {
       const isBot = msg.sender === 'bot';
@@ -356,7 +351,6 @@ export function WhatsAppMockup() {
       cumulativeDelay += preDelay;
 
       if (isBot) {
-        // Show typing indicator
         const typingTime = cumulativeDelay;
         timers.push(
           setTimeout(() => {
@@ -366,7 +360,6 @@ export function WhatsAppMockup() {
 
         cumulativeDelay += TYPING_DURATION;
 
-        // Show the message
         const showTime = cumulativeDelay;
         timers.push(
           setTimeout(() => {
@@ -388,7 +381,6 @@ export function WhatsAppMockup() {
       }
     });
 
-    // After all messages, wait then restart
     cumulativeDelay += RESTART_PAUSE;
     timers.push(
       setTimeout(() => {
@@ -423,13 +415,13 @@ export function WhatsAppMockup() {
 
         {/* Screen */}
         <div className="relative flex h-[600px] flex-col overflow-hidden rounded-[2rem] bg-white sm:h-[640px]">
-          {/* Dynamic Island / Notch */}
+          {/* Dynamic Island */}
           <div className="absolute left-1/2 top-0 z-50 flex -translate-x-1/2 items-center justify-center">
             <div className="h-[22px] w-[90px] rounded-b-2xl bg-slate-800" />
           </div>
 
-          {/* Status bar */}
-          <div className="relative z-40 flex items-center justify-between bg-[#075E54] px-4 pb-0 pt-[26px]">
+          {/* Status bar — WhatsApp brand colors (not tokenized) */}
+          <div className="relative z-40 flex items-center justify-between bg-[var(--color-brand-whatsapp-700)] px-4 pb-0 pt-6">
             <span className="text-[9px] font-semibold text-white/90">9:41</span>
             <div className="flex items-center gap-1">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
@@ -453,32 +445,30 @@ export function WhatsAppMockup() {
             </div>
           </div>
 
-          {/* WhatsApp header */}
-          <div className="relative z-30 flex items-center gap-2 bg-[#075E54] px-2 pb-2.5 pt-0.5">
+          {/* WhatsApp header — WhatsApp brand colors (not tokenized) */}
+          <div className="relative z-30 flex items-center gap-2 bg-[var(--color-brand-whatsapp-700)] px-2 pb-2.5 pt-0.5">
             <ChevronLeft className="h-4 w-4 shrink-0 text-white/80" />
 
-            {/* Avatar */}
-            <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full bg-gradient-to-br from-emerald-300 to-teal-500 shadow-inner">
+            <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full bg-gradient-to-br from-[var(--color-brand-whatsapp-400)] to-[var(--color-brand-whatsapp-500)] shadow-inner">
               <div className="flex h-full w-full items-center justify-center">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white" opacity="0.9">
                   <path d="M12 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 12c5.523 0 10 2.239 10 5v1H2v-1c0-2.761 4.477-5 10-5Z" />
                 </svg>
               </div>
-              {/* Online dot */}
-              <div className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-[1.5px] border-[#075E54] bg-green-400" />
+              <div className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-2 border-[var(--color-brand-whatsapp-700)] bg-green-400" />
             </div>
 
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1">
                 <span className="truncate text-[13px] font-semibold text-white">
-                  CotiFácil Bot
+                  Kotkot Bot
                 </span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0">
-                  <circle cx="12" cy="12" r="10" fill="#25D366" />
+                  <circle cx="12" cy="12" r="10" fill="var(--color-brand-whatsapp-400)" />
                   <path d="M8 12l3 3 5-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <span className="text-[10px] text-emerald-200/80">en línea</span>
+              <span className="text-xs text-[var(--color-brand-whatsapp-400)]/80">en línea</span>
             </div>
 
             <div className="flex items-center gap-3">
@@ -488,27 +478,26 @@ export function WhatsAppMockup() {
             </div>
           </div>
 
-          {/* Chat area */}
+          {/* Chat area — WhatsApp brand background */}
           <div
             className="relative flex-1 overflow-hidden"
             style={{
-              backgroundColor: '#ECE5DD',
+              backgroundColor: 'var(--color-brand-whatsapp-chat)',
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c8e6c9' fill-opacity='0.18'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
             }}
           >
-            {/* Scroll container */}
             <div className="flex h-full flex-col-reverse overflow-y-auto">
               <div className="flex flex-col gap-[6px] px-1.5 py-2">
                 {/* Date chip */}
                 <div className="flex justify-center py-1">
-                  <span className="rounded-lg bg-white/80 px-3 py-0.5 text-[10px] font-medium text-gray-500 shadow-sm">
+                  <span className="rounded-lg bg-white/80 px-3 py-0.5 text-xs font-medium text-[var(--text-secondary)] shadow-sm">
                     HOY
                   </span>
                 </div>
 
                 {/* Encryption notice */}
                 <div className="flex justify-center px-6 pb-1">
-                  <div className="rounded-lg bg-[#FFF3C4]/60 px-3 py-1.5 text-center">
+                  <div className="rounded-lg bg-[var(--color-brand-note-bg)]/60 px-3 py-1.5 text-center">
                     <span className="text-[8.5px] leading-tight text-amber-800/70">
                       🔒 Los mensajes están cifrados de extremo a extremo.
                     </span>
@@ -527,30 +516,30 @@ export function WhatsAppMockup() {
             </div>
           </div>
 
-          {/* Input bar */}
-          <div className="relative z-20 flex items-center gap-1.5 bg-[#F0F0F0] px-2 py-1.5">
+          {/* Input bar — WhatsApp brand */}
+          <div className="relative z-20 flex items-center gap-1.5 bg-[var(--color-brand-whatsapp-input)] px-2 py-1.5">
             <div className="flex flex-1 items-center gap-2 rounded-full bg-white px-3 py-1.5 shadow-sm">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8696A0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M8 14s1.5 2 4 2 4-2 4-2" />
                 <line x1="9" y1="9" x2="9.01" y2="9" />
                 <line x1="15" y1="9" x2="15.01" y2="9" />
               </svg>
-              <span className="flex-1 text-[11px] text-gray-400">Mensaje</span>
-              <Paperclip className="h-3.5 w-3.5 shrink-0 rotate-45 text-gray-400" />
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8696A0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+              <span className="flex-1 text-[11px] text-[var(--text-muted)]">Mensaje</span>
+              <Paperclip className="h-3.5 w-3.5 shrink-0 rotate-45 text-[var(--text-muted)]" />
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
                 <circle cx="8.5" cy="8.5" r="1.5" />
                 <polyline points="21 15 16 10 5 21" />
               </svg>
             </div>
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#075E54] shadow-sm">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand-whatsapp-700)] shadow-sm">
               <Mic className="h-3.5 w-3.5 text-white" />
             </div>
           </div>
 
-          {/* Home indicator bar */}
-          <div className="flex items-center justify-center bg-[#F0F0F0] pb-1.5 pt-0.5">
+          {/* Home indicator */}
+          <div className="flex items-center justify-center bg-[var(--color-brand-whatsapp-input)] pb-1.5 pt-0.5">
             <div className="h-[4px] w-[100px] rounded-full bg-slate-800/20" />
           </div>
         </div>

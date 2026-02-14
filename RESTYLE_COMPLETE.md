@@ -21,7 +21,7 @@ The entire Kotkot project has been successfully restyled to match the **KOTKOT_L
 - **Text primary**: `#111827` (headings, titles)
 - **Text secondary**: `#6b7280` (body, descriptions)
 - **Text tertiary**: `#9ca3af` (timestamps, metadata)
-- **Links**: `#059669` (emerald green)
+- **Links**: `#0C1E35` (emerald green)
 - **Chart line**: `#10b981`
 - **Borders**: `#e5e7eb` default, `#f3f4f6` light dividers
 

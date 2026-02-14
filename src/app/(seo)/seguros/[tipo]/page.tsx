@@ -122,16 +122,16 @@ export default async function InsuranceProductPage({
         {/* Coverage Types */}
         {product.coverageTypes && product.coverageTypes.length > 0 && (
           <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-            <h2 className="mb-8 text-3xl font-bold text-gray-900">
+            <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
               Tipos de Cobertura
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {product.coverageTypes.map((coverage, index) => (
                 <GlassCard key={index} className="p-6">
-                  <h3 className="mb-3 text-xl font-bold text-gray-900">
+                  <h3 className="mb-3 text-xl font-bold text-[var(--text-primary)]">
                     {coverage.name}
                   </h3>
-                  <p className="text-gray-600">{coverage.description}</p>
+                  <p className="text-[var(--text-secondary)]">{coverage.description}</p>
                 </GlassCard>
               ))}
             </div>
@@ -141,20 +141,20 @@ export default async function InsuranceProductPage({
         {/* Price Ranges */}
         {product.priceRanges && (
           <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-            <h2 className="mb-8 text-3xl font-bold text-gray-900">
+            <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
               ¿Cuánto cuesta?
             </h2>
             <GlassCard className="p-8">
               <div className="mb-6 flex items-baseline gap-4">
-                <span className="text-4xl font-bold text-emerald-600">
+                <span className="text-4xl font-bold text-[var(--dark-blue)]">
                   {product.priceRanges.min}
                 </span>
-                <span className="text-xl text-gray-600">a</span>
-                <span className="text-4xl font-bold text-emerald-600">
+                <span className="text-xl text-[var(--text-secondary)]">a</span>
+                <span className="text-4xl font-bold text-[var(--dark-blue)]">
                   {product.priceRanges.max}
                 </span>
               </div>
-              <p className="mb-6 text-gray-600">
+              <p className="mb-6 text-[var(--text-secondary)]">
                 El precio depende de varios factores:
               </p>
               <ul className="space-y-2">
@@ -163,7 +163,7 @@ export default async function InsuranceProductPage({
                     <Badge color="gray" className="mt-1">
                       {index + 1}
                     </Badge>
-                    <span className="text-gray-700">{factor}</span>
+                    <span className="text-[var(--text-primary)]">{factor}</span>
                   </li>
                 ))}
               </ul>
@@ -173,10 +173,10 @@ export default async function InsuranceProductPage({
 
         {/* Companies Offering This Product */}
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <h2 className="mb-8 text-3xl font-bold text-gray-900">
+          <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
             Compara Aseguradoras
           </h2>
-          <p className="mb-8 text-lg text-gray-600">
+          <p className="mb-8 text-lg text-[var(--text-secondary)]">
             {companies.length} aseguradoras ofrecen {product.name.toLowerCase()}{' '}
             en Panamá
           </p>
@@ -195,16 +195,16 @@ export default async function InsuranceProductPage({
         {/* FAQ Section */}
         {product.faqs && product.faqs.length > 0 && (
           <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-            <h2 className="mb-8 text-3xl font-bold text-gray-900">
+            <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
               Preguntas Frecuentes
             </h2>
             <div className="space-y-4">
               {product.faqs.map((faq, index) => (
                 <GlassCard key={index} className="p-6">
-                  <h3 className="mb-3 text-lg font-bold text-gray-900">
+                  <h3 className="mb-3 text-lg font-bold text-[var(--text-primary)]">
                     {faq.question}
                   </h3>
-                  <p className="text-gray-600">{faq.answer}</p>
+                  <p className="text-[var(--text-secondary)]">{faq.answer}</p>
                 </GlassCard>
               ))}
             </div>
@@ -214,7 +214,7 @@ export default async function InsuranceProductPage({
         {/* Related Products */}
         {product.relatedProducts && product.relatedProducts.length > 0 && (
           <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-            <h2 className="mb-8 text-3xl font-bold text-gray-900">
+            <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
               También te puede interesar
             </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -234,10 +234,10 @@ export default async function InsuranceProductPage({
                           {relatedProduct.icon}
                         </div>
                       )}
-                      <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-emerald-600">
+                      <h3 className="mb-2 text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--text-primary)]">
                         {relatedProduct.name}
                       </h3>
-                      <p className="text-sm text-gray-600 line-clamp-2">
+                      <p className="text-sm text-[var(--text-secondary)] line-clamp-2">
                         {relatedProduct.shortDescription}
                       </p>
                     </GlassCard>
@@ -250,11 +250,11 @@ export default async function InsuranceProductPage({
 
         {/* Final CTA */}
         <section className="mx-auto max-w-4xl px-4 py-16">
-          <GlassCard className="bg-gradient-to-br from-emerald-600 to-teal-600 p-12 text-center text-white">
+          <GlassCard className="bg-[var(--accent)] p-12 text-center text-[var(--text-primary)]">
             <h2 className="mb-4 text-3xl font-bold">
               ¿Listo para cotizar tu {product.name.toLowerCase()}?
             </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-emerald-50">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-[var(--text-secondary)]">
               Recibe cotizaciones personalizadas de las mejores aseguradoras en
               minutos por WhatsApp.
             </p>
@@ -264,7 +264,7 @@ export default async function InsuranceProductPage({
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl bg-white px-8 py-4 text-lg font-semibold text-emerald-600 hover:bg-gray-50 transition-colors shadow-lg"
+              className="inline-flex items-center rounded-xl bg-[var(--text-primary)] px-8 py-4 text-lg font-semibold text-white hover:bg-[var(--text-primary)] transition-colors shadow-lg"
             >
               Cotizar Ahora por WhatsApp
             </a>

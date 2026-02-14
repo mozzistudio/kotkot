@@ -144,14 +144,14 @@ const clients: Client[] = [
 // ---------------------------------------------------------------------------
 
 const tagColors: Record<string, string> = {
-  VIP: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
-  Nuevo: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
-  Renovacion: 'bg-blue-500/15 text-blue-400 border-blue-500/30',
-  Empresa: 'bg-purple-500/15 text-purple-400 border-purple-500/30',
-  Referido: 'bg-teal-500/15 text-teal-400 border-teal-500/30',
-  Auto: 'bg-sky-500/15 text-sky-400 border-sky-500/30',
-  Salud: 'bg-rose-500/15 text-rose-400 border-rose-500/30',
-  Hogar: 'bg-orange-500/15 text-orange-400 border-orange-500/30',
+  VIP: 'bg-amber-50 text-amber-700 border border-amber-200',
+  Nuevo: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
+  Renovacion: 'bg-blue-50 text-blue-700 border border-blue-200',
+  Empresa: 'bg-purple-50 text-purple-700 border border-purple-200',
+  Referido: 'bg-teal-50 text-teal-700 border border-teal-200',
+  Auto: 'bg-sky-50 text-sky-700 border border-sky-200',
+  Salud: 'bg-rose-50 text-rose-700 border border-rose-200',
+  Hogar: 'bg-orange-50 text-orange-700 border border-orange-200',
 };
 
 // ---------------------------------------------------------------------------
@@ -213,7 +213,7 @@ export default function ClientsPage() {
             onClick={() => setShowFilters(!showFilters)}
             className={`btn-secondary ${
               showFilters || selectedTags.length > 0
-                ? 'border-[var(--accent)] bg-[var(--accent-light)] text-[var(--text-primary)]'
+                ? 'border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] text-[var(--dark-blue)]'
                 : ''
             }`}
           >
@@ -265,7 +265,7 @@ export default function ClientsPage() {
             {/* Top Row */}
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--accent-light)] text-[var(--text-primary)]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(12,30,53,0.06)] text-[var(--dark-blue)]">
                   <User className="h-5 w-5" />
                 </div>
                 <div>

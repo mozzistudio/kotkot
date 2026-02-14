@@ -15,9 +15,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Centro de Ayuda — CotiFácil',
+  title: 'Centro de Ayuda — Kotkot',
   description:
-    'Encuentra respuestas a tus preguntas sobre CotiFácil. Guías, tutoriales y soporte técnico.',
+    'Encuentra respuestas a tus preguntas sobre Kotkot. Guías, tutoriales y soporte técnico.',
 };
 
 const faqs = [
@@ -26,7 +26,7 @@ const faqs = [
     icon: Smartphone,
     questions: [
       {
-        q: '¿Cómo empiezo a usar CotiFácil?',
+        q: '¿Cómo empiezo a usar Kotkot?',
         a: 'Primero, solicita una demo desde nuestra página principal. Nuestro equipo te contactará para configurar tu cuenta, conectar tu número de WhatsApp Business y configurar las integraciones con tus aseguradoras.',
       },
       {
@@ -63,10 +63,10 @@ const faqs = [
     questions: [
       {
         q: '¿Cómo funciona el cobro automático?',
-        a: 'CotiFácil genera automáticamente links de pago (Yappy, Stripe) cuando un cliente acepta una cotización. El dinero va directamente a tu cuenta de procesador de pagos.',
+        a: 'Kotkot genera automáticamente links de pago (Yappy, Stripe) cuando un cliente acepta una cotización. El dinero va directamente a tu cuenta de procesador de pagos.',
       },
       {
-        q: '¿CotiFácil cobra comisión por las ventas?',
+        q: '¿Kotkot cobra comisión por las ventas?',
         a: 'No. Solo pagas la suscripción mensual. No cobramos comisiones sobre tus ventas de seguros.',
       },
       {
@@ -135,7 +135,7 @@ const resources = [
   {
     icon: Book,
     title: 'Documentación',
-    description: 'Guías completas sobre cómo usar todas las funciones de CotiFácil.',
+    description: 'Guías completas sobre cómo usar todas las funciones de Kotkot.',
     href: '#',
   },
   {
@@ -164,26 +164,26 @@ export default function AyudaPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Page Header --- */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[var(--text-primary)]">
             Estamos aquí para ayudarte
-            <span className="inline-block h-px w-10 bg-[#059669]" />
+            <span className="inline-block h-px w-10 bg-[var(--text-primary)]" />
           </span>
-          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl lg:text-6xl">
             Centro de Ayuda
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-[#6b7280] sm:text-xl">
+          <p className="mt-6 text-lg leading-relaxed text-[var(--text-secondary)] sm:text-xl">
             Encuentra respuestas a tus preguntas o contacta a nuestro equipo de
             soporte.
           </p>
 
           {/* Search bar */}
           <div className="mx-auto mt-8 max-w-2xl">
-            <div className="bg-white border border-[#e5e7eb] rounded-[16px] flex items-center gap-3 p-4">
-              <HelpCircle className="h-5 w-5 shrink-0 text-[#9ca3af]" />
+            <div className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] flex items-center gap-3 p-4">
+              <HelpCircle className="h-5 w-5 shrink-0 text-[var(--text-muted)]" />
               <input
                 type="text"
                 placeholder="Buscar en la ayuda..."
-                className="w-full bg-transparent text-sm text-[#111827] placeholder:text-[#9ca3af] focus:outline-none"
+                className="w-full bg-transparent text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none"
               />
             </div>
           </div>
@@ -192,7 +192,7 @@ export default function AyudaPage() {
         {/* --- Quick Resources --- */}
         <section className="mb-20">
           <div className="mb-8 text-center">
-            <h2 className="font-heading text-2xl font-bold text-[#111827]">
+            <h2 className="font-heading text-2xl font-bold text-[var(--text-primary)]">
               Recursos Rápidos
             </h2>
           </div>
@@ -202,15 +202,15 @@ export default function AyudaPage() {
               <a
                 key={resource.title}
                 href={resource.href}
-                className="bg-white border border-[#e5e7eb] rounded-[16px] group p-6 transition-all duration-300"
+                className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] group p-6 transition-all duration-300"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)] transition-colors group-hover:bg-[rgba(202,255,4,0.15)]">
-                  <resource.icon className="h-6 w-6 text-[#059669]" strokeWidth={1.8} />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-[var(--radius-md)] bg-[rgba(202,255,4,0.15)] transition-colors group-hover:bg-[rgba(202,255,4,0.15)]">
+                  <resource.icon className="h-6 w-6 text-[var(--text-primary)]" strokeWidth={1.8} />
                 </div>
-                <h3 className="font-heading text-base font-semibold text-[#111827]">
+                <h3 className="font-heading text-base font-semibold text-[var(--text-primary)]">
                   {resource.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#6b7280]">
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
                   {resource.description}
                 </p>
               </a>
@@ -221,7 +221,7 @@ export default function AyudaPage() {
         {/* --- FAQs by Category --- */}
         <section className="mb-20">
           <div className="mb-12 text-center">
-            <h2 className="font-heading text-2xl font-bold text-[#111827]">
+            <h2 className="font-heading text-2xl font-bold text-[var(--text-primary)]">
               Preguntas Frecuentes
             </h2>
           </div>
@@ -231,10 +231,10 @@ export default function AyudaPage() {
               <div key={category.category}>
                 {/* Category header */}
                 <div className="mb-6 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                    <category.icon className="h-5 w-5 text-[#059669]" strokeWidth={1.8} />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-[var(--radius-md)] bg-[rgba(202,255,4,0.15)]">
+                    <category.icon className="h-5 w-5 text-[var(--text-primary)]" strokeWidth={1.8} />
                   </div>
-                  <h3 className="font-heading text-xl font-bold text-[#111827]">
+                  <h3 className="font-heading text-xl font-bold text-[var(--text-primary)]">
                     {category.category}
                   </h3>
                 </div>
@@ -242,11 +242,11 @@ export default function AyudaPage() {
                 {/* Questions */}
                 <div className="space-y-4">
                   {category.questions.map((faq, idx) => (
-                    <div key={idx} className="bg-white border border-[#e5e7eb] rounded-[16px] p-6">
-                      <h4 className="font-heading text-base font-semibold text-[#111827]">
+                    <div key={idx} className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-6">
+                      <h4 className="font-heading text-base font-semibold text-[var(--text-primary)]">
                         {faq.q}
                       </h4>
-                      <p className="mt-2 text-sm leading-relaxed text-[#6b7280]">
+                      <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
                         {faq.a}
                       </p>
                     </div>
@@ -258,28 +258,28 @@ export default function AyudaPage() {
         </section>
 
         {/* --- Contact Support CTA --- */}
-        <div className="bg-white border border-[#e5e7eb] rounded-[16px] mx-auto max-w-3xl p-10 text-center">
-          <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-[16px] bg-emerald-50">
-            <Mail className="h-7 w-7 text-[#059669]" />
+        <div className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] mx-auto max-w-3xl p-10 text-center">
+          <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-[var(--radius-card)] bg-[rgba(202,255,4,0.15)]">
+            <Mail className="h-7 w-7 text-[var(--text-primary)]" />
           </div>
-          <h2 className="font-heading text-2xl font-bold text-[#111827]">
+          <h2 className="font-heading text-2xl font-bold text-[var(--text-primary)]">
             ¿No encuentras lo que buscas?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#6b7280]">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[var(--text-secondary)]">
             Nuestro equipo de soporte está listo para ayudarte. Contáctanos por
             email, WhatsApp o chat en vivo.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
               href="/contacto"
-              className="inline-flex items-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-base font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600]"
+              className="inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent)] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-base font-semibold text-[var(--text-primary)] transition-all duration-200 hover:bg-[var(--action-primary-hover)]"
             >
               Contactar Soporte
               <ArrowUpRight className="h-5 w-5" />
             </a>
             <a
               href="mailto:support@kotkot.studio"
-              className="inline-flex items-center gap-2 rounded-[16px] bg-white border border-[#e5e7eb] px-8 py-4 text-base font-semibold text-[#111827] transition-all duration-200 hover:bg-[#f3f4f6]"
+              className="inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-white border border-[var(--border-default)] px-8 py-4 text-base font-semibold text-[var(--text-primary)] transition-all duration-200 hover:bg-[var(--surface-hover)]"
             >
               Enviar Email
             </a>

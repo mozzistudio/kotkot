@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Clock, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Blog — CotiFácil',
+  title: 'Blog — Kotkot',
   description:
     'Noticias, guías y tendencias del mundo de seguros en LATAM. Aprende sobre insurtech, automatización y WhatsApp Business.',
 };
@@ -14,7 +14,7 @@ const blogPosts = [
     excerpt:
       'La inteligencia artificial está revolucionando la manera en que se venden, cotizan y gestionan seguros en toda la región. Desde chatbots en WhatsApp hasta suscripción automatizada, exploramos las tendencias más importantes.',
     category: 'Tendencias',
-    categoryColor: 'bg-teal-100 text-teal-700',
+    categoryColor: 'bg-[rgba(202,255,4,0.15)] text-[var(--text-primary)]',
     date: '8 Feb 2026',
     readTime: '7 min',
   },
@@ -22,9 +22,9 @@ const blogPosts = [
     slug: '5-razones-automatizar-correduria',
     title: '5 razones para automatizar tu correduría de seguros',
     excerpt:
-      'La automatización no es solo para grandes empresas. Descubre por qué los corredores independientes y las pequeñas corredurías son quienes más se benefician de herramientas como CotiFácil.',
+      'La automatización no es solo para grandes empresas. Descubre por qué los corredores independientes y las pequeñas corredurías son quienes más se benefician de herramientas como Kotkot.',
     category: 'Guías',
-    categoryColor: 'bg-emerald-100 text-emerald-700',
+    categoryColor: 'bg-[rgba(202,255,4,0.15)] text-[var(--text-primary)]',
     date: '3 Feb 2026',
     readTime: '5 min',
   },
@@ -34,7 +34,7 @@ const blogPosts = [
     excerpt:
       'Todo lo que necesitas saber sobre la WhatsApp Business API: cómo funciona, cuánto cuesta, cómo obtener acceso y las mejores prácticas para usarla en tu correduría.',
     category: 'Guías',
-    categoryColor: 'bg-emerald-100 text-emerald-700',
+    categoryColor: 'bg-[rgba(202,255,4,0.15)] text-[var(--text-primary)]',
     date: '28 Ene 2026',
     readTime: '10 min',
   },
@@ -54,7 +54,7 @@ const blogPosts = [
     excerpt:
       'El ecosistema insurtech en Latinoamérica está creciendo aceleradamente. Analizamos las startups más importantes, las tendencias de inversión y lo que viene para el sector.',
     category: 'Tendencias',
-    categoryColor: 'bg-teal-100 text-teal-700',
+    categoryColor: 'bg-[rgba(202,255,4,0.15)] text-[var(--text-primary)]',
     date: '15 Ene 2026',
     readTime: '6 min',
   },
@@ -64,7 +64,7 @@ const blogPosts = [
     excerpt:
       'Guía práctica para corredores: los factores clave para recomendar el seguro de salud ideal según el perfil, presupuesto y necesidades de cada cliente.',
     category: 'Guías',
-    categoryColor: 'bg-emerald-100 text-emerald-700',
+    categoryColor: 'bg-[rgba(202,255,4,0.15)] text-[var(--text-primary)]',
     date: '10 Ene 2026',
     readTime: '9 min',
   },
@@ -76,14 +76,14 @@ export default function BlogPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Page Header --- */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[var(--text-primary)]">
             Recursos
-            <span className="inline-block h-px w-10 bg-[#059669]" />
+            <span className="inline-block h-px w-10 bg-[var(--text-primary)]" />
           </span>
-          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
-            Blog CotiFácil
+          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl lg:text-6xl">
+            Blog Kotkot
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-[#6b7280] sm:text-xl">
+          <p className="mt-6 text-lg leading-relaxed text-[var(--text-secondary)] sm:text-xl">
             Noticias, guías y tendencias del mundo de seguros en LATAM
           </p>
         </div>
@@ -93,12 +93,12 @@ export default function BlogPage() {
           {blogPosts.map((post) => (
             <article
               key={post.slug}
-              className="bg-white border border-[#e5e7eb] rounded-[16px] group flex flex-col overflow-hidden"
+              className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] group flex flex-col overflow-hidden"
             >
               {/* Image placeholder */}
-              <div className="flex h-48 items-center justify-center bg-gradient-to-br from-emerald-50 to-teal-50">
-                <div className="flex h-16 w-16 items-center justify-center rounded-[16px] bg-white/80 shadow-sm">
-                  <span className="font-heading text-2xl font-bold text-[#059669]">
+              <div className="flex h-48 items-center justify-center bg-gradient-to-br from-[var(--surface-panel)] to-[var(--surface-hover)]">
+                <div className="flex h-16 w-16 items-center justify-center rounded-[var(--radius-card)] bg-white/80 shadow-sm">
+                  <span className="font-heading text-2xl font-bold text-[var(--text-primary)]">
                     CF
                   </span>
                 </div>
@@ -113,26 +113,26 @@ export default function BlogPage() {
                   >
                     {post.category}
                   </span>
-                  <div className="flex items-center gap-1 text-xs text-[#9ca3af]">
+                  <div className="flex items-center gap-1 text-xs text-[var(--text-muted)]">
                     <Clock className="h-3 w-3" />
                     {post.readTime}
                   </div>
                 </div>
 
                 {/* Title */}
-                <h2 className="font-heading text-lg font-semibold leading-snug text-[#111827] transition-colors group-hover:text-[#059669]">
+                <h2 className="font-heading text-lg font-semibold leading-snug text-[var(--text-primary)] transition-colors group-hover:text-[var(--text-secondary)]">
                   {post.title}
                 </h2>
 
                 {/* Excerpt */}
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-[#6b7280] line-clamp-3">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--text-secondary)] line-clamp-3">
                   {post.excerpt}
                 </p>
 
                 {/* Footer */}
-                <div className="mt-4 flex items-center justify-between border-t border-[#e5e7eb] pt-4">
-                  <span className="text-xs text-[#9ca3af]">{post.date}</span>
-                  <span className="inline-flex items-center gap-1 text-sm font-medium text-[#059669] transition-transform group-hover:translate-x-0.5">
+                <div className="mt-4 flex items-center justify-between border-t border-[var(--border-default)] pt-4">
+                  <span className="text-xs text-[var(--text-muted)]">{post.date}</span>
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-[var(--text-primary)] transition-transform group-hover:translate-x-0.5">
                     Leer más
                     <ArrowRight className="h-3.5 w-3.5" />
                   </span>
@@ -144,11 +144,11 @@ export default function BlogPage() {
 
         {/* --- Newsletter CTA --- */}
         <div className="mx-auto mt-20 max-w-2xl text-center">
-          <div className="bg-white border border-[#e5e7eb] rounded-[16px] p-10">
-            <h2 className="font-heading text-2xl font-bold text-[#111827]">
+          <div className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-10">
+            <h2 className="font-heading text-2xl font-bold text-[var(--text-primary)]">
               Suscríbete a nuestro newsletter
             </h2>
-            <p className="mt-3 text-base text-[#6b7280]">
+            <p className="mt-3 text-base text-[var(--text-secondary)]">
               Recibe las últimas noticias y guías sobre seguros e insurtech en
               LATAM directamente en tu inbox.
             </p>
@@ -156,9 +156,9 @@ export default function BlogPage() {
               <input
                 type="email"
                 placeholder="tu@email.com"
-                className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-5 py-3 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[rgba(5,150,105,0.20)] sm:max-w-xs"
+                className="w-full rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white px-5 py-3 text-sm text-[var(--text-primary)] transition-all duration-200 placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[rgba(202,255,4,0.20)] sm:max-w-xs"
               />
-              <button className="inline-flex items-center justify-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-6 py-3 text-sm font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600]">
+              <button className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent)] border border-[rgba(202,255,4,0.40)] px-6 py-3 text-sm font-semibold text-[var(--text-primary)] transition-all duration-200 hover:bg-[var(--action-primary-hover)]">
                 Suscribirse
               </button>
             </div>

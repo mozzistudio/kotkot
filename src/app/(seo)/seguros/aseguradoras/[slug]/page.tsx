@@ -112,7 +112,7 @@ export default async function InsuranceCompanyProfilePage({
 
         {/* Products Grid */}
         <section className="mt-12">
-          <h2 className="mb-8 text-3xl font-bold text-gray-900">
+          <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
             Productos de {company.name}
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -129,17 +129,17 @@ export default async function InsuranceCompanyProfilePage({
                     {product.icon && (
                       <div className="mb-3 text-3xl">{product.icon}</div>
                     )}
-                    <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-emerald-600">
+                    <h3 className="mb-2 text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--text-primary)]">
                       {product.name}
                     </h3>
-                    <p className="mb-4 text-sm text-gray-600 line-clamp-2">
+                    <p className="mb-4 text-sm text-[var(--text-secondary)] line-clamp-2">
                       {product.shortDescription}
                     </p>
-                    <div className="flex items-center gap-2 text-sm font-semibold text-emerald-600">
+                    <div className="flex items-center gap-2 text-sm font-semibold text-[var(--dark-blue)]">
                       Ver Detalles
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </div>
-                    <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 opacity-0 transition-opacity group-hover:opacity-100" />
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[rgba(202,255,4,0.08)] to-[rgba(202,255,4,0.04)] opacity-0 transition-opacity group-hover:opacity-100" />
                   </GlassCard>
                 </Link>
               );
@@ -149,11 +149,11 @@ export default async function InsuranceCompanyProfilePage({
 
         {/* CTA Section */}
         <section className="mx-auto mt-16 max-w-4xl">
-          <GlassCard className="bg-gradient-to-br from-emerald-600 to-teal-600 p-12 text-center text-white">
+          <GlassCard className="bg-[var(--accent)] p-12 text-center text-[var(--text-primary)]">
             <h2 className="mb-4 text-3xl font-bold">
               ¿Quieres cotizar con {company.name}?
             </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-emerald-50">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-[var(--text-secondary)]">
               Obtén una cotización personalizada en minutos por WhatsApp.
             </p>
             <a
@@ -162,7 +162,7 @@ export default async function InsuranceCompanyProfilePage({
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl bg-white px-8 py-4 text-lg font-semibold text-emerald-600 hover:bg-gray-50 transition-colors shadow-lg"
+              className="inline-flex items-center rounded-xl bg-[var(--text-primary)] px-8 py-4 text-lg font-semibold text-white hover:bg-[var(--text-primary)] transition-colors shadow-lg"
             >
               Cotizar Ahora
             </a>

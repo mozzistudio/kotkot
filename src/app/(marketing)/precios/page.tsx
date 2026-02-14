@@ -3,9 +3,9 @@ import { Pricing } from '@/components/marketing/Pricing';
 import { ChevronDown } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Precios — CotiFácil',
+  title: 'Precios — Kotkot',
   description:
-    'Planes y precios de CotiFácil. Desde $149/mes para corredores individuales hasta planes Enterprise para grandes corredurías.',
+    'Planes y precios de Kotkot. Desde $149/mes para corredores individuales hasta planes Enterprise para grandes corredurías.',
 };
 
 const faqs = [
@@ -22,7 +22,7 @@ const faqs = [
   {
     question: '¿Qué pasa con los mensajes de WhatsApp?',
     answer:
-      'Las tarifas de Meta se cobran por separado, al costo. CotiFácil no agrega ningún markup. Las tarifas varían por país y tipo de mensaje (conversación iniciada por usuario vs. notificación).',
+      'Las tarifas de Meta se cobran por separado, al costo. Kotkot no agrega ningún markup. Las tarifas varían por país y tipo de mensaje (conversación iniciada por usuario vs. notificación).',
   },
   {
     question: '¿Cuánto cuesta un número adicional?',
@@ -32,7 +32,7 @@ const faqs = [
   {
     question: '¿Puedo usar mi número existente?',
     answer:
-      'Sí, siempre que sea un número de WhatsApp Business. Si actualmente usas WhatsApp personal, puedes migrarlo a WhatsApp Business antes de conectarlo a CotiFácil.',
+      'Sí, siempre que sea un número de WhatsApp Business. Si actualmente usas WhatsApp personal, puedes migrarlo a WhatsApp Business antes de conectarlo a Kotkot.',
   },
   {
     question: '¿En qué países están disponibles?',
@@ -50,24 +50,24 @@ export default function PreciosPage() {
       {/* --- FAQ Section --- */}
       <div className="mx-auto mt-24 max-w-6xl px-4">
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
             Preguntas sobre precios
           </h2>
-          <p className="mt-4 text-lg text-[#6b7280]">
+          <p className="mt-4 text-lg text-[var(--text-secondary)]">
             Resolvemos tus dudas sobre planes, pagos y facturación.
           </p>
         </div>
 
         <div className="mx-auto max-w-3xl space-y-4">
           {faqs.map((faq) => (
-            <div key={faq.question} className="bg-white border border-[#e5e7eb] rounded-[16px] p-6">
+            <div key={faq.question} className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-6">
               <div className="flex items-start gap-3">
-                <ChevronDown className="mt-0.5 h-5 w-5 shrink-0 text-[#059669]" />
+                <ChevronDown className="mt-0.5 h-5 w-5 shrink-0 text-[var(--text-primary)]" />
                 <div>
-                  <h3 className="font-heading text-base font-semibold text-[#111827]">
+                  <h3 className="font-heading text-base font-semibold text-[var(--text-primary)]">
                     {faq.question}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#6b7280]">
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
                     {faq.answer}
                   </p>
                 </div>
@@ -78,17 +78,17 @@ export default function PreciosPage() {
 
         {/* --- Bottom CTA --- */}
         <div className="mx-auto mt-20 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl">
+          <h2 className="font-heading text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">
             ¿No estás seguro de qué plan necesitas?
           </h2>
-          <p className="mt-4 text-lg text-[#6b7280]">
+          <p className="mt-4 text-lg text-[var(--text-secondary)]">
             Agenda una demo y te ayudamos a elegir el plan perfecto para tu
             correduría.
           </p>
           <div className="mt-8">
             <a
               href="/demo"
-              className="inline-flex items-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600]"
+              className="inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent)] border border-[rgba(202,255,4,0.40)] px-8 py-4 text-lg font-semibold text-[var(--text-primary)] transition-all duration-200 hover:bg-[var(--action-primary-hover)]"
             >
               Solicitar Demo
             </a>

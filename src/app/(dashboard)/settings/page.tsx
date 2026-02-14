@@ -62,9 +62,9 @@ const invoices: Invoice[] = [
 ];
 
 const roleConfig: Record<string, { label: string; color: string }> = {
-  admin: { label: 'Admin', color: 'bg-purple-500/15 text-purple-400 border-purple-500/30' },
-  agent: { label: 'Agente', color: 'bg-blue-500/15 text-blue-400 border-blue-500/30' },
-  viewer: { label: 'Visor', color: 'bg-slate-500/15 text-[var(--text-secondary)] border-slate-500/30' },
+  admin: { label: 'Admin', color: 'bg-purple-50 text-purple-700 border border-purple-200' },
+  agent: { label: 'Agente', color: 'bg-blue-50 text-blue-700 border border-blue-200' },
+  viewer: { label: 'Visor', color: 'bg-slate-50 text-[var(--text-secondary)] border border-slate-200' },
 };
 
 const tabs: { key: SettingsTab; label: string; icon: React.ReactNode }[] = [
@@ -108,7 +108,7 @@ export default function SettingsPage() {
             onClick={() => setActiveTab(tab.key)}
             className={`flex items-center gap-2 whitespace-nowrap rounded-md px-4 py-2.5 text-sm font-medium transition-all ${
               activeTab === tab.key
-                ? 'bg-[var(--accent-light)] text-[var(--accent)] '
+                ? 'bg-[rgba(12,30,53,0.06)] text-[var(--dark-blue)] '
                 : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
             }`}
           >
@@ -126,7 +126,7 @@ export default function SettingsPage() {
             <h2 className="text-card-title">Informacion del Perfil</h2>
 
             <div className="flex items-center gap-4">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-dashed border-[var(--border)] text-[var(--text-tertiary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-dashed border-[var(--border)] text-[var(--text-tertiary)] transition-colors hover:border-[var(--dark-blue)] hover:text-[var(--dark-blue)]">
                 <Camera className="h-6 w-6" />
               </div>
               <div>
@@ -141,7 +141,7 @@ export default function SettingsPage() {
                 <input
                   type="text"
                   defaultValue="Ricardo Lopez"
-                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
+                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20"
                 />
               </div>
               <div>
@@ -149,7 +149,7 @@ export default function SettingsPage() {
                 <input
                   type="email"
                   defaultValue="ricardo@brokerspa.com"
-                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
+                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20"
                 />
               </div>
               <div>
@@ -160,7 +160,7 @@ export default function SettingsPage() {
                 <input
                   type="text"
                   defaultValue="Brokers Panama S.A."
-                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
+                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20"
                 />
               </div>
               <div>
@@ -171,7 +171,7 @@ export default function SettingsPage() {
                 <input
                   type="tel"
                   defaultValue="+507 6100-0000"
-                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
+                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20"
                 />
               </div>
               <div>
@@ -191,7 +191,7 @@ export default function SettingsPage() {
               </div>
             </div>
 
-            <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--accent-hover)]">
+            <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--dark-blue)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--dark-blue)]/90">
               <Check className="h-4 w-4" />
               Guardar Perfil
             </button>
@@ -204,18 +204,18 @@ export default function SettingsPage() {
             <h2 className="text-card-title">Facturacion & Plan</h2>
 
             {/* Current Plan */}
-            <div className="rounded-lg border border-[var(--accent)] bg-[var(--accent-light)] p-5">
+            <div className="rounded-lg border border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] p-5">
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--accent-light)]">
-                    <Crown className="h-5 w-5 text-[var(--accent)]" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[rgba(12,30,53,0.06)]">
+                    <Crown className="h-5 w-5 text-[var(--dark-blue)]" />
                   </div>
                   <div>
                     <h3 className="text-section-heading">Plan Profesional</h3>
                     <p className="text-body">$49/mes - Hasta 500 conversaciones</p>
                   </div>
                 </div>
-                <span className="rounded-full border border-[var(--accent)] bg-[var(--accent-light)] px-3 py-1 text-xs font-medium text-[var(--accent)]">
+                <span className="rounded-full border border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] px-3 py-1 text-xs font-medium text-[var(--dark-blue)]">
                   Activo
                 </span>
               </div>
@@ -233,7 +233,7 @@ export default function SettingsPage() {
                   <p className="text-xs text-[var(--text-tertiary)]">Hasta renovacion</p>
                 </div>
               </div>
-              <button className="mt-4 inline-flex items-center gap-2 rounded-lg border border-[var(--accent)] bg-[var(--accent-light)] px-4 py-2 text-sm font-medium text-[var(--accent)] transition-colors hover:bg-[var(--accent-light)]">
+              <button className="mt-4 inline-flex items-center gap-2 rounded-lg border border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] px-4 py-2 text-sm font-medium text-[var(--dark-blue)] transition-colors hover:bg-[rgba(12,30,53,0.10)]">
                 <Zap className="h-4 w-4" />
                 Cambiar Plan
               </button>
@@ -243,7 +243,7 @@ export default function SettingsPage() {
             <div>
               <h3 className="mb-3 text-sm font-semibold text-[var(--text-primary)]">Metodo de Pago</h3>
               <div className="flex items-center gap-3 rounded-lg border border-[var(--border)] p-4">
-                <div className="flex h-8 w-12 items-center justify-center rounded-md bg-blue-500/20 text-xs font-bold text-blue-400">
+                <div className="flex h-8 w-12 items-center justify-center rounded-md bg-blue-50 text-xs font-bold text-blue-700">
                   VISA
                 </div>
                 <div>
@@ -272,7 +272,7 @@ export default function SettingsPage() {
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-sm font-semibold text-[var(--text-primary)] font-data">{inv.amount}</span>
-                      <span className="rounded-full border border-[var(--accent)] bg-[var(--accent-light)] px-2 py-0.5 text-xs text-[var(--accent)]">
+                      <span className="rounded-full border border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] px-2 py-0.5 text-xs text-[var(--dark-blue)]">
                         Pagada
                       </span>
                     </div>
@@ -294,10 +294,10 @@ export default function SettingsPage() {
             {demoCountry === 'PA' ? (
               /* ── Yappy Config (Panama) ────────────────────── */
               <div className="space-y-5">
-                <div className="rounded-lg border border-[var(--accent)] bg-[var(--accent-light)] p-4">
+                <div className="rounded-lg border border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] p-4">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#7B2BFC]/20">
-                      <Wallet className="h-5 w-5 text-[#7B2BFC]" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--color-brand-wallet)]/20">
+                      <Wallet className="h-5 w-5 text-[var(--color-brand-wallet)]" />
                     </div>
                     <div>
                       <h3 className="text-sm font-semibold text-[var(--text-primary)]">Yappy Business</h3>
@@ -305,7 +305,7 @@ export default function SettingsPage() {
                         Acepta pagos de polizas de seguros via Yappy en Panama
                       </p>
                     </div>
-                    <span className="ml-auto rounded-full border border-[var(--accent)] bg-[var(--accent-light)] px-2.5 py-0.5 text-xs font-medium text-[var(--accent)]">
+                    <span className="ml-auto rounded-full border border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] px-2.5 py-0.5 text-xs font-medium text-[var(--dark-blue)]">
                       Conectado
                     </span>
                   </div>
@@ -319,7 +319,7 @@ export default function SettingsPage() {
                     <input
                       type="text"
                       defaultValue="YAPPY_MID_BROKERS_PA"
-                      className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] font-mono focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
+                      className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] font-mono focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20"
                     />
                   </div>
                   <div>
@@ -329,17 +329,17 @@ export default function SettingsPage() {
                     <input
                       type="password"
                       defaultValue="ypy_sk_live_xxxxxxxxxxxxx"
-                      className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] font-mono focus:border-[var(--accent)]/50 focus:outline-none focus:ring-1 focus:ring-[var(--accent-light)]/20"
+                      className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] font-mono focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20"
                     />
                   </div>
                 </div>
 
                 <div className="flex gap-3">
-                  <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--accent-hover)]">
+                  <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--dark-blue)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--dark-blue)]/90">
                     <Check className="h-4 w-4" />
                     Guardar Credenciales
                   </button>
-                  <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-5 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]">
+                  <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-5 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--dark-blue)] hover:text-[var(--dark-blue)]">
                     <Zap className="h-4 w-4" />
                     Probar Conexion
                   </button>
@@ -349,7 +349,7 @@ export default function SettingsPage() {
                   <p className="mb-1 font-medium text-[var(--text-secondary)]">Como funciona:</p>
                   <ul className="ml-4 list-disc space-y-1">
                     <li>El cliente selecciona una cotizacion y elige Yappy como metodo de pago</li>
-                    <li>CotiFacil genera un enlace de pago Yappy con el monto exacto</li>
+                    <li>Kotkot genera un enlace de pago Yappy con el monto exacto</li>
                     <li>El enlace se envia por WhatsApp al cliente</li>
                     <li>Al confirmar el pago, la poliza se genera automaticamente</li>
                   </ul>
@@ -360,8 +360,8 @@ export default function SettingsPage() {
               <div className="space-y-5">
                 <div className="rounded-lg border border-[var(--border)] p-5">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/20">
-                      <CreditCard className="h-5 w-5 text-purple-400" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-50">
+                      <CreditCard className="h-5 w-5 text-purple-700" />
                     </div>
                     <div>
                       <h3 className="text-sm font-semibold text-[var(--text-primary)]">Stripe Connect</h3>
@@ -369,13 +369,13 @@ export default function SettingsPage() {
                         Acepta pagos de polizas con tarjeta de credito/debito
                       </p>
                     </div>
-                    <span className="ml-auto rounded-full border border-amber-500/30 bg-amber-500/15 px-2.5 py-0.5 text-xs font-medium text-amber-400">
+                    <span className="ml-auto rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-700">
                       No conectado
                     </span>
                   </div>
                 </div>
 
-                <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--accent-hover)]">
+                <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--dark-blue)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--dark-blue)]/90">
                   <ExternalLink className="h-4 w-4" />
                   Conectar con Stripe
                 </button>
@@ -389,7 +389,7 @@ export default function SettingsPage() {
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <h2 className="text-card-title">Equipo</h2>
-              <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--accent-hover)]">
+              <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--dark-blue)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--dark-blue)]/90">
                 <Plus className="h-4 w-4" />
                 Invitar Miembro
               </button>
@@ -411,7 +411,7 @@ export default function SettingsPage() {
                         <div className="flex items-center gap-2">
                           <span className="text-sm font-medium text-[var(--text-primary)]">{member.name}</span>
                           {member.status === 'pending' && (
-                            <span className="rounded-full border border-amber-500/30 bg-amber-500/15 px-2 py-0.5 text-xs text-amber-400">
+                            <span className="rounded-full border border-amber-200 bg-amber-50 px-2 py-0.5 text-xs text-amber-700">
                               Pendiente
                             </span>
                           )}
@@ -425,13 +425,13 @@ export default function SettingsPage() {
                       </span>
                       <select
                         defaultValue={member.role}
-                        className="rounded-md border border-[var(--border)] bg-white px-2 py-1 text-xs text-[var(--text-primary)] focus:border-[var(--accent)]/50 focus:outline-none"
+                        className="rounded-md border border-[var(--border)] bg-white px-2 py-1 text-xs text-[var(--text-primary)] focus:border-[var(--dark-blue)]/50 focus:outline-none"
                       >
                         <option value="admin">Admin</option>
                         <option value="agent">Agente</option>
                         <option value="viewer">Visor</option>
                       </select>
-                      <button className="rounded-md p-1.5 text-[var(--text-tertiary)] transition-colors hover:bg-red-500/10 hover:text-red-400">
+                      <button className="rounded-md p-1.5 text-[var(--text-tertiary)] transition-colors hover:bg-red-50 hover:text-red-700">
                         <Trash2 className="h-4 w-4" />
                       </button>
                     </div>
@@ -534,7 +534,7 @@ export default function SettingsPage() {
               </div>
             </div>
 
-            <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--accent-hover)]">
+            <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--dark-blue)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--dark-blue)]/90">
               <Check className="h-4 w-4" />
               Guardar Preferencias
             </button>

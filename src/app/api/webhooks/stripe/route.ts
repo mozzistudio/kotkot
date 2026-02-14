@@ -166,7 +166,7 @@ export async function POST(request: NextRequest) {
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 /**
- * Determine the CotiFacil plan from a Stripe subscription's price IDs.
+ * Determine the Kotkot plan from a Stripe subscription's price IDs.
  */
 function determinePlan(subscription: Stripe.Subscription): 'starter' | 'pro' | 'enterprise' {
   const priceId = subscription.items.data[0]?.price?.id;

@@ -31,8 +31,8 @@ export function Toggle({
         aria-label={label}
         disabled={disabled}
         onClick={() => onChange(!checked)}
-        className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 disabled:cursor-not-allowed disabled:opacity-50 ${
-          checked ? 'bg-emerald-500' : 'bg-gray-300'
+        className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)] disabled:cursor-not-allowed disabled:opacity-50 ${
+          checked ? 'bg-[var(--accent)]' : 'bg-[var(--border-default)]'
         }`}
       >
         <span
@@ -48,13 +48,13 @@ export function Toggle({
           {label && (
             <label
               htmlFor={id}
-              className="cursor-pointer text-sm font-medium text-gray-700"
+              className="cursor-pointer text-sm font-medium text-[var(--text-primary)]"
             >
               {label}
             </label>
           )}
           {description && (
-            <p className="text-sm text-gray-400">{description}</p>
+            <p className="text-sm text-[var(--text-muted)]">{description}</p>
           )}
         </div>
       )}

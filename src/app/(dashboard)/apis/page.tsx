@@ -140,18 +140,18 @@ const insurers: Insurer[] = [
 // ---------------------------------------------------------------------------
 
 const statusConfig: Record<ConnectionStatus, { label: string; dotColor: string; badgeBg: string; badgeText: string; badgeBorder: string }> = {
-  active: { label: 'Activa', dotColor: 'bg-emerald-500', badgeBg: 'bg-emerald-500/15', badgeText: 'text-emerald-400', badgeBorder: 'border-emerald-500/30' },
-  pending: { label: 'Pendiente', dotColor: 'bg-amber-500', badgeBg: 'bg-amber-500/15', badgeText: 'text-amber-400', badgeBorder: 'border-amber-500/30' },
-  error: { label: 'Error', dotColor: 'bg-red-500', badgeBg: 'bg-red-500/15', badgeText: 'text-red-400', badgeBorder: 'border-red-500/30' },
-  disconnected: { label: 'No conectada', dotColor: 'bg-slate-500', badgeBg: 'bg-slate-500/15', badgeText: 'text-slate-400', badgeBorder: 'border-slate-500/30' },
+  active: { label: 'Activa', dotColor: 'bg-[var(--success)]', badgeBg: 'bg-emerald-50', badgeText: 'text-emerald-700', badgeBorder: 'border-emerald-200' },
+  pending: { label: 'Pendiente', dotColor: 'bg-amber-500', badgeBg: 'bg-amber-50', badgeText: 'text-amber-700', badgeBorder: 'border-amber-200' },
+  error: { label: 'Error', dotColor: 'bg-red-500', badgeBg: 'bg-red-50', badgeText: 'text-red-700', badgeBorder: 'border-red-200' },
+  disconnected: { label: 'No conectada', dotColor: 'bg-slate-400', badgeBg: 'bg-slate-100', badgeText: 'text-slate-600', badgeBorder: 'border-slate-200' },
 };
 
 const productConfig: Record<InsuranceProduct, { label: string; icon: React.ReactNode; color: string }> = {
-  auto: { label: 'Auto', icon: <Car className="h-3 w-3" />, color: 'bg-sky-500/15 text-sky-400 border-sky-500/30' },
-  health: { label: 'Salud', icon: <Heart className="h-3 w-3" />, color: 'bg-rose-500/15 text-rose-400 border-rose-500/30' },
-  home: { label: 'Hogar', icon: <Home className="h-3 w-3" />, color: 'bg-amber-500/15 text-amber-400 border-amber-500/30' },
-  travel: { label: 'Viaje', icon: <Plane className="h-3 w-3" />, color: 'bg-purple-500/15 text-purple-400 border-purple-500/30' },
-  business: { label: 'Negocio', icon: <Briefcase className="h-3 w-3" />, color: 'bg-teal-500/15 text-teal-400 border-teal-500/30' },
+  auto: { label: 'Auto', icon: <Car className="h-3 w-3" />, color: 'bg-sky-50 text-sky-700 border border-sky-200' },
+  health: { label: 'Salud', icon: <Heart className="h-3 w-3" />, color: 'bg-rose-50 text-rose-700 border border-rose-200' },
+  home: { label: 'Hogar', icon: <Home className="h-3 w-3" />, color: 'bg-amber-50 text-amber-700 border border-amber-200' },
+  travel: { label: 'Viaje', icon: <Plane className="h-3 w-3" />, color: 'bg-purple-50 text-purple-700 border border-purple-200' },
+  business: { label: 'Negocio', icon: <Briefcase className="h-3 w-3" />, color: 'bg-teal-50 text-teal-700 border border-teal-200' },
 };
 
 // ---------------------------------------------------------------------------
@@ -190,7 +190,7 @@ export default function ApisPage() {
           return (
             <div key={s} className="card p-3">
               <div className="flex items-center gap-2">
-                <span className={`status-dot ${sc.dotColor === 'bg-emerald-500' ? 'status-dot-success' : sc.dotColor === 'bg-red-500' ? 'status-dot-error' : sc.dotColor === 'bg-amber-500' ? 'status-dot-warning' : ''}`} />
+                <span className={`status-dot ${sc.dotColor === 'bg-[var(--success)]' ? 'status-dot-success' : sc.dotColor === 'bg-red-500' ? 'status-dot-error' : sc.dotColor === 'bg-amber-500' ? 'status-dot-warning' : ''}`} />
                 <span className="text-xs text-[var(--text-secondary)]">{sc.label}</span>
               </div>
               <p className="mt-1 text-lg font-bold text-[var(--text-primary)] font-data">{count}</p>
