@@ -109,7 +109,7 @@ export function InsuranceProducts() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
           className="mx-auto mb-16 max-w-3xl text-center"
         >
-          <div className="mb-4 inline-flex items-center gap-2 rounded-[10px] border border-[rgba(202,255,4,0.40)] bg-[rgba(202,255,4,0.15)] px-4 py-2 text-sm font-semibold text-[#111827]">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-[10px] border border-[rgba(12,30,53,0.15)] bg-[rgba(12,30,53,0.08)] px-4 py-2 text-sm font-semibold text-[#0C1E35]">
             <span>✨</span>
             10 Tipos de Seguros Disponibles
           </div>
@@ -135,10 +135,10 @@ export function InsuranceProducts() {
             <motion.div key={product.slug} variants={cardVariants}>
               <Link
                 href={`/seguros/${product.slug}`}
-                className="group block h-full rounded-[16px] border border-[#e5e7eb] bg-white p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(202,255,4,0.40)] hover:bg-[#f3f4f6]"
+                className="group block h-full rounded-[16px] border border-[#e5e7eb] bg-white p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#0C1E35] hover:bg-[#f3f4f6]"
               >
                 {/* Icon */}
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)] text-3xl transition-transform duration-300 group-hover:scale-110">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-[12px] bg-[rgba(12,30,53,0.08)] text-3xl transition-transform duration-300 group-hover:scale-110">
                   {product.icon}
                 </div>
 
@@ -187,7 +187,7 @@ export function InsuranceProducts() {
         >
           <Link
             href="/seguros"
-            className="inline-flex items-center gap-2 rounded-[10px] border border-[#e5e7eb] bg-white px-8 py-4 text-lg font-semibold text-[#111827] transition-all duration-200 hover:bg-[#f3f4f6]"
+            className="inline-flex items-center gap-2 rounded-[10px] border border-[#0C1E35] bg-white px-8 py-4 text-lg font-semibold text-[#0C1E35] transition-all duration-200 hover:bg-[rgba(12,30,53,0.06)]"
           >
             Ver Todas las Aseguradoras
             <span className="transition-transform group-hover:translate-x-1">→</span>

@@ -102,15 +102,15 @@ export function HowItWorks() {
                 className="relative flex flex-col items-center text-center"
               >
                 {/* Numbered circle */}
-                <div className="relative z-10 mb-5 flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-[10px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)]">
-                  <span className="font-heading text-xl font-bold text-[#111827]">
+                <div className="relative z-10 mb-5 flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-[10px] bg-[#0C1E35]">
+                  <span className="font-heading text-xl font-bold text-white">
                     {step.number}
                   </span>
                 </div>
 
                 {/* Icon */}
-                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-[10px] bg-[rgba(202,255,4,0.15)]">
-                  <step.icon className="h-5 w-5 text-[#111827]" strokeWidth={1.8} />
+                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-[10px] bg-[rgba(12,30,53,0.08)]">
+                  <step.icon className="h-5 w-5 text-[#0C1E35]" strokeWidth={1.8} />
                 </div>
 
                 {/* Title */}
@@ -135,8 +135,8 @@ export function HowItWorks() {
                 className="relative flex items-start gap-5 pl-2"
               >
                 {/* Numbered circle */}
-                <div className="relative z-10 flex h-[3.5rem] w-[3.5rem] shrink-0 items-center justify-center rounded-[10px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)]">
-                  <span className="font-heading text-lg font-bold text-[#111827]">
+                <div className="relative z-10 flex h-[3.5rem] w-[3.5rem] shrink-0 items-center justify-center rounded-[10px] bg-[#0C1E35]">
+                  <span className="font-heading text-lg font-bold text-white">
                     {step.number}
                   </span>
                 </div>

@@ -212,8 +212,8 @@ function QuoteCard({ text }: { text: string }) {
               MEJOR
             </span>
           </div>
-          <span className="text-[12px] font-extrabold text-[#059669]">
-            $89<span className="text-[9px] font-semibold text-[#059669]">/mes</span>
+          <span className="text-[12px] font-extrabold text-[#0C1E35]">
+            $89<span className="text-[9px] font-semibold text-[#0C1E35]">/mes</span>
           </span>
         </div>
 

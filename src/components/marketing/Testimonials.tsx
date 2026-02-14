@@ -23,7 +23,7 @@ const testimonials: Testimonial[] = [
     country: 'Panamá',
     flag: '\u{1F1F5}\u{1F1E6}',
     initials: 'CM',
-    color: 'bg-[#CAFF04]',
+    color: 'bg-[#0C1E35] text-white',
   },
   {
     quote:
@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
     country: 'Colombia',
     flag: '\u{1F1E8}\u{1F1F4}',
     initials: 'MG',
-    color: 'bg-[#CAFF04]',
+    color: 'bg-[#0C1E35] text-white',
   },
   {
     quote:
@@ -43,7 +43,7 @@ const testimonials: Testimonial[] = [
     country: 'México',
     flag: '\u{1F1F2}\u{1F1FD}',
     initials: 'RL',
-    color: 'bg-[#CAFF04]',
+    color: 'bg-[#0C1E35] text-white',
   },
 ];
 
@@ -206,7 +206,7 @@ export function Testimonials() {
                   aria-label={`Ir a testimonio ${i + 1}`}
                   className={`h-2 rounded-[10px] transition-all duration-300 ${
                     i === currentIndex
-                      ? 'w-6 bg-[#CAFF04]'
+                      ? 'w-6 bg-[#0C1E35]'
                       : 'w-2 bg-[#e5e7eb] hover:bg-[#9ca3af]'
                   }`}
                 />

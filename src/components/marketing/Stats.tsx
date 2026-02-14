@@ -52,9 +52,9 @@ export function Stats() {
           <motion.div
             key={stat.label}
             variants={cardVariants}
-            className="flex flex-col items-center justify-center rounded-[16px] border border-[#e5e7eb] bg-white px-6 py-8 text-center transition-all duration-200 hover:bg-[#f3f4f6]"
+            className="flex flex-col items-center justify-center rounded-[16px] border border-[#e5e7eb] bg-white px-6 py-8 text-center transition-all duration-200 hover:bg-[rgba(12,30,53,0.06)]"
           >
-            <span className="font-data text-4xl font-bold tracking-tight text-[#111827]">
+            <span className="font-data text-4xl font-bold tracking-tight text-[#0C1E35]">
               {stat.value}
             </span>
             <span className="mt-2 text-sm font-medium text-[#6b7280]">

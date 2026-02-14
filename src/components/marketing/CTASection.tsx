@@ -29,14 +29,14 @@ export function CTASection() {
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
                 href="/demo"
-                className="inline-flex items-center gap-2 rounded-[10px] border border-[rgba(202,255,4,0.40)] bg-[#CAFF04] px-8 py-3.5 text-base font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600]"
+                className="inline-flex items-center gap-2 rounded-[10px] bg-[#0C1E35] px-8 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:bg-[#122B47]"
               >
                 Solicitar Demo
                 <ArrowUpRight className="h-4.5 w-4.5" />
               </a>
               <a
                 href="#precios"
-                className="inline-flex items-center justify-center rounded-[10px] border border-[#e5e7eb] bg-white px-8 py-3.5 font-heading text-[0.9375rem] font-semibold text-[#111827] transition-all duration-200 hover:bg-[#f3f4f6]"
+                className="inline-flex items-center justify-center rounded-[10px] border border-[#0C1E35] bg-white px-8 py-3.5 font-heading text-[0.9375rem] font-semibold text-[#0C1E35] transition-all duration-200 hover:bg-[rgba(12,30,53,0.06)]"
               >
                 Ver Precios
               </a>

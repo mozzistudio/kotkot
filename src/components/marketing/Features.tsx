@@ -114,8 +114,8 @@ export function Features() {
               className="group cursor-default rounded-[16px] border border-[#e5e7eb] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-[#f3f4f6]"
             >
               {/* Icon */}
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-[10px] bg-[rgba(202,255,4,0.15)]">
-                <feature.icon className="h-6 w-6 text-[#111827]" strokeWidth={1.8} />
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-[10px] bg-[rgba(12,30,53,0.08)]">
+                <feature.icon className="h-6 w-6 text-[#0C1E35]" strokeWidth={1.8} />
               </div>
 
               {/* Title */}

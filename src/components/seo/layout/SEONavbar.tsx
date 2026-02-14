@@ -89,7 +89,7 @@ export function SEONavbar() {
                         <Link
                           key={product.slug}
                           href={`/seguros/${product.slug}`}
-                          className="group rounded-[12px] p-3 hover:bg-[rgba(202,255,4,0.15)] transition-colors"
+                          className="group rounded-[12px] p-3 hover:bg-[rgba(12,30,53,0.06)] transition-colors"
                         >
                           <div className="flex items-start gap-2">
                             <span className="text-2xl flex-shrink-0">{product.icon}</span>
@@ -144,7 +144,7 @@ export function SEONavbar() {
                         <Link
                           key={product.slug}
                           href={`/prestamos/${product.slug}`}
-                          className="group rounded-[12px] p-3 hover:bg-[rgba(202,255,4,0.15)] transition-colors"
+                          className="group rounded-[12px] p-3 hover:bg-[rgba(12,30,53,0.06)] transition-colors"
                         >
                           <div className="flex items-start gap-2">
                             <span className="text-2xl flex-shrink-0">{product.icon}</span>
@@ -193,7 +193,7 @@ export function SEONavbar() {
                         <Link
                           key={company.slug}
                           href={`/seguros/aseguradoras/${company.slug}`}
-                          className="group flex items-center justify-between rounded-[12px] p-3 hover:bg-[rgba(202,255,4,0.15)] transition-colors"
+                          className="group flex items-center justify-between rounded-[12px] p-3 hover:bg-[rgba(12,30,53,0.06)] transition-colors"
                         >
                           <div>
                             <p className="text-sm font-semibold text-[#111827]">
@@ -206,7 +206,7 @@ export function SEONavbar() {
                       ))}
                       <Link
                         href="/seguros/aseguradoras"
-                        className="mt-2 flex items-center justify-center rounded-[10px] border border-[#e5e7eb] bg-[#CAFF04] p-3 text-sm font-semibold text-[#111827] hover:bg-[#b8e604] transition-colors"
+                        className="mt-2 flex items-center justify-center rounded-[10px] bg-[#0C1E35] p-3 text-sm font-semibold text-white hover:bg-[#122B47] transition-colors"
                       >
                         Ver todas las aseguradoras →
                       </Link>
@@ -248,7 +248,7 @@ export function SEONavbar() {
             href="https://wa.me/50760000000?text=Hola%2C%20quiero%20cotizar%20un%20seguro"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden items-center gap-2 rounded-[10px] bg-[#CAFF04] px-4 py-2 text-sm font-semibold text-[#111827] hover:bg-[#b8e604] transition-colors sm:flex"
+            className="hidden items-center gap-2 rounded-[10px] bg-[#0C1E35] px-4 py-2 text-sm font-semibold text-white hover:bg-[#122B47] transition-colors sm:flex"
           >
             <Phone className="h-4 w-4" />
             <span className="hidden md:inline">Cotizar</span>
@@ -290,7 +290,7 @@ export function SEONavbar() {
                     <Link
                       key={product.slug}
                       href={`/seguros/${product.slug}`}
-                      className="flex items-center gap-2 rounded-[12px] p-2 text-sm text-[#6b7280] hover:bg-[rgba(202,255,4,0.15)] hover:text-[#111827]"
+                      className="flex items-center gap-2 rounded-[12px] p-2 text-sm text-[#6b7280] hover:bg-[rgba(12,30,53,0.06)] hover:text-[#111827]"
                       onClick={() => setMobileOpen(false)}
                     >
                       <span className="text-lg">{product.icon}</span>
@@ -315,7 +315,7 @@ export function SEONavbar() {
                     <Link
                       key={product.slug}
                       href={`/prestamos/${product.slug}`}
-                      className="flex items-center gap-2 rounded-[12px] p-2 text-sm text-[#6b7280] hover:bg-[rgba(202,255,4,0.15)] hover:text-[#111827]"
+                      className="flex items-center gap-2 rounded-[12px] p-2 text-sm text-[#6b7280] hover:bg-[rgba(12,30,53,0.06)] hover:text-[#111827]"
                       onClick={() => setMobileOpen(false)}
                     >
                       <span className="text-lg">{product.icon}</span>
@@ -340,7 +340,7 @@ export function SEONavbar() {
                     <Link
                       key={company.slug}
                       href={`/seguros/aseguradoras/${company.slug}`}
-                      className="block rounded-[12px] p-2 text-sm text-[#6b7280] hover:bg-[rgba(202,255,4,0.15)] hover:text-[#111827]"
+                      className="block rounded-[12px] p-2 text-sm text-[#6b7280] hover:bg-[rgba(12,30,53,0.06)] hover:text-[#111827]"
                       onClick={() => setMobileOpen(false)}
                     >
                       {company.name}
@@ -353,21 +353,21 @@ export function SEONavbar() {
               <div className="space-y-2 border-t border-[#e5e7eb] pt-4">
                 <Link
                   href="/blog"
-                  className="block rounded-[12px] p-2 text-base font-medium text-[#6b7280] hover:bg-[rgba(202,255,4,0.15)] hover:text-[#111827]"
+                  className="block rounded-[12px] p-2 text-base font-medium text-[#6b7280] hover:bg-[rgba(12,30,53,0.06)] hover:text-[#111827]"
                   onClick={() => setMobileOpen(false)}
                 >
                   Blog
                 </Link>
                 <Link
                   href="/para-brokers"
-                  className="block rounded-[12px] p-2 text-base font-medium text-[#6b7280] hover:bg-[rgba(202,255,4,0.15)] hover:text-[#111827]"
+                  className="block rounded-[12px] p-2 text-base font-medium text-[#6b7280] hover:bg-[rgba(12,30,53,0.06)] hover:text-[#111827]"
                   onClick={() => setMobileOpen(false)}
                 >
                   Para Brokers
                 </Link>
                 <Link
                   href="/login"
-                  className="block rounded-[12px] p-2 text-base font-medium text-[#6b7280] hover:bg-[rgba(202,255,4,0.15)] hover:text-[#111827]"
+                  className="block rounded-[12px] p-2 text-base font-medium text-[#6b7280] hover:bg-[rgba(12,30,53,0.06)] hover:text-[#111827]"
                   onClick={() => setMobileOpen(false)}
                 >
                   Iniciar Sesión
@@ -379,7 +379,7 @@ export function SEONavbar() {
                 href="https://wa.me/50760000000?text=Hola%2C%20quiero%20cotizar%20un%20seguro"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 flex items-center justify-center gap-2 rounded-[10px] bg-[#CAFF04] px-4 py-3 text-base font-semibold text-[#111827] hover:bg-[#b8e604] transition-colors"
+                className="mt-4 flex items-center justify-center gap-2 rounded-[10px] bg-[#0C1E35] px-4 py-3 text-base font-semibold text-white hover:bg-[#122B47] transition-colors"
               >
                 <Phone className="h-5 w-5" />
                 Cotizar por WhatsApp
