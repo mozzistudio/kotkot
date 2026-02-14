@@ -39,7 +39,7 @@ export default function ContactoPage() {
       <div className="flex min-h-[70vh] items-center justify-center px-4 pt-32">
         <div className="bg-white border border-[#e5e7eb] rounded-[16px] mx-auto max-w-lg p-12 text-center">
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)]">
-            <CheckCircle2 className="h-8 w-8 text-[#059669]" />
+            <CheckCircle2 className="h-8 w-8 text-[#111827]" />
           </div>
           <h2 className="font-heading text-2xl font-bold text-[#111827]">
             Mensaje enviado
@@ -64,9 +64,9 @@ export default function ContactoPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Header --- */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#111827]">
             Estamos aquí para ti
-            <span className="inline-block h-px w-10 bg-[#059669]" />
+            <span className="inline-block h-px w-10 bg-[#111827]" />
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl">
             Contáctanos
@@ -102,7 +102,7 @@ export default function ContactoPage() {
                     value={formData.nombre}
                     onChange={handleChange}
                     placeholder="Juan Pérez"
-                    className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[rgba(5,150,105,0.20)]"
+                    className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:outline-none focus:ring-2 focus:ring-[rgba(202,255,4,0.20)]"
                   />
                 </div>
 
@@ -122,7 +122,7 @@ export default function ContactoPage() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="juan@correduria.com"
-                    className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[rgba(5,150,105,0.20)]"
+                    className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:outline-none focus:ring-2 focus:ring-[rgba(202,255,4,0.20)]"
                   />
                 </div>
 
@@ -142,7 +142,7 @@ export default function ContactoPage() {
                     value={formData.asunto}
                     onChange={handleChange}
                     placeholder="¿En qué podemos ayudarte?"
-                    className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[rgba(5,150,105,0.20)]"
+                    className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:outline-none focus:ring-2 focus:ring-[rgba(202,255,4,0.20)]"
                   />
                 </div>
 
@@ -162,7 +162,7 @@ export default function ContactoPage() {
                     value={formData.mensaje}
                     onChange={handleChange}
                     placeholder="Escribe tu mensaje aquí..."
-                    className="w-full resize-none rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[rgba(5,150,105,0.20)]"
+                    className="w-full resize-none rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:outline-none focus:ring-2 focus:ring-[rgba(202,255,4,0.20)]"
                   />
                 </div>
 
@@ -217,7 +217,7 @@ export default function ContactoPage() {
                 {/* Email */}
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                    <Mail className="h-5 w-5 text-[#059669]" />
+                    <Mail className="h-5 w-5 text-[#111827]" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-[#111827]">
@@ -225,7 +225,7 @@ export default function ContactoPage() {
                     </p>
                     <a
                       href="mailto:support@kotkot.studio"
-                      className="text-sm text-[#059669] transition-colors hover:text-[#059669]"
+                      className="text-sm text-[#059669] transition-colors hover:text-[#111827]"
                     >
                       support@kotkot.studio
                     </a>
@@ -235,7 +235,7 @@ export default function ContactoPage() {
                 {/* WhatsApp */}
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                    <MessageCircle className="h-5 w-5 text-[#059669]" />
+                    <MessageCircle className="h-5 w-5 text-[#111827]" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-[#111827]">
@@ -243,7 +243,7 @@ export default function ContactoPage() {
                     </p>
                     <a
                       href="https://wa.me/50760000000"
-                      className="text-sm text-[#059669] transition-colors hover:text-[#059669]"
+                      className="text-sm text-[#059669] transition-colors hover:text-[#111827]"
                     >
                       +507 6000-0000
                     </a>
@@ -253,7 +253,7 @@ export default function ContactoPage() {
                 {/* Phone */}
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                    <Phone className="h-5 w-5 text-[#059669]" />
+                    <Phone className="h-5 w-5 text-[#111827]" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-[#111827]">
@@ -261,7 +261,7 @@ export default function ContactoPage() {
                     </p>
                     <a
                       href="tel:+50720000000"
-                      className="text-sm text-[#059669] transition-colors hover:text-[#059669]"
+                      className="text-sm text-[#059669] transition-colors hover:text-[#111827]"
                     >
                       +507 200-0000
                     </a>
@@ -271,7 +271,7 @@ export default function ContactoPage() {
                 {/* Address */}
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                    <MapPin className="h-5 w-5 text-[#059669]" />
+                    <MapPin className="h-5 w-5 text-[#111827]" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-[#111827]">

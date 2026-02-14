@@ -311,7 +311,7 @@ export default async function LoanProductPage({
           <div className="grid gap-3 sm:grid-cols-2">
             {product.benefits.map((benefit, index) => (
               <div key={index} className="flex items-start gap-3 rounded-[12px] border border-[#e5e7eb] bg-white p-4">
-                <Check className="h-5 w-5 flex-shrink-0 text-[#059669] mt-0.5" />
+                <Check className="h-5 w-5 flex-shrink-0 text-[#111827] mt-0.5" />
                 <span className="text-[#111827]">{benefit}</span>
               </div>
             ))}
@@ -377,7 +377,7 @@ export default async function LoanProductPage({
                 <Link key={relatedSlug} href={`/prestamos/${relatedSlug}`} className="group">
                   <GlassCard className="p-6 transition-all hover:scale-[1.02]">
                     <div className="mb-3 text-3xl">{related.icon}</div>
-                    <h3 className="mb-2 text-lg font-bold text-[#111827] group-hover:text-[#059669]">
+                    <h3 className="mb-2 text-lg font-bold text-[#111827] group-hover:text-[#111827]">
                       {related.name}
                     </h3>
                     <p className="text-sm text-[#6b7280]">{related.shortDescription}</p>

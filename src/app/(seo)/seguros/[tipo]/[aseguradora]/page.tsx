@@ -123,17 +123,17 @@ export default async function InsuranceCrossPage({
         {/* Hero Section */}
         <section className="mb-12">
           <div className="text-center">
-            <div className="mb-4 flex items-center justify-center gap-2 text-sm text-gray-600">
+            <div className="mb-4 flex items-center justify-center gap-2 text-sm text-[#6b7280]">
               {product.icon && (
                 <span className="text-2xl">{product.icon}</span>
               )}
               <span>→</span>
               <span className="font-semibold">{company.name}</span>
             </div>
-            <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            <h1 className="mb-6 text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl">
               {product.name} {company.name}
             </h1>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-600">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-[#6b7280]">
               Toda la información sobre el {product.name.toLowerCase()} de{' '}
               {company.name} en Panamá: coberturas, precios, requisitos y cómo
               contratarlo.
@@ -143,11 +143,11 @@ export default async function InsuranceCrossPage({
             <div className="mb-8 flex items-center justify-center gap-4">
               <div className="flex items-center gap-2">
                 <Star className="h-6 w-6 fill-yellow-400 text-yellow-400" />
-                <span className="text-2xl font-bold text-gray-900">
+                <span className="text-2xl font-bold text-[#111827]">
                   {company.ratings.overall.toFixed(1)}
                 </span>
               </div>
-              <span className="text-gray-600">
+              <span className="text-[#6b7280]">
                 ({company.ratings.reviewCount || 0} reseñas)
               </span>
             </div>
@@ -169,15 +169,15 @@ export default async function InsuranceCrossPage({
 
         {/* Key Benefits */}
         <section className="mb-12">
-          <h2 className="mb-8 text-3xl font-bold text-gray-900">
+          <h2 className="mb-8 text-3xl font-bold text-[#111827]">
             ¿Por qué elegir {company.name}?
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {company.pros.slice(0, 6).map((pro, index) => (
               <GlassCard key={index} className="p-6">
                 <div className="flex items-start gap-3">
-                  <Check className="h-6 w-6 flex-shrink-0 text-[#059669] mt-1" />
-                  <p className="text-gray-700">{pro}</p>
+                  <Check className="h-6 w-6 flex-shrink-0 text-[#111827] mt-1" />
+                  <p className="text-[#111827]">{pro}</p>
                 </div>
               </GlassCard>
             ))}
@@ -186,19 +186,19 @@ export default async function InsuranceCrossPage({
 
         {/* Coverage Details */}
         <section className="mb-12">
-          <h2 className="mb-8 text-3xl font-bold text-gray-900">
+          <h2 className="mb-8 text-3xl font-bold text-[#111827]">
             ¿Qué cubre?
           </h2>
           <GlassCard className="p-8">
             <div className="grid gap-4 md:grid-cols-2">
               {product.coverageTypes.slice(0, 6).map((coverage, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <Check className="h-6 w-6 flex-shrink-0 text-[#059669] mt-1" />
+                  <Check className="h-6 w-6 flex-shrink-0 text-[#111827] mt-1" />
                   <div>
-                    <h3 className="mb-1 font-semibold text-gray-900">
+                    <h3 className="mb-1 font-semibold text-[#111827]">
                       {coverage.name}
                     </h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-[#6b7280]">
                       {coverage.description}
                     </p>
                   </div>
@@ -211,12 +211,12 @@ export default async function InsuranceCrossPage({
         {/* Pricing Section */}
         {product.priceRanges && (
           <section className="mb-12">
-            <h2 className="mb-8 text-3xl font-bold text-gray-900">
+            <h2 className="mb-8 text-3xl font-bold text-[#111827]">
               Precios y Factores
             </h2>
             <GlassCard className="p-8">
               <div className="mb-6">
-                <p className="mb-4 text-gray-700">
+                <p className="mb-4 text-[#111827]">
                   El costo del {product.name.toLowerCase()} en {company.name}{' '}
                   varía según tus necesidades:
                 </p>
@@ -224,14 +224,14 @@ export default async function InsuranceCrossPage({
                   <span className="text-3xl font-bold text-[#059669]">
                     {product.priceRanges.min}
                   </span>
-                  <span className="text-xl text-gray-600">a</span>
+                  <span className="text-xl text-[#6b7280]">a</span>
                   <span className="text-3xl font-bold text-[#059669]">
                     {product.priceRanges.max}
                   </span>
                 </div>
               </div>
               <div>
-                <h3 className="mb-4 font-semibold text-gray-900">
+                <h3 className="mb-4 font-semibold text-[#111827]">
                   Factores que afectan el precio:
                 </h3>
                 <div className="grid gap-3 sm:grid-cols-2">
@@ -240,7 +240,7 @@ export default async function InsuranceCrossPage({
                       <Badge color="gray" className="mt-0.5">
                         {index + 1}
                       </Badge>
-                      <span className="text-sm text-gray-700">{factor}</span>
+                      <span className="text-sm text-[#111827]">{factor}</span>
                     </div>
                   ))}
                 </div>
@@ -252,7 +252,7 @@ export default async function InsuranceCrossPage({
         {/* Company Comparison */}
         {competingCompanies.length > 0 && (
           <section className="mb-12">
-            <h2 className="mb-8 text-3xl font-bold text-gray-900">
+            <h2 className="mb-8 text-3xl font-bold text-[#111827]">
               Comparar con Otras Opciones
             </h2>
             <div className="grid gap-6 md:grid-cols-3">
@@ -262,16 +262,16 @@ export default async function InsuranceCrossPage({
                   href={`/seguros/${product.slug}/${competitor.slug}`}
                 >
                   <GlassCard className="group h-full p-6 transition-all hover:shadow-xl hover:scale-[1.02]">
-                    <h3 className="mb-2 text-xl font-bold text-gray-900 group-hover:text-[#059669]">
+                    <h3 className="mb-2 text-xl font-bold text-[#111827] group-hover:text-[#111827]">
                       {competitor.name}
                     </h3>
                     <div className="mb-4 flex items-center gap-2">
                       <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                      <span className="font-semibold text-gray-900">
+                      <span className="font-semibold text-[#111827]">
                         {competitor.ratings.overall.toFixed(1)}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-600 line-clamp-2">
+                    <p className="text-sm text-[#6b7280] line-clamp-2">
                       {competitor.description}
                     </p>
                   </GlassCard>
@@ -284,16 +284,16 @@ export default async function InsuranceCrossPage({
         {/* FAQ Section */}
         {product.faqs && product.faqs.length > 0 && (
           <section className="mb-12">
-            <h2 className="mb-8 text-3xl font-bold text-gray-900">
+            <h2 className="mb-8 text-3xl font-bold text-[#111827]">
               Preguntas Frecuentes
             </h2>
             <div className="space-y-4">
               {product.faqs.slice(0, 3).map((faq, index) => (
                 <GlassCard key={index} className="p-6">
-                  <h3 className="mb-3 text-lg font-bold text-gray-900">
+                  <h3 className="mb-3 text-lg font-bold text-[#111827]">
                     {faq.question}
                   </h3>
-                  <p className="text-gray-600">{faq.answer}</p>
+                  <p className="text-[#6b7280]">{faq.answer}</p>
                 </GlassCard>
               ))}
             </div>
@@ -303,10 +303,10 @@ export default async function InsuranceCrossPage({
         {/* Company Profile Link */}
         <section className="mb-12">
           <GlassCard className="p-8 text-center">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900">
+            <h2 className="mb-4 text-2xl font-bold text-[#111827]">
               Más sobre {company.name}
             </h2>
-            <p className="mb-6 text-gray-600">
+            <p className="mb-6 text-[#6b7280]">
               Conoce más detalles sobre esta aseguradora, sus otros productos y
               opiniones de clientes.
             </p>
@@ -334,7 +334,7 @@ export default async function InsuranceCrossPage({
               )}%20con%20${encodeURIComponent(company.name)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-gray-50 transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-[#1f2937] transition-colors shadow-lg"
             >
               <Phone className="h-5 w-5" />
               Cotizar Ahora por WhatsApp

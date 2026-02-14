@@ -79,9 +79,9 @@ export default function CasosDeExitoPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Page Header --- */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#111827]">
             Historias reales
-            <span className="inline-block h-px w-10 bg-[#059669]" />
+            <span className="inline-block h-px w-10 bg-[#111827]" />
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
             Casos de Éxito
@@ -107,7 +107,7 @@ export default function CasosDeExitoPage() {
                     <p className="text-sm text-[#9ca3af]">{study.country}</p>
                   </div>
                 </div>
-                <p className="mt-3 font-heading text-lg font-semibold text-[#059669]">
+                <p className="mt-3 font-heading text-lg font-semibold text-[#111827]">
                   {study.headline}
                 </p>
               </div>
@@ -129,7 +129,7 @@ export default function CasosDeExitoPage() {
                     </p>
                   </div>
                   <div className="bg-white border border-[#e5e7eb] rounded-[16px] p-5">
-                    <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#059669]">
+                    <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#111827]">
                       Solución
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-slate-700">
@@ -145,7 +145,7 @@ export default function CasosDeExitoPage() {
                       key={metric.label}
                       className="flex flex-col items-center rounded-[16px] bg-[rgba(202,255,4,0.15)] px-4 py-5 text-center"
                     >
-                      <metric.icon className="mb-2 h-5 w-5 text-[#059669]" />
+                      <metric.icon className="mb-2 h-5 w-5 text-[#111827]" />
                       <span className="font-data text-2xl font-bold text-[#111827]">
                         {metric.value}
                       </span>

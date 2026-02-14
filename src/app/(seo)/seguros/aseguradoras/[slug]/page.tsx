@@ -112,7 +112,7 @@ export default async function InsuranceCompanyProfilePage({
 
         {/* Products Grid */}
         <section className="mt-12">
-          <h2 className="mb-8 text-3xl font-bold text-gray-900">
+          <h2 className="mb-8 text-3xl font-bold text-[#111827]">
             Productos de {company.name}
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -129,10 +129,10 @@ export default async function InsuranceCompanyProfilePage({
                     {product.icon && (
                       <div className="mb-3 text-3xl">{product.icon}</div>
                     )}
-                    <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-[#059669]">
+                    <h3 className="mb-2 text-lg font-bold text-[#111827] group-hover:text-[#111827]">
                       {product.name}
                     </h3>
-                    <p className="mb-4 text-sm text-gray-600 line-clamp-2">
+                    <p className="mb-4 text-sm text-[#6b7280] line-clamp-2">
                       {product.shortDescription}
                     </p>
                     <div className="flex items-center gap-2 text-sm font-semibold text-[#059669]">
@@ -162,7 +162,7 @@ export default async function InsuranceCompanyProfilePage({
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-gray-50 transition-colors shadow-lg"
+              className="inline-flex items-center rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-[#1f2937] transition-colors shadow-lg"
             >
               Cotizar Ahora
             </a>

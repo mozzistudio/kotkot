@@ -75,7 +75,7 @@ export function HowItWorks() {
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl lg:text-5xl">
             De registro a primera venta en{' '}
-            <span className="text-[#059669]">15 minutos</span>
+            <span className="text-[#111827]">15 minutos</span>
           </h2>
         </motion.div>
 

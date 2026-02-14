@@ -151,13 +151,13 @@ export default function ParaBrokersPage() {
             <Shield className="h-4 w-4" />
             Plataforma para Brokers
           </div>
-          <h1 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl lg:text-6xl">
+          <h1 className="mb-6 text-4xl font-bold text-[#111827] md:text-5xl lg:text-6xl">
             Vende Más Seguros con
             <span className="block text-[#111827] font-bold">
               Herramientas Digitales
             </span>
           </h1>
-          <p className="mx-auto mb-8 max-w-3xl text-lg text-gray-600 md:text-xl">
+          <p className="mx-auto mb-8 max-w-3xl text-lg text-[#6b7280] md:text-xl">
             Únete a kotkot.ai y accede a múltiples aseguradoras, cotizador instantáneo,
             CRM integrado, y leads cualificados. Todo lo que necesitas para crecer tu negocio.
           </p>
@@ -182,7 +182,7 @@ export default function ParaBrokersPage() {
 
         {/* Benefits Grid */}
         <div className="mb-16">
-          <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+          <h2 className="mb-8 text-center text-3xl font-bold text-[#111827]">
             Beneficios para Brokers
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -191,8 +191,8 @@ export default function ParaBrokersPage() {
                 <div className="mb-4 inline-flex items-center justify-center rounded-xl bg-[rgba(202,255,4,0.15)] p-3">
                   <benefit.icon className="h-6 w-6 text-[#111827]" />
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-gray-900">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <h3 className="mb-2 text-xl font-bold text-[#111827]">{benefit.title}</h3>
+                <p className="text-[#6b7280]">{benefit.description}</p>
               </GlassCard>
             ))}
           </div>
@@ -200,18 +200,18 @@ export default function ParaBrokersPage() {
 
         {/* Features Section */}
         <div className="mb-16">
-          <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+          <h2 className="mb-8 text-center text-3xl font-bold text-[#111827]">
             Características de la Plataforma
           </h2>
           <div className="grid gap-8 lg:grid-cols-3">
             {features.map((feature) => (
               <GlassCard key={feature.title} className="p-6">
-                <h3 className="mb-3 text-xl font-bold text-gray-900">{feature.title}</h3>
-                <p className="mb-4 text-gray-600">{feature.description}</p>
+                <h3 className="mb-3 text-xl font-bold text-[#111827]">{feature.title}</h3>
+                <p className="mb-4 text-[#6b7280]">{feature.description}</p>
                 <ul className="space-y-2">
                   {feature.list.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
-                      <span className="mt-1 text-[#059669]">✓</span>
+                    <li key={item} className="flex items-start gap-2 text-sm text-[#111827]">
+                      <span className="mt-1 text-[#111827]">✓</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -223,7 +223,7 @@ export default function ParaBrokersPage() {
 
         {/* How It Works */}
         <div className="mb-16">
-          <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+          <h2 className="mb-8 text-center text-3xl font-bold text-[#111827]">
             ¿Cómo Empezar?
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -232,8 +232,8 @@ export default function ParaBrokersPage() {
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#CAFF04] text-xl font-bold text-[#111827]">
                   {step.step}
                 </div>
-                <h3 className="mb-2 text-lg font-bold text-gray-900">{step.title}</h3>
-                <p className="text-sm text-gray-600">{step.description}</p>
+                <h3 className="mb-2 text-lg font-bold text-[#111827]">{step.title}</h3>
+                <p className="text-sm text-[#6b7280]">{step.description}</p>
               </GlassCard>
             ))}
           </div>
@@ -242,10 +242,10 @@ export default function ParaBrokersPage() {
         {/* Aseguradoras Disponibles */}
         <div className="mb-16">
           <GlassCard className="p-8 text-center">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900">
+            <h2 className="mb-4 text-2xl font-bold text-[#111827]">
               Aseguradoras Disponibles
             </h2>
-            <p className="mb-6 text-gray-600">
+            <p className="mb-6 text-[#6b7280]">
               Accede a productos de las principales aseguradoras de Panamá
             </p>
             <div className="flex flex-wrap items-center justify-center gap-6">
@@ -253,7 +253,7 @@ export default function ParaBrokersPage() {
                 (company) => (
                   <div
                     key={company}
-                    className="rounded-lg bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm"
+                    className="rounded-lg bg-white px-4 py-2 text-sm font-semibold text-[#111827] shadow-sm"
                   >
                     {company}
                   </div>
@@ -265,45 +265,45 @@ export default function ParaBrokersPage() {
 
         {/* FAQ Section */}
         <div className="mb-16">
-          <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+          <h2 className="mb-8 text-center text-3xl font-bold text-[#111827]">
             Preguntas Frecuentes
           </h2>
           <div className="space-y-4">
             <GlassCard className="p-6">
-              <h3 className="mb-2 text-lg font-bold text-gray-900">
+              <h3 className="mb-2 text-lg font-bold text-[#111827]">
                 ¿Cuánto cuesta usar la plataforma?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-[#6b7280]">
                 La plataforma es completamente gratuita para brokers registrados. No hay
                 costos de suscripción ni tarifas mensuales.
               </p>
             </GlassCard>
 
             <GlassCard className="p-6">
-              <h3 className="mb-2 text-lg font-bold text-gray-900">
+              <h3 className="mb-2 text-lg font-bold text-[#111827]">
                 ¿Cómo funcionan las comisiones?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-[#6b7280]">
                 Mantienes tus comisiones actuales con cada aseguradora. Además, ofrecemos
                 bonos adicionales por volumen de ventas mensuales.
               </p>
             </GlassCard>
 
             <GlassCard className="p-6">
-              <h3 className="mb-2 text-lg font-bold text-gray-900">
+              <h3 className="mb-2 text-lg font-bold text-[#111827]">
                 ¿Necesito licencia de broker?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-[#6b7280]">
                 Sí, debes tener una licencia de broker vigente emitida por la
                 Superintendencia de Seguros de Panamá.
               </p>
             </GlassCard>
 
             <GlassCard className="p-6">
-              <h3 className="mb-2 text-lg font-bold text-gray-900">
+              <h3 className="mb-2 text-lg font-bold text-[#111827]">
                 ¿Cuánto tiempo toma la activación?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-[#6b7280]">
                 El proceso de verificación toma 1-2 días hábiles. Después de la
                 capacitación, puedes comenzar a usar la plataforma inmediatamente.
               </p>
@@ -313,10 +313,10 @@ export default function ParaBrokersPage() {
 
         {/* CTA Section */}
         <GlassCard className="p-8 text-center md:p-12">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900">
+          <h2 className="mb-4 text-3xl font-bold text-[#111827]">
             ¿Listo para Crecer tu Negocio?
           </h2>
-          <p className="mx-auto mb-6 max-w-2xl text-lg text-gray-600">
+          <p className="mx-auto mb-6 max-w-2xl text-lg text-[#6b7280]">
             Únete a kotkot.ai hoy y comienza a vender más seguros con herramientas
             digitales de última generación.
           </p>

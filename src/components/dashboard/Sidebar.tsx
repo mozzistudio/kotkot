@@ -48,7 +48,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
             <ShieldCheck className="w-5 h-5 text-[#111827]" />
           </div>
           <span className="font-heading text-lg font-bold text-[#111827]">
-            Coti<span className="text-[#059669]">Facil</span>
+            kotkot<span className="text-[#111827]">.ai</span>
           </span>
         </Link>
 
@@ -76,7 +76,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
               className={`group relative flex items-center gap-3 px-3 py-2.5 rounded-[10px] text-sm font-medium transition-all duration-150 ${
                 isActive
                   ? 'bg-[#CAFF04] text-[#111827] font-semibold'
-                  : 'text-[#374151] hover:text-[#111827] hover:bg-[#f3f4f6]'
+                  : 'text-[#6b7280] hover:text-[#111827] hover:bg-[#f3f4f6]'
               }`}
             >
               <Icon

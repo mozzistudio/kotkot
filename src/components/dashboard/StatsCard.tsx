@@ -28,7 +28,7 @@ export function StatsCard({ icon, label, value, trend, className = '' }: StatsCa
           <div
             className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold ${
               trend.direction === 'up'
-                ? 'bg-[rgba(16,185,129,0.15)] text-[#047857]'
+                ? 'bg-[rgba(16,185,129,0.15)] text-[#059669]'
                 : 'bg-[rgba(239,68,68,0.15)] text-[#dc2626]'
             }`}
           >

@@ -71,7 +71,7 @@ function getPasswordStrength(password: string): { score: number; label: string; 
   if (score <= 2) return { score, label: 'Regular', color: 'bg-orange-400' };
   if (score <= 3) return { score, label: 'Buena', color: 'bg-yellow-400' };
   if (score <= 4) return { score, label: 'Fuerte', color: 'bg-[#10b981]' };
-  return { score, label: 'Muy fuerte', color: 'bg-[#059669]' };
+  return { score, label: 'Muy fuerte', color: 'bg-[#CAFF04]' };
 }
 
 export default function SignupPage() {
@@ -146,7 +146,7 @@ export default function SignupPage() {
             <ShieldCheck className="w-6 h-6 text-[#111827]" />
           </div>
           <span className="font-heading text-2xl font-bold text-[#111827]">
-            Coti<span className="text-[#10b981]">Facil</span>
+            kotkot<span className="text-[#111827]">.ai</span>
           </span>
         </div>
 
@@ -396,7 +396,7 @@ export default function SignupPage() {
                       animate={{ opacity: 1, height: 'auto' }}
                       className="flex items-start gap-2 p-3 rounded-lg bg-white border border-[#e5e7eb]"
                     >
-                      <Info className="w-4 h-4 text-[#10b981] mt-0.5 shrink-0" />
+                      <Info className="w-4 h-4 text-[#111827] mt-0.5 shrink-0" />
                       <div className="text-xs text-[#6b7280] space-y-0.5">
                         <p>
                           <span className="font-medium">Moneda:</span> {selectedCountry.currency}
@@ -502,7 +502,7 @@ export default function SignupPage() {
                         <ul className="mt-2 space-y-1">
                           {plan.features.map((feature) => (
                             <li key={feature} className="text-[10px] text-[#6b7280] flex items-start gap-1">
-                              <Check className="w-3 h-3 text-[#10b981] shrink-0 mt-px" />
+                              <Check className="w-3 h-3 text-[#111827] shrink-0 mt-px" />
                               <span>{feature}</span>
                             </li>
                           ))}
@@ -534,11 +534,11 @@ export default function SignupPage() {
                   </div>
                   <span className="text-xs text-[#6b7280] leading-relaxed">
                     Acepto los{' '}
-                    <Link href="/terms" className="text-[#10b981] hover:underline font-medium">
+                    <Link href="/terms" className="text-[#059669] hover:underline font-medium">
                       Terminos de Servicio
                     </Link>{' '}
                     y la{' '}
-                    <Link href="/privacy" className="text-[#10b981] hover:underline font-medium">
+                    <Link href="/privacy" className="text-[#059669] hover:underline font-medium">
                       Politica de Privacidad
                     </Link>
                   </span>
@@ -575,7 +575,7 @@ export default function SignupPage() {
           Ya tienes cuenta?{' '}
           <Link
             href="/login"
-            className="text-[#10b981] hover:text-[#059669] font-semibold transition-colors"
+            className="text-[#059669] hover:text-[#111827] font-semibold transition-colors"
           >
             Iniciar sesion
           </Link>

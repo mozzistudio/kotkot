@@ -114,7 +114,7 @@ export function InsuranceProducts() {
             10 Tipos de Seguros Disponibles
           </div>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl lg:text-5xl">
-            Cotiza <span className="text-[#059669]">Cualquier Seguro</span> en
+            Cotiza <span className="text-[#111827]">Cualquier Seguro</span> en
             Minutos
           </h2>
           <p className="mt-4 text-lg text-[#6b7280]">
@@ -159,7 +159,7 @@ export function InsuranceProducts() {
                       key={feature}
                       className="flex items-center gap-2 text-xs text-[#6b7280]"
                     >
-                      <span className="text-[#059669]">✓</span>
+                      <span className="text-[#111827]">✓</span>
                       {feature}
                     </li>
                   ))}

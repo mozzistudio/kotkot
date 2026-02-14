@@ -62,7 +62,7 @@ export default function LoginPage() {
             <ShieldCheck className="w-6 h-6 text-[#111827]" />
           </div>
           <span className="font-heading text-2xl font-bold text-[#111827]">
-            Coti<span className="text-[#10b981]">Facil</span>
+            kotkot<span className="text-[#111827]">.ai</span>
           </span>
         </div>
 
@@ -135,7 +135,7 @@ export default function LoginPage() {
           <div className="flex justify-end">
             <Link
               href="/forgot-password"
-              className="text-sm text-[#10b981] hover:text-[#059669] font-medium transition-colors"
+              className="text-sm text-[#059669] hover:text-[#111827] font-medium transition-colors"
             >
               Olvidaste tu contrasena?
             </Link>
@@ -193,7 +193,7 @@ export default function LoginPage() {
           No tienes cuenta?{' '}
           <Link
             href="/signup"
-            className="text-[#10b981] hover:text-[#059669] font-semibold transition-colors"
+            className="text-[#059669] hover:text-[#111827] font-semibold transition-colors"
           >
             Crear cuenta
           </Link>

@@ -260,7 +260,7 @@ function RatingBar({ label, rating }: { label: string; rating: number }) {
           {rating.toFixed(1)} / 5.0
         </span>
       </div>
-      <div className="h-3 overflow-hidden rounded-[20px] bg-gray-200">
+      <div className="h-3 overflow-hidden rounded-[20px] bg-[#e5e7eb]">
         <div
           className="h-full rounded-[20px] bg-[#CAFF04] transition-all"
           style={{ width: `${percentage}%` }}
@@ -276,13 +276,13 @@ function FeatureBadge({ label, enabled }: { label: string; enabled: boolean }) {
       className={`flex items-center gap-2 rounded-[12px] border px-4 py-2 ${
         enabled
           ? 'border-[#e5e7eb] bg-[rgba(202,255,4,0.15)]'
-          : 'border-[#e5e7eb] bg-gray-50'
+          : 'border-[#e5e7eb] bg-[#f9fafb]'
       }`}
     >
       {enabled ? (
         <Check className="h-5 w-5 text-[#111827]" />
       ) : (
-        <X className="h-5 w-5 text-gray-400" />
+        <X className="h-5 w-5 text-[#9ca3af]" />
       )}
       <span
         className={`text-sm font-medium ${

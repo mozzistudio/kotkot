@@ -62,7 +62,7 @@ export default function PreciosPage() {
           {faqs.map((faq) => (
             <div key={faq.question} className="bg-white border border-[#e5e7eb] rounded-[16px] p-6">
               <div className="flex items-start gap-3">
-                <ChevronDown className="mt-0.5 h-5 w-5 shrink-0 text-[#059669]" />
+                <ChevronDown className="mt-0.5 h-5 w-5 shrink-0 text-[#111827]" />
                 <div>
                   <h3 className="font-heading text-base font-semibold text-[#111827]">
                     {faq.question}

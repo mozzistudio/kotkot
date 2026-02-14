@@ -145,9 +145,9 @@ export default function FuncionalidadesPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Page Header --- */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#111827]">
             Plataforma completa
-            <span className="inline-block h-px w-10 bg-[#059669]" />
+            <span className="inline-block h-px w-10 bg-[#111827]" />
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
             Funcionalidades
@@ -174,7 +174,7 @@ export default function FuncionalidadesPage() {
                 <div className={isReversed ? 'lg:[direction:ltr]' : ''}>
                   <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)]">
                     <feature.icon
-                      className="h-7 w-7 text-[#059669]"
+                      className="h-7 w-7 text-[#111827]"
                       strokeWidth={1.8}
                     />
                   </div>
@@ -182,7 +182,7 @@ export default function FuncionalidadesPage() {
                   <h2 className="font-heading text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl">
                     {feature.title}
                   </h2>
-                  <p className="mt-1 text-base font-medium text-[#059669]">
+                  <p className="mt-1 text-base font-medium text-[#111827]">
                     {feature.subtitle}
                   </p>
                   <p className="mt-4 text-base leading-relaxed text-[#6b7280]">
@@ -194,7 +194,7 @@ export default function FuncionalidadesPage() {
                     {feature.subFeatures.map((sub) => (
                       <li key={sub} className="flex items-start gap-3">
                         <CheckCircle2
-                          className="mt-0.5 h-5 w-5 shrink-0 text-[#059669]"
+                          className="mt-0.5 h-5 w-5 shrink-0 text-[#111827]"
                           strokeWidth={2}
                         />
                         <span className="text-sm leading-relaxed text-[#6b7280]">
@@ -213,7 +213,7 @@ export default function FuncionalidadesPage() {
                       <ol className="mt-3 space-y-2">
                         {feature.flow.map((step, i) => (
                           <li key={i} className="flex items-start gap-3">
-                            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)] text-xs font-bold text-[#059669]">
+                            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)] text-xs font-bold text-[#111827]">
                               {i + 1}
                             </span>
                             <span className="text-sm leading-relaxed text-[#6b7280]">

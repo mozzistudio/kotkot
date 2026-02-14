@@ -62,7 +62,7 @@ export function Logo({ className = '', size = 'md' }: LogoProps) {
 
       {/* Brand Name */}
       <span className={`font-heading ${sizes.text} font-bold tracking-tight text-slate-900`}>
-        kotkot<span className="text-[#059669]">.ai</span>
+        kotkot<span className="text-[#111827]">.ai</span>
       </span>
     </div>
   );

@@ -97,7 +97,7 @@ export function Pricing() {
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl lg:text-5xl">
             Planes diseñados para{' '}
-            <span className="text-[#059669]">corredores de seguros</span>
+            <span className="text-[#111827]">corredores de seguros</span>
           </h2>
           <p className="mt-4 text-lg text-[#6b7280]">
             Sin comisiones ocultas. Cancela cuando quieras.
@@ -156,7 +156,7 @@ export function Pricing() {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2.5">
                     <Check
-                      className="mt-0.5 h-4.5 w-4.5 shrink-0 text-[#059669]"
+                      className="mt-0.5 h-4.5 w-4.5 shrink-0 text-[#111827]"
                       strokeWidth={2.5}
                     />
                     <span className="text-[0.9375rem] leading-snug text-[#6b7280]">
