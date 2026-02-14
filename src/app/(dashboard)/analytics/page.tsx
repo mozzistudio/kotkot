@@ -144,7 +144,7 @@ export default function AnalyticsPage() {
               onClick={() => setDateRange(dr.key)}
               className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
                 dateRange === dr.key
-                  ? 'bg-[var(--accent)] text-[var(--text-on-accent)]'
+                  ? 'bg-[#0C1E35] text-white'
                   : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               }`}
             >
@@ -263,7 +263,7 @@ export default function AnalyticsPage() {
                     <span className="text-sm font-semibold text-[var(--text-primary)] font-data">
                       {step.value.toLocaleString()}
                     </span>
-                    <span className="badge badge-lime">
+                    <span className="badge badge-dark-blue">
                       {step.percentage}%
                     </span>
                   </div>
@@ -288,7 +288,7 @@ export default function AnalyticsPage() {
           </div>
 
           {/* Conversion rate callout */}
-          <div className="mt-4 rounded-lg border border-[var(--border)] bg-[var(--accent-light)] p-3 text-center">
+          <div className="mt-4 rounded-lg border border-[rgba(12,30,53,0.12)] bg-[rgba(12,30,53,0.04)] p-3 text-center">
             <p className="text-xs text-[var(--text-secondary)]">Tasa de conversion total</p>
             <p className="text-xl font-bold text-[var(--success)] font-data">22.9%</p>
             <p className="text-xs text-[var(--text-tertiary)]">Conversacion a Pago</p>

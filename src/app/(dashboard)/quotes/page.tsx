@@ -173,11 +173,11 @@ const quotes: Quote[] = [
 // ---------------------------------------------------------------------------
 
 const statusConfig: Record<QuoteStatus, { label: string; bg: string; text: string; border: string }> = {
-  generated: { label: 'Generada', bg: 'bg-slate-500/15', text: 'text-slate-400', border: 'border-slate-500/30' },
-  sent: { label: 'Enviada', bg: 'bg-blue-500/15', text: 'text-blue-400', border: 'border-blue-500/30' },
-  selected: { label: 'Seleccionada', bg: 'bg-amber-500/15', text: 'text-amber-400', border: 'border-amber-500/30' },
-  paid: { label: 'Pagada', bg: 'bg-[#10b981]/15', text: 'text-[#10b981]', border: 'border-[#10b981]/30' },
-  expired: { label: 'Expirada', bg: 'bg-red-500/15', text: 'text-red-400', border: 'border-red-500/30' },
+  generated: { label: 'Generada', bg: 'bg-slate-100', text: 'text-slate-600', border: 'border-slate-200' },
+  sent: { label: 'Enviada', bg: 'bg-blue-50', text: 'text-blue-700', border: 'border-blue-200' },
+  selected: { label: 'Seleccionada', bg: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-200' },
+  paid: { label: 'Pagada', bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-200' },
+  expired: { label: 'Expirada', bg: 'bg-red-50', text: 'text-red-700', border: 'border-red-200' },
 };
 
 const typeIcons: Record<string, React.ReactNode> = {

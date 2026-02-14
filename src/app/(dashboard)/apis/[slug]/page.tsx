@@ -205,18 +205,18 @@ const insurerData: Record<string, InsurerDetail> = {
 // ---------------------------------------------------------------------------
 
 const productConfig: Record<InsuranceProduct, { label: string; icon: React.ReactNode; color: string }> = {
-  auto: { label: 'Auto', icon: <Car className="h-3.5 w-3.5" />, color: 'bg-sky-500/15 text-sky-400 border-sky-500/30' },
-  health: { label: 'Salud', icon: <Heart className="h-3.5 w-3.5" />, color: 'bg-rose-500/15 text-rose-400 border-rose-500/30' },
-  home: { label: 'Hogar', icon: <Home className="h-3.5 w-3.5" />, color: 'bg-amber-500/15 text-amber-400 border-amber-500/30' },
-  travel: { label: 'Viaje', icon: <Plane className="h-3.5 w-3.5" />, color: 'bg-purple-500/15 text-purple-400 border-purple-500/30' },
-  business: { label: 'Negocio', icon: <Briefcase className="h-3.5 w-3.5" />, color: 'bg-[#059669]/15 text-[#059669] border-[#059669]/30' },
+  auto: { label: 'Auto', icon: <Car className="h-3.5 w-3.5" />, color: 'bg-sky-50 text-sky-700 border border-sky-200' },
+  health: { label: 'Salud', icon: <Heart className="h-3.5 w-3.5" />, color: 'bg-rose-50 text-rose-700 border border-rose-200' },
+  home: { label: 'Hogar', icon: <Home className="h-3.5 w-3.5" />, color: 'bg-amber-50 text-amber-700 border border-amber-200' },
+  travel: { label: 'Viaje', icon: <Plane className="h-3.5 w-3.5" />, color: 'bg-purple-50 text-purple-700 border border-purple-200' },
+  business: { label: 'Negocio', icon: <Briefcase className="h-3.5 w-3.5" />, color: 'bg-teal-50 text-teal-700 border border-teal-200' },
 };
 
 const statusConfig: Record<ConnectionStatus, { label: string; dotColor: string; bg: string; text: string; border: string }> = {
-  active: { label: 'Activa', dotColor: 'bg-[var(--success)]', bg: 'bg-[var(--accent-light)]', text: 'text-[var(--accent)]', border: 'border-[var(--accent)]' },
-  pending: { label: 'Pendiente', dotColor: 'bg-amber-500', bg: 'bg-amber-500/15', text: 'text-amber-400', border: 'border-amber-500/30' },
-  error: { label: 'Error', dotColor: 'bg-red-500', bg: 'bg-red-500/15', text: 'text-red-400', border: 'border-red-500/30' },
-  disconnected: { label: 'No conectada', dotColor: 'bg-slate-500', bg: 'bg-slate-500/15', text: 'text-[var(--text-secondary)]', border: 'border-slate-500/30' },
+  active: { label: 'Activa', dotColor: 'bg-[var(--success)]', bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border border-emerald-200' },
+  pending: { label: 'Pendiente', dotColor: 'bg-amber-500', bg: 'bg-amber-50', text: 'text-amber-700', border: 'border border-amber-200' },
+  error: { label: 'Error', dotColor: 'bg-red-500', bg: 'bg-red-50', text: 'text-red-700', border: 'border border-red-200' },
+  disconnected: { label: 'No conectada', dotColor: 'bg-slate-500', bg: 'bg-slate-100', text: 'text-[var(--text-secondary)]', border: 'border border-slate-200' },
 };
 
 // ---------------------------------------------------------------------------
@@ -230,7 +230,7 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
   if (!insurer) {
     return (
       <div className="min-h-screen p-6 lg:p-8">
-        <Link href="/apis" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors mb-6">
+        <Link href="/apis" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[#0C1E35] transition-colors mb-6">
           <ArrowLeft className="h-4 w-4" />
           Volver a Aseguradoras
         </Link>
@@ -248,7 +248,7 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
   return (
     <div className="min-h-screen p-6 lg:p-8">
       {/* Back link */}
-      <Link href="/apis" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors mb-6">
+      <Link href="/apis" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[#0C1E35] transition-colors mb-6">
         <ArrowLeft className="h-4 w-4" />
         Volver a Aseguradoras
       </Link>
@@ -262,7 +262,7 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
           <div>
             <h1 className="text-page-title">{insurer.name}</h1>
             <div className="mt-1 flex items-center gap-3">
-              <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium ${sc.bg} ${sc.text} ${sc.border}`}>
+              <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium ${sc.bg} ${sc.text} ${sc.border}`}>
                 <span className={`h-1.5 w-1.5 rounded-full ${sc.dotColor}`} />
                 {sc.label}
               </span>
@@ -273,11 +273,11 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
         </div>
 
         <div className="flex gap-2">
-          <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]">
+          <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[#0C1E35] hover:text-[#0C1E35]">
             <RefreshCw className="h-4 w-4" />
             Test Conexion
           </button>
-          <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]">
+          <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[#0C1E35] hover:text-[#0C1E35]">
             <Settings className="h-4 w-4" />
             Configurar
           </button>
@@ -305,7 +305,7 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
             <TrendingUp className="h-4 w-4" />
             <span className="text-xs">Comision</span>
           </div>
-          <p className="mt-2 text-xl font-bold text-[var(--accent)] font-data">{insurer.commissionRate}%</p>
+          <p className="mt-2 text-xl font-bold text-[#047857] font-data">{insurer.commissionRate}%</p>
         </div>
         <div className="rounded-xl border border-[var(--border)] bg-white p-4">
           <div className="flex items-center gap-2 text-[var(--text-tertiary)]">
@@ -355,7 +355,7 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
                 const pc = productConfig[p];
                 return (
                   <div key={p} className="flex items-center gap-3 rounded-lg border border-[var(--border)]/60 px-4 py-3">
-                    <div className={`flex h-8 w-8 items-center justify-center rounded-lg border ${pc.color}`}>
+                    <div className={`flex h-8 w-8 items-center justify-center rounded-lg ${pc.color}`}>
                       {pc.icon}
                     </div>
                     <span className="text-sm font-medium text-[var(--text-primary)]">{pc.label}</span>
@@ -411,27 +411,27 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
                     <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)] text-center">Estado</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#1e293b]/60">
+                <tbody className="divide-y divide-[#e5e7eb]">
                   {insurer.recentQuotes.map((q) => (
-                    <tr key={q.id + q.client} className="hover:bg-white/[0.02] transition-colors">
+                    <tr key={q.id + q.client} className="hover:bg-[#f9fafb] transition-colors">
                       <td className="py-3 text-sm text-[var(--text-secondary)] font-data">{q.id}</td>
                       <td className="py-3 text-sm">
                         <Link
                           href={`/clients/${q.id.replace('Q-', 'C-')}`}
-                          className="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
+                          className="text-[var(--text-primary)] hover:text-[#0C1E35] transition-colors"
                         >
                           {q.client}
                         </Link>
                       </td>
                       <td className="py-3 text-sm text-[var(--text-secondary)]">{q.type}</td>
-                      <td className="py-3 text-sm text-[var(--accent)] text-right font-data font-semibold">{q.price}</td>
+                      <td className="py-3 text-sm text-[#047857] text-right font-data font-semibold">{q.price}</td>
                       <td className="py-3 text-sm text-[var(--text-secondary)] font-data">{q.date}</td>
                       <td className="py-3 text-center">
                         <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-                          q.status === 'Pagada' ? 'bg-[var(--accent-light)] text-[var(--accent)]' :
-                          q.status === 'Seleccionada' ? 'bg-amber-500/15 text-amber-400' :
-                          q.status === 'Enviada' ? 'bg-blue-500/15 text-blue-400' :
-                          'bg-slate-500/15 text-[var(--text-secondary)]'
+                          q.status === 'Pagada' ? 'bg-emerald-50 text-emerald-700' :
+                          q.status === 'Seleccionada' ? 'bg-amber-50 text-amber-700' :
+                          q.status === 'Enviada' ? 'bg-blue-50 text-blue-700' :
+                          'bg-slate-100 text-[var(--text-secondary)]'
                         }`}>
                           {q.status}
                         </span>

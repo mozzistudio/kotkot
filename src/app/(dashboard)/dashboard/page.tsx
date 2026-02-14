@@ -142,8 +142,8 @@ const quickActions = [
 const statusColors: Record<RecentConversation['status'], string> = {
   active: 'bg-[#10b981]',
   waiting: 'bg-amber-500',
-  human: 'bg-blue-500',
-  closed: 'bg-slate-500',
+  human: 'bg-[#0C1E35]',
+  closed: 'bg-slate-400',
 };
 
 const statusLabels: Record<RecentConversation['status'], string> = {
@@ -151,6 +151,13 @@ const statusLabels: Record<RecentConversation['status'], string> = {
   waiting: 'Esperando Pago',
   human: 'Humano',
   closed: 'Cerrada',
+};
+
+const statusBadgeClasses: Record<RecentConversation['status'], string> = {
+  active: 'bg-[rgba(16,185,129,0.12)] text-[#047857] border border-[rgba(16,185,129,0.25)]',
+  waiting: 'bg-[rgba(245,158,11,0.12)] text-[#b45309] border border-[rgba(245,158,11,0.25)]',
+  human: 'bg-[rgba(12,30,53,0.08)] text-[#0C1E35] border border-[rgba(12,30,53,0.15)]',
+  closed: 'bg-[#f3f4f6] text-[#4b5563] border border-[#e5e7eb]',
 };
 
 // ---------------------------------------------------------------------------
@@ -243,7 +250,7 @@ export default function DashboardPage() {
                     <span className="text-sm font-medium text-[var(--text-primary)]">
                       {conv.clientName}
                     </span>
-                    <span className="badge badge-lime">
+                    <span className={`badge ${statusBadgeClasses[conv.status]}`}>
                       {statusLabels[conv.status]}
                     </span>
                   </div>

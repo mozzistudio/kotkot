@@ -15,12 +15,12 @@ interface StatsCardProps {
 export function StatsCard({ icon, label, value, trend, className = '' }: StatsCardProps) {
   return (
     <div
-      className={`bg-white border border-[#e5e7eb] rounded-[16px] p-6 transition-all duration-150 hover:border-[rgba(202,255,4,0.40)] hover:-translate-y-0.5 ${className}`}
+      className={`bg-white border border-[#e5e7eb] rounded-[16px] p-6 transition-all duration-150 hover:border-[rgba(12,30,53,0.20)] hover:-translate-y-0.5 ${className}`}
     >
       <div className="flex items-start justify-between">
         {/* Icon */}
-        <div className="flex items-center justify-center w-10 h-10 rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-          <div className="text-[#111827]">{icon}</div>
+        <div className="flex items-center justify-center w-10 h-10 rounded-[12px] bg-[rgba(12,30,53,0.06)]">
+          <div className="text-[#0C1E35]">{icon}</div>
         </div>
 
         {/* Trend */}
