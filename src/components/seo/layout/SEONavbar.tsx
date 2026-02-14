@@ -231,6 +231,20 @@ export function SEONavbar() {
           >
             Para Brokers
           </Link>
+
+          <Link
+            href="/precios"
+            className="text-sm font-medium text-[#111827] hover:text-[#6b7280] transition-colors"
+          >
+            Precios
+          </Link>
+
+          <Link
+            href="/app"
+            className="text-sm font-medium text-[#111827] hover:text-[#6b7280] transition-colors"
+          >
+            App
+          </Link>
         </div>
 
         {/* Right Side - Login & CTA & Mobile Menu */}
@@ -364,6 +378,20 @@ export function SEONavbar() {
                   onClick={() => setMobileOpen(false)}
                 >
                   Para Brokers
+                </Link>
+                <Link
+                  href="/precios"
+                  className="block rounded-[12px] p-2 text-base font-medium text-[#6b7280] hover:bg-[rgba(202,255,4,0.15)] hover:text-[#111827]"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Precios
+                </Link>
+                <Link
+                  href="/app"
+                  className="block rounded-[12px] p-2 text-base font-medium text-[#6b7280] hover:bg-[rgba(202,255,4,0.15)] hover:text-[#111827]"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  App
                 </Link>
                 <Link
                   href="/login"

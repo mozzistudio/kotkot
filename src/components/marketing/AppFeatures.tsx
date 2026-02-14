@@ -1,58 +1,26 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {
-  MessageSquare,
-  Plug,
-  CreditCard,
-  BarChart3,
-  Palette,
-  Users,
-} from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { BarChart3, Zap, Shield } from 'lucide-react';
 
-interface Feature {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-}
-
-const features: Feature[] = [
-  {
-    icon: MessageSquare,
-    title: 'Agente IA en WhatsApp',
-    description:
-      'Cotiza seguros y préstamos 24/7. Compara opciones y cierra ventas automáticamente en WhatsApp.',
-  },
-  {
-    icon: Plug,
-    title: 'Conecta Aseguradoras y Bancos',
-    description:
-      'APIs de aseguradoras y entidades financieras. Cotización en tiempo real con tus credenciales.',
-  },
-  {
-    icon: CreditCard,
-    title: 'Cobro y Desembolso Automático',
-    description:
-      'Links de pago y tracking de desembolsos. Yappy, Stripe, y más integrados. El dinero llega directo.',
-  },
+const appFeatures = [
   {
     icon: BarChart3,
-    title: 'Dashboard Unificado',
+    title: 'Analytics en Tiempo Real',
     description:
-      'Seguros, préstamos, conversaciones, clientes y comisiones en un solo lugar. Todo bajo control.',
+      'Dashboards interactivos con métricas de conversión, productos top y rendimiento del bot.',
   },
   {
-    icon: Palette,
-    title: 'Personaliza tu Agente',
+    icon: Zap,
+    title: 'Acceso desde Cualquier Lugar',
     description:
-      'Configura tono, idioma y personalidad. Tu marca, múltiples productos financieros, una sola voz.',
+      'Responsive design. Accede desde desktop, tablet o móvil sin perder funcionalidad.',
   },
   {
-    icon: Users,
-    title: 'CRM Inteligente',
+    icon: Shield,
+    title: 'Seguro y Confiable',
     description:
-      'Lead scoring, seguimiento automático, renovaciones de pólizas, refinanciamiento de préstamos.',
+      'Datos encriptados, backups automáticos y uptime del 99.9%. Tu información siempre protegida.',
   },
 ];
 
@@ -77,11 +45,11 @@ const cardVariants = {
   },
 };
 
-export function Features() {
+export function AppFeatures() {
   return (
-    <section id="funcionalidades" className="relative px-4 py-24 sm:py-32">
+    <section className="relative px-4 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
-        {/* --- Header --- */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -89,24 +57,24 @@ export function Features() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
           className="mx-auto mb-16 max-w-2xl text-center"
         >
-          <h2 className="font-heading text-4xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-5xl lg:text-6xl leading-[1.1]">
-            Todo lo que tu negocio financiero{' '}
-            <span className="text-[var(--text-link)]">necesita</span>
+          <h2 className="font-heading text-4xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-5xl leading-[1.1]">
+            Potente, rápido y{' '}
+            <span className="text-[var(--text-link)]">confiable</span>
           </h2>
           <p className="mt-6 text-xl text-[var(--text-secondary)] font-medium leading-relaxed">
-            Una plataforma completa para automatizar seguros y préstamos en Latinoamérica.
+            Una plataforma diseñada para brokers modernos que valoran su tiempo.
           </p>
         </motion.div>
 
-        {/* --- Grid --- */}
+        {/* Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
-          className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-6 md:grid-cols-3"
         >
-          {features.map((feature) => (
+          {appFeatures.map((feature) => (
             <motion.div
               key={feature.title}
               variants={cardVariants}
@@ -114,7 +82,10 @@ export function Features() {
             >
               {/* Icon */}
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-[var(--radius-input)] bg-[var(--accent-light)]">
-                <feature.icon className="h-7 w-7 text-[var(--text-primary)]" strokeWidth={2} />
+                <feature.icon
+                  className="h-7 w-7 text-[var(--text-primary)]"
+                  strokeWidth={2}
+                />
               </div>
 
               {/* Title */}
