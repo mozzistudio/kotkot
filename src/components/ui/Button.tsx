@@ -15,21 +15,21 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-[var(--action-primary-bg)] text-[var(--action-primary-fg)] border border-[rgba(202,255,4,0.40)] hover:bg-[var(--action-primary-hover)] font-semibold',
+    'border border-[var(--color-border-strong)] bg-[var(--color-action-primary-bg)] text-[var(--color-action-primary-fg)] hover:bg-[var(--color-action-primary-hover)]',
   secondary:
-    'bg-[var(--surface-page)] text-[var(--text-primary)] border border-[var(--border-default)] hover:bg-[var(--surface-hover)] hover:border-[var(--border-strong)]',
+    'border border-[var(--color-border-default)] bg-[var(--color-action-secondary-bg)] text-[var(--color-action-secondary-fg)] hover:bg-[var(--color-surface-hover)] hover:border-[var(--color-border-strong)]',
   tertiary:
-    'bg-transparent text-[var(--text-secondary)] border-none hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]',
+    'border border-transparent bg-transparent text-[var(--color-action-tertiary-fg)] hover:bg-[var(--color-surface-hover)] hover:text-[var(--color-text-primary)]',
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: 'px-4 py-2 text-sm gap-1.5',
-  md: 'px-6 py-3 text-sm gap-2',
-  lg: 'px-8 py-3.5 text-base gap-2.5',
+  sm: 'min-h-11 gap-2 px-4 py-2 text-[var(--type-body-sm)]',
+  md: 'min-h-11 gap-2 px-6 py-3 text-[var(--type-body-sm)]',
+  lg: 'min-h-12 gap-2 px-8 py-3 text-[var(--type-body-md)]',
 };
 
 const iconSizeClasses: Record<ButtonSize, string> = {
-  sm: 'h-3.5 w-3.5',
+  sm: 'h-4 w-4',
   md: 'h-4 w-4',
   lg: 'h-5 w-5',
 };
@@ -46,17 +46,13 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`inline-flex items-center justify-center rounded-[var(--radius-button)] font-medium transition-all duration-150 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)] disabled:pointer-events-none disabled:opacity-50 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
+      className={`inline-flex items-center justify-center rounded-[var(--radius-md)] font-semibold transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-focus-ring)] disabled:pointer-events-none disabled:opacity-50 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
       disabled={disabled || loading}
       {...props}
     >
-      {loading && (
-        <Loader2 className={`animate-spin ${iconSizeClasses[size]}`} />
-      )}
+      {loading && <Loader2 className={`animate-spin ${iconSizeClasses[size]}`} />}
       {children}
-      {arrow && !loading && (
-        <ArrowRight className={`transition-transform group-hover:translate-x-0.5 ${iconSizeClasses[size]}`} />
-      )}
+      {arrow && !loading && <ArrowRight className={`${iconSizeClasses[size]}`} />}
     </button>
   );
 }

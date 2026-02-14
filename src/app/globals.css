@@ -94,6 +94,19 @@
   --color-info-fg: #0C1E35;
   --color-notification: #ef4444;
 
+  --color-brand-google-blue: #4285f4;
+  --color-brand-google-green: #34a853;
+  --color-brand-google-yellow: #fbbc05;
+  --color-brand-google-red: #ea4335;
+  --color-brand-whatsapp-teal: #075e54;
+  --color-brand-whatsapp-green: #25d366;
+  --color-brand-whatsapp-green-dark: #128c7e;
+  --color-brand-whatsapp-chat: #ece5dd;
+  --color-brand-whatsapp-reply: #d9fdd3;
+  --color-brand-whatsapp-ui: #f0f0f0;
+  --color-brand-whatsapp-icon: #8696a0;
+  --color-brand-yappy: #7b2bfc;
+
   /* --- Focus ----------------------------------------------- */
   --color-focus-ring: #0C1E35;
 
@@ -220,6 +233,19 @@
   --accent: #CAFF04;
   --accent-hover: #b8e600;
   --accent-light: rgba(202, 255, 4, 0.15);
+
+  --color-brand-google-blue: #4285f4;
+  --color-brand-google-green: #34a853;
+  --color-brand-google-yellow: #fbbc05;
+  --color-brand-google-red: #ea4335;
+  --color-brand-whatsapp-teal: #075e54;
+  --color-brand-whatsapp-green: #25d366;
+  --color-brand-whatsapp-green-dark: #128c7e;
+  --color-brand-whatsapp-chat: #ece5dd;
+  --color-brand-whatsapp-reply: #d9fdd3;
+  --color-brand-whatsapp-ui: #f0f0f0;
+  --color-brand-whatsapp-icon: #8696a0;
+  --color-brand-yappy: #7b2bfc;
 
   /* Dark Blue */
   --dark-blue: #0C1E35;
