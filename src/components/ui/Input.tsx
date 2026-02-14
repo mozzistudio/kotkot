@@ -26,24 +26,24 @@ export function Input({
       {label && (
         <label
           htmlFor={id}
-          className="text-sm font-medium text-[var(--text-primary)]"
+          className="text-sm font-medium text-[var(--color-text-primary)]"
         >
           {label}
         </label>
       )}
       <div className="relative">
         {icon && (
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-secondary)]">
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--color-text-secondary)]">
             {icon}
           </div>
         )}
         <input
           id={id}
-          className={`w-full rounded-[var(--radius-input)] px-4 py-3 text-sm bg-[var(--surface-page)] border border-[var(--border-default)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] transition-all duration-150 focus:outline-none focus:border-[var(--accent)] focus:ring-[3px] focus:ring-[var(--accent-light)] ${
+          className={`w-full rounded-[var(--radius-input)] px-4 py-3 text-sm bg-[var(--color-surface-page)] border border-[var(--color-border-default)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] transition-all duration-150 focus:outline-none focus:border-[var(--color-border-focus)] focus:ring-[3px] focus:ring-[var(--color-focus-ring)]/15 ${
             icon ? 'pl-10' : ''
           } ${
             error
-              ? 'border-[var(--error)] focus:border-[var(--error)] focus:ring-[var(--color-danger-bg)]'
+              ? 'border-[var(--color-danger-fg)] focus:border-[var(--color-danger-fg)] focus:ring-[var(--color-danger-bg)]'
               : ''
           } ${className}`}
           aria-invalid={error ? 'true' : undefined}
@@ -54,12 +54,12 @@ export function Input({
         />
       </div>
       {error && (
-        <p id={`${id}-error`} className="text-sm text-[var(--error)]" role="alert">
+        <p id={`${id}-error`} className="text-sm text-[var(--color-danger-fg)]" role="alert">
           {error}
         </p>
       )}
       {hint && !error && (
-        <p id={`${id}-hint`} className="text-sm text-[var(--text-muted)]">
+        <p id={`${id}-hint`} className="text-sm text-[var(--color-text-muted)]">
           {hint}
         </p>
       )}

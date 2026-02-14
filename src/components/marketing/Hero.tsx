@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Play } from 'lucide-react';
+import { Play } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
 import WhatsAppMockup from './WhatsAppMockup';
 
 const containerVariants = {
@@ -57,13 +58,13 @@ export function Hero() {
             variants={itemVariants}
             className="mt-8 font-heading leading-[1.05] tracking-tight"
           >
-            <span className="block text-[2.5rem] font-medium text-[var(--text-secondary)] sm:text-5xl lg:text-[3.5rem]">
+            <span className="block text-[var(--type-display-sm)] font-medium text-[var(--text-secondary)] lg:text-[var(--type-display-lg)]">
               Tu agente de seguros
             </span>
-            <span className="block text-[2.5rem] font-bold text-[var(--text-primary)] sm:text-5xl lg:text-[3.5rem]">
+            <span className="block text-[var(--type-display-sm)] font-bold text-[var(--text-primary)] lg:text-[var(--type-display-lg)]">
               inteligente en
             </span>
-            <span className="relative inline-block text-[2.5rem] font-bold text-[var(--text-primary)] sm:text-5xl lg:text-[3.5rem]">
+            <span className="relative inline-block text-[var(--type-display-sm)] font-bold text-[var(--text-primary)] lg:text-[var(--type-display-lg)]">
               WhatsApp
               <span className="absolute -bottom-1 left-0 h-3 w-full bg-[var(--accent)] -z-10 rounded-sm" />
             </span>
@@ -80,20 +81,23 @@ export function Hero() {
 
           {/* CTA — single primary (dark bg for B2B demo), secondary = outline */}
           <motion.div variants={itemVariants} className="mt-8 flex flex-wrap items-center gap-4">
-            <a
+            <Button
               href="/demo"
-              className="group inline-flex items-center gap-2 rounded-[var(--radius-button)] bg-[var(--action-dark-bg)] px-7 py-3.5 text-base font-semibold text-[var(--action-dark-fg)] transition-all duration-150 hover:bg-[var(--action-dark-hover)] hover:shadow-lg hover:shadow-[rgba(12,30,53,0.25)]"
+              size="lg"
+              className="bg-[var(--color-action-dark-bg)] text-[var(--color-action-dark-fg)] hover:bg-[var(--color-action-dark-hover)]"
+              arrow
             >
               Solicitar Demo
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </a>
-            <a
+            </Button>
+            <Button
               href="/seguros"
-              className="inline-flex items-center gap-2 rounded-[var(--radius-button)] border border-[var(--dark-blue)] bg-white px-7 py-3.5 text-base font-semibold text-[var(--dark-blue)] transition-all duration-150 hover:bg-[var(--dark-blue-surface)]"
+              variant="secondary"
+              size="lg"
+              className="border-[var(--color-info-fg)] text-[var(--color-info-fg)] hover:bg-[var(--color-info-bg)]"
             >
               <Play className="h-4 w-4" />
               Ver Seguros
-            </a>
+            </Button>
           </motion.div>
 
           {/* Social proof */}
@@ -102,7 +106,7 @@ export function Hero() {
               {['JP', 'MR', 'AL', 'SC'].map((initials, i) => (
                 <div
                   key={i}
-                  className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[var(--surface-hover)] text-[10px] font-bold text-[var(--text-primary)]"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[var(--surface-hover)] text-xs font-bold text-[var(--text-primary)]"
                 >
                   {initials}
                 </div>
