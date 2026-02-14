@@ -9,18 +9,18 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.2,
+      staggerChildren: 0.1,
+      delayChildren: 0.15,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
@@ -33,6 +33,19 @@ const mockupVariants = {
     transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const, delay: 0.5 },
   },
 };
+
+const stats = [
+  { value: '2 min', label: 'Cotización promedio' },
+  { value: '10+', label: 'Aseguradoras' },
+  { value: '24/7', label: 'Automatización' },
+];
+
+const avatars = [
+  { initials: 'JP', bg: 'bg-[var(--dark-blue)]' },
+  { initials: 'MR', bg: 'bg-[var(--dark-blue-light)]' },
+  { initials: 'AL', bg: 'bg-[var(--dark-blue-lighter)]' },
+  { initials: 'SC', bg: 'bg-[var(--dark-blue)]' },
+];
 
 export function Hero() {
   return (
@@ -47,8 +60,11 @@ export function Hero() {
         >
           {/* Badge */}
           <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center gap-2 rounded-full bg-[var(--color-info-bg)] border border-[rgba(12,30,53,0.15)] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[var(--dark-blue)]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--dark-blue)]" />
+            <span className="inline-flex items-center gap-2.5 rounded-full bg-[var(--color-info-bg)] border border-[rgba(12,30,53,0.12)] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--dark-blue)]">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--color-success)] opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--color-success)]" />
+              </span>
               Insurtech para corredores
             </span>
           </motion.div>
@@ -56,17 +72,22 @@ export function Hero() {
           {/* Main headline */}
           <motion.h1
             variants={itemVariants}
-            className="mt-8 font-heading leading-[1.05] tracking-tight"
+            className="mt-8 font-heading leading-[1.08] tracking-tight"
           >
-            <span className="block text-[var(--type-display-sm)] font-medium text-[var(--text-secondary)] lg:text-[var(--type-display-lg)]">
+            <span className="block text-[var(--type-display-sm)] font-bold text-[var(--text-primary)] lg:text-[var(--type-display-lg)]">
               Tu agente de seguros
             </span>
             <span className="block text-[var(--type-display-sm)] font-bold text-[var(--text-primary)] lg:text-[var(--type-display-lg)]">
-              inteligente en
-            </span>
-            <span className="relative inline-block text-[var(--type-display-sm)] font-bold text-[var(--text-primary)] lg:text-[var(--type-display-lg)]">
-              WhatsApp
-              <span className="absolute -bottom-1 left-0 h-3 w-full bg-[var(--accent)] -z-10 rounded-sm" />
+              inteligente en{' '}
+              <span className="relative inline-block">
+                <span className="relative z-10">WhatsApp</span>
+                <motion.span
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.9 }}
+                  className="absolute -bottom-0.5 left-[-2%] h-[0.32em] w-[104%] origin-left -skew-y-[0.8deg] rounded-[3px] bg-[var(--accent)]"
+                />
+              </span>
             </span>
           </motion.h1>
 
@@ -75,11 +96,14 @@ export function Hero() {
             variants={itemVariants}
             className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--text-secondary)]"
           >
-            Automatiza tu correduría con IA. Cotiza, compara 10+ aseguradoras
-            y cierra ventas 24/7 directamente por WhatsApp.
+            Automatiza tu correduría con IA. Cotiza, compara{' '}
+            <span className="font-semibold text-[var(--text-primary)]">10+ aseguradoras</span>{' '}
+            y cierra ventas{' '}
+            <span className="font-semibold text-[var(--text-primary)]">24/7</span>{' '}
+            directamente por WhatsApp.
           </motion.p>
 
-          {/* CTA — single primary (dark bg for B2B demo), secondary = outline */}
+          {/* CTA */}
           <motion.div variants={itemVariants} className="mt-8 flex flex-wrap items-center gap-4">
             <Button
               href="/demo"
@@ -102,18 +126,18 @@ export function Hero() {
 
           {/* Social proof */}
           <motion.div variants={itemVariants} className="mt-10 flex items-center gap-6">
-            <div className="flex -space-x-2">
-              {['JP', 'MR', 'AL', 'SC'].map((initials, i) => (
+            <div className="flex -space-x-2.5">
+              {avatars.map((user, i) => (
                 <div
                   key={i}
-                  className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[var(--surface-hover)] text-xs font-bold text-[var(--text-primary)]"
+                  className={`flex h-9 w-9 items-center justify-center rounded-full border-2 border-white ${user.bg} text-[10px] font-bold text-white`}
                 >
-                  {initials}
+                  {user.initials}
                 </div>
               ))}
             </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1">
+            <div className="flex flex-col gap-0.5">
+              <div className="flex items-center gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="h-3.5 w-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -131,18 +155,17 @@ export function Hero() {
             variants={itemVariants}
             className="mt-8 flex flex-wrap gap-8 border-t border-[var(--border-default)] pt-8"
           >
-            <div>
-              <div className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">2 min</div>
-              <div className="text-xs text-[var(--text-muted)]">Cotización promedio</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">10+</div>
-              <div className="text-xs text-[var(--text-muted)]">Aseguradoras</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">24/7</div>
-              <div className="text-xs text-[var(--text-muted)]">Automatización</div>
-            </div>
+            {stats.map((stat) => (
+              <div key={stat.label} className="flex flex-col gap-1">
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+                  <span className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">
+                    {stat.value}
+                  </span>
+                </div>
+                <span className="pl-3.5 text-xs text-[var(--text-muted)]">{stat.label}</span>
+              </div>
+            ))}
           </motion.div>
         </motion.div>
 
