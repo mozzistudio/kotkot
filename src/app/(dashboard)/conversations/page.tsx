@@ -131,8 +131,8 @@ const conversations: Conversation[] = [
 const statusColors: Record<ConversationStatus, string> = {
   active: 'bg-[#10b981]',
   waiting: 'bg-amber-500',
-  human: 'bg-blue-500',
-  closed: 'bg-slate-500',
+  human: 'bg-[#0C1E35]',
+  closed: 'bg-slate-400',
 };
 
 const statusLabels: Record<ConversationStatus, string> = {
@@ -145,10 +145,10 @@ const statusLabels: Record<ConversationStatus, string> = {
 const filterOptions: ConversationStatus[] = ['active', 'waiting', 'human', 'closed'];
 
 const insuranceBadgeColors: Record<string, string> = {
-  Auto: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-  Salud: 'bg-rose-500/20 text-rose-400 border-rose-500/30',
-  Hogar: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
-  Viaje: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
+  Auto: 'bg-blue-50 text-blue-700 border border-blue-200',
+  Salud: 'bg-rose-50 text-rose-700 border border-rose-200',
+  Hogar: 'bg-amber-50 text-amber-700 border border-amber-200',
+  Viaje: 'bg-purple-50 text-purple-700 border border-purple-200',
 };
 
 // ---------------------------------------------------------------------------

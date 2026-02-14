@@ -40,26 +40,26 @@ export function Sidebar({ open, onClose }: SidebarProps) {
   const pathname = usePathname();
 
   const sidebarContent = (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full bg-[#0C1E35]">
       {/* Logo */}
-      <div className="flex items-center justify-between px-6 py-5 border-b border-[#e5e7eb]">
+      <div className="flex items-center justify-between px-6 py-5 border-b border-white/[0.08]">
         <Link href="/dashboard" className="flex items-center gap-2.5">
           <div className="flex items-center justify-center w-9 h-9 rounded-[10px] bg-[#CAFF04]">
             <svg viewBox="0 0 32 32" fill="none" className="h-[18px] w-[18px]">
-              <path d="M9 6v20" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
-              <path d="M9 16l10-10" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
-              <path d="M9 16l10 10" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
+              <path d="M9 6v20" stroke="#0C1E35" strokeWidth="3" strokeLinecap="round" />
+              <path d="M9 16l10-10" stroke="#0C1E35" strokeWidth="3" strokeLinecap="round" />
+              <path d="M9 16l10 10" stroke="#0C1E35" strokeWidth="3" strokeLinecap="round" />
             </svg>
           </div>
-          <span className="font-heading text-lg font-bold text-[#111827]">
-            kotkot<span className="font-normal text-[#9ca3af]">.ai</span>
+          <span className="font-heading text-lg font-bold text-white">
+            kotkot<span className="font-normal text-white/40">.ai</span>
           </span>
         </Link>
 
         {/* Close button for mobile */}
         <button
           onClick={onClose}
-          className="lg:hidden p-1.5 rounded-[10px] text-[#6b7280] hover:text-[#111827] hover:bg-[#f3f4f6] transition-colors"
+          className="lg:hidden p-1.5 rounded-[10px] text-white/50 hover:text-white hover:bg-white/[0.06] transition-colors"
           aria-label="Cerrar menu"
         >
           <X className="w-5 h-5" />
@@ -79,20 +79,20 @@ export function Sidebar({ open, onClose }: SidebarProps) {
               onClick={onClose}
               className={`group relative flex items-center gap-3 px-3 py-2.5 rounded-[10px] text-sm font-medium transition-all duration-150 ${
                 isActive
-                  ? 'bg-[#CAFF04] text-[#111827] font-semibold'
-                  : 'text-[#6b7280] hover:text-[#111827] hover:bg-[#f3f4f6]'
+                  ? 'bg-[rgba(202,255,4,0.10)] text-[#CAFF04] font-semibold border-l-[3px] border-l-[#CAFF04]'
+                  : 'text-white/65 hover:text-white/90 hover:bg-white/[0.06]'
               }`}
             >
               <Icon
                 className={`w-[18px] h-[18px] shrink-0 transition-colors duration-150 ${
-                  isActive ? 'text-[#111827]' : 'text-[#6b7280] group-hover:text-[#111827]'
+                  isActive ? 'text-[#CAFF04]' : 'text-white/50 group-hover:text-white/80'
                 }`}
               />
               <span>{item.label}</span>
 
               {/* Notification badge for Conversaciones */}
               {item.href === '/conversations' && (
-                <span className="ml-auto flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-[rgba(202,255,4,0.15)] text-[#111827] text-[10px] font-bold">
+                <span className="ml-auto flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-[#CAFF04] text-[#0C1E35] text-[10px] font-bold">
                   12
                 </span>
               )}
@@ -102,18 +102,18 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       </nav>
 
       {/* Bottom: Broker profile */}
-      <div className="px-3 py-4 border-t border-[#e5e7eb]">
-        <div className="flex items-center gap-3 px-3 py-2.5 rounded-[10px] hover:bg-[#f3f4f6] transition-colors cursor-pointer">
-          <div className="w-9 h-9 rounded-full bg-[rgba(202,255,4,0.15)] flex items-center justify-center text-[#111827] font-bold text-sm shrink-0">
+      <div className="px-3 py-4 border-t border-white/[0.08]">
+        <div className="flex items-center gap-3 px-3 py-2.5 rounded-[10px] hover:bg-white/[0.06] transition-colors cursor-pointer">
+          <div className="w-9 h-9 rounded-full bg-[#1A3A5C] flex items-center justify-center text-white font-bold text-sm shrink-0">
             JP
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-[#111827] truncate">Juan Perez</p>
+            <p className="text-sm font-medium text-white truncate">Juan Perez</p>
             <div className="flex items-center gap-1.5">
-              <span className="inline-flex items-center px-1.5 py-0.5 rounded-[6px] text-[10px] font-bold bg-[rgba(202,255,4,0.15)] text-[#111827]">
+              <span className="inline-flex items-center px-1.5 py-0.5 rounded-[6px] text-[10px] font-bold bg-[#CAFF04] text-[#0C1E35]">
                 PRO
               </span>
-              <span className="text-[11px] text-[#9ca3af] truncate">Broker</span>
+              <span className="text-[11px] text-white/40 truncate">Broker</span>
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex lg:fixed lg:inset-y-0 lg:left-0 lg:w-[220px] lg:flex-col bg-white border-r border-[#e5e7eb] z-30">
+      <aside className="hidden lg:flex lg:fixed lg:inset-y-0 lg:left-0 lg:w-[220px] lg:flex-col bg-[#0C1E35] z-30">
         {sidebarContent}
       </aside>
 
@@ -136,7 +136,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
             animate={{ x: 0 }}
             exit={{ x: -220 }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed inset-y-0 left-0 w-[220px] flex flex-col bg-white border-r border-[#e5e7eb] z-50 lg:hidden"
+            className="fixed inset-y-0 left-0 w-[220px] flex flex-col bg-[#0C1E35] z-50 lg:hidden"
           >
             {sidebarContent}
           </motion.aside>
