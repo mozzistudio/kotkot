@@ -46,8 +46,8 @@ export function Hero() {
         >
           {/* Badge */}
           <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center gap-2 rounded-full bg-[rgba(202,255,4,0.15)] border border-[rgba(202,255,4,0.40)] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#111827]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#CAFF04]" />
+            <span className="inline-flex items-center gap-2 rounded-full bg-[rgba(12,30,53,0.08)] border border-[rgba(12,30,53,0.15)] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#0C1E35]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#0C1E35]" />
               Insurtech para corredores
             </span>
           </motion.div>
@@ -82,14 +82,14 @@ export function Hero() {
           <motion.div variants={itemVariants} className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="/demo"
-              className="group inline-flex items-center gap-2 rounded-[12px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-7 py-3.5 text-base font-semibold text-[#111827] transition-all duration-150 hover:bg-[#b8e600] hover:shadow-lg hover:shadow-[rgba(202,255,4,0.25)]"
+              className="group inline-flex items-center gap-2 rounded-[10px] bg-[#0C1E35] px-7 py-3.5 text-base font-semibold text-white transition-all duration-150 hover:bg-[#122B47] hover:shadow-lg hover:shadow-[rgba(12,30,53,0.25)]"
             >
               Solicitar Demo
               <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
               href="/seguros"
-              className="inline-flex items-center gap-2 rounded-[12px] border border-[#e5e7eb] bg-white px-7 py-3.5 text-base font-semibold text-[#111827] transition-all duration-150 hover:bg-[#f9fafb] hover:border-[#d1d5db]"
+              className="inline-flex items-center gap-2 rounded-[10px] border border-[#0C1E35] bg-white px-7 py-3.5 text-base font-semibold text-[#0C1E35] transition-all duration-150 hover:bg-[rgba(12,30,53,0.06)]"
             >
               <Play className="h-4 w-4" />
               Ver Seguros
@@ -111,7 +111,7 @@ export function Hero() {
             <div className="flex flex-col">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="h-3.5 w-3.5 text-[#CAFF04]" fill="currentColor" viewBox="0 0 20 20">
+                  <svg key={i} className="h-3.5 w-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}

@@ -118,14 +118,14 @@ export function Pricing() {
               variants={cardVariants}
               className={`relative flex flex-col rounded-[16px] border bg-white p-8 transition-all duration-300 hover:-translate-y-1 ${
                 plan.popular
-                  ? 'border-[rgba(202,255,4,0.40)] md:-my-4 md:py-10 md:scale-[1.03]'
-                  : 'border-[#e5e7eb] hover:border-[rgba(202,255,4,0.40)]'
+                  ? 'border-[#0C1E35] md:-my-4 md:py-10 md:scale-[1.03]'
+                  : 'border-[#e5e7eb] hover:border-[#0C1E35]'
               }`}
             >
               {/* Popular badge */}
               {plan.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center rounded-[10px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-4 py-1 text-xs font-bold uppercase tracking-wider text-[#111827]">
+                  <span className="inline-flex items-center rounded-[10px] bg-[#0C1E35] px-4 py-1 text-xs font-bold uppercase tracking-wider text-white">
                     Popular
                   </span>
                 </div>
@@ -170,14 +170,14 @@ export function Pricing() {
               {plan.ctaStyle === 'filled' ? (
                 <a
                   href="/signup"
-                  className="w-full rounded-[10px] border border-[rgba(202,255,4,0.40)] bg-[#CAFF04] px-6 py-3 text-center font-heading text-[0.9375rem] font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600]"
+                  className="w-full rounded-[10px] bg-[#0C1E35] px-6 py-3 text-center font-heading text-[0.9375rem] font-semibold text-white transition-all duration-200 hover:bg-[#122B47]"
                 >
                   {plan.cta}
                 </a>
               ) : (
                 <a
                   href={plan.name === 'Enterprise' ? '/contacto' : '/signup'}
-                  className="inline-flex w-full items-center justify-center rounded-[10px] border border-[#e5e7eb] bg-white px-6 py-3 font-heading text-[0.9375rem] font-semibold text-[#111827] transition-all duration-200 hover:bg-[#f3f4f6]"
+                  className="inline-flex w-full items-center justify-center rounded-[10px] border border-[#0C1E35] bg-white px-6 py-3 font-heading text-[0.9375rem] font-semibold text-[#0C1E35] transition-all duration-200 hover:bg-[rgba(12,30,53,0.06)]"
                 >
                   {plan.cta}
                 </a>

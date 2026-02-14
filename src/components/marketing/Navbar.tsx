@@ -112,7 +112,7 @@ export function Navbar() {
                       <div className="mt-1 border-t border-[#e5e7eb] pt-1">
                         <a
                           href="/seguros"
-                          className="flex items-center justify-center rounded-[10px] px-3 py-2 text-sm font-semibold text-[#111827] transition-colors hover:bg-[rgba(202,255,4,0.15)]"
+                          className="flex items-center justify-center rounded-[10px] px-3 py-2 text-sm font-semibold text-[#111827] transition-colors hover:bg-[rgba(12,30,53,0.06)]"
                         >
                           Ver todos los seguros →
                         </a>
@@ -157,7 +157,7 @@ export function Navbar() {
                       <div className="mt-1 border-t border-[#e5e7eb] pt-1">
                         <a
                           href="/prestamos"
-                          className="flex items-center justify-center rounded-[10px] px-3 py-2 text-sm font-semibold text-[#111827] transition-colors hover:bg-[rgba(202,255,4,0.15)]"
+                          className="flex items-center justify-center rounded-[10px] px-3 py-2 text-sm font-semibold text-[#111827] transition-colors hover:bg-[rgba(12,30,53,0.06)]"
                         >
                           Ver todos los préstamos →
                         </a>
@@ -175,7 +175,7 @@ export function Navbar() {
                 onClick={() => setActiveLink(link.href)}
                 className={`relative flex items-center gap-1.5 rounded-[10px] px-4 py-2 text-sm font-medium transition-all duration-150 ${
                   activeLink === link.href
-                    ? 'bg-[#CAFF04] text-[#111827] font-semibold'
+                    ? 'bg-[#0C1E35] text-white font-semibold'
                     : 'text-[#6b7280] hover:bg-[#f3f4f6] hover:text-[#111827]'
                 }`}
               >
@@ -194,7 +194,7 @@ export function Navbar() {
             </a>
             <a
               href="/demo"
-              className="inline-flex items-center gap-1.5 rounded-[10px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-5 py-2.5 text-sm font-semibold text-[#111827] transition-all duration-150 hover:bg-[#b8e600]"
+              className="inline-flex items-center gap-1.5 rounded-[10px] bg-[#0C1E35] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-150 hover:bg-[#122B47]"
             >
               Solicitar Demo
               <ArrowUpRight className="h-4 w-4" />
@@ -272,7 +272,7 @@ export function Navbar() {
                   className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#111827] transition-colors hover:text-[#6b7280]"
                 >
                   {activeLink === link.href && (
-                    <span className="h-2 w-2 rounded-full bg-[#CAFF04]" />
+                    <span className="h-2 w-2 rounded-full bg-[#0C1E35]" />
                   )}
                   {link.label}
                 </motion.a>
@@ -296,7 +296,7 @@ export function Navbar() {
                 <a
                   href="/demo"
                   onClick={() => setMobileOpen(false)}
-                  className="inline-flex items-center gap-2 rounded-[10px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-3.5 text-base font-semibold text-[#111827] transition-all duration-150 hover:bg-[#b8e600]"
+                  className="inline-flex items-center gap-2 rounded-[10px] bg-[#0C1E35] px-8 py-3.5 text-base font-semibold text-white transition-all duration-150 hover:bg-[#122B47]"
                 >
                   Solicitar Demo
                   <ArrowUpRight className="h-5 w-5" />
