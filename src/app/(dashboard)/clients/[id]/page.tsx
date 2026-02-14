@@ -354,7 +354,7 @@ function getGenericClient(id: string): ClientDetail {
 
 const tagColors: Record<string, string> = {
   VIP: 'bg-amber-50 text-amber-700 border border-amber-200',
-  Nuevo: 'bg-[rgba(12,30,53,0.06)] text-[#0C1E35] border border-[#0C1E35]/20',
+  Nuevo: 'bg-[rgba(12,30,53,0.06)] text-[var(--dark-blue)] border border-[var(--dark-blue)]/20',
   Renovacion: 'bg-blue-50 text-blue-700 border border-blue-200',
   Empresa: 'bg-purple-50 text-purple-700 border border-purple-200',
   Referido: 'bg-teal-50 text-teal-700 border border-teal-200',
@@ -409,7 +409,7 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       <Link
         href="/clients"
-        className="mb-6 inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors hover:text-[#0C1E35]"
+        className="mb-6 inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--dark-blue)]"
       >
         <ArrowLeft className="h-4 w-4" />
         Volver a Clientes
@@ -422,7 +422,7 @@ export default function ClientDetailPage() {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-center gap-5">
             {/* Avatar */}
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#0C1E35] text-xl font-bold text-white">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[var(--dark-blue)] text-xl font-bold text-white">
               {client.initials}
             </div>
             <div>
@@ -436,7 +436,7 @@ export default function ClientDetailPage() {
                 <span
                   className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
                     client.status === 'Activo'
-                      ? 'bg-emerald-50 text-[#047857]'
+                      ? 'bg-emerald-50 text-[var(--success-fg)]'
                       : 'bg-red-50 text-red-700'
                   }`}
                 >
@@ -451,7 +451,7 @@ export default function ClientDetailPage() {
 
           {/* Quick Actions */}
           <div className="flex gap-3">
-            <button className="inline-flex items-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-2.5 text-sm font-medium text-[#047857] transition-colors hover:bg-emerald-100">
+            <button className="inline-flex items-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-2.5 text-sm font-medium text-[var(--success-fg)] transition-colors hover:bg-emerald-100">
               <MessageCircle className="h-4 w-4" />
               Enviar WhatsApp
             </button>
@@ -474,7 +474,7 @@ export default function ClientDetailPage() {
         {/* Datos Personales */}
         <div className="card">
           <h2 className="mb-4 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
-            <User className="h-5 w-5 text-[#0C1E35]" />
+            <User className="h-5 w-5 text-[var(--dark-blue)]" />
             Datos Personales
           </h2>
           <div className="space-y-3">
@@ -550,9 +550,9 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       <div className="mb-8 rounded-xl border border-[var(--border)] bg-white p-6">
         <h2 className="mb-5 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
-          <Shield className="h-5 w-5 text-[#0C1E35]" />
+          <Shield className="h-5 w-5 text-[var(--dark-blue)]" />
           Polizas
-          <span className="ml-2 rounded-full bg-[rgba(12,30,53,0.06)] px-2 py-0.5 text-xs font-medium text-[#0C1E35]">
+          <span className="ml-2 rounded-full bg-[rgba(12,30,53,0.06)] px-2 py-0.5 text-xs font-medium text-[var(--dark-blue)]">
             {client.policies.length}
           </span>
         </h2>
@@ -586,7 +586,7 @@ export default function ClientDetailPage() {
                     <td className="py-3 pr-4 text-[var(--text-secondary)]">{policy.aseguradora}</td>
                     <td className="py-3 pr-4 text-[var(--text-secondary)]">{policy.tipo}</td>
                     <td className="py-3 pr-4 text-[var(--text-secondary)]">{policy.cobertura}</td>
-                    <td className="py-3 pr-4 font-semibold text-[#047857] font-data">
+                    <td className="py-3 pr-4 font-semibold text-[var(--success-fg)] font-data">
                       {policy.primaMensual}
                     </td>
                     <td className="py-3 pr-4 text-[var(--text-tertiary)] font-data">{policy.fechaInicio}</td>
@@ -643,11 +643,11 @@ export default function ClientDetailPage() {
                   </p>
                   <p className="mt-0.5 text-xs text-[var(--text-secondary)]">
                     Seleccionada:{' '}
-                    <span className="text-[#047857]">{quote.seleccionada}</span>
+                    <span className="text-[var(--success-fg)]">{quote.seleccionada}</span>
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="text-sm font-semibold text-[#047857] font-data">
+                  <p className="text-sm font-semibold text-[var(--success-fg)] font-data">
                     {quote.precio}
                   </p>
                 </div>
@@ -662,7 +662,7 @@ export default function ClientDetailPage() {
       {/* ----------------------------------------------------------------- */}
       <div className="mb-8 rounded-xl border border-[var(--border)] bg-white p-6">
         <h2 className="mb-5 flex items-center gap-2 text-base font-semibold text-[var(--text-primary)]">
-          <MessageSquare className="h-5 w-5 text-[#0C1E35]" />
+          <MessageSquare className="h-5 w-5 text-[var(--dark-blue)]" />
           Historial de Conversaciones
         </h2>
 
@@ -676,7 +676,7 @@ export default function ClientDetailPage() {
                 className="flex items-center gap-4 rounded-lg border border-[var(--border)]/50 p-4 transition-colors hover:border-[var(--border)]"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(12,30,53,0.06)]">
-                  <MessageCircle className="h-5 w-5 text-[#0C1E35]" />
+                  <MessageCircle className="h-5 w-5 text-[var(--dark-blue)]" />
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2">
@@ -778,10 +778,10 @@ export default function ClientDetailPage() {
           onChange={(e) => setNotes(e.target.value)}
           rows={4}
           placeholder="Agregar notas sobre el cliente..."
-          className="w-full rounded-lg border border-[var(--border)] px-4 py-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[#0C1E35]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.10)]"
+          className="w-full rounded-lg border border-[var(--border)] px-4 py-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.10)]"
         />
         <div className="mt-3 flex justify-end">
-          <button className="rounded-lg bg-[#0C1E35] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#122B47]">
+          <button className="rounded-lg bg-[var(--dark-blue)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--dark-blue-light)]">
             Guardar Notas
           </button>
         </div>

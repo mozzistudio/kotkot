@@ -12,17 +12,17 @@ export default function PoliticaPrivacidadPage() {
       <div className="mx-auto max-w-4xl">
         {/* --- Header --- */}
         <div className="mb-12 text-center">
-          <h1 className="font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl">
+          <h1 className="font-heading text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl">
             Política de Privacidad
           </h1>
-          <p className="mt-4 text-base text-[#9ca3af]">
+          <p className="mt-4 text-base text-[var(--text-muted)]">
             Última actualización: 1 de febrero de 2026
           </p>
         </div>
 
         {/* --- Content --- */}
-        <div className="bg-white border border-[#e5e7eb] rounded-[16px] p-8 sm:p-12">
-          <div className="prose-sm space-y-8 text-[#6b7280]">
+        <div className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-8 sm:p-12">
+          <div className="prose-sm space-y-8 text-[var(--text-secondary)]">
             {/* Intro */}
             <section>
               <p className="text-base leading-relaxed">
@@ -37,7 +37,7 @@ export default function PoliticaPrivacidadPage() {
 
             {/* 1. Datos que Recopilamos */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-[#111827]">
+              <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
                 1. Datos que Recopilamos
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -73,7 +73,7 @@ export default function PoliticaPrivacidadPage() {
 
             {/* 2. Uso de la Información */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-[#111827]">
+              <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
                 2. Uso de la Información
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -93,7 +93,7 @@ export default function PoliticaPrivacidadPage() {
 
             {/* 3. Cookies y Tecnologías de Seguimiento */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-[#111827]">
+              <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
                 3. Cookies y Tecnologías de Seguimiento
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -125,7 +125,7 @@ export default function PoliticaPrivacidadPage() {
 
             {/* 4. Compartición con Terceros */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-[#111827]">
+              <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
                 4. Compartición con Terceros
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -165,7 +165,7 @@ export default function PoliticaPrivacidadPage() {
 
             {/* 5. Seguridad de los Datos */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-[#111827]">
+              <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
                 5. Seguridad de los Datos
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -183,7 +183,7 @@ export default function PoliticaPrivacidadPage() {
 
             {/* 6. Tus Derechos */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-[#111827]">
+              <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
                 6. Tus Derechos
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -220,7 +220,7 @@ export default function PoliticaPrivacidadPage() {
                 Para ejercer cualquiera de estos derechos, contáctanos en{' '}
                 <a
                   href="mailto:privacidad@kotkot.ai"
-                  className="font-medium text-[#111827] font-medium hover:text-[#6b7280]"
+                  className="font-medium text-[var(--text-primary)] font-medium hover:text-[var(--text-secondary)]"
                 >
                   privacidad@kotkot.ai
                 </a>
@@ -230,7 +230,7 @@ export default function PoliticaPrivacidadPage() {
 
             {/* 7. Retención de Datos */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-[#111827]">
+              <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
                 7. Retención de Datos
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -244,7 +244,7 @@ export default function PoliticaPrivacidadPage() {
 
             {/* 8. Menores de Edad */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-[#111827]">
+              <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
                 8. Menores de Edad
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -257,7 +257,7 @@ export default function PoliticaPrivacidadPage() {
 
             {/* 9. Cambios a esta Política */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-[#111827]">
+              <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
                 9. Cambios a esta Política
               </h2>
               <p className="mt-3 text-base leading-relaxed">
@@ -270,27 +270,27 @@ export default function PoliticaPrivacidadPage() {
 
             {/* 10. Contacto */}
             <section>
-              <h2 className="font-heading text-xl font-bold text-[#111827]">
+              <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
                 10. Contacto
               </h2>
               <p className="mt-3 text-base leading-relaxed">
                 Si tienes preguntas sobre esta Política de Privacidad o sobre
                 cómo manejamos tus datos, contáctanos:
               </p>
-              <div className="mt-3 bg-white border border-[#e5e7eb] rounded-[16px] p-5">
-                <p className="text-sm text-[#6b7280]">
+              <div className="mt-3 bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-5">
+                <p className="text-sm text-[var(--text-secondary)]">
                   <strong>Kotkot</strong>
                 </p>
-                <p className="text-sm text-[#6b7280]">
+                <p className="text-sm text-[var(--text-secondary)]">
                   Email:{' '}
                   <a
                     href="mailto:privacidad@kotkot.ai"
-                    className="text-[#111827] font-medium hover:text-[#6b7280]"
+                    className="text-[var(--text-primary)] font-medium hover:text-[var(--text-secondary)]"
                   >
                     privacidad@kotkot.ai
                   </a>
                 </p>
-                <p className="text-sm text-[#6b7280]">
+                <p className="text-sm text-[var(--text-secondary)]">
                   Dirección: Calle 50, Torre Global Bank, Piso 30, Ciudad de
                   Panamá, Panamá
                 </p>

@@ -230,7 +230,7 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
   if (!insurer) {
     return (
       <div className="min-h-screen p-6 lg:p-8">
-        <Link href="/apis" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[#0C1E35] transition-colors mb-6">
+        <Link href="/apis" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--dark-blue)] transition-colors mb-6">
           <ArrowLeft className="h-4 w-4" />
           Volver a Aseguradoras
         </Link>
@@ -248,7 +248,7 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
   return (
     <div className="min-h-screen p-6 lg:p-8">
       {/* Back link */}
-      <Link href="/apis" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[#0C1E35] transition-colors mb-6">
+      <Link href="/apis" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--dark-blue)] transition-colors mb-6">
         <ArrowLeft className="h-4 w-4" />
         Volver a Aseguradoras
       </Link>
@@ -273,11 +273,11 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
         </div>
 
         <div className="flex gap-2">
-          <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[#0C1E35] hover:text-[#0C1E35]">
+          <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--dark-blue)] hover:text-[var(--dark-blue)]">
             <RefreshCw className="h-4 w-4" />
             Test Conexion
           </button>
-          <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[#0C1E35] hover:text-[#0C1E35]">
+          <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-white px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--dark-blue)] hover:text-[var(--dark-blue)]">
             <Settings className="h-4 w-4" />
             Configurar
           </button>
@@ -305,7 +305,7 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
             <TrendingUp className="h-4 w-4" />
             <span className="text-xs">Comision</span>
           </div>
-          <p className="mt-2 text-xl font-bold text-[#047857] font-data">{insurer.commissionRate}%</p>
+          <p className="mt-2 text-xl font-bold text-[var(--success-fg)] font-data">{insurer.commissionRate}%</p>
         </div>
         <div className="rounded-xl border border-[var(--border)] bg-white p-4">
           <div className="flex items-center gap-2 text-[var(--text-tertiary)]">
@@ -411,20 +411,20 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
                     <th className="pb-3 text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)] text-center">Estado</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#e5e7eb]">
+                <tbody className="divide-y divide-[var(--border-default)]">
                   {insurer.recentQuotes.map((q) => (
-                    <tr key={q.id + q.client} className="hover:bg-[#f9fafb] transition-colors">
+                    <tr key={q.id + q.client} className="hover:bg-[var(--surface-panel)] transition-colors">
                       <td className="py-3 text-sm text-[var(--text-secondary)] font-data">{q.id}</td>
                       <td className="py-3 text-sm">
                         <Link
                           href={`/clients/${q.id.replace('Q-', 'C-')}`}
-                          className="text-[var(--text-primary)] hover:text-[#0C1E35] transition-colors"
+                          className="text-[var(--text-primary)] hover:text-[var(--dark-blue)] transition-colors"
                         >
                           {q.client}
                         </Link>
                       </td>
                       <td className="py-3 text-sm text-[var(--text-secondary)]">{q.type}</td>
-                      <td className="py-3 text-sm text-[#047857] text-right font-data font-semibold">{q.price}</td>
+                      <td className="py-3 text-sm text-[var(--success-fg)] text-right font-data font-semibold">{q.price}</td>
                       <td className="py-3 text-sm text-[var(--text-secondary)] font-data">{q.date}</td>
                       <td className="py-3 text-center">
                         <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${

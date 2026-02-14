@@ -100,10 +100,10 @@ export default function LoansHubPage() {
 
         {/* Hero Section */}
         <section className="mb-16 text-center">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
+          <h1 className="mb-6 text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl lg:text-6xl">
             Compara Préstamos en Panamá
           </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-[#6b7280] sm:text-xl">
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-[var(--text-secondary)] sm:text-xl">
             Encuentra el préstamo ideal comparando tasas de interés, plazos
             y condiciones de los principales bancos de Panamá.
           </p>
@@ -111,7 +111,7 @@ export default function LoansHubPage() {
             href="https://wa.me/50760000000?text=Hola%2C%20quiero%20comparar%20pr%C3%A9stamos"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-xl bg-[#CAFF04] px-8 py-4 text-lg font-semibold text-[#111827] hover:bg-[#b8e600] transition-colors border border-[rgba(202,255,4,0.40)]"
+            className="inline-flex items-center rounded-xl bg-[var(--accent)] px-8 py-4 text-lg font-semibold text-[var(--text-primary)] hover:bg-[var(--action-primary-hover)] transition-colors border border-[rgba(202,255,4,0.40)]"
           >
             Comparar Gratis por WhatsApp
           </a>
@@ -119,7 +119,7 @@ export default function LoansHubPage() {
 
         {/* Loan Types */}
         <section className="mb-16">
-          <h2 className="mb-8 text-3xl font-bold text-[#111827]">
+          <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
             Tipos de Préstamos
           </h2>
           <div className="grid gap-6 sm:grid-cols-2">
@@ -127,27 +127,27 @@ export default function LoansHubPage() {
               <Link key={product.slug} href={`/prestamos/${product.slug}`}>
                 <GlassCard className="group relative h-full overflow-hidden p-6 transition-all hover:scale-[1.02]">
                   <div className="mb-4 text-4xl">{product.icon}</div>
-                  <h3 className="mb-2 text-xl font-bold text-[#111827]">
+                  <h3 className="mb-2 text-xl font-bold text-[var(--text-primary)]">
                     {product.name}
                   </h3>
-                  <p className="mb-4 text-sm text-[#6b7280]">
+                  <p className="mb-4 text-sm text-[var(--text-secondary)]">
                     {product.description}
                   </p>
                   <div className="mb-4 grid grid-cols-3 gap-3">
                     <div>
-                      <p className="text-xs text-[#9ca3af]">Tasa</p>
-                      <p className="text-sm font-semibold text-[#111827]">{product.rate}</p>
+                      <p className="text-xs text-[var(--text-muted)]">Tasa</p>
+                      <p className="text-sm font-semibold text-[var(--text-primary)]">{product.rate}</p>
                     </div>
                     <div>
-                      <p className="text-xs text-[#9ca3af]">Monto</p>
-                      <p className="text-sm font-semibold text-[#111827]">{product.amount}</p>
+                      <p className="text-xs text-[var(--text-muted)]">Monto</p>
+                      <p className="text-sm font-semibold text-[var(--text-primary)]">{product.amount}</p>
                     </div>
                     <div>
-                      <p className="text-xs text-[#9ca3af]">Plazo</p>
-                      <p className="text-sm font-semibold text-[#111827]">{product.term}</p>
+                      <p className="text-xs text-[var(--text-muted)]">Plazo</p>
+                      <p className="text-sm font-semibold text-[var(--text-primary)]">{product.term}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 text-sm font-semibold text-[#0C1E35]">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[var(--dark-blue)]">
                     Comparar Opciones
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
@@ -160,27 +160,27 @@ export default function LoansHubPage() {
 
         {/* Top Banks */}
         <section className="mb-16">
-          <h2 className="mb-8 text-3xl font-bold text-[#111827]">
+          <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
             Principales Bancos
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {topBanks.map((bank) => (
               <GlassCard key={bank.slug} className="p-6">
-                <h3 className="mb-1 text-lg font-bold text-[#111827]">
+                <h3 className="mb-1 text-lg font-bold text-[var(--text-primary)]">
                   {bank.name}
                 </h3>
-                <p className="text-sm text-[#6b7280]">{bank.description}</p>
+                <p className="text-sm text-[var(--text-secondary)]">{bank.description}</p>
               </GlassCard>
             ))}
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="rounded-2xl bg-[#CAFF04] p-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-[#111827]">
+        <section className="rounded-2xl bg-[var(--accent)] p-12 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-[var(--text-primary)]">
             ¿No sabes cuál préstamo elegir?
           </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-[#6b7280]">
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-[var(--text-secondary)]">
             Nuestro asistente por WhatsApp te ayuda a encontrar el préstamo
             perfecto según tus necesidades y capacidad de pago.
           </p>
@@ -188,7 +188,7 @@ export default function LoansHubPage() {
             href="https://wa.me/50760000000?text=Hola%2C%20necesito%20ayuda%20para%20elegir%20un%20pr%C3%A9stamo"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-[#1f2937] transition-colors"
+            className="inline-flex items-center rounded-xl bg-[var(--text-primary)] px-8 py-4 text-lg font-semibold text-white hover:bg-[var(--text-primary)] transition-colors"
           >
             Hablar con un Asesor
           </a>

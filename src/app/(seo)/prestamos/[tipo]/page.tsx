@@ -269,29 +269,29 @@ export default async function LoanProductPage({
         {/* Hero Section */}
         <section className="mb-16">
           <div className="text-5xl mb-4">{product.icon}</div>
-          <h1 className="mb-4 text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl">
+          <h1 className="mb-4 text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl">
             {product.name} en Panamá
           </h1>
-          <p className="mb-8 max-w-3xl text-lg text-[#6b7280]">
+          <p className="mb-8 max-w-3xl text-lg text-[var(--text-secondary)]">
             {product.longDescription}
           </p>
 
           {/* Key Terms */}
           <div className="mb-8 grid gap-4 sm:grid-cols-3">
             <GlassCard className="p-6 text-center">
-              <p className="text-sm text-[#9ca3af] mb-1">Tasa de interés</p>
-              <p className="text-2xl font-bold text-[#111827]">{product.rate.min}</p>
-              <p className="text-sm text-[#6b7280]">hasta {product.rate.max}</p>
+              <p className="text-sm text-[var(--text-muted)] mb-1">Tasa de interés</p>
+              <p className="text-2xl font-bold text-[var(--text-primary)]">{product.rate.min}</p>
+              <p className="text-sm text-[var(--text-secondary)]">hasta {product.rate.max}</p>
             </GlassCard>
             <GlassCard className="p-6 text-center">
-              <p className="text-sm text-[#9ca3af] mb-1">Monto</p>
-              <p className="text-2xl font-bold text-[#111827]">{product.amount.min}</p>
-              <p className="text-sm text-[#6b7280]">hasta {product.amount.max}</p>
+              <p className="text-sm text-[var(--text-muted)] mb-1">Monto</p>
+              <p className="text-2xl font-bold text-[var(--text-primary)]">{product.amount.min}</p>
+              <p className="text-sm text-[var(--text-secondary)]">hasta {product.amount.max}</p>
             </GlassCard>
             <GlassCard className="p-6 text-center">
-              <p className="text-sm text-[#9ca3af] mb-1">Plazo</p>
-              <p className="text-2xl font-bold text-[#111827]">{product.term.min}</p>
-              <p className="text-sm text-[#6b7280]">hasta {product.term.max}</p>
+              <p className="text-sm text-[var(--text-muted)] mb-1">Plazo</p>
+              <p className="text-2xl font-bold text-[var(--text-primary)]">{product.term.min}</p>
+              <p className="text-sm text-[var(--text-secondary)]">hasta {product.term.max}</p>
             </GlassCard>
           </div>
 
@@ -299,7 +299,7 @@ export default async function LoanProductPage({
             href={`https://wa.me/50760000000?text=Hola%2C%20quiero%20comparar%20${encodeURIComponent(product.name)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-xl bg-[#CAFF04] px-8 py-4 text-lg font-semibold text-[#111827] hover:bg-[#b8e600] transition-colors border border-[rgba(202,255,4,0.40)]"
+            className="inline-flex items-center rounded-xl bg-[var(--accent)] px-8 py-4 text-lg font-semibold text-[var(--text-primary)] hover:bg-[var(--action-primary-hover)] transition-colors border border-[rgba(202,255,4,0.40)]"
           >
             Comparar Opciones por WhatsApp
           </a>
@@ -307,12 +307,12 @@ export default async function LoanProductPage({
 
         {/* Benefits */}
         <section className="mb-16">
-          <h2 className="mb-8 text-3xl font-bold text-[#111827]">Beneficios</h2>
+          <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">Beneficios</h2>
           <div className="grid gap-3 sm:grid-cols-2">
             {product.benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start gap-3 rounded-[12px] border border-[#e5e7eb] bg-white p-4">
-                <Check className="h-5 w-5 flex-shrink-0 text-[#111827] mt-0.5" />
-                <span className="text-[#111827]">{benefit}</span>
+              <div key={index} className="flex items-start gap-3 rounded-[var(--radius-md)] border border-[var(--border-default)] bg-white p-4">
+                <Check className="h-5 w-5 flex-shrink-0 text-[var(--text-primary)] mt-0.5" />
+                <span className="text-[var(--text-primary)]">{benefit}</span>
               </div>
             ))}
           </div>
@@ -320,7 +320,7 @@ export default async function LoanProductPage({
 
         {/* Ideal For */}
         <section className="mb-16">
-          <h2 className="mb-8 text-3xl font-bold text-[#111827]">Ideal para</h2>
+          <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">Ideal para</h2>
           <div className="flex flex-wrap gap-3">
             {product.idealFor.map((use, index) => (
               <Badge key={index} color="lime">
@@ -332,7 +332,7 @@ export default async function LoanProductPage({
 
         {/* Requirements */}
         <section className="mb-16">
-          <h2 className="mb-8 text-3xl font-bold text-[#111827]">Requisitos</h2>
+          <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">Requisitos</h2>
           <GlassCard className="p-8">
             <ul className="space-y-3">
               {product.requirements.map((req, index) => (
@@ -340,7 +340,7 @@ export default async function LoanProductPage({
                   <Badge color="gray" className="mt-0.5 flex-shrink-0">
                     {index + 1}
                   </Badge>
-                  <span className="text-[#6b7280]">{req}</span>
+                  <span className="text-[var(--text-secondary)]">{req}</span>
                 </li>
               ))}
             </ul>
@@ -349,16 +349,16 @@ export default async function LoanProductPage({
 
         {/* FAQs */}
         <section className="mb-16">
-          <h2 className="mb-8 text-3xl font-bold text-[#111827]">
+          <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
             Preguntas Frecuentes
           </h2>
           <div className="space-y-4">
             {product.faqs.map((faq, index) => (
               <GlassCard key={index} className="p-6">
-                <h3 className="mb-3 text-lg font-bold text-[#111827]">
+                <h3 className="mb-3 text-lg font-bold text-[var(--text-primary)]">
                   {faq.question}
                 </h3>
-                <p className="text-[#6b7280]">{faq.answer}</p>
+                <p className="text-[var(--text-secondary)]">{faq.answer}</p>
               </GlassCard>
             ))}
           </div>
@@ -366,7 +366,7 @@ export default async function LoanProductPage({
 
         {/* Related Products */}
         <section className="mb-16">
-          <h2 className="mb-8 text-3xl font-bold text-[#111827]">
+          <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
             También te puede interesar
           </h2>
           <div className="grid gap-4 sm:grid-cols-3">
@@ -377,11 +377,11 @@ export default async function LoanProductPage({
                 <Link key={relatedSlug} href={`/prestamos/${relatedSlug}`} className="group">
                   <GlassCard className="p-6 transition-all hover:scale-[1.02]">
                     <div className="mb-3 text-3xl">{related.icon}</div>
-                    <h3 className="mb-2 text-lg font-bold text-[#111827] group-hover:text-[#111827]">
+                    <h3 className="mb-2 text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--text-primary)]">
                       {related.name}
                     </h3>
-                    <p className="text-sm text-[#6b7280]">{related.shortDescription}</p>
-                    <div className="mt-3 flex items-center gap-1 text-sm font-semibold text-[#0C1E35]">
+                    <p className="text-sm text-[var(--text-secondary)]">{related.shortDescription}</p>
+                    <div className="mt-3 flex items-center gap-1 text-sm font-semibold text-[var(--dark-blue)]">
                       Ver más <ArrowRight className="h-4 w-4" />
                     </div>
                   </GlassCard>
@@ -393,11 +393,11 @@ export default async function LoanProductPage({
 
         {/* Final CTA */}
         <section className="mx-auto max-w-4xl">
-          <GlassCard className="bg-[#CAFF04] p-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-[#111827]">
+          <GlassCard className="bg-[var(--accent)] p-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-[var(--text-primary)]">
               ¿Listo para solicitar tu {product.name.toLowerCase()}?
             </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-[#6b7280]">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-[var(--text-secondary)]">
               Compara tasas y condiciones de los principales bancos de Panamá
               en minutos por WhatsApp.
             </p>
@@ -405,7 +405,7 @@ export default async function LoanProductPage({
               href={`https://wa.me/50760000000?text=Hola%2C%20quiero%20solicitar%20${encodeURIComponent(product.name)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-[#1f2937] transition-colors"
+              className="inline-flex items-center rounded-xl bg-[var(--text-primary)] px-8 py-4 text-lg font-semibold text-white hover:bg-[var(--text-primary)] transition-colors"
             >
               Solicitar Ahora por WhatsApp
             </a>

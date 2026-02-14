@@ -83,26 +83,26 @@ const dateRanges: { key: DateRange; label: string }[] = [
 
 const kpiByRange: Record<DateRange, KPI[]> = {
   '7d': [
-    { label: 'Ingresos Totales', value: '$3,120', change: '+8.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[#0C1E35]" /> },
-    { label: 'Comisiones Ganadas', value: '$936', change: '+6.1%', changeType: 'up', icon: <Award className="h-5 w-5 text-[#0C1E35]" /> },
+    { label: 'Ingresos Totales', value: '$3,120', change: '+8.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--dark-blue)]" /> },
+    { label: 'Comisiones Ganadas', value: '$936', change: '+6.1%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--dark-blue)]" /> },
     { label: 'Polizas Activas', value: '142', change: '+3', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
     { label: 'Ticket Promedio', value: '$72.10', change: '-2.3%', changeType: 'down', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
   ],
   '30d': [
-    { label: 'Ingresos Totales', value: '$12,450', change: '+15.3%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[#0C1E35]" /> },
-    { label: 'Comisiones Ganadas', value: '$3,735', change: '+12.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[#0C1E35]" /> },
+    { label: 'Ingresos Totales', value: '$12,450', change: '+15.3%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--dark-blue)]" /> },
+    { label: 'Comisiones Ganadas', value: '$3,735', change: '+12.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--dark-blue)]" /> },
     { label: 'Polizas Activas', value: '156', change: '+14', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
     { label: 'Ticket Promedio', value: '$79.80', change: '+4.1%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
   ],
   '90d': [
-    { label: 'Ingresos Totales', value: '$38,920', change: '+22.7%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[#0C1E35]" /> },
-    { label: 'Comisiones Ganadas', value: '$11,676', change: '+19.4%', changeType: 'up', icon: <Award className="h-5 w-5 text-[#0C1E35]" /> },
+    { label: 'Ingresos Totales', value: '$38,920', change: '+22.7%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--dark-blue)]" /> },
+    { label: 'Comisiones Ganadas', value: '$11,676', change: '+19.4%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--dark-blue)]" /> },
     { label: 'Polizas Activas', value: '156', change: '+38', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
     { label: 'Ticket Promedio', value: '$83.50', change: '+7.6%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
   ],
   '12m': [
-    { label: 'Ingresos Totales', value: '$148,600', change: '+45.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[#0C1E35]" /> },
-    { label: 'Comisiones Ganadas', value: '$44,580', change: '+41.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[#0C1E35]" /> },
+    { label: 'Ingresos Totales', value: '$148,600', change: '+45.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--dark-blue)]" /> },
+    { label: 'Comisiones Ganadas', value: '$44,580', change: '+41.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--dark-blue)]" /> },
     { label: 'Polizas Activas', value: '156', change: '+89', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
     { label: 'Ticket Promedio', value: '$86.20', change: '+11.3%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
   ],
@@ -150,7 +150,7 @@ const insuranceTypeRevenue: InsuranceTypeRevenue[] = [
   { type: 'Salud', percentage: 25, amount: '$3,113', color: 'bg-rose-500' },
   { type: 'Hogar', percentage: 15, amount: '$1,868', color: 'bg-amber-500' },
   { type: 'Viaje', percentage: 10, amount: '$1,245', color: 'bg-purple-500' },
-  { type: 'Negocio', percentage: 5, amount: '$623', color: 'bg-[#0C1E35]' },
+  { type: 'Negocio', percentage: 5, amount: '$623', color: 'bg-[var(--dark-blue)]' },
 ];
 
 const insurerRevenue: InsurerRevenue[] = [
@@ -187,11 +187,11 @@ const paymentMethods: PaymentMethod[] = [
 function getEstadoBadge(estado: Transaction['estado']) {
   switch (estado) {
     case 'pagado':
-      return <span className="inline-flex items-center rounded-full bg-[rgba(16,185,129,0.12)] px-2.5 py-0.5 text-xs font-semibold text-[#047857]">Pagado</span>;
+      return <span className="inline-flex items-center rounded-full bg-[rgba(16,185,129,0.12)] px-2.5 py-0.5 text-xs font-semibold text-[var(--success-fg)]">Pagado</span>;
     case 'pendiente':
-      return <span className="inline-flex items-center rounded-full bg-[rgba(245,158,11,0.12)] px-2.5 py-0.5 text-xs font-semibold text-[#b45309]">Pendiente</span>;
+      return <span className="inline-flex items-center rounded-full bg-[rgba(245,158,11,0.12)] px-2.5 py-0.5 text-xs font-semibold text-[var(--warning-fg)]">Pendiente</span>;
     case 'cancelado':
-      return <span className="inline-flex items-center rounded-full bg-[rgba(239,68,68,0.12)] px-2.5 py-0.5 text-xs font-semibold text-[#b91c1c]">Cancelado</span>;
+      return <span className="inline-flex items-center rounded-full bg-[rgba(239,68,68,0.12)] px-2.5 py-0.5 text-xs font-semibold text-[var(--danger-fg)]">Cancelado</span>;
   }
 }
 
@@ -228,7 +228,7 @@ export default function IngresosPage() {
               onClick={() => setDateRange(dr.key)}
               className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
                 dateRange === dr.key
-                  ? 'bg-[#0C1E35] text-white'
+                  ? 'bg-[var(--dark-blue)] text-white'
                   : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               }`}
             >
@@ -246,7 +246,7 @@ export default function IngresosPage() {
               <div className="rounded-lg p-2.5">{kpi.icon}</div>
               <span
                 className={`inline-flex items-center gap-0.5 text-xs font-semibold ${
-                  kpi.changeType === 'up' ? 'text-[#047857]' : 'text-[#b91c1c]'
+                  kpi.changeType === 'up' ? 'text-[var(--success-fg)]' : 'text-[var(--danger-fg)]'
                 }`}
               >
                 {kpi.changeType === 'up' ? (
@@ -280,7 +280,7 @@ export default function IngresosPage() {
                   </span>
                   <div className="w-full flex justify-center">
                     <div
-                      className="w-8 rounded-t-md bg-[#0C1E35] transition-all duration-300"
+                      className="w-8 rounded-t-md bg-[var(--dark-blue)] transition-all duration-300"
                       style={{ height: `${heightPct}%`, minHeight: 8 }}
                     />
                   </div>
@@ -345,13 +345,13 @@ export default function IngresosPage() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#e5e7eb]">
+              <tbody className="divide-y divide-[var(--border-default)]">
                 {insurerRevenue.map((insurer) => (
-                  <tr key={insurer.name} className="group hover:bg-[#f9fafb] transition-colors">
+                  <tr key={insurer.name} className="group hover:bg-[var(--surface-panel)] transition-colors">
                     <td className="py-3 text-sm">
                       <Link
                         href={`/apis/${insurer.slug}`}
-                        className="text-[var(--text-primary)] hover:text-[#0C1E35] transition-colors"
+                        className="text-[var(--text-primary)] hover:text-[var(--dark-blue)] transition-colors"
                       >
                         {insurer.name}
                       </Link>
@@ -365,7 +365,7 @@ export default function IngresosPage() {
                     <td className="py-3 text-sm text-[var(--text-secondary)] text-right font-data">
                       {insurer.commissionPct}%
                     </td>
-                    <td className="py-3 text-sm text-[#047857] text-right font-data font-semibold">
+                    <td className="py-3 text-sm text-[var(--success-fg)] text-right font-data font-semibold">
                       {insurer.commissionAmount}
                     </td>
                   </tr>
@@ -408,14 +408,14 @@ export default function IngresosPage() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#e5e7eb]">
+              <tbody className="divide-y divide-[var(--border-default)]">
                 {recentTransactions.map((tx) => (
-                  <tr key={tx.id} className="group hover:bg-[#f9fafb] transition-colors">
+                  <tr key={tx.id} className="group hover:bg-[var(--surface-panel)] transition-colors">
                     <td className="py-3 text-sm text-[var(--text-secondary)] font-data">{tx.fecha}</td>
                     <td className="py-3 text-sm">
                       <Link
                         href={`/clients/${tx.id.replace('TX-', 'C-')}`}
-                        className="text-[var(--text-primary)] hover:text-[#0C1E35] transition-colors"
+                        className="text-[var(--text-primary)] hover:text-[var(--dark-blue)] transition-colors"
                       >
                         {tx.cliente}
                       </Link>
@@ -424,7 +424,7 @@ export default function IngresosPage() {
                     <td className="py-3 text-sm">
                       <Link
                         href={`/apis/${tx.aseguradora.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="text-[var(--text-secondary)] hover:text-[#0C1E35] transition-colors"
+                        className="text-[var(--text-secondary)] hover:text-[var(--dark-blue)] transition-colors"
                       >
                         {tx.aseguradora}
                       </Link>
@@ -432,7 +432,7 @@ export default function IngresosPage() {
                     <td className="py-3 text-sm text-[var(--text-primary)] text-right font-data font-semibold">
                       {tx.prima}
                     </td>
-                    <td className="py-3 text-sm text-[#047857] text-right font-data font-semibold">
+                    <td className="py-3 text-sm text-[var(--success-fg)] text-right font-data font-semibold">
                       {tx.comision}
                     </td>
                     <td className="py-3 text-center">{getEstadoBadge(tx.estado)}</td>

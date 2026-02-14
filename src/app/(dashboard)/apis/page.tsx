@@ -140,7 +140,7 @@ const insurers: Insurer[] = [
 // ---------------------------------------------------------------------------
 
 const statusConfig: Record<ConnectionStatus, { label: string; dotColor: string; badgeBg: string; badgeText: string; badgeBorder: string }> = {
-  active: { label: 'Activa', dotColor: 'bg-[#10b981]', badgeBg: 'bg-emerald-50', badgeText: 'text-emerald-700', badgeBorder: 'border-emerald-200' },
+  active: { label: 'Activa', dotColor: 'bg-[var(--success)]', badgeBg: 'bg-emerald-50', badgeText: 'text-emerald-700', badgeBorder: 'border-emerald-200' },
   pending: { label: 'Pendiente', dotColor: 'bg-amber-500', badgeBg: 'bg-amber-50', badgeText: 'text-amber-700', badgeBorder: 'border-amber-200' },
   error: { label: 'Error', dotColor: 'bg-red-500', badgeBg: 'bg-red-50', badgeText: 'text-red-700', badgeBorder: 'border-red-200' },
   disconnected: { label: 'No conectada', dotColor: 'bg-slate-400', badgeBg: 'bg-slate-100', badgeText: 'text-slate-600', badgeBorder: 'border-slate-200' },
@@ -190,7 +190,7 @@ export default function ApisPage() {
           return (
             <div key={s} className="card p-3">
               <div className="flex items-center gap-2">
-                <span className={`status-dot ${sc.dotColor === 'bg-[#10b981]' ? 'status-dot-success' : sc.dotColor === 'bg-red-500' ? 'status-dot-error' : sc.dotColor === 'bg-amber-500' ? 'status-dot-warning' : ''}`} />
+                <span className={`status-dot ${sc.dotColor === 'bg-[var(--success)]' ? 'status-dot-success' : sc.dotColor === 'bg-red-500' ? 'status-dot-error' : sc.dotColor === 'bg-amber-500' ? 'status-dot-warning' : ''}`} />
                 <span className="text-xs text-[var(--text-secondary)]">{sc.label}</span>
               </div>
               <p className="mt-1 text-lg font-bold text-[var(--text-primary)] font-data">{count}</p>

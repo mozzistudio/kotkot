@@ -129,9 +129,9 @@ const conversations: Conversation[] = [
 // ---------------------------------------------------------------------------
 
 const statusColors: Record<ConversationStatus, string> = {
-  active: 'bg-[#10b981]',
+  active: 'bg-[var(--success)]',
   waiting: 'bg-amber-500',
-  human: 'bg-[#0C1E35]',
+  human: 'bg-[var(--dark-blue)]',
   closed: 'bg-slate-400',
 };
 

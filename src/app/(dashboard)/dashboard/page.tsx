@@ -140,9 +140,9 @@ const quickActions = [
 // ---------------------------------------------------------------------------
 
 const statusColors: Record<RecentConversation['status'], string> = {
-  active: 'bg-[#10b981]',
+  active: 'bg-[var(--success)]',
   waiting: 'bg-amber-500',
-  human: 'bg-[#0C1E35]',
+  human: 'bg-[var(--dark-blue)]',
   closed: 'bg-slate-400',
 };
 
@@ -154,10 +154,10 @@ const statusLabels: Record<RecentConversation['status'], string> = {
 };
 
 const statusBadgeClasses: Record<RecentConversation['status'], string> = {
-  active: 'bg-[rgba(16,185,129,0.12)] text-[#047857] border border-[rgba(16,185,129,0.25)]',
-  waiting: 'bg-[rgba(245,158,11,0.12)] text-[#b45309] border border-[rgba(245,158,11,0.25)]',
-  human: 'bg-[rgba(12,30,53,0.08)] text-[#0C1E35] border border-[rgba(12,30,53,0.15)]',
-  closed: 'bg-[#f3f4f6] text-[#4b5563] border border-[#e5e7eb]',
+  active: 'bg-[rgba(16,185,129,0.12)] text-[var(--success-fg)] border border-[rgba(16,185,129,0.25)]',
+  waiting: 'bg-[rgba(245,158,11,0.12)] text-[var(--warning-fg)] border border-[rgba(245,158,11,0.25)]',
+  human: 'bg-[rgba(12,30,53,0.08)] text-[var(--dark-blue)] border border-[rgba(12,30,53,0.15)]',
+  closed: 'bg-[var(--surface-hover)] text-[var(--text-secondary)] border border-[var(--border-default)]',
 };
 
 // ---------------------------------------------------------------------------

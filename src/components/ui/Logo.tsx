@@ -18,7 +18,7 @@ export function Logo({ className = '', size = 'md' }: LogoProps) {
     <div className={`flex items-center gap-2.5 ${className}`}>
       {/* Logo Mark */}
       <div
-        className={`${sizes.container} relative flex items-center justify-center rounded-[10px] bg-[#CAFF04]`}
+        className={`${sizes.container} relative flex items-center justify-center rounded-[var(--radius-button)] bg-[var(--accent)]`}
       >
         <svg
           viewBox="0 0 32 32"
@@ -29,19 +29,19 @@ export function Logo({ className = '', size = 'md' }: LogoProps) {
           {/* Stylized "K" lettermark */}
           <path
             d="M9 6v20"
-            stroke="#111827"
+            stroke="var(--dark-blue)"
             strokeWidth="3"
             strokeLinecap="round"
           />
           <path
             d="M9 16l10-10"
-            stroke="#111827"
+            stroke="var(--dark-blue)"
             strokeWidth="3"
             strokeLinecap="round"
           />
           <path
             d="M9 16l10 10"
-            stroke="#111827"
+            stroke="var(--dark-blue)"
             strokeWidth="3"
             strokeLinecap="round"
           />
@@ -49,8 +49,8 @@ export function Logo({ className = '', size = 'md' }: LogoProps) {
       </div>
 
       {/* Wordmark */}
-      <span className={`font-heading ${sizes.text} font-bold tracking-tight text-[#111827]`}>
-        kotkot<span className="font-normal text-[#9ca3af]">.ai</span>
+      <span className={`font-heading ${sizes.text} font-bold tracking-tight text-[var(--text-primary)]`}>
+        kotkot<span className="font-normal text-[var(--text-muted)]">.ai</span>
       </span>
     </div>
   );
@@ -61,7 +61,7 @@ export function LogoIcon({ className = '', size = 'md' }: LogoProps) {
 
   return (
     <div
-      className={`${sizes.container} ${className} relative flex items-center justify-center rounded-[10px] bg-[#CAFF04]`}
+      className={`${sizes.container} ${className} relative flex items-center justify-center rounded-[var(--radius-button)] bg-[var(--accent)]`}
     >
       <svg
         viewBox="0 0 32 32"
@@ -71,19 +71,19 @@ export function LogoIcon({ className = '', size = 'md' }: LogoProps) {
       >
         <path
           d="M9 6v20"
-          stroke="#111827"
+          stroke="var(--dark-blue)"
           strokeWidth="3"
           strokeLinecap="round"
         />
         <path
           d="M9 16l10-10"
-          stroke="#111827"
+          stroke="var(--dark-blue)"
           strokeWidth="3"
           strokeLinecap="round"
         />
         <path
           d="M9 16l10 10"
-          stroke="#111827"
+          stroke="var(--dark-blue)"
           strokeWidth="3"
           strokeLinecap="round"
         />

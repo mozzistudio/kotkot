@@ -37,20 +37,20 @@ export default function ContactoPage() {
   if (submitted) {
     return (
       <div className="flex min-h-[70vh] items-center justify-center px-4 pt-32">
-        <div className="bg-white border border-[#e5e7eb] rounded-[16px] mx-auto max-w-lg p-12 text-center">
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-[16px] bg-[rgba(202,255,4,0.15)]">
-            <CheckCircle2 className="h-8 w-8 text-[#111827]" />
+        <div className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] mx-auto max-w-lg p-12 text-center">
+          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-[var(--radius-card)] bg-[rgba(202,255,4,0.15)]">
+            <CheckCircle2 className="h-8 w-8 text-[var(--text-primary)]" />
           </div>
-          <h2 className="font-heading text-2xl font-bold text-[#111827]">
+          <h2 className="font-heading text-2xl font-bold text-[var(--text-primary)]">
             Mensaje enviado
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-[#6b7280]">
+          <p className="mt-4 text-base leading-relaxed text-[var(--text-secondary)]">
             Gracias por contactarnos, {formData.nombre}. Te responderemos dentro
             de las próximas 24 horas.
           </p>
           <a
             href="/"
-            className="mt-8 inline-flex items-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-6 py-3 text-sm font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600]"
+            className="mt-8 inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent)] border border-[rgba(202,255,4,0.40)] px-6 py-3 text-sm font-semibold text-[var(--text-primary)] transition-all duration-200 hover:bg-[var(--action-primary-hover)]"
           >
             Volver al inicio
           </a>
@@ -64,14 +64,14 @@ export default function ContactoPage() {
       <div className="mx-auto max-w-6xl">
         {/* --- Header --- */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#111827]">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[var(--text-primary)]">
             Estamos aquí para ti
-            <span className="inline-block h-px w-10 bg-[#111827]" />
+            <span className="inline-block h-px w-10 bg-[var(--text-primary)]" />
           </span>
-          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[#111827] sm:text-5xl">
+          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl">
             Contáctanos
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-[#6b7280]">
+          <p className="mt-6 text-lg leading-relaxed text-[var(--text-secondary)]">
             ¿Tienes preguntas, sugerencias o necesitas ayuda? Escríbenos y te
             responderemos lo más pronto posible.
           </p>
@@ -81,8 +81,8 @@ export default function ContactoPage() {
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-5 lg:gap-16">
           {/* --- Form (left) --- */}
           <div className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="bg-white border border-[#e5e7eb] rounded-[16px] p-8 sm:p-10">
-              <h2 className="mb-6 font-heading text-lg font-bold text-[#111827]">
+            <form onSubmit={handleSubmit} className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-8 sm:p-10">
+              <h2 className="mb-6 font-heading text-lg font-bold text-[var(--text-primary)]">
                 Envíanos un mensaje
               </h2>
               <div className="flex flex-col gap-6">
@@ -90,7 +90,7 @@ export default function ContactoPage() {
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="nombre"
-                    className="text-sm font-medium text-[#111827]"
+                    className="text-sm font-medium text-[var(--text-primary)]"
                   >
                     Nombre completo *
                   </label>
@@ -102,7 +102,7 @@ export default function ContactoPage() {
                     value={formData.nombre}
                     onChange={handleChange}
                     placeholder="Juan Pérez"
-                    className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:outline-none focus:ring-2 focus:ring-[rgba(202,255,4,0.20)]"
+                    className="w-full rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white px-4 py-2.5 text-sm text-[var(--text-primary)] transition-all duration-200 placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[rgba(202,255,4,0.20)]"
                   />
                 </div>
 
@@ -110,7 +110,7 @@ export default function ContactoPage() {
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="email"
-                    className="text-sm font-medium text-[#111827]"
+                    className="text-sm font-medium text-[var(--text-primary)]"
                   >
                     Email *
                   </label>
@@ -122,7 +122,7 @@ export default function ContactoPage() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="juan@correduria.com"
-                    className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:outline-none focus:ring-2 focus:ring-[rgba(202,255,4,0.20)]"
+                    className="w-full rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white px-4 py-2.5 text-sm text-[var(--text-primary)] transition-all duration-200 placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[rgba(202,255,4,0.20)]"
                   />
                 </div>
 
@@ -130,7 +130,7 @@ export default function ContactoPage() {
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="asunto"
-                    className="text-sm font-medium text-[#111827]"
+                    className="text-sm font-medium text-[var(--text-primary)]"
                   >
                     Asunto *
                   </label>
@@ -142,7 +142,7 @@ export default function ContactoPage() {
                     value={formData.asunto}
                     onChange={handleChange}
                     placeholder="¿En qué podemos ayudarte?"
-                    className="w-full rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:outline-none focus:ring-2 focus:ring-[rgba(202,255,4,0.20)]"
+                    className="w-full rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white px-4 py-2.5 text-sm text-[var(--text-primary)] transition-all duration-200 placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[rgba(202,255,4,0.20)]"
                   />
                 </div>
 
@@ -150,7 +150,7 @@ export default function ContactoPage() {
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="mensaje"
-                    className="text-sm font-medium text-[#111827]"
+                    className="text-sm font-medium text-[var(--text-primary)]"
                   >
                     Mensaje *
                   </label>
@@ -162,7 +162,7 @@ export default function ContactoPage() {
                     value={formData.mensaje}
                     onChange={handleChange}
                     placeholder="Escribe tu mensaje aquí..."
-                    className="w-full resize-none rounded-[16px] border border-[#e5e7eb] bg-white px-4 py-2.5 text-sm text-[#111827] transition-all duration-200 placeholder:text-[#9ca3af] focus:border-[#CAFF04] focus:outline-none focus:ring-2 focus:ring-[rgba(202,255,4,0.20)]"
+                    className="w-full resize-none rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white px-4 py-2.5 text-sm text-[var(--text-primary)] transition-all duration-200 placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[rgba(202,255,4,0.20)]"
                   />
                 </div>
 
@@ -170,7 +170,7 @@ export default function ContactoPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-[16px] bg-[#CAFF04] border border-[rgba(202,255,4,0.40)] px-8 py-3.5 text-base font-semibold text-[#111827] transition-all duration-200 hover:bg-[#b8e600] disabled:pointer-events-none disabled:opacity-50 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent)] border border-[rgba(202,255,4,0.40)] px-8 py-3.5 text-base font-semibold text-[var(--text-primary)] transition-all duration-200 hover:bg-[var(--action-primary-hover)] disabled:pointer-events-none disabled:opacity-50 sm:w-auto"
                 >
                   {isSubmitting ? (
                     <>
@@ -208,24 +208,24 @@ export default function ContactoPage() {
 
           {/* --- Contact Info (right) --- */}
           <div className="lg:col-span-2">
-            <div className="bg-white border border-[#e5e7eb] rounded-[16px] p-8">
-              <h3 className="mb-6 font-heading text-lg font-bold text-[#111827]">
+            <div className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-8">
+              <h3 className="mb-6 font-heading text-lg font-bold text-[var(--text-primary)]">
                 Información de contacto
               </h3>
 
               <div className="space-y-6">
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                    <Mail className="h-5 w-5 text-[#111827]" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-[rgba(202,255,4,0.15)]">
+                    <Mail className="h-5 w-5 text-[var(--text-primary)]" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-[#111827]">
+                    <p className="text-sm font-semibold text-[var(--text-primary)]">
                       Email
                     </p>
                     <a
                       href="mailto:support@kotkot.studio"
-                      className="text-sm text-[#111827] font-medium transition-colors hover:text-[#6b7280]"
+                      className="text-sm text-[var(--text-primary)] font-medium transition-colors hover:text-[var(--text-secondary)]"
                     >
                       support@kotkot.studio
                     </a>
@@ -234,16 +234,16 @@ export default function ContactoPage() {
 
                 {/* WhatsApp */}
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                    <MessageCircle className="h-5 w-5 text-[#111827]" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-[rgba(202,255,4,0.15)]">
+                    <MessageCircle className="h-5 w-5 text-[var(--text-primary)]" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-[#111827]">
+                    <p className="text-sm font-semibold text-[var(--text-primary)]">
                       WhatsApp
                     </p>
                     <a
                       href="https://wa.me/50760000000"
-                      className="text-sm text-[#111827] font-medium transition-colors hover:text-[#6b7280]"
+                      className="text-sm text-[var(--text-primary)] font-medium transition-colors hover:text-[var(--text-secondary)]"
                     >
                       +507 6000-0000
                     </a>
@@ -252,16 +252,16 @@ export default function ContactoPage() {
 
                 {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                    <Phone className="h-5 w-5 text-[#111827]" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-[rgba(202,255,4,0.15)]">
+                    <Phone className="h-5 w-5 text-[var(--text-primary)]" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-[#111827]">
+                    <p className="text-sm font-semibold text-[var(--text-primary)]">
                       Teléfono
                     </p>
                     <a
                       href="tel:+50720000000"
-                      className="text-sm text-[#111827] font-medium transition-colors hover:text-[#6b7280]"
+                      className="text-sm text-[var(--text-primary)] font-medium transition-colors hover:text-[var(--text-secondary)]"
                     >
                       +507 200-0000
                     </a>
@@ -270,17 +270,17 @@ export default function ContactoPage() {
 
                 {/* Address */}
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-[rgba(202,255,4,0.15)]">
-                    <MapPin className="h-5 w-5 text-[#111827]" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-[rgba(202,255,4,0.15)]">
+                    <MapPin className="h-5 w-5 text-[var(--text-primary)]" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-[#111827]">
+                    <p className="text-sm font-semibold text-[var(--text-primary)]">
                       Oficina
                     </p>
-                    <p className="text-sm text-[#6b7280]">
+                    <p className="text-sm text-[var(--text-secondary)]">
                       Ciudad de Panamá, Panamá
                     </p>
-                    <p className="text-xs text-[#9ca3af]">
+                    <p className="text-xs text-[var(--text-muted)]">
                       Calle 50, Torre Global Bank, Piso 30
                     </p>
                   </div>
@@ -289,29 +289,29 @@ export default function ContactoPage() {
             </div>
 
             {/* Horarios */}
-            <div className="mt-6 bg-white border border-[#e5e7eb] rounded-[16px] p-6">
-              <h4 className="font-heading text-sm font-semibold text-[#111827]">
+            <div className="mt-6 bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-6">
+              <h4 className="font-heading text-sm font-semibold text-[var(--text-primary)]">
                 Horario de atención
               </h4>
               <div className="mt-3 space-y-1.5">
                 <div className="flex justify-between text-sm">
-                  <span className="text-[#6b7280]">Lunes a Viernes</span>
-                  <span className="font-medium text-[#111827]">
+                  <span className="text-[var(--text-secondary)]">Lunes a Viernes</span>
+                  <span className="font-medium text-[var(--text-primary)]">
                     8:00 AM - 6:00 PM
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-[#6b7280]">Sábados</span>
-                  <span className="font-medium text-[#111827]">
+                  <span className="text-[var(--text-secondary)]">Sábados</span>
+                  <span className="font-medium text-[var(--text-primary)]">
                     9:00 AM - 1:00 PM
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-[#6b7280]">Domingos</span>
-                  <span className="text-[#9ca3af]">Cerrado</span>
+                  <span className="text-[var(--text-secondary)]">Domingos</span>
+                  <span className="text-[var(--text-muted)]">Cerrado</span>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-[#9ca3af]">
+              <p className="mt-3 text-xs text-[var(--text-muted)]">
                 Hora de Panamá (EST / UTC-5). Nuestro bot de WhatsApp está
                 disponible 24/7.
               </p>

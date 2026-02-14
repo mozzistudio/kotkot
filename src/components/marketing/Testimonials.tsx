@@ -23,7 +23,7 @@ const testimonials: Testimonial[] = [
     country: 'Panamá',
     flag: '\u{1F1F5}\u{1F1E6}',
     initials: 'CM',
-    color: 'bg-[#0C1E35] text-white',
+    color: 'bg-[var(--dark-blue)] text-white',
   },
   {
     quote:
@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
     country: 'Colombia',
     flag: '\u{1F1E8}\u{1F1F4}',
     initials: 'MG',
-    color: 'bg-[#0C1E35] text-white',
+    color: 'bg-[var(--dark-blue)] text-white',
   },
   {
     quote:
@@ -43,7 +43,7 @@ const testimonials: Testimonial[] = [
     country: 'México',
     flag: '\u{1F1F2}\u{1F1FD}',
     initials: 'RL',
-    color: 'bg-[#0C1E35] text-white',
+    color: 'bg-[var(--dark-blue)] text-white',
   },
 ];
 
@@ -94,7 +94,7 @@ export function Testimonials() {
   };
 
   return (
-    <section className="relative px-4 py-24 sm:py-32">
+    <section className="relative px-4 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl">
         {/* --- Header --- */}
         <motion.div
@@ -104,9 +104,9 @@ export function Testimonials() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
           className="mx-auto mb-16 max-w-2xl text-center"
         >
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl lg:text-5xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
             Lo que dicen nuestros{' '}
-            <span className="text-[#111827]">corredores</span>
+            <span className="text-[var(--text-primary)]">corredores</span>
           </h2>
         </motion.div>
 
@@ -122,27 +122,27 @@ export function Testimonials() {
             <motion.div
               key={t.name}
               variants={cardVariants}
-              className="flex flex-col rounded-[16px] border border-[#e5e7eb] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-[#f3f4f6]"
+              className="flex flex-col rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--surface-hover)]"
             >
               <StarRating />
 
-              <blockquote className="mt-4 flex-1 text-[0.9375rem] leading-relaxed text-[#111827]">
+              <blockquote className="mt-4 flex-1 text-[0.9375rem] leading-relaxed text-[var(--text-primary)]">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
 
-              <div className="mt-6 flex items-center gap-3 border-t border-[#e5e7eb] pt-5">
+              <div className="mt-6 flex items-center gap-3 border-t border-[var(--border-default)] pt-5">
                 {/* Avatar */}
                 <div
-                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] ${t.color} text-sm font-bold text-[#111827]`}
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[var(--radius-button)] ${t.color} text-sm font-bold`}
                 >
                   {t.initials}
                 </div>
 
                 <div className="min-w-0">
-                  <p className="font-heading text-sm font-semibold text-[#111827]">
+                  <p className="font-heading text-sm font-semibold text-[var(--text-primary)]">
                     {t.name}
                   </p>
-                  <p className="text-xs text-[#6b7280]">
+                  <p className="text-xs text-[var(--text-secondary)]">
                     {t.title}, {t.country} {t.flag}
                   </p>
                 </div>
@@ -160,25 +160,25 @@ export function Testimonials() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
-              className="flex flex-col rounded-[16px] border border-[#e5e7eb] bg-white p-7"
+              className="flex flex-col rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white p-6"
             >
               <StarRating />
 
-              <blockquote className="mt-4 text-[0.9375rem] leading-relaxed text-[#111827]">
+              <blockquote className="mt-4 text-[0.9375rem] leading-relaxed text-[var(--text-primary)]">
                 &ldquo;{testimonials[currentIndex].quote}&rdquo;
               </blockquote>
 
-              <div className="mt-6 flex items-center gap-3 border-t border-[#e5e7eb] pt-5">
+              <div className="mt-6 flex items-center gap-3 border-t border-[var(--border-default)] pt-5">
                 <div
-                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] ${testimonials[currentIndex].color} text-sm font-bold text-[#111827]`}
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[var(--radius-button)] ${testimonials[currentIndex].color} text-sm font-bold`}
                 >
                   {testimonials[currentIndex].initials}
                 </div>
                 <div>
-                  <p className="font-heading text-sm font-semibold text-[#111827]">
+                  <p className="font-heading text-sm font-semibold text-[var(--text-primary)]">
                     {testimonials[currentIndex].name}
                   </p>
-                  <p className="text-xs text-[#6b7280]">
+                  <p className="text-xs text-[var(--text-secondary)]">
                     {testimonials[currentIndex].title},{' '}
                     {testimonials[currentIndex].country}{' '}
                     {testimonials[currentIndex].flag}
@@ -193,7 +193,7 @@ export function Testimonials() {
             <button
               onClick={goToPrev}
               aria-label="Anterior testimonio"
-              className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-[#e5e7eb] bg-white text-[#6b7280] transition-all duration-200 hover:bg-[#f3f4f6] hover:text-[#111827]"
+              className="flex h-10 w-10 items-center justify-center rounded-[var(--radius-button)] border border-[var(--border-default)] bg-white text-[var(--text-secondary)] transition-all duration-200 hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
@@ -204,10 +204,10 @@ export function Testimonials() {
                   key={i}
                   onClick={() => setCurrentIndex(i)}
                   aria-label={`Ir a testimonio ${i + 1}`}
-                  className={`h-2 rounded-[10px] transition-all duration-300 ${
+                  className={`h-2 rounded-[var(--radius-button)] transition-all duration-300 ${
                     i === currentIndex
-                      ? 'w-6 bg-[#0C1E35]'
-                      : 'w-2 bg-[#e5e7eb] hover:bg-[#9ca3af]'
+                      ? 'w-6 bg-[var(--dark-blue)]'
+                      : 'w-2 bg-[var(--border-default)] hover:bg-[var(--text-muted)]'
                   }`}
                 />
               ))}
@@ -216,7 +216,7 @@ export function Testimonials() {
             <button
               onClick={goToNext}
               aria-label="Siguiente testimonio"
-              className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-[#e5e7eb] bg-white text-[#6b7280] transition-all duration-200 hover:bg-[#f3f4f6] hover:text-[#111827]"
+              className="flex h-10 w-10 items-center justify-center rounded-[var(--radius-button)] border border-[var(--border-default)] bg-white text-[var(--text-secondary)] transition-all duration-200 hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
             >
               <ChevronRight className="h-5 w-5" />
             </button>

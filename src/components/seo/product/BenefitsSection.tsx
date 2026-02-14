@@ -22,15 +22,15 @@ export function BenefitsSection({
       <div className="grid gap-12 lg:grid-cols-2">
         {/* Benefits */}
         <div>
-          <h2 className="mb-8 text-3xl font-bold text-[#111827]">{title}</h2>
-          <div className="bg-white border border-[#e5e7eb] rounded-[16px] p-8">
+          <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">{title}</h2>
+          <div className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-8">
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <div className="flex-shrink-0 mt-0.5 bg-[rgba(202,255,4,0.15)] rounded-[12px] p-1.5">
-                    <Check className="h-4 w-4 text-[#111827]" />
+                  <div className="flex-shrink-0 mt-0.5 bg-[rgba(202,255,4,0.15)] rounded-[var(--radius-md)] p-1.5">
+                    <Check className="h-4 w-4 text-[var(--text-primary)]" />
                   </div>
-                  <span className="text-[#6b7280]">{benefit}</span>
+                  <span className="text-[var(--text-secondary)]">{benefit}</span>
                 </li>
               ))}
             </ul>
@@ -40,17 +40,17 @@ export function BenefitsSection({
         {/* Who Needs It */}
         {whoNeedsIt && whoNeedsIt.length > 0 && (
           <div>
-            <h2 className="mb-8 text-3xl font-bold text-[#111827]">
+            <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
               ¿Quién lo necesita?
             </h2>
-            <div className="bg-white border border-[#e5e7eb] rounded-[16px] p-8">
+            <div className="bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-8">
               <ul className="space-y-4">
                 {whoNeedsIt.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 mt-0.5 bg-[rgba(202,255,4,0.15)] rounded-[12px] p-1.5">
-                      <Check className="h-4 w-4 text-[#111827]" />
+                    <div className="flex-shrink-0 mt-0.5 bg-[rgba(202,255,4,0.15)] rounded-[var(--radius-md)] p-1.5">
+                      <Check className="h-4 w-4 text-[var(--text-primary)]" />
                     </div>
-                    <span className="text-[#6b7280]">{item}</span>
+                    <span className="text-[var(--text-secondary)]">{item}</span>
                   </li>
                 ))}
               </ul>

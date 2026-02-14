@@ -112,7 +112,7 @@ export default async function InsuranceCompanyProfilePage({
 
         {/* Products Grid */}
         <section className="mt-12">
-          <h2 className="mb-8 text-3xl font-bold text-[#111827]">
+          <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">
             Productos de {company.name}
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -129,13 +129,13 @@ export default async function InsuranceCompanyProfilePage({
                     {product.icon && (
                       <div className="mb-3 text-3xl">{product.icon}</div>
                     )}
-                    <h3 className="mb-2 text-lg font-bold text-[#111827] group-hover:text-[#111827]">
+                    <h3 className="mb-2 text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--text-primary)]">
                       {product.name}
                     </h3>
-                    <p className="mb-4 text-sm text-[#6b7280] line-clamp-2">
+                    <p className="mb-4 text-sm text-[var(--text-secondary)] line-clamp-2">
                       {product.shortDescription}
                     </p>
-                    <div className="flex items-center gap-2 text-sm font-semibold text-[#0C1E35]">
+                    <div className="flex items-center gap-2 text-sm font-semibold text-[var(--dark-blue)]">
                       Ver Detalles
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </div>
@@ -149,11 +149,11 @@ export default async function InsuranceCompanyProfilePage({
 
         {/* CTA Section */}
         <section className="mx-auto mt-16 max-w-4xl">
-          <GlassCard className="bg-[#CAFF04] p-12 text-center text-[#111827]">
+          <GlassCard className="bg-[var(--accent)] p-12 text-center text-[var(--text-primary)]">
             <h2 className="mb-4 text-3xl font-bold">
               ¿Quieres cotizar con {company.name}?
             </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-[#6b7280]">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-[var(--text-secondary)]">
               Obtén una cotización personalizada en minutos por WhatsApp.
             </p>
             <a
@@ -162,7 +162,7 @@ export default async function InsuranceCompanyProfilePage({
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl bg-[#111827] px-8 py-4 text-lg font-semibold text-white hover:bg-[#1f2937] transition-colors shadow-lg"
+              className="inline-flex items-center rounded-xl bg-[var(--text-primary)] px-8 py-4 text-lg font-semibold text-white hover:bg-[var(--text-primary)] transition-colors shadow-lg"
             >
               Cotizar Ahora
             </a>

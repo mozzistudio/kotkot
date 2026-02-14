@@ -35,21 +35,21 @@ export function InternalLinkGrid({
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <h2 className="mb-8 text-3xl font-bold text-[#111827]">{title}</h2>
+      <h2 className="mb-8 text-3xl font-bold text-[var(--text-primary)]">{title}</h2>
       <div className={`grid gap-4 ${gridColsClass}`}>
         {links.map((link, index) => (
           <Link key={index} href={link.href} className="group">
-            <div className="h-full bg-white border border-[#e5e7eb] rounded-[16px] p-6 transition-all hover:scale-[1.02]">
+            <div className="h-full bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-6 transition-all hover:scale-[1.02]">
               {link.icon && <div className="mb-3 text-3xl">{link.icon}</div>}
-              <h3 className="mb-2 text-lg font-bold text-[#111827] group-hover:text-[#6b7280]">
+              <h3 className="mb-2 text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--text-secondary)]">
                 {link.title}
               </h3>
               {link.description && (
-                <p className="mb-3 text-sm text-[#6b7280] line-clamp-2">
+                <p className="mb-3 text-sm text-[var(--text-secondary)] line-clamp-2">
                   {link.description}
                 </p>
               )}
-              <div className="flex items-center gap-2 text-sm font-semibold text-[#111827]">
+              <div className="flex items-center gap-2 text-sm font-semibold text-[var(--text-primary)]">
                 Ver más
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </div>

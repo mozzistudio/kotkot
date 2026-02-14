@@ -30,11 +30,11 @@ export function CompanyCard({
     : null;
 
   return (
-    <div className="group relative overflow-hidden bg-white border border-[#e5e7eb] rounded-[16px] p-6 transition-all hover:scale-[1.02]">
+    <div className="group relative overflow-hidden bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-6 transition-all hover:scale-[1.02]">
       {/* Company Header */}
       <div className="mb-4 flex items-start justify-between">
         <div className="flex-1">
-          <h3 className="mb-2 text-xl font-bold text-[#111827]">
+          <h3 className="mb-2 text-xl font-bold text-[var(--text-primary)]">
             {company.name}
           </h3>
 
@@ -42,11 +42,11 @@ export function CompanyCard({
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1">
               <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-              <span className="font-semibold text-[#111827]">
+              <span className="font-semibold text-[var(--text-primary)]">
                 {company.ratings.overall.toFixed(1)}
               </span>
             </div>
-            <span className="text-sm text-[#6b7280]">
+            <span className="text-sm text-[var(--text-secondary)]">
               ({company.ratings.reviewCount || 0} reseñas)
             </span>
           </div>
@@ -61,7 +61,7 @@ export function CompanyCard({
       </div>
 
       {/* Description */}
-      <p className="mb-4 line-clamp-2 text-sm text-[#6b7280]">
+      <p className="mb-4 line-clamp-2 text-sm text-[var(--text-secondary)]">
         {company.description}
       </p>
 
@@ -86,7 +86,7 @@ export function CompanyCard({
         {crossPagePath && (
           <Link
             href={crossPagePath}
-            className="flex flex-1 items-center justify-center gap-2 rounded-[10px] bg-[#CAFF04] px-4 py-2 text-sm font-semibold text-[#111827] hover:bg-[#b8e604] transition-colors"
+            className="flex flex-1 items-center justify-center gap-2 rounded-[var(--radius-button)] bg-[var(--accent)] px-4 py-2 text-sm font-semibold text-[var(--text-primary)] hover:bg-[var(--action-primary-hover)] transition-colors"
           >
             Ver Detalles
             <ArrowRight className="h-4 w-4" />
@@ -95,7 +95,7 @@ export function CompanyCard({
 
         <Link
           href={companyPath}
-          className="flex flex-1 items-center justify-center gap-2 rounded-[10px] border border-[#e5e7eb] bg-white px-4 py-2 text-sm font-semibold text-[#111827] hover:bg-[#f9fafb] transition-colors"
+          className="flex flex-1 items-center justify-center gap-2 rounded-[var(--radius-button)] border border-[var(--border-default)] bg-white px-4 py-2 text-sm font-semibold text-[var(--text-primary)] hover:bg-[var(--surface-panel)] transition-colors"
         >
           Perfil Completo
         </Link>

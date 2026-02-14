@@ -63,7 +63,7 @@ const stepVariants = {
 
 export function HowItWorks() {
   return (
-    <section id="como-funciona" className="relative px-4 py-24 sm:py-32">
+    <section id="como-funciona" className="relative px-4 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl">
         {/* --- Header --- */}
         <motion.div
@@ -73,9 +73,9 @@ export function HowItWorks() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
           className="mx-auto mb-16 max-w-2xl text-center"
         >
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl lg:text-5xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
             De registro a primera venta en{' '}
-            <span className="text-[#111827]">15 minutos</span>
+            <span className="text-[var(--text-primary)]">15 minutos</span>
           </h2>
         </motion.div>
 
@@ -88,10 +88,10 @@ export function HowItWorks() {
           className="relative"
         >
           {/* Connecting line — horizontal (desktop) */}
-          <div className="absolute top-[3.25rem] left-[calc(12.5%+1.25rem)] right-[calc(12.5%+1.25rem)] hidden h-0.5 border-t-2 border-dashed border-[#e5e7eb] lg:block" />
+          <div className="absolute top-[3.25rem] left-[calc(12.5%+1.25rem)] right-[calc(12.5%+1.25rem)] hidden h-0.5 border-t-2 border-dashed border-[var(--border-default)] lg:block" />
 
           {/* Connecting line — vertical (mobile/tablet) */}
-          <div className="absolute top-16 bottom-16 left-[1.6875rem] w-0.5 border-l-2 border-dashed border-[#e5e7eb] lg:hidden" />
+          <div className="absolute top-16 bottom-16 left-[1.6875rem] w-0.5 border-l-2 border-dashed border-[var(--border-default)] lg:hidden" />
 
           {/* Desktop grid (horizontal) */}
           <div className="hidden grid-cols-4 gap-8 lg:grid">
@@ -102,24 +102,24 @@ export function HowItWorks() {
                 className="relative flex flex-col items-center text-center"
               >
                 {/* Numbered circle */}
-                <div className="relative z-10 mb-5 flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-[10px] bg-[#0C1E35]">
+                <div className="relative z-10 mb-5 flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-[var(--radius-button)] bg-[var(--action-dark-bg)]">
                   <span className="font-heading text-xl font-bold text-white">
                     {step.number}
                   </span>
                 </div>
 
                 {/* Icon */}
-                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-[10px] bg-[rgba(12,30,53,0.08)]">
-                  <step.icon className="h-5 w-5 text-[#0C1E35]" strokeWidth={1.8} />
+                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-info-bg)]">
+                  <step.icon className="h-5 w-5 text-[var(--dark-blue)]" strokeWidth={1.8} />
                 </div>
 
                 {/* Title */}
-                <h3 className="font-heading text-lg font-bold text-[#111827]">
+                <h3 className="font-heading text-lg font-bold text-[var(--text-primary)]">
                   {step.title}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-1.5 text-sm leading-relaxed text-[#6b7280]">
+                <p className="mt-1.5 text-sm leading-relaxed text-[var(--text-secondary)]">
                   {step.description}
                 </p>
               </motion.div>
@@ -135,7 +135,7 @@ export function HowItWorks() {
                 className="relative flex items-start gap-5 pl-2"
               >
                 {/* Numbered circle */}
-                <div className="relative z-10 flex h-[3.5rem] w-[3.5rem] shrink-0 items-center justify-center rounded-[10px] bg-[#0C1E35]">
+                <div className="relative z-10 flex h-[3.5rem] w-[3.5rem] shrink-0 items-center justify-center rounded-[var(--radius-button)] bg-[var(--action-dark-bg)]">
                   <span className="font-heading text-lg font-bold text-white">
                     {step.number}
                   </span>
@@ -144,12 +144,12 @@ export function HowItWorks() {
                 {/* Content */}
                 <div className="pt-1">
                   <div className="mb-1.5 flex items-center gap-2">
-                    <step.icon className="h-5 w-5 text-[#111827]" strokeWidth={1.8} />
-                    <h3 className="font-heading text-lg font-bold text-[#111827]">
+                    <step.icon className="h-5 w-5 text-[var(--text-primary)]" strokeWidth={1.8} />
+                    <h3 className="font-heading text-lg font-bold text-[var(--text-primary)]">
                       {step.title}
                     </h3>
                   </div>
-                  <p className="text-sm leading-relaxed text-[#6b7280]">
+                  <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
                     {step.description}
                   </p>
                 </div>

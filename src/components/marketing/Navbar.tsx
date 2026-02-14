@@ -59,20 +59,20 @@ export function Navbar() {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="sticky top-0 left-0 right-0 z-50 bg-white border-b border-[#e5e7eb]"
+        className="sticky top-0 left-0 right-0 z-50 bg-[var(--surface-page)] border-b border-[var(--border-default)]"
       >
         <nav className="flex w-full max-w-7xl mx-auto items-center justify-between px-6 py-4">
           {/* --- Logo --- */}
           <a href="/" className="flex items-center gap-2.5 group">
-            <div className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-[#CAFF04] transition-transform duration-200 group-hover:scale-105">
+            <div className="flex h-9 w-9 items-center justify-center rounded-[var(--radius-button)] bg-[var(--accent)] transition-transform duration-200 group-hover:scale-105">
               <svg viewBox="0 0 32 32" fill="none" className="h-[18px] w-[18px]">
-                <path d="M9 6v20" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
-                <path d="M9 16l10-10" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
-                <path d="M9 16l10 10" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
+                <path d="M9 6v20" stroke="var(--text-primary)" strokeWidth="3" strokeLinecap="round" />
+                <path d="M9 16l10-10" stroke="var(--text-primary)" strokeWidth="3" strokeLinecap="round" />
+                <path d="M9 16l10 10" stroke="var(--text-primary)" strokeWidth="3" strokeLinecap="round" />
               </svg>
             </div>
-            <span className="font-heading text-xl font-bold tracking-tight text-[#111827]">
-              kotkot<span className="font-normal text-[#9ca3af]">.ai</span>
+            <span className="font-heading text-xl font-bold tracking-tight text-[var(--text-primary)]">
+              kotkot<span className="font-normal text-[var(--text-muted)]">.ai</span>
             </span>
           </a>
 
@@ -84,7 +84,7 @@ export function Navbar() {
               onMouseEnter={() => setSegurosOpen(true)}
               onMouseLeave={() => setSegurosOpen(false)}
             >
-              <button className="flex items-center gap-1 rounded-[10px] px-4 py-2 text-sm font-medium text-[#6b7280] transition-colors hover:bg-[#f3f4f6] hover:text-[#111827]">
+              <button className="flex items-center gap-1 rounded-[var(--radius-button)] px-4 py-2 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]">
                 Seguros
                 <ChevronDown className={`h-4 w-4 transition-transform ${segurosOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -96,23 +96,23 @@ export function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute left-0 top-full mt-2 w-64 rounded-[16px] border border-[#e5e7eb] bg-white"
+                    className="absolute left-0 top-full mt-2 w-64 rounded-[var(--radius-card)] border border-[var(--border-default)] bg-[var(--surface-page)]"
                   >
                     <div className="p-2">
                       {insuranceProducts.map((product) => (
                         <a
                           key={product.slug}
                           href={`/seguros/${product.slug}`}
-                          className="flex items-center gap-3 rounded-[10px] px-3 py-2 text-sm font-medium text-[#6b7280] transition-colors hover:bg-[#f3f4f6] hover:text-[#111827]"
+                          className="flex items-center gap-3 rounded-[var(--radius-button)] px-3 py-2 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
                         >
                           <span className="text-lg">{product.icon}</span>
                           <span>Seguro de {product.name}</span>
                         </a>
                       ))}
-                      <div className="mt-1 border-t border-[#e5e7eb] pt-1">
+                      <div className="mt-1 border-t border-[var(--border-default)] pt-1">
                         <a
                           href="/seguros"
-                          className="flex items-center justify-center rounded-[10px] px-3 py-2 text-sm font-semibold text-[#111827] transition-colors hover:bg-[rgba(12,30,53,0.06)]"
+                          className="flex items-center justify-center rounded-[var(--radius-button)] px-3 py-2 text-sm font-semibold text-[var(--text-primary)] transition-colors hover:bg-[var(--dark-blue-surface)]"
                         >
                           Ver todos los seguros →
                         </a>
@@ -129,7 +129,7 @@ export function Navbar() {
               onMouseEnter={() => setPrestamosOpen(true)}
               onMouseLeave={() => setPrestamosOpen(false)}
             >
-              <button className="flex items-center gap-1 rounded-[10px] px-4 py-2 text-sm font-medium text-[#6b7280] transition-colors hover:bg-[#f3f4f6] hover:text-[#111827]">
+              <button className="flex items-center gap-1 rounded-[var(--radius-button)] px-4 py-2 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]">
                 Préstamos
                 <ChevronDown className={`h-4 w-4 transition-transform ${prestamosOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -141,23 +141,23 @@ export function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute left-0 top-full mt-2 w-64 rounded-[16px] border border-[#e5e7eb] bg-white"
+                    className="absolute left-0 top-full mt-2 w-64 rounded-[var(--radius-card)] border border-[var(--border-default)] bg-[var(--surface-page)]"
                   >
                     <div className="p-2">
                       {loanProducts.map((product) => (
                         <a
                           key={product.slug}
                           href={`/prestamos/${product.slug}`}
-                          className="flex items-center gap-3 rounded-[10px] px-3 py-2 text-sm font-medium text-[#6b7280] transition-colors hover:bg-[#f3f4f6] hover:text-[#111827]"
+                          className="flex items-center gap-3 rounded-[var(--radius-button)] px-3 py-2 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
                         >
                           <span className="text-lg">{product.icon}</span>
                           <span>Préstamo {product.name}</span>
                         </a>
                       ))}
-                      <div className="mt-1 border-t border-[#e5e7eb] pt-1">
+                      <div className="mt-1 border-t border-[var(--border-default)] pt-1">
                         <a
                           href="/prestamos"
-                          className="flex items-center justify-center rounded-[10px] px-3 py-2 text-sm font-semibold text-[#111827] transition-colors hover:bg-[rgba(12,30,53,0.06)]"
+                          className="flex items-center justify-center rounded-[var(--radius-button)] px-3 py-2 text-sm font-semibold text-[var(--text-primary)] transition-colors hover:bg-[var(--dark-blue-surface)]"
                         >
                           Ver todos los préstamos →
                         </a>
@@ -173,10 +173,10 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setActiveLink(link.href)}
-                className={`relative flex items-center gap-1.5 rounded-[10px] px-4 py-2 text-sm font-medium transition-all duration-150 ${
+                className={`relative flex items-center gap-1.5 rounded-[var(--radius-button)] px-4 py-2 text-sm font-medium transition-all duration-150 ${
                   activeLink === link.href
-                    ? 'bg-[#0C1E35] text-white font-semibold'
-                    : 'text-[#6b7280] hover:bg-[#f3f4f6] hover:text-[#111827]'
+                    ? 'bg-[var(--dark-blue)] text-[var(--text-inverse)] font-semibold'
+                    : 'text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]'
                 }`}
               >
                 {link.label}
@@ -188,13 +188,13 @@ export function Navbar() {
           <div className="hidden items-center gap-4 lg:flex">
             <a
               href="/login"
-              className="text-sm font-medium text-[#6b7280] transition-colors duration-150 hover:text-[#111827]"
+              className="text-sm font-medium text-[var(--text-secondary)] transition-colors duration-150 hover:text-[var(--text-primary)]"
             >
               Iniciar Sesión
             </a>
             <a
               href="/demo"
-              className="inline-flex items-center gap-1.5 rounded-[10px] bg-[#0C1E35] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-150 hover:bg-[#122B47]"
+              className="inline-flex items-center gap-1.5 rounded-[var(--radius-button)] bg-[var(--action-dark-bg)] px-5 py-2.5 text-sm font-semibold text-[var(--action-dark-fg)] transition-all duration-150 hover:bg-[var(--action-dark-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
             >
               Solicitar Demo
               <ArrowUpRight className="h-4 w-4" />
@@ -204,7 +204,7 @@ export function Navbar() {
           {/* --- Hamburger (mobile) --- */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-[10px] text-[#6b7280] transition-colors hover:bg-[#f3f4f6] lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-[var(--radius-button)] text-[var(--text-secondary)] transition-colors hover:bg-[var(--surface-hover)] lg:hidden"
             aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -220,7 +220,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 flex flex-col bg-white lg:hidden"
+            className="fixed inset-0 z-40 flex flex-col bg-[var(--surface-page)] lg:hidden"
           >
             {/* Spacer for navbar height */}
             <div className="h-20 shrink-0" />
@@ -243,7 +243,7 @@ export function Navbar() {
                   closed: { y: 20, opacity: 0 },
                 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#111827] transition-colors hover:text-[#6b7280]"
+                className="flex items-center gap-2 font-heading text-2xl font-semibold text-[var(--text-primary)] transition-colors hover:text-[var(--text-secondary)]"
               >
                 Seguros
               </motion.a>
@@ -255,7 +255,7 @@ export function Navbar() {
                   closed: { y: 20, opacity: 0 },
                 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#111827] transition-colors hover:text-[#6b7280]"
+                className="flex items-center gap-2 font-heading text-2xl font-semibold text-[var(--text-primary)] transition-colors hover:text-[var(--text-secondary)]"
               >
                 Préstamos
               </motion.a>
@@ -269,10 +269,10 @@ export function Navbar() {
                     closed: { y: 20, opacity: 0 },
                   }}
                   transition={{ duration: 0.3, ease: 'easeOut' }}
-                  className="flex items-center gap-2 font-heading text-2xl font-semibold text-[#111827] transition-colors hover:text-[#6b7280]"
+                  className="flex items-center gap-2 font-heading text-2xl font-semibold text-[var(--text-primary)] transition-colors hover:text-[var(--text-secondary)]"
                 >
                   {activeLink === link.href && (
-                    <span className="h-2 w-2 rounded-full bg-[#0C1E35]" />
+                    <span className="h-2 w-2 rounded-full bg-[var(--dark-blue)]" />
                   )}
                   {link.label}
                 </motion.a>
@@ -289,14 +289,14 @@ export function Navbar() {
                 <a
                   href="/login"
                   onClick={() => setMobileOpen(false)}
-                  className="text-base font-medium text-[#6b7280] transition-colors hover:text-[#111827]"
+                  className="text-base font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
                 >
                   Iniciar Sesión
                 </a>
                 <a
                   href="/demo"
                   onClick={() => setMobileOpen(false)}
-                  className="inline-flex items-center gap-2 rounded-[10px] bg-[#0C1E35] px-8 py-3.5 text-base font-semibold text-white transition-all duration-150 hover:bg-[#122B47]"
+                  className="inline-flex items-center gap-2 rounded-[var(--radius-button)] bg-[var(--action-dark-bg)] px-8 py-3.5 text-base font-semibold text-[var(--action-dark-fg)] transition-all duration-150 hover:bg-[var(--action-dark-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
                 >
                   Solicitar Demo
                   <ArrowUpRight className="h-5 w-5" />
