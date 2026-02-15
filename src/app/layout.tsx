@@ -28,9 +28,9 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "kotkot.ai — Tu agente de seguros que nunca duerme",
+  title: "kotkot.ai — Automatiza tu correduría de seguros y préstamos con IA",
   description:
-    "Bot de seguros con IA por WhatsApp para brokers en Latinoamérica. Cotiza, emite y gestiona pólizas automáticamente las 24 horas.",
+    "Plataforma de automatización para brokers. Tu bot IA cotiza, compara y cierra ventas de seguros y préstamos 24/7 por WhatsApp. Conecta 25+ aseguradoras y bancos.",
 };
 
 export default function RootLayout({

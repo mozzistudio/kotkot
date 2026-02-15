@@ -36,8 +36,8 @@ const mockupVariants = {
 };
 
 const stats = [
-  { value: '2 min', label: 'Cotización promedio' },
-  { value: '25+', label: 'Partners Financieros' },
+  { value: '3x', label: 'Más ventas cerradas' },
+  { value: '25+', label: 'Aseguradoras y Bancos' },
   { value: '24/7', label: 'Automatización' },
 ];
 
@@ -48,7 +48,14 @@ const avatars = [
   { initials: 'SC', bg: 'bg-[var(--dark-blue)]' },
 ];
 
-const words = ['seguros', 'préstamos'];
+const words = [
+  'la venta de Seguro de Auto',
+  'la venta de Préstamo Hipotecario',
+  'la venta de Seguro de Salud',
+  'la venta de Préstamo Personal',
+  'la venta de Seguro de Vida',
+  'la venta de Seguro de Hogar',
+];
 
 export function Hero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -101,7 +108,7 @@ export function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--color-success)] opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--color-success)]" />
               </span>
-              Plataforma Financiera IA
+              Automatización para Brokers
             </span>
           </motion.div>
 
@@ -110,13 +117,13 @@ export function Hero() {
             variants={itemVariants}
             className="mt-6 font-heading text-[44px] font-extrabold leading-[1.05] tracking-[-0.03em] text-[var(--dark-blue)] sm:text-[52px] lg:text-[56px] xl:text-[64px]"
           >
-            Tu agente de{' '}
-            <span className="inline-block min-w-[200px] text-left">
+            Automatiza{' '}
+            <span className="inline-block min-w-[300px] text-left">
               <span className="text-[var(--dark-blue)]">{currentText}</span>
               <span className="animate-pulse">|</span>
             </span>
             <br className="hidden sm:block" />
-            {' '}inteligente en{' '}
+            {' '}por{' '}
             <span className="relative inline-block whitespace-nowrap">
               <span className="relative z-10">WhatsApp</span>
               <motion.span
@@ -133,11 +140,9 @@ export function Hero() {
             variants={itemVariants}
             className="mt-5 max-w-xl text-[18px] leading-relaxed text-[var(--text-secondary)] sm:text-xl"
           >
-            Compara seguros y préstamos con IA. Conecta{' '}
-            <span className="font-semibold text-[var(--dark-blue)]">10+ aseguradoras</span> y{' '}
-            <span className="font-semibold text-[var(--dark-blue)]">15+ bancos</span>. Cierra ventas{' '}
-            <span className="font-semibold text-[var(--dark-blue)]">24/7</span>{' '}
-            por WhatsApp.
+            Tu bot IA cotiza, compara y cierra ventas de seguros y préstamos{' '}
+            <span className="font-semibold text-[var(--dark-blue)]">24/7</span>.{' '}
+            Tú te enfocas en crecer tu cartera.
           </motion.p>
 
           {/* CTA */}
@@ -157,7 +162,7 @@ export function Hero() {
               className="border-[var(--color-info-fg)] text-[var(--color-info-fg)] hover:bg-[var(--color-info-bg)]"
             >
               <Play className="h-4 w-4" />
-              Ver Productos
+              Ver cómo funciona
             </Button>
           </motion.div>
 

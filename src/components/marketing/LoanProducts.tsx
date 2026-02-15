@@ -132,7 +132,7 @@ export function LoanProducts() {
 
                 {/* CTA */}
                 <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-[#059669] group-hover:gap-2 transition-all">
-                  Comparar bancos
+                  Activar
                   <span className="transition-transform group-hover:translate-x-1">
                     →
                   </span>
