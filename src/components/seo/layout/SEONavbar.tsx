@@ -123,7 +123,7 @@ const solucionesMenu = {
         {
           icon: CreditCard,
           label: 'Cobrar automáticamente',
-          href: '/soluciones/cobrar-automaticamente',
+          href: '/soluciones/cobro-automatico',
           description: 'Elimina fricción'
         }
       ]

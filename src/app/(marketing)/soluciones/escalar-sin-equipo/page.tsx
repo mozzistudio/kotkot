@@ -1,21 +1,19 @@
 import type { Metadata } from 'next';
+import { SolucionEscalarSinEquipo } from './SolucionEscalarSinEquipo';
 
 export const metadata: Metadata = {
-  title: 'Escala sin Contratar — kotkot.ai',
-  description: 'Crece tu negocio sin contratar más personas. La IA y automatización hacen el trabajo pesado por ti.',
+  title: 'Escala tu Negocio sin Contratar — kotkot.ai',
+  description:
+    'Bot que maneja 500 conversaciones simultáneas. Crece 10x sin sumar salarios. Escala rentable sin equipo.',
+  keywords: 'escalabilidad negocio, automatización de ventas, crecimiento sin equipo',
+  openGraph: {
+    title: 'Escala tu Negocio sin Contratar — kotkot.ai',
+    description:
+      'De 50 a 500 clientes sin contratar a nadie. 10x capacidad. $0 en costos.',
+    type: 'website',
+  },
 };
 
 export default function EscalarSinEquipoPage() {
-  return (
-    <main className="flex min-h-[60vh] items-center justify-center px-4">
-      <div className="text-center">
-        <h1 className="font-heading text-4xl font-bold text-[var(--text-primary)]">
-          Escala sin Contratar
-        </h1>
-        <p className="mt-4 text-lg text-[var(--text-secondary)]">
-          Próximamente
-        </p>
-      </div>
-    </main>
-  );
+  return <SolucionEscalarSinEquipo />;
 }

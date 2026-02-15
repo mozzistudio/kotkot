@@ -23,7 +23,7 @@ const linkGroups: FooterLinkGroup[] = [
       { label: 'Automatizar cotizaciones', href: '/soluciones/automatizar-cotizaciones' },
       { label: 'Vender por WhatsApp', href: '/soluciones/vender-por-whatsapp' },
       { label: 'Gestionar clientes', href: '/soluciones/gestionar-clientes' },
-      { label: 'Cobrar automáticamente', href: '/soluciones/cobrar-automaticamente' },
+      { label: 'Cobrar automáticamente', href: '/soluciones/cobro-automatico' },
       { label: 'Escalar sin equipo', href: '/soluciones/escalar-sin-equipo' },
       { label: 'Multi-producto', href: '/soluciones/multi-producto' },
     ],

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { SolucionCobrarAutomaticamente } from './SolucionCobrarAutomaticamente';
+import { SolucionCobroAutomatico } from './SolucionCobroAutomatico';
 
 export const metadata: Metadata = {
   title: 'Cobranza Automática para Seguros — kotkot.ai',
@@ -14,6 +14,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CobrarAutomaticamentePage() {
-  return <SolucionCobrarAutomaticamente />;
+export default function CobroAutomaticoPage() {
+  return <SolucionCobroAutomatico />;
 }

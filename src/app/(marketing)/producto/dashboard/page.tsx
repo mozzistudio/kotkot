@@ -1,21 +1,21 @@
 import type { Metadata } from 'next';
+import { DashboardPage } from './DashboardPage';
 
 export const metadata: Metadata = {
   title: 'Dashboard & Analytics — kotkot.ai',
   description: 'Visualiza tus ventas, comisiones y rendimiento en tiempo real con reportes detallados y analíticas avanzadas.',
+  keywords: 'dashboard analytics, reportes de ventas, métricas en tiempo real, KPIs brokers',
+  openGraph: {
+    title: 'Dashboard & Analytics — kotkot.ai',
+    description: 'Visualiza todas tus métricas en tiempo real y toma decisiones basadas en datos.',
+    type: 'website',
+  },
 };
 
-export default function DashboardPage() {
+export default function Page() {
   return (
-    <main className="flex min-h-[60vh] items-center justify-center px-4">
-      <div className="text-center">
-        <h1 className="font-heading text-4xl font-bold text-[var(--text-primary)]">
-          Dashboard & Analytics
-        </h1>
-        <p className="mt-4 text-lg text-[var(--text-secondary)]">
-          Próximamente
-        </p>
-      </div>
+    <main>
+      <DashboardPage />
     </main>
   );
 }
