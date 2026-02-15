@@ -195,7 +195,7 @@ export default function FuncionalidadesPage() {
                       <li key={sub} className="flex items-start gap-3">
                         <CheckCircle2
                           className="mt-0.5 h-5 w-5 shrink-0 text-[var(--text-primary)]"
-                          strokeWidth={2}
+                         
                         />
                         <span className="text-sm leading-relaxed text-[var(--text-secondary)]">
                           {sub}

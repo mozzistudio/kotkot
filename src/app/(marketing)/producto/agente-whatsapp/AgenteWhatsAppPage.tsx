@@ -55,7 +55,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -78,7 +78,7 @@ export function AgenteWhatsAppPage() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
             className="mb-12 text-center"
           >
             <h2 className="font-heading text-3xl font-bold text-[var(--text-primary)] sm:text-4xl">
@@ -100,7 +100,7 @@ export function AgenteWhatsAppPage() {
               <motion.div key={cap.title} variants={itemVariants}>
                 <div className="h-full rounded-[var(--radius-card)] border-2 border-[var(--border-default)] bg-white p-6 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-lg hover:shadow-[var(--accent)]/10">
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--color-dark-blue)]">
-                    <cap.icon className="h-6 w-6 text-[var(--accent)]" strokeWidth={2} />
+                    <cap.icon className="h-6 w-6 text-[var(--accent)]" />
                   </div>
                   <h3 className="mb-2 font-heading text-lg font-semibold text-[var(--text-primary)]">
                     {cap.title}
@@ -122,7 +122,7 @@ export function AgenteWhatsAppPage() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
             className="text-center"
           >
             <h2 className="font-heading text-3xl font-bold text-[var(--text-primary)] sm:text-4xl">

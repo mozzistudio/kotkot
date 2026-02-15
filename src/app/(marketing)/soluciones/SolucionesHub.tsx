@@ -76,7 +76,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -108,7 +108,7 @@ export function SolucionesHub() {
                   <div className="relative h-full overflow-hidden rounded-[var(--radius-card)] border-2 border-[var(--border-default)] bg-white p-6 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-lg hover:shadow-[var(--accent)]/10">
                     {/* Icon */}
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--color-dark-blue)] transition-transform duration-300 group-hover:scale-110">
-                      <solution.icon className="h-6 w-6 text-[var(--accent)]" strokeWidth={2} />
+                      <solution.icon className="h-6 w-6 text-[var(--accent)]" />
                     </div>
 
                     {/* Problem Badge */}
@@ -135,7 +135,7 @@ export function SolucionesHub() {
                     <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] transition-transform duration-300 group-hover:gap-3">
                       Ver solución
                       <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </div>
 
@@ -156,7 +156,7 @@ export function SolucionesHub() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
             className="text-center"
           >
             <h2 className="font-heading text-3xl font-bold text-[var(--text-primary)] sm:text-4xl">

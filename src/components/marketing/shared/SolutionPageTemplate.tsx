@@ -47,7 +47,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -81,7 +81,7 @@ export function SolutionPageTemplate({
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
             className="rounded-[var(--radius-card)] border-2 border-[var(--color-warning)] bg-[var(--color-warning-bg)] p-8 text-center"
           >
             <h2 className="font-heading text-2xl font-bold text-[var(--text-primary)] sm:text-3xl">
@@ -101,7 +101,7 @@ export function SolutionPageTemplate({
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
             className="mb-12 text-center"
           >
             <h2 className="font-heading text-3xl font-bold text-[var(--text-primary)] sm:text-4xl">
@@ -118,7 +118,7 @@ export function SolutionPageTemplate({
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
               className="rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white p-6"
             >
               <div className="mb-5 flex items-center gap-3">
@@ -180,7 +180,7 @@ export function SolutionPageTemplate({
                 variants={itemVariants}
                 className="rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white p-6 text-center"
               >
-                <stat.icon className="mx-auto h-8 w-8 text-[var(--dark-blue)]" strokeWidth={1.8} />
+                <stat.icon className="mx-auto h-8 w-8 text-[var(--dark-blue)]" />
                 <div className="mt-4 font-heading text-3xl font-bold text-[var(--text-primary)]">
                   {stat.value}
                 </div>

@@ -65,7 +65,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -98,7 +98,7 @@ export function ProductoHub() {
                     {/* Icon */}
                     <div className="mb-4 flex items-center gap-3">
                       <div className="rounded-lg bg-[var(--color-dark-blue)] p-2.5 transition-transform duration-300 group-hover:scale-110">
-                        <feature.icon className="h-5 w-5 text-[var(--accent)]" strokeWidth={2} />
+                        <feature.icon className="h-5 w-5 text-[var(--accent)]" />
                       </div>
                       {feature.badge && (
                         <span className="text-xs font-semibold uppercase tracking-wider text-[var(--accent)]">
@@ -142,7 +142,7 @@ export function ProductoHub() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
             className="text-center"
           >
             <h2 className="font-heading text-3xl font-bold text-[var(--text-primary)] sm:text-4xl">
