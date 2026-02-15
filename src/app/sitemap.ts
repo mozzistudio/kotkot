@@ -1,21 +1,15 @@
 /**
  * Dynamic Sitemap Generator
- * Generates sitemap.xml for all SEO pages
+ * Generates sitemap.xml for B2B marketing pages
  */
 
 import { MetadataRoute } from 'next';
-import {
-  getAllInsuranceProducts,
-  getInsuranceCompaniesByCountry,
-  generateInsuranceCrossPages,
-  generateInsuranceComparisons,
-} from '@/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://kotkot.ai';
   const routes: MetadataRoute.Sitemap = [];
 
-  // Static pages
+  // Homepage
   routes.push({
     url: baseUrl,
     lastModified: new Date(),
@@ -23,61 +17,117 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1.0,
   });
 
-  routes.push({
-    url: `${baseUrl}/seguros`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.9,
-  });
-
-  routes.push({
-    url: `${baseUrl}/seguros/aseguradoras`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  });
-
-  // Insurance product pages (10 pages)
-  const products = getAllInsuranceProducts();
-  products.forEach((product) => {
+  // Product pages
+  const productPages = [
+    '/producto',
+    '/producto/agente-whatsapp',
+    '/producto/crm',
+    '/producto/dashboard',
+    '/producto/cobros',
+    '/producto/integraciones',
+  ];
+  productPages.forEach((path) => {
     routes.push({
-      url: `${baseUrl}/seguros/${product.slug}`,
+      url: `${baseUrl}${path}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    });
+  });
+
+  // Solutions pages
+  const solutionsPages = [
+    '/soluciones',
+    '/soluciones/automatizar-cotizaciones',
+    '/soluciones/vender-por-whatsapp',
+    '/soluciones/gestionar-clientes',
+    '/soluciones/cobrar-automaticamente',
+    '/soluciones/escalar-sin-equipo',
+    '/soluciones/multi-producto',
+  ];
+  solutionsPages.forEach((path) => {
+    routes.push({
+      url: `${baseUrl}${path}`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     });
   });
 
-  // Insurance company pages (10 pages)
-  const companies = getInsuranceCompaniesByCountry('panama');
-  companies.forEach((company) => {
+  // Integration pages
+  const integrationPages = [
+    '/integraciones',
+    '/integraciones/assa',
+    '/integraciones/mapfre',
+    '/integraciones/sura',
+    '/integraciones/bac',
+    '/integraciones/banco-general',
+    '/integraciones/whatsapp',
+    '/integraciones/yappy',
+    '/integraciones/stripe',
+  ];
+  integrationPages.forEach((path) => {
     routes.push({
-      url: `${baseUrl}/seguros/aseguradoras/${company.slug}`,
+      url: `${baseUrl}${path}`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     });
   });
 
-  // Insurance cross pages (~90 pages)
-  const crossPages = generateInsuranceCrossPages('panama');
-  crossPages.forEach((cross) => {
+  // Resources pages
+  const resourcePages = [
+    '/recursos',
+    '/recursos/guias',
+    '/recursos/glosario',
+    '/recursos/webinars',
+    '/recursos/calculadora-roi',
+  ];
+  resourcePages.forEach((path) => {
     routes.push({
-      url: `${baseUrl}/seguros/${cross.productSlug}/${cross.companySlug}`,
+      url: `${baseUrl}${path}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    });
+  });
+
+  // Other pages
+  const otherPages = [
+    '/precios',
+    '/casos-de-exito',
+    '/comparativas',
+    '/nosotros',
+    '/contacto',
+    '/demo',
+    '/blog',
+    '/app',
+    '/ayuda',
+    '/funcionalidades',
+    '/como-funciona',
+    '/estado',
+    '/api-docs',
+  ];
+  otherPages.forEach((path) => {
+    routes.push({
+      url: `${baseUrl}${path}`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,
     });
   });
 
-  // Insurance comparison pages (~45 pages)
-  const comparisons = generateInsuranceComparisons('panama');
-  comparisons.forEach((comparison) => {
+  // Legal pages
+  const legalPages = [
+    '/politica-privacidad',
+    '/terminos',
+  ];
+  legalPages.forEach((path) => {
     routes.push({
-      url: `${baseUrl}/seguros/comparar/${comparison.slug}`,
+      url: `${baseUrl}${path}`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     });
   });
 
