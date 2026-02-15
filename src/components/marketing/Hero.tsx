@@ -84,7 +84,6 @@ export function Hero() {
     return () => clearTimeout(timeout);
   }, [currentText, isDeleting, currentWordIndex]);
 
-export function Hero() {
   return (
     <section className="relative overflow-hidden px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
