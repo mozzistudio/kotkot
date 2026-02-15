@@ -20,11 +20,12 @@ interface Integration {
 }
 
 const integrations: Integration[] = [
+  // Aseguradoras - Disponible
   {
     name: 'ASSA',
     slug: 'assa',
     type: 'Aseguradora',
-    description: 'Cotiza y vende seguros de auto, salud y vida en tiempo real',
+    description: 'Seguros de auto, salud, vida, hogar y empresarial',
     status: 'Disponible',
     icon: <Building2 className="h-8 w-8" />,
   },
@@ -32,23 +33,81 @@ const integrations: Integration[] = [
     name: 'MAPFRE',
     slug: 'mapfre',
     type: 'Aseguradora',
-    description: 'Acceso completo a pólizas de MAPFRE para tu mercado',
+    description: 'Seguros generales y de vida en toda Latinoamérica',
     status: 'Disponible',
     icon: <Building2 className="h-8 w-8" />,
   },
   {
-    name: 'Seguros SURA',
+    name: 'SURA',
     slug: 'sura',
     type: 'Aseguradora',
-    description: 'Integración directa con el catálogo completo de SURA',
+    description: 'Seguros, ARL y soluciones financieras',
     status: 'Disponible',
     icon: <Building2 className="h-8 w-8" />,
   },
+  {
+    name: 'Allianz',
+    slug: 'allianz',
+    type: 'Aseguradora',
+    description: 'Seguros globales con presencia en LATAM',
+    status: 'Disponible',
+    icon: <Building2 className="h-8 w-8" />,
+  },
+  {
+    name: 'Liberty',
+    slug: 'liberty',
+    type: 'Aseguradora',
+    description: 'Seguros de auto y hogar',
+    status: 'Disponible',
+    icon: <Building2 className="h-8 w-8" />,
+  },
+  {
+    name: 'Qualitas',
+    slug: 'qualitas',
+    type: 'Aseguradora',
+    description: 'Especialistas en seguro de auto',
+    status: 'Disponible',
+    icon: <Building2 className="h-8 w-8" />,
+  },
+  // Aseguradoras - Próximamente
+  {
+    name: 'GNP',
+    slug: 'gnp',
+    type: 'Aseguradora',
+    description: 'Seguros de vida, auto, salud y empresariales',
+    status: 'Próximamente',
+    icon: <Building2 className="h-8 w-8" />,
+  },
+  {
+    name: 'Rímac',
+    slug: 'rimac',
+    type: 'Aseguradora',
+    description: 'Líder en seguros en Perú',
+    status: 'Próximamente',
+    icon: <Building2 className="h-8 w-8" />,
+  },
+  {
+    name: 'Bolívar',
+    slug: 'bolivar',
+    type: 'Aseguradora',
+    description: 'Seguros y capitalización en Colombia',
+    status: 'Próximamente',
+    icon: <Building2 className="h-8 w-8" />,
+  },
+  {
+    name: 'Pacífico',
+    slug: 'pacifico',
+    type: 'Aseguradora',
+    description: 'Seguros de salud y vida en Perú',
+    status: 'Próximamente',
+    icon: <Building2 className="h-8 w-8" />,
+  },
+  // Bancos - Disponible
   {
     name: 'BAC',
     slug: 'bac',
     type: 'Banco',
-    description: 'Vende préstamos personales y tarjetas de crédito BAC',
+    description: 'Préstamos personales, hipotecarios y de auto',
     status: 'Disponible',
     icon: <Landmark className="h-8 w-8" />,
   },
@@ -56,23 +115,73 @@ const integrations: Integration[] = [
     name: 'Banco General',
     slug: 'banco-general',
     type: 'Banco',
-    description: 'Cotización automática de préstamos hipotecarios y personales',
+    description: 'El banco más grande de Panamá',
     status: 'Disponible',
     icon: <Landmark className="h-8 w-8" />,
   },
+  // Bancos - Próximamente
   {
-    name: 'WhatsApp Business',
-    slug: 'whatsapp',
-    type: 'Pagos',
-    description: 'API oficial de WhatsApp para comunicación con clientes',
-    status: 'Disponible',
-    icon: <MessageSquare className="h-8 w-8" />,
+    name: 'Banistmo',
+    slug: 'banistmo',
+    type: 'Banco',
+    description: 'Préstamos y productos financieros',
+    status: 'Próximamente',
+    icon: <Landmark className="h-8 w-8" />,
   },
+  {
+    name: 'Banco Nacional',
+    slug: 'banco-nacional',
+    type: 'Banco',
+    description: 'Banca estatal de Panamá',
+    status: 'Próximamente',
+    icon: <Landmark className="h-8 w-8" />,
+  },
+  {
+    name: 'Scotiabank',
+    slug: 'scotiabank',
+    type: 'Banco',
+    description: 'Banca internacional en LATAM',
+    status: 'Próximamente',
+    icon: <Landmark className="h-8 w-8" />,
+  },
+  {
+    name: 'Multibank',
+    slug: 'multibank',
+    type: 'Banco',
+    description: 'Préstamos y leasing en Panamá',
+    status: 'Próximamente',
+    icon: <Landmark className="h-8 w-8" />,
+  },
+  {
+    name: 'Global Bank',
+    slug: 'global-bank',
+    type: 'Banco',
+    description: 'Banca comercial y personal',
+    status: 'Próximamente',
+    icon: <Landmark className="h-8 w-8" />,
+  },
+  {
+    name: 'Caja de Ahorros',
+    slug: 'caja-de-ahorros',
+    type: 'Banco',
+    description: 'Banca social panameña',
+    status: 'Próximamente',
+    icon: <Landmark className="h-8 w-8" />,
+  },
+  {
+    name: 'Credicorp Bank',
+    slug: 'credicorp-bank',
+    type: 'Banco',
+    description: 'Banca privada y comercial',
+    status: 'Próximamente',
+    icon: <Landmark className="h-8 w-8" />,
+  },
+  // Pagos - Disponible
   {
     name: 'Yappy',
     slug: 'yappy',
     type: 'Pagos',
-    description: 'Cobros instantáneos con Yappy en Panamá',
+    description: 'Pagos instantáneos en Panamá',
     status: 'Disponible',
     icon: <CreditCard className="h-8 w-8" />,
   },
@@ -80,9 +189,17 @@ const integrations: Integration[] = [
     name: 'Stripe',
     slug: 'stripe',
     type: 'Pagos',
-    description: 'Acepta tarjetas de crédito y débito internacionalmente',
+    description: 'Pagos internacionales con tarjeta',
     status: 'Disponible',
     icon: <CreditCard className="h-8 w-8" />,
+  },
+  {
+    name: 'WhatsApp Business',
+    slug: 'whatsapp',
+    type: 'Pagos',
+    description: 'API oficial de Meta para mensajería',
+    status: 'Disponible',
+    icon: <MessageSquare className="h-8 w-8" />,
   },
 ];
 
@@ -98,7 +215,7 @@ export default function IntegracionesPage() {
       <PageHero
         badge="Integraciones"
         title="Conecta con 25+ Aseguradoras y Bancos en Minutos"
-        subtitle="Integra tu bot con las principales aseguradoras, bancos y pasarelas de pago en Latinoamérica. Sin código, sin complicaciones."
+        subtitle="Tu bot IA se integra directamente con las plataformas que ya usas. Cotización en tiempo real, emisión de pólizas y cobro automático."
         ctaText="Ver Demo"
         ctaHref="/demo"
       />
@@ -128,78 +245,103 @@ export default function IntegracionesPage() {
       <section className="px-4 pb-20 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredIntegrations.map((integration, index) => (
-              <motion.div
-                key={integration.slug}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  ease: [0.22, 1, 0.36, 1],
-                  delay: index * 0.08,
-                }}
-              >
-                <Link href={`/integraciones/${integration.slug}`}>
-                  <div className="group relative h-full rounded-[var(--radius-card)] border-2 border-[var(--border-default)] bg-white p-6 transition-all duration-200 hover:border-[var(--accent)] hover:shadow-lg">
-                    {/* Icon */}
-                    <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-[var(--dark-blue-surface)] text-[var(--dark-blue)]">
-                      {integration.icon}
-                    </div>
+            {filteredIntegrations.map((integration, index) => {
+              const isComingSoon = integration.status === 'Próximamente';
 
-                    {/* Name */}
-                    <h3 className="mb-2 font-heading text-xl font-bold text-[var(--text-primary)]">
-                      {integration.name}
-                    </h3>
-
-                    {/* Type Badge */}
-                    <div className="mb-3 inline-flex items-center gap-2">
-                      <span
-                        className={`inline-block rounded-md px-2.5 py-1 text-xs font-semibold ${
-                          integration.type === 'Aseguradora'
-                            ? 'bg-blue-50 text-blue-700'
-                            : integration.type === 'Banco'
-                              ? 'bg-emerald-50 text-emerald-700'
-                              : 'bg-purple-50 text-purple-700'
-                        }`}
-                      >
-                        {integration.type}
+              const cardContent = (
+                <div
+                  className={`relative h-full rounded-[var(--radius-card)] border-2 bg-white p-6 transition-all duration-200 ${
+                    isComingSoon
+                      ? 'cursor-not-allowed border-[var(--border-default)] opacity-60'
+                      : 'group border-[var(--border-default)] hover:border-[var(--accent)] hover:shadow-lg'
+                  }`}
+                >
+                  {/* Status Badge in Top Right */}
+                  <div className="absolute right-4 top-4">
+                    {integration.status === 'Disponible' && (
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-success-bg)] px-2.5 py-1 text-xs font-semibold text-[var(--success-fg)]">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[var(--success)]" />
+                        Disponible
                       </span>
-                      {integration.status === 'Disponible' && (
-                        <span className="inline-flex items-center gap-1 text-xs font-medium text-[var(--success-fg)]">
-                          <Check className="h-3.5 w-3.5" />
-                          Disponible
-                        </span>
-                      )}
-                      {integration.status === 'Próximamente' && (
-                        <span className="text-xs font-medium text-[var(--text-muted)]">
-                          Próximamente
-                        </span>
-                      )}
-                    </div>
+                    )}
+                    {integration.status === 'Próximamente' && (
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--surface-panel)] px-2.5 py-1 text-xs font-semibold text-[var(--text-muted)]">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[var(--text-muted)]" />
+                        Próximamente
+                      </span>
+                    )}
+                  </div>
 
-                    {/* Description */}
-                    <p className="mb-4 text-sm leading-relaxed text-[var(--text-secondary)]">
-                      {integration.description}
-                    </p>
+                  {/* Icon */}
+                  <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-[var(--dark-blue-surface)] text-[var(--dark-blue)]">
+                    {integration.icon}
+                  </div>
 
-                    {/* Link */}
+                  {/* Name */}
+                  <h3 className="mb-2 font-heading text-xl font-bold text-[var(--text-primary)]">
+                    {integration.name}
+                  </h3>
+
+                  {/* Type Badge */}
+                  <div className="mb-3">
+                    <span
+                      className={`inline-block rounded-md px-2.5 py-1 text-xs font-semibold ${
+                        integration.type === 'Aseguradora'
+                          ? 'bg-emerald-50 text-emerald-700'
+                          : integration.type === 'Banco'
+                            ? 'bg-blue-50 text-blue-700'
+                            : 'bg-purple-50 text-purple-700'
+                      }`}
+                    >
+                      {integration.type}
+                    </span>
+                  </div>
+
+                  {/* Description */}
+                  <p className="mb-4 text-sm leading-relaxed text-[var(--text-secondary)]">
+                    {integration.description}
+                  </p>
+
+                  {/* Link */}
+                  {!isComingSoon && (
                     <div className="flex items-center gap-2 text-sm font-semibold text-[var(--dark-blue)] transition-all group-hover:gap-3">
                       Ver detalles
                       <ArrowRight className="h-4 w-4" />
                     </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+                  )}
+                </div>
+              );
+
+              return (
+                <motion.div
+                  key={integration.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    ease: [0.22, 1, 0.36, 1],
+                    delay: index * 0.08,
+                  }}
+                >
+                  {isComingSoon ? (
+                    cardContent
+                  ) : (
+                    <Link href={`/integraciones/${integration.slug}`}>
+                      {cardContent}
+                    </Link>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       <CTABanner
-        title="¿Necesitas una integración específica?"
+        title="¿No ves tu aseguradora o banco?"
         subtitle="Trabajamos con tu equipo para conectar cualquier aseguradora o banco en tu mercado"
-        ctaText="Contactar Ventas"
-        ctaHref="/demo"
+        ctaText="Contáctanos"
+        ctaHref="/contacto"
       />
     </>
   );
