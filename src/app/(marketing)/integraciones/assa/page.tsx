@@ -2,9 +2,8 @@ import type { Metadata } from 'next';
 import { IntegrationPageTemplate } from '@/components/marketing/shared/IntegrationPageTemplate';
 
 export const metadata: Metadata = {
-  title: 'Integración ASSA — kotkot.ai',
-  description: 'Vende seguros ASSA automatizado. Cotización en tiempo real, emisión de pólizas y comisiones automáticas.',
-  keywords: 'vender seguros ASSA automatizado, integración ASSA, bot seguros ASSA',
+  title: 'Integración ASSA — Vende Seguros ASSA con kotkot',
+  description: 'Conecta la API de ASSA Compañía de Seguros a tu bot de WhatsApp. Cotiza auto, salud, vida, hogar y empresarial en tiempo real.',
 };
 
 export default function ASSAPage() {
@@ -12,45 +11,48 @@ export default function ASSAPage() {
     <IntegrationPageTemplate
       companyName="ASSA"
       companyType="Aseguradora"
-      overview="ASSA Compañía de Seguros es una de las aseguradoras líderes en Centroamérica. Con kotkot, puedes vender seguros ASSA de forma automatizada 24/7 a través de WhatsApp."
+      overview="ASSA Compañía de Seguros es la aseguradora más grande de Panamá con más de 75 años de experiencia. La integración con kotkot te permite cotizar en tiempo real todas sus líneas de productos."
       features={[
         {
           title: 'Productos disponibles',
           items: [
-            'Seguros de auto: cotización instantánea con cálculo de prima en tiempo real',
-            'Seguros de salud: planes individuales y familiares con comparador de coberturas',
-            'Seguros de vida: pólizas temporales y permanentes con emisión automática',
-            'Seguros comerciales: protección para negocios y empresas',
+            'Seguros de Auto: cotización instantánea con cobertura completa',
+            'Seguros de Salud: planes individuales y familiares',
+            'Seguros de Vida: pólizas temporales y permanentes',
+            'Seguros de Hogar: protección para propiedad y contenido',
+            'Seguros Empresariales: soluciones para negocios',
+            'Responsabilidad Civil: cobertura profesional y comercial',
+            'Seguros de Accidentes: protección contra accidentes personales',
           ],
         },
         {
-          title: 'Capacidades de integración',
+          title: 'Qué puedes hacer con esta integración',
           items: [
-            'Cotización en tiempo real: tu bot consulta las tarifas actualizadas de ASSA al instante',
-            'Emisión de pólizas: emite pólizas directamente desde la conversación de WhatsApp',
-            'Cobro automático: integración con Yappy y tarjetas para cobrar el primer pago',
-            'Renovaciones automáticas: tu bot recuerda y gestiona renovaciones de pólizas',
+            'Cotización en tiempo real: tu bot consulta tarifas ASSA al instante',
+            'Comparador multi-producto: compara diferentes tipos de seguros automáticamente',
+            'Consulta de estado de pólizas: verifica el estado de pólizas existentes',
+            'Alertas de renovación: notifica a clientes cuando su póliza está por vencer',
           ],
         },
       ]}
       steps={[
         {
           number: '1',
-          title: 'Conecta tus credenciales API',
+          title: 'Conecta tus credenciales',
           description:
-            'Ingresa tus credenciales de corredor ASSA en el dashboard de kotkot. Tu información está encriptada y segura.',
+            'Ingresa tu API key o credenciales en el dashboard de kotkot',
         },
         {
           number: '2',
-          title: 'Configura los productos en tu dashboard',
+          title: 'Configura tus productos',
           description:
-            'Selecciona qué seguros de ASSA quieres vender, define tus márgenes de comisión y personaliza mensajes.',
+            'Selecciona qué productos quieres que tu bot ofrezca',
         },
         {
           number: '3',
-          title: 'Tu bot empieza a vender automáticamente',
+          title: 'Tu bot empieza a vender',
           description:
-            'Tu bot de WhatsApp cotiza, emite pólizas y cobra pagos de ASSA sin que tengas que intervenir.',
+            'Cotización en tiempo real directo desde ASSA a WhatsApp',
         },
       ]}
     />
