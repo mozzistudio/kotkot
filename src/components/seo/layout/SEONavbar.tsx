@@ -1,51 +1,218 @@
 'use client';
 
 /**
- * SEO Navbar Component
- * Enhanced navigation with dropdowns for insurance products and companies
+ * SEO Navbar Component — B2B SaaS Navigation
+ * For insurance/loan brokers in Latin America
  */
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Phone, ChevronDown, Menu, X } from 'lucide-react';
+import {
+  MessageSquare,
+  Users,
+  BarChart3,
+  CreditCard,
+  Building2,
+  Landmark,
+  Wallet,
+  FileText,
+  BookOpen,
+  GraduationCap,
+  Video,
+  TrendingUp,
+  Calculator,
+  GitCompare,
+  ArrowRight,
+  Menu,
+  X,
+  ChevronDown
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Logo } from '@/components/ui/Logo';
 
-const insuranceProducts = [
-  { slug: 'auto', name: 'Auto', icon: '🚗', description: 'Protección para tu vehículo' },
-  { slug: 'salud', name: 'Salud', icon: '🏥', description: 'Cobertura médica completa' },
-  { slug: 'vida', name: 'Vida', icon: '🛡️', description: 'Protección para tu familia' },
-  { slug: 'hogar', name: 'Hogar', icon: '🏠', description: 'Protege tu casa' },
-  { slug: 'viaje', name: 'Viaje', icon: '✈️', description: 'Viaja protegido' },
-  { slug: 'mascota', name: 'Mascota', icon: '🐾', description: 'Salud para tu mascota' },
-  { slug: 'empresarial', name: 'Empresarial', icon: '🏢', description: 'Para tu negocio' },
-  { slug: 'responsabilidad-civil', name: 'Responsabilidad Civil', icon: '⚖️', description: 'Protección legal' },
-  { slug: 'accidentes-personales', name: 'Accidentes Personales', icon: '🚑', description: 'Cobertura 24/7' },
-  { slug: 'ahorro', name: 'Ahorro', icon: '💰', description: 'Ahorra e invierte' },
-];
+// Smooth easing curve
+const EASING: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-const loanProducts = [
-  { slug: 'personal', name: 'Personal', icon: '💳', description: 'Para tus proyectos personales' },
-  { slug: 'hipotecario', name: 'Hipotecario', icon: '🏡', description: 'Compra tu casa soñada' },
-  { slug: 'auto', name: 'Auto', icon: '🚙', description: 'Financia tu vehículo' },
-  { slug: 'empresarial', name: 'Empresarial', icon: '💼', description: 'Crece tu negocio' },
-];
+// Mega menu content
+const productoMenu = {
+  sections: [
+    {
+      title: 'Plataforma',
+      items: [
+        {
+          icon: MessageSquare,
+          label: 'Agente IA WhatsApp',
+          href: '/producto/agente-whatsapp',
+          description: 'Tu bot cotiza y vende 24/7'
+        },
+        {
+          icon: Users,
+          label: 'CRM Inteligente',
+          href: '/producto/crm',
+          description: 'Gestión de clientes y leads'
+        },
+        {
+          icon: BarChart3,
+          label: 'Dashboard & Analytics',
+          href: '/producto/dashboard',
+          description: 'Métricas en tiempo real'
+        },
+        {
+          icon: CreditCard,
+          label: 'Cobros Automáticos',
+          href: '/producto/cobros',
+          description: 'Del presupuesto al pago'
+        }
+      ]
+    },
+    {
+      title: 'Integraciones',
+      items: [
+        {
+          icon: Building2,
+          label: 'Aseguradoras',
+          href: '/integraciones',
+          description: '25+ aseguradoras conectadas',
+          logos: ['ASSA', 'MAPFRE', 'SURA']
+        },
+        {
+          icon: Landmark,
+          label: 'Bancos',
+          href: '/integraciones',
+          description: '15+ bancos y financieras',
+          logos: ['BAC', 'Banco General']
+        },
+        {
+          icon: Wallet,
+          label: 'Pagos',
+          href: '/integraciones',
+          description: 'Yappy, Stripe y más'
+        }
+      ]
+    }
+  ],
+  footer: {
+    label: 'Ver todas las integraciones',
+    href: '/integraciones'
+  }
+};
 
-const topCompanies = [
-  { slug: 'assa', name: 'ASSA', description: 'Líder del mercado' },
-  { slug: 'mapfre', name: 'MAPFRE', description: 'Innovación digital' },
-  { slug: 'sura', name: 'Sura', description: 'Enfoque en bienestar' },
-  { slug: 'bupa', name: 'Bupa', description: 'Salud internacional' },
-];
+const solucionesMenu = {
+  sections: [
+    {
+      title: 'Por problema',
+      items: [
+        {
+          icon: FileText,
+          label: 'Automatizar cotizaciones',
+          href: '/soluciones/automatizar-cotizaciones',
+          description: 'Cotiza más rápido'
+        },
+        {
+          icon: MessageSquare,
+          label: 'Vender por WhatsApp',
+          href: '/soluciones/vender-por-whatsapp',
+          description: 'Convierte chats en ventas'
+        },
+        {
+          icon: Users,
+          label: 'Gestionar clientes',
+          href: '/soluciones/gestionar-clientes',
+          description: 'CRM todo-en-uno'
+        },
+        {
+          icon: CreditCard,
+          label: 'Cobrar automáticamente',
+          href: '/soluciones/cobrar-automaticamente',
+          description: 'Elimina fricción'
+        }
+      ]
+    },
+    {
+      title: 'Por perfil',
+      items: [
+        {
+          icon: TrendingUp,
+          label: 'Corredor independiente',
+          href: '/soluciones/escalar-sin-equipo',
+          description: 'Escala sin contratar'
+        },
+        {
+          icon: Users,
+          label: 'Agencia con equipo',
+          href: '/soluciones/multi-producto',
+          description: 'Multi-producto y multi-agente'
+        }
+      ]
+    }
+  ]
+};
+
+const recursosMenu = {
+  sections: [
+    {
+      title: 'Aprender',
+      items: [
+        {
+          icon: BookOpen,
+          label: 'Blog',
+          href: '/blog',
+          description: 'Artículos y consejos'
+        },
+        {
+          icon: FileText,
+          label: 'Guías y ebooks',
+          href: '/recursos/guias',
+          description: 'Contenido descargable'
+        },
+        {
+          icon: GraduationCap,
+          label: 'Glosario',
+          href: '/recursos/glosario',
+          description: 'Términos clave'
+        },
+        {
+          icon: Video,
+          label: 'Webinars',
+          href: '/recursos/webinars',
+          description: 'Aprende en vivo'
+        }
+      ]
+    },
+    {
+      title: 'Evaluar',
+      items: [
+        {
+          icon: TrendingUp,
+          label: 'Casos de éxito',
+          href: '/casos-de-exito',
+          description: 'Historias reales'
+        },
+        {
+          icon: Calculator,
+          label: 'Calculadora de ROI',
+          href: '/recursos/calculadora-roi',
+          description: 'Calcula tu retorno'
+        },
+        {
+          icon: GitCompare,
+          label: 'Comparativas',
+          href: '/comparativas',
+          description: 'Kotkot vs. otros'
+        }
+      ]
+    }
+  ]
+};
 
 export function SEONavbar() {
-  const [segurosOpen, setSegurosOpen] = useState(false);
-  const [prestamosOpen, setPrestamosOpen] = useState(false);
-  const [aseguradorasOpen, setAseguradorasOpen] = useState(false);
+  const [productoOpen, setProductoOpen] = useState(false);
+  const [solucionesOpen, setSolucionesOpen] = useState(false);
+  const [recursosOpen, setRecursosOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border-default)] bg-white">
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-[var(--border-default)]">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="transition-opacity hover:opacity-80">
@@ -53,202 +220,195 @@ export function SEONavbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-6 lg:flex">
-          {/* Seguros Dropdown */}
+        <div className="hidden items-center gap-8 lg:flex">
+          {/* Producto Dropdown */}
           <div
             className="relative"
-            onMouseEnter={() => setSegurosOpen(true)}
-            onMouseLeave={() => setSegurosOpen(false)}
+            onMouseEnter={() => setProductoOpen(true)}
+            onMouseLeave={() => setProductoOpen(false)}
           >
             <button className="flex items-center gap-1 text-sm font-medium text-[var(--text-primary)] hover:text-[var(--text-secondary)] transition-colors">
-              Seguros
-              <ChevronDown className={`h-4 w-4 transition-transform ${segurosOpen ? 'rotate-180' : ''}`} />
+              Producto
+              <ChevronDown className={`h-4 w-4 transition-transform ${productoOpen ? 'rotate-180' : ''}`} />
             </button>
 
             <AnimatePresence>
-              {segurosOpen && (
+              {productoOpen && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute left-0 top-full mt-2 w-[480px] rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white"
+                  transition={{ duration: 0.3, ease: EASING }}
+                  className="absolute left-0 top-full mt-2 w-[600px] rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white shadow-[var(--elevation-2)]"
                 >
-                  <div className="p-4">
-                    <div className="mb-3 flex items-center justify-between">
-                      <h3 className="text-sm font-semibold text-[var(--text-primary)]">Tipos de Seguros</h3>
-                      <Link
-                        href="/seguros"
-                        className="text-xs font-medium text-[var(--text-primary)] hover:text-[var(--text-secondary)]"
-                      >
-                        Ver todos →
-                      </Link>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      {insuranceProducts.map((product) => (
-                        <Link
-                          key={product.slug}
-                          href={`/seguros/${product.slug}`}
-                          className="group rounded-[var(--radius-md)] p-3 hover:bg-[var(--dark-blue-surface)] transition-colors"
-                        >
-                          <div className="flex items-start gap-2">
-                            <span className="text-2xl flex-shrink-0">{product.icon}</span>
-                            <div>
-                              <p className="text-sm font-semibold text-[var(--text-primary)]">
-                                {product.name}
-                              </p>
-                              <p className="text-xs text-[var(--text-secondary)]">{product.description}</p>
-                            </div>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
+                  <div className="grid grid-cols-2 gap-8 p-6">
+                    {productoMenu.sections.map((section) => (
+                      <div key={section.title}>
+                        <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)] mb-4">
+                          {section.title}
+                        </h3>
+                        <div className="space-y-1">
+                          {section.items.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className="group flex items-start gap-3 rounded-[var(--radius-md)] p-3 hover:bg-[var(--surface-hover)] transition-colors"
+                            >
+                              <item.icon className="h-5 w-5 flex-shrink-0 text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors" />
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm font-semibold text-[var(--text-primary)] mb-0.5">
+                                  {item.label}
+                                </p>
+                                <p className="text-xs text-[var(--text-secondary)]">
+                                  {item.description}
+                                </p>
+                                {item.logos && (
+                                  <div className="flex items-center gap-2 mt-1">
+                                    {item.logos.map((logo) => (
+                                      <span key={logo} className="text-[10px] font-medium text-[var(--text-muted)]">
+                                        {logo}
+                                      </span>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="border-t border-[var(--border-subtle)] px-6 py-3">
+                    <Link
+                      href={productoMenu.footer.href}
+                      className="flex items-center gap-2 text-sm font-medium text-[var(--text-primary)] hover:text-[var(--text-secondary)] transition-colors"
+                    >
+                      {productoMenu.footer.label}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          {/* Préstamos Dropdown */}
+          {/* Soluciones Dropdown */}
           <div
             className="relative"
-            onMouseEnter={() => setPrestamosOpen(true)}
-            onMouseLeave={() => setPrestamosOpen(false)}
+            onMouseEnter={() => setSolucionesOpen(true)}
+            onMouseLeave={() => setSolucionesOpen(false)}
           >
             <button className="flex items-center gap-1 text-sm font-medium text-[var(--text-primary)] hover:text-[var(--text-secondary)] transition-colors">
-              Préstamos
-              <ChevronDown className={`h-4 w-4 transition-transform ${prestamosOpen ? 'rotate-180' : ''}`} />
+              Soluciones
+              <ChevronDown className={`h-4 w-4 transition-transform ${solucionesOpen ? 'rotate-180' : ''}`} />
             </button>
 
             <AnimatePresence>
-              {prestamosOpen && (
+              {solucionesOpen && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute left-0 top-full mt-2 w-[400px] rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white"
+                  transition={{ duration: 0.3, ease: EASING }}
+                  className="absolute left-0 top-full mt-2 w-[560px] rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white shadow-[var(--elevation-2)]"
                 >
-                  <div className="p-4">
-                    <div className="mb-3 flex items-center justify-between">
-                      <h3 className="text-sm font-semibold text-[var(--text-primary)]">Tipos de Préstamos</h3>
-                      <Link
-                        href="/prestamos"
-                        className="text-xs font-medium text-[var(--text-primary)] hover:text-[var(--text-secondary)]"
-                      >
-                        Ver todos →
-                      </Link>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      {loanProducts.map((product) => (
-                        <Link
-                          key={product.slug}
-                          href={`/prestamos/${product.slug}`}
-                          className="group rounded-[var(--radius-md)] p-3 hover:bg-[var(--dark-blue-surface)] transition-colors"
-                        >
-                          <div className="flex items-start gap-2">
-                            <span className="text-2xl flex-shrink-0">{product.icon}</span>
-                            <div>
-                              <p className="text-sm font-semibold text-[var(--text-primary)]">
-                                {product.name}
-                              </p>
-                              <p className="text-xs text-[var(--text-secondary)]">{product.description}</p>
-                            </div>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
+                  <div className="grid grid-cols-2 gap-8 p-6">
+                    {solucionesMenu.sections.map((section) => (
+                      <div key={section.title}>
+                        <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)] mb-4">
+                          {section.title}
+                        </h3>
+                        <div className="space-y-1">
+                          {section.items.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className="group flex items-start gap-3 rounded-[var(--radius-md)] p-3 hover:bg-[var(--surface-hover)] transition-colors"
+                            >
+                              <item.icon className="h-5 w-5 flex-shrink-0 text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors" />
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm font-semibold text-[var(--text-primary)] mb-0.5">
+                                  {item.label}
+                                </p>
+                                <p className="text-xs text-[var(--text-secondary)]">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          {/* Aseguradoras Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setAseguradorasOpen(true)}
-            onMouseLeave={() => setAseguradorasOpen(false)}
-          >
-            <button className="flex items-center gap-1 text-sm font-medium text-[var(--text-primary)] hover:text-[var(--text-secondary)] transition-colors">
-              Aseguradoras
-              <ChevronDown className={`h-4 w-4 transition-transform ${aseguradorasOpen ? 'rotate-180' : ''}`} />
-            </button>
-
-            <AnimatePresence>
-              {aseguradorasOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute left-0 top-full mt-2 w-72 rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white"
-                >
-                  <div className="p-4">
-                    <div className="mb-3">
-                      <h3 className="text-sm font-semibold text-[var(--text-primary)]">Aseguradoras en Panamá</h3>
-                    </div>
-                    <div className="space-y-1">
-                      {topCompanies.map((company) => (
-                        <Link
-                          key={company.slug}
-                          href={`/seguros/aseguradoras/${company.slug}`}
-                          className="group flex items-center justify-between rounded-[var(--radius-md)] p-3 hover:bg-[var(--dark-blue-surface)] transition-colors"
-                        >
-                          <div>
-                            <p className="text-sm font-semibold text-[var(--text-primary)]">
-                              {company.name}
-                            </p>
-                            <p className="text-xs text-[var(--text-secondary)]">{company.description}</p>
-                          </div>
-                          <span className="text-[var(--text-muted)] group-hover:text-[var(--text-primary)]">→</span>
-                        </Link>
-                      ))}
-                      <Link
-                        href="/seguros/aseguradoras"
-                        className="mt-2 flex items-center justify-center rounded-[var(--radius-button)] bg-[var(--dark-blue)] p-3 text-sm font-semibold text-white hover:bg-[var(--dark-blue-light)] transition-colors"
-                      >
-                        Ver todas las aseguradoras →
-                      </Link>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {/* Other Links */}
-          <Link
-            href="/blog"
-            className="text-sm font-medium text-[var(--text-primary)] hover:text-[var(--text-secondary)] transition-colors"
-          >
-            Blog
-          </Link>
-
-          <Link
-            href="/para-brokers"
-            className="text-sm font-medium text-[var(--text-primary)] hover:text-[var(--text-secondary)] transition-colors"
-          >
-            Para Brokers
-          </Link>
-
+          {/* Precios - Direct Link */}
           <Link
             href="/precios"
-            className="text-sm font-medium text-[#111827] hover:text-[#6b7280] transition-colors"
+            className="text-sm font-medium text-[var(--text-primary)] hover:text-[var(--text-secondary)] transition-colors"
           >
             Precios
           </Link>
 
-          <Link
-            href="/app"
-            className="text-sm font-medium text-[#111827] hover:text-[#6b7280] transition-colors"
+          {/* Recursos Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setRecursosOpen(true)}
+            onMouseLeave={() => setRecursosOpen(false)}
           >
-            App
-          </Link>
+            <button className="flex items-center gap-1 text-sm font-medium text-[var(--text-primary)] hover:text-[var(--text-secondary)] transition-colors">
+              Recursos
+              <ChevronDown className={`h-4 w-4 transition-transform ${recursosOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {recursosOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3, ease: EASING }}
+                  className="absolute left-0 top-full mt-2 w-[520px] rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white shadow-[var(--elevation-2)]"
+                >
+                  <div className="grid grid-cols-2 gap-8 p-6">
+                    {recursosMenu.sections.map((section) => (
+                      <div key={section.title}>
+                        <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)] mb-4">
+                          {section.title}
+                        </h3>
+                        <div className="space-y-1">
+                          {section.items.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className="group flex items-start gap-3 rounded-[var(--radius-md)] p-3 hover:bg-[var(--surface-hover)] transition-colors"
+                            >
+                              <item.icon className="h-5 w-5 flex-shrink-0 text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors" />
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm font-semibold text-[var(--text-primary)] mb-0.5">
+                                  {item.label}
+                                </p>
+                                <p className="text-xs text-[var(--text-secondary)]">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
-        {/* Right Side - Login & CTA & Mobile Menu */}
-        <div className="flex items-center gap-3">
+        {/* Right Side - Login & Demo CTA */}
+        <div className="flex items-center gap-4">
           {/* Login Link */}
           <Link
             href="/login"
@@ -260,16 +420,16 @@ export function SEONavbar() {
           {/* Demo CTA */}
           <Link
             href="/demo"
-            className="hidden items-center gap-2 rounded-[var(--radius-button)] bg-[var(--dark-blue)] px-4 py-2 text-sm font-semibold text-white hover:bg-[var(--dark-blue-light)] transition-colors sm:flex"
+            className="hidden items-center gap-2 rounded-[var(--radius-button)] bg-[var(--action-primary-bg)] px-4 py-2 text-sm font-semibold text-[var(--action-primary-fg)] hover:bg-[var(--action-primary-hover)] border border-[rgba(202,255,4,0.40)] transition-colors lg:flex"
           >
-            <Phone className="h-4 w-4" />
-            <span className="hidden md:inline">Solicitar Demo</span>
+            <span>Solicitar Demo</span>
+            <ArrowRight className="h-4 w-4" />
           </Link>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex items-center justify-center rounded-[var(--radius-md)] p-2 text-[var(--text-primary)] hover:bg-[var(--surface-panel)] lg:hidden"
+            className="flex items-center justify-center rounded-[var(--radius-md)] p-2 text-[var(--text-primary)] hover:bg-[var(--surface-hover)] lg:hidden"
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -283,117 +443,96 @@ export function SEONavbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="border-t border-[var(--border-default)] bg-white lg:hidden"
+            transition={{ duration: 0.3, ease: EASING }}
+            className="border-t border-[var(--border-default)] bg-white lg:hidden overflow-hidden"
           >
-            <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
-              {/* Mobile Seguros */}
-              <div className="mb-4">
-                <Link
-                  href="/seguros"
-                  className="mb-2 flex items-center justify-between text-base font-semibold text-[var(--text-primary)]"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Seguros
-                  <span className="text-sm text-[var(--text-secondary)]">Ver todos →</span>
-                </Link>
-                <div className="grid grid-cols-2 gap-2 pl-4">
-                  {insuranceProducts.slice(0, 6).map((product) => (
-                    <Link
-                      key={product.slug}
-                      href={`/seguros/${product.slug}`}
-                      className="flex items-center gap-2 rounded-[var(--radius-md)] p-2 text-sm text-[var(--text-secondary)] hover:bg-[var(--dark-blue-surface)] hover:text-[var(--text-primary)]"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      <span className="text-lg">{product.icon}</span>
-                      <span>{product.name}</span>
-                    </Link>
+            <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+              {/* Mobile Producto */}
+              <div className="mb-6">
+                <h3 className="text-sm font-bold text-[var(--text-primary)] mb-3">Producto</h3>
+                <div className="space-y-2">
+                  {productoMenu.sections.map((section) => (
+                    <div key={section.title}>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)] mb-2 px-3">
+                        {section.title}
+                      </p>
+                      {section.items.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="flex items-center gap-3 rounded-[var(--radius-md)] p-3 text-sm text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          <item.icon className="h-5 w-5 flex-shrink-0" />
+                          <span>{item.label}</span>
+                        </Link>
+                      ))}
+                    </div>
                   ))}
                 </div>
               </div>
 
-              {/* Mobile Préstamos */}
-              <div className="mb-4">
-                <Link
-                  href="/prestamos"
-                  className="mb-2 flex items-center justify-between text-base font-semibold text-[var(--text-primary)]"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Préstamos
-                  <span className="text-sm text-[var(--text-secondary)]">Ver todos →</span>
-                </Link>
-                <div className="grid grid-cols-2 gap-2 pl-4">
-                  {loanProducts.map((product) => (
-                    <Link
-                      key={product.slug}
-                      href={`/prestamos/${product.slug}`}
-                      className="flex items-center gap-2 rounded-[var(--radius-md)] p-2 text-sm text-[var(--text-secondary)] hover:bg-[var(--dark-blue-surface)] hover:text-[var(--text-primary)]"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      <span className="text-lg">{product.icon}</span>
-                      <span>{product.name}</span>
-                    </Link>
+              {/* Mobile Soluciones */}
+              <div className="mb-6">
+                <h3 className="text-sm font-bold text-[var(--text-primary)] mb-3">Soluciones</h3>
+                <div className="space-y-2">
+                  {solucionesMenu.sections.map((section) => (
+                    <div key={section.title}>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)] mb-2 px-3">
+                        {section.title}
+                      </p>
+                      {section.items.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="flex items-center gap-3 rounded-[var(--radius-md)] p-3 text-sm text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          <item.icon className="h-5 w-5 flex-shrink-0" />
+                          <span>{item.label}</span>
+                        </Link>
+                      ))}
+                    </div>
                   ))}
                 </div>
               </div>
 
-              {/* Mobile Aseguradoras */}
-              <div className="mb-4">
-                <Link
-                  href="/seguros/aseguradoras"
-                  className="mb-2 flex items-center justify-between text-base font-semibold text-[var(--text-primary)]"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Aseguradoras
-                  <span className="text-sm text-[var(--text-secondary)]">Ver todas →</span>
-                </Link>
-                <div className="space-y-1 pl-4">
-                  {topCompanies.map((company) => (
-                    <Link
-                      key={company.slug}
-                      href={`/seguros/aseguradoras/${company.slug}`}
-                      className="block rounded-[var(--radius-md)] p-2 text-sm text-[var(--text-secondary)] hover:bg-[var(--dark-blue-surface)] hover:text-[var(--text-primary)]"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {company.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Other Mobile Links */}
-              <div className="space-y-2 border-t border-[var(--border-default)] pt-4">
-                <Link
-                  href="/blog"
-                  className="block rounded-[var(--radius-md)] p-2 text-base font-medium text-[var(--text-secondary)] hover:bg-[var(--dark-blue-surface)] hover:text-[var(--text-primary)]"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="/para-brokers"
-                  className="block rounded-[var(--radius-md)] p-2 text-base font-medium text-[var(--text-secondary)] hover:bg-[var(--dark-blue-surface)] hover:text-[var(--text-primary)]"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Para Brokers
-                </Link>
+              {/* Mobile Other Links */}
+              <div className="space-y-2 border-t border-[var(--border-default)] pt-4 mb-4">
                 <Link
                   href="/precios"
-                  className="block rounded-[12px] p-2 text-base font-medium text-[#6b7280] hover:bg-[rgba(202,255,4,0.15)] hover:text-[#111827]"
+                  className="block rounded-[var(--radius-md)] p-3 text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
                   onClick={() => setMobileOpen(false)}
                 >
                   Precios
                 </Link>
-                <Link
-                  href="/app"
-                  className="block rounded-[12px] p-2 text-base font-medium text-[#6b7280] hover:bg-[rgba(202,255,4,0.15)] hover:text-[#111827]"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  App
-                </Link>
+
+                {/* Mobile Recursos */}
+                <div>
+                  <h3 className="text-sm font-bold text-[var(--text-primary)] mb-2 px-3">Recursos</h3>
+                  {recursosMenu.sections.map((section) => (
+                    <div key={section.title}>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)] mb-2 px-3">
+                        {section.title}
+                      </p>
+                      {section.items.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="flex items-center gap-3 rounded-[var(--radius-md)] p-3 text-sm text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          <item.icon className="h-5 w-5 flex-shrink-0" />
+                          <span>{item.label}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+
                 <Link
                   href="/login"
-                  className="block rounded-[var(--radius-md)] p-2 text-base font-medium text-[var(--text-secondary)] hover:bg-[var(--dark-blue-surface)] hover:text-[var(--text-primary)]"
+                  className="block rounded-[var(--radius-md)] p-3 text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
                   onClick={() => setMobileOpen(false)}
                 >
                   Iniciar Sesión
@@ -403,11 +542,11 @@ export function SEONavbar() {
               {/* Mobile CTA */}
               <Link
                 href="/demo"
-                className="mt-4 flex items-center justify-center gap-2 rounded-[var(--radius-button)] bg-[var(--dark-blue)] px-4 py-3 text-base font-semibold text-white hover:bg-[var(--dark-blue-light)] transition-colors"
+                className="flex items-center justify-center gap-2 rounded-[var(--radius-button)] bg-[var(--action-primary-bg)] px-4 py-3 text-sm font-semibold text-[var(--action-primary-fg)] hover:bg-[var(--action-primary-hover)] border border-[rgba(202,255,4,0.40)] transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
-                <Phone className="h-5 w-5" />
-                Solicitar Demo
+                <span>Solicitar Demo</span>
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </motion.div>

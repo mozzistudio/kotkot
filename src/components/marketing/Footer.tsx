@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 interface FooterLinkGroup {
   title: string;
@@ -7,31 +8,35 @@ interface FooterLinkGroup {
 
 const linkGroups: FooterLinkGroup[] = [
   {
-    title: 'Seguros',
-    links: [
-      { label: 'Seguro de Auto', href: '/seguros/auto' },
-      { label: 'Seguro de Salud', href: '/seguros/salud' },
-      { label: 'Seguro de Vida', href: '/seguros/vida' },
-      { label: 'Seguro de Hogar', href: '/seguros/hogar' },
-      { label: 'Ver Todas', href: '/seguros' },
-    ],
-  },
-  {
-    title: 'Préstamos',
-    links: [
-      { label: 'Préstamo Personal', href: '/prestamos/personal' },
-      { label: 'Préstamo Hipotecario', href: '/prestamos/hipotecario' },
-      { label: 'Préstamo de Auto', href: '/prestamos/auto' },
-      { label: 'Ver Todos', href: '/prestamos' },
-    ],
-  },
-  {
     title: 'Producto',
     links: [
-      { label: 'Funcionalidades', href: '#funcionalidades' },
-      { label: 'Precios', href: '#precios' },
-      { label: 'Para Brokers', href: '/para-brokers' },
+      { label: 'Agente WhatsApp', href: '/producto/agente-whatsapp' },
+      { label: 'CRM', href: '/producto/crm' },
+      { label: 'Dashboard', href: '/producto/dashboard' },
+      { label: 'Cobros', href: '/producto/cobros' },
+      { label: 'Integraciones', href: '/integraciones' },
+    ],
+  },
+  {
+    title: 'Soluciones',
+    links: [
+      { label: 'Automatizar cotizaciones', href: '/soluciones/automatizar-cotizaciones' },
+      { label: 'Vender por WhatsApp', href: '/soluciones/vender-por-whatsapp' },
+      { label: 'Gestionar clientes', href: '/soluciones/gestionar-clientes' },
+      { label: 'Cobrar automáticamente', href: '/soluciones/cobrar-automaticamente' },
+      { label: 'Escalar sin equipo', href: '/soluciones/escalar-sin-equipo' },
+      { label: 'Multi-producto', href: '/soluciones/multi-producto' },
+    ],
+  },
+  {
+    title: 'Recursos',
+    links: [
       { label: 'Blog', href: '/blog' },
+      { label: 'Guías', href: '/recursos/guias' },
+      { label: 'Glosario', href: '/recursos/glosario' },
+      { label: 'Casos de éxito', href: '/casos-de-exito' },
+      { label: 'Calculadora ROI', href: '/recursos/calculadora-roi' },
+      { label: 'Comparativas', href: '/comparativas' },
     ],
   },
   {
@@ -39,7 +44,8 @@ const linkGroups: FooterLinkGroup[] = [
     links: [
       { label: 'Nosotros', href: '/nosotros' },
       { label: 'Contacto', href: '/contacto' },
-      { label: 'Casos de Éxito', href: '/casos-de-exito' },
+      { label: 'Partners', href: '/partners' },
+      { label: 'Precios', href: '/precios' },
     ],
   },
 ];
@@ -49,9 +55,9 @@ export function Footer() {
     <footer className="relative bg-[var(--dark-blue)]">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
-          {/* Brand Column - Spans 2 columns */}
-          <div className="col-span-2">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-6">
+          {/* Brand Column - Spans 2 columns on desktop */}
+          <div className="sm:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2.5">
               <div className="flex h-9 w-9 items-center justify-center rounded-[var(--radius-button)] bg-[var(--accent)]">
                 <svg viewBox="0 0 32 32" fill="none" className="h-[18px] w-[18px]">
@@ -67,12 +73,13 @@ export function Footer() {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
               Plataforma de automatización para corredores de seguros y préstamos en Latinoamérica.
             </p>
-            <div className="mt-6 flex items-center gap-4">
+            <div className="mt-6">
               <Link
                 href="/demo"
-                className="text-sm font-semibold text-[var(--accent)] hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 rounded-[var(--radius-button)] bg-[var(--accent)] px-4 py-2.5 text-sm font-semibold text-[var(--text-primary)] hover:bg-[var(--accent-hover)] border border-[rgba(202,255,4,0.40)] transition-colors"
               >
-                Solicitar Demo →
+                <span>Solicitar Demo</span>
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
@@ -102,6 +109,9 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 border-t border-white/10 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <p className="text-sm text-white/40">
+              © 2026 kotkot.ai
+            </p>
             <div className="flex items-center gap-6">
               <Link
                 href="/politica-privacidad"
@@ -122,9 +132,6 @@ export function Footer() {
                 Contacto
               </Link>
             </div>
-            <p className="text-sm text-white/40">
-              © 2026 kotkot.ai. Todos los derechos reservados.
-            </p>
           </div>
         </div>
       </div>
