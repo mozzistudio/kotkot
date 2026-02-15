@@ -36,6 +36,17 @@ export function InsurersLogos() {
   return (
     <section className="relative overflow-hidden px-4 py-16 sm:py-20">
       <div className="mx-auto max-w-6xl">
+        {/* --- Header --- */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
+          className="mb-12 text-center font-heading text-xl font-semibold text-[var(--text-secondary)]"
+        >
+          Conectado con las principales aseguradoras y bancos de Latinoamérica
+        </motion.p>
+
         {/* --- Insurers Section --- */}
         <div className="mb-16">
           <motion.p
@@ -43,9 +54,9 @@ export function InsurersLogos() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mb-10 text-center font-heading text-lg font-semibold text-[#6b7280]"
+            className="mb-10 text-center font-heading text-base font-semibold text-[#6b7280]"
           >
-            Aseguradoras Integradas
+            Aseguradoras
           </motion.p>
 
           {/* --- Marquee --- */}
@@ -98,9 +109,9 @@ export function InsurersLogos() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mb-10 text-center font-heading text-lg font-semibold text-[#6b7280]"
+            className="mb-10 text-center font-heading text-base font-semibold text-[#6b7280]"
           >
-            Bancos y Financieras Integradas
+            Bancos y Financieras
           </motion.p>
 
           {/* --- Marquee --- */}

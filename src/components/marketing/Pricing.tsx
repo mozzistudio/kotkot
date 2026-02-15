@@ -103,7 +103,7 @@ export function Pricing() {
             <span className="text-[var(--text-link)]">brokers financieros</span>
           </h2>
           <p className="mt-6 text-xl text-[var(--text-secondary)] font-medium">
-            Vende seguros y préstamos con la misma plataforma. Sin comisiones ocultas.
+            Vende seguros y préstamos con la misma plataforma. Sin comisiones ocultas
           </p>
         </motion.div>
 
@@ -195,15 +195,24 @@ export function Pricing() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-10 flex flex-col items-center gap-2 text-center text-sm text-[#6b7280]"
+          className="mt-10 flex flex-col items-center gap-3 text-center"
         >
-          <p className="font-semibold text-[#111827]">
-            El módulo de préstamos está incluido sin costo adicional en planes Pro y Enterprise
-          </p>
-          <p>+$100/mes por número de WhatsApp adicional</p>
-          <p>
-            Tarifas de mensajes de Meta se cobran por separado, al costo
-          </p>
+          <a
+            href="/recursos/calculadora-roi"
+            className="inline-flex items-center gap-2 text-base font-semibold text-[var(--dark-blue)] underline underline-offset-4 decoration-2 hover:opacity-70 transition-opacity"
+          >
+            ¿No estás seguro? Calcula tu ROI
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <div className="flex flex-col gap-2 text-sm text-[var(--text-muted)]">
+            <p className="font-semibold text-[var(--text-primary)]">
+              El módulo de préstamos está incluido sin costo adicional en planes Pro y Enterprise
+            </p>
+            <p>+$100/mes por número de WhatsApp adicional</p>
+            <p>Tarifas de mensajes de Meta se cobran por separado, al costo</p>
+          </div>
         </motion.div>
       </div>
     </section>

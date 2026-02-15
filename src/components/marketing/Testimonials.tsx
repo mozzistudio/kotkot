@@ -17,9 +17,9 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote:
-      'Kotkot transformó mi correduría. Ahora vendo seguros mientras duermo.',
+      'Mis ventas aumentaron 40% con kotkot. El bot cotiza seguros mientras yo duermo y los clientes reciben respuesta inmediata.',
     name: 'Carlos M.',
-    title: 'Corredor',
+    title: 'Corredor de Seguros',
     country: 'Panamá',
     flag: '\u{1F1F5}\u{1F1E6}',
     initials: 'CM',
@@ -27,9 +27,9 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      'Mis clientes aman poder cotizar por WhatsApp. Las ventas aumentaron 40%.',
+      'Ahorro 3 horas diarias en cotizaciones manuales. Ahora puedo enfocarme en cerrar más ventas y crecer mi cartera.',
     name: 'María G.',
-    title: 'Directora',
+    title: 'Directora de Correduría',
     country: 'Colombia',
     flag: '\u{1F1E8}\u{1F1F4}',
     initials: 'MG',
@@ -37,9 +37,9 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      'El mejor ROI en tecnología que he hecho para mi negocio de seguros.',
+      'El mejor ROI para mi negocio financiero. Recuperé la inversión en menos de 2 meses vendiendo más seguros y préstamos.',
     name: 'Roberto L.',
-    title: 'CEO',
+    title: 'CEO Correduría',
     country: 'México',
     flag: '\u{1F1F2}\u{1F1FD}',
     initials: 'RL',
@@ -105,8 +105,7 @@ export function Testimonials() {
           className="mx-auto mb-16 max-w-2xl text-center"
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
-            Lo que dicen nuestros{' '}
-            <span className="text-[var(--text-primary)]">corredores</span>
+            Brokers que ya automatizaron su negocio
           </h2>
         </motion.div>
 
