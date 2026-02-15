@@ -265,7 +265,7 @@ export function SEONavbar() {
             className="hidden items-center gap-2 rounded-[var(--radius-button)] bg-[var(--dark-blue)] px-4 py-2 text-sm font-semibold text-white hover:bg-[var(--dark-blue-light)] transition-colors sm:flex"
           >
             <Phone className="h-4 w-4" />
-            <span className="hidden md:inline">Cotizar</span>
+            <span className="hidden md:inline">Solicitar Demo</span>
           </a>
 
           {/* Mobile Menu Button */}
@@ -410,7 +410,7 @@ export function SEONavbar() {
                 className="mt-4 flex items-center justify-center gap-2 rounded-[var(--radius-button)] bg-[var(--dark-blue)] px-4 py-3 text-base font-semibold text-white hover:bg-[var(--dark-blue-light)] transition-colors"
               >
                 <Phone className="h-5 w-5" />
-                Cotizar por WhatsApp
+                Solicitar Demo
               </a>
             </div>
           </motion.div>

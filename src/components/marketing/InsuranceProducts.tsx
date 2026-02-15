@@ -114,12 +114,11 @@ export function InsuranceProducts() {
             10 Tipos de Seguros Disponibles
           </div>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
-            Cotiza <span className="text-[var(--text-primary)]">Cualquier Seguro</span> en
-            Minutos
+            Productos que tu <span className="text-[var(--text-primary)]">Bot Puede Vender</span>
           </h2>
           <p className="mt-4 text-lg text-[var(--text-secondary)]">
-            Desde seguro de auto hasta planes de ahorro. Compara 10+ aseguradoras y
-            encuentra la mejor opción para ti.
+            Configura tu agente IA para vender estos productos automáticamente.
+            Compara 10+ aseguradoras y ofrece la mejor opción a tus clientes.
           </p>
         </motion.div>
 
@@ -167,7 +166,7 @@ export function InsuranceProducts() {
 
                 {/* CTA */}
                 <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-[var(--text-primary)] group-hover:gap-2 transition-all">
-                  Comparar precios
+                  Configurar
                   <span className="transition-transform group-hover:translate-x-1">
                     →
                   </span>
