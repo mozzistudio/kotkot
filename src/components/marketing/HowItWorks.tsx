@@ -36,7 +36,7 @@ const steps: Step[] = [
     number: 4,
     icon: Rocket,
     title: '¡Listo!',
-    description: 'Tu agente IA está vendiendo seguros 24/7 en WhatsApp.',
+    description: 'Tu agente IA está vendiendo seguros y préstamos 24/7.',
   },
 ];
 

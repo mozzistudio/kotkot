@@ -257,16 +257,14 @@ export function SEONavbar() {
             Iniciar Sesión
           </Link>
 
-          {/* WhatsApp CTA */}
-          <a
-            href="https://wa.me/50760000000?text=Hola%2C%20quiero%20cotizar%20un%20seguro"
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Demo CTA */}
+          <Link
+            href="/demo"
             className="hidden items-center gap-2 rounded-[var(--radius-button)] bg-[var(--dark-blue)] px-4 py-2 text-sm font-semibold text-white hover:bg-[var(--dark-blue-light)] transition-colors sm:flex"
           >
             <Phone className="h-4 w-4" />
             <span className="hidden md:inline">Solicitar Demo</span>
-          </a>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
@@ -403,15 +401,14 @@ export function SEONavbar() {
               </div>
 
               {/* Mobile CTA */}
-              <a
-                href="https://wa.me/50760000000?text=Hola%2C%20quiero%20cotizar%20un%20seguro"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/demo"
                 className="mt-4 flex items-center justify-center gap-2 rounded-[var(--radius-button)] bg-[var(--dark-blue)] px-4 py-3 text-base font-semibold text-white hover:bg-[var(--dark-blue-light)] transition-colors"
+                onClick={() => setMobileOpen(false)}
               >
                 <Phone className="h-5 w-5" />
                 Solicitar Demo
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

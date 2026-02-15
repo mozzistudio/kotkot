@@ -79,12 +79,11 @@ export function LoanProducts() {
             5 Tipos de Préstamos Disponibles
           </div>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl lg:text-5xl">
-            Compara <span className="text-[#059669]">Préstamos</span> al
-            Instante
+            Préstamos que tu <span className="text-[#059669]">Bot Puede Ofrecer</span>
           </h2>
           <p className="mt-4 text-lg text-[#6b7280]">
-            Desde préstamos personales hasta hipotecarios. Compara 15+ bancos y
-            obtén aprobación en minutos.
+            Activa préstamos en tu agente IA y genera comisiones automáticamente.
+            Compara 15+ bancos y obtén aprobación en minutos.
           </p>
         </motion.div>
 

@@ -49,12 +49,12 @@ const avatars = [
 ];
 
 const words = [
-  'la venta de Seguro de Auto',
-  'la venta de Préstamo Hipotecario',
-  'la venta de Seguro de Salud',
-  'la venta de Préstamo Personal',
-  'la venta de Seguro de Vida',
-  'la venta de Seguro de Hogar',
+  'Seguro de Auto',
+  'Préstamo Hipotecario',
+  'Seguro de Salud',
+  'Préstamo Personal',
+  'Seguro de Vida',
+  'Seguro Empresarial',
 ];
 
 export function Hero() {
@@ -64,8 +64,7 @@ export function Hero() {
 
   useEffect(() => {
     const currentWord = words[currentWordIndex];
-    const typingSpeed = isDeleting ? 50 : 100;
-    const pauseDuration = isDeleting ? 500 : 2000;
+    const typingSpeed = isDeleting ? 40 : 80;
 
     const timeout = setTimeout(() => {
       if (!isDeleting) {
@@ -74,7 +73,7 @@ export function Hero() {
           setCurrentText(currentWord.slice(0, currentText.length + 1));
         } else {
           // Finished typing, pause then start deleting
-          setTimeout(() => setIsDeleting(true), pauseDuration);
+          setTimeout(() => setIsDeleting(true), 2000);
         }
       } else {
         // Deleting
@@ -117,10 +116,10 @@ export function Hero() {
             variants={itemVariants}
             className="mt-6 font-heading text-[44px] font-extrabold leading-[1.05] tracking-[-0.03em] text-[var(--dark-blue)] sm:text-[52px] lg:text-[56px] xl:text-[64px]"
           >
-            Automatiza{' '}
+            Automatiza la venta de{' '}
             <span className="inline-block min-w-[300px] text-left">
               <span className="text-[var(--dark-blue)]">{currentText}</span>
-              <span className="animate-pulse">|</span>
+              <span className="cursor-blink">|</span>
             </span>
             <br className="hidden sm:block" />
             {' '}por{' '}
@@ -140,9 +139,9 @@ export function Hero() {
             variants={itemVariants}
             className="mt-5 max-w-xl text-[18px] leading-relaxed text-[var(--text-secondary)] sm:text-xl"
           >
-            Tu bot IA cotiza, compara y cierra ventas de seguros y préstamos{' '}
+            Tu bot IA cotiza, compara y cierra ventas{' '}
             <span className="font-semibold text-[var(--dark-blue)]">24/7</span>.{' '}
-            Tú te enfocas en crecer tu cartera.
+            Tú creces tu cartera.
           </motion.p>
 
           {/* CTA */}
