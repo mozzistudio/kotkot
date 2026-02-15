@@ -220,6 +220,97 @@ export default function IntegracionesPage() {
         ctaHref="/demo"
       />
 
+      {/* Category Cards */}
+      <section className="px-4 py-8 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-6 sm:grid-cols-3">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 0.1,
+              }}
+            >
+              <Link href="/integraciones/aseguradoras">
+                <div className="group h-full rounded-[var(--radius-card)] border-2 border-[var(--border-default)] bg-white p-6 transition-all duration-200 hover:border-[var(--accent)] hover:shadow-lg">
+                  <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+                    <Building2 className="h-7 w-7" />
+                  </div>
+                  <h3 className="mb-2 font-heading text-xl font-bold text-[var(--text-primary)]">
+                    Aseguradoras
+                  </h3>
+                  <p className="mb-4 text-sm text-[var(--text-secondary)]">
+                    25+ aseguradoras conectadas
+                  </p>
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[var(--dark-blue)] transition-all group-hover:gap-3">
+                    Ver todas
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 0.2,
+              }}
+            >
+              <Link href="/integraciones/bancos">
+                <div className="group h-full rounded-[var(--radius-card)] border-2 border-[var(--border-default)] bg-white p-6 transition-all duration-200 hover:border-[var(--accent)] hover:shadow-lg">
+                  <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
+                    <Landmark className="h-7 w-7" />
+                  </div>
+                  <h3 className="mb-2 font-heading text-xl font-bold text-[var(--text-primary)]">
+                    Bancos
+                  </h3>
+                  <p className="mb-4 text-sm text-[var(--text-secondary)]">
+                    15+ bancos y financieras
+                  </p>
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[var(--dark-blue)] transition-all group-hover:gap-3">
+                    Ver todos
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 0.3,
+              }}
+            >
+              <Link href="/integraciones/pagos">
+                <div className="group h-full rounded-[var(--radius-card)] border-2 border-[var(--border-default)] bg-white p-6 transition-all duration-200 hover:border-[var(--accent)] hover:shadow-lg">
+                  <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-purple-50 text-purple-700">
+                    <CreditCard className="h-7 w-7" />
+                  </div>
+                  <h3 className="mb-2 font-heading text-xl font-bold text-[var(--text-primary)]">
+                    Pagos
+                  </h3>
+                  <p className="mb-4 text-sm text-[var(--text-secondary)]">
+                    Yappy, Stripe y más
+                  </p>
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[var(--dark-blue)] transition-all group-hover:gap-3">
+                    Ver todos
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Filter Bar */}
       <section className="px-4 py-8 sm:px-6">
         <div className="mx-auto max-w-6xl">
