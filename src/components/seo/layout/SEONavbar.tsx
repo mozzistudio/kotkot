@@ -71,21 +71,21 @@ const productoMenu = {
         {
           icon: Building2,
           label: 'Aseguradoras',
-          href: '/integraciones',
+          href: '/integraciones/aseguradoras',
           description: '25+ aseguradoras conectadas',
           logos: ['ASSA', 'MAPFRE', 'SURA']
         },
         {
           icon: Landmark,
           label: 'Bancos',
-          href: '/integraciones',
+          href: '/integraciones/bancos',
           description: '15+ bancos y financieras',
           logos: ['BAC', 'Banco General']
         },
         {
           icon: Wallet,
           label: 'Pagos',
-          href: '/integraciones',
+          href: '/integraciones/pagos',
           description: 'Yappy, Stripe y más'
         }
       ]
