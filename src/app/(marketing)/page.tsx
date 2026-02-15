@@ -6,6 +6,7 @@ import { Features } from '@/components/marketing/Features';
 import { HowItWorks } from '@/components/marketing/HowItWorks';
 import { Testimonials } from '@/components/marketing/Testimonials';
 import { Pricing } from '@/components/marketing/Pricing';
+import { PartnersTeaser } from '@/components/marketing/PartnersTeaser';
 import { CTASection } from '@/components/marketing/CTASection';
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function HomePage() {
       <Features />
       <HowItWorks />
       <Testimonials />
+      <PartnersTeaser />
       <Pricing />
       <CTASection />
     </>
