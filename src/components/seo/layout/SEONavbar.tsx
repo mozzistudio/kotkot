@@ -248,32 +248,60 @@ export function SEONavbar() {
                           {section.title}
                         </h3>
                         <div className="space-y-1">
-                          {section.items.map((item) => (
-                            <Link
-                              key={item.href}
-                              href={item.href}
-                              className="group flex items-start gap-3 rounded-[var(--radius-md)] p-3 hover:bg-[var(--surface-hover)] transition-colors"
-                            >
-                              <item.icon className="h-5 w-5 flex-shrink-0 text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors" />
-                              <div className="flex-1 min-w-0">
-                                <p className="text-sm font-semibold text-[var(--text-primary)] mb-0.5">
-                                  {item.label}
-                                </p>
-                                <p className="text-xs text-[var(--text-secondary)]">
-                                  {item.description}
-                                </p>
-                                {item.logos && (
-                                  <div className="flex items-center gap-2 mt-1">
-                                    {item.logos.map((logo) => (
-                                      <span key={logo} className="text-[10px] font-medium text-[var(--text-muted)]">
-                                        {logo}
-                                      </span>
-                                    ))}
+                          {section.items.map((item) => {
+                            // For integration items, only make the label clickable
+                            const isIntegrationSection = section.title === 'Integraciones';
+
+                            if (isIntegrationSection) {
+                              return (
+                                <div
+                                  key={item.href}
+                                  className="group flex items-start gap-3 rounded-[var(--radius-md)] p-3 hover:bg-[var(--surface-hover)] transition-colors"
+                                >
+                                  <item.icon className="h-5 w-5 flex-shrink-0 text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors" />
+                                  <div className="flex-1 min-w-0">
+                                    <Link
+                                      href={item.href}
+                                      className="text-sm font-semibold text-[var(--text-primary)] hover:text-[var(--text-secondary)] transition-colors inline-block mb-0.5"
+                                    >
+                                      {item.label}
+                                    </Link>
+                                    <p className="text-xs text-[var(--text-secondary)]">
+                                      {item.description}
+                                    </p>
+                                    {item.logos && (
+                                      <div className="flex items-center gap-2 mt-1">
+                                        {item.logos.map((logo) => (
+                                          <span key={logo} className="text-[10px] font-medium text-[var(--text-muted)]">
+                                            {logo}
+                                          </span>
+                                        ))}
+                                      </div>
+                                    )}
                                   </div>
-                                )}
-                              </div>
-                            </Link>
-                          ))}
+                                </div>
+                              );
+                            }
+
+                            // For non-integration items, keep entire item clickable
+                            return (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                className="group flex items-start gap-3 rounded-[var(--radius-md)] p-3 hover:bg-[var(--surface-hover)] transition-colors"
+                              >
+                                <item.icon className="h-5 w-5 flex-shrink-0 text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors" />
+                                <div className="flex-1 min-w-0">
+                                  <p className="text-sm font-semibold text-[var(--text-primary)] mb-0.5">
+                                    {item.label}
+                                  </p>
+                                  <p className="text-xs text-[var(--text-secondary)]">
+                                    {item.description}
+                                  </p>
+                                </div>
+                              </Link>
+                            );
+                          })}
                         </div>
                       </div>
                     ))}
@@ -464,7 +492,18 @@ export function SEONavbar() {
                           onClick={() => setMobileOpen(false)}
                         >
                           <item.icon className="h-5 w-5 flex-shrink-0" />
-                          <span>{item.label}</span>
+                          <div>
+                            <span className="font-semibold">{item.label}</span>
+                            {item.logos && (
+                              <div className="flex items-center gap-2 mt-0.5">
+                                {item.logos.map((logo) => (
+                                  <span key={logo} className="text-[10px] font-medium text-[var(--text-muted)]">
+                                    {logo}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
                         </Link>
                       ))}
                     </div>
