@@ -28,9 +28,16 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "kotkot.ai — Automatiza tu correduría de seguros y préstamos con IA",
+  title: "kotkot.ai — Automatiza tu Correduría de Seguros y Préstamos con IA",
   description:
-    "Plataforma de automatización para brokers. Tu bot IA cotiza, compara y cierra ventas de seguros y préstamos 24/7 por WhatsApp. Conecta 25+ aseguradoras y bancos.",
+    "Bot de WhatsApp con IA para corredores de seguros y préstamos. Cotiza, compara y cierra ventas 24/7. Conecta 25+ aseguradoras y bancos en Latinoamérica.",
+  openGraph: {
+    title: "kotkot.ai — Automatiza tu Correduría de Seguros y Préstamos con IA",
+    description:
+      "Bot de WhatsApp con IA para corredores de seguros y préstamos. Cotiza, compara y cierra ventas 24/7. Conecta 25+ aseguradoras y bancos en Latinoamérica.",
+    type: "website",
+    locale: "es_ES",
+  },
 };
 
 export default function RootLayout({
