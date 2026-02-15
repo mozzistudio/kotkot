@@ -15,28 +15,26 @@ const steps: Step[] = [
   {
     number: 1,
     icon: CircleUser,
-    title: 'Regístrate',
-    description: 'Crea tu cuenta y elige tu plan. Setup en 2 minutos.',
+    title: 'Crea tu cuenta',
+    description: 'Setup en 2 minutos',
   },
   {
     number: 2,
     icon: Plug,
-    title: 'Conecta APIs',
-    description:
-      'Conecta tus aseguradoras con tus credenciales API o sube tablas de tarifas.',
+    title: 'Conecta tus aseguradoras',
+    description: 'APIs o tablas de tarifas',
   },
   {
     number: 3,
     icon: Smartphone,
     title: 'Conecta WhatsApp',
-    description:
-      'Vincula tu número de WhatsApp Business con Meta Embedded Signup.',
+    description: 'Meta Business Signup',
   },
   {
     number: 4,
     icon: Rocket,
-    title: '¡Listo!',
-    description: 'Tu agente IA está vendiendo seguros y préstamos 24/7.',
+    title: 'Tu bot vende 24/7',
+    description: 'Seguros y préstamos automáticamente',
   },
 ];
 

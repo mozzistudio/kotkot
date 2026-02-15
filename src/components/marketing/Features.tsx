@@ -22,25 +22,25 @@ const features: Feature[] = [
     icon: MessageSquare,
     title: 'Agente IA en WhatsApp',
     description:
-      'Cotiza seguros y préstamos 24/7. Compara opciones y cierra ventas automáticamente en WhatsApp.',
+      'Tu bot cotiza, compara y cierra ventas de seguros y préstamos directamente en WhatsApp. Sin intervención humana.',
   },
   {
     icon: Plug,
     title: 'Conecta Aseguradoras y Bancos',
     description:
-      'APIs de aseguradoras y entidades financieras. Cotización en tiempo real con tus credenciales.',
+      'APIs de 25+ aseguradoras y bancos. Cotización en tiempo real con tus propias credenciales.',
   },
   {
     icon: CreditCard,
-    title: 'Cobro y Desembolso Automático',
+    title: 'Cobro Automático',
     description:
-      'Links de pago y tracking de desembolsos. Yappy, Stripe, y más integrados. El dinero llega directo.',
+      'Del presupuesto al pago en un clic. Yappy, Stripe, y más. Sin perseguir al cliente.',
   },
   {
     icon: BarChart3,
     title: 'Dashboard Unificado',
     description:
-      'Seguros, préstamos, conversaciones, clientes y comisiones en un solo lugar. Todo bajo control.',
+      'Seguros, préstamos, conversaciones, clientes y comisiones. Todo en un solo lugar.',
   },
   {
     icon: Palette,
@@ -52,7 +52,7 @@ const features: Feature[] = [
     icon: Users,
     title: 'CRM Inteligente',
     description:
-      'Lead scoring, seguimiento automático, renovaciones de pólizas, refinanciamiento de préstamos.',
+      'Cada conversación crea un lead. Seguimiento automático, renovaciones, cross-sell de productos.',
   },
 ];
 
@@ -90,11 +90,10 @@ export function Features() {
           className="mx-auto mb-16 max-w-2xl text-center"
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
-            Todo lo que tu negocio financiero{' '}
-            <span className="text-[var(--text-primary)]">necesita</span>
+            Todo lo que tu correduría necesita
           </h2>
           <p className="mt-4 text-lg text-[var(--text-secondary)]">
-            Una plataforma completa para automatizar seguros y préstamos en Latinoamérica.
+            Una plataforma completa para automatizar seguros y préstamos en Latinoamérica
           </p>
         </motion.div>
 

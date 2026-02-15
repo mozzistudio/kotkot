@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
 import WhatsAppMockup from './WhatsAppMockup';
 
 const containerVariants = {
@@ -139,30 +137,31 @@ export function Hero() {
             variants={itemVariants}
             className="mt-5 max-w-xl text-[18px] leading-relaxed text-[var(--text-secondary)] sm:text-xl"
           >
-            Tu bot IA cotiza, compara y cierra ventas{' '}
-            <span className="font-semibold text-[var(--dark-blue)]">24/7</span>.{' '}
-            Tú creces tu cartera.
+            Tu bot IA cotiza, compara y cierra ventas de seguros y préstamos{' '}
+            <span className="font-semibold text-[var(--dark-blue)]">24/7</span>{' '}
+            mientras tú te enfocas en crecer tu cartera.
           </motion.p>
 
           {/* CTA */}
           <motion.div variants={itemVariants} className="mt-8 flex flex-wrap items-center gap-4">
-            <Button
+            <a
               href="/demo"
-              size="lg"
-              className="bg-[var(--color-action-dark-bg)] text-[var(--color-action-dark-fg)] hover:bg-[var(--color-action-dark-hover)]"
-              arrow
+              className="inline-flex items-center gap-3 rounded-[var(--radius-button)] border-2 border-[var(--accent)] bg-[var(--accent)] px-8 py-4 text-lg font-bold text-[var(--text-primary)] transition-all duration-150 hover:bg-[var(--accent-hover)] hover:scale-[1.02] shadow-[0_4px_16px_rgba(202,255,4,0.25)]"
             >
-              Solicitar Demo
-            </Button>
-            <Button
-              href="/seguros"
-              variant="secondary"
-              size="lg"
-              className="border-[var(--color-info-fg)] text-[var(--color-info-fg)] hover:bg-[var(--color-info-bg)]"
+              Solicitar Demo Gratis
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a
+              href="#como-funciona"
+              className="inline-flex items-center gap-2 text-base font-semibold text-[var(--dark-blue)] transition-opacity hover:opacity-70"
             >
-              <Play className="h-4 w-4" />
               Ver cómo funciona
-            </Button>
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </motion.div>
 
           {/* Social proof */}
