@@ -113,8 +113,8 @@ export default function WhatsAppPage() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex items-start gap-4">
                   {/* Icon */}
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[rgba(12,30,53,0.06)]">
-                    <MessageSquare className="h-6 w-6 text-[var(--dark-blue)]" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent)]/10">
+                    <MessageSquare className="h-6 w-6 text-black" />
                   </div>
 
                   <div>
@@ -122,7 +122,7 @@ export default function WhatsAppPage() {
                       <h3 className="text-section-heading">{num.displayName}</h3>
                       <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium ${
                         num.status === 'active'
-                          ? 'border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] text-[var(--dark-blue)]'
+                          ? 'border-[var(--accent)] bg-[var(--accent)]/10 text-black'
                           : num.status === 'pending'
                           ? 'border border-amber-200 bg-amber-50 text-amber-700'
                           : 'border border-red-200 bg-red-50 text-red-700'
@@ -164,7 +164,7 @@ export default function WhatsAppPage() {
                   <div className="mt-1">
                     <select
                       defaultValue={num.botPersonality}
-                      className="w-full rounded-md border border-[var(--border)] bg-white px-2 py-1 text-sm text-[var(--text-primary)] focus:border-[var(--dark-blue)]/50 focus:outline-none"
+                      className="w-full rounded-md border border-[var(--border)] bg-white px-2 py-1 text-sm text-[var(--text-primary)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20"
                     >
                       {botPersonalities.map((bp) => (
                         <option key={bp} value={bp}>{bp}</option>
@@ -175,7 +175,7 @@ export default function WhatsAppPage() {
                 <div className="col-span-2 rounded-lg border border-[var(--border)] p-3 sm:col-span-1">
                   <span className="text-xs text-[var(--text-tertiary)]">Estado</span>
                   <div className="mt-1 flex items-center gap-2">
-                    {sc.icon}
+                    <span className="h-2 w-2 rounded-full bg-[var(--accent)]"></span>
                     <span className="text-sm font-medium text-[var(--text-primary)]">Operacional</span>
                   </div>
                 </div>
@@ -191,7 +191,7 @@ export default function WhatsAppPage() {
                     <Clock className="h-4 w-4 text-[var(--text-tertiary)]" />
                     <span className="text-sm font-medium text-[var(--text-primary)]">Horario de Atencion</span>
                     {num.businessHours.enabled && (
-                      <span className="rounded-full bg-[rgba(12,30,53,0.06)] px-2 py-0.5 text-xs text-[var(--dark-blue)]">
+                      <span className="rounded-full bg-[var(--accent)]/10 px-2 py-0.5 text-xs text-black font-medium">
                         Activo
                       </span>
                     )}
@@ -227,8 +227,8 @@ export default function WhatsAppPage() {
                             key={day}
                             className={`rounded-md px-2.5 py-1 text-xs font-medium ${
                               num.businessHours.days.includes(day)
-                                ? 'bg-[rgba(12,30,53,0.06)] text-[var(--dark-blue)] border border-[var(--dark-blue)]'
-                                : 'bg-white text-[var(--text-tertiary)] border border-[var(--border)]'
+                                ? 'bg-[var(--accent)]/10 text-black border border-[var(--accent)]'
+                                : 'bg-white text-[var(--text-muted)] border border-[var(--border)]'
                             }`}
                           >
                             {day}
@@ -250,15 +250,15 @@ export default function WhatsAppPage() {
       {/* Connect New Number */}
       <div className="rounded-xl border-2 border-dashed border-[var(--border)] bg-white/50 p-8">
         <div className="mx-auto max-w-md text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[rgba(12,30,53,0.06)]">
-            <Plus className="h-8 w-8 text-[var(--dark-blue)]" />
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--accent)]/10">
+            <Plus className="h-8 w-8 text-black" />
           </div>
           <h3 className="text-card-title">Conectar Nuevo Numero</h3>
           <p className="mt-2 text-sm text-[var(--text-secondary)]">
             Conecta un nuevo numero de WhatsApp Business a tu cuenta de Kotkot a traves de Meta Embedded Signup.
           </p>
 
-          <button className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[var(--dark-blue)] px-6 py-3 text-[var(--text-on-accent)] transition-all hover:bg-[var(--dark-blue)]/90">
+          <button className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-black transition-all hover:bg-[var(--accent-hover)]">
             <MessageSquare className="h-4 w-4" />
             Conectar con Meta
             <ExternalLink className="h-3.5 w-3.5" />
