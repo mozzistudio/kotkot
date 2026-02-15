@@ -141,7 +141,9 @@ export function Pricing() {
 
               {/* Price */}
               <div className="mt-4 flex items-baseline gap-1">
-                <span className="font-heading text-5xl font-extrabold tracking-tight text-[var(--text-primary)]">
+                <span className={`font-heading font-extrabold tracking-tight text-[var(--text-primary)] ${
+                  plan.name === 'Enterprise' ? 'text-3xl sm:text-4xl' : 'text-5xl'
+                }`}>
                   {plan.price}
                 </span>
                 {plan.period && (
@@ -195,7 +197,7 @@ export function Pricing() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-10 flex flex-col items-center gap-3 text-center"
+          className="mt-10 mb-20 flex flex-col items-center gap-3 text-center"
         >
           <a
             href="/recursos/calculadora-roi"
