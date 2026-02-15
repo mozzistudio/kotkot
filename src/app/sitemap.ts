@@ -41,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/soluciones/automatizar-cotizaciones',
     '/soluciones/vender-por-whatsapp',
     '/soluciones/gestionar-clientes',
-    '/soluciones/cobrar-automaticamente',
+    '/soluciones/cobro-automatico',
     '/soluciones/escalar-sin-equipo',
     '/soluciones/multi-producto',
   ];

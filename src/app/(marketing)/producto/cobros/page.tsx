@@ -1,21 +1,21 @@
 import type { Metadata } from 'next';
+import { CobrosPage } from './CobrosPage';
 
 export const metadata: Metadata = {
   title: 'Cobros Automáticos — kotkot.ai',
   description: 'Automatiza el cobro de primas con Yappy, ACH y tarjetas. Olvídate de perseguir pagos manualmente.',
+  keywords: 'sistema de cobros, pagos automáticos, procesamiento de pagos, múltiples métodos',
+  openGraph: {
+    title: 'Cobros Automáticos — kotkot.ai',
+    description: 'Procesa pagos de seguros y préstamos de forma segura y rápida.',
+    type: 'website',
+  },
 };
 
-export default function CobrosPage() {
+export default function Page() {
   return (
-    <main className="flex min-h-[60vh] items-center justify-center px-4">
-      <div className="text-center">
-        <h1 className="font-heading text-4xl font-bold text-[var(--text-primary)]">
-          Cobros Automáticos
-        </h1>
-        <p className="mt-4 text-lg text-[var(--text-secondary)]">
-          Próximamente
-        </p>
-      </div>
+    <main>
+      <CobrosPage />
     </main>
   );
 }
