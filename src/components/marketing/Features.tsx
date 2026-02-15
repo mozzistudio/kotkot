@@ -110,7 +110,7 @@ export function Features() {
             <motion.div
               key={feature.title}
               variants={cardVariants}
-              className="group cursor-default rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--surface-hover)]"
+              className="group cursor-default rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white p-6 transition-all duration-300 hover:-translate-y-2 hover:bg-[var(--surface-hover)]"
             >
               {/* Icon */}
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-info-bg)]">

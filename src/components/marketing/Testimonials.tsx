@@ -122,7 +122,7 @@ export function Testimonials() {
             <motion.div
               key={t.name}
               variants={cardVariants}
-              className="flex flex-col rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--surface-hover)]"
+              className="flex flex-col rounded-[var(--radius-card)] border border-[var(--border-default)] bg-white p-6 transition-all duration-300 hover:-translate-y-2 hover:bg-[var(--surface-hover)]"
             >
               <StarRating />
 
