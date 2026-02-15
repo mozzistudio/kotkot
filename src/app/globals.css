@@ -826,9 +826,9 @@ body {
 }
 
 .pill-active {
-  background: var(--dark-blue);
-  border: 1px solid var(--dark-blue);
-  color: var(--text-inverse);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: var(--text-on-accent);
 }
 
 /* ============================================================

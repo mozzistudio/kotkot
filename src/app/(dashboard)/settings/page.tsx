@@ -108,7 +108,7 @@ export default function SettingsPage() {
             onClick={() => setActiveTab(tab.key)}
             className={`flex items-center gap-2 whitespace-nowrap rounded-md px-4 py-2.5 text-sm font-medium transition-all ${
               activeTab === tab.key
-                ? 'bg-[rgba(12,30,53,0.06)] text-[var(--dark-blue)] '
+                ? 'bg-[var(--accent)]/10 text-[var(--text-on-accent)] border-b-2 border-[var(--accent)]'
                 : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
             }`}
           >
@@ -126,12 +126,12 @@ export default function SettingsPage() {
             <h2 className="text-card-title">Informacion del Perfil</h2>
 
             <div className="flex items-center gap-4">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-dashed border-[var(--border)] text-[var(--text-tertiary)] transition-colors hover:border-[var(--dark-blue)] hover:text-[var(--dark-blue)]">
+              <div className="flex h-20 w-20 items-center justify-center rounded-xl border-2 border-dashed border-[var(--border)] text-[var(--text-muted)] transition-all hover:border-[var(--accent)] hover:bg-[var(--accent)]/5 hover:text-[var(--accent)] cursor-pointer">
                 <Camera className="h-6 w-6" />
               </div>
               <div>
                 <p className="text-sm font-medium text-[var(--text-primary)]">Foto de perfil</p>
-                <p className="text-xs text-[var(--text-tertiary)]">JPG, PNG. Max 2MB.</p>
+                <p className="text-xs text-[var(--text-muted)]">JPG, PNG. Max 2MB.</p>
               </div>
             </div>
 
@@ -141,7 +141,7 @@ export default function SettingsPage() {
                 <input
                   type="text"
                   defaultValue="Ricardo Lopez"
-                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20"
+                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20"
                 />
               </div>
               <div>
@@ -149,7 +149,7 @@ export default function SettingsPage() {
                 <input
                   type="email"
                   defaultValue="ricardo@brokerspa.com"
-                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20"
+                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20"
                 />
               </div>
               <div>
@@ -160,7 +160,7 @@ export default function SettingsPage() {
                 <input
                   type="text"
                   defaultValue="Brokers Panama S.A."
-                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20"
+                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20"
                 />
               </div>
               <div>
@@ -171,7 +171,7 @@ export default function SettingsPage() {
                 <input
                   type="tel"
                   defaultValue="+507 6100-0000"
-                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20"
+                  className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20"
                 />
               </div>
               <div>
@@ -184,14 +184,14 @@ export default function SettingsPage() {
                     type="text"
                     value="Panama (PA)"
                     readOnly
-                    className="w-full cursor-not-allowed rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-tertiary)] opacity-60"
+                    className="w-full cursor-not-allowed rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-muted)] opacity-60 bg-gray-50"
                   />
-                  <span className="shrink-0 text-xs text-[var(--text-tertiary)]">No editable</span>
+                  <span className="shrink-0 rounded bg-gray-100 px-2 py-0.5 text-xs text-[var(--text-muted)]">No editable</span>
                 </div>
               </div>
             </div>
 
-            <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--dark-blue)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--dark-blue)]/90">
+            <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-black transition-all hover:bg-[var(--accent-hover)]">
               <Check className="h-4 w-4" />
               Guardar Perfil
             </button>
@@ -204,18 +204,18 @@ export default function SettingsPage() {
             <h2 className="text-card-title">Facturacion & Plan</h2>
 
             {/* Current Plan */}
-            <div className="rounded-lg border border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] p-5">
+            <div className="rounded-lg border border-[var(--accent)] bg-[var(--accent)]/5 p-5">
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[rgba(12,30,53,0.06)]">
-                    <Crown className="h-5 w-5 text-[var(--dark-blue)]" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--accent)]/10">
+                    <Crown className="h-5 w-5 text-black" />
                   </div>
                   <div>
                     <h3 className="text-section-heading">Plan Profesional</h3>
                     <p className="text-body">$49/mes - Hasta 500 conversaciones</p>
                   </div>
                 </div>
-                <span className="rounded-full border border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] px-3 py-1 text-xs font-medium text-[var(--dark-blue)]">
+                <span className="rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-3 py-1 text-xs font-medium text-black">
                   Activo
                 </span>
               </div>
@@ -233,7 +233,7 @@ export default function SettingsPage() {
                   <p className="text-xs text-[var(--text-tertiary)]">Hasta renovacion</p>
                 </div>
               </div>
-              <button className="mt-4 inline-flex items-center gap-2 rounded-lg border border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] px-4 py-2 text-sm font-medium text-[var(--dark-blue)] transition-colors hover:bg-[rgba(12,30,53,0.10)]">
+              <button className="mt-4 inline-flex items-center gap-2 rounded-lg border border-[var(--accent)] bg-[var(--accent)]/10 px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-[rgba(12,30,53,0.10)]">
                 <Zap className="h-4 w-4" />
                 Cambiar Plan
               </button>
@@ -272,7 +272,7 @@ export default function SettingsPage() {
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-sm font-semibold text-[var(--text-primary)] font-data">{inv.amount}</span>
-                      <span className="rounded-full border border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] px-2 py-0.5 text-xs text-[var(--dark-blue)]">
+                      <span className="rounded-full border border-[var(--accent)] bg-[var(--accent)]/5 px-2 py-0.5 text-xs text-black">
                         Pagada
                       </span>
                     </div>
@@ -294,7 +294,7 @@ export default function SettingsPage() {
             {demoCountry === 'PA' ? (
               /* ── Yappy Config (Panama) ────────────────────── */
               <div className="space-y-5">
-                <div className="rounded-lg border border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] p-4">
+                <div className="rounded-lg border border-[var(--accent)] bg-[var(--accent)]/5 p-4">
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--color-brand-wallet)]/20">
                       <Wallet className="h-5 w-5 text-[var(--color-brand-wallet)]" />
@@ -305,7 +305,7 @@ export default function SettingsPage() {
                         Acepta pagos de polizas de seguros via Yappy en Panama
                       </p>
                     </div>
-                    <span className="ml-auto rounded-full border border-[var(--dark-blue)] bg-[rgba(12,30,53,0.06)] px-2.5 py-0.5 text-xs font-medium text-[var(--dark-blue)]">
+                    <span className="ml-auto rounded-full border border-[var(--accent)] bg-[var(--accent)]/5 px-2.5 py-0.5 text-xs font-medium text-black">
                       Conectado
                     </span>
                   </div>
@@ -319,7 +319,7 @@ export default function SettingsPage() {
                     <input
                       type="text"
                       defaultValue="YAPPY_MID_BROKERS_PA"
-                      className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] font-mono focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20"
+                      className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] font-mono focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20"
                     />
                   </div>
                   <div>
@@ -329,17 +329,17 @@ export default function SettingsPage() {
                     <input
                       type="password"
                       defaultValue="ypy_sk_live_xxxxxxxxxxxxx"
-                      className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] font-mono focus:border-[var(--dark-blue)]/50 focus:outline-none focus:ring-1 focus:ring-[rgba(12,30,53,0.06)]/20"
+                      className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] font-mono focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20"
                     />
                   </div>
                 </div>
 
                 <div className="flex gap-3">
-                  <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--dark-blue)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--dark-blue)]/90">
+                  <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-black transition-all hover:bg-[var(--accent-hover)]">
                     <Check className="h-4 w-4" />
                     Guardar Credenciales
                   </button>
-                  <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-5 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--dark-blue)] hover:text-[var(--dark-blue)]">
+                  <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-5 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--dark-blue)] hover:text-black">
                     <Zap className="h-4 w-4" />
                     Probar Conexion
                   </button>
@@ -375,7 +375,7 @@ export default function SettingsPage() {
                   </div>
                 </div>
 
-                <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--dark-blue)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--dark-blue)]/90">
+                <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-black transition-all hover:bg-[var(--accent-hover)]">
                   <ExternalLink className="h-4 w-4" />
                   Conectar con Stripe
                 </button>
@@ -389,7 +389,7 @@ export default function SettingsPage() {
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <h2 className="text-card-title">Equipo</h2>
-              <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--dark-blue)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--dark-blue)]/90">
+              <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-black transition-all hover:bg-[var(--accent-hover)]">
                 <Plus className="h-4 w-4" />
                 Invitar Miembro
               </button>
@@ -534,7 +534,7 @@ export default function SettingsPage() {
               </div>
             </div>
 
-            <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--dark-blue)] text-[var(--text-on-accent)] transition-all hover:bg-[var(--dark-blue)]/90">
+            <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-black transition-all hover:bg-[var(--accent-hover)]">
               <Check className="h-4 w-4" />
               Guardar Preferencias
             </button>
