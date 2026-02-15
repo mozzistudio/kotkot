@@ -14,6 +14,8 @@ const loanProducts = [
 const navLinks = [
   { label: 'Funcionalidades', href: '#funcionalidades' },
   { label: 'Precios', href: '#precios' },
+  { label: 'Partners', href: '/partners' },
+  { label: 'Recursos', href: '/recursos' },
   { label: 'Para Brokers', href: '/para-brokers' },
 ];
 
