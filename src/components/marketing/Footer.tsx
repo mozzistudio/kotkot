@@ -65,8 +65,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
-              Comparador inteligente de seguros y préstamos en Latinoamérica.
-              Encuentra las mejores opciones en minutos.
+              Plataforma de automatización para corredores de seguros y préstamos en Latinoamérica.
             </p>
             <div className="mt-6 flex items-center gap-4">
               <Link
