@@ -437,6 +437,14 @@ export function SEONavbar() {
 
         {/* Right Side - Login & Demo CTA */}
         <div className="flex items-center gap-4">
+          {/* Partners Button */}
+          <Link
+            href="/partners"
+            className="hidden rounded-[var(--radius-button)] border border-[var(--border-default)] px-4 py-2 text-sm font-medium text-[var(--text-primary)] transition-colors hover:bg-[var(--surface-hover)] lg:block"
+          >
+            Partners
+          </Link>
+
           {/* Login Link */}
           <Link
             href="/login"
@@ -575,6 +583,14 @@ export function SEONavbar() {
                   onClick={() => setMobileOpen(false)}
                 >
                   Iniciar Sesión
+                </Link>
+
+                <Link
+                  href="/partners"
+                  className="block rounded-[var(--radius-md)] p-3 text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Partners
                 </Link>
               </div>
 
