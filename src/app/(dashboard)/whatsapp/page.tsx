@@ -108,6 +108,14 @@ declare global {
   }
 }
 
+// Debug: Log environment variables
+console.log('WhatsApp Page Environment Variables:', {
+  FACEBOOK_APP_ID,
+  META_CONFIG_ID,
+  hasAppId: !!FACEBOOK_APP_ID,
+  hasConfigId: !!META_CONFIG_ID,
+});
+
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
