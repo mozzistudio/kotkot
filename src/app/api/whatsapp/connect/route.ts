@@ -7,13 +7,44 @@ const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
 export async function POST(request: NextRequest) {
   try {
-    const { accessToken } = await request.json();
+    const { accessToken: providedAccessToken, code } = await request.json();
 
-    if (!accessToken) {
+    if (!providedAccessToken && !code) {
       return NextResponse.json(
-        { error: 'Access token is required' },
+        { error: 'Access token or authorization code is required' },
         { status: 400 }
       );
+    }
+
+    let accessToken = providedAccessToken;
+
+    // If code is provided, exchange it for an access token
+    if (code && !accessToken) {
+      const tokenResponse = await fetch(
+        `https://graph.facebook.com/v21.0/oauth/access_token?` +
+        `client_id=${process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}` +
+        `&client_secret=${process.env.FACEBOOK_APP_SECRET}` +
+        `&code=${code}`
+      );
+
+      if (!tokenResponse.ok) {
+        const error = await tokenResponse.json();
+        console.error('Token exchange error:', error);
+        return NextResponse.json(
+          { error: 'Failed to exchange code for access token' },
+          { status: 400 }
+        );
+      }
+
+      const tokenData = await tokenResponse.json();
+      accessToken = tokenData.access_token;
+
+      if (!accessToken) {
+        return NextResponse.json(
+          { error: 'No access token received from Meta' },
+          { status: 400 }
+        );
+      }
     }
 
     // Get user from cookies

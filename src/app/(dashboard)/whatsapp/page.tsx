@@ -85,6 +85,83 @@ const statusConfig: Record<NumberStatus, { label: string; dotColor: string; icon
 
 export default function WhatsAppPage() {
   const [expandedHours, setExpandedHours] = useState<string | null>(null);
+  const [isConnecting, setIsConnecting] = useState(false);
+
+  const handleConnectWhatsApp = () => {
+    setIsConnecting(true);
+
+    // Load Facebook SDK
+    if (typeof window !== 'undefined' && !(window as any).FB) {
+      const script = document.createElement('script');
+      script.src = 'https://connect.facebook.net/en_US/sdk.js';
+      script.async = true;
+      script.defer = true;
+      script.crossOrigin = 'anonymous';
+      script.onload = () => {
+        (window as any).FB.init({
+          appId: process.env.NEXT_PUBLIC_FACEBOOK_APP_ID,
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: 'v21.0'
+        });
+        launchEmbeddedSignup();
+      };
+      document.body.appendChild(script);
+    } else {
+      launchEmbeddedSignup();
+    }
+  };
+
+  const launchEmbeddedSignup = () => {
+    const configId = process.env.NEXT_PUBLIC_META_CONFIG_ID;
+
+    if (!(window as any).FB) {
+      console.error('Facebook SDK not loaded');
+      setIsConnecting(false);
+      return;
+    }
+
+    (window as any).FB.login(
+      function(response: any) {
+        if (response.authResponse) {
+          const code = response.authResponse.code;
+
+          // Send code to backend to exchange for access token
+          fetch('/api/whatsapp/connect', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ code }),
+          })
+            .then(res => res.json())
+            .then(data => {
+              console.log('WhatsApp connected successfully:', data);
+              setIsConnecting(false);
+              // Refresh the page to show the new number
+              window.location.reload();
+            })
+            .catch(err => {
+              console.error('Error connecting WhatsApp:', err);
+              setIsConnecting(false);
+            });
+        } else {
+          console.log('User cancelled login or did not fully authorize.');
+          setIsConnecting(false);
+        }
+      },
+      {
+        config_id: configId,
+        response_type: 'code',
+        override_default_response_type: true,
+        extras: {
+          setup: {},
+          featureType: '',
+          sessionInfoVersion: '3',
+        }
+      }
+    );
+  };
 
   return (
     <div className="min-h-screen p-6 lg:p-8">
@@ -258,9 +335,13 @@ export default function WhatsAppPage() {
             Conecta un nuevo numero de WhatsApp Business a tu cuenta de Kotkot a traves de Meta Embedded Signup.
           </p>
 
-          <button className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-[var(--text-dark)] transition-all hover:bg-[var(--accent-hover)]">
+          <button
+            onClick={handleConnectWhatsApp}
+            disabled={isConnecting}
+            className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-[var(--text-dark)] transition-all hover:bg-[var(--accent-hover)] disabled:opacity-50 disabled:cursor-not-allowed"
+          >
             <MessageSquare className="h-4 w-4" />
-            Conectar con Meta
+            {isConnecting ? 'Conectando...' : 'Conectar con Meta'}
             <ExternalLink className="h-3.5 w-3.5" />
           </button>
 
