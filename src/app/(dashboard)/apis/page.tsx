@@ -215,7 +215,7 @@ export default function ApisPage() {
                     <Building2 className="h-5 w-5" />
                   </div>
                   <div>
-                    <Link href={`/apis/${insurer.slug}`} className="text-sm font-semibold text-[var(--text-primary)] hover:text-[var(--text-link)] transition-colors">
+                    <Link href={`/app/apis/${insurer.slug}`} className="text-sm font-semibold text-[var(--text-primary)] hover:text-[var(--text-link)] transition-colors">
                       {insurer.name}
                     </Link>
                     <span className="block text-xs text-[var(--text-tertiary)]">

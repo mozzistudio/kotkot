@@ -417,7 +417,7 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
                       <td className="py-3 text-sm text-[var(--text-secondary)] font-data">{q.id}</td>
                       <td className="py-3 text-sm">
                         <Link
-                          href={`/clients/${q.id.replace('Q-', 'C-')}`}
+                          href={`/app/clients/${q.id.replace('Q-', 'C-')}`}
                           className="text-[var(--text-primary)] hover:text-[var(--text-primary)] transition-colors"
                         >
                           {q.client}

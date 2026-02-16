@@ -350,7 +350,7 @@ export default function IngresosPage() {
                   <tr key={insurer.name} className="group hover:bg-[var(--surface-panel)] transition-colors">
                     <td className="py-3 text-sm">
                       <Link
-                        href={`/apis/${insurer.slug}`}
+                        href={`/app/apis/${insurer.slug}`}
                         className="text-[var(--text-primary)] hover:text-[var(--text-primary)] transition-colors"
                       >
                         {insurer.name}
@@ -414,7 +414,7 @@ export default function IngresosPage() {
                     <td className="py-3 text-sm text-[var(--text-secondary)] font-data">{tx.fecha}</td>
                     <td className="py-3 text-sm">
                       <Link
-                        href={`/clients/${tx.id.replace('TX-', 'C-')}`}
+                        href={`/app/clients/${tx.id.replace('TX-', 'C-')}`}
                         className="text-[var(--text-primary)] hover:text-[var(--text-primary)] transition-colors"
                       >
                         {tx.cliente}
@@ -423,7 +423,7 @@ export default function IngresosPage() {
                     <td className="py-3 text-sm text-[var(--text-primary)]">{tx.tipoSeguro}</td>
                     <td className="py-3 text-sm">
                       <Link
-                        href={`/apis/${tx.aseguradora.toLowerCase().replace(/\s+/g, '-')}`}
+                        href={`/app/apis/${tx.aseguradora.toLowerCase().replace(/\s+/g, '-')}`}
                         className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
                       >
                         {tx.aseguradora}

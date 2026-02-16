@@ -48,7 +48,7 @@ const stats: StatCard[] = [
     change: '+12%',
     changeType: 'up',
     icon: <MessageSquare className="h-5 w-5 text-[var(--accent)]" />,
-    href: '/conversations?filter=active',
+    href: '/app/conversations?filter=active',
   },
   {
     label: 'Cotizaciones Hoy',
@@ -56,7 +56,7 @@ const stats: StatCard[] = [
     change: '+8%',
     changeType: 'up',
     icon: <FileText className="h-5 w-5 text-[var(--accent)]" />,
-    href: `/quotes?date=${new Date().toISOString().slice(0, 10)}`,
+    href: `/app/quotes?date=${new Date().toISOString().slice(0, 10)}`,
   },
   {
     label: 'Polizas Vendidas',
@@ -64,7 +64,7 @@ const stats: StatCard[] = [
     change: '+23%',
     changeType: 'up',
     icon: <Shield className="h-5 w-5 text-[var(--accent)]" />,
-    href: '/quotes?status=paid',
+    href: '/app/quotes?status=paid',
   },
   {
     label: 'Ingresos del Mes',
@@ -72,7 +72,7 @@ const stats: StatCard[] = [
     change: '+18%',
     changeType: 'up',
     icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" />,
-    href: '/ingresos',
+    href: '/app/ingresos',
   },
 ];
 
@@ -130,9 +130,9 @@ const chartData = [
 ];
 
 const quickActions = [
-  { label: 'Ver Conversaciones', icon: <MessageSquare className="h-4 w-4" />, href: '/conversations' },
-  { label: 'Configurar Bot', icon: <Bot className="h-4 w-4" />, href: '/bot' },
-  { label: 'Conectar Aseguradora', icon: <Link2 className="h-4 w-4" />, href: '/apis' },
+  { label: 'Ver Conversaciones', icon: <MessageSquare className="h-4 w-4" />, href: '/app/conversations' },
+  { label: 'Configurar Bot', icon: <Bot className="h-4 w-4" />, href: '/app/bot' },
+  { label: 'Conectar Aseguradora', icon: <Link2 className="h-4 w-4" />, href: '/app/apis' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -229,7 +229,7 @@ export default function DashboardPage() {
             {recentConversations.map((conv) => (
               <Link
                 key={conv.id}
-                href={`/conversations?id=${conv.id}`}
+                href={`/app/conversations?id=${conv.id}`}
                 className="flex items-center gap-4 rounded-lg border border-[var(--border)] bg-[var(--surface-secondary)] p-3.5 transition-colors hover:border-[var(--border-medium)]"
               >
                 {/* Status Dot */}

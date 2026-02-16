@@ -228,7 +228,7 @@ function QuotesContent() {
     // Remove date param from URL without full reload
     const params = new URLSearchParams(searchParams.toString());
     params.delete('date');
-    const newUrl = params.toString() ? `/quotes?${params.toString()}` : '/quotes';
+    const newUrl = params.toString() ? `/app/quotes?${params.toString()}` : '/app/quotes';
     router.replace(newUrl);
   };
 
@@ -319,7 +319,7 @@ function QuotesContent() {
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2">
                     <Link
-                      href={`/clients/${quote.id.replace('Q-', 'C-')}`}
+                      href={`/app/clients/${quote.id.replace('Q-', 'C-')}`}
                       onClick={(e) => e.stopPropagation()}
                       className="text-sm font-medium text-[var(--text-primary)] hover:text-[var(--text-link)] transition-colors"
                     >
@@ -381,7 +381,7 @@ function QuotesContent() {
                           <tr key={idx}>
                             <td className="font-medium">
                               <Link
-                                href={`/apis/${r.insurer.toLowerCase().replace(/\s+/g, '-')}`}
+                                href={`/app/apis/${r.insurer.toLowerCase().replace(/\s+/g, '-')}`}
                                 className="link"
                               >
                                 {r.insurer}

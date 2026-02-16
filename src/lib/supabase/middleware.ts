@@ -1,6 +1,19 @@
 import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 
+const PROTECTED_APP_PATHS = [
+  '/app/dashboard',
+  '/app/conversations',
+  '/app/quotes',
+  '/app/ingresos',
+  '/app/clients',
+  '/app/bot',
+  '/app/apis',
+  '/app/whatsapp',
+  '/app/analytics',
+  '/app/settings',
+];
+
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request });
 
@@ -27,12 +40,14 @@ export async function updateSession(request: NextRequest) {
 
   const { data: { user } } = await supabase.auth.getUser();
 
-  if (
-    !user &&
-    request.nextUrl.pathname.startsWith('/dashboard')
-  ) {
+  const isProtectedAppPath = PROTECTED_APP_PATHS.some((path) =>
+    request.nextUrl.pathname.startsWith(path)
+  );
+
+  if (!user && isProtectedAppPath) {
     const url = request.nextUrl.clone();
     url.pathname = '/login';
+    url.searchParams.set('next', request.nextUrl.pathname);
     return NextResponse.redirect(url);
   }
 

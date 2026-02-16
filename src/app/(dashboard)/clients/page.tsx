@@ -259,7 +259,7 @@ export default function ClientsPage() {
         {filteredClients.map((client) => (
           <Link
             key={client.id}
-            href={`/clients/${client.id}`}
+            href={`/app/clients/${client.id}`}
             className="group card block"
           >
             {/* Top Row */}
