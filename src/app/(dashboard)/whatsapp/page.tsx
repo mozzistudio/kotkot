@@ -76,6 +76,14 @@ const botPersonalities = ['Mi Agente', 'Agente Formal', 'Agente Express'];
 const FACEBOOK_APP_ID = process.env.NEXT_PUBLIC_FACEBOOK_APP_ID;
 const META_CONFIG_ID = process.env.NEXT_PUBLIC_META_CONFIG_ID;
 
+// Debug: Log environment variables
+console.log('WhatsApp Page Environment Variables:', {
+  FACEBOOK_APP_ID,
+  META_CONFIG_ID,
+  hasAppId: !!FACEBOOK_APP_ID,
+  hasConfigId: !!META_CONFIG_ID,
+});
+
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
