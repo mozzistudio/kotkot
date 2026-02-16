@@ -14,7 +14,7 @@ import {
   Smartphone,
   ArrowUpRight,
   ArrowDownRight,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -83,28 +83,28 @@ const dateRanges: { key: DateRange; label: string }[] = [
 
 const kpiByRange: Record<DateRange, KPI[]> = {
   '7d': [
-    { label: 'Ingresos Totales', value: '$3,120', change: '+8.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--dark-blue)]" /> },
-    { label: 'Comisiones Ganadas', value: '$936', change: '+6.1%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--dark-blue)]" /> },
-    { label: 'Polizas Activas', value: '142', change: '+3', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
-    { label: 'Ticket Promedio', value: '$72.10', change: '-2.3%', changeType: 'down', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
+    { label: 'Ingresos Totales', value: '$3,120', change: '+8.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--text-primary)]" /> },
+    { label: 'Comisiones Ganadas', value: '$936', change: '+6.1%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--text-primary)]" /> },
+    { label: 'Polizas Activas', value: '142', change: '+3', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Ticket Promedio', value: '$72.10', change: '-2.3%', changeType: 'down', icon: <Receipt className="h-5 w-5 text-[var(--accent)]" /> },
   ],
   '30d': [
-    { label: 'Ingresos Totales', value: '$12,450', change: '+15.3%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--dark-blue)]" /> },
-    { label: 'Comisiones Ganadas', value: '$3,735', change: '+12.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--dark-blue)]" /> },
-    { label: 'Polizas Activas', value: '156', change: '+14', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
-    { label: 'Ticket Promedio', value: '$79.80', change: '+4.1%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
+    { label: 'Ingresos Totales', value: '$12,450', change: '+15.3%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--text-primary)]" /> },
+    { label: 'Comisiones Ganadas', value: '$3,735', change: '+12.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--text-primary)]" /> },
+    { label: 'Polizas Activas', value: '156', change: '+14', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Ticket Promedio', value: '$79.80', change: '+4.1%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-[var(--accent)]" /> },
   ],
   '90d': [
-    { label: 'Ingresos Totales', value: '$38,920', change: '+22.7%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--dark-blue)]" /> },
-    { label: 'Comisiones Ganadas', value: '$11,676', change: '+19.4%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--dark-blue)]" /> },
-    { label: 'Polizas Activas', value: '156', change: '+38', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
-    { label: 'Ticket Promedio', value: '$83.50', change: '+7.6%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
+    { label: 'Ingresos Totales', value: '$38,920', change: '+22.7%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--text-primary)]" /> },
+    { label: 'Comisiones Ganadas', value: '$11,676', change: '+19.4%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--text-primary)]" /> },
+    { label: 'Polizas Activas', value: '156', change: '+38', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Ticket Promedio', value: '$83.50', change: '+7.6%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-[var(--accent)]" /> },
   ],
   '12m': [
-    { label: 'Ingresos Totales', value: '$148,600', change: '+45.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--dark-blue)]" /> },
-    { label: 'Comisiones Ganadas', value: '$44,580', change: '+41.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--dark-blue)]" /> },
-    { label: 'Polizas Activas', value: '156', change: '+89', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-blue-400" /> },
-    { label: 'Ticket Promedio', value: '$86.20', change: '+11.3%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-amber-400" /> },
+    { label: 'Ingresos Totales', value: '$148,600', change: '+45.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--text-primary)]" /> },
+    { label: 'Comisiones Ganadas', value: '$44,580', change: '+41.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--text-primary)]" /> },
+    { label: 'Polizas Activas', value: '156', change: '+89', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Ticket Promedio', value: '$86.20', change: '+11.3%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-[var(--accent)]" /> },
   ],
 };
 
@@ -146,11 +146,11 @@ const revenueBarsByRange: Record<DateRange, RevenueBar[]> = {
 };
 
 const insuranceTypeRevenue: InsuranceTypeRevenue[] = [
-  { type: 'Auto', percentage: 45, amount: '$5,603', color: 'bg-sky-500' },
-  { type: 'Salud', percentage: 25, amount: '$3,113', color: 'bg-rose-500' },
-  { type: 'Hogar', percentage: 15, amount: '$1,868', color: 'bg-amber-500' },
-  { type: 'Viaje', percentage: 10, amount: '$1,245', color: 'bg-purple-500' },
-  { type: 'Negocio', percentage: 5, amount: '$623', color: 'bg-[var(--dark-blue)]' },
+  { type: 'Auto', percentage: 45, amount: '$5,603', color: 'bg-[var(--accent)]' },
+  { type: 'Salud', percentage: 25, amount: '$3,113', color: 'bg-[var(--accent)]' },
+  { type: 'Hogar', percentage: 15, amount: '$1,868', color: 'bg-[var(--accent)]' },
+  { type: 'Viaje', percentage: 10, amount: '$1,245', color: 'bg-[var(--accent)]' },
+  { type: 'Negocio', percentage: 5, amount: '$623', color: 'bg-[var(--surface-inverse)]' },
 ];
 
 const insurerRevenue: InsurerRevenue[] = [
@@ -176,8 +176,8 @@ const recentTransactions: Transaction[] = [
 ];
 
 const paymentMethods: PaymentMethod[] = [
-  { name: 'Yappy', percentage: 62, amount: '$7,719', color: 'from-violet-500 to-purple-500', icon: <Smartphone className="h-5 w-5" /> },
-  { name: 'Stripe', percentage: 38, amount: '$4,731', color: 'from-blue-500 to-indigo-500', icon: <CreditCard className="h-5 w-5" /> },
+  { name: 'Yappy', percentage: 62, amount: '$7,719', color: 'from-[var(--accent)] to-[var(--accent-hover)]', icon: <Smartphone className="h-5 w-5" /> },
+  { name: 'Stripe', percentage: 38, amount: '$4,731', color: 'from-[var(--accent)] to-[var(--accent-hover)]', icon: <CreditCard className="h-5 w-5" /> },
 ];
 
 // ---------------------------------------------------------------------------
@@ -228,7 +228,7 @@ export default function IngresosPage() {
               onClick={() => setDateRange(dr.key)}
               className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
                 dateRange === dr.key
-                  ? 'bg-[var(--dark-blue)] text-white'
+                  ? 'bg-[var(--accent)] text-[var(--text-primary)]'
                   : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               }`}
             >
@@ -280,7 +280,7 @@ export default function IngresosPage() {
                   </span>
                   <div className="w-full flex justify-center">
                     <div
-                      className="w-8 rounded-t-md bg-[var(--dark-blue)] transition-all duration-300"
+                      className="w-8 rounded-t-md bg-[var(--surface-inverse)] transition-all duration-300"
                       style={{ height: `${heightPct}%`, minHeight: 8 }}
                     />
                   </div>
@@ -351,7 +351,7 @@ export default function IngresosPage() {
                     <td className="py-3 text-sm">
                       <Link
                         href={`/apis/${insurer.slug}`}
-                        className="text-[var(--text-primary)] hover:text-[var(--dark-blue)] transition-colors"
+                        className="text-[var(--text-primary)] hover:text-[var(--text-primary)] transition-colors"
                       >
                         {insurer.name}
                       </Link>
@@ -415,7 +415,7 @@ export default function IngresosPage() {
                     <td className="py-3 text-sm">
                       <Link
                         href={`/clients/${tx.id.replace('TX-', 'C-')}`}
-                        className="text-[var(--text-primary)] hover:text-[var(--dark-blue)] transition-colors"
+                        className="text-[var(--text-primary)] hover:text-[var(--text-primary)] transition-colors"
                       >
                         {tx.cliente}
                       </Link>
@@ -424,7 +424,7 @@ export default function IngresosPage() {
                     <td className="py-3 text-sm">
                       <Link
                         href={`/apis/${tx.aseguradora.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="text-[var(--text-secondary)] hover:text-[var(--dark-blue)] transition-colors"
+                        className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
                       >
                         {tx.aseguradora}
                       </Link>

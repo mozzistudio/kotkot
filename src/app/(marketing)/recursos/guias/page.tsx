@@ -5,7 +5,7 @@ import { PageHero } from '@/components/marketing/shared/PageHero';
 import { Breadcrumb } from '@/components/marketing/shared/Breadcrumb';
 import { CTABanner } from '@/components/marketing/shared/CTABanner';
 import { motion } from 'framer-motion';
-import { FileText, Download, ArrowRight } from 'lucide-react';
+import { FileText, Download, ArrowRight } from '@/components/shared/icon-map';
 
 const guides = [
   {

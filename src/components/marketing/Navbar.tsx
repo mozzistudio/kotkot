@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Menu, X, ChevronDown } from 'lucide-react';
+import { ArrowUpRight, Menu, X, ChevronDown } from '@/components/shared/icon-map';
 
 const loanProducts = [
   { slug: 'personal', name: 'Personal', icon: '💳' },
@@ -14,6 +14,8 @@ const loanProducts = [
 const navLinks = [
   { label: 'Funcionalidades', href: '#funcionalidades' },
   { label: 'Precios', href: '#precios' },
+  { label: 'Partners', href: '/partners' },
+  { label: 'Recursos', href: '/recursos' },
   { label: 'Para Brokers', href: '/para-brokers' },
 ];
 

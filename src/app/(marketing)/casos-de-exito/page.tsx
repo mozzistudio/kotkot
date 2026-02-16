@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { TrendingUp, Clock, MessageSquare, Quote } from 'lucide-react';
+import { TrendingUp, Clock, MessageSquare, Quote } from '@/components/shared/icon-map';
 
 export const metadata: Metadata = {
   title: 'Casos de Éxito — Kotkot',

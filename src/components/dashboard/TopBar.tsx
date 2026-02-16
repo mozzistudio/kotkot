@@ -18,7 +18,7 @@ import {
   MessageSquare,
   Shield,
   ArrowRight,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 interface TopBarProps {
   onMenuClick: () => void;
@@ -241,7 +241,7 @@ export function TopBar({ onMenuClick }: TopBarProps) {
               onFocus={() => setSearchOpen(true)}
               onKeyDown={handleKeyDown}
               placeholder="Buscar cotizaciones, clientes..."
-              className="w-full rounded-[var(--radius-md)] pl-10 pr-4 py-2 text-sm bg-white border border-[var(--border-default)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--dark-blue)] focus:ring-1 focus:ring-[rgba(12,30,53,0.15)] focus:outline-none transition-all duration-200"
+              className="w-full rounded-[var(--radius-md)] pl-10 pr-4 py-2 text-sm bg-white border border-[var(--border-default)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent-light)] focus:outline-none transition-all duration-200"
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
               <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-medium text-[var(--text-muted)] bg-white border border-[var(--border-default)]">
@@ -350,7 +350,7 @@ export function TopBar({ onMenuClick }: TopBarProps) {
               onClick={() => setProfileOpen(!profileOpen)}
               className="flex items-center gap-2 p-1.5 rounded-[var(--radius-md)] hover:bg-[var(--surface-hover)] transition-colors"
             >
-              <div className="w-8 h-8 rounded-full bg-[var(--dark-blue)] flex items-center justify-center text-white font-bold text-xs">
+              <div className="w-8 h-8 rounded-full bg-[var(--surface-inverse)] flex items-center justify-center text-white font-bold text-xs">
                 JP
               </div>
               <ChevronDown
@@ -399,7 +399,7 @@ export function TopBar({ onMenuClick }: TopBarProps) {
                         setProfileOpen(false);
                         console.log('Logout');
                       }}
-                      className="flex items-center gap-3 w-full px-4 py-2.5 text-sm text-red-400 hover:text-red-300 hover:bg-red-500/5 transition-colors"
+                      className="flex items-center gap-3 w-full px-4 py-2.5 text-sm text-[var(--error)] hover:text-[var(--error)] hover:bg-[rgba(239,68,68,0.08)] transition-colors"
                     >
                       <LogOut className="w-4 h-4" />
                       Cerrar sesion

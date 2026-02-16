@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mic, Paperclip, Phone, Video, ChevronLeft, MoreVertical } from 'lucide-react';
+import { Mic, Paperclip, Phone, Video, ChevronLeft, MoreVertical } from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types

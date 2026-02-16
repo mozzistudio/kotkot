@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { PageHero } from '@/components/marketing/shared/PageHero';
 import { CTABanner } from '@/components/marketing/shared/CTABanner';
 import { motion } from 'framer-motion';
-import { Check, X, Minus } from 'lucide-react';
+import { Check, X, Minus } from '@/components/shared/icon-map';
 
 const features = [
   { name: 'Integración con WhatsApp Business', kotkot: 'check', manual: 'x', crm: 'x', chatbot: 'partial' },

@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Star, Phone } from 'lucide-react';
+import { Star, Phone } from '@/components/shared/icon-map';
 import type { InsuranceProduct, InsuranceCompany, LoanProduct, Lender } from '@/data/schema';
 
 interface CrossPageHeroProps {

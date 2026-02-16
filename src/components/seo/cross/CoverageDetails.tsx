@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Check } from 'lucide-react';
+import { Check } from '@/components/shared/icon-map';
 import type { Coverage } from '@/data/schema';
 
 interface CoverageDetailsProps {

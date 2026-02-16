@@ -13,7 +13,7 @@ import {
   TrendingUp,
   Clock,
   Phone,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -47,7 +47,7 @@ const stats: StatCard[] = [
     value: '24',
     change: '+12%',
     changeType: 'up',
-    icon: <MessageSquare className="h-5 w-5 text-[var(--chart-line)]" />,
+    icon: <MessageSquare className="h-5 w-5 text-[var(--accent)]" />,
     href: '/conversations?filter=active',
   },
   {
@@ -55,7 +55,7 @@ const stats: StatCard[] = [
     value: '18',
     change: '+8%',
     changeType: 'up',
-    icon: <FileText className="h-5 w-5 text-[var(--chart-dot)]" />,
+    icon: <FileText className="h-5 w-5 text-[var(--accent)]" />,
     href: `/quotes?date=${new Date().toISOString().slice(0, 10)}`,
   },
   {
@@ -63,7 +63,7 @@ const stats: StatCard[] = [
     value: '156',
     change: '+23%',
     changeType: 'up',
-    icon: <Shield className="h-5 w-5 text-[var(--chart-line)]" />,
+    icon: <Shield className="h-5 w-5 text-[var(--accent)]" />,
     href: '/quotes?status=paid',
   },
   {
@@ -71,7 +71,7 @@ const stats: StatCard[] = [
     value: '$12,450',
     change: '+18%',
     changeType: 'up',
-    icon: <DollarSign className="h-5 w-5 text-[var(--chart-dot)]" />,
+    icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" />,
     href: '/ingresos',
   },
 ];
@@ -141,9 +141,9 @@ const quickActions = [
 
 const statusColors: Record<RecentConversation['status'], string> = {
   active: 'bg-[var(--success)]',
-  waiting: 'bg-amber-500',
-  human: 'bg-[var(--dark-blue)]',
-  closed: 'bg-slate-400',
+  waiting: 'bg-[var(--accent)]',
+  human: 'bg-[var(--surface-inverse)]',
+  closed: 'bg-[var(--border-strong)]',
 };
 
 const statusLabels: Record<RecentConversation['status'], string> = {
@@ -156,7 +156,7 @@ const statusLabels: Record<RecentConversation['status'], string> = {
 const statusBadgeClasses: Record<RecentConversation['status'], string> = {
   active: 'bg-[rgba(16,185,129,0.12)] text-[var(--success-fg)] border border-[rgba(16,185,129,0.25)]',
   waiting: 'bg-[rgba(245,158,11,0.12)] text-[var(--warning-fg)] border border-[rgba(245,158,11,0.25)]',
-  human: 'bg-[rgba(12,30,53,0.08)] text-[var(--dark-blue)] border border-[rgba(12,30,53,0.15)]',
+  human: 'bg-[var(--accent-light)] text-[var(--text-primary)] border border-[rgba(202,255,4,0.45)]',
   closed: 'bg-[var(--surface-hover)] text-[var(--text-secondary)] border border-[var(--border-default)]',
 };
 
@@ -303,7 +303,7 @@ export default function DashboardPage() {
               <h2 className="text-section-heading">
                 Actividad Semanal
               </h2>
-              <TrendingUp className="h-4 w-4 text-[var(--chart-line)]" />
+              <TrendingUp className="h-4 w-4 text-[var(--accent)]" />
             </div>
 
             <div className="flex items-end justify-between gap-2" style={{ height: 140 }}>
@@ -316,7 +316,7 @@ export default function DashboardPage() {
                     </span>
                     <div className="w-full flex justify-center">
                       <div
-                        className="w-6 rounded-t-md bg-[var(--chart-line)] transition-all duration-300"
+                        className="w-6 rounded-t-md bg-[var(--accent)] transition-all duration-300"
                         style={{ height: `${heightPct}%`, minHeight: 8 }}
                       />
                     </div>

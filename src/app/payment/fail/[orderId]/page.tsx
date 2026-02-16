@@ -1,4 +1,4 @@
-import { XCircle, RefreshCw, ArrowLeft, MessageCircle } from 'lucide-react';
+import { XCircle, RefreshCw, ArrowLeft, MessageCircle } from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types

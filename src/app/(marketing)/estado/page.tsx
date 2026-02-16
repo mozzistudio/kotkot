@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { CheckCircle2, AlertCircle, XCircle, Clock } from 'lucide-react';
+import { CheckCircle2, AlertCircle, XCircle, Clock } from '@/components/shared/icon-map';
 
 type ServiceStatus = 'operational' | 'degraded' | 'outage';
 type IncidentStatus = 'resolved' | 'investigating' | 'monitoring';

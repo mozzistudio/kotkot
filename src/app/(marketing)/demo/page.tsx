@@ -9,7 +9,7 @@ import {
   Zap,
   Globe,
   HeadphonesIcon,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 const countries = [
   { code: 'PA', name: 'Panamá', flag: '\u{1F1F5}\u{1F1E6}' },

@@ -16,7 +16,7 @@ import {
   Settings,
   ShieldCheck,
   X,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 interface SidebarProps {
   open: boolean;
@@ -40,7 +40,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
   const pathname = usePathname();
 
   const sidebarContent = (
-    <div className="flex flex-col h-full bg-[var(--dark-blue)]">
+    <div className="flex flex-col h-full bg-[var(--surface-inverse)]">
       {/* Logo */}
       <div className="flex items-center justify-between px-6 py-5 border-b border-white/[0.08]">
         <Link href="/app/dashboard" className="flex items-center gap-2.5">
@@ -92,7 +92,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
 
               {/* Notification badge for Conversaciones */}
               {item.href === '/app/conversations' && (
-                <span className="ml-auto flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-[var(--accent)] text-[var(--dark-blue)] text-[10px] font-bold">
+                <span className="ml-auto flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-[var(--accent)] text-[var(--text-primary)] text-[10px] font-bold">
                   12
                 </span>
               )}
@@ -110,7 +110,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
           <div className="flex-1 min-w-0">
             <p className="text-sm font-medium text-white truncate">Juan Perez</p>
             <div className="flex items-center gap-1.5">
-              <span className="inline-flex items-center px-1.5 py-0.5 rounded-[var(--radius-badge)] text-[10px] font-bold bg-[var(--accent)] text-[var(--dark-blue)]">
+              <span className="inline-flex items-center px-1.5 py-0.5 rounded-[var(--radius-badge)] text-[10px] font-bold bg-[var(--accent)] text-[var(--text-primary)]">
                 PRO
               </span>
               <span className="text-[11px] text-white/40 truncate">Broker</span>
@@ -124,7 +124,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex lg:fixed lg:inset-y-0 lg:left-0 lg:w-[220px] lg:flex-col bg-[var(--dark-blue)] z-30">
+      <aside className="hidden lg:flex lg:fixed lg:inset-y-0 lg:left-0 lg:w-[220px] lg:flex-col bg-[var(--surface-inverse)] z-30">
         {sidebarContent}
       </aside>
 
@@ -136,7 +136,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
             animate={{ x: 0 }}
             exit={{ x: -220 }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed inset-y-0 left-0 w-[220px] flex flex-col bg-[var(--dark-blue)] z-50 lg:hidden"
+            className="fixed inset-y-0 left-0 w-[220px] flex flex-col bg-[var(--surface-inverse)] z-50 lg:hidden"
           >
             {sidebarContent}
           </motion.aside>

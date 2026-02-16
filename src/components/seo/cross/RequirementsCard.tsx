@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Check, X } from 'lucide-react';
+import { Check, X } from '@/components/shared/icon-map';
 
 interface RequirementsCardProps {
   requiredDocuments?: string[];

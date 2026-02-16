@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Users, Inbox, BarChart3, Zap, Filter, Calendar } from 'lucide-react';
+import { Users, Inbox, BarChart3, Zap, Filter, Calendar } from '@/components/shared/icon-map';
 import { PageHero } from '@/components/marketing/shared/PageHero';
 import { CTABanner } from '@/components/marketing/shared/CTABanner';
 import { Breadcrumb } from '@/components/marketing/shared/Breadcrumb';

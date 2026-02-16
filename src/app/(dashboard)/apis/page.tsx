@@ -18,7 +18,7 @@ import {
   Building2,
   RefreshCw,
   Shield,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -140,18 +140,18 @@ const insurers: Insurer[] = [
 // ---------------------------------------------------------------------------
 
 const statusConfig: Record<ConnectionStatus, { label: string; dotColor: string; badgeBg: string; badgeText: string; badgeBorder: string }> = {
-  active: { label: 'Activa', dotColor: 'bg-[var(--success)]', badgeBg: 'bg-emerald-50', badgeText: 'text-emerald-700', badgeBorder: 'border-emerald-200' },
-  pending: { label: 'Pendiente', dotColor: 'bg-amber-500', badgeBg: 'bg-amber-50', badgeText: 'text-amber-700', badgeBorder: 'border-amber-200' },
-  error: { label: 'Error', dotColor: 'bg-red-500', badgeBg: 'bg-red-50', badgeText: 'text-red-700', badgeBorder: 'border-red-200' },
-  disconnected: { label: 'No conectada', dotColor: 'bg-slate-400', badgeBg: 'bg-slate-100', badgeText: 'text-slate-600', badgeBorder: 'border-slate-200' },
+  active: { label: 'Activa', dotColor: 'bg-[var(--success)]', badgeBg: 'bg-[rgba(16,185,129,0.12)]', badgeText: 'text-[var(--success-fg)]', badgeBorder: 'border-[rgba(16,185,129,0.25)]' },
+  pending: { label: 'Pendiente', dotColor: 'bg-[var(--accent)]', badgeBg: 'bg-[var(--surface-panel)]', badgeText: 'text-[var(--text-primary)]', badgeBorder: 'border-[var(--border-default)]' },
+  error: { label: 'Error', dotColor: 'bg-[var(--error)]', badgeBg: 'bg-[rgba(239,68,68,0.12)]', badgeText: 'text-[var(--error)]', badgeBorder: 'border-[rgba(239,68,68,0.25)]' },
+  disconnected: { label: 'No conectada', dotColor: 'bg-[var(--border-strong)]', badgeBg: 'bg-[var(--surface-panel)]', badgeText: 'text-[var(--text-secondary)]', badgeBorder: 'border-[var(--border-default)]' },
 };
 
 const productConfig: Record<InsuranceProduct, { label: string; icon: React.ReactNode; color: string }> = {
-  auto: { label: 'Auto', icon: <Car className="h-3 w-3" />, color: 'bg-sky-50 text-sky-700 border border-sky-200' },
-  health: { label: 'Salud', icon: <Heart className="h-3 w-3" />, color: 'bg-rose-50 text-rose-700 border border-rose-200' },
-  home: { label: 'Hogar', icon: <Home className="h-3 w-3" />, color: 'bg-amber-50 text-amber-700 border border-amber-200' },
-  travel: { label: 'Viaje', icon: <Plane className="h-3 w-3" />, color: 'bg-purple-50 text-purple-700 border border-purple-200' },
-  business: { label: 'Negocio', icon: <Briefcase className="h-3 w-3" />, color: 'bg-teal-50 text-teal-700 border border-teal-200' },
+  auto: { label: 'Auto', icon: <Car className="h-3 w-3" />, color: 'bg-[var(--accent-light)] text-[var(--text-primary)] border border-[rgba(202,255,4,0.45)]' },
+  health: { label: 'Salud', icon: <Heart className="h-3 w-3" />, color: 'bg-[var(--accent-light)] text-[var(--text-primary)] border border-[rgba(202,255,4,0.45)]' },
+  home: { label: 'Hogar', icon: <Home className="h-3 w-3" />, color: 'bg-[var(--surface-panel)] text-[var(--text-secondary)] border border-[var(--border-default)]' },
+  travel: { label: 'Viaje', icon: <Plane className="h-3 w-3" />, color: 'bg-[var(--accent-light)] text-[var(--text-primary)] border border-[rgba(202,255,4,0.45)]' },
+  business: { label: 'Negocio', icon: <Briefcase className="h-3 w-3" />, color: 'bg-[var(--accent-light)] text-[var(--text-primary)] border border-[rgba(202,255,4,0.45)]' },
 };
 
 // ---------------------------------------------------------------------------
@@ -190,7 +190,7 @@ export default function ApisPage() {
           return (
             <div key={s} className="card p-3">
               <div className="flex items-center gap-2">
-                <span className={`status-dot ${sc.dotColor === 'bg-[var(--success)]' ? 'status-dot-success' : sc.dotColor === 'bg-red-500' ? 'status-dot-error' : sc.dotColor === 'bg-amber-500' ? 'status-dot-warning' : ''}`} />
+                <span className={`status-dot ${sc.dotColor === 'bg-[var(--success)]' ? 'status-dot-success' : sc.dotColor === 'bg-[var(--error)]' ? 'status-dot-error' : sc.dotColor === 'bg-[var(--accent)]' ? 'status-dot-warning' : ''}`} />
                 <span className="text-xs text-[var(--text-secondary)]">{sc.label}</span>
               </div>
               <p className="mt-1 text-lg font-bold text-[var(--text-primary)] font-data">{count}</p>

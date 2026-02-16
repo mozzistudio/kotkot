@@ -15,7 +15,7 @@ import {
   Info,
   ExternalLink,
   CheckCircle,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -74,9 +74,9 @@ const botPersonalities = ['Mi Agente', 'Agente Formal', 'Agente Express'];
 // ---------------------------------------------------------------------------
 
 const statusConfig: Record<NumberStatus, { label: string; dotColor: string; icon: React.ReactNode }> = {
-  active: { label: 'Activo', dotColor: 'bg-[var(--success)]', icon: <Wifi className="h-4 w-4 text-[var(--dark-blue)]" /> },
-  pending: { label: 'Pendiente', dotColor: 'bg-amber-500', icon: <Clock className="h-4 w-4 text-amber-700" /> },
-  disconnected: { label: 'Desconectado', dotColor: 'bg-red-500', icon: <WifiOff className="h-4 w-4 text-red-700" /> },
+  active: { label: 'Activo', dotColor: 'bg-[var(--success)]', icon: <Wifi className="h-4 w-4 text-[var(--text-primary)]" /> },
+  pending: { label: 'Pendiente', dotColor: 'bg-[var(--accent)]', icon: <Clock className="h-4 w-4 text-[var(--text-primary)]" /> },
+  disconnected: { label: 'Desconectado', dotColor: 'bg-[var(--error)]', icon: <WifiOff className="h-4 w-4 text-[var(--error)]" /> },
 };
 
 // ---------------------------------------------------------------------------
@@ -124,8 +124,8 @@ export default function WhatsAppPage() {
                         num.status === 'active'
                           ? 'border-[var(--accent)] bg-[var(--accent)]/10 text-black'
                           : num.status === 'pending'
-                          ? 'border border-amber-200 bg-amber-50 text-amber-700'
-                          : 'border border-red-200 bg-red-50 text-red-700'
+                          ? 'border border-[var(--border-default)] bg-[var(--surface-panel)] text-[var(--text-primary)]'
+                          : 'border border-[rgba(239,68,68,0.25)] bg-[rgba(239,68,68,0.12)] text-[var(--error)]'
                       }`}>
                         <span className={`h-1.5 w-1.5 rounded-full ${sc.dotColor}`} />
                         {sc.label}
@@ -147,7 +147,7 @@ export default function WhatsAppPage() {
                   </div>
                 </div>
 
-                <button className="inline-flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm font-medium text-red-700 transition-colors hover:bg-red-100">
+                <button className="inline-flex items-center gap-2 rounded-lg border border-[rgba(239,68,68,0.25)] bg-[rgba(239,68,68,0.12)] px-4 py-2 text-sm font-medium text-[var(--error)] transition-colors hover:bg-[rgba(239,68,68,0.18)]">
                   <Unplug className="h-4 w-4" />
                   Desconectar
                 </button>
@@ -267,7 +267,7 @@ export default function WhatsAppPage() {
           {/* Info Card */}
           <div className="mt-6 rounded-lg border border-[var(--border)] p-4 text-left">
             <div className="flex items-start gap-3">
-              <Info className="mt-0.5 h-4 w-4 shrink-0 text-blue-700" />
+              <Info className="mt-0.5 h-4 w-4 shrink-0 text-[var(--text-primary)]" />
               <div className="text-xs text-[var(--text-secondary)] space-y-2">
                 <p>
                   <strong className="text-[var(--text-primary)]">Meta Embedded Signup</strong> te permite conectar tu numero de WhatsApp Business directamente desde esta plataforma.
@@ -281,7 +281,7 @@ export default function WhatsAppPage() {
                   <li>Acceso a recibir SMS o llamadas en ese numero</li>
                 </ul>
                 <p>
-                  <strong className="text-[var(--text-primary)]">Costo:</strong> El uso de la API de WhatsApp Business tiene un costo aproximado de <span className="text-[var(--dark-blue)] font-medium">$100/mes</span> dependiendo del volumen de mensajes.
+                  <strong className="text-[var(--text-primary)]">Costo:</strong> El uso de la API de WhatsApp Business tiene un costo aproximado de <span className="text-[var(--text-primary)] font-medium">$100/mes</span> dependiendo del volumen de mensajes.
                 </p>
               </div>
             </div>

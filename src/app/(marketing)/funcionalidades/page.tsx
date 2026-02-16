@@ -7,7 +7,7 @@ import {
   Palette,
   Users,
   CheckCircle2,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 export const metadata: Metadata = {
   title: 'Funcionalidades — Kotkot',

@@ -5,7 +5,7 @@ import { PageHero } from '@/components/marketing/shared/PageHero';
 import { Breadcrumb } from '@/components/marketing/shared/Breadcrumb';
 import { CTABanner } from '@/components/marketing/shared/CTABanner';
 import { motion } from 'framer-motion';
-import { TrendingUp, Clock, DollarSign, Zap } from 'lucide-react';
+import { TrendingUp, Clock, DollarSign, Zap } from '@/components/shared/icon-map';
 import { useState, useEffect } from 'react';
 
 export default function CalculadoraROIPage() {

@@ -13,7 +13,7 @@ import {
   Shield,
   HandMetal,
   ExternalLink,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -130,9 +130,9 @@ const conversations: Conversation[] = [
 
 const statusColors: Record<ConversationStatus, string> = {
   active: 'bg-[var(--success)]',
-  waiting: 'bg-amber-500',
-  human: 'bg-[var(--dark-blue)]',
-  closed: 'bg-slate-400',
+  waiting: 'bg-[var(--accent)]',
+  human: 'bg-[var(--surface-inverse)]',
+  closed: 'bg-[var(--border-strong)]',
 };
 
 const statusLabels: Record<ConversationStatus, string> = {
@@ -145,10 +145,10 @@ const statusLabels: Record<ConversationStatus, string> = {
 const filterOptions: ConversationStatus[] = ['active', 'waiting', 'human', 'closed'];
 
 const insuranceBadgeColors: Record<string, string> = {
-  Auto: 'bg-blue-50 text-blue-700 border border-blue-200',
-  Salud: 'bg-rose-50 text-rose-700 border border-rose-200',
-  Hogar: 'bg-amber-50 text-amber-700 border border-amber-200',
-  Viaje: 'bg-purple-50 text-purple-700 border border-purple-200',
+  Auto: 'bg-[var(--accent-light)] text-[var(--text-primary)] border border-[rgba(202,255,4,0.45)]',
+  Salud: 'bg-[var(--accent-light)] text-[var(--text-primary)] border border-[rgba(202,255,4,0.45)]',
+  Hogar: 'bg-[var(--surface-panel)] text-[var(--text-secondary)] border border-[var(--border-default)]',
+  Viaje: 'bg-[var(--accent-light)] text-[var(--text-primary)] border border-[rgba(202,255,4,0.45)]',
 };
 
 // ---------------------------------------------------------------------------
@@ -313,18 +313,18 @@ function ConversationsContent() {
                   msg.sender === 'user'
                     ? 'bg-white'
                     : msg.sender === 'agent'
-                    ? 'bg-blue-50 border-blue-200'
+                    ? 'bg-[var(--accent-light)] border-[rgba(202,255,4,0.45)]'
                     : 'bg-[var(--accent-light)] border-[var(--accent)]'
                 }`}
               >
                 {msg.sender !== 'user' && (
                   <div className="mb-1 flex items-center gap-1">
                     {msg.sender === 'bot' ? (
-                      <Bot className="h-3 w-3 text-[var(--chart-line)]" />
+                      <Bot className="h-3 w-3 text-[var(--accent)]" />
                     ) : (
-                      <User className="h-3 w-3 text-blue-600" />
+                      <User className="h-3 w-3 text-[var(--text-primary)]" />
                     )}
-                    <span className={`text-chat-label ${msg.sender === 'bot' ? 'text-[var(--chart-line)]' : 'text-blue-600'}`}>
+                    <span className={`text-chat-label ${msg.sender === 'bot' ? 'text-[var(--accent)]' : 'text-[var(--text-primary)]'}`}>
                       {msg.sender === 'bot' ? 'Bot' : 'Agente'}
                     </span>
                   </div>

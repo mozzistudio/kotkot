@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Breadcrumb } from './Breadcrumb';
 import { CTABanner } from './CTABanner';
-import { Check, ArrowRight } from 'lucide-react';
+import { Check, ArrowRight } from '@/components/shared/icon-map';
 
 interface IntegrationFeature {
   title: string;

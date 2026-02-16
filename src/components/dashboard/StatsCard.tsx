@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import { TrendingUp, TrendingDown } from 'lucide-react';
+import { TrendingUp, TrendingDown } from '@/components/shared/icon-map';
 
 interface StatsCardProps {
   icon: ReactNode;
@@ -15,12 +15,12 @@ interface StatsCardProps {
 export function StatsCard({ icon, label, value, trend, className = '' }: StatsCardProps) {
   return (
     <div
-      className={`bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-6 transition-all duration-150 hover:border-[rgba(12,30,53,0.20)] hover:-translate-y-0.5 ${className}`}
+      className={`bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-6 transition-all duration-150 hover:border-[rgba(200,238,68,0.45)] hover:shadow-[0_10px_24px_rgba(10,15,7,0.08)] hover:-translate-y-0.5 ${className}`}
     >
       <div className="flex items-start justify-between">
         {/* Icon */}
         <div className="flex items-center justify-center w-10 h-10 rounded-[var(--radius-md)] bg-[var(--dark-blue-surface)]">
-          <div className="text-[var(--dark-blue)]">{icon}</div>
+          <div className="text-[var(--text-primary)]">{icon}</div>
         </div>
 
         {/* Trend */}
@@ -28,7 +28,7 @@ export function StatsCard({ icon, label, value, trend, className = '' }: StatsCa
           <div
             className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold ${
               trend.direction === 'up'
-                ? 'bg-[rgba(16,185,129,0.15)] text-[var(--dark-blue)]'
+                ? 'bg-[rgba(16,185,129,0.15)] text-[var(--text-primary)]'
                 : 'bg-[rgba(239,68,68,0.15)] text-[var(--error)]'
             }`}
           >

@@ -13,7 +13,7 @@ import {
   Link as LinkIcon,
   Bell,
   DollarSign
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 import Link from 'next/link';
 
 interface Integration {

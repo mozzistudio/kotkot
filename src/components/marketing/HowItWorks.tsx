@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CircleUser, Plug, Smartphone, Rocket } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { CircleUser, Plug, Smartphone, Rocket } from '@/components/shared/icon-map';
+import type { LucideIcon } from '@/components/shared/icon-map';
 
 interface Step {
   number: number;

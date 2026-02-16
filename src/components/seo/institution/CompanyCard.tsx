@@ -5,7 +5,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Star, ArrowRight, Phone } from 'lucide-react';
+import { Star, ArrowRight, Phone } from '@/components/shared/icon-map';
 import { Badge } from '@/components/ui/Badge';
 import type { InsuranceCompany, Lender } from '@/data/schema';
 

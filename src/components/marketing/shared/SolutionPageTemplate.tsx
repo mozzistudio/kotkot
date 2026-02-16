@@ -1,11 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle2, X } from 'lucide-react';
+import { CheckCircle2, X } from '@/components/shared/icon-map';
 import { PageHero } from './PageHero';
 import { CTABanner } from './CTABanner';
 import { Breadcrumb } from './Breadcrumb';
-import type { LucideIcon } from 'lucide-react';
+import type { LucideIcon } from '@/components/shared/icon-map';
 
 interface BeforeAfter {
   before: string[];

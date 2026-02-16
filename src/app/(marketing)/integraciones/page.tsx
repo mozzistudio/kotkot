@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { PageHero } from '@/components/marketing/shared/PageHero';
 import { CTABanner } from '@/components/marketing/shared/CTABanner';
 import { motion } from 'framer-motion';
-import { Building2, Landmark, CreditCard, MessageSquare, ArrowRight, Check } from 'lucide-react';
+import { Building2, Landmark, CreditCard, MessageSquare, ArrowRight, Check } from '@/components/shared/icon-map';
 import Link from 'next/link';
 import { useState } from 'react';
 

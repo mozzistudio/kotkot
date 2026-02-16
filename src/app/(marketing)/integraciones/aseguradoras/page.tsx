@@ -17,7 +17,7 @@ import {
   AlertCircle,
   Users,
   Check
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 import Link from 'next/link';
 
 interface Integration {
