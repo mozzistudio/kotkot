@@ -42,7 +42,7 @@ export function Slider({
             </label>
           )}
           {showValue && (
-            <span className="text-sm font-semibold text-[var(--dark-blue)]">
+            <span className="text-sm font-semibold text-[var(--text-primary)]">
               {value}
             </span>
           )}
@@ -60,7 +60,7 @@ export function Slider({
         disabled={disabled}
         className="h-2 w-full cursor-pointer appearance-none rounded-full bg-[var(--border-default)] outline-none transition-opacity disabled:cursor-not-allowed disabled:opacity-50"
         style={{
-          background: `linear-gradient(to right, var(--success) 0%, var(--success) ${percentage}%, var(--border-default) ${percentage}%)`,
+          background: `linear-gradient(to right, var(--accent) 0%, var(--accent) ${percentage}%, var(--border-default) ${percentage}%)`,
         }}
       />
 

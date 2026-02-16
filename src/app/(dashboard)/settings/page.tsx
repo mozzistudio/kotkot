@@ -62,9 +62,9 @@ const invoices: Invoice[] = [
 ];
 
 const roleConfig: Record<string, { label: string; color: string }> = {
-  admin: { label: 'Admin', color: 'bg-purple-50 text-purple-700 border border-purple-200' },
-  agent: { label: 'Agente', color: 'bg-blue-50 text-blue-700 border border-blue-200' },
-  viewer: { label: 'Visor', color: 'bg-slate-50 text-[var(--text-secondary)] border border-slate-200' },
+  admin: { label: 'Admin', color: 'bg-[var(--accent-light)] text-[var(--text-primary)] border border-[rgba(202,255,4,0.45)]' },
+  agent: { label: 'Agente', color: 'bg-[var(--accent-light)] text-[var(--text-primary)] border border-[rgba(202,255,4,0.45)]' },
+  viewer: { label: 'Visor', color: 'bg-[var(--surface-panel)] text-[var(--text-secondary)] border border-[var(--border-default)]' },
 };
 
 const tabs: { key: SettingsTab; label: string; icon: React.ReactNode }[] = [
@@ -184,9 +184,9 @@ export default function SettingsPage() {
                     type="text"
                     value="Panama (PA)"
                     readOnly
-                    className="w-full cursor-not-allowed rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-muted)] opacity-60 bg-gray-50"
+                    className="w-full cursor-not-allowed rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-muted)] opacity-60 bg-[var(--surface-panel)]"
                   />
-                  <span className="shrink-0 rounded bg-gray-100 px-2 py-0.5 text-xs text-[var(--text-muted)]">No editable</span>
+                  <span className="shrink-0 rounded bg-[var(--surface-hover)] px-2 py-0.5 text-xs text-[var(--text-muted)]">No editable</span>
                 </div>
               </div>
             </div>
@@ -233,7 +233,7 @@ export default function SettingsPage() {
                   <p className="text-xs text-[var(--text-tertiary)]">Hasta renovacion</p>
                 </div>
               </div>
-              <button className="mt-4 inline-flex items-center gap-2 rounded-lg border border-[var(--accent)] bg-[var(--accent)]/10 px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-[rgba(12,30,53,0.10)]">
+              <button className="mt-4 inline-flex items-center gap-2 rounded-lg border border-[var(--accent)] bg-[var(--accent)]/10 px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-[rgba(202,255,4,0.2)]">
                 <Zap className="h-4 w-4" />
                 Cambiar Plan
               </button>
@@ -243,7 +243,7 @@ export default function SettingsPage() {
             <div>
               <h3 className="mb-3 text-sm font-semibold text-[var(--text-primary)]">Metodo de Pago</h3>
               <div className="flex items-center gap-3 rounded-lg border border-[var(--border)] p-4">
-                <div className="flex h-8 w-12 items-center justify-center rounded-md bg-blue-50 text-xs font-bold text-blue-700">
+                <div className="flex h-8 w-12 items-center justify-center rounded-md bg-[var(--accent-light)] text-xs font-bold text-[var(--text-primary)]">
                   VISA
                 </div>
                 <div>
@@ -339,7 +339,7 @@ export default function SettingsPage() {
                     <Check className="h-4 w-4" />
                     Guardar Credenciales
                   </button>
-                  <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-5 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--dark-blue)] hover:text-black">
+                  <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-5 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)] hover:text-black">
                     <Zap className="h-4 w-4" />
                     Probar Conexion
                   </button>
@@ -360,8 +360,8 @@ export default function SettingsPage() {
               <div className="space-y-5">
                 <div className="rounded-lg border border-[var(--border)] p-5">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-50">
-                      <CreditCard className="h-5 w-5 text-purple-700" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--accent-light)]">
+                      <CreditCard className="h-5 w-5 text-[var(--text-primary)]" />
                     </div>
                     <div>
                       <h3 className="text-sm font-semibold text-[var(--text-primary)]">Stripe Connect</h3>
@@ -369,7 +369,7 @@ export default function SettingsPage() {
                         Acepta pagos de polizas con tarjeta de credito/debito
                       </p>
                     </div>
-                    <span className="ml-auto rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-700">
+                    <span className="ml-auto rounded-full border border-[var(--border-default)] bg-[var(--surface-panel)] px-2.5 py-0.5 text-xs font-medium text-[var(--text-primary)]">
                       No conectado
                     </span>
                   </div>
@@ -411,7 +411,7 @@ export default function SettingsPage() {
                         <div className="flex items-center gap-2">
                           <span className="text-sm font-medium text-[var(--text-primary)]">{member.name}</span>
                           {member.status === 'pending' && (
-                            <span className="rounded-full border border-amber-200 bg-amber-50 px-2 py-0.5 text-xs text-amber-700">
+                            <span className="rounded-full border border-[var(--border-default)] bg-[var(--surface-panel)] px-2 py-0.5 text-xs text-[var(--text-primary)]">
                               Pendiente
                             </span>
                           )}
@@ -425,13 +425,13 @@ export default function SettingsPage() {
                       </span>
                       <select
                         defaultValue={member.role}
-                        className="rounded-md border border-[var(--border)] bg-white px-2 py-1 text-xs text-[var(--text-primary)] focus:border-[var(--dark-blue)]/50 focus:outline-none"
+                        className="rounded-md border border-[var(--border)] bg-white px-2 py-1 text-xs text-[var(--text-primary)] focus:border-[var(--accent)] focus:outline-none"
                       >
                         <option value="admin">Admin</option>
                         <option value="agent">Agente</option>
                         <option value="viewer">Visor</option>
                       </select>
-                      <button className="rounded-md p-1.5 text-[var(--text-tertiary)] transition-colors hover:bg-red-50 hover:text-red-700">
+                      <button className="rounded-md p-1.5 text-[var(--text-tertiary)] transition-colors hover:bg-[rgba(239,68,68,0.12)] hover:text-[var(--error)]">
                         <Trash2 className="h-4 w-4" />
                       </button>
                     </div>

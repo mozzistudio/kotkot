@@ -12,8 +12,8 @@ const colorClasses: Record<BadgeColor, string> = {
   warning: 'bg-[var(--color-warning-bg)] text-[var(--warning-fg)] border border-[rgba(245,158,11,0.25)]',
   error: 'bg-[var(--color-danger-bg)] text-[var(--danger-fg)] border border-[rgba(239,68,68,0.25)]',
   gray: 'bg-[var(--surface-hover)] text-[var(--text-secondary)] border border-[var(--border-default)]',
-  'dark-blue': 'bg-[var(--color-info-bg)] text-[var(--dark-blue)] border border-[rgba(12,30,53,0.15)]',
-  info: 'bg-[var(--color-info-bg)] text-[var(--color-info-fg)] border border-[rgba(12,30,53,0.15)]',
+  'dark-blue': 'bg-[var(--color-info-bg)] text-[var(--text-primary)] border border-[rgba(202,255,4,0.45)]',
+  info: 'bg-[var(--accent-light)] text-[var(--text-primary)] border border-[rgba(202,255,4,0.45)]',
   neutral: 'bg-[var(--surface-panel)] text-[var(--text-secondary)] border border-[var(--border-default)]',
 };
 

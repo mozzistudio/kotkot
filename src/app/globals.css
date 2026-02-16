@@ -31,11 +31,11 @@
   --color-accent-light: rgba(202, 255, 4, 0.15);
 
   /* --- Dark Blue (Midnight Navy) -------------------------- */
-  --color-dark-blue: #0C1E35;
-  --color-dark-blue-light: #122B47;
-  --color-dark-blue-lighter: #1A3A5C;
-  --color-dark-blue-surface: rgba(12, 30, 53, 0.06);
-  --color-dark-blue-text: #0C1E35;
+  --color-dark-blue: #0a0f07;
+  --color-dark-blue-light: #151d10;
+  --color-dark-blue-lighter: #1f2a18;
+  --color-dark-blue-surface: rgba(200, 238, 68, 0.18);
+  --color-dark-blue-text: #0a0f07;
 
   /* --------------------------------------------------------
      Semantic Tokens (DESIGN_SYSTEM.md §3.3)
@@ -43,22 +43,22 @@
      -------------------------------------------------------- */
 
   /* --- Surfaces -------------------------------------------- */
-  --color-surface-page: #ffffff;
-  --color-surface-panel: #f9fafb;
+  --color-surface-page: #f8faf5;
+  --color-surface-panel: #f3f5ef;
   --color-surface-elevated: #ffffff;
-  --color-surface-inverse: #0C1E35;
+  --color-surface-inverse: #0a0f07;
   --color-surface-hover: #f3f4f6;
   --color-surface-active: #CAFF04;
-  --color-surface-sidebar: #0C1E35;
+  --color-surface-sidebar: #0a0f07;
   --color-surface-history: #fafafa;
 
   /* --- Text ------------------------------------------------ */
-  --color-text-primary: #111827;
+  --color-text-primary: #1a1a1a;
   --color-text-secondary: #6b7280;
   --color-text-muted: #9ca3af;
   --color-text-inverse: #ffffff;
   --color-text-on-accent: #111827;
-  --color-text-link: #0C1E35;
+  --color-text-link: #0a0f07;
 
   /* --- Borders --------------------------------------------- */
   --color-border-subtle: #f3f4f6;
@@ -76,9 +76,9 @@
   --color-action-tertiary-fg: #6b7280;
   --color-action-tertiary-hover: #f3f4f6;
   /* Dark action (B2B conversion) */
-  --color-action-dark-bg: #0C1E35;
+  --color-action-dark-bg: #0a0f07;
   --color-action-dark-fg: #ffffff;
-  --color-action-dark-hover: #122B47;
+  --color-action-dark-hover: #151d10;
 
   /* --- Brand utility aliases (bounded use in branded UI motifs) --- */
   --color-brand-whatsapp-700: #075E54;
@@ -92,10 +92,10 @@
   --color-brand-google-green: #34A853;
   --color-brand-google-yellow: #FBBC05;
   --color-brand-google-red: #EA4335;
-  --color-brand-yappy-1: #8b5cf6;
-  --color-brand-yappy-2: #a855f7;
-  --color-brand-stripe-1: #3b82f6;
-  --color-brand-stripe-2: #6366f1;
+  --color-brand-yappy-1: #c8ee44;
+  --color-brand-yappy-2: #a8d12f;
+  --color-brand-stripe-1: #c8ee44;
+  --color-brand-stripe-2: #a8d12f;
   --color-brand-wallet: #7B2BFC;
 
   /* --- Semantic States -------------------------------------- */
@@ -108,16 +108,16 @@
   --color-danger-bg: rgba(239, 68, 68, 0.12);
   --color-danger-fg: #b91c1c;
   --color-danger: #ef4444;
-  --color-info-bg: rgba(12, 30, 53, 0.08);
-  --color-info-fg: #0C1E35;
+  --color-info-bg: rgba(200, 238, 68, 0.18);
+  --color-info-fg: #1a1a1a;
   --color-notification: #ef4444;
 
   /* --- Focus ----------------------------------------------- */
-  --color-focus-ring: #0C1E35;
+  --color-focus-ring: #c8ee44;
 
   /* --- Charts & Data --------------------------------------- */
-  --color-chart-line: #10b981;
-  --color-chart-dot: #0C1E35;
+  --color-chart-line: #c8ee44;
+  --color-chart-dot: #c8ee44;
   --color-chart-grid: #e5e7eb;
   --color-chart-fill: rgba(16, 185, 129, 0.08);
 
@@ -249,27 +249,27 @@
   --accent-light: rgba(202, 255, 4, 0.15);
 
   /* Dark Blue */
-  --dark-blue: #0C1E35;
-  --dark-blue-light: #122B47;
-  --dark-blue-lighter: #1A3A5C;
-  --dark-blue-surface: rgba(12, 30, 53, 0.06);
+  --dark-blue: #0a0f07;
+  --dark-blue-light: #151d10;
+  --dark-blue-lighter: #1f2a18;
+  --dark-blue-surface: rgba(200, 238, 68, 0.18);
 
   /* Surfaces */
-  --surface-page: #ffffff;
-  --surface-panel: #f9fafb;
+  --surface-page: #f8faf5;
+  --surface-panel: #f3f5ef;
   --surface-elevated: #ffffff;
-  --surface-inverse: #0C1E35;
+  --surface-inverse: #0a0f07;
   --surface-hover: #f3f4f6;
   --surface-active: #CAFF04;
-  --surface-sidebar: #0C1E35;
+  --surface-sidebar: #0a0f07;
 
   /* Text */
-  --text-primary: #111827;
+  --text-primary: #1a1a1a;
   --text-secondary: #6b7280;
   --text-muted: #9ca3af;
   --text-inverse: #ffffff;
   --text-on-accent: #111827;
-  --text-link: #0C1E35;
+  --text-link: #0a0f07;
 
   /* Borders */
   --border-subtle: #f3f4f6;
@@ -281,9 +281,9 @@
   --action-primary-bg: #CAFF04;
   --action-primary-fg: #111827;
   --action-primary-hover: #b8e600;
-  --action-dark-bg: #0C1E35;
+  --action-dark-bg: #0a0f07;
   --action-dark-fg: #ffffff;
-  --action-dark-hover: #122B47;
+  --action-dark-hover: #151d10;
 
   --brand-whatsapp-700: #075E54;
   --brand-whatsapp-500: #128C7E;
@@ -296,10 +296,10 @@
   --brand-google-green: #34A853;
   --brand-google-yellow: #FBBC05;
   --brand-google-red: #EA4335;
-  --brand-yappy-1: #8b5cf6;
-  --brand-yappy-2: #a855f7;
-  --brand-stripe-1: #3b82f6;
-  --brand-stripe-2: #6366f1;
+  --brand-yappy-1: #c8ee44;
+  --brand-yappy-2: #a8d12f;
+  --brand-stripe-1: #c8ee44;
+  --brand-stripe-2: #a8d12f;
   --brand-wallet: #7B2BFC;
 
   /* Semantic States */
@@ -312,8 +312,8 @@
   --notification: #ef4444;
 
   /* Charts */
-  --chart-line: #10b981;
-  --chart-dot: #0C1E35;
+  --chart-line: #c8ee44;
+  --chart-dot: #c8ee44;
   --chart-grid: #e5e7eb;
   --chart-fill: rgba(16, 185, 129, 0.08);
 
@@ -336,7 +336,7 @@
   --transition-spring: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Focus */
-  --focus-ring: #0C1E35;
+  --focus-ring: #c8ee44;
 }
 
 /* ============================================================
@@ -510,11 +510,13 @@ body {
   border: 1px solid var(--border-default);
   border-radius: var(--radius-card);
   padding: var(--space-card);
-  transition: border-color var(--transition-base);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
 }
 
 .card:hover {
-  border-color: var(--border-strong);
+  border-color: rgba(200, 238, 68, 0.45);
+  box-shadow: 0 10px 24px rgba(10, 15, 7, 0.08);
+  transform: translateY(-2px);
 }
 
 .card-nested {
@@ -855,7 +857,7 @@ body {
 .badge-dark-blue {
   background: var(--color-info-bg);
   color: var(--dark-blue);
-  border: 1px solid rgba(12, 30, 53, 0.15);
+  border: 1px solid rgba(202, 255, 4, 0.45);
 }
 
 .badge-success {

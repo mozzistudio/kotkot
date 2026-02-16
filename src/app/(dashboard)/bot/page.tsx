@@ -517,10 +517,10 @@ export default function BotPage() {
                   {settings.restrictedTopics.map((topic) => (
                     <span
                       key={topic}
-                      className="inline-flex items-center gap-1 rounded-full border border-red-200 bg-red-50 px-2.5 py-1 text-xs font-medium text-red-700"
+                      className="inline-flex items-center gap-1 rounded-full border border-[rgba(239,68,68,0.25)] bg-[rgba(239,68,68,0.12)] px-2.5 py-1 text-xs font-medium text-[var(--error)]"
                     >
                       {topic}
-                      <button onClick={() => removeRestrictedTopic(topic)} className="hover:text-red-900">
+                      <button onClick={() => removeRestrictedTopic(topic)} className="hover:text-[var(--error)]">
                         <X className="h-3 w-3" />
                       </button>
                     </span>
@@ -537,7 +537,7 @@ export default function BotPage() {
                   />
                   <button
                     onClick={addRestrictedTopic}
-                    className="rounded-lg border border-[var(--border)] px-3 py-2 text-sm text-[var(--text-secondary)] transition-colors hover:border-[var(--dark-blue)] hover:text-[var(--dark-blue)]"
+                    className="rounded-lg border border-[var(--border)] px-3 py-2 text-sm text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--text-primary)]"
                   >
                     Agregar
                   </button>
@@ -589,7 +589,7 @@ export default function BotPage() {
               className="flex w-full items-center justify-between p-6 text-left"
             >
               <div className="flex items-center gap-2">
-                <Sparkles className="h-4 w-4 text-amber-700" />
+                <Sparkles className="h-4 w-4 text-[var(--text-primary)]" />
                 <span className="text-card-title">Avanzado</span>
               </div>
               {showAdvanced ? (
@@ -610,7 +610,7 @@ export default function BotPage() {
                   placeholder="Deja vacio para usar el prompt generado automaticamente basado en la configuracion anterior..."
                   className="w-full rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20 resize-none font-mono"
                 />
-                <p className="mt-1.5 text-xs text-amber-700/80">
+                <p className="mt-1.5 text-xs text-[var(--text-primary)]/80">
                   Advertencia: Esto sobrescribe completamente el prompt del sistema. Usa con cuidado.
                 </p>
               </div>
@@ -635,7 +635,7 @@ export default function BotPage() {
           <div className="sticky top-8">
             <div className="rounded-xl border border-[var(--border)] bg-white overflow-hidden">
               {/* Preview Header */}
-              <div className="flex items-center justify-between border-b border-[var(--border)] bg-[rgba(12,30,53,0.06)] px-4 py-3">
+              <div className="flex items-center justify-between border-b border-[var(--border)] bg-[var(--accent-light)] px-4 py-3">
                 <div className="flex items-center gap-3">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--accent)]/10">
                     <Bot className="h-4 w-4 text-black" />
@@ -648,7 +648,7 @@ export default function BotPage() {
                 {chatMessages.length > 0 && (
                   <button
                     onClick={clearChat}
-                    className="flex items-center gap-1.5 rounded-lg border border-[var(--border)]/60 px-2.5 py-1.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-red-200 hover:text-red-700"
+                    className="flex items-center gap-1.5 rounded-lg border border-[var(--border)]/60 px-2.5 py-1.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-[rgba(239,68,68,0.25)] hover:text-[var(--error)]"
                     title="Limpiar chat"
                   >
                     <Trash2 className="h-3 w-3" />
@@ -676,7 +676,7 @@ export default function BotPage() {
                     <div
                       className={`max-w-[85%] rounded-2xl px-3.5 py-2 text-xs leading-relaxed ${
                         msg.isError
-                          ? 'border border-red-200 bg-red-50 text-red-700 rounded-bl-sm'
+                          ? 'border border-[rgba(239,68,68,0.25)] bg-[rgba(239,68,68,0.12)] text-[var(--error)] rounded-bl-sm'
                           : msg.sender === 'user'
                           ? 'bg-white/10 text-[var(--text-primary)] rounded-br-sm'
                           : 'bg-[var(--accent)]/10 border border-[var(--accent)] text-black rounded-bl-sm'
@@ -711,12 +711,12 @@ export default function BotPage() {
               {/* Interactive Input */}
               <div className="border-t border-[var(--border)] p-3">
                 {chatError && !isTyping && (
-                  <div className="mb-2 flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700">
+                  <div className="mb-2 flex items-center gap-2 rounded-lg border border-[rgba(239,68,68,0.25)] bg-[rgba(239,68,68,0.12)] px-3 py-2 text-xs text-[var(--error)]">
                     <AlertCircle className="h-3 w-3 flex-shrink-0" />
                     <span className="line-clamp-2">{chatError}</span>
                     <button
                       onClick={() => setChatError(null)}
-                      className="ml-auto flex-shrink-0 text-red-700/60 hover:text-red-700"
+                      className="ml-auto flex-shrink-0 text-[var(--error)]/60 hover:text-[var(--error)]"
                     >
                       <X className="h-3 w-3" />
                     </button>

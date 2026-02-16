@@ -63,22 +63,22 @@ const dateRanges: { key: DateRange; label: string }[] = [
 
 const kpiByRange: Record<DateRange, KPI[]> = {
   '7d': [
-    { label: 'Total Conversaciones', value: '168', change: '+12%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--chart-line)]" /> },
-    { label: 'Tasa de Conversion', value: '34.5%', change: '+3.2%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--chart-dot)]" /> },
-    { label: 'Tiempo Prom. Cotizacion', value: '2.4 min', change: '-18%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--chart-line)]" /> },
-    { label: 'Ingresos Totales', value: '$4,280', change: '+22%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--chart-dot)]" /> },
+    { label: 'Total Conversaciones', value: '168', change: '+12%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Tasa de Conversion', value: '34.5%', change: '+3.2%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Tiempo Prom. Cotizacion', value: '2.4 min', change: '-18%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Ingresos Totales', value: '$4,280', change: '+22%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" /> },
   ],
   '30d': [
-    { label: 'Total Conversaciones', value: '682', change: '+18%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--chart-line)]" /> },
-    { label: 'Tasa de Conversion', value: '31.2%', change: '+5.1%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--chart-dot)]" /> },
-    { label: 'Tiempo Prom. Cotizacion', value: '2.8 min', change: '-12%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--chart-line)]" /> },
-    { label: 'Ingresos Totales', value: '$12,450', change: '+15%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--chart-dot)]" /> },
+    { label: 'Total Conversaciones', value: '682', change: '+18%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Tasa de Conversion', value: '31.2%', change: '+5.1%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Tiempo Prom. Cotizacion', value: '2.8 min', change: '-12%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Ingresos Totales', value: '$12,450', change: '+15%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" /> },
   ],
   '90d': [
-    { label: 'Total Conversaciones', value: '1,847', change: '+45%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--chart-line)]" /> },
-    { label: 'Tasa de Conversion', value: '29.8%', change: '+8.3%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--chart-dot)]" /> },
-    { label: 'Tiempo Prom. Cotizacion', value: '3.1 min', change: '-24%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--chart-line)]" /> },
-    { label: 'Ingresos Totales', value: '$38,920', change: '+52%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--chart-dot)]" /> },
+    { label: 'Total Conversaciones', value: '1,847', change: '+45%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Tasa de Conversion', value: '29.8%', change: '+8.3%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Tiempo Prom. Cotizacion', value: '3.1 min', change: '-24%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Ingresos Totales', value: '$38,920', change: '+52%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" /> },
   ],
 };
 
@@ -93,11 +93,11 @@ const dailyConversations: DailyConversation[] = [
 ];
 
 const insuranceDistribution: InsuranceTypeDist[] = [
-  { type: 'Auto', percentage: 45, color: 'bg-sky-500' },
-  { type: 'Salud', percentage: 25, color: 'bg-rose-500' },
-  { type: 'Hogar', percentage: 15, color: 'bg-amber-500' },
-  { type: 'Viaje', percentage: 10, color: 'bg-purple-500' },
-  { type: 'Negocio', percentage: 5, color: 'bg-[var(--dark-blue)]' },
+  { type: 'Auto', percentage: 45, color: 'bg-[var(--accent)]' },
+  { type: 'Salud', percentage: 25, color: 'bg-[var(--accent)]' },
+  { type: 'Hogar', percentage: 15, color: 'bg-[var(--accent)]' },
+  { type: 'Viaje', percentage: 10, color: 'bg-[var(--accent)]' },
+  { type: 'Negocio', percentage: 5, color: 'bg-[var(--surface-inverse)]' },
 ];
 
 const topInsurers: TopInsurer[] = [
@@ -109,10 +109,10 @@ const topInsurers: TopInsurer[] = [
 ];
 
 const funnelSteps: FunnelStep[] = [
-  { label: 'Conversaciones', value: 682, percentage: 100, color: 'from-slate-500 to-slate-400' },
-  { label: 'Cotizaciones', value: 412, percentage: 60, color: 'from-blue-500 to-blue-400' },
-  { label: 'Seleccion', value: 213, percentage: 31, color: 'from-amber-500 to-amber-400' },
-  { label: 'Pago', value: 156, percentage: 23, color: 'from-[var(--success)] to-[var(--dark-blue)]' },
+  { label: 'Conversaciones', value: 682, percentage: 100, color: 'from-[var(--text-secondary)] to-[var(--text-muted)]' },
+  { label: 'Cotizaciones', value: 412, percentage: 60, color: 'from-[var(--accent)] to-[var(--accent-hover)]' },
+  { label: 'Seleccion', value: 213, percentage: 31, color: 'from-[var(--accent)] to-[var(--accent-hover)]' },
+  { label: 'Pago', value: 156, percentage: 23, color: 'from-[var(--success)] to-[var(--accent-hover)]' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -144,7 +144,7 @@ export default function AnalyticsPage() {
               onClick={() => setDateRange(dr.key)}
               className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
                 dateRange === dr.key
-                  ? 'bg-[var(--dark-blue)] text-white'
+                  ? 'bg-[var(--accent)] text-[var(--text-primary)]'
                   : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               }`}
             >
@@ -186,7 +186,7 @@ export default function AnalyticsPage() {
                   <span className="text-xs text-[var(--text-secondary)] font-data">{d.value}</span>
                   <div className="w-full flex justify-center">
                     <div
-                      className="w-8 rounded-t-md bg-[var(--chart-line)] transition-all duration-300"
+                      className="w-8 rounded-t-md bg-[var(--accent)] transition-all duration-300"
                       style={{ height: `${heightPct}%`, minHeight: 8 }}
                     />
                   </div>
@@ -288,7 +288,7 @@ export default function AnalyticsPage() {
           </div>
 
           {/* Conversion rate callout */}
-          <div className="mt-4 rounded-lg border border-[rgba(12,30,53,0.12)] bg-[rgba(12,30,53,0.04)] p-3 text-center">
+          <div className="mt-4 rounded-lg border border-[rgba(202,255,4,0.45)] bg-[var(--accent-light)] p-3 text-center">
             <p className="text-xs text-[var(--text-secondary)]">Tasa de conversion total</p>
             <p className="text-xl font-bold text-[var(--success)] font-data">22.9%</p>
             <p className="text-xs text-[var(--text-tertiary)]">Conversacion a Pago</p>
