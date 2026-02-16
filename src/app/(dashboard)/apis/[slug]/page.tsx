@@ -230,7 +230,7 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
   if (!insurer) {
     return (
       <div className="min-h-screen p-6 lg:p-8">
-        <Link href="/apis" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors mb-6">
+        <Link href="/app/apis" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors mb-6">
           <ArrowLeft className="h-4 w-4" />
           Volver a Aseguradoras
         </Link>
@@ -248,7 +248,7 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
   return (
     <div className="min-h-screen p-6 lg:p-8">
       {/* Back link */}
-      <Link href="/apis" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors mb-6">
+      <Link href="/app/apis" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors mb-6">
         <ArrowLeft className="h-4 w-4" />
         Volver a Aseguradoras
       </Link>
@@ -417,7 +417,7 @@ export default function InsurerDetailPage({ params }: { params: Promise<{ slug: 
                       <td className="py-3 text-sm text-[var(--text-secondary)] font-data">{q.id}</td>
                       <td className="py-3 text-sm">
                         <Link
-                          href={`/clients/${q.id.replace('Q-', 'C-')}`}
+                          href={`/app/clients/${q.id.replace('Q-', 'C-')}`}
                           className="text-[var(--text-primary)] hover:text-[var(--text-primary)] transition-colors"
                         >
                           {q.client}

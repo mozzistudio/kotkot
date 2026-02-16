@@ -274,7 +274,7 @@ function ConversationsContent() {
             <div>
               <div className="flex items-center gap-2">
                 <Link
-                  href={`/clients/C-${selectedConversation.id.padStart(3, '0')}`}
+                  href={`/app/clients/C-${selectedConversation.id.padStart(3, '0')}`}
                   className="text-sm font-semibold text-[var(--text-primary)] hover:text-[var(--text-link)] transition-colors inline-flex items-center gap-1"
                 >
                   {selectedConversation.clientName}

@@ -25,16 +25,16 @@ interface TopBarProps {
 }
 
 const PAGE_TITLES: Record<string, string> = {
-  '/dashboard': 'Dashboard',
-  '/conversations': 'Conversaciones',
-  '/quotes': 'Cotizaciones',
-  '/ingresos': 'Ingresos',
-  '/clients': 'Clientes',
-  '/bot': 'Mi Agente',
-  '/apis': 'Aseguradoras',
-  '/whatsapp': 'WhatsApp',
-  '/analytics': 'Analytics',
-  '/settings': 'Configuracion',
+  '/app/dashboard': 'Dashboard',
+  '/app/conversations': 'Conversaciones',
+  '/app/quotes': 'Cotizaciones',
+  '/app/ingresos': 'Ingresos',
+  '/app/clients': 'Clientes',
+  '/app/bot': 'Mi Agente',
+  '/app/apis': 'Aseguradoras',
+  '/app/whatsapp': 'WhatsApp',
+  '/app/analytics': 'Analytics',
+  '/app/settings': 'Configuracion',
 };
 
 // ---------------------------------------------------------------------------
@@ -50,42 +50,42 @@ interface SearchItem {
 
 const searchableItems: SearchItem[] = [
   // Clients
-  { type: 'client', label: 'Maria Gonzalez', sublabel: '+507 6234-5678', href: '/clients/C-001' },
-  { type: 'client', label: 'Carlos Perez', sublabel: '+507 6345-6789', href: '/clients/C-002' },
-  { type: 'client', label: 'Ana Rodriguez', sublabel: '+507 6456-7890', href: '/clients/C-003' },
-  { type: 'client', label: 'Juan Martinez', sublabel: '+507 6567-8901', href: '/clients/C-004' },
-  { type: 'client', label: 'Laura Castillo', sublabel: '+507 6678-9012', href: '/clients/C-005' },
-  { type: 'client', label: 'Roberto Diaz', sublabel: '+507 6789-0123', href: '/clients/C-006' },
-  { type: 'client', label: 'Patricia Morales', sublabel: '+507 6890-1234', href: '/clients/C-007' },
-  { type: 'client', label: 'Fernando Vega', sublabel: '+507 6901-2345', href: '/clients/C-008' },
+  { type: 'client', label: 'Maria Gonzalez', sublabel: '+507 6234-5678', href: '/app/clients/C-001' },
+  { type: 'client', label: 'Carlos Perez', sublabel: '+507 6345-6789', href: '/app/clients/C-002' },
+  { type: 'client', label: 'Ana Rodriguez', sublabel: '+507 6456-7890', href: '/app/clients/C-003' },
+  { type: 'client', label: 'Juan Martinez', sublabel: '+507 6567-8901', href: '/app/clients/C-004' },
+  { type: 'client', label: 'Laura Castillo', sublabel: '+507 6678-9012', href: '/app/clients/C-005' },
+  { type: 'client', label: 'Roberto Diaz', sublabel: '+507 6789-0123', href: '/app/clients/C-006' },
+  { type: 'client', label: 'Patricia Morales', sublabel: '+507 6890-1234', href: '/app/clients/C-007' },
+  { type: 'client', label: 'Fernando Vega', sublabel: '+507 6901-2345', href: '/app/clients/C-008' },
   // Insurers
-  { type: 'insurer', label: 'ASSA Compania de Seguros', sublabel: 'API activa · 48 polizas', href: '/apis/assa' },
-  { type: 'insurer', label: 'Mapfre Panama', sublabel: 'API activa · 35 polizas', href: '/apis/mapfre' },
-  { type: 'insurer', label: 'Pan American Life', sublabel: 'API activa · 28 polizas', href: '/apis/pan-american-life' },
-  { type: 'insurer', label: 'Seguros Suramericana', sublabel: 'API activa · 22 polizas', href: '/apis/suramericana' },
-  { type: 'insurer', label: 'General de Seguros', sublabel: 'Error · 15 polizas', href: '/apis/general-de-seguros' },
-  { type: 'insurer', label: 'Worldwide Medical', sublabel: 'API activa · 8 polizas', href: '/apis/worldwide-medical' },
-  { type: 'insurer', label: 'BUPA Panama', sublabel: 'No conectada', href: '/apis/bupa' },
-  { type: 'insurer', label: 'Cigna International', sublabel: 'No conectada', href: '/apis/cigna' },
+  { type: 'insurer', label: 'ASSA Compania de Seguros', sublabel: 'API activa · 48 polizas', href: '/app/apis/assa' },
+  { type: 'insurer', label: 'Mapfre Panama', sublabel: 'API activa · 35 polizas', href: '/app/apis/mapfre' },
+  { type: 'insurer', label: 'Pan American Life', sublabel: 'API activa · 28 polizas', href: '/app/apis/pan-american-life' },
+  { type: 'insurer', label: 'Seguros Suramericana', sublabel: 'API activa · 22 polizas', href: '/app/apis/suramericana' },
+  { type: 'insurer', label: 'General de Seguros', sublabel: 'Error · 15 polizas', href: '/app/apis/general-de-seguros' },
+  { type: 'insurer', label: 'Worldwide Medical', sublabel: 'API activa · 8 polizas', href: '/app/apis/worldwide-medical' },
+  { type: 'insurer', label: 'BUPA Panama', sublabel: 'No conectada', href: '/app/apis/bupa' },
+  { type: 'insurer', label: 'Cigna International', sublabel: 'No conectada', href: '/app/apis/cigna' },
   // Quotes
-  { type: 'quote', label: 'Q-001 · Maria Gonzalez', sublabel: 'Auto · $85/mes · Enviada', href: '/quotes?status=sent' },
-  { type: 'quote', label: 'Q-002 · Carlos Perez', sublabel: 'Auto · $92/mes · Seleccionada', href: '/quotes?status=selected' },
-  { type: 'quote', label: 'Q-003 · Ana Rodriguez', sublabel: 'Salud · $145/mes · Generada', href: '/quotes?status=generated' },
-  { type: 'quote', label: 'Q-004 · Juan Martinez', sublabel: 'Hogar · $45/mes · Pagada', href: '/quotes?status=paid' },
-  { type: 'quote', label: 'Q-005 · Laura Castillo', sublabel: 'Salud · $180/mes · Enviada', href: '/quotes?status=sent' },
-  { type: 'quote', label: 'Q-006 · Roberto Diaz', sublabel: 'Viaje · $25 · Expirada', href: '/quotes?status=expired' },
-  { type: 'quote', label: 'Q-007 · Patricia Morales', sublabel: 'Auto · $78/mes · Pagada', href: '/quotes?status=paid' },
-  { type: 'quote', label: 'Q-008 · Fernando Vega', sublabel: 'Negocio · $320/mes · Generada', href: '/quotes?status=generated' },
+  { type: 'quote', label: 'Q-001 · Maria Gonzalez', sublabel: 'Auto · $85/mes · Enviada', href: '/app/quotes?status=sent' },
+  { type: 'quote', label: 'Q-002 · Carlos Perez', sublabel: 'Auto · $92/mes · Seleccionada', href: '/app/quotes?status=selected' },
+  { type: 'quote', label: 'Q-003 · Ana Rodriguez', sublabel: 'Salud · $145/mes · Generada', href: '/app/quotes?status=generated' },
+  { type: 'quote', label: 'Q-004 · Juan Martinez', sublabel: 'Hogar · $45/mes · Pagada', href: '/app/quotes?status=paid' },
+  { type: 'quote', label: 'Q-005 · Laura Castillo', sublabel: 'Salud · $180/mes · Enviada', href: '/app/quotes?status=sent' },
+  { type: 'quote', label: 'Q-006 · Roberto Diaz', sublabel: 'Viaje · $25 · Expirada', href: '/app/quotes?status=expired' },
+  { type: 'quote', label: 'Q-007 · Patricia Morales', sublabel: 'Auto · $78/mes · Pagada', href: '/app/quotes?status=paid' },
+  { type: 'quote', label: 'Q-008 · Fernando Vega', sublabel: 'Negocio · $320/mes · Generada', href: '/app/quotes?status=generated' },
   // Conversations
-  { type: 'conversation', label: 'Maria Gonzalez', sublabel: 'Seguro de auto · Activa', href: '/conversations?id=1' },
-  { type: 'conversation', label: 'Carlos Perez', sublabel: 'Esperando pago · ASSA', href: '/conversations?id=2' },
-  { type: 'conversation', label: 'Ana Rodriguez', sublabel: 'Salud · Transferida a humano', href: '/conversations?id=3' },
-  { type: 'conversation', label: 'Juan Martinez', sublabel: 'Hogar · Cerrada', href: '/conversations?id=4' },
-  { type: 'conversation', label: 'Laura Castillo', sublabel: 'Salud familiar · Activa', href: '/conversations?id=5' },
+  { type: 'conversation', label: 'Maria Gonzalez', sublabel: 'Seguro de auto · Activa', href: '/app/conversations?id=1' },
+  { type: 'conversation', label: 'Carlos Perez', sublabel: 'Esperando pago · ASSA', href: '/app/conversations?id=2' },
+  { type: 'conversation', label: 'Ana Rodriguez', sublabel: 'Salud · Transferida a humano', href: '/app/conversations?id=3' },
+  { type: 'conversation', label: 'Juan Martinez', sublabel: 'Hogar · Cerrada', href: '/app/conversations?id=4' },
+  { type: 'conversation', label: 'Laura Castillo', sublabel: 'Salud familiar · Activa', href: '/app/conversations?id=5' },
   // Policies
-  { type: 'policy', label: 'POL-001 · Maria Gonzalez', sublabel: 'Auto · ASSA · $85/mes', href: '/quotes?status=paid' },
-  { type: 'policy', label: 'POL-002 · Juan Martinez', sublabel: 'Hogar · Suramericana · $45/mes', href: '/quotes?status=paid' },
-  { type: 'policy', label: 'POL-003 · Patricia Morales', sublabel: 'Auto · General de Seguros · $78/mes', href: '/quotes?status=paid' },
+  { type: 'policy', label: 'POL-001 · Maria Gonzalez', sublabel: 'Auto · ASSA · $85/mes', href: '/app/quotes?status=paid' },
+  { type: 'policy', label: 'POL-002 · Juan Martinez', sublabel: 'Hogar · Suramericana · $45/mes', href: '/app/quotes?status=paid' },
+  { type: 'policy', label: 'POL-003 · Patricia Morales', sublabel: 'Auto · General de Seguros · $78/mes', href: '/app/quotes?status=paid' },
 ];
 
 const groupConfig: Record<SearchItem['type'], { label: string; icon: React.ReactNode }> = {
@@ -378,7 +378,7 @@ export function TopBar({ onMenuClick }: TopBarProps) {
                   {/* Menu items */}
                   <div className="py-1">
                     <Link
-                      href="/settings"
+                      href="/app/settings"
                       onClick={() => setProfileOpen(false)}
                       className="flex items-center gap-3 px-4 py-2.5 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)] transition-colors"
                     >
@@ -386,7 +386,7 @@ export function TopBar({ onMenuClick }: TopBarProps) {
                       Perfil
                     </Link>
                     <Link
-                      href="/settings"
+                      href="/app/settings"
                       onClick={() => setProfileOpen(false)}
                       className="flex items-center gap-3 px-4 py-2.5 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)] transition-colors"
                     >

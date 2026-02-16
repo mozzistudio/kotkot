@@ -24,16 +24,16 @@ interface SidebarProps {
 }
 
 const NAV_ITEMS = [
-  { icon: LayoutDashboard, label: 'Dashboard', href: '/dashboard' },
-  { icon: MessageSquare, label: 'Conversaciones', href: '/conversations' },
-  { icon: FileText, label: 'Cotizaciones', href: '/quotes' },
-  { icon: DollarSign, label: 'Ingresos', href: '/ingresos' },
-  { icon: Users, label: 'Clientes', href: '/clients' },
-  { icon: Bot, label: 'Mi Agente', href: '/bot' },
-  { icon: Plug, label: 'Aseguradoras', href: '/apis' },
-  { icon: Smartphone, label: 'WhatsApp', href: '/whatsapp' },
-  { icon: BarChart3, label: 'Analytics', href: '/analytics' },
-  { icon: Settings, label: 'Configuracion', href: '/settings' },
+  { icon: LayoutDashboard, label: 'Dashboard', href: '/app/dashboard' },
+  { icon: MessageSquare, label: 'Conversaciones', href: '/app/conversations' },
+  { icon: FileText, label: 'Cotizaciones', href: '/app/quotes' },
+  { icon: DollarSign, label: 'Ingresos', href: '/app/ingresos' },
+  { icon: Users, label: 'Clientes', href: '/app/clients' },
+  { icon: Bot, label: 'Mi Agente', href: '/app/bot' },
+  { icon: Plug, label: 'Aseguradoras', href: '/app/apis' },
+  { icon: Smartphone, label: 'WhatsApp', href: '/app/whatsapp' },
+  { icon: BarChart3, label: 'Analytics', href: '/app/analytics' },
+  { icon: Settings, label: 'Configuracion', href: '/app/settings' },
 ] as const;
 
 export function Sidebar({ open, onClose }: SidebarProps) {
@@ -43,7 +43,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
     <div className="flex flex-col h-full bg-[var(--surface-inverse)]">
       {/* Logo */}
       <div className="flex items-center justify-between px-6 py-5 border-b border-white/[0.08]">
-        <Link href="/dashboard" className="flex items-center gap-2.5">
+        <Link href="/app/dashboard" className="flex items-center gap-2.5">
           <div className="flex items-center justify-center w-9 h-9 rounded-[var(--radius-button)] bg-[var(--accent)]">
             <svg viewBox="0 0 32 32" fill="none" className="h-[18px] w-[18px]">
               <path d="M9 6v20" stroke="var(--dark-blue)" strokeWidth="3" strokeLinecap="round" />
@@ -91,7 +91,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
               <span>{item.label}</span>
 
               {/* Notification badge for Conversaciones */}
-              {item.href === '/conversations' && (
+              {item.href === '/app/conversations' && (
                 <span className="ml-auto flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-[var(--accent)] text-[var(--text-primary)] text-[10px] font-bold">
                   12
                 </span>
