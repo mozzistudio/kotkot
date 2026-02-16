@@ -408,7 +408,7 @@ export default function ClientDetailPage() {
       {/* Back Button                                                        */}
       {/* ----------------------------------------------------------------- */}
       <Link
-        href="/clients"
+        href="/app/clients"
         className="mb-6 inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--dark-blue)]"
       >
         <ArrowLeft className="h-4 w-4" />
