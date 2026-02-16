@@ -18,7 +18,7 @@ import {
   Building2,
   RefreshCw,
   Shield,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types

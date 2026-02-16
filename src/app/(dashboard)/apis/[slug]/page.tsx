@@ -23,7 +23,7 @@ import {
   Globe,
   Phone as PhoneIcon,
   Mail,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types

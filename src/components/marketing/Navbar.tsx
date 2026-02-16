@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Menu, X, ChevronDown } from 'lucide-react';
+import { ArrowUpRight, Menu, X, ChevronDown } from '@/components/shared/icon-map';
 
 const loanProducts = [
   { slug: 'personal', name: 'Personal', icon: '💳' },

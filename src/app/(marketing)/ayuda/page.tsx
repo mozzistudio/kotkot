@@ -12,7 +12,7 @@ import {
   Settings,
   Users,
   BarChart3,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 export const metadata: Metadata = {
   title: 'Centro de Ayuda — Kotkot',

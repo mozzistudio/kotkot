@@ -11,7 +11,7 @@ import {
   Calendar,
   BarChart3,
   ArrowDown,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types

@@ -19,7 +19,7 @@ import {
   FileText,
   X,
   CalendarDays,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types

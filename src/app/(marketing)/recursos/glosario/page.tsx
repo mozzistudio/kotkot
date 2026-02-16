@@ -5,7 +5,7 @@ import { PageHero } from '@/components/marketing/shared/PageHero';
 import { Breadcrumb } from '@/components/marketing/shared/Breadcrumb';
 import { CTABanner } from '@/components/marketing/shared/CTABanner';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from '@/components/shared/icon-map';
 import { useState } from 'react';
 
 interface GlossaryTerm {

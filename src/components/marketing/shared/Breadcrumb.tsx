@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight } from '@/components/shared/icon-map';
 import Link from 'next/link';
 
 interface BreadcrumbItem {

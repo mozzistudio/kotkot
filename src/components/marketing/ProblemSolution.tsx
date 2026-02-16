@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { XCircle, CheckCircle, Clock, TrendingUp } from 'lucide-react';
+import { XCircle, CheckCircle, Clock, TrendingUp } from '@/components/shared/icon-map';
 
 interface PainPoint {
   title: string;

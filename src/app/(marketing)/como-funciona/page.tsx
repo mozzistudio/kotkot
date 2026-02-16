@@ -6,7 +6,7 @@ import {
   Sparkles,
   ChevronDown,
   ArrowRight,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 export const metadata: Metadata = {
   title: 'Cómo Funciona — Kotkot',

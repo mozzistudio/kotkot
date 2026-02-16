@@ -26,7 +26,7 @@ import {
   Fingerprint,
   Palette,
   Tag,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types

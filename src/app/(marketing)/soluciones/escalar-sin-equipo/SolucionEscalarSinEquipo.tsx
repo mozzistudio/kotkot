@@ -1,6 +1,6 @@
 'use client';
 
-import { TrendingUp, Zap, Users } from 'lucide-react';
+import { TrendingUp, Zap, Users } from '@/components/shared/icon-map';
 import { SolutionPageTemplate } from '@/components/marketing/shared/SolutionPageTemplate';
 
 const beforeAfter = {

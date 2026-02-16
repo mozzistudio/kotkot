@@ -14,7 +14,7 @@ import {
   Smartphone,
   ArrowUpRight,
   ArrowDownRight,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types

@@ -7,7 +7,7 @@ import {
   Users,
   Target,
   ArrowUpRight,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 export const metadata: Metadata = {
   title: 'Sobre Nosotros — Kotkot',
