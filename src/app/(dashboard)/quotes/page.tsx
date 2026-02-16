@@ -173,11 +173,11 @@ const quotes: Quote[] = [
 // ---------------------------------------------------------------------------
 
 const statusConfig: Record<QuoteStatus, { label: string; bg: string; text: string; border: string }> = {
-  generated: { label: 'Generada', bg: 'bg-slate-100', text: 'text-slate-600', border: 'border-slate-200' },
-  sent: { label: 'Enviada', bg: 'bg-blue-50', text: 'text-blue-700', border: 'border-blue-200' },
-  selected: { label: 'Seleccionada', bg: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-200' },
-  paid: { label: 'Pagada', bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-200' },
-  expired: { label: 'Expirada', bg: 'bg-red-50', text: 'text-red-700', border: 'border-red-200' },
+  generated: { label: 'Generada', bg: 'bg-[var(--surface-panel)]', text: 'text-[var(--text-secondary)]', border: 'border-[var(--border-default)]' },
+  sent: { label: 'Enviada', bg: 'bg-[var(--accent-light)]', text: 'text-[var(--text-primary)]', border: 'border-[rgba(202,255,4,0.45)]' },
+  selected: { label: 'Seleccionada', bg: 'bg-[var(--surface-panel)]', text: 'text-[var(--text-primary)]', border: 'border-[var(--border-default)]' },
+  paid: { label: 'Pagada', bg: 'bg-[rgba(16,185,129,0.12)]', text: 'text-[var(--success-fg)]', border: 'border-[rgba(16,185,129,0.25)]' },
+  expired: { label: 'Expirada', bg: 'bg-[rgba(239,68,68,0.12)]', text: 'text-[var(--error)]', border: 'border-[rgba(239,68,68,0.25)]' },
 };
 
 const typeIcons: Record<string, React.ReactNode> = {
