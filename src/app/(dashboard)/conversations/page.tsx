@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import {
@@ -36,6 +36,7 @@ interface Conversation {
   time: string;
   status: ConversationStatus;
   insuranceType: string;
+  day: string;
   messages: Message[];
 }
 
@@ -52,6 +53,7 @@ const conversations: Conversation[] = [
     time: 'Hace 2 min',
     status: 'active',
     insuranceType: 'Auto',
+    day: 'tuesday',
     messages: [
       { id: 'm1', sender: 'bot', text: 'Hola Maria! Soy tu asistente de seguros. En que puedo ayudarte hoy?', time: '10:30 AM' },
       { id: 'm2', sender: 'user', text: 'Hola! Me interesa un seguro de auto para mi Toyota Corolla 2023', time: '10:31 AM' },
@@ -68,6 +70,7 @@ const conversations: Conversation[] = [
     time: 'Hace 15 min',
     status: 'waiting',
     insuranceType: 'Auto',
+    day: 'monday',
     messages: [
       { id: 'm1', sender: 'bot', text: 'Hola Carlos! Bienvenido. Como te puedo ayudar?', time: '09:45 AM' },
       { id: 'm2', sender: 'user', text: 'Necesito un seguro para mi Honda CRV 2022', time: '09:46 AM' },
@@ -84,6 +87,7 @@ const conversations: Conversation[] = [
     time: 'Hace 32 min',
     status: 'human',
     insuranceType: 'Salud',
+    day: 'thursday',
     messages: [
       { id: 'm1', sender: 'bot', text: 'Hola Ana! Estoy aqui para ayudarte con tu seguro de salud.', time: '09:20 AM' },
       { id: 'm2', sender: 'user', text: 'Tengo dudas sobre que cubre exactamente el plan familiar', time: '09:22 AM' },
@@ -100,6 +104,7 @@ const conversations: Conversation[] = [
     time: 'Hace 1 hora',
     status: 'closed',
     insuranceType: 'Hogar',
+    day: 'friday',
     messages: [
       { id: 'm1', sender: 'bot', text: 'Hola Juan! Tu pago ha sido confirmado exitosamente.', time: '08:40 AM' },
       { id: 'm2', sender: 'bot', text: 'Tu poliza de seguro de hogar con Seguros Suramericana ya fue generada. Te la envio por correo ahora.', time: '08:41 AM' },
@@ -114,6 +119,7 @@ const conversations: Conversation[] = [
     time: 'Hace 2 horas',
     status: 'active',
     insuranceType: 'Salud',
+    day: 'wednesday',
     messages: [
       { id: 'm1', sender: 'bot', text: 'Hola Laura! Bienvenida a Kotkot. En que te puedo ayudar?', time: '08:10 AM' },
       { id: 'm2', sender: 'user', text: 'Quiero comparar seguros de salud para mi familia', time: '08:12 AM' },
@@ -159,30 +165,26 @@ function ConversationsContent() {
   const searchParams = useSearchParams();
   const urlId = searchParams.get('id');
   const urlFilter = searchParams.get('filter') as ConversationStatus | null;
+  const urlDay = searchParams.get('day');
 
   const [selectedId, setSelectedId] = useState<string>(urlId ?? '1');
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState<ConversationStatus | 'all'>(urlFilter ?? 'all');
   const [inputMessage, setInputMessage] = useState('');
 
-  // Sync state when URL params change
-  useEffect(() => {
-    if (urlId) setSelectedId(urlId);
-  }, [urlId]);
-
-  useEffect(() => {
-    if (urlFilter) setActiveFilter(urlFilter);
-  }, [urlFilter]);
+  const effectiveSelectedId = urlId ?? selectedId;
+  const effectiveFilter = urlFilter ?? activeFilter;
 
   const filteredConversations = conversations.filter((c) => {
     const matchesSearch =
       c.clientName.toLowerCase().includes(searchQuery.toLowerCase()) ||
       c.phone.includes(searchQuery);
-    const matchesFilter = activeFilter === 'all' || c.status === activeFilter;
-    return matchesSearch && matchesFilter;
+    const matchesFilter = effectiveFilter === 'all' || c.status === effectiveFilter;
+    const matchesDay = !urlDay || c.day === urlDay;
+    return matchesSearch && matchesFilter && matchesDay;
   });
 
-  const selectedConversation = conversations.find((c) => c.id === selectedId) ?? conversations[0];
+  const selectedConversation = conversations.find((c) => c.id === effectiveSelectedId) ?? conversations[0];
 
   return (
     <div className="flex h-screen bg-white">
@@ -205,7 +207,7 @@ function ConversationsContent() {
             <button
               onClick={() => setActiveFilter('all')}
               className={`shrink-0 pill ${
-                activeFilter === 'all'
+                effectiveFilter === 'all'
                   ? 'pill-active'
                   : 'pill-default'
               }`}
@@ -217,7 +219,7 @@ function ConversationsContent() {
                 key={status}
                 onClick={() => setActiveFilter(status)}
                 className={`shrink-0 pill ${
-                  activeFilter === status
+                  effectiveFilter === status
                     ? 'pill-active'
                     : 'pill-default'
                 }`}
@@ -235,7 +237,7 @@ function ConversationsContent() {
               key={conv.id}
               onClick={() => setSelectedId(conv.id)}
               className={`flex w-full items-start gap-3 border-b border-[var(--border-light)] p-4 text-left transition-colors ${
-                selectedId === conv.id
+                effectiveSelectedId === conv.id
                   ? 'bg-[var(--surface-secondary)] border-l-2 border-l-[var(--accent)]'
                   : 'hover:bg-[var(--surface-hover)]'
               }`}

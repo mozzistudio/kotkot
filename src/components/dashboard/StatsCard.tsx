@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { type ReactNode } from 'react';
 import { TrendingUp, TrendingDown } from '@/components/shared/icon-map';
 
@@ -5,48 +6,48 @@ interface StatsCardProps {
   icon: ReactNode;
   label: string;
   value: string;
+  href?: string;
   trend?: {
     value: string;
-    direction: 'up' | 'down';
+    direction: 'up' | 'down' | 'neutral';
   };
   className?: string;
 }
 
-export function StatsCard({ icon, label, value, trend, className = '' }: StatsCardProps) {
+export function StatsCard({ icon, label, value, href, trend, className = '' }: StatsCardProps) {
+  const Comp = href ? Link : 'div';
+
   return (
-    <div
-      className={`bg-white border border-[var(--border-default)] rounded-[var(--radius-card)] p-6 transition-all duration-150 hover:border-[rgba(200,238,68,0.45)] hover:shadow-[0_10px_24px_rgba(10,15,7,0.08)] hover:-translate-y-0.5 ${className}`}
+    <Comp
+      {...(href ? { href } : {})}
+      className={`rounded-2xl border border-[var(--border-default)] bg-white p-6 transition-all duration-200 ${
+        href ? 'cursor-pointer hover:border-[rgba(200,238,68,0.3)] hover:shadow-md' : ''
+      } ${className}`}
     >
       <div className="flex items-start justify-between">
-        {/* Icon */}
-        <div className="flex items-center justify-center w-10 h-10 rounded-[var(--radius-md)] bg-[var(--dark-blue-surface)]">
-          <div className="text-[var(--text-primary)]">{icon}</div>
+        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--accent-light)] text-[var(--accent)]">
+          {icon}
         </div>
 
-        {/* Trend */}
         {trend && (
           <div
-            className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold ${
+            className={`inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-semibold ${
               trend.direction === 'up'
-                ? 'bg-[rgba(16,185,129,0.15)] text-[var(--text-primary)]'
-                : 'bg-[rgba(239,68,68,0.15)] text-[var(--error)]'
+                ? 'bg-green-50 text-green-600'
+                : trend.direction === 'down'
+                  ? 'bg-red-50 text-red-600'
+                  : 'bg-gray-100 text-gray-600'
             }`}
           >
-            {trend.direction === 'up' ? (
-              <TrendingUp className="w-3 h-3" />
-            ) : (
-              <TrendingDown className="w-3 h-3" />
-            )}
+            {trend.direction === 'up' ? <TrendingUp className="h-3 w-3" /> : null}
+            {trend.direction === 'down' ? <TrendingDown className="h-3 w-3" /> : null}
             {trend.value}
           </div>
         )}
       </div>
 
-      {/* Label */}
-      <p className="mt-4 text-sm text-[var(--text-secondary)]">{label}</p>
-
-      {/* Value */}
-      <p className="mt-1 text-2xl font-bold font-mono text-[var(--text-primary)] tracking-tight">{value}</p>
-    </div>
+      <p className="mt-4 text-3xl font-bold font-data text-[var(--text-primary)]">{value}</p>
+      <p className="mt-1 text-sm text-[var(--text-secondary)]">{label}</p>
+    </Comp>
   );
 }

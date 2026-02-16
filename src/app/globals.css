@@ -26,15 +26,16 @@
      -------------------------------------------------------- */
 
   /* --- Accent (Electric Lime) ------------------------------ */
-  --color-accent: #CAFF04;
-  --color-accent-hover: #b8e600;
-  --color-accent-light: rgba(202, 255, 4, 0.15);
+  --color-accent: #c8ee44;
+  --color-accent-hover: #b5d63e;
+  --color-accent-light: rgba(200, 238, 68, 0.15);
+  --color-accent-10: rgba(200, 238, 68, 0.10);
 
   /* --- Dark Blue (Midnight Navy) -------------------------- */
   --color-dark-blue: #0a0f07;
   --color-dark-blue-light: #151d10;
   --color-dark-blue-lighter: #1f2a18;
-  --color-dark-blue-surface: rgba(200, 238, 68, 0.18);
+  --color-dark-blue-surface: rgba(200, 238, 68, 0.15);
   --color-dark-blue-text: #0a0f07;
 
   /* --------------------------------------------------------
@@ -44,11 +45,13 @@
 
   /* --- Surfaces -------------------------------------------- */
   --color-surface-page: #f8faf5;
+  --color-bg-dark: #0a0f07;
+  --color-bg-card: #ffffff;
   --color-surface-panel: #f3f5ef;
   --color-surface-elevated: #ffffff;
   --color-surface-inverse: #0a0f07;
   --color-surface-hover: #f3f4f6;
-  --color-surface-active: #CAFF04;
+  --color-surface-active: #c8ee44;
   --color-surface-sidebar: #0a0f07;
   --color-surface-history: #fafafa;
 
@@ -57,21 +60,21 @@
   --color-text-secondary: #6b7280;
   --color-text-muted: #9ca3af;
   --color-text-inverse: #ffffff;
-  --color-text-on-accent: #111827;
+  --color-text-on-accent: #1a1a1a;
   --color-text-link: #0a0f07;
 
   /* --- Borders --------------------------------------------- */
   --color-border-subtle: #f3f4f6;
   --color-border-default: #e5e7eb;
-  --color-border-strong: #d1d5db;
-  --color-border-focus: #CAFF04;
+  --color-border-strong: #e5e7eb;
+  --color-border-focus: #c8ee44;
 
   /* --- Actions --------------------------------------------- */
-  --color-action-primary-bg: #CAFF04;
-  --color-action-primary-fg: #111827;
-  --color-action-primary-hover: #b8e600;
+  --color-action-primary-bg: #c8ee44;
+  --color-action-primary-fg: #1a1a1a;
+  --color-action-primary-hover: #b5d63e;
   --color-action-secondary-bg: #ffffff;
-  --color-action-secondary-fg: #374151;
+  --color-action-secondary-fg: #1a1a1a;
   --color-action-secondary-hover: #f3f4f6;
   --color-action-tertiary-fg: #6b7280;
   --color-action-tertiary-hover: #f3f4f6;
@@ -100,15 +103,15 @@
 
   /* --- Semantic States -------------------------------------- */
   --color-success-bg: rgba(16, 185, 129, 0.12);
-  --color-success-fg: #047857;
-  --color-success: #10b981;
+  --color-success-fg: #22c55e;
+  --color-success: #22c55e;
   --color-warning-bg: rgba(245, 158, 11, 0.12);
-  --color-warning-fg: #b45309;
-  --color-warning: #f59e0b;
+  --color-warning-fg: #6b7280;
+  --color-warning: #6b7280;
   --color-danger-bg: rgba(239, 68, 68, 0.12);
   --color-danger-fg: #b91c1c;
   --color-danger: #ef4444;
-  --color-info-bg: rgba(200, 238, 68, 0.18);
+  --color-info-bg: rgba(200, 238, 68, 0.15);
   --color-info-fg: #1a1a1a;
   --color-notification: #ef4444;
 
@@ -118,8 +121,11 @@
   /* --- Charts & Data --------------------------------------- */
   --color-chart-line: #c8ee44;
   --color-chart-dot: #c8ee44;
-  --color-chart-grid: #e5e7eb;
-  --color-chart-fill: rgba(16, 185, 129, 0.08);
+  --color-chart-bar: #c8ee44;
+  --color-chart-bar-hover: #b5d63e;
+  --color-chart-secondary: #a8cc2a;
+  --color-chart-grid: #f3f4f6;
+  --color-chart-fill: rgba(200, 238, 68, 0.10);
 
   /* --------------------------------------------------------
      Radius Tokens (DESIGN_SYSTEM.md §6)
@@ -244,23 +250,27 @@
   --font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
 
   /* Accent */
-  --accent: #CAFF04;
-  --accent-hover: #b8e600;
-  --accent-light: rgba(202, 255, 4, 0.15);
+  --accent: #c8ee44;
+  --accent-hover: #b5d63e;
+  --accent-light: rgba(200, 238, 68, 0.15);
+  --accent-10: rgba(200, 238, 68, 0.10);
 
   /* Dark Blue */
   --dark-blue: #0a0f07;
   --dark-blue-light: #151d10;
   --dark-blue-lighter: #1f2a18;
-  --dark-blue-surface: rgba(200, 238, 68, 0.18);
+  --dark-blue-surface: rgba(200, 238, 68, 0.15);
 
   /* Surfaces */
   --surface-page: #f8faf5;
+  --bg-dark: #0a0f07;
+  --bg-page: #f8faf5;
+  --bg-card: #ffffff;
   --surface-panel: #f3f5ef;
   --surface-elevated: #ffffff;
   --surface-inverse: #0a0f07;
   --surface-hover: #f3f4f6;
-  --surface-active: #CAFF04;
+  --surface-active: #c8ee44;
   --surface-sidebar: #0a0f07;
 
   /* Text */
@@ -268,19 +278,19 @@
   --text-secondary: #6b7280;
   --text-muted: #9ca3af;
   --text-inverse: #ffffff;
-  --text-on-accent: #111827;
+  --text-on-accent: #1a1a1a;
   --text-link: #0a0f07;
 
   /* Borders */
   --border-subtle: #f3f4f6;
   --border-default: #e5e7eb;
-  --border-strong: #d1d5db;
-  --border-focus: #CAFF04;
+  --border-strong: #e5e7eb;
+  --border-focus: #c8ee44;
 
   /* Actions */
-  --action-primary-bg: #CAFF04;
-  --action-primary-fg: #111827;
-  --action-primary-hover: #b8e600;
+  --action-primary-bg: #c8ee44;
+  --action-primary-fg: #1a1a1a;
+  --action-primary-hover: #b5d63e;
   --action-dark-bg: #0a0f07;
   --action-dark-fg: #ffffff;
   --action-dark-hover: #151d10;
@@ -303,10 +313,10 @@
   --brand-wallet: #7B2BFC;
 
   /* Semantic States */
-  --success: #10b981;
-  --success-fg: #047857;
-  --warning: #f59e0b;
-  --warning-fg: #b45309;
+  --success: #22c55e;
+  --success-fg: #22c55e;
+  --warning: #6b7280;
+  --warning-fg: #6b7280;
   --error: #ef4444;
   --danger-fg: #b91c1c;
   --notification: #ef4444;
@@ -314,8 +324,11 @@
   /* Charts */
   --chart-line: #c8ee44;
   --chart-dot: #c8ee44;
-  --chart-grid: #e5e7eb;
-  --chart-fill: rgba(16, 185, 129, 0.08);
+  --chart-bar: #c8ee44;
+  --chart-bar-hover: #b5d63e;
+  --chart-secondary: #a8cc2a;
+  --chart-grid: #f3f4f6;
+  --chart-fill: rgba(200, 238, 68, 0.10);
 
   /* Radius */
   --radius-sm: 8px;

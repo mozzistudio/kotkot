@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import Link from 'next/link';
+import { useRouter, useSearchParams } from 'next/navigation';
 import {
   TrendingUp,
   TrendingDown,
@@ -28,6 +29,7 @@ interface KPI {
   change: string;
   changeType: 'up' | 'down';
   icon: React.ReactNode;
+  href: string;
 }
 
 interface RevenueBar {
@@ -83,28 +85,28 @@ const dateRanges: { key: DateRange; label: string }[] = [
 
 const kpiByRange: Record<DateRange, KPI[]> = {
   '7d': [
-    { label: 'Ingresos Totales', value: '$3,120', change: '+8.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--text-primary)]" /> },
-    { label: 'Comisiones Ganadas', value: '$936', change: '+6.1%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--text-primary)]" /> },
-    { label: 'Polizas Activas', value: '142', change: '+3', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-[var(--accent)]" /> },
-    { label: 'Ticket Promedio', value: '$72.10', change: '-2.3%', changeType: 'down', icon: <Receipt className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Ingresos Totales', value: '$3,120', change: '+8.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?metric=total' },
+    { label: 'Comisiones Ganadas', value: '$936', change: '+6.1%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?metric=commissions' },
+    { label: 'Polizas Activas', value: '142', change: '+3', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-[var(--accent)]" />, href: '/quotes?status=paid' },
+    { label: 'Ticket Promedio', value: '$72.10', change: '-2.3%', changeType: 'down', icon: <Receipt className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?metric=ticket' },
   ],
   '30d': [
-    { label: 'Ingresos Totales', value: '$12,450', change: '+15.3%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--text-primary)]" /> },
-    { label: 'Comisiones Ganadas', value: '$3,735', change: '+12.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--text-primary)]" /> },
-    { label: 'Polizas Activas', value: '156', change: '+14', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-[var(--accent)]" /> },
-    { label: 'Ticket Promedio', value: '$79.80', change: '+4.1%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Ingresos Totales', value: '$12,450', change: '+15.3%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?metric=total' },
+    { label: 'Comisiones Ganadas', value: '$3,735', change: '+12.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?metric=commissions' },
+    { label: 'Polizas Activas', value: '156', change: '+14', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-[var(--accent)]" />, href: '/quotes?status=paid' },
+    { label: 'Ticket Promedio', value: '$79.80', change: '+4.1%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?metric=ticket' },
   ],
   '90d': [
-    { label: 'Ingresos Totales', value: '$38,920', change: '+22.7%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--text-primary)]" /> },
-    { label: 'Comisiones Ganadas', value: '$11,676', change: '+19.4%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--text-primary)]" /> },
-    { label: 'Polizas Activas', value: '156', change: '+38', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-[var(--accent)]" /> },
-    { label: 'Ticket Promedio', value: '$83.50', change: '+7.6%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Ingresos Totales', value: '$38,920', change: '+22.7%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?metric=total' },
+    { label: 'Comisiones Ganadas', value: '$11,676', change: '+19.4%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?metric=commissions' },
+    { label: 'Polizas Activas', value: '156', change: '+38', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-[var(--accent)]" />, href: '/quotes?status=paid' },
+    { label: 'Ticket Promedio', value: '$83.50', change: '+7.6%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?metric=ticket' },
   ],
   '12m': [
-    { label: 'Ingresos Totales', value: '$148,600', change: '+45.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--text-primary)]" /> },
-    { label: 'Comisiones Ganadas', value: '$44,580', change: '+41.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--text-primary)]" /> },
-    { label: 'Polizas Activas', value: '156', change: '+89', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-[var(--accent)]" /> },
-    { label: 'Ticket Promedio', value: '$86.20', change: '+11.3%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Ingresos Totales', value: '$148,600', change: '+45.2%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?metric=total' },
+    { label: 'Comisiones Ganadas', value: '$44,580', change: '+41.8%', changeType: 'up', icon: <Award className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?metric=commissions' },
+    { label: 'Polizas Activas', value: '156', change: '+89', changeType: 'up', icon: <ShieldCheck className="h-5 w-5 text-[var(--accent)]" />, href: '/quotes?status=paid' },
+    { label: 'Ticket Promedio', value: '$86.20', change: '+11.3%', changeType: 'up', icon: <Receipt className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?metric=ticket' },
   ],
 };
 
@@ -150,7 +152,7 @@ const insuranceTypeRevenue: InsuranceTypeRevenue[] = [
   { type: 'Salud', percentage: 25, amount: '$3,113', color: 'bg-[var(--accent)]' },
   { type: 'Hogar', percentage: 15, amount: '$1,868', color: 'bg-[var(--accent)]' },
   { type: 'Viaje', percentage: 10, amount: '$1,245', color: 'bg-[var(--accent)]' },
-  { type: 'Negocio', percentage: 5, amount: '$623', color: 'bg-[var(--surface-inverse)]' },
+  { type: 'Negocio', percentage: 5, amount: '$623', color: 'bg-[var(--chart-secondary)]' },
 ];
 
 const insurerRevenue: InsurerRevenue[] = [
@@ -204,10 +206,26 @@ function formatCurrency(value: number): string {
 // ---------------------------------------------------------------------------
 
 export default function IngresosPage() {
-  const [dateRange, setDateRange] = useState<DateRange>('30d');
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const initialRange = (searchParams.get('period') as DateRange) || '30d';
+  const [dateRange, setDateRange] = useState<DateRange>(initialRange);
   const kpis = kpiByRange[dateRange];
   const revenueBars = revenueBarsByRange[dateRange];
   const maxRevenue = Math.max(...revenueBars.map((b) => b.value));
+
+  const selectedTransactions = useMemo(() => {
+    const week = searchParams.get('week');
+    if (!week) return recentTransactions;
+    const weekMap: Record<string, string[]> = {
+      '1': ['2026-02-06', '2026-02-07'],
+      '2': ['2026-02-08', '2026-02-09'],
+      '3': ['2026-02-10'],
+      '4': ['2026-02-11'],
+    };
+    const dates = weekMap[week] || [];
+    return recentTransactions.filter((tx) => dates.includes(tx.fecha));
+  }, [searchParams]);
 
   return (
     <div className="min-h-screen">
@@ -226,7 +244,7 @@ export default function IngresosPage() {
             <button
               key={dr.key}
               onClick={() => setDateRange(dr.key)}
-              className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
+              className={`rounded-xl px-5 py-2.5 text-sm font-medium transition-all ${
                 dateRange === dr.key
                   ? 'bg-[var(--accent)] text-[var(--text-primary)]'
                   : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
@@ -241,12 +259,16 @@ export default function IngresosPage() {
       {/* KPI Row */}
       <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {kpis.map((kpi) => (
-          <div key={kpi.label} className="card">
+          <button
+            key={kpi.label}
+            onClick={() => router.push(kpi.href)}
+            className="rounded-2xl border border-[var(--border-default)] bg-white p-6 text-left transition-all duration-200 hover:border-[rgba(200,238,68,0.3)] hover:shadow-md"
+          >
             <div className="flex items-center justify-between">
-              <div className="rounded-lg p-2.5">{kpi.icon}</div>
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--accent-light)]">{kpi.icon}</div>
               <span
-                className={`inline-flex items-center gap-0.5 text-xs font-semibold ${
-                  kpi.changeType === 'up' ? 'text-[var(--success-fg)]' : 'text-[var(--danger-fg)]'
+                className={`inline-flex items-center gap-0.5 rounded-lg px-2.5 py-1 text-xs font-semibold ${
+                  kpi.changeType === 'up' ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'
                 }`}
               >
                 {kpi.changeType === 'up' ? (
@@ -257,9 +279,9 @@ export default function IngresosPage() {
                 {kpi.change}
               </span>
             </div>
-            <p className="mt-4 text-2xl font-bold text-[var(--text-primary)] font-data">{kpi.value}</p>
+            <p className="mt-4 text-3xl font-bold text-[var(--text-primary)] font-data">{kpi.value}</p>
             <p className="mt-1 text-sm text-[var(--text-secondary)]">{kpi.label}</p>
-          </div>
+          </button>
         ))}
       </div>
 
@@ -270,22 +292,28 @@ export default function IngresosPage() {
             <h2 className="text-section-heading">Ingresos por Periodo</h2>
             <BarChart3 className="h-4 w-4 text-[var(--text-tertiary)]" />
           </div>
-          <div className="flex items-end justify-between gap-2" style={{ height: 200 }}>
-            {revenueBars.map((bar) => {
-              const heightPct = (bar.value / maxRevenue) * 100;
+          <div className="flex items-end justify-between gap-2" style={{ height: 220 }}>
+            {revenueBars.map((bar, index) => {
+              const heightPct = (bar.value / maxRevenue) * 85;
               return (
-                <div key={bar.label} className="flex flex-1 flex-col items-center gap-2">
-                  <span className="text-[10px] text-[var(--text-secondary)] font-data">
-                    {formatCurrency(bar.value)}
-                  </span>
-                  <div className="w-full flex justify-center">
+                <button
+                  key={bar.label}
+                  onClick={() => router.push(`/ingresos?week=${index + 1}`)}
+                  className="flex flex-1 cursor-pointer flex-col items-center gap-2 rounded-lg p-1 transition-all hover:bg-[var(--accent-light)]"
+                >
+                  <span className="text-[10px] text-[var(--text-secondary)] font-data">{formatCurrency(bar.value)}</span>
+                  <div className="flex w-full justify-center">
                     <div
-                      className="w-8 rounded-t-md bg-[var(--surface-inverse)] transition-all duration-300"
-                      style={{ height: `${heightPct}%`, minHeight: 8 }}
+                      className="w-8 rounded-t-[6px] transition-all duration-300"
+                      style={{
+                        height: `${heightPct}%`,
+                        minHeight: 10,
+                        background: 'linear-gradient(180deg, rgba(200,238,68,0.6) 0%, #c8ee44 100%)',
+                      }}
                     />
                   </div>
-                  <span className="text-xs text-[var(--text-tertiary)]">{bar.label}</span>
-                </div>
+                  <span className="text-xs text-[var(--text-secondary)]">{bar.label}</span>
+                </button>
               );
             })}
           </div>
@@ -409,7 +437,7 @@ export default function IngresosPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-[var(--border-default)]">
-                {recentTransactions.map((tx) => (
+                {selectedTransactions.map((tx) => (
                   <tr key={tx.id} className="group hover:bg-[var(--surface-panel)] transition-colors">
                     <td className="py-3 text-sm text-[var(--text-secondary)] font-data">{tx.fecha}</td>
                     <td className="py-3 text-sm">
@@ -480,12 +508,12 @@ export default function IngresosPage() {
                   />
                   <defs>
                     <linearGradient id="yappyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="var(--color-brand-yappy-1)" />
-                      <stop offset="100%" stopColor="var(--color-brand-yappy-2)" />
+                      <stop offset="0%" stopColor="#c8ee44" />
+                      <stop offset="100%" stopColor="#b5d63e" />
                     </linearGradient>
                     <linearGradient id="stripeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="var(--color-brand-stripe-1)" />
-                      <stop offset="100%" stopColor="var(--color-brand-stripe-2)" />
+                      <stop offset="0%" stopColor="#a8cc2a" />
+                      <stop offset="100%" stopColor="#c8ee44" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -503,7 +531,7 @@ export default function IngresosPage() {
                 <div key={method.name} className="rounded-lg border border-[var(--border)] p-4">
                   <div className="flex items-center gap-3">
                     <div
-                      className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${method.color} text-white`}
+                      className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${method.color} text-[var(--text-on-accent)]`}
                     >
                       {method.icon}
                     </div>

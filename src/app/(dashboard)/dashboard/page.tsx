@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import {
   MessageSquare,
   FileText,
@@ -72,7 +73,7 @@ const stats: StatCard[] = [
     change: '+18%',
     changeType: 'up',
     icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" />,
-    href: '/ingresos',
+    href: '/ingresos?period=month',
   },
 ];
 
@@ -165,8 +166,19 @@ const statusBadgeClasses: Record<RecentConversation['status'], string> = {
 // ---------------------------------------------------------------------------
 
 export default function DashboardPage() {
+  const router = useRouter();
   const [hoveredStat, setHoveredStat] = useState<number | null>(null);
   const maxChartValue = Math.max(...chartData.map((d) => d.value));
+
+  const dayToParam: Record<string, string> = {
+    Lun: 'monday',
+    Mar: 'tuesday',
+    Mie: 'wednesday',
+    Jue: 'thursday',
+    Vie: 'friday',
+    Sab: 'saturday',
+    Dom: 'sunday',
+  };
 
   return (
     <div className="min-h-screen">
@@ -188,21 +200,21 @@ export default function DashboardPage() {
             href={stat.href}
             onMouseEnter={() => setHoveredStat(idx)}
             onMouseLeave={() => setHoveredStat(null)}
-            className={`block card transition-all duration-200 ${
-              hoveredStat === idx ? 'border-[var(--border-medium)]' : ''
+            className={`block rounded-2xl border border-[var(--border-default)] bg-white p-6 transition-all duration-200 cursor-pointer hover:shadow-md hover:border-[rgba(200,238,68,0.3)] ${
+              hoveredStat === idx ? 'border-[rgba(200,238,68,0.3)] shadow-md' : ''
             }`}
           >
             <div className="flex items-center justify-between">
-              <div className="rounded-lg bg-[var(--surface-secondary)] p-2.5">{stat.icon}</div>
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--accent-light)]">{stat.icon}</div>
               <span
-                className={`text-xs font-semibold ${
-                  stat.changeType === 'up' ? 'text-[var(--success)]' : 'text-[var(--error)]'
+                className={`rounded-lg px-2.5 py-1 text-xs font-semibold ${
+                  stat.changeType === 'up' ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'
                 }`}
               >
                 {stat.change}
               </span>
             </div>
-            <p className="mt-4 text-2xl font-bold text-[var(--text-primary)] font-data">
+            <p className="mt-4 text-3xl font-bold text-[var(--text-primary)] font-data">
               {stat.value}
             </p>
             <p className="mt-1 text-sm text-[var(--text-secondary)]">{stat.label}</p>
@@ -303,25 +315,31 @@ export default function DashboardPage() {
               <h2 className="text-section-heading">
                 Actividad Semanal
               </h2>
-              <TrendingUp className="h-4 w-4 text-[var(--accent)]" />
+              <TrendingUp className="h-4 w-4 text-[var(--text-secondary)]" />
             </div>
 
-            <div className="flex items-end justify-between gap-2" style={{ height: 140 }}>
+            <div className="flex items-end justify-between gap-2" style={{ height: 170 }}>
               {chartData.map((d) => {
-                const heightPct = (d.value / maxChartValue) * 100;
+                const heightPct = (d.value / maxChartValue) * 85;
                 return (
-                  <div key={d.day} className="flex flex-1 flex-col items-center gap-1.5">
-                    <span className="text-xs text-[var(--text-secondary)] font-data">
-                      {d.value}
-                    </span>
-                    <div className="w-full flex justify-center">
+                  <button
+                    key={d.day}
+                    onClick={() => router.push(`/conversations?day=${dayToParam[d.day]}`)}
+                    className="flex flex-1 cursor-pointer flex-col items-center gap-1.5 rounded-lg p-1 transition-all hover:bg-[var(--accent-light)]"
+                  >
+                    <span className="text-xs text-[var(--text-secondary)] font-data">{d.value}</span>
+                    <div className="flex w-full justify-center">
                       <div
-                        className="w-6 rounded-t-md bg-[var(--accent)] transition-all duration-300"
-                        style={{ height: `${heightPct}%`, minHeight: 8 }}
+                        className="w-6 rounded-t-[6px] transition-all duration-300 hover:brightness-105"
+                        style={{
+                          height: `${heightPct}%`,
+                          minHeight: 10,
+                          background: 'linear-gradient(180deg, rgba(200,238,68,0.6) 0%, #c8ee44 100%)',
+                        }}
                       />
                     </div>
-                    <span className="text-xs text-[var(--text-tertiary)]">{d.day}</span>
-                  </div>
+                    <span className="text-xs text-[var(--text-secondary)]">{d.day}</span>
+                  </button>
                 );
               })}
             </div>

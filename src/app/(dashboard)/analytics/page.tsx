@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   TrendingUp,
   TrendingDown,
@@ -25,6 +26,7 @@ interface KPI {
   change: string;
   changeType: 'up' | 'down';
   icon: React.ReactNode;
+  href: string;
 }
 
 interface DailyConversation {
@@ -63,22 +65,22 @@ const dateRanges: { key: DateRange; label: string }[] = [
 
 const kpiByRange: Record<DateRange, KPI[]> = {
   '7d': [
-    { label: 'Total Conversaciones', value: '168', change: '+12%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--accent)]" /> },
-    { label: 'Tasa de Conversion', value: '34.5%', change: '+3.2%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--accent)]" /> },
-    { label: 'Tiempo Prom. Cotizacion', value: '2.4 min', change: '-18%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--accent)]" /> },
-    { label: 'Ingresos Totales', value: '$4,280', change: '+22%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Total Conversaciones', value: '168', change: '+12%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--accent)]" />, href: '/conversations' },
+    { label: 'Tasa de Conversion', value: '34.5%', change: '+3.2%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--accent)]" />, href: '/quotes?status=selected' },
+    { label: 'Tiempo Prom. Cotizacion', value: '2.4 min', change: '-18%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--accent)]" />, href: '/conversations?filter=active' },
+    { label: 'Ingresos Totales', value: '$4,280', change: '+22%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?period=30d' },
   ],
   '30d': [
-    { label: 'Total Conversaciones', value: '682', change: '+18%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--accent)]" /> },
-    { label: 'Tasa de Conversion', value: '31.2%', change: '+5.1%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--accent)]" /> },
-    { label: 'Tiempo Prom. Cotizacion', value: '2.8 min', change: '-12%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--accent)]" /> },
-    { label: 'Ingresos Totales', value: '$12,450', change: '+15%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Total Conversaciones', value: '682', change: '+18%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--accent)]" />, href: '/conversations' },
+    { label: 'Tasa de Conversion', value: '31.2%', change: '+5.1%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--accent)]" />, href: '/quotes?status=selected' },
+    { label: 'Tiempo Prom. Cotizacion', value: '2.8 min', change: '-12%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--accent)]" />, href: '/conversations?filter=active' },
+    { label: 'Ingresos Totales', value: '$12,450', change: '+15%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?period=30d' },
   ],
   '90d': [
-    { label: 'Total Conversaciones', value: '1,847', change: '+45%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--accent)]" /> },
-    { label: 'Tasa de Conversion', value: '29.8%', change: '+8.3%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--accent)]" /> },
-    { label: 'Tiempo Prom. Cotizacion', value: '3.1 min', change: '-24%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--accent)]" /> },
-    { label: 'Ingresos Totales', value: '$38,920', change: '+52%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" /> },
+    { label: 'Total Conversaciones', value: '1,847', change: '+45%', changeType: 'up', icon: <MessageSquare className="h-5 w-5 text-[var(--accent)]" />, href: '/conversations' },
+    { label: 'Tasa de Conversion', value: '29.8%', change: '+8.3%', changeType: 'up', icon: <Target className="h-5 w-5 text-[var(--accent)]" />, href: '/quotes?status=selected' },
+    { label: 'Tiempo Prom. Cotizacion', value: '3.1 min', change: '-24%', changeType: 'up', icon: <Clock className="h-5 w-5 text-[var(--accent)]" />, href: '/conversations?filter=active' },
+    { label: 'Ingresos Totales', value: '$38,920', change: '+52%', changeType: 'up', icon: <DollarSign className="h-5 w-5 text-[var(--accent)]" />, href: '/ingresos?period=30d' },
   ],
 };
 
@@ -97,7 +99,7 @@ const insuranceDistribution: InsuranceTypeDist[] = [
   { type: 'Salud', percentage: 25, color: 'bg-[var(--accent)]' },
   { type: 'Hogar', percentage: 15, color: 'bg-[var(--accent)]' },
   { type: 'Viaje', percentage: 10, color: 'bg-[var(--accent)]' },
-  { type: 'Negocio', percentage: 5, color: 'bg-[var(--surface-inverse)]' },
+  { type: 'Negocio', percentage: 5, color: 'bg-[var(--chart-secondary)]' },
 ];
 
 const topInsurers: TopInsurer[] = [
@@ -109,10 +111,10 @@ const topInsurers: TopInsurer[] = [
 ];
 
 const funnelSteps: FunnelStep[] = [
-  { label: 'Conversaciones', value: 682, percentage: 100, color: 'from-[var(--text-secondary)] to-[var(--text-muted)]' },
+  { label: 'Conversaciones', value: 682, percentage: 100, color: 'from-[var(--accent)] to-[var(--chart-secondary)]' },
   { label: 'Cotizaciones', value: 412, percentage: 60, color: 'from-[var(--accent)] to-[var(--accent-hover)]' },
   { label: 'Seleccion', value: 213, percentage: 31, color: 'from-[var(--accent)] to-[var(--accent-hover)]' },
-  { label: 'Pago', value: 156, percentage: 23, color: 'from-[var(--success)] to-[var(--accent-hover)]' },
+  { label: 'Pago', value: 156, percentage: 23, color: 'from-[var(--accent-hover)] to-[var(--chart-secondary)]' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -120,6 +122,7 @@ const funnelSteps: FunnelStep[] = [
 // ---------------------------------------------------------------------------
 
 export default function AnalyticsPage() {
+  const router = useRouter();
   const [dateRange, setDateRange] = useState<DateRange>('30d');
   const kpis = kpiByRange[dateRange];
   const maxDaily = Math.max(...dailyConversations.map((d) => d.value));
@@ -142,7 +145,7 @@ export default function AnalyticsPage() {
             <button
               key={dr.key}
               onClick={() => setDateRange(dr.key)}
-              className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
+              className={`rounded-xl px-5 py-2.5 text-sm font-medium transition-all ${
                 dateRange === dr.key
                   ? 'bg-[var(--accent)] text-[var(--text-primary)]'
                   : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
@@ -157,7 +160,11 @@ export default function AnalyticsPage() {
       {/* KPI Row */}
       <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {kpis.map((kpi) => (
-          <div key={kpi.label} className="card">
+          <button
+            key={kpi.label}
+            onClick={() => router.push(kpi.href)}
+            className="rounded-2xl border border-[var(--border-default)] bg-white p-6 text-left transition-all duration-200 hover:border-[rgba(200,238,68,0.3)] hover:shadow-md"
+          >
             <div className="flex items-center justify-between">
               <div className="rounded-lg bg-[var(--surface-secondary)] p-2.5">{kpi.icon}</div>
               <span className={`inline-flex items-center gap-0.5 text-xs font-semibold ${kpi.changeType === 'up' ? 'text-[var(--success)]' : 'text-[var(--error)]'}`}>
@@ -165,9 +172,9 @@ export default function AnalyticsPage() {
                 {kpi.change}
               </span>
             </div>
-            <p className="mt-4 text-2xl font-bold text-[var(--text-primary)] font-data">{kpi.value}</p>
+            <p className="mt-4 text-3xl font-bold text-[var(--text-primary)] font-data">{kpi.value}</p>
             <p className="mt-1 text-sm text-[var(--text-secondary)]">{kpi.label}</p>
-          </div>
+          </button>
         ))}
       </div>
 
@@ -178,20 +185,37 @@ export default function AnalyticsPage() {
             <h2 className="text-section-heading">Conversaciones por Dia</h2>
             <BarChart3 className="h-4 w-4 text-[var(--text-tertiary)]" />
           </div>
-          <div className="flex items-end justify-between gap-3" style={{ height: 180 }}>
+          <div className="flex items-end justify-between gap-3" style={{ height: 200 }}>
             {dailyConversations.map((d) => {
-              const heightPct = (d.value / maxDaily) * 100;
+              const heightPct = (d.value / maxDaily) * 85;
+              const dayMap: Record<string, string> = {
+                Lun: 'monday',
+                Mar: 'tuesday',
+                Mie: 'wednesday',
+                Jue: 'thursday',
+                Vie: 'friday',
+                Sab: 'saturday',
+                Dom: 'sunday',
+              };
               return (
-                <div key={d.day} className="flex flex-1 flex-col items-center gap-2">
+                <button
+                  key={d.day}
+                  onClick={() => router.push(`/conversations?day=${dayMap[d.day]}`)}
+                  className="flex flex-1 cursor-pointer flex-col items-center gap-2 rounded-lg p-1 transition-all hover:bg-[var(--accent-light)]"
+                >
                   <span className="text-xs text-[var(--text-secondary)] font-data">{d.value}</span>
-                  <div className="w-full flex justify-center">
+                  <div className="flex w-full justify-center">
                     <div
-                      className="w-8 rounded-t-md bg-[var(--accent)] transition-all duration-300"
-                      style={{ height: `${heightPct}%`, minHeight: 8 }}
+                      className="w-8 rounded-t-[6px] transition-all duration-300"
+                      style={{
+                        height: `${heightPct}%`,
+                        minHeight: 10,
+                        background: 'linear-gradient(180deg, rgba(200,238,68,0.6) 0%, #c8ee44 100%)',
+                      }}
                     />
                   </div>
-                  <span className="text-xs text-[var(--text-tertiary)]">{d.day}</span>
-                </div>
+                  <span className="text-xs text-[var(--text-secondary)]">{d.day}</span>
+                </button>
               );
             })}
           </div>
@@ -263,7 +287,7 @@ export default function AnalyticsPage() {
                     <span className="text-sm font-semibold text-[var(--text-primary)] font-data">
                       {step.value.toLocaleString()}
                     </span>
-                    <span className="badge badge-dark-blue">
+                    <span className="badge">
                       {step.percentage}%
                     </span>
                   </div>
@@ -274,7 +298,7 @@ export default function AnalyticsPage() {
                     style={{ width: `${step.percentage}%` }}
                   >
                     {step.percentage > 15 && (
-                      <span className="text-xs font-medium text-white/80">{step.value.toLocaleString()}</span>
+                      <span className="text-xs font-medium text-[var(--text-on-accent)]">{step.value.toLocaleString()}</span>
                     )}
                   </div>
                 </div>
@@ -290,7 +314,7 @@ export default function AnalyticsPage() {
           {/* Conversion rate callout */}
           <div className="mt-4 rounded-lg border border-[rgba(202,255,4,0.45)] bg-[var(--accent-light)] p-3 text-center">
             <p className="text-xs text-[var(--text-secondary)]">Tasa de conversion total</p>
-            <p className="text-xl font-bold text-[var(--success)] font-data">22.9%</p>
+            <p className="text-xl font-bold text-[var(--accent)] font-data">22.9%</p>
             <p className="text-xs text-[var(--text-tertiary)]">Conversacion a Pago</p>
           </div>
         </div>
