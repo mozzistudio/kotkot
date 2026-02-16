@@ -328,7 +328,7 @@ export default function BotPage() {
             <div className="flex flex-col gap-6 sm:flex-row">
               {/* Avatar */}
               <div className="flex flex-col items-center gap-2">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-dashed border-[var(--border)] bg-white text-[var(--text-muted)] transition-all hover:border-[var(--accent)] hover:bg-[var(--accent)]/5 hover:text-black cursor-pointer">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-dashed border-[var(--border)] bg-white text-[var(--text-muted)] transition-all hover:border-[var(--accent)] hover:bg-[var(--accent)]/5 hover:text-[var(--text-dark)] cursor-pointer">
                   <Camera className="h-6 w-6" />
                 </div>
                 <span className="text-xs text-[var(--text-muted)]">Subir avatar</span>
@@ -422,7 +422,7 @@ export default function BotPage() {
                   >
                     <span
                       className={`text-sm font-semibold ${
-                        settings.tone === t.key ? 'text-black' : 'text-[var(--text-primary)]'
+                        settings.tone === t.key ? 'text-[var(--text-dark)]' : 'text-[var(--text-primary)]'
                       }`}
                     >
                       {t.label}
@@ -437,7 +437,7 @@ export default function BotPage() {
             <div className="mb-6">
               <div className="mb-2 flex items-center justify-between">
                 <label className="text-sm font-medium text-[var(--text-primary)]">Formalidad</label>
-                <span className="text-xs font-semibold text-black font-data">{settings.formality}</span>
+                <span className="text-xs font-semibold text-[var(--text-dark)] font-data">{settings.formality}</span>
               </div>
               <input
                 type="range"
@@ -464,7 +464,7 @@ export default function BotPage() {
                   onClick={() => updateSetting('pronoun', 'tu')}
                   className={`rounded-md px-5 py-2 text-sm font-medium transition-all ${
                     settings.pronoun === 'tu'
-                      ? 'bg-[var(--accent)] text-black'
+                      ? 'bg-[var(--accent)] text-[var(--text-dark)]'
                       : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                   }`}
                 >
@@ -474,7 +474,7 @@ export default function BotPage() {
                   onClick={() => updateSetting('pronoun', 'usted')}
                   className={`rounded-md px-5 py-2 text-sm font-medium transition-all ${
                     settings.pronoun === 'usted'
-                      ? 'bg-[var(--accent)] text-black'
+                      ? 'bg-[var(--accent)] text-[var(--text-dark)]'
                       : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                   }`}
                 >
@@ -619,7 +619,7 @@ export default function BotPage() {
 
           {/* Action Buttons */}
           <div className="flex flex-col gap-3 sm:flex-row">
-            <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-black transition-all hover:bg-[var(--accent-hover)]">
+            <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-[var(--text-dark)] transition-all hover:bg-[var(--accent-hover)]">
               <Save className="h-4 w-4" />
               Guardar Cambios
             </button>
@@ -638,11 +638,11 @@ export default function BotPage() {
               <div className="flex items-center justify-between border-b border-[var(--border)] bg-[var(--accent-light)] px-4 py-3">
                 <div className="flex items-center gap-3">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--accent)]/10">
-                    <Bot className="h-4 w-4 text-black" />
+                    <Bot className="h-4 w-4 text-[var(--text-dark)]" />
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-[var(--text-primary)]">{settings.name || 'Bot'}</h3>
-                    <span className="text-xs text-black font-medium">Vista previa interactiva</span>
+                    <span className="text-xs text-[var(--text-dark)] font-medium">Vista previa interactiva</span>
                   </div>
                 </div>
                 {chatMessages.length > 0 && (
@@ -679,7 +679,7 @@ export default function BotPage() {
                           ? 'border border-[rgba(239,68,68,0.25)] bg-[rgba(239,68,68,0.12)] text-[var(--error)] rounded-bl-sm'
                           : msg.sender === 'user'
                           ? 'bg-white/10 text-[var(--text-primary)] rounded-br-sm'
-                          : 'bg-[var(--accent)]/10 border border-[var(--accent)] text-black rounded-bl-sm'
+                          : 'bg-[var(--accent)]/10 border border-[var(--accent)] text-[var(--text-dark)] rounded-bl-sm'
                       }`}
                     >
                       {msg.isError && (
@@ -739,7 +739,7 @@ export default function BotPage() {
                     disabled={!chatInput.trim() || isTyping}
                     className={`flex-shrink-0 rounded-full p-1 transition-all ${
                       chatInput.trim() && !isTyping
-                        ? 'bg-[var(--accent)] text-black hover:bg-[var(--accent-hover)]'
+                        ? 'bg-[var(--accent)] text-[var(--text-dark)] hover:bg-[var(--accent-hover)]'
                         : 'text-[var(--text-muted)]'
                     }`}
                   >

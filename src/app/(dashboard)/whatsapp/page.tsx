@@ -114,7 +114,7 @@ export default function WhatsAppPage() {
                 <div className="flex items-start gap-4">
                   {/* Icon */}
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent)]/10">
-                    <MessageSquare className="h-6 w-6 text-black" />
+                    <MessageSquare className="h-6 w-6 text-[var(--text-dark)]" />
                   </div>
 
                   <div>
@@ -122,7 +122,7 @@ export default function WhatsAppPage() {
                       <h3 className="text-section-heading">{num.displayName}</h3>
                       <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium ${
                         num.status === 'active'
-                          ? 'border-[var(--accent)] bg-[var(--accent)]/10 text-black'
+                          ? 'border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--text-dark)]'
                           : num.status === 'pending'
                           ? 'border border-[var(--border-default)] bg-[var(--surface-panel)] text-[var(--text-primary)]'
                           : 'border border-[rgba(239,68,68,0.25)] bg-[rgba(239,68,68,0.12)] text-[var(--error)]'
@@ -191,7 +191,7 @@ export default function WhatsAppPage() {
                     <Clock className="h-4 w-4 text-[var(--text-tertiary)]" />
                     <span className="text-sm font-medium text-[var(--text-primary)]">Horario de Atencion</span>
                     {num.businessHours.enabled && (
-                      <span className="rounded-full bg-[var(--accent)]/10 px-2 py-0.5 text-xs text-black font-medium">
+                      <span className="rounded-full bg-[var(--accent)]/10 px-2 py-0.5 text-xs text-[var(--text-dark)] font-medium">
                         Activo
                       </span>
                     )}
@@ -227,7 +227,7 @@ export default function WhatsAppPage() {
                             key={day}
                             className={`rounded-md px-2.5 py-1 text-xs font-medium ${
                               num.businessHours.days.includes(day)
-                                ? 'bg-[var(--accent)]/10 text-black border border-[var(--accent)]'
+                                ? 'bg-[var(--accent)]/10 text-[var(--text-dark)] border border-[var(--accent)]'
                                 : 'bg-white text-[var(--text-muted)] border border-[var(--border)]'
                             }`}
                           >
@@ -251,14 +251,14 @@ export default function WhatsAppPage() {
       <div className="rounded-xl border-2 border-dashed border-[var(--border)] bg-white/50 p-8">
         <div className="mx-auto max-w-md text-center">
           <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--accent)]/10">
-            <Plus className="h-8 w-8 text-black" />
+            <Plus className="h-8 w-8 text-[var(--text-dark)]" />
           </div>
           <h3 className="text-card-title">Conectar Nuevo Numero</h3>
           <p className="mt-2 text-sm text-[var(--text-secondary)]">
             Conecta un nuevo numero de WhatsApp Business a tu cuenta de Kotkot a traves de Meta Embedded Signup.
           </p>
 
-          <button className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-black transition-all hover:bg-[var(--accent-hover)]">
+          <button className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-[var(--text-dark)] transition-all hover:bg-[var(--accent-hover)]">
             <MessageSquare className="h-4 w-4" />
             Conectar con Meta
             <ExternalLink className="h-3.5 w-3.5" />
