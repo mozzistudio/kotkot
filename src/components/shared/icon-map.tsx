@@ -1,10 +1,10 @@
 'use client';
 
-import type { SVGProps } from 'react';
+import type { SVGProps, ReactElement, FC } from 'react';
 import * as Lucide from 'lucide-react';
 import { BrandIcon } from '@/components/shared/BrandIcon';
 
-export type LucideIcon = (props: SVGProps<SVGSVGElement> & { size?: number; className?: string }) => JSX.Element;
+export type LucideIcon = FC<SVGProps<SVGSVGElement> & { size?: number; className?: string }>;
 
 const iconNameMap = {
   AlertCircle: 'alert-circle',

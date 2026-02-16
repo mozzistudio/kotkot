@@ -218,7 +218,7 @@ export default function DashboardPage() {
               Conversaciones Recientes
             </h2>
             <Link
-              href="/conversations"
+              href="/app/conversations"
               className="inline-flex items-center gap-1 text-sm text-[var(--text-link)] hover:opacity-80 transition-opacity"
             >
               Ver todas <ArrowRight className="h-3.5 w-3.5" />
