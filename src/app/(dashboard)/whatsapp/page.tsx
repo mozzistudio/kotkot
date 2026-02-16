@@ -70,6 +70,13 @@ const numbers: WhatsAppNumber[] = [
 const botPersonalities = ['Mi Agente', 'Agente Formal', 'Agente Express'];
 
 // ---------------------------------------------------------------------------
+// Environment Variables
+// ---------------------------------------------------------------------------
+
+const FACEBOOK_APP_ID = process.env.NEXT_PUBLIC_FACEBOOK_APP_ID;
+const META_CONFIG_ID = process.env.NEXT_PUBLIC_META_CONFIG_ID;
+
+// ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 
@@ -99,12 +106,16 @@ export default function WhatsAppPage() {
       script.crossOrigin = 'anonymous';
       script.onload = () => {
         (window as any).FB.init({
-          appId: process.env.NEXT_PUBLIC_FACEBOOK_APP_ID,
+          appId: FACEBOOK_APP_ID,
           autoLogAppEvents: true,
           xfbml: true,
           version: 'v21.0'
         });
         launchEmbeddedSignup();
+      };
+      script.onerror = () => {
+        console.error('Failed to load Facebook SDK');
+        setIsConnecting(false);
       };
       document.body.appendChild(script);
     } else {
@@ -113,7 +124,12 @@ export default function WhatsAppPage() {
   };
 
   const launchEmbeddedSignup = () => {
-    const configId = process.env.NEXT_PUBLIC_META_CONFIG_ID;
+    if (!META_CONFIG_ID) {
+      console.error('META_CONFIG_ID not configured');
+      alert('Configuration Meta manquante. Veuillez contacter le support.');
+      setIsConnecting(false);
+      return;
+    }
 
     if (!(window as any).FB) {
       console.error('Facebook SDK not loaded');
@@ -151,7 +167,7 @@ export default function WhatsAppPage() {
         }
       },
       {
-        config_id: configId,
+        config_id: META_CONFIG_ID,
         response_type: 'code',
         override_default_response_type: true,
         extras: {
