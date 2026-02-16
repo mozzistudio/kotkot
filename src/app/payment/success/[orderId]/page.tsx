@@ -1,4 +1,4 @@
-import { CheckCircle, ArrowLeft } from 'lucide-react';
+import { CheckCircle, ArrowLeft } from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types

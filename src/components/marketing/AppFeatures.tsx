@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { BarChart3, Zap, Shield } from 'lucide-react';
+import { BarChart3, Zap, Shield } from '@/components/shared/icon-map';
 
 const appFeatures = [
   {

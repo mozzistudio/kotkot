@@ -16,7 +16,7 @@ import {
   Settings,
   ShieldCheck,
   X,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 interface SidebarProps {
   open: boolean;

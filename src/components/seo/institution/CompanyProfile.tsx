@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Star, Phone, Mail, Globe, MapPin, Check, X } from 'lucide-react';
+import { Star, Phone, Mail, Globe, MapPin, Check, X } from '@/components/shared/icon-map';
 import { Badge } from '@/components/ui/Badge';
 import type { InsuranceCompany } from '@/data/schema';
 

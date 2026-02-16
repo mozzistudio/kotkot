@@ -18,7 +18,7 @@ import {
   Trash2,
   AlertCircle,
   Loader2,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types

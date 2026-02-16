@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Phone } from 'lucide-react';
+import { Phone } from '@/components/shared/icon-map';
 
 interface CTASectionProps {
   title: string;

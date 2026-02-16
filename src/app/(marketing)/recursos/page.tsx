@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { PageHero } from '@/components/marketing/shared/PageHero';
 import { CTABanner } from '@/components/marketing/shared/CTABanner';
 import { motion } from 'framer-motion';
-import { BookOpen, Calculator, GraduationCap, FileText, ArrowRight } from 'lucide-react';
+import { BookOpen, Calculator, GraduationCap, FileText, ArrowRight } from '@/components/shared/icon-map';
 import Link from 'next/link';
 
 const resources = [

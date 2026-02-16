@@ -15,7 +15,7 @@ import {
   Info,
   ExternalLink,
   CheckCircle,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types

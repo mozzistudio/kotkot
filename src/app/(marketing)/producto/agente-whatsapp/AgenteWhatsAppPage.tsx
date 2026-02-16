@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MessageCircle, Zap, Clock, Users, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { MessageCircle, Zap, Clock, Users, TrendingUp, CheckCircle2 } from '@/components/shared/icon-map';
 import { PageHero } from '@/components/marketing/shared/PageHero';
 import { CTABanner } from '@/components/marketing/shared/CTABanner';
 import { Breadcrumb } from '@/components/marketing/shared/Breadcrumb';

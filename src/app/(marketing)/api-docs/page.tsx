@@ -10,7 +10,7 @@ import {
   Webhook,
   Database,
   Lock,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 export const metadata: Metadata = {
   title: 'Documentación API — Kotkot',

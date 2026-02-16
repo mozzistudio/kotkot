@@ -1,6 +1,6 @@
 'use client';
 
-import { Users, Database, Bell } from 'lucide-react';
+import { Users, Database, Bell } from '@/components/shared/icon-map';
 import { SolutionPageTemplate } from '@/components/marketing/shared/SolutionPageTemplate';
 
 const beforeAfter = {

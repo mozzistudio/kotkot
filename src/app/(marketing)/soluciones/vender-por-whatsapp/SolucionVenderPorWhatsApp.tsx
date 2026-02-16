@@ -1,6 +1,6 @@
 'use client';
 
-import { MessageCircle, Clock, Zap } from 'lucide-react';
+import { MessageCircle, Clock, Zap } from '@/components/shared/icon-map';
 import { SolutionPageTemplate } from '@/components/marketing/shared/SolutionPageTemplate';
 
 const beforeAfter = {

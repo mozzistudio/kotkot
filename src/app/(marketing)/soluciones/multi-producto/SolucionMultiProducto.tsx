@@ -1,6 +1,6 @@
 'use client';
 
-import { Package, DollarSign, Zap } from 'lucide-react';
+import { Package, DollarSign, Zap } from '@/components/shared/icon-map';
 import { SolutionPageTemplate } from '@/components/marketing/shared/SolutionPageTemplate';
 
 const beforeAfter = {

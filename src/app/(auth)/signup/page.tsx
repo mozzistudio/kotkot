@@ -17,7 +17,7 @@ import {
   ArrowLeft,
   Check,
   Info,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 const COUNTRIES = [
   { code: 'PA', name: 'Panama', flag: '\u{1F1F5}\u{1F1E6}', phoneCode: '+507', currency: 'USD', paymentMethods: 'Yappy + Stripe' },

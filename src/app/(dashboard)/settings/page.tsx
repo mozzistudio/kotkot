@@ -20,7 +20,7 @@ import {
   Shield,
   Crown,
   Zap,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types

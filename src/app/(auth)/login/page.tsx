@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Mail, Lock, Eye, EyeOff, ShieldCheck } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, ShieldCheck } from '@/components/shared/icon-map';
 import { createBrowserClient } from '@supabase/ssr';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';

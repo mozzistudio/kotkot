@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import { TrendingUp, TrendingDown } from 'lucide-react';
+import { TrendingUp, TrendingDown } from '@/components/shared/icon-map';
 
 interface StatsCardProps {
   icon: ReactNode;

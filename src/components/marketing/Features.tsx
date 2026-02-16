@@ -8,8 +8,8 @@ import {
   BarChart3,
   Palette,
   Users,
-} from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+} from '@/components/shared/icon-map';
+import type { LucideIcon } from '@/components/shared/icon-map';
 
 interface Feature {
   icon: LucideIcon;

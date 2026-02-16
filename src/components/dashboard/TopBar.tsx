@@ -18,7 +18,7 @@ import {
   MessageSquare,
   Shield,
   ArrowRight,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 interface TopBarProps {
   onMenuClick: () => void;

@@ -14,8 +14,8 @@ import {
   Plug,
   TrendingUp,
   Users,
-} from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+} from '@/components/shared/icon-map';
+import type { LucideIcon } from '@/components/shared/icon-map';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 

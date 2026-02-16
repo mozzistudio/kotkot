@@ -26,7 +26,7 @@ import {
   Menu,
   X,
   ChevronDown
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Logo } from '@/components/ui/Logo';
 

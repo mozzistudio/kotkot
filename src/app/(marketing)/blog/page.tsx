@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Clock, ArrowRight } from 'lucide-react';
+import { Clock, ArrowRight } from '@/components/shared/icon-map';
 
 export const metadata: Metadata = {
   title: 'Blog — Kotkot',

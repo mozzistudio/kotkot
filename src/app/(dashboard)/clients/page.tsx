@@ -13,7 +13,7 @@ import {
   MoreHorizontal,
   User,
   Filter,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types

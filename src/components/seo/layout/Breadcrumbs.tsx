@@ -5,7 +5,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ChevronRight, Home } from 'lucide-react';
+import { ChevronRight, Home } from '@/components/shared/icon-map';
 import { generateBreadcrumbSchema } from '@/lib/seo/schema';
 import { SchemaMarkup } from '../shared/SchemaMarkup';
 

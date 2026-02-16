@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Pricing } from '@/components/marketing/Pricing';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from '@/components/shared/icon-map';
 
 export const metadata: Metadata = {
   title: 'Precios — Kotkot',

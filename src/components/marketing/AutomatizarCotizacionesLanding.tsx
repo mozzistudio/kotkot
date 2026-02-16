@@ -11,7 +11,7 @@ import {
   TrendingUp,
   XCircle,
   Zap,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 import Link from 'next/link';
 
 import { Breadcrumb } from '@/components/marketing/shared/Breadcrumb';

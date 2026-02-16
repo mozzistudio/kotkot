@@ -1,6 +1,6 @@
 'use client';
 
-import { CreditCard, Link2, CheckCircle } from 'lucide-react';
+import { CreditCard, Link2, CheckCircle } from '@/components/shared/icon-map';
 import { SolutionPageTemplate } from '@/components/marketing/shared/SolutionPageTemplate';
 
 const beforeAfter = {

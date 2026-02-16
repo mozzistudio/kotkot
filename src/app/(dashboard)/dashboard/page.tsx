@@ -13,7 +13,7 @@ import {
   TrendingUp,
   Clock,
   Phone,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 // ---------------------------------------------------------------------------
 // Types

@@ -8,7 +8,7 @@ import {
   MapPin,
   MessageCircle,
   CheckCircle2,
-} from 'lucide-react';
+} from '@/components/shared/icon-map';
 
 export default function ContactoPage() {
   const [formData, setFormData] = useState({

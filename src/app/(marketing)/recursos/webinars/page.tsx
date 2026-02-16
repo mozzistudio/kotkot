@@ -5,7 +5,7 @@ import { PageHero } from '@/components/marketing/shared/PageHero';
 import { Breadcrumb } from '@/components/marketing/shared/Breadcrumb';
 import { CTABanner } from '@/components/marketing/shared/CTABanner';
 import { motion } from 'framer-motion';
-import { Video, Calendar, Users, Bell } from 'lucide-react';
+import { Video, Calendar, Users, Bell } from '@/components/shared/icon-map';
 
 export default function WebinarsPage() {
   return (
