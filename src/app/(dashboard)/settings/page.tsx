@@ -191,7 +191,7 @@ export default function SettingsPage() {
               </div>
             </div>
 
-            <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-black transition-all hover:bg-[var(--accent-hover)]">
+            <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-[var(--text-dark)] transition-all hover:bg-[var(--accent-hover)]">
               <Check className="h-4 w-4" />
               Guardar Perfil
             </button>
@@ -208,14 +208,14 @@ export default function SettingsPage() {
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--accent)]/10">
-                    <Crown className="h-5 w-5 text-black" />
+                    <Crown className="h-5 w-5 text-[var(--text-dark)]" />
                   </div>
                   <div>
                     <h3 className="text-section-heading">Plan Profesional</h3>
                     <p className="text-body">$49/mes - Hasta 500 conversaciones</p>
                   </div>
                 </div>
-                <span className="rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-3 py-1 text-xs font-medium text-black">
+                <span className="rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-3 py-1 text-xs font-medium text-[var(--text-dark)]">
                   Activo
                 </span>
               </div>
@@ -233,7 +233,7 @@ export default function SettingsPage() {
                   <p className="text-xs text-[var(--text-tertiary)]">Hasta renovacion</p>
                 </div>
               </div>
-              <button className="mt-4 inline-flex items-center gap-2 rounded-lg border border-[var(--accent)] bg-[var(--accent)]/10 px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-[rgba(202,255,4,0.2)]">
+              <button className="mt-4 inline-flex items-center gap-2 rounded-lg border border-[var(--accent)] bg-[var(--accent)]/10 px-4 py-2 text-sm font-medium text-[var(--text-dark)] transition-colors hover:bg-[rgba(202,255,4,0.2)]">
                 <Zap className="h-4 w-4" />
                 Cambiar Plan
               </button>
@@ -272,7 +272,7 @@ export default function SettingsPage() {
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-sm font-semibold text-[var(--text-primary)] font-data">{inv.amount}</span>
-                      <span className="rounded-full border border-[var(--accent)] bg-[var(--accent)]/5 px-2 py-0.5 text-xs text-black">
+                      <span className="rounded-full border border-[var(--accent)] bg-[var(--accent)]/5 px-2 py-0.5 text-xs text-[var(--text-dark)]">
                         Pagada
                       </span>
                     </div>
@@ -305,7 +305,7 @@ export default function SettingsPage() {
                         Acepta pagos de polizas de seguros via Yappy en Panama
                       </p>
                     </div>
-                    <span className="ml-auto rounded-full border border-[var(--accent)] bg-[var(--accent)]/5 px-2.5 py-0.5 text-xs font-medium text-black">
+                    <span className="ml-auto rounded-full border border-[var(--accent)] bg-[var(--accent)]/5 px-2.5 py-0.5 text-xs font-medium text-[var(--text-dark)]">
                       Conectado
                     </span>
                   </div>
@@ -335,11 +335,11 @@ export default function SettingsPage() {
                 </div>
 
                 <div className="flex gap-3">
-                  <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-black transition-all hover:bg-[var(--accent-hover)]">
+                  <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-[var(--text-dark)] transition-all hover:bg-[var(--accent-hover)]">
                     <Check className="h-4 w-4" />
                     Guardar Credenciales
                   </button>
-                  <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-5 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)] hover:text-black">
+                  <button className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-5 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--text-dark)]">
                     <Zap className="h-4 w-4" />
                     Probar Conexion
                   </button>
@@ -375,7 +375,7 @@ export default function SettingsPage() {
                   </div>
                 </div>
 
-                <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-black transition-all hover:bg-[var(--accent-hover)]">
+                <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-[var(--text-dark)] transition-all hover:bg-[var(--accent-hover)]">
                   <ExternalLink className="h-4 w-4" />
                   Conectar con Stripe
                 </button>
@@ -389,7 +389,7 @@ export default function SettingsPage() {
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <h2 className="text-card-title">Equipo</h2>
-              <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-black transition-all hover:bg-[var(--accent-hover)]">
+              <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-[var(--text-dark)] transition-all hover:bg-[var(--accent-hover)]">
                 <Plus className="h-4 w-4" />
                 Invitar Miembro
               </button>
@@ -534,7 +534,7 @@ export default function SettingsPage() {
               </div>
             </div>
 
-            <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-black transition-all hover:bg-[var(--accent-hover)]">
+            <button className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-[var(--text-dark)] transition-all hover:bg-[var(--accent-hover)]">
               <Check className="h-4 w-4" />
               Guardar Preferencias
             </button>
