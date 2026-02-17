@@ -31,6 +31,11 @@ export const metadata: Metadata = {
   title: "kotkot.ai — Automatiza tu Correduría de Seguros y Préstamos con IA",
   description:
     "Bot de WhatsApp con IA para corredores de seguros y préstamos. Cotiza, compara y cierra ventas 24/7. Conecta 25+ aseguradoras y bancos en Latinoamérica.",
+  verification: {
+    other: {
+      'facebook-domain-verification': 'j013kt10g3ewc4pjpnfw9f1amturs6',
+    },
+  },
   openGraph: {
     title: "kotkot.ai — Automatiza tu Correduría de Seguros y Préstamos con IA",
     description:
