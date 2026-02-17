@@ -139,40 +139,72 @@ export default function WhatsAppPage() {
       return;
     }
 
+    if (!FACEBOOK_APP_ID) {
+      console.error('FACEBOOK_APP_ID not configured');
+      alert('Configuration Meta manquante. Veuillez contacter le support.');
+      setIsConnecting(false);
+      return;
+    }
+
     if (!(window as any).FB) {
       console.error('Facebook SDK not loaded');
       setIsConnecting(false);
       return;
     }
 
-    (window as any).FB.login(
-      function(response: any) {
-        if (response.authResponse) {
-          const code = response.authResponse.code;
+    console.log('Launching embedded signup with config:', {
+      config_id: META_CONFIG_ID,
+      app_id: FACEBOOK_APP_ID,
+    });
 
-          // Send code to backend to exchange for access token
-          fetch('/api/whatsapp/connect', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ code }),
+    // Subscribe to the auth.authResponseChange event before launching
+    (window as any).FB.Event.subscribe('auth.authResponseChange', function(response: any) {
+      console.log('Auth response change:', response);
+
+      if (response.status === 'connected' && response.authResponse) {
+        const code = response.authResponse.code;
+        console.log('Received authorization code:', code);
+
+        // Send code to backend to exchange for access token
+        fetch('/api/whatsapp/connect', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ code }),
+        })
+          .then(res => {
+            if (!res.ok) {
+              throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.json();
           })
-            .then(res => res.json())
-            .then(data => {
-              console.log('WhatsApp connected successfully:', data);
+          .then(data => {
+            console.log('WhatsApp connected successfully:', data);
+            if (data.success) {
+              alert('WhatsApp conectado exitosamente!');
               setIsConnecting(false);
               // Refresh the page to show the new number
               window.location.reload();
-            })
-            .catch(err => {
-              console.error('Error connecting WhatsApp:', err);
-              setIsConnecting(false);
-            });
-        } else {
-          console.log('User cancelled login or did not fully authorize.');
-          setIsConnecting(false);
-        }
+            } else {
+              throw new Error(data.error || 'Failed to connect');
+            }
+          })
+          .catch(err => {
+            console.error('Error connecting WhatsApp:', err);
+            alert('Error al conectar WhatsApp: ' + err.message);
+            setIsConnecting(false);
+          });
+      } else {
+        console.log('User cancelled login or did not fully authorize.');
+        setIsConnecting(false);
+      }
+    });
+
+    // Launch the embedded signup dialog
+    (window as any).FB.login(
+      function(response: any) {
+        console.log('FB.login callback:', response);
       },
       {
         config_id: META_CONFIG_ID,
