@@ -78,6 +78,7 @@ const META_CONFIG_ID = process.env.NEXT_PUBLIC_META_CONFIG_ID;
 const FACEBOOK_SDK_SRC = 'https://connect.facebook.net/en_US/sdk.js';
 
 interface FacebookLoginResponse {
+  status?: string;
   authResponse?: {
     code?: string;
   };
@@ -99,6 +100,9 @@ interface FacebookSDK {
       override_default_response_type: boolean;
     }
   ) => void;
+  Event: {
+    subscribe: (event: string, callback: (response: FacebookLoginResponse) => void) => void;
+  };
 }
 
 declare global {
@@ -189,6 +193,16 @@ export default function WhatsAppPage() {
         version: 'v21.0',
       });
 
+      console.log('Launching embedded signup with config:', {
+        config_id: META_CONFIG_ID,
+        app_id: FACEBOOK_APP_ID,
+      });
+
+      // Subscribe to auth events for better error handling
+      fb.Event.subscribe('auth.authResponseChange', (response: FacebookLoginResponse) => {
+        console.log('Auth response change:', response);
+      });
+
       const response = await new Promise<FacebookLoginResponse>((resolve) => {
         fb.login(resolve, {
           config_id: META_CONFIG_ID,
@@ -197,12 +211,17 @@ export default function WhatsAppPage() {
         });
       });
 
+      console.log('FB.login response:', response);
+
       const authorizationCode = response.authResponse?.code ?? response.code;
 
       if (!authorizationCode) {
+        console.error('No authorization code received:', response);
         alert('No se completo la autorizacion con Meta.');
         return;
       }
+
+      console.log('Received authorization code, sending to backend...');
 
       const connectResponse = await fetch('/api/whatsapp/connect', {
         method: 'POST',
@@ -212,9 +231,14 @@ export default function WhatsAppPage() {
 
       if (!connectResponse.ok) {
         const payload = await connectResponse.json().catch(() => ({}));
+        console.error('Backend error:', payload);
         throw new Error(payload.error || 'No se pudo conectar WhatsApp con Meta');
       }
 
+      const result = await connectResponse.json();
+      console.log('WhatsApp connected successfully:', result);
+
+      alert('WhatsApp conectado exitosamente!');
       window.location.reload();
     } catch (error) {
       console.error('Error connecting WhatsApp:', error);

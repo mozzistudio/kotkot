@@ -29,6 +29,13 @@ export async function POST(request: NextRequest) {
         );
       }
 
+      console.log('Exchanging authorization code for access token...');
+      console.log('Token exchange request:', {
+        client_id: facebookAppId,
+        has_secret: !!facebookAppSecret,
+        code: code.substring(0, 10) + '...',
+      });
+
       const searchParams = new URLSearchParams({
         client_id: facebookAppId,
         client_secret: facebookAppSecret,
@@ -41,17 +48,29 @@ export async function POST(request: NextRequest) {
 
       if (!tokenResponse.ok) {
         const error = await tokenResponse.json();
-        console.error('Token exchange error:', error);
+        console.error('Token exchange error:', {
+          status: tokenResponse.status,
+          error,
+        });
         return NextResponse.json(
-          { error: 'Failed to exchange code for access token' },
+          {
+            error: 'Failed to exchange code for access token',
+            details: error.error?.message || error.message || 'Unknown error'
+          },
           { status: 400 }
         );
       }
 
       const tokenData = await tokenResponse.json();
+      console.log('Token exchange response:', {
+        has_access_token: !!tokenData.access_token,
+        token_type: tokenData.token_type,
+      });
+
       accessToken = tokenData.access_token;
 
       if (!accessToken) {
+        console.error('No access token in response:', tokenData);
         return NextResponse.json(
           { error: 'No access token received from Meta' },
           { status: 400 }
@@ -86,20 +105,32 @@ export async function POST(request: NextRequest) {
     }
 
     // Step 1: Get WhatsApp Business Accounts from Meta Graph API
+    console.log('Fetching WhatsApp Business Accounts from Meta...');
+
     const wabaResponse = await fetch(
       `https://graph.facebook.com/v21.0/me/businesses?fields=whatsapp_business_accounts{id,name,phone_numbers}&access_token=${accessToken}`
     );
 
     if (!wabaResponse.ok) {
       const error = await wabaResponse.json();
-      console.error('Meta API error:', error);
+      console.error('Meta API error:', {
+        status: wabaResponse.status,
+        error,
+      });
       return NextResponse.json(
-        { error: 'Failed to fetch WhatsApp accounts from Meta' },
+        {
+          error: 'Failed to fetch WhatsApp accounts from Meta',
+          details: error.error?.message || error.message || 'Unknown error'
+        },
         { status: 400 }
       );
     }
 
     const wabaData = await wabaResponse.json();
+    console.log('WABA response:', {
+      businesses_count: wabaData.data?.length || 0,
+      data: wabaData,
+    });
 
     // Extract the first WABA and phone number
     const businesses = wabaData.data || [];
