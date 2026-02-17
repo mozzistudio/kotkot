@@ -177,26 +177,46 @@ export default function WhatsAppPage() {
     }
   }, []);
 
-  // Check login status and handle the response
-  const checkLoginState = () => {
+  // Launch embedded signup with FB.login
+  const launchEmbeddedSignup = () => {
     if (!window.FB) {
       console.error('Facebook SDK not loaded');
+      alert('Facebook SDK no esta cargado. Intenta recargar la pagina.');
       return;
     }
 
-    console.log('Checking login status...');
+    if (!META_CONFIG_ID) {
+      console.error('META_CONFIG_ID not configured');
+      alert('Configuracion de Meta faltante.');
+      return;
+    }
+
+    console.log('Launching embedded signup with config:', {
+      config_id: META_CONFIG_ID,
+      app_id: FACEBOOK_APP_ID,
+    });
+
     setIsConnecting(true);
 
-    window.FB.getLoginStatus((response: FacebookLoginResponse) => {
-      console.log('Login status response:', response);
+    window.FB.login((response: FacebookLoginResponse) => {
+      console.log('FB.login response:', response);
 
-      if (response.status === 'connected' && response.authResponse) {
+      if (response.authResponse) {
         handleAuthResponse(response);
       } else {
-        console.log('User not connected:', response);
+        console.log('User cancelled or did not authorize:', response);
+        alert('Autorizacion cancelada.');
         setIsConnecting(false);
       }
-    });
+    }, {
+      config_id: META_CONFIG_ID,
+      response_type: 'code',
+      override_default_response_type: true,
+      extras: {
+        setup: {},
+        sessionInfoVersion: '3'
+      }
+    } as any);
   };
 
   // Handle successful authorization
@@ -238,13 +258,6 @@ export default function WhatsAppPage() {
     }
   };
 
-  // Expose checkLoginState to global scope for fb:login-button
-  React.useEffect(() => {
-    (window as any).checkLoginState = checkLoginState;
-    return () => {
-      delete (window as any).checkLoginState;
-    };
-  }, [sdkLoaded]);
 
   return (
     <div className="min-h-screen p-6 lg:p-8">
@@ -418,29 +431,15 @@ export default function WhatsAppPage() {
             Conecta un nuevo numero de WhatsApp Business a tu cuenta de Kotkot a traves de Meta Embedded Signup.
           </p>
 
-          {sdkLoaded && META_CONFIG_ID ? (
-            <div
-              className="mt-5"
-              dangerouslySetInnerHTML={{
-                __html: `<fb:login-button
-                  scope="business_management,whatsapp_business_management,whatsapp_business_messaging"
-                  config_id="${META_CONFIG_ID}"
-                  response_type="code"
-                  override_default_response_type="true"
-                  onlogin="checkLoginState()">
-                </fb:login-button>`
-              }}
-            />
-          ) : (
-            <button
-              disabled={true}
-              className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-[var(--text-dark)] transition-all opacity-50 cursor-not-allowed"
-            >
-              <MessageSquare className="h-4 w-4" />
-              {isConnecting ? 'Conectando...' : 'Cargando Facebook SDK...'}
-              <ExternalLink className="h-3.5 w-3.5" />
-            </button>
-          )}
+          <button
+            onClick={launchEmbeddedSignup}
+            disabled={!sdkLoaded || isConnecting}
+            className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-[var(--text-dark)] transition-all hover:bg-[var(--accent-hover)] disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <MessageSquare className="h-4 w-4" />
+            {isConnecting ? 'Conectando...' : sdkLoaded ? 'Conectar con Meta' : 'Cargando SDK...'}
+            <ExternalLink className="h-3.5 w-3.5" />
+          </button>
 
           {/* Info Card */}
           <div className="mt-6 rounded-lg border border-[var(--border)] p-4 text-left">
