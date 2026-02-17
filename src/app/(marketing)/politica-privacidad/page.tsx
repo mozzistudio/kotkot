@@ -16,7 +16,7 @@ export default function PoliticaPrivacidadPage() {
             Política de Privacidad
           </h1>
           <p className="mt-4 text-base text-[var(--text-muted)]">
-            Última actualización: 1 de febrero de 2026
+            Última actualización: 16 de febrero de 2026
           </p>
         </div>
 
@@ -53,7 +53,9 @@ export default function PoliticaPrivacidadPage() {
                   <strong>Datos de clientes finales:</strong> información proporcionada
                   durante conversaciones de WhatsApp, incluyendo nombre, cédula,
                   datos de vehículo, fecha de nacimiento, y otra información
-                  necesaria para generar cotizaciones de seguros.
+                  necesaria para generar cotizaciones de seguros. Los mensajes de
+                  WhatsApp se almacenan temporalmente para el funcionamiento del
+                  agente de IA y el seguimiento de conversaciones.
                 </li>
                 <li>
                   <strong>Datos de uso:</strong> métricas de uso de la plataforma,
@@ -83,6 +85,7 @@ export default function PoliticaPrivacidadPage() {
                 <li>Proporcionar y mantener nuestros servicios de cotización de seguros.</li>
                 <li>Procesar cotizaciones y conectar con las APIs de aseguradoras.</li>
                 <li>Generar y procesar pagos a través de nuestros socios (Yappy, Stripe).</li>
+                <li>Operar el agente de WhatsApp Business y procesar mensajes mediante webhooks de Meta.</li>
                 <li>Mejorar nuestro agente de IA y la experiencia del usuario.</li>
                 <li>Enviar comunicaciones relacionadas con el servicio (actualizaciones, alertas, soporte).</li>
                 <li>Cumplir con obligaciones legales y regulatorias.</li>
@@ -143,9 +146,12 @@ export default function PoliticaPrivacidadPage() {
                   información necesaria para procesar transacciones.
                 </li>
                 <li>
-                  <strong>Meta (WhatsApp):</strong> como usuarios de la WhatsApp
-                  Business API, los mensajes se transmiten a través de la
-                  infraestructura de Meta.
+                  <strong>Meta (WhatsApp y Facebook):</strong> utilizamos la WhatsApp
+                  Business API y Meta Embedded Signup para conectar cuentas de WhatsApp
+                  Business. Los mensajes se transmiten a través de la infraestructura
+                  de Meta. Recibimos webhooks con información de mensajes entrantes
+                  y eventos de estado de mensajes. Utilizamos el Facebook SDK para
+                  el proceso de autenticación y vinculación de cuentas.
                 </li>
                 <li>
                   <strong>Proveedores de infraestructura:</strong> servicios de
