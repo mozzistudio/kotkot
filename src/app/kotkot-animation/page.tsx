@@ -1,100 +1,84 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useCallback } from "react";
 
-const chickenPixels = [
-  "          ████████           ",
-  "        ██████████████        ",
-  "      ████████████████████    ",
-  "     ████  ████  ████████     ",
-  "    ██████████████████████    ",
-  "    ██████████████████████    ",
-  "     ████████████████████     ",
-  "      ██████████████████      ",
-  "       ████████████████       ",
-  "      ████████████████        ",
-  "     ██████████████           ",
-  "    ████████████              ",
-  "   ██████  ██████             ",
-  "  ████      ████              ",
-  "  ███        ███              ",
+// Minimal monochrome pixel mascot — compact geometric chicken
+const mascotPixels = [
+  "      ████      ",
+  "     ██████     ",
+  "    ████████    ",
+  "   ██  ██  ██   ",
+  "   ██████████   ",
+  "    ████████    ",
+  "     ██████     ",
+  "    ████████    ",
+  "   ██████████   ",
+  "  ████████████  ",
+  "  ████████████  ",
+  "   ██████████   ",
+  "   ███    ███   ",
+  "   ██      ██   ",
 ];
 
-const navItems = [
-  "Fonctionnalités",
-  "Comment ça marche",
-  "Tarifs",
-  "À propos",
-  "Contact",
-];
+const PIXEL_SIZE = 8;
+const LINE_HEIGHT = 12;
+const TOTAL_LINES = mascotPixels.length;
+const CYCLE_FRAMES = 100; // 100 frames × 50ms = 5s loop
 
-function getPixelColor(lineIndex: number): string {
-  const colors = ["#ea580c", "#dc2626", "#f97316"];
-  return colors[lineIndex % 3];
-}
-
-interface Particle {
-  left: string;
-  top: string;
-  size: number;
-  duration: number;
-  delay: number;
-  opacity: number;
-}
-
-function generateParticles(): Particle[] {
-  return Array.from({ length: 8 }, () => ({
-    left: `${Math.random() * 100}%`,
-    top: `${Math.random() * 100}%`,
-    size: 4 + Math.random() * 6,
-    duration: 3 + Math.random() * 2,
-    delay: Math.random() * 3,
-    opacity: 0.3 + Math.random() * 0.4,
-  }));
-}
+const navItems = ["Product", "Research", "Pricing", "About"];
 
 export default function KotkotAnimationPage() {
-  const [offset, setOffset] = useState(0);
+  const [frame, setFrame] = useState(0);
   const [glitchOffsets, setGlitchOffsets] = useState<number[]>(
-    () => new Array(chickenPixels.length).fill(0)
+    () => new Array(TOTAL_LINES).fill(0)
   );
+  const [scanlineY, setScanlineY] = useState(0);
 
-  const particles = useMemo(() => generateParticles(), []);
+  const triggerGlitch = useCallback(() => {
+    const intensity = 4 + Math.random() * 12;
+    setGlitchOffsets(
+      mascotPixels.map(() =>
+        Math.random() > 0.4 ? (Math.random() - 0.5) * intensity : 0
+      )
+    );
+    setTimeout(
+      () => setGlitchOffsets(new Array(TOTAL_LINES).fill(0)),
+      60 + Math.random() * 80
+    );
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setOffset((prev) => (prev + 1) % 100);
-      if (Math.random() > 0.95) {
-        const intensity = Math.random() * 20;
-        setGlitchOffsets(
-          chickenPixels.map(() =>
-            Math.random() > 0.3 ? (Math.random() - 0.5) * intensity : 0
-          )
-        );
-        setTimeout(() => setGlitchOffsets(new Array(chickenPixels.length).fill(0)), 100);
+      setFrame((prev) => (prev + 1) % CYCLE_FRAMES);
+      setScanlineY((prev) => (prev + 2) % (TOTAL_LINES * LINE_HEIGHT + 40));
+
+      // Glitch at ~8% frequency for punchy feel
+      if (Math.random() > 0.92) {
+        triggerGlitch();
       }
     }, 50);
     return () => clearInterval(interval);
-  }, []);
+  }, [triggerGlitch]);
 
-  const shinePosition = offset;
+  // Normalized progress 0→1 over 5s cycle
+  const progress = frame / CYCLE_FRAMES;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-50 to-red-50">
-      {/* Navigation */}
-      <nav className="w-full px-8 py-4">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
+    <div className="min-h-screen bg-white text-neutral-900">
+      {/* Navigation — ultra minimal */}
+      <nav className="w-full px-8 py-6 border-b border-neutral-100">
+        <div className="max-w-5xl mx-auto flex items-center justify-between">
           <span
-            className="text-2xl font-bold tracking-tight"
-            style={{ fontFamily: "monospace", color: "#ea580c" }}
+            className="text-sm font-medium tracking-widest uppercase"
+            style={{ fontFamily: "monospace" }}
           >
-            KOTKOT
+            kotkot
           </span>
           <div className="hidden md:flex gap-8">
             {navItems.map((item) => (
               <button
                 key={item}
-                className="text-sm text-gray-600 hover:text-orange-600 transition-colors"
+                className="text-xs text-neutral-400 hover:text-neutral-900 transition-colors tracking-wide uppercase"
                 style={{ fontFamily: "monospace" }}
               >
                 {item}
@@ -104,136 +88,178 @@ export default function KotkotAnimationPage() {
         </div>
       </nav>
 
-      {/* Main content */}
-      <main className="max-w-6xl w-full mx-auto px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left column - Text and CTA */}
-          <div className="flex flex-col gap-6">
-            <div>
+      {/* Hero section */}
+      <main className="max-w-5xl mx-auto px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[calc(100vh-73px)]">
+          {/* Left — Copy */}
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-3">
+              <p
+                className="text-xs text-neutral-400 tracking-widest uppercase"
+                style={{ fontFamily: "monospace" }}
+              >
+                AI-powered assistant
+              </p>
               <h1
-                className="text-7xl font-bold tracking-tighter"
-                style={{ fontFamily: "monospace", color: "#ea580c" }}
+                className="text-5xl lg:text-6xl font-light tracking-tight leading-none text-neutral-900"
+                style={{ fontFamily: "monospace" }}
               >
-                KOTKOT
+                kotkot
               </h1>
-              <h2
-                className="text-5xl font-bold tracking-tight mt-2"
-                style={{ fontFamily: "monospace", color: "#dc2626" }}
-              >
-                AI POULE
-              </h2>
+              <p className="text-lg text-neutral-400 font-light max-w-sm leading-relaxed mt-2">
+                Your intelligent assistant that helps you manage tasks and hatch
+                brilliant ideas.
+              </p>
             </div>
 
-            <p className="text-lg text-gray-700 max-w-md leading-relaxed">
-              Votre assistante IA maligne qui vous aide à gérer vos tâches et
-              pondre des idées brillantes.
-            </p>
-
-            <div className="flex items-center gap-4 mt-4">
-              <button className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition-colors">
-                Commencer
+            <div className="flex items-center gap-6">
+              <button className="px-6 py-2.5 bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-medium rounded transition-colors tracking-wide">
+                Get started
               </button>
-              <button className="text-orange-600 font-semibold hover:underline transition-colors">
-                Comment ça marche →
+              <button
+                className="text-sm text-neutral-400 hover:text-neutral-900 transition-colors tracking-wide"
+                style={{ fontFamily: "monospace" }}
+              >
+                Learn more →
               </button>
             </div>
           </div>
 
-          {/* Right column - Chicken animation */}
-          <div className="relative flex items-center justify-center">
-            {/* Floating particles */}
-            {particles.map((particle, i) => (
+          {/* Right — Mascot animation */}
+          <div className="flex items-center justify-center">
+            <div className="relative">
+              {/* CRT scanline sweep */}
               <div
-                key={i}
-                className="absolute rounded-full pointer-events-none"
+                className="absolute left-0 right-0 pointer-events-none z-20"
                 style={{
-                  left: particle.left,
-                  top: particle.top,
-                  width: particle.size,
-                  height: particle.size,
-                  backgroundColor: "#f97316",
-                  opacity: particle.opacity,
-                  animation: `float ${particle.duration}s ease-in-out ${particle.delay}s infinite`,
-                }}
-              />
-            ))}
-
-            {/* Chicken pixel art container */}
-            <div
-              className="relative"
-              style={{ boxShadow: "0 0 10px rgba(234, 88, 12, 0.3)" }}
-            >
-              {/* Shine effect overlay */}
-              <div
-                className="absolute inset-0 pointer-events-none z-10"
-                style={{
-                  background: `linear-gradient(90deg, transparent ${shinePosition - 5}%, rgba(255,255,255,0.2) ${shinePosition}%, rgba(255,255,255,0.3) ${shinePosition + 2}%, rgba(255,255,255,0.2) ${shinePosition + 5}%, transparent ${shinePosition + 10}%)`,
+                  top: scanlineY,
+                  height: 2,
+                  background:
+                    "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.06) 20%, rgba(0,0,0,0.06) 80%, transparent 100%)",
                 }}
               />
 
-              {/* Scan lines overlay */}
-              <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
-                {Array.from({ length: 15 }).map((_, i) => (
+              {/* Static CRT scanlines overlay */}
+              <div className="absolute inset-0 pointer-events-none z-10">
+                {Array.from({ length: TOTAL_LINES }).map((_, i) => (
                   <div
                     key={i}
-                    className="w-full"
                     style={{
-                      height: 40,
-                      background: "rgba(234, 88, 12, 0.08)",
-                      transform: `translateX(${-offset * 2}px)`,
+                      height: LINE_HEIGHT,
+                      borderBottom: "1px solid rgba(0,0,0,0.03)",
                     }}
                   />
                 ))}
               </div>
 
               {/* Pixel rows */}
-              {chickenPixels.map((line, lineIndex) => {
-                const sinOffset =
-                  Math.sin((offset + lineIndex * 3) / 10) * 15;
-                const glitchOffset = glitchOffsets[lineIndex];
-                const isGlitching = glitchOffset !== 0;
+              {mascotPixels.map((line, lineIndex) => {
+                // Subtle sine wave — breathe animation
+                const breathe =
+                  Math.sin(progress * Math.PI * 2 + lineIndex * 0.3) * 2;
+                const glitch = glitchOffsets[lineIndex];
+                const isGlitching = glitch !== 0;
+
+                // Opacity pulse per line for depth
+                const lineOpacity =
+                  0.85 +
+                  0.15 *
+                    Math.sin(progress * Math.PI * 2 + lineIndex * 0.5);
 
                 return (
                   <div
                     key={lineIndex}
                     className="flex"
                     style={{
-                      height: 40,
-                      transform: `translateX(${sinOffset + glitchOffset}px)`,
-                      transition:
-                        isGlitching ? "none" : "transform 0.05s linear",
+                      height: LINE_HEIGHT,
+                      transform: `translateX(${breathe + glitch}px)`,
+                      transition: isGlitching
+                        ? "none"
+                        : "transform 0.1s ease-out",
+                      opacity: lineOpacity,
                     }}
                   >
                     {line.split("").map((char, charIndex) => (
                       <div
                         key={charIndex}
                         style={{
-                          width: 20,
-                          height: 40,
+                          width: PIXEL_SIZE,
+                          height: LINE_HEIGHT,
                           backgroundColor:
-                            char !== " "
-                              ? getPixelColor(lineIndex)
-                              : "transparent",
+                            char !== " " ? "#171717" : "transparent",
                         }}
                       />
                     ))}
                   </div>
                 );
               })}
+
+              {/* Glitch RGB split — appears during glitch */}
+              {glitchOffsets.some((g) => g !== 0) && (
+                <div className="absolute inset-0 pointer-events-none z-30 mix-blend-multiply opacity-30">
+                  {mascotPixels.map((line, lineIndex) => (
+                    <div
+                      key={lineIndex}
+                      className="flex"
+                      style={{
+                        height: LINE_HEIGHT,
+                        transform: `translateX(${(glitchOffsets[lineIndex] || 0) * -0.5 + 3}px)`,
+                      }}
+                    >
+                      {line.split("").map((char, charIndex) => (
+                        <div
+                          key={charIndex}
+                          style={{
+                            width: PIXEL_SIZE,
+                            height: LINE_HEIGHT,
+                            backgroundColor:
+                              char !== " "
+                                ? "rgba(0,0,0,0.15)"
+                                : "transparent",
+                          }}
+                        />
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
       </main>
 
-      {/* Float animation keyframes */}
+      {/* Bottom line */}
+      <div className="fixed bottom-0 left-0 right-0 border-t border-neutral-100 bg-white/80 backdrop-blur-sm">
+        <div className="max-w-5xl mx-auto px-8 py-3 flex items-center justify-between">
+          <span
+            className="text-xs text-neutral-300 tracking-widest"
+            style={{ fontFamily: "monospace" }}
+          >
+            v0.1.0
+          </span>
+          <div
+            className="flex items-center gap-2 text-xs text-neutral-300"
+            style={{ fontFamily: "monospace" }}
+          >
+            <span
+              className="inline-block w-1.5 h-1.5 rounded-full bg-green-400"
+              style={{
+                animation: "pulse-dot 2s ease-in-out infinite",
+              }}
+            />
+            operational
+          </div>
+        </div>
+      </div>
+
       <style jsx global>{`
-        @keyframes float {
+        @keyframes pulse-dot {
           0%,
           100% {
-            transform: translateY(0px) rotate(0deg);
+            opacity: 1;
           }
           50% {
-            transform: translateY(-20px) rotate(5deg);
+            opacity: 0.4;
           }
         }
       `}</style>
