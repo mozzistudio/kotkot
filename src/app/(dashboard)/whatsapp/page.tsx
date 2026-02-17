@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
   Phone,
   Plus,
@@ -88,7 +88,8 @@ interface FacebookLoginResponse {
 interface FacebookSDK {
   init: (options: {
     appId: string;
-    autoLogAppEvents: boolean;
+    cookie?: boolean;
+    autoLogAppEvents?: boolean;
     xfbml: boolean;
     version: string;
   }) => void;
@@ -100,6 +101,7 @@ interface FacebookSDK {
       override_default_response_type: boolean;
     }
   ) => void;
+  getLoginStatus: (callback: (response: FacebookLoginResponse) => void) => void;
   Event: {
     subscribe: (event: string, callback: (response: FacebookLoginResponse) => void) => void;
   };
@@ -137,87 +139,75 @@ const statusConfig: Record<NumberStatus, { label: string; dotColor: string; icon
 export default function WhatsAppPage() {
   const [expandedHours, setExpandedHours] = useState<string | null>(null);
   const [isConnecting, setIsConnecting] = useState(false);
+  const [sdkLoaded, setSdkLoaded] = useState(false);
 
-  const loadFacebookSDK = async (): Promise<FacebookSDK> => {
-    if (window.FB) {
-      return window.FB;
+  // Initialize Facebook SDK on component mount
+  React.useEffect(() => {
+    if (!FACEBOOK_APP_ID || !META_CONFIG_ID) {
+      console.error('Missing Facebook credentials');
+      return;
     }
 
-    await new Promise<void>((resolve, reject) => {
-      const existingScript = document.querySelector<HTMLScriptElement>(`script[src="${FACEBOOK_SDK_SRC}"]`);
-      if (existingScript) {
-        if (window.FB) {
-          resolve();
-          return;
-        }
+    // Define fbAsyncInit callback
+    window.fbAsyncInit = function() {
+      if (!window.FB) return;
 
-        existingScript.addEventListener('load', () => resolve(), { once: true });
-        existingScript.addEventListener('error', () => reject(new Error('Failed to load Facebook SDK')), { once: true });
-        return;
-      }
+      window.FB.init({
+        appId: FACEBOOK_APP_ID,
+        cookie: true,
+        xfbml: true,
+        version: 'v21.0'
+      });
 
+      console.log('Facebook SDK initialized');
+      setSdkLoaded(true);
+    };
+
+    // Load Facebook SDK script
+    if (!document.getElementById('facebook-jssdk')) {
       const script = document.createElement('script');
+      script.id = 'facebook-jssdk';
       script.src = FACEBOOK_SDK_SRC;
       script.async = true;
       script.defer = true;
       script.crossOrigin = 'anonymous';
-      script.onload = () => resolve();
-      script.onerror = () => reject(new Error('Failed to load Facebook SDK'));
-      document.body.appendChild(script);
-    });
 
-    if (!window.FB) {
-      throw new Error('Facebook SDK loaded but FB is unavailable');
+      const firstScript = document.getElementsByTagName('script')[0];
+      firstScript.parentNode?.insertBefore(script, firstScript);
     }
+  }, []);
 
-    return window.FB;
-  };
-
-  const handleConnectWhatsApp = async () => {
-    if (isConnecting) return;
-
-    if (!FACEBOOK_APP_ID || !META_CONFIG_ID) {
-      alert('Faltan variables de configuracion de Meta. Contacta al soporte.');
+  // Check login status and handle the response
+  const checkLoginState = () => {
+    if (!window.FB) {
+      console.error('Facebook SDK not loaded');
       return;
     }
 
+    console.log('Checking login status...');
     setIsConnecting(true);
 
+    window.FB.getLoginStatus((response: FacebookLoginResponse) => {
+      console.log('Login status response:', response);
+
+      if (response.status === 'connected' && response.authResponse) {
+        handleAuthResponse(response);
+      } else {
+        console.log('User not connected:', response);
+        setIsConnecting(false);
+      }
+    });
+  };
+
+  // Handle successful authorization
+  const handleAuthResponse = async (response: FacebookLoginResponse) => {
     try {
-      const fb = await loadFacebookSDK();
-
-      fb.init({
-        appId: FACEBOOK_APP_ID,
-        autoLogAppEvents: true,
-        xfbml: true,
-        version: 'v21.0',
-      });
-
-      console.log('Launching embedded signup with config:', {
-        config_id: META_CONFIG_ID,
-        app_id: FACEBOOK_APP_ID,
-      });
-
-      // Subscribe to auth events for better error handling
-      fb.Event.subscribe('auth.authResponseChange', (response: FacebookLoginResponse) => {
-        console.log('Auth response change:', response);
-      });
-
-      const response = await new Promise<FacebookLoginResponse>((resolve) => {
-        fb.login(resolve, {
-          config_id: META_CONFIG_ID,
-          response_type: 'code',
-          override_default_response_type: true,
-        });
-      });
-
-      console.log('FB.login response:', response);
-
       const authorizationCode = response.authResponse?.code ?? response.code;
 
       if (!authorizationCode) {
         console.error('No authorization code received:', response);
         alert('No se completo la autorizacion con Meta.');
+        setIsConnecting(false);
         return;
       }
 
@@ -244,10 +234,17 @@ export default function WhatsAppPage() {
       console.error('Error connecting WhatsApp:', error);
       const message = error instanceof Error ? error.message : 'Ocurrio un error al conectar con Meta';
       alert(message);
-    } finally {
       setIsConnecting(false);
     }
   };
+
+  // Expose checkLoginState to global scope for fb:login-button
+  React.useEffect(() => {
+    (window as any).checkLoginState = checkLoginState;
+    return () => {
+      delete (window as any).checkLoginState;
+    };
+  }, [sdkLoaded]);
 
   return (
     <div className="min-h-screen p-6 lg:p-8">
@@ -421,15 +418,29 @@ export default function WhatsAppPage() {
             Conecta un nuevo numero de WhatsApp Business a tu cuenta de Kotkot a traves de Meta Embedded Signup.
           </p>
 
-          <button
-            onClick={handleConnectWhatsApp}
-            disabled={isConnecting}
-            className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-[var(--text-dark)] transition-all hover:bg-[var(--accent-hover)] disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <MessageSquare className="h-4 w-4" />
-            {isConnecting ? 'Conectando...' : 'Conectar con Meta'}
-            <ExternalLink className="h-3.5 w-3.5" />
-          </button>
+          {sdkLoaded && META_CONFIG_ID ? (
+            <div
+              className="mt-5"
+              dangerouslySetInnerHTML={{
+                __html: `<fb:login-button
+                  scope="business_management,whatsapp_business_management,whatsapp_business_messaging"
+                  config_id="${META_CONFIG_ID}"
+                  response_type="code"
+                  override_default_response_type="true"
+                  onlogin="checkLoginState()">
+                </fb:login-button>`
+              }}
+            />
+          ) : (
+            <button
+              disabled={true}
+              className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 font-semibold text-[var(--text-dark)] transition-all opacity-50 cursor-not-allowed"
+            >
+              <MessageSquare className="h-4 w-4" />
+              {isConnecting ? 'Conectando...' : 'Cargando Facebook SDK...'}
+              <ExternalLink className="h-3.5 w-3.5" />
+            </button>
+          )}
 
           {/* Info Card */}
           <div className="mt-6 rounded-lg border border-[var(--border)] p-4 text-left">
