@@ -4,6 +4,8 @@ import { cookies } from 'next/headers';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+const facebookAppId = process.env.NEXT_PUBLIC_FACEBOOK_APP_ID;
+const facebookAppSecret = process.env.FACEBOOK_APP_SECRET;
 
 export async function POST(request: NextRequest) {
   try {
@@ -20,20 +22,29 @@ export async function POST(request: NextRequest) {
 
     // If code is provided, exchange it for an access token
     if (code && !accessToken) {
+      if (!facebookAppId || !facebookAppSecret) {
+        return NextResponse.json(
+          { error: 'Meta app credentials are not configured' },
+          { status: 500 }
+        );
+      }
+
       console.log('Exchanging authorization code for access token...');
-
-      const tokenUrl = `https://graph.facebook.com/v21.0/oauth/access_token?` +
-        `client_id=${process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}` +
-        `&client_secret=${process.env.FACEBOOK_APP_SECRET}` +
-        `&code=${code}`;
-
       console.log('Token exchange request:', {
-        client_id: process.env.NEXT_PUBLIC_FACEBOOK_APP_ID,
-        has_secret: !!process.env.FACEBOOK_APP_SECRET,
+        client_id: facebookAppId,
+        has_secret: !!facebookAppSecret,
         code: code.substring(0, 10) + '...',
       });
 
-      const tokenResponse = await fetch(tokenUrl);
+      const searchParams = new URLSearchParams({
+        client_id: facebookAppId,
+        client_secret: facebookAppSecret,
+        code,
+      });
+
+      const tokenResponse = await fetch(
+        `https://graph.facebook.com/v21.0/oauth/access_token?${searchParams.toString()}`
+      );
 
       if (!tokenResponse.ok) {
         const error = await tokenResponse.json();
@@ -70,7 +81,6 @@ export async function POST(request: NextRequest) {
     // Get user from cookies
     const cookieStore = await cookies();
     const supabaseAccessToken = cookieStore.get('sb-access-token')?.value;
-    const supabaseRefreshToken = cookieStore.get('sb-refresh-token')?.value;
 
     if (!supabaseAccessToken) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });

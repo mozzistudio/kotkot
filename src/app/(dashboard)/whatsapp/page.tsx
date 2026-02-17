@@ -75,6 +75,42 @@ const botPersonalities = ['Mi Agente', 'Agente Formal', 'Agente Express'];
 
 const FACEBOOK_APP_ID = process.env.NEXT_PUBLIC_FACEBOOK_APP_ID;
 const META_CONFIG_ID = process.env.NEXT_PUBLIC_META_CONFIG_ID;
+const FACEBOOK_SDK_SRC = 'https://connect.facebook.net/en_US/sdk.js';
+
+interface FacebookLoginResponse {
+  status?: string;
+  authResponse?: {
+    code?: string;
+  };
+  code?: string;
+}
+
+interface FacebookSDK {
+  init: (options: {
+    appId: string;
+    autoLogAppEvents: boolean;
+    xfbml: boolean;
+    version: string;
+  }) => void;
+  login: (
+    callback: (response: FacebookLoginResponse) => void,
+    options: {
+      config_id: string;
+      response_type: 'code';
+      override_default_response_type: boolean;
+    }
+  ) => void;
+  Event: {
+    subscribe: (event: string, callback: (response: FacebookLoginResponse) => void) => void;
+  };
+}
+
+declare global {
+  interface Window {
+    FB?: FacebookSDK;
+    fbAsyncInit?: () => void;
+  }
+}
 
 // Debug: Log environment variables
 console.log('WhatsApp Page Environment Variables:', {
@@ -102,121 +138,115 @@ export default function WhatsAppPage() {
   const [expandedHours, setExpandedHours] = useState<string | null>(null);
   const [isConnecting, setIsConnecting] = useState(false);
 
-  const handleConnectWhatsApp = () => {
-    setIsConnecting(true);
+  const loadFacebookSDK = async (): Promise<FacebookSDK> => {
+    if (window.FB) {
+      return window.FB;
+    }
 
-    // Load Facebook SDK
-    if (typeof window !== 'undefined' && !(window as any).FB) {
+    await new Promise<void>((resolve, reject) => {
+      const existingScript = document.querySelector<HTMLScriptElement>(`script[src="${FACEBOOK_SDK_SRC}"]`);
+      if (existingScript) {
+        if (window.FB) {
+          resolve();
+          return;
+        }
+
+        existingScript.addEventListener('load', () => resolve(), { once: true });
+        existingScript.addEventListener('error', () => reject(new Error('Failed to load Facebook SDK')), { once: true });
+        return;
+      }
+
       const script = document.createElement('script');
-      script.src = 'https://connect.facebook.net/en_US/sdk.js';
+      script.src = FACEBOOK_SDK_SRC;
       script.async = true;
       script.defer = true;
       script.crossOrigin = 'anonymous';
-      script.onload = () => {
-        (window as any).FB.init({
-          appId: FACEBOOK_APP_ID,
-          autoLogAppEvents: true,
-          xfbml: true,
-          version: 'v21.0'
-        });
-        launchEmbeddedSignup();
-      };
-      script.onerror = () => {
-        console.error('Failed to load Facebook SDK');
-        setIsConnecting(false);
-      };
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error('Failed to load Facebook SDK'));
       document.body.appendChild(script);
-    } else {
-      launchEmbeddedSignup();
+    });
+
+    if (!window.FB) {
+      throw new Error('Facebook SDK loaded but FB is unavailable');
     }
+
+    return window.FB;
   };
 
-  const launchEmbeddedSignup = () => {
-    if (!META_CONFIG_ID) {
-      console.error('META_CONFIG_ID not configured');
-      alert('Configuration Meta manquante. Veuillez contacter le support.');
-      setIsConnecting(false);
+  const handleConnectWhatsApp = async () => {
+    if (isConnecting) return;
+
+    if (!FACEBOOK_APP_ID || !META_CONFIG_ID) {
+      alert('Faltan variables de configuracion de Meta. Contacta al soporte.');
       return;
     }
 
-    if (!FACEBOOK_APP_ID) {
-      console.error('FACEBOOK_APP_ID not configured');
-      alert('Configuration Meta manquante. Veuillez contacter le support.');
-      setIsConnecting(false);
-      return;
-    }
+    setIsConnecting(true);
 
-    if (!(window as any).FB) {
-      console.error('Facebook SDK not loaded');
-      setIsConnecting(false);
-      return;
-    }
+    try {
+      const fb = await loadFacebookSDK();
 
-    console.log('Launching embedded signup with config:', {
-      config_id: META_CONFIG_ID,
-      app_id: FACEBOOK_APP_ID,
-    });
+      fb.init({
+        appId: FACEBOOK_APP_ID,
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: 'v21.0',
+      });
 
-    // Subscribe to the auth.authResponseChange event before launching
-    (window as any).FB.Event.subscribe('auth.authResponseChange', function(response: any) {
-      console.log('Auth response change:', response);
-
-      if (response.status === 'connected' && response.authResponse) {
-        const code = response.authResponse.code;
-        console.log('Received authorization code:', code);
-
-        // Send code to backend to exchange for access token
-        fetch('/api/whatsapp/connect', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ code }),
-        })
-          .then(res => {
-            if (!res.ok) {
-              throw new Error(`HTTP error! status: ${res.status}`);
-            }
-            return res.json();
-          })
-          .then(data => {
-            console.log('WhatsApp connected successfully:', data);
-            if (data.success) {
-              alert('WhatsApp conectado exitosamente!');
-              setIsConnecting(false);
-              // Refresh the page to show the new number
-              window.location.reload();
-            } else {
-              throw new Error(data.error || 'Failed to connect');
-            }
-          })
-          .catch(err => {
-            console.error('Error connecting WhatsApp:', err);
-            alert('Error al conectar WhatsApp: ' + err.message);
-            setIsConnecting(false);
-          });
-      } else {
-        console.log('User cancelled login or did not fully authorize.');
-        setIsConnecting(false);
-      }
-    });
-
-    // Launch the embedded signup dialog
-    (window as any).FB.login(
-      function(response: any) {
-        console.log('FB.login callback:', response);
-      },
-      {
+      console.log('Launching embedded signup with config:', {
         config_id: META_CONFIG_ID,
-        response_type: 'code',
-        override_default_response_type: true,
-        extras: {
-          setup: {},
-          featureType: '',
-          sessionInfoVersion: '3',
-        }
+        app_id: FACEBOOK_APP_ID,
+      });
+
+      // Subscribe to auth events for better error handling
+      fb.Event.subscribe('auth.authResponseChange', (response: FacebookLoginResponse) => {
+        console.log('Auth response change:', response);
+      });
+
+      const response = await new Promise<FacebookLoginResponse>((resolve) => {
+        fb.login(resolve, {
+          config_id: META_CONFIG_ID,
+          response_type: 'code',
+          override_default_response_type: true,
+        });
+      });
+
+      console.log('FB.login response:', response);
+
+      const authorizationCode = response.authResponse?.code ?? response.code;
+
+      if (!authorizationCode) {
+        console.error('No authorization code received:', response);
+        alert('No se completo la autorizacion con Meta.');
+        return;
       }
-    );
+
+      console.log('Received authorization code, sending to backend...');
+
+      const connectResponse = await fetch('/api/whatsapp/connect', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code: authorizationCode }),
+      });
+
+      if (!connectResponse.ok) {
+        const payload = await connectResponse.json().catch(() => ({}));
+        console.error('Backend error:', payload);
+        throw new Error(payload.error || 'No se pudo conectar WhatsApp con Meta');
+      }
+
+      const result = await connectResponse.json();
+      console.log('WhatsApp connected successfully:', result);
+
+      alert('WhatsApp conectado exitosamente!');
+      window.location.reload();
+    } catch (error) {
+      console.error('Error connecting WhatsApp:', error);
+      const message = error instanceof Error ? error.message : 'Ocurrio un error al conectar con Meta';
+      alert(message);
+    } finally {
+      setIsConnecting(false);
+    }
   };
 
   return (
