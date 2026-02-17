@@ -16,7 +16,7 @@ export default function TerminosPage() {
             Términos de Servicio
           </h1>
           <p className="mt-4 text-base text-[var(--text-muted)]">
-            Última actualización: 1 de febrero de 2026
+            Última actualización: 16 de febrero de 2026
           </p>
         </div>
 
@@ -73,9 +73,9 @@ export default function TerminosPage() {
               </p>
               <ul className="mt-3 list-disc space-y-2 pl-6">
                 <li>
-                  Desplegar un agente de inteligencia artificial en WhatsApp
-                  Business para atender clientes y generar cotizaciones de
-                  seguros automáticamente.
+                  Conectar tu cuenta de WhatsApp Business mediante Meta Embedded
+                  Signup y desplegar un agente de inteligencia artificial para
+                  atender clientes y generar cotizaciones de seguros automáticamente.
                 </li>
                 <li>
                   Conectar APIs de aseguradoras para obtener cotizaciones en
@@ -88,6 +88,10 @@ export default function TerminosPage() {
                 <li>
                   Gestionar clientes, cotizaciones, pólizas y comisiones a
                   través de un dashboard web.
+                </li>
+                <li>
+                  Configurar la personalidad del bot de IA y monitorear
+                  conversaciones en tiempo real.
                 </li>
               </ul>
               <p className="mt-3 text-base leading-relaxed">
@@ -189,7 +193,8 @@ export default function TerminosPage() {
                 </li>
                 <li>
                   Cumplir con las políticas de uso de WhatsApp Business Platform
-                  de Meta.
+                  y las Políticas de Plataforma de Meta, incluyendo las normas
+                  sobre uso de datos, privacidad y mensajería comercial.
                 </li>
                 <li>
                   No intentar acceder a datos de otros usuarios de la plataforma.
@@ -201,6 +206,10 @@ export default function TerminosPage() {
                 <li>
                   No utilizar la plataforma para actividades ilegales, incluido
                   el lavado de dinero o el fraude de seguros.
+                </li>
+                <li>
+                  Mantener tu cuenta de WhatsApp Business en buen estado y
+                  cumplir con las verificaciones requeridas por Meta.
                 </li>
               </ul>
             </section>
@@ -230,10 +239,52 @@ export default function TerminosPage() {
               </p>
             </section>
 
-            {/* 7. Limitación de Responsabilidad */}
+            {/* 7. Integraciones de Terceros */}
             <section>
               <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
-                7. Limitación de Responsabilidad
+                7. Integraciones de Terceros
+              </h2>
+              <p className="mt-3 text-base leading-relaxed">
+                Kotkot utiliza servicios de terceros para proporcionar
+                funcionalidades completas. Al usar nuestra plataforma,
+                también estás sujeto a los términos y políticas de estos
+                proveedores:
+              </p>
+              <ul className="mt-3 list-disc space-y-2 pl-6">
+                <li>
+                  <strong>Meta (WhatsApp Business API y Facebook):</strong> al
+                  conectar tu cuenta de WhatsApp Business mediante Meta Embedded
+                  Signup, autorizas a Kotkot a actuar en tu nombre para enviar
+                  y recibir mensajes a través de la WhatsApp Business Platform.
+                  Debes cumplir con los Términos de Servicio Comerciales de Meta,
+                  las Políticas de Plataforma, y las políticas específicas de
+                  WhatsApp Business. Meta puede suspender o revocar el acceso
+                  a la API si detecta violaciones de sus políticas.
+                </li>
+                <li>
+                  <strong>Aseguradoras:</strong> las conexiones a APIs de
+                  aseguradoras están sujetas a los acuerdos comerciales entre
+                  tu correduría y cada aseguradora. Kotkot no es parte de estos
+                  acuerdos.
+                </li>
+                <li>
+                  <strong>Procesadores de pago (Stripe, Yappy):</strong> los
+                  pagos procesados están sujetos a los términos de servicio
+                  de cada procesador.
+                </li>
+              </ul>
+              <p className="mt-3 text-base leading-relaxed">
+                No somos responsables de interrupciones, cambios o terminación
+                de servicios de terceros. Si un proveedor modifica o descontinúa
+                su servicio, haremos esfuerzos razonables para notificarte y
+                ofrecer alternativas cuando sea posible.
+              </p>
+            </section>
+
+            {/* 8. Limitación de Responsabilidad */}
+            <section>
+              <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
+                8. Limitación de Responsabilidad
               </h2>
               <ul className="mt-3 list-disc space-y-2 pl-6">
                 <li>
@@ -268,10 +319,10 @@ export default function TerminosPage() {
               </ul>
             </section>
 
-            {/* 8. Suspensión y Terminación */}
+            {/* 9. Suspensión y Terminación */}
             <section>
               <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
-                8. Suspensión y Terminación
+                9. Suspensión y Terminación
               </h2>
               <p className="mt-3 text-base leading-relaxed">
                 Podemos suspender o terminar tu acceso a la plataforma si:
@@ -306,10 +357,10 @@ export default function TerminosPage() {
               </ul>
             </section>
 
-            {/* 9. Indemnización */}
+            {/* 10. Indemnización */}
             <section>
               <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
-                9. Indemnización
+                10. Indemnización
               </h2>
               <p className="mt-3 text-base leading-relaxed">
                 Aceptas indemnizar y mantener indemne a Kotkot, sus
@@ -320,10 +371,10 @@ export default function TerminosPage() {
               </p>
             </section>
 
-            {/* 10. Modificaciones */}
+            {/* 11. Modificaciones */}
             <section>
               <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
-                10. Modificaciones a los Términos
+                11. Modificaciones a los Términos
               </h2>
               <p className="mt-3 text-base leading-relaxed">
                 Nos reservamos el derecho de modificar estos Términos en
@@ -335,10 +386,10 @@ export default function TerminosPage() {
               </p>
             </section>
 
-            {/* 11. Ley Aplicable */}
+            {/* 12. Ley Aplicable */}
             <section>
               <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
-                11. Ley Aplicable y Jurisdicción
+                12. Ley Aplicable y Jurisdicción
               </h2>
               <p className="mt-3 text-base leading-relaxed">
                 Estos Términos se rigen por las leyes de la República de
@@ -348,10 +399,10 @@ export default function TerminosPage() {
               </p>
             </section>
 
-            {/* 12. Disposiciones Generales */}
+            {/* 13. Disposiciones Generales */}
             <section>
               <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
-                12. Disposiciones Generales
+                13. Disposiciones Generales
               </h2>
               <ul className="mt-3 list-disc space-y-2 pl-6">
                 <li>
@@ -374,10 +425,10 @@ export default function TerminosPage() {
               </ul>
             </section>
 
-            {/* 13. Contacto */}
+            {/* 14. Contacto */}
             <section>
               <h2 className="font-heading text-xl font-bold text-[var(--text-primary)]">
-                13. Contacto
+                14. Contacto
               </h2>
               <p className="mt-3 text-base leading-relaxed">
                 Para preguntas sobre estos Términos de Servicio, contáctanos:
